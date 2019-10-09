@@ -9,6 +9,7 @@ public class AttackTest : MonoBehaviour
     public float uppercutRadius;
 
     public LayerMask EnemyMask;
+    public float _pushbackIntensity;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +20,22 @@ public class AttackTest : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A))
         {
+
             Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(uppercutPosition.position, uppercutRadius, EnemyMask);
-            for (int i = 0; i < enemiesCollider.Length; i++)
+            if(enemiesCollider.Length > 0)
             {
-                Debug.Log("Hit");
+                
+                for (int i = 0; i < enemiesCollider.Length; i++)
+                {
+                    //enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = this.transform.forward * Time.deltaTime * _pushbackIntensity;
+                    enemiesCollider[i].GetComponent<Rigidbody2D>().AddForce(this.transform.forward * Time.deltaTime * _pushbackIntensity);
+                }
+            }
+            else
+            {
+                Debug.Log("Bruh");
             }
         }
     }
