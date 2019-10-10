@@ -5,8 +5,8 @@ using UnityEngine;
 public class AttackTest : MonoBehaviour
 {
 
-    public Transform uppercutPosition;
-    public float uppercutRadius;
+    public Transform shockWavePosition;
+    public float shockWaveRadius;
 
     public LayerMask EnemyMask;
     public float _pushbackIntensity;
@@ -23,14 +23,16 @@ public class AttackTest : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A))
         {
 
-            Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(uppercutPosition.position, uppercutRadius, EnemyMask);
+            Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);
             if(enemiesCollider.Length > 0)
             {
                 
                 for (int i = 0; i < enemiesCollider.Length; i++)
                 {
+                    Vector3 moveDirection = enemiesCollider[i].transform.position - this.transform.position;
                     //enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = this.transform.forward * Time.deltaTime * _pushbackIntensity;
-                    enemiesCollider[i].GetComponent<Rigidbody2D>().AddForce(this.transform.forward * Time.deltaTime * _pushbackIntensity);
+                    enemiesCollider[i].GetComponent<Rigidbody2D>().AddForce(moveDirection.normalized * Time.deltaTime * _pushbackIntensity);
+                    Debug.Log("Hit");
                 }
             }
             else
@@ -43,6 +45,6 @@ public class AttackTest : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(uppercutPosition.position, uppercutRadius);
+        Gizmos.DrawWireSphere(shockWavePosition.position, shockWaveRadius);
     }
 }
