@@ -50,7 +50,7 @@ public class AttackTest : MonoBehaviour
         }
 
         //permet de faire en sorte que la shockwave dure pendant un certain temps
-        if ((Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.A)) && isShockWavePossible)
+        if ((Input.GetKeyDown("joystick " + GetComponent<MouvementPlayer>().controllerNumber + " button 0") || Input.GetKeyDown(KeyCode.A)) && isShockWavePossible)
         {
             isShockWaveButtonPressed = true;
         }
