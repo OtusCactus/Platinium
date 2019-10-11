@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class MouvementPlayer : MonoBehaviour
 {
-    public float accelerationX;
-    public float accelerationY;
-    public float prevAccX;
-    public float prevAccY;
+    private float accelerationX;
+    private float accelerationY;
+    private float prevAccX;
+    private float prevAccY;
     //
-    public float timerPowerX;
-    public float timerPowerY;
+    private float timerPowerX;
+    private float timerPowerY;
     public float powerMax;
     //
     public int speed;
     //
     private Rigidbody2D myRb;
 
-    public float timerDeadPointX;
-    public float timerDeadPointY;
+    private float timerDeadPointX;
+    private float timerDeadPointY;
 
     public float rotationSpeed;
     private float joyAngle;
 
-    float angle;
+    private float angle;
+
+    [HideInInspector] public int controllerNumber;
 
 
     // Start is called before the first frame update
@@ -37,11 +39,11 @@ public class MouvementPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        accelerationX = Input.GetAxis("Horizontal");
-        accelerationY = Input.GetAxis("Vertical");
+        accelerationX = Input.GetAxis("HorizontalJoy" + controllerNumber);
+        accelerationY = Input.GetAxis("VerticalJoy" + controllerNumber);
 
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = -Input.GetAxis("Vertical");
+        float inputX = Input.GetAxis("HorizontalJoy" + controllerNumber);
+        float inputY = -Input.GetAxis("VerticalJoy" + controllerNumber);
 
         if (inputX != 0.0f || inputY != 0.0f)
         {
