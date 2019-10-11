@@ -30,6 +30,12 @@ public class MouvementPlayer : MonoBehaviour
 
     [HideInInspector] public int controllerNumber;
 
+    private void Awake()
+    {
+        timerPowerX = 0;
+        timerPowerY = 0;
+        powerSlider.value = 0;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +43,8 @@ public class MouvementPlayer : MonoBehaviour
         myRb = GetComponent<Rigidbody2D>();
         timerDeadPointX = 0;
         timerDeadPointY = 0;
+        powerSlider.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -57,6 +65,8 @@ public class MouvementPlayer : MonoBehaviour
         //on définit la puissance du déplacement. Plus le joueur reste incliné, plus le timer et donc la puissance augmente
         if (accelerationX != 0)
         {
+            powerSlider.gameObject.SetActive(true);
+
             prevAccX = accelerationX;
             myRb.drag = 3;
             timerPowerX += Time.deltaTime;
@@ -67,6 +77,8 @@ public class MouvementPlayer : MonoBehaviour
         }
         if (accelerationY != 0)
         {
+            powerSlider.gameObject.SetActive(true);
+
             prevAccY = accelerationY;
             myRb.drag = 2;
             timerPowerY += Time.deltaTime;
@@ -105,6 +117,8 @@ public class MouvementPlayer : MonoBehaviour
             {
                 timerPowerX = timerPowerY;
             }
+            powerSlider.gameObject.SetActive(false);
+
             myRb.velocity = new Vector2(prevAccX * (-timerPowerX * speed), prevAccY * (-timerPowerY * speed));
             prevAccX = 0;
             prevAccY = 0;
