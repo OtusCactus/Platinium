@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mouvement : MonoBehaviour
+public class MouvementFPS : MonoBehaviour
 {
     CharacterController characterController;
 
