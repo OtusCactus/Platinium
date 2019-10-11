@@ -75,6 +75,8 @@ public class AttackTest : MonoBehaviour
                             enemiesCollider[i].GetComponent<AttackTest>().reboundWallDamage = 1;
                             hasWallDamageBeenAssigned = true;
                         }
+                        enemiesCollider[i].GetComponent<ShockwaveHit>().haveIBeenHit = true;
+
                         //enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = this.transform.forward * Time.deltaTime * _pushbackIntensity;
                         enemiesCollider[i].GetComponent<Rigidbody2D>().AddForce(moveDirection.normalized * Time.deltaTime * pushbackIntensity);
                         Debug.Log("Hit");
