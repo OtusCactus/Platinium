@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouvementPlayer : MonoBehaviour
+public class MouvPlayer2 : MonoBehaviour
 {
     public float accelerationX;
     public float accelerationY;
@@ -40,7 +40,7 @@ public class MouvementPlayer : MonoBehaviour
             prevAccX = accelerationX;
             myRb.drag = 3;
             timerPowerX += Time.deltaTime;
-            if (timerPowerX > powerMax)
+            if(timerPowerX > powerMax)
             {
                 timerPowerX = powerMax;
             }
