@@ -215,7 +215,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.2862988, y: -0.039154977}
+  m_Offset: {x: 3.2862988, y: 0.001450181}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -226,7 +226,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.498909, y: 1.993082}
+  m_Size: {x: 7.498909, y: 0.9848478}
   m_EdgeRadius: 0
 --- !u!114 &287647762
 MonoBehaviour:
@@ -335,7 +335,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.2862988, y: -0.039154977}
+  m_Offset: {x: 3.2862988, y: -0.009227037}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -346,7 +346,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.498909, y: 1.993082}
+  m_Size: {x: 7.498909, y: 1.0353847}
   m_EdgeRadius: 0
 --- !u!114 &295671235
 MonoBehaviour:
@@ -538,7 +538,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.2862988, y: -0.039154977}
+  m_Offset: {x: 3.2862988, y: -0.015860915}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -549,7 +549,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.498909, y: 1.993082}
+  m_Size: {x: 7.498909, y: 1.0464361}
   m_EdgeRadius: 0
 --- !u!114 &1118785718
 MonoBehaviour:
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 1129844919}
   - component: {fileID: 1129844914}
   - component: {fileID: 1129844913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plyaer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,8 +640,8 @@ MonoBehaviour:
   shockWaveDurationMax: 0.5
   EnemyMask:
     serializedVersion: 2
-    m_Bits: 256
-  pushbackIntensity: 7500
+    m_Bits: 3584
+  pushbackIntensity: 1000
 --- !u!212 &1129844916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -721,17 +721,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dc5d1071ba6ad41b96c10c917010df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationX: 0
-  accelerationY: 0
-  prevAccX: 0
-  prevAccY: 0
-  timerPowerX: 0
-  timerPowerY: 0
   powerMax: 5
   speed: 5
-  timerDeadPointX: 0
-  timerDeadPointY: 0
   rotationSpeed: 0
+  controllerNumber: 0
 --- !u!50 &1129844919
 Rigidbody2D:
   serializedVersion: 4
@@ -987,7 +980,32 @@ PrefabInstance:
     - target: {fileID: 482254352350085799, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085796, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: EnemyMask.m_Bits
+      value: 3328
+      objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085796, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: pushbackIntensity
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085795, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085795, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085795, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.09173083
       objectReference: {fileID: 0}
     - target: {fileID: 482254352350085794, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
         type: 3}
@@ -1043,21 +1061,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -39.041
-      objectReference: {fileID: 0}
-    - target: {fileID: 482254352350085795, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 482254352350085795, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 482254352350085795, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.09173083
       objectReference: {fileID: 0}
     - target: {fileID: 482254353138302554, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
         type: 3}
@@ -1246,7 +1249,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.2862988, y: -0.039154977}
+  m_Offset: {x: 3.2862988, y: 0.020897254}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1257,7 +1260,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.498909, y: 1.993082}
+  m_Size: {x: 7.498909, y: 1.010953}
   m_EdgeRadius: 0
 --- !u!114 &1858443626
 MonoBehaviour:
@@ -1370,7 +1373,7 @@ GameObject:
   - component: {fileID: 1981319175}
   - component: {fileID: 1981319174}
   - component: {fileID: 1981319173}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Plyaer (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,17 +1449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dc5d1071ba6ad41b96c10c917010df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationX: 0
-  accelerationY: 0
-  prevAccX: 0
-  prevAccY: 0
-  timerPowerX: 0
-  timerPowerY: 0
   powerMax: 5
   speed: 5
-  timerDeadPointX: 0
-  timerDeadPointY: 0
   rotationSpeed: 0
+  controllerNumber: 0
 --- !u!114 &1981319177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,8 +1473,8 @@ MonoBehaviour:
   shockWaveDurationMax: 0.5
   EnemyMask:
     serializedVersion: 2
-    m_Bits: 256
-  pushbackIntensity: 0
+    m_Bits: 3328
+  pushbackIntensity: 1000
 --- !u!212 &1981319178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1591,7 +1587,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.2862988, y: -0.039154977}
+  m_Offset: {x: 3.2862988, y: 0.0034616292}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1602,7 +1598,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.498909, y: 1.993082}
+  m_Size: {x: 7.498909, y: 1.010644}
   m_EdgeRadius: 0
 --- !u!212 &2141885750
 SpriteRenderer:
@@ -1677,6 +1673,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plyaer
       objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085799, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085796, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: pushbackIntensity
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 482254352350085796, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
+        type: 3}
+      propertyPath: EnemyMask.m_Bits
+      value: 3584
+      objectReference: {fileID: 0}
     - target: {fileID: 482254352350085794, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1731,11 +1742,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -39.041
-      objectReference: {fileID: 0}
-    - target: {fileID: 482254352350085796, guid: ff50865c8b1f16d47ae04daeaa50b7fc,
-        type: 3}
-      propertyPath: pushbackIntensity
-      value: 7500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff50865c8b1f16d47ae04daeaa50b7fc, type: 3}
