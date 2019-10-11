@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouvementPlayer : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class MouvementPlayer : MonoBehaviour
     private float joyAngle;
 
     private float angle;
+
+    public Slider powerSlider;
 
     [HideInInspector] public int controllerNumber;
 
@@ -110,5 +113,16 @@ public class MouvementPlayer : MonoBehaviour
             timerDeadPointX = 0;
             timerDeadPointY = 0;
         }
+
+        //controle la value du slider en fonction de la puissance engagée
+        if (timerPowerX > timerPowerY)
+        {
+            powerSlider.value = timerPowerX / 5;
+        }
+        else
+        {
+            powerSlider.value = timerPowerY / 5;
+        }
     }
+
 }
