@@ -699,6 +699,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shockWavePosition: {fileID: 0}
   shockWaveRadius: 0
+  shockWaveCooldownMax: 0
+  shockWaveSprite: {fileID: 0}
+  shockWaveDurationMax: 0
   EnemyMask:
     serializedVersion: 2
     m_Bits: 256
@@ -787,6 +790,12 @@ MonoBehaviour:
   timerPowerY: 0
   powerMax: 5
   speed: 2
+  myRb: {fileID: 0}
+  timerDeadPointX: 0
+  timerDeadPointY: 0
+  rotationSpeed: 0
+  joyAngle: 0
+  angle: 0
 --- !u!50 &1479260704
 Rigidbody2D:
   serializedVersion: 4
@@ -821,7 +830,6 @@ GameObject:
   - component: {fileID: 1511616805}
   - component: {fileID: 1511616804}
   - component: {fileID: 1511616803}
-  - component: {fileID: 1511616802}
   - component: {fileID: 1511616808}
   m_Layer: 0
   m_Name: New Sprite
@@ -830,26 +838,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1511616802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511616801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db53aad175287b644aedfa7dd78f00ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accelerationX: 0
-  accelerationY: 0
-  prevAccX: 0
-  prevAccY: 0
-  timerPowerX: 0
-  timerPowerY: 0
-  powerMax: 5
-  speed: 2
 --- !u!50 &1511616803
 Rigidbody2D:
   serializedVersion: 4
@@ -974,7 +962,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511616801}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8dc5d1071ba6ad41b96c10c917010df, type: 3}
   m_Name: 
@@ -987,6 +975,9 @@ MonoBehaviour:
   timerPowerY: 0
   powerMax: 5
   speed: 2
+  timerDeadPointX: 0
+  timerDeadPointY: 0
+  rotationSpeed: 5
 --- !u!1 &1678979986
 GameObject:
   m_ObjectHideFlags: 0

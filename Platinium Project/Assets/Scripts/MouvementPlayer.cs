@@ -20,6 +20,12 @@ public class MouvementPlayer : MonoBehaviour
     public float timerDeadPointX;
     public float timerDeadPointY;
 
+    public float rotationSpeed;
+    private float joyAngle;
+
+    float angle;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +39,15 @@ public class MouvementPlayer : MonoBehaviour
     {
         accelerationX = Input.GetAxis("Horizontal");
         accelerationY = Input.GetAxis("Vertical");
+
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = -Input.GetAxis("Vertical");
+
+        if (inputX != 0.0f || inputY != 0.0f)
+        {
+            angle = Mathf.Atan2(inputX, inputY) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
 
         //on définit la puissance du déplacement. Plus le joueur reste incliné, plus le timer et donc la puissance augmente
         if (accelerationX != 0)
