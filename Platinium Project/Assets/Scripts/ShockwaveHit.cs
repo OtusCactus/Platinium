@@ -23,6 +23,7 @@ public class ShockwaveHit : MonoBehaviour
             if(mouvementPlayerDisabledTime <= 0)
             {
                 this.GetComponent<MouvementPlayer>().enabled = true;
+                this.GetComponent<AttackTest>().reboundWallDamage = 0;
                 haveIBeenHit = false;
                 mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
             }
