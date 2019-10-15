@@ -7,6 +7,11 @@ public class MouvementPlayer : MonoBehaviour
 {
     private float accelerationX;
     private float accelerationY;
+
+    private float inputX;
+    private float inputY;
+
+
     private float prevAccX;
     private float prevAccY;
     //
@@ -25,7 +30,6 @@ public class MouvementPlayer : MonoBehaviour
     private float joyAngle;
 
     private float angle;
-
     public Slider powerSlider;
 
     [HideInInspector] public int controllerNumber;
@@ -50,11 +54,11 @@ public class MouvementPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        accelerationX = Input.GetAxis("HorizontalJoy" + controllerNumber);
-        accelerationY = Input.GetAxis("VerticalJoy" + controllerNumber);
+        //accelerationX = Input.GetAxis("HorizontalJoy" + controllerNumber);
+        //accelerationY = Input.GetAxis("VerticalJoy" + controllerNumber);
 
-        float inputX = Input.GetAxis("HorizontalJoy" + controllerNumber);
-        float inputY = -Input.GetAxis("VerticalJoy" + controllerNumber);
+        //float inputX = Input.GetAxis("HorizontalJoy" + controllerNumber);
+        //float inputY = -Input.GetAxis("VerticalJoy" + controllerNumber);
 
         if (inputX != 0.0f || inputY != 0.0f)
         {
@@ -137,6 +141,26 @@ public class MouvementPlayer : MonoBehaviour
         {
             powerSlider.value = timerPowerY / 5;
         }
+    }
+
+    public void GetAccelerationX(float tempAccelerationX)
+    {
+        accelerationX = tempAccelerationX;
+    }
+
+    public void GetAccelerationY(float tempAccelerationY)
+    {
+        accelerationY = tempAccelerationY;
+    }
+
+    public void GetInputX(float tempInputX)
+    {
+        inputX = tempInputX;
+    }
+
+    public void GetInputY(float tempInputY)
+    {
+        inputY = tempInputY;
     }
 
 }
