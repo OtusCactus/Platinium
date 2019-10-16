@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    private int wallLife;
+    public int wallLife;
+    public float wallLimitVelocity;
+    public float wallMinVelocity;
 
     private WallManager wallManagerScript;
 
-    private Vector2 _playerVelocity;
+    public float _playerVelocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,26 +23,35 @@ public class Wall : MonoBehaviour
     {
         if (wallLife <= 0)
         {
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _playerVelocity = collision.GetComponent<Rigidbody2D>().velocity;
+        _playerVelocity = collision.GetComponent<Rigidbody2D>().velocity.sqrMagnitude;
+        if (_playerVelocity >= wallLimitVelocity)
+        {
+            wallLife = 0;
+        }
+        else if (_playerVelocity >= wallMinVelocity && _playerVelocity < wallLimitVelocity)
+        {
+            wallLife -= 1;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
-        if (collision.GetComponent<AttackTest>().reboundWallDamage > 0)
+        /*if (collision.GetComponent<AttackTest>().reboundWallDamage > 0)
         {
             collision.GetComponent<Rigidbody2D>().velocity = -_playerVelocity;
 
             collision.GetComponent<AttackTest>().reboundWallDamage -= 1;
             wallLife -= 1;
-        }
+        }*/
     }
 
 }

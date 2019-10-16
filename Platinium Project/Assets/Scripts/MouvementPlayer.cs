@@ -36,6 +36,8 @@ public class MouvementPlayer : MonoBehaviour
 
     [HideInInspector] public int controllerNumber;
 
+    public float myVelocity;
+
     private void Awake()
     {
         timerPowerX = 0;
@@ -56,12 +58,18 @@ public class MouvementPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        myVelocity = myRb.velocity.sqrMagnitude;
         if (inputX != 0.0f || inputY != 0.0f)
         {
             angle = Mathf.Atan2(inputX, inputY) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
+
+        //enum, si input change orient
+        //si point mort -> en relachement lance le timer, si input mais pas timer fini, go 1er enum, sinon 3eme
+        //si point mort + timer -> relaché donc je lance le joueur
+        //line renderer pour mur 
+
 
         //on définit la puissance du déplacement. Plus le joueur reste incliné, plus le timer et donc la puissance augmente
         if (accelerationX != 0)
@@ -81,7 +89,7 @@ public class MouvementPlayer : MonoBehaviour
             powerJaugeParent.gameObject.SetActive(true);
 
             prevAccY = accelerationY;
-            myRb.drag = 2;
+            myRb.drag = 3;
             timerPowerY += Time.deltaTime;
             if (timerPowerY > powerMax)
             {
@@ -119,8 +127,8 @@ public class MouvementPlayer : MonoBehaviour
                 timerPowerX = timerPowerY;
             }
             powerJaugeParent.gameObject.SetActive(false);
-
-            myRb.velocity = new Vector2(prevAccX * (-timerPowerX * speed), prevAccY * (-timerPowerY * speed));
+            
+            myRb.velocity = new Vector2(prevAccX, prevAccY).normalized * (-timerPowerX * speed);
             prevAccX = 0;
             prevAccY = 0;
             timerPowerX = 0;
