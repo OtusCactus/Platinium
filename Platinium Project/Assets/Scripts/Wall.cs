@@ -23,15 +23,16 @@ public class Wall : MonoBehaviour
     {
         if (wallLife <= 0)
         {
-            //this.gameObject.SetActive(false);
             GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
+            //GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<LineRenderer>().enabled = false;
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         _playerVelocity = collision.GetComponent<Rigidbody2D>().velocity.sqrMagnitude;
         if (_playerVelocity >= wallLimitVelocity)
         {
@@ -41,17 +42,6 @@ public class Wall : MonoBehaviour
         {
             wallLife -= 1;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        /*if (collision.GetComponent<AttackTest>().reboundWallDamage > 0)
-        {
-            collision.GetComponent<Rigidbody2D>().velocity = -_playerVelocity;
-
-            collision.GetComponent<AttackTest>().reboundWallDamage -= 1;
-            wallLife -= 1;
-        }*/
     }
 
 }
