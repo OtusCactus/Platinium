@@ -30,7 +30,9 @@ public class MouvementPlayer : MonoBehaviour
     private float joyAngle;
 
     private float angle;
-    public Slider powerSlider;
+    //public Slider powerSlider;
+    public Image powerJauge;
+    public GameObject powerJaugeParent;
 
     [HideInInspector] public int controllerNumber;
 
@@ -38,7 +40,7 @@ public class MouvementPlayer : MonoBehaviour
     {
         timerPowerX = 0;
         timerPowerY = 0;
-        powerSlider.value = 0;
+        powerJauge.fillAmount = 0;
     }
 
     // Start is called before the first frame update
@@ -47,18 +49,13 @@ public class MouvementPlayer : MonoBehaviour
         myRb = GetComponent<Rigidbody2D>();
         timerDeadPointX = 0;
         timerDeadPointY = 0;
-        powerSlider.gameObject.SetActive(false);
+        powerJaugeParent.gameObject.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //accelerationX = Input.GetAxis("HorizontalJoy" + controllerNumber);
-        //accelerationY = Input.GetAxis("VerticalJoy" + controllerNumber);
-
-        //float inputX = Input.GetAxis("HorizontalJoy" + controllerNumber);
-        //float inputY = -Input.GetAxis("VerticalJoy" + controllerNumber);
 
         if (inputX != 0.0f || inputY != 0.0f)
         {
@@ -69,7 +66,7 @@ public class MouvementPlayer : MonoBehaviour
         //on définit la puissance du déplacement. Plus le joueur reste incliné, plus le timer et donc la puissance augmente
         if (accelerationX != 0)
         {
-            powerSlider.gameObject.SetActive(true);
+            powerJaugeParent.gameObject.SetActive(true);
 
             prevAccX = accelerationX;
             myRb.drag = 3;
@@ -81,7 +78,7 @@ public class MouvementPlayer : MonoBehaviour
         }
         if (accelerationY != 0)
         {
-            powerSlider.gameObject.SetActive(true);
+            powerJaugeParent.gameObject.SetActive(true);
 
             prevAccY = accelerationY;
             myRb.drag = 2;
@@ -121,7 +118,7 @@ public class MouvementPlayer : MonoBehaviour
             {
                 timerPowerX = timerPowerY;
             }
-            powerSlider.gameObject.SetActive(false);
+            powerJaugeParent.gameObject.SetActive(false);
 
             myRb.velocity = new Vector2(prevAccX * (-timerPowerX * speed), prevAccY * (-timerPowerY * speed));
             prevAccX = 0;
@@ -135,11 +132,11 @@ public class MouvementPlayer : MonoBehaviour
         //controle la value du slider en fonction de la puissance engagée
         if (timerPowerX > timerPowerY)
         {
-            powerSlider.value = timerPowerX / 5;
+            powerJauge.fillAmount = timerPowerX / 5;
         }
         else
         {
-            powerSlider.value = timerPowerY / 5;
+            powerJauge.fillAmount = timerPowerY / 5;
         }
     }
 

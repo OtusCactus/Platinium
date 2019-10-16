@@ -52,19 +52,6 @@ public class PlayerController : MonoBehaviour
         mouvementPlayer2.GetAccelerationY(accelerationYPlayer2);
         mouvementPlayer2.GetInputX(inputXPlayer2);
         mouvementPlayer2.GetInputY(inputYPlayer2);
-        //float dirX = _mainPlayer.GetAxis("MoveHorizontal");
-        //playerEntityScript.Move(dirX);
-
-
-        //if (_mainPlayer.GetButtonDown("Jump") && playerEntityScript.IsOnGround())
-        //{
-        //    playerEntityScript.Jump();
-        //}
-
-        //if (_mainPlayer.GetButtonUp("Jump") && playerEntityScript.IsJumping())
-        //{
-        //    playerEntityScript.StopJump();
-        //}
 
     }
 }

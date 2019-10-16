@@ -18,7 +18,8 @@ public class ShockwaveHit : MonoBehaviour
     {
         if (haveIBeenHit)
         {
-            this.GetComponent<MouvementPlayer>().powerSlider.gameObject.SetActive(false);
+            //this.GetComponent<MouvementPlayer>().powerSlider.gameObject.SetActive(false);
+            this.GetComponent<MouvementPlayer>().powerJaugeParent.gameObject.SetActive(false);
             this.GetComponent<MouvementPlayer>().enabled = false;
             mouvementPlayerDisabledTime -= Time.deltaTime;
             if(mouvementPlayerDisabledTime <= 0)
