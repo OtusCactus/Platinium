@@ -1,12 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class PlayerManager : MonoBehaviour
 {
-    public MouvementPlayer[] allPlayers;
+    //public MouvementPlayer[] allPlayers;
 
     public static PlayerManager Instance = null;
+
+    private Player _player1;
+    private Player _player2;
+    private Player _player3;
+    private Player _player4;
+
+    public PlayerEntity mouvementPlayer1;
+    public PlayerEntity mouvementPlayer2;
+    //public MouvementPlayer mouvementPlayer3;
+    //public MouvementPlayer mouvementPlayer4;
 
     private void Awake()
     {
@@ -24,7 +35,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] controllers = Input.GetJoystickNames();
+        /*string[] controllers = Input.GetJoystickNames();
         int j = 0;
         for (int i = 0; i < controllers.Length; i++)
         {
@@ -38,12 +49,39 @@ public class PlayerManager : MonoBehaviour
         if (j < allPlayers.Length)
         {
             Debug.Log("Il manque " + (allPlayers.Length - j) + " manettes");
-        }
+        }*/
+
+        _player1 = ReInput.players.GetPlayer("Player1");
+        _player2 = ReInput.players.GetPlayer("Player2");
+        _player3 = ReInput.players.GetPlayer("Player3");
+        _player4 = ReInput.players.GetPlayer("Player4");
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*float accelerationXPlayer1 = _player1.GetAxis("HorizontalJoy1");
+        float accelerationYPlayer1 = _player1.GetAxis("VerticalJoy1");*/
 
+        float inputXPlayer1 = _player1.GetAxis("HorizontalJoy1");
+        float inputYPlayer1 = -_player1.GetAxis("VerticalJoy1");
+        Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
+
+        /*mouvementPlayer1.GetAccelerationX(accelerationXPlayer1);
+        mouvementPlayer1.GetAccelerationY(accelerationYPlayer1);*/
+        mouvementPlayer1.SetInputX(dirPlayer1);
+
+
+
+        /*float accelerationXPlayer2 = _player2.GetAxis("HorizontalJoy2");
+        float accelerationYPlayer2 = _player2.GetAxis("VerticalJoy2");*/
+
+        float inputXPlayer2 = _player2.GetAxis("HorizontalJoy2");
+        float inputYPlayer2 = -_player2.GetAxis("VerticalJoy2");
+        Vector2 dirPlayer2 = new Vector2(inputXPlayer2, inputYPlayer2);
+
+        /*mouvementPlayer2.GetAccelerationX(accelerationXPlayer2);
+        mouvementPlayer2.GetAccelerationY(accelerationYPlayer2);*/
+        mouvementPlayer2.SetInputX(dirPlayer2);
     }
 }
