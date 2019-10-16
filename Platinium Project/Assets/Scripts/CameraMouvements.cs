@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class CameraMouvements : MonoBehaviour
 {
-
-    public Transform Dice;
+    //positions de caméra
+    [Header("CameraPositions")]
     public Transform[] cameraPosition;
+    private Vector3 _startPosition;
+    private Vector3 _endPosition;
+    private Quaternion _startRotation;
+    private Quaternion _endRotation;
+
+    //face utilisée
+    private int _cameraPositionNumber;
+
+    //objet qui tourne
+    [Header("ArenaRotation")]
+    private bool _isTurning;
+    private float timerClamped;
+    private float _turningTimer;
     public float turningTimerMax;
 
 
-    private int _cameraPositionNumber;
-    private bool _isTurning;
-    private float _turningTimer;
+    //debug
+    public bool debug;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +35,20 @@ public class CameraMouvements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Dice);
-        if(Input.GetKeyDown(KeyCode.N) && !_isTurning && _cameraPositionNumber < 5)
+
+
+       
+        if(Input.GetKeyDown(KeyCode.N) && !_isTurning && _cameraPositionNumber < cameraPosition.Length -1)
         {
             Debug.Log("OK");
             _cameraPositionNumber += 1;
+
+            _startPosition = transform.position;
+            _endPosition = cameraPosition[_cameraPositionNumber].position;
+
+            _startRotation = transform.rotation;
+            _endRotation = cameraPosition[_cameraPositionNumber].rotation;
+
             _isTurning = true;
         }
 
@@ -34,21 +56,39 @@ public class CameraMouvements : MonoBehaviour
         {
             Debug.Log("OK");
             _cameraPositionNumber -= 1;
+
+            _startPosition = transform.position;
+            _endPosition = cameraPosition[_cameraPositionNumber].position;
+
+            _startRotation = transform.rotation;
+            _endRotation = cameraPosition[_cameraPositionNumber].rotation;
             _isTurning = true;
         }
 
         if (_isTurning)
         {
             _turningTimer += Time.deltaTime;
-            float timerClamped = _turningTimer / turningTimerMax;
-            Debug.Log(timerClamped);
-            transform.position = Vector3.Lerp(transform.position, cameraPosition[_cameraPositionNumber].position, timerClamped);
-            if(timerClamped >= 1)
+
+            timerClamped = _turningTimer / turningTimerMax;
+            transform.position = Vector3.Lerp(_startPosition, _endPosition, timerClamped);
+            Quaternion currentRotation = Quaternion.Lerp(_startRotation, _endRotation, timerClamped);
+            transform.rotation = currentRotation;
+
+
+            if (timerClamped >= 1)
             {
                 timerClamped = 0;
                 _turningTimer = 0;
                 _isTurning = false;
             }
+        }
+    }
+
+    private void OnGUI()
+    {
+        if (debug)
+        {
+            GUILayout.Label("TimerClamped : " + timerClamped);
         }
     }
 }
