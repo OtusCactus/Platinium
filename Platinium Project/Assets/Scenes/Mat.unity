@@ -282,7 +282,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271729724}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd398540455bf2c4db1dfc1ba20a2a10, type: 3}
   m_Name: 
@@ -291,6 +291,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &287647758
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +417,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &295671231
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +543,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &490292815
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +821,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &1211049128
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +848,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211049128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6fd1400d2dae2a47b2bcd9f51f62e4b, type: 3}
   m_Name: 
@@ -1348,7 +1356,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513436691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd398540455bf2c4db1dfc1ba20a2a10, type: 3}
   m_Name: 
@@ -1357,6 +1365,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &1549613358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,7 +1614,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763135052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd398540455bf2c4db1dfc1ba20a2a10, type: 3}
   m_Name: 
@@ -1613,6 +1623,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &1858443622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +1749,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &1887356433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1896,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 4
+  yradius: 4
 --- !u!61 &1887356437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2032,6 +2048,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1 &2144352362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,7 +2212,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144352362}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd398540455bf2c4db1dfc1ba20a2a10, type: 3}
   m_Name: 
@@ -2203,6 +2221,8 @@ MonoBehaviour:
   wallLimitVelocity: 300
   wallMinVelocity: 50
   _playerVelocity: 0
+  xradius: 0
+  yradius: 0
 --- !u!1001 &4949148487290535193
 PrefabInstance:
   m_ObjectHideFlags: 0
