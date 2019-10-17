@@ -11,11 +11,15 @@ public class Wall : MonoBehaviour
     private WallManager wallManagerScript;
 
     public float _playerVelocity;
+
+    private LineRenderer line;
+    public float xradius;
+    public float yradius;
+
     // Start is called before the first frame update
     void Start()
     {
-        wallManagerScript = GameObject.FindWithTag("GameController").GetComponent<WallManager>();
-        wallLife = wallManagerScript._wallLife;
+        line = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -23,15 +27,15 @@ public class Wall : MonoBehaviour
     {
         if (wallLife <= 0)
         {
-            //this.gameObject.SetActive(false);
             GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<LineRenderer>().enabled = false;
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         _playerVelocity = collision.GetComponent<Rigidbody2D>().velocity.sqrMagnitude;
         if (_playerVelocity >= wallLimitVelocity)
         {
@@ -39,19 +43,31 @@ public class Wall : MonoBehaviour
         }
         else if (_playerVelocity >= wallMinVelocity && _playerVelocity < wallLimitVelocity)
         {
+            CreatePoints();
             wallLife -= 1;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void CreatePoints()
     {
-        /*if (collision.GetComponent<AttackTest>().reboundWallDamage > 0)
-        {
-            collision.GetComponent<Rigidbody2D>().velocity = -_playerVelocity;
+        float x;
+        float y;
+        float z = 0f;
+        int segments = 25;
 
-            collision.GetComponent<AttackTest>().reboundWallDamage -= 1;
-            wallLife -= 1;
-        }*/
+        float angle = 20f;
+        line.SetVertexCount(segments + 1);
+        line.useWorldSpace = false;
+
+        for (int i = 0; i < ((segments + 1)/2); i++)
+        {
+            x = Mathf.Sin(Mathf.Deg2Rad * angle) * xradius;
+            y = Mathf.Cos(Mathf.Deg2Rad * angle) * yradius;
+
+            line.SetPosition(i, new Vector3(x, y, z));
+
+            angle += (360f / segments/2);
+        }
     }
 
 }
