@@ -5,23 +5,29 @@ using UnityEngine;
 public class CameraMouvements : MonoBehaviour
 {
     //positions de caméra
-    [Header("CameraPositions")]
-    public Transform[] cameraPosition;
+    //[Header("CameraPositions")]
     private Vector3 _startPosition;
     private Vector3 _endPosition;
     private Quaternion _startRotation;
     private Quaternion _endRotation;
 
     //face utilisée
-    private int _cameraPositionNumber;
+    [System.NonSerialized]
+    public int _cameraPositionNumber;
+    private int _cameraCurrentHolder;
 
     //objet qui tourne
     [Header("ArenaRotation")]
-    private bool _isTurning;
+    [System.NonSerialized]
+    public bool _isTurning;
     private float timerClamped;
     private float _turningTimer;
     public float turningTimerMax;
 
+    //GameManager
+    public GameObject gameManager;
+    private FaceClass _faceClassScript;
+    private GameManager _gameManagerScript;
 
     //debug
     public bool debug;
@@ -29,25 +35,38 @@ public class CameraMouvements : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _faceClassScript = gameManager.GetComponent<FaceClass>();
+        _gameManagerScript = gameManager.GetComponent<GameManager>();
+        _cameraPositionNumber = 0;
+        _cameraCurrentHolder = _cameraPositionNumber;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (_cameraCurrentHolder != _cameraPositionNumber)
+        {
+            _startPosition = transform.position;
+            _endPosition = _faceClassScript.faceTab[_cameraPositionNumber - 1].cameraPosition.position;
 
+            _startRotation = transform.rotation;
+            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber - 1].cameraPosition.rotation;
+
+            _isTurning = true;
+            _cameraCurrentHolder = _cameraPositionNumber;
+        }
        
-        if(Input.GetKeyDown(KeyCode.N) && !_isTurning && _cameraPositionNumber < cameraPosition.Length -1)
+        if(Input.GetKeyDown(KeyCode.N) && !_isTurning && _cameraPositionNumber < _faceClassScript.faceTab.Length -1)
         {
             Debug.Log("OK");
             _cameraPositionNumber += 1;
 
             _startPosition = transform.position;
-            _endPosition = cameraPosition[_cameraPositionNumber].position;
+            _endPosition = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
 
             _startRotation = transform.rotation;
-            _endRotation = cameraPosition[_cameraPositionNumber].rotation;
+            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
 
             _isTurning = true;
         }
@@ -58,10 +77,10 @@ public class CameraMouvements : MonoBehaviour
             _cameraPositionNumber -= 1;
 
             _startPosition = transform.position;
-            _endPosition = cameraPosition[_cameraPositionNumber].position;
+            _endPosition = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
 
             _startRotation = transform.rotation;
-            _endRotation = cameraPosition[_cameraPositionNumber].rotation;
+            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
             _isTurning = true;
         }
 
