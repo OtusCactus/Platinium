@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wall : MonoBehaviour
+public class Wall1 : MonoBehaviour
 {
     public int wallLife;
     public float wallLimitVelocity;
