@@ -11,12 +11,19 @@ public class CameraMouvements : MonoBehaviour
     private Quaternion _startRotation;
     private Quaternion _endRotation;
 
+    private float diceCameraDistance;
+    //public Transform[] faceCenter;
+
+    //arène
+    [Header("Arène")]
+    public GameObject twelveSidedDice;
+
     //face utilisée
     [System.NonSerialized]
     public int _cameraPositionNumber;
     private int _cameraCurrentHolder;
 
-    //objet qui tourne
+    //caméra qui tourne
     [Header("ArenaRotation")]
     [System.NonSerialized]
     public bool _isTurning;
@@ -39,12 +46,14 @@ public class CameraMouvements : MonoBehaviour
         _gameManagerScript = gameManager.GetComponent<GameManager>();
         _cameraPositionNumber = 0;
         _cameraCurrentHolder = _cameraPositionNumber;
+        transform.position = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
+        transform.rotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        diceCameraDistance = Vector3.Distance(this.transform.position, twelveSidedDice.transform.position);
         if (_cameraCurrentHolder != _cameraPositionNumber)
         {
             _startPosition = transform.position;
@@ -94,6 +103,7 @@ public class CameraMouvements : MonoBehaviour
             transform.rotation = currentRotation;
 
 
+
             if (timerClamped >= 1)
             {
                 timerClamped = 0;
@@ -108,6 +118,7 @@ public class CameraMouvements : MonoBehaviour
         if (debug)
         {
             GUILayout.Label("TimerClamped : " + timerClamped);
+            GUILayout.Label("diceCameraDistance : " + diceCameraDistance);
         }
     }
 }
