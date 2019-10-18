@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Wall3D1 : MonoBehaviour
 {
-    //Matilde s'est occupée de ce script
-    //Grégoire a travaillé sur Wall, qui permet de gérer la transition de la caméra selon quel mur est détruit
-    //
-    //ce script permet de gérer la vie du mur et son apparence
+    //merge des scripts Wall et Wall3D pour la scène Proto.
 
     [Header("Propriétés")]
     public float wallLifeMax;
