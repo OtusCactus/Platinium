@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AttackTest : MonoBehaviour
 {
+
+    //Grégoire s'est occupé de ce script
+
     //shockwave paramètres
     [Header("Shockwave")]
     public Transform shockWavePosition;
