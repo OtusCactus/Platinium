@@ -5,19 +5,25 @@ using UnityEngine.UI;
 
 public class PlayerEntity : MonoBehaviour
 {
+    //Ce script sert aux déplacements des joueurs
+    //Pour l'instant on utilise la physique d'Unity pour le proto, mais on changera pour une physique personnalisée pour la semaine prochaine
 
-    private Vector2 _input;
-    private Vector2 _inputVariableToStoreDirection;
     //
+    [Header("Speed")]
     public int speed;
+    public float rotationSpeed;
+
     //
     private Rigidbody2D _myRb;
 
+    //Variables pour input joystick
+    private Vector2 _input;
+    private Vector2 _inputVariableToStoreDirection;
     private float _timerDeadPoint = 0;
-
-    public float rotationSpeed;
     private float _joyAngle;
     private float _angle;
+    [HideInInspector] public int _controllerNumber;
+
 
     [Header("Power")]
     public float powerMax;
@@ -25,11 +31,13 @@ public class PlayerEntity : MonoBehaviour
     public GameObject powerJaugeParent;
     private float _timerPower = 0;
 
-    [HideInInspector] public int _controllerNumber;
+    //Variables pour la vitesse
+    private float _myVelocity;
+    private float _velocityMax;
+    private float _velocityConvertedToRatio;
 
-    public float myVelocity;
-
-    enum INPUTSTATE { GivingInput, EasingInput, Released, None };
+    //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
+    private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
 
     // Start is called before the first frame update
@@ -38,12 +46,14 @@ public class PlayerEntity : MonoBehaviour
         _myRb = GetComponent<Rigidbody2D>();
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
+        _velocityMax = (powerMax * speed) * (powerMax * speed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        #region Changement Enum
+        //Dicte quand on passe d'un enum à l'autre
+        #region Change Enum
         if (_input != Vector2.zero)
         {
             _playerInput = INPUTSTATE.GivingInput;
@@ -58,8 +68,7 @@ public class PlayerEntity : MonoBehaviour
         }
         #endregion
 
-        myVelocity = _myRb.velocity.sqrMagnitude;
-
+        #region Actions depending on INPUTSTATE
         if (_playerInput == INPUTSTATE.GivingInput)
         {
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
@@ -75,25 +84,42 @@ public class PlayerEntity : MonoBehaviour
                 _timerPower = powerMax;
             }
         }
-        if (_playerInput == INPUTSTATE.EasingInput)
+        else if (_playerInput == INPUTSTATE.EasingInput)
         {
                 _timerDeadPoint += Time.deltaTime;
         }
-        if(_playerInput == INPUTSTATE.Released)
+        else if(_playerInput == INPUTSTATE.Released)
         {
             _myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
-
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
             _inputVariableToStoreDirection = Vector2.zero;
             _timerPower = 0;
             _timerDeadPoint = 0;
             _playerInput = INPUTSTATE.None;
         }
+        #endregion
+
+        //Fait apparaitre une trail si la vitesse atteind le seuil des murs (on changera après le 0.8 par une variable)
+        _myVelocity = _myRb.velocity.sqrMagnitude;
+        _velocityConvertedToRatio = (_myVelocity / _velocityMax);
+        if (_velocityConvertedToRatio > 0.8)
+        {
+            GetComponent<TrailRenderer>().enabled = true;
+        }
+        else
+        {
+            GetComponent<TrailRenderer>().enabled = false;
+        }
     }
 
     public void SetInputX(Vector2 myInput)
     {
         _input = myInput;
+    }
+
+    public float GetVelocityRatio()
+    {
+        return _velocityConvertedToRatio;
     }
 }
