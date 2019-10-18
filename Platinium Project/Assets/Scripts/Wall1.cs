@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Wall1 : MonoBehaviour
 {
+    //Même script que Wall mais sans tous les mouvements de caméra pour que je puisse travailler sur ma scène sans rajouter tous les assets nécessaires
+    //et Grégoire peut utiliser le script Wall sur sa scène
+    //
+    //Ce script n'est plus utilisé car nous avons maintenant des murs 3D, mais je le garde juste au cas, et notamment pour garder la mécanique de Line Renderer
+
+    //Propriétés du mur
+    [Header("Propriétés")]
     public int wallLife;
     public float wallLimitVelocity;
-    public float wallMinVelocity;
 
-    //differents scripts 
-    private WallManager _wallManagerScript;
-    private GameManager _gameManagerScript;
-    private CameraMouvements _cameraMouvementsScript;
+    private float _playerVelocity;
 
-    private int _currentFace;
-    private int _nextFace;
-
-    public float _playerVelocity;
-
+    //Variables pour les murs en LineRenderer, pour l'instant inutile, mais on les garde au cas où
     private LineRenderer line;
     public float xradius;
     public float yradius;
-
     public Transform[] points;
 
     // Start is called before the first frame update
@@ -51,10 +49,8 @@ public class Wall1 : MonoBehaviour
         {
             wallLife = 0;
         }
-        else if (_playerVelocity >= wallMinVelocity && _playerVelocity < wallLimitVelocity)
+        else if (_playerVelocity < wallLimitVelocity)
         {
-            //CreatePoints();
-            //WallElasticity();
             wallLife -= 1;
         }
     }
@@ -66,45 +62,6 @@ public class Wall1 : MonoBehaviour
             line.SetPosition(i, points[i].position);
         }
     }
-
-
-    /*void WallElasticity()
-    {
-        Vector3 firstPointPosition = line.GetPosition(0);
-        Vector3 lastPointPosition = line.GetPosition(1);
-
-        float x;
-        float y;
-        float z = 0f;
-        int segments = 12;
-
-        float angle = 180/segments;
-        line.SetVertexCount(segments);
-
-        for (int i = 0; i < (segments); i++)
-        {
-            if (i == 0)
-            {
-                line.SetPosition(i, firstPointPosition);
-            }
-            else if (i == segments - 1)
-            {
-                line.SetPosition(i, lastPointPosition);
-            }
-            else
-            {
-                x = (line.GetPosition(i - 1).x) + Mathf.Sin(Mathf.Deg2Rad * angle) * xradius;
-                y = (line.GetPosition(i - 1).y) + Mathf.Cos(Mathf.Deg2Rad * angle) * yradius;
-
-                line.SetPosition(i, new Vector3(x, y, z));
-
-                angle -= (180f / segments - 2);
-            }
-        }
-
-        line.SetPosition(0, firstPointPosition);
-        line.SetPosition((segments - 1), lastPointPosition);
-    }*/
    
 
 }

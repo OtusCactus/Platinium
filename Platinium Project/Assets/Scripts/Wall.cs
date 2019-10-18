@@ -6,7 +6,6 @@ public class Wall : MonoBehaviour
 {
     public int wallLife;
     public float wallLimitVelocity;
-    public float wallMinVelocity;
 
     //differents scripts 
     private WallManager _wallManagerScript;
@@ -81,7 +80,7 @@ public class Wall : MonoBehaviour
         {
             wallLife = 0;
         }
-        else if (_playerVelocity >= wallMinVelocity && _playerVelocity < wallLimitVelocity)
+        else if (_playerVelocity < wallLimitVelocity)
         {
             wallLife -= 1;
         }

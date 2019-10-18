@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class Wall3D : MonoBehaviour
 {
-    public float wallLife;
+    //Matilde s'est occupée de ce script
+    //Grégoire a travaillé sur Wall, qui permet de gérer la transition de la caméra selon quel mur est détruit
+    //
+    //ce script permet de gérer la vie du mur et son apparence
+
+    [Header("Propriétés")]
+    public float wallLifeMax;
     public float wallLimitVelocity;
-
-    //differents scripts 
-    private WallManager _wallManagerScript;
-    private GameManager _gameManagerScript;
-    private CameraMouvements _cameraMouvementsScript;
-
-    private int _currentFace;
-    private int _nextFace;
-
+    private float wallLife;
+    //
     private bool _lastHit = false;
 
     //Materials
+    [Header("Apparence")]
     public Material[] wallAppearance;
 
-    public float _playerVelocity;
+    private float _playerVelocityRatio;
 
     // Start is called before the first frame update
     void Start()
     {
+        //set le material du mur par défaut
         GetComponent<MeshRenderer>().material = wallAppearance[0];
+        wallLife = wallLifeMax;
     }
 
     // Update is called once per frame
@@ -34,29 +36,26 @@ public class Wall3D : MonoBehaviour
         if (wallLife <= 0)
         {
             _lastHit = true;
+            GetComponent<MeshRenderer>().material = wallAppearance[2];
         }
-        if(wallLife < 1 && !_lastHit)
+        if(wallLife < wallLifeMax && !_lastHit)
         {
             GetComponent<MeshRenderer>().material = wallAppearance[1];
-        }
-        if (_lastHit)
-        {
-            GetComponent<MeshRenderer>().material = wallAppearance[2];
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        _playerVelocity = collision.GetComponent<Rigidbody2D>().velocity.sqrMagnitude/625;
-        if (_playerVelocity >= wallLimitVelocity)
+        _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
+        //
+        if (_playerVelocityRatio >= wallLimitVelocity)
         {
             wallLife = 0;
         }
-        else if (_playerVelocity < wallLimitVelocity)
+        else if (_playerVelocityRatio < wallLimitVelocity)
         {
-            wallLife -= _playerVelocity;
+            wallLife -= _playerVelocityRatio;
         }
         if (_lastHit)
         {

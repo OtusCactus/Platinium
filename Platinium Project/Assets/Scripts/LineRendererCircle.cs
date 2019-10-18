@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class LineRendererCircle : MonoBehaviour
 {
+    //Matilde a fait se script
+    //Ce script sert à faire un rond avec un LineRenderer
+    //Il ne nous sert plus, mais je le garde en référence pour l'instant au cas où
+
     public int segments;
     public float xradius;
     public float yradius;
