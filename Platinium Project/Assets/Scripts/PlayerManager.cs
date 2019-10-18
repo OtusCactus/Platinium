@@ -17,8 +17,8 @@ public class PlayerManager : MonoBehaviour
     public PlayerEntity playerEntity1;
     public PlayerEntity playerEntity2;
 
-    public AttackTest attackTest1;
-    public AttackTest attackTest2;
+    private AttackTest _attackTest1;
+    private AttackTest _attackTest2;
 
     private void Awake()
     {
@@ -31,6 +31,8 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        _attackTest1 = playerEntity1.GetComponent<AttackTest>();
+        _attackTest2 = playerEntity2.GetComponent<AttackTest>();
     }
 
     // Start is called before the first frame update
@@ -53,9 +55,9 @@ public class PlayerManager : MonoBehaviour
         
         playerEntity1.SetInputX(dirPlayer1);
 
-        if(_player1.GetButton("Push1") && attackTest1.isShockWavePossible)
+        if(_player1.GetButton("Push1") && _attackTest1.isShockWavePossible)
         {
-            attackTest1.Push();
+            _attackTest1.Push();
         }
         
 
@@ -65,9 +67,9 @@ public class PlayerManager : MonoBehaviour
         
         playerEntity2.SetInputX(dirPlayer2);
 
-        if (_player2.GetButton("Push2") && attackTest2.isShockWavePossible)
+        if (_player2.GetButton("Push2") && _attackTest2.isShockWavePossible)
         {
-            attackTest2.Push();
+            _attackTest2.Push();
         }
     }
 }
