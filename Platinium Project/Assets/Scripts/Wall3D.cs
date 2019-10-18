@@ -22,6 +22,7 @@ public class Wall3D : MonoBehaviour
 
     private float _playerVelocityRatio;
 
+
     // Start is called before the first frame update
     void Start()
     {
