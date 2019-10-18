@@ -17,13 +17,13 @@ public class WallManager : MonoBehaviour
         
     }
 
+    //Changement de face
     public int WallFaceChange(int[] wallOrientFaceChangeTab, int currentFace)
     {
         int nextface;
         if (currentFace != 0)
         {
             nextface = wallOrientFaceChangeTab[currentFace - 1];
-
         }
         else
         {

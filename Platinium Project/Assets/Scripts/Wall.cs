@@ -42,7 +42,7 @@ public class Wall : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = true;
         }
 
-        Debug.Log(_nextFace + " next face " + this.gameObject.name);
+        //Debug.Log(_nextFace + " next face " + this.gameObject.name);
         Debug.Log(_currentFace + " current face " + this.gameObject.name);
         if (wallLife <= 0)
         {
