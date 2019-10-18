@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     //public MouvementPlayer mouvementPlayer3;
     //public MouvementPlayer mouvementPlayer4;
 
+    public AttackTest attackTestPlayer1;
+    public AttackTest attackTestPlayer2;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,10 @@ public class PlayerController : MonoBehaviour
         mouvementPlayer1.GetInputX(inputXPlayer1);
         mouvementPlayer1.GetInputY(inputYPlayer1);
 
+        if(_player1.GetButton("Push1") && attackTestPlayer1.isShockWavePossible)
+        {
+            attackTestPlayer1.Push();
+        }
 
 
         float accelerationXPlayer2 = _player2.GetAxis("HorizontalJoy2");
@@ -53,5 +59,10 @@ public class PlayerController : MonoBehaviour
         mouvementPlayer2.GetInputX(inputXPlayer2);
         mouvementPlayer2.GetInputY(inputYPlayer2);
 
+
+        if (_player2.GetButton("Push2") && attackTestPlayer2.isShockWavePossible)
+        {
+            attackTestPlayer2.Push();
+        }
     }
 }

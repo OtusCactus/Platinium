@@ -17,7 +17,8 @@ public class AttackTest : MonoBehaviour
     private float shockWaveDuration;
 
     private bool isShockWaveButtonPressed;
-    private bool isShockWavePossible;
+    [HideInInspector]
+    public bool isShockWavePossible;
     private bool hasWallDamageBeenAssigned;
 
     public LayerMask EnemyMask;
@@ -31,6 +32,8 @@ public class AttackTest : MonoBehaviour
         shockWaveCooldown = 0;
         shockWaveDuration = shockWaveDurationMax;
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -49,11 +52,11 @@ public class AttackTest : MonoBehaviour
             
         }
 
-        //permet de faire en sorte que la shockwave dure pendant un certain temps
-        if ((Input.GetKeyDown("joystick " + GetComponent<MouvementPlayer>().controllerNumber + " button 0") || Input.GetKeyDown(KeyCode.A)) && isShockWavePossible)
-        {
-            isShockWaveButtonPressed = true;
-        }
+        ////permet de faire en sorte que la shockwave dure pendant un certain temps
+        //if ((Input.GetKeyDown() || Input.GetKeyDown(KeyCode.A)) && isShockWavePossible)
+        //{
+            
+        //}
 
         //active la shockwave pendant un certains temps
         if (isShockWaveButtonPressed && isShockWavePossible)
@@ -85,7 +88,7 @@ public class AttackTest : MonoBehaviour
                 else
                 {
                     //si rien n'est check
-                    Debug.Log("Bruh");
+                    Debug.Log("Not hit");
                 }
 
             }
@@ -98,6 +101,12 @@ public class AttackTest : MonoBehaviour
                 hasWallDamageBeenAssigned = false;
             }
         }
+    }
+
+
+    public void Push()
+    {
+        isShockWaveButtonPressed = true;
     }
 
     //permet de voir le cercle de la shockwave dans l'éditeur

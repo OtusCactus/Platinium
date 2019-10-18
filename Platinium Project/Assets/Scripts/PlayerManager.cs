@@ -14,10 +14,13 @@ public class PlayerManager : MonoBehaviour
     private Player _player3;
     private Player _player4;
 
-    public PlayerEntity mouvementPlayer1;
-    public PlayerEntity mouvementPlayer2;
-    //public MouvementPlayer mouvementPlayer3;
-    //public MouvementPlayer mouvementPlayer4;
+    public PlayerEntity playerEntity1;
+    public PlayerEntity playerEntity2;
+    //public PlayerEntity playerEntity3;
+    //public PlayerEntity playerEntity4;
+
+    public AttackTest attackTest1;
+    public AttackTest attackTest2;
 
     private void Awake()
     {
@@ -67,11 +70,14 @@ public class PlayerManager : MonoBehaviour
         float inputYPlayer1 = -_player1.GetAxis("VerticalJoy1");
         Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
 
-        /*mouvementPlayer1.GetAccelerationX(accelerationXPlayer1);
-        mouvementPlayer1.GetAccelerationY(accelerationYPlayer1);*/
-        mouvementPlayer1.SetInputX(dirPlayer1);
+        /*playerEntity1.GetAccelerationX(accelerationXPlayer1);
+        playerEntity1.GetAccelerationY(accelerationYPlayer1);*/
+        playerEntity1.SetInputX(dirPlayer1);
 
-
+        if(_player1.GetButton("Push1") && attackTest1.isShockWavePossible)
+        {
+            attackTest1.Push();
+        }
 
         /*float accelerationXPlayer2 = _player2.GetAxis("HorizontalJoy2");
         float accelerationYPlayer2 = _player2.GetAxis("VerticalJoy2");*/
@@ -80,8 +86,13 @@ public class PlayerManager : MonoBehaviour
         float inputYPlayer2 = -_player2.GetAxis("VerticalJoy2");
         Vector2 dirPlayer2 = new Vector2(inputXPlayer2, inputYPlayer2);
 
-        /*mouvementPlayer2.GetAccelerationX(accelerationXPlayer2);
-        mouvementPlayer2.GetAccelerationY(accelerationYPlayer2);*/
-        mouvementPlayer2.SetInputX(dirPlayer2);
+        /*playerEntity2.GetAccelerationX(accelerationXPlayer2);
+        playerEntity2.GetAccelerationY(accelerationYPlayer2);*/
+        playerEntity2.SetInputX(dirPlayer2);
+
+        if (_player2.GetButton("Push2") && attackTest2.isShockWavePossible)
+        {
+            attackTest2.Push();
+        }
     }
 }

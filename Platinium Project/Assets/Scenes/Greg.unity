@@ -550,8 +550,6 @@ MonoBehaviour:
   wallLimitVelocity: 0
   wallMinVelocity: 0
   _playerVelocity: 0
-  xradius: 0
-  yradius: 0
 --- !u!1 &289422853
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,8 +798,6 @@ MonoBehaviour:
   wallLimitVelocity: 0
   wallMinVelocity: 0
   _playerVelocity: 0
-  xradius: 0
-  yradius: 0
 --- !u!1 &311912589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1296,7 @@ PrefabInstance:
     - target: {fileID: 7305082172455521715, guid: 154779d035e845443b0dac2e1081ef52,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7305082172455521713, guid: 154779d035e845443b0dac2e1081ef52,
         type: 3}
@@ -1909,6 +1905,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -1.72, y: 1, z: -5.0420003}
+--- !u!114 &971188514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7305082172455521724, guid: 154779d035e845443b0dac2e1081ef52,
+    type: 3}
+  m_PrefabInstance: {fileID: 1659256368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02adb4331bda7b438f59dfccddf980e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &998962510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2008,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1021752266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7305082172455521724, guid: 154779d035e845443b0dac2e1081ef52,
+    type: 3}
+  m_PrefabInstance: {fileID: 672272065}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02adb4331bda7b438f59dfccddf980e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1030847316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,8 +2276,6 @@ MonoBehaviour:
   wallLimitVelocity: 0
   wallMinVelocity: 0
   _playerVelocity: 0
-  xradius: 0
-  yradius: 0
 --- !u!1 &1136110536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,7 +2853,7 @@ PrefabInstance:
     - target: {fileID: 7305082172455521715, guid: 154779d035e845443b0dac2e1081ef52,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7305082172455521713, guid: 154779d035e845443b0dac2e1081ef52,
         type: 3}
@@ -3182,7 +3200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1780049733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3197,6 +3215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouvementPlayer1: {fileID: 0}
   mouvementPlayer2: {fileID: 0}
+  attackTestPlayer1: {fileID: 0}
+  attackTestPlayer2: {fileID: 0}
 --- !u!4 &1780049734
 Transform:
   m_ObjectHideFlags: 0
@@ -3534,8 +3554,6 @@ MonoBehaviour:
   wallLimitVelocity: 0
   wallMinVelocity: 0
   _playerVelocity: 0
-  xradius: 0
-  yradius: 0
 --- !u!1 &1895367489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,8 +3948,6 @@ MonoBehaviour:
   wallLimitVelocity: 0
   wallMinVelocity: 0
   _playerVelocity: 0
-  xradius: 0
-  yradius: 0
 --- !u!33 &586729328844537326
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4199,6 +4215,26 @@ PrefabInstance:
       propertyPath: mouvementPlayer2
       value: 
       objectReference: {fileID: 1628361858}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playerEntity1
+      value: 
+      objectReference: {fileID: 1846743620}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playerEntity2
+      value: 
+      objectReference: {fileID: 1628361858}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: attackTest1
+      value: 
+      objectReference: {fileID: 1021752266}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: attackTest2
+      value: 
+      objectReference: {fileID: 971188514}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[0].cameraPosition
