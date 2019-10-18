@@ -18,10 +18,6 @@ public class Wall : MonoBehaviour
 
     public float _playerVelocity;
 
-    private LineRenderer line;
-    public float xradius;
-    public float yradius;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +26,6 @@ public class Wall : MonoBehaviour
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
 
         _currentFace = _cameraMouvementsScript._cameraPositionNumber;
-        wallLife = _wallManagerScript._wallLife;
-
-
-        //line = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -43,7 +35,6 @@ public class Wall : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
-            wallLife = _wallManagerScript._wallLife;
             _currentFace = _cameraMouvementsScript._cameraPositionNumber;
         }
         else
@@ -57,7 +48,7 @@ public class Wall : MonoBehaviour
         if (wallLife <= 0)
         {
             GetComponent<BoxCollider2D>().enabled = false;
-            //GetComponent<LineRenderer>().enabled = false;
+            GetComponent<LineRenderer>().enabled = false;
 
             switch (this.gameObject.name)
             {
@@ -92,30 +83,7 @@ public class Wall : MonoBehaviour
         }
         else if (_playerVelocity >= wallMinVelocity && _playerVelocity < wallLimitVelocity)
         {
-            CreatePoints();
             wallLife -= 1;
-        }
-    }
-
-    void CreatePoints()
-    {
-        float x;
-        float y;
-        float z = 0f;
-        int segments = 25;
-
-        float angle = 20f;
-        line.SetVertexCount(segments + 1);
-        line.useWorldSpace = false;
-
-        for (int i = 0; i < ((segments + 1)/2); i++)
-        {
-            x = Mathf.Sin(Mathf.Deg2Rad * angle) * xradius;
-            y = Mathf.Cos(Mathf.Deg2Rad * angle) * yradius;
-
-            line.SetPosition(i, new Vector3(x, y, z));
-
-            angle += (360f / segments/2);
         }
     }
 

@@ -81,7 +81,6 @@ public class PlayerEntity : MonoBehaviour
         }
         if(_playerInput == INPUTSTATE.Released)
         {
-            //_myRb.velocity = new Vector2(0, 0);
             _myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
 
