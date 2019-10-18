@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShockwaveHit : MonoBehaviour
 {
+    //Grégoire s'est occupé de ce script
+
     //check si le joueur est bien hit
     public bool haveIBeenHit;
 

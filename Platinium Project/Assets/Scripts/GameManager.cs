@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-
-    ////all walls
-    //[Header("Walls")]
-    //public GameObject WallNorthEast;
-    //public GameObject WallNorthWest;
-    //public GameObject WallSouthWest;
-    //public GameObject WallSouthEast;
-    //public GameObject WallSouth;
+    //Grégoire s'est occupé des arrays des différents murs
 
     //tableaux contenant les prochaines faces selon la face où l'on est et selon le mur détruit.
     [Header("NextFaceArrays")]
@@ -22,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int[] _wallSouthTab;
     public int[] _wallSouthWestTab;
 
-
+    //score
 
     // Start is called before the first frame update
     void Start()

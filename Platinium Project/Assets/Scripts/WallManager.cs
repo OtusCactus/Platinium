@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WallManager : MonoBehaviour
 {
+    //Grégoire s'est occupé de ce script
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class WallManager : MonoBehaviour
         
     }
 
-    //Changement de face
+    //Changement de face en fonction de la face actuelle et des faces proches.
     public int WallFaceChange(int[] wallOrientFaceChangeTab, int currentFace)
     {
         int nextface;
