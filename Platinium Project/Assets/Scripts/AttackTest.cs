@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class AttackTest : MonoBehaviour
 {
-
+    //shockwave paramètres
+    [Header("Shockwave")]
     public Transform shockWavePosition;
-
     public float shockWaveRadius;
-    private float shockWaveCooldown;
     public float shockWaveCooldownMax;
-
-    public GameObject shockWaveSprite;
-
     public float shockWaveDurationMax;
     private float shockWaveDuration;
-
-    private bool isShockWaveButtonPressed;
     [HideInInspector]
     public bool isShockWavePossible;
-    private bool hasWallDamageBeenAssigned;
+    private float shockWaveCooldown;
+    
+    //apparence shockwave
+    public GameObject shockWaveSprite;
+
+
+    private bool isShockWaveButtonPressed;
 
     public LayerMask EnemyMask;
     public float pushbackIntensity;
 
-    public int reboundWallDamage {  get;  set; }
 
     // Start is called before the first frame update
     void Start()
     {
+        //set les paramètres de la shockwave au début pour qu'elle soit lançable
         shockWaveCooldown = 0;
         shockWaveDuration = shockWaveDurationMax;
     }
@@ -52,13 +52,8 @@ public class AttackTest : MonoBehaviour
             
         }
 
-        ////permet de faire en sorte que la shockwave dure pendant un certain temps
-        //if ((Input.GetKeyDown() || Input.GetKeyDown(KeyCode.A)) && isShockWavePossible)
-        //{
-            
-        //}
 
-        //active la shockwave pendant un certains temps
+        //active la shockwave pendant un certain temps
         if (isShockWaveButtonPressed && isShockWavePossible)
         {
             shockWaveDuration -= Time.deltaTime;
@@ -73,11 +68,7 @@ public class AttackTest : MonoBehaviour
                     for (int i = 0; i < enemiesCollider.Length; i++)
                     {
                         Vector3 moveDirection = enemiesCollider[i].transform.position - this.transform.position;
-                        if(!hasWallDamageBeenAssigned)
-                        {
-                            enemiesCollider[i].GetComponent<AttackTest>().reboundWallDamage = 1;
-                            hasWallDamageBeenAssigned = true;
-                        }
+
                         enemiesCollider[i].GetComponent<ShockwaveHit>().haveIBeenHit = true;
 
                         //enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = this.transform.forward * Time.deltaTime * _pushbackIntensity;
@@ -98,12 +89,11 @@ public class AttackTest : MonoBehaviour
                 shockWaveDuration = shockWaveDurationMax;
                 isShockWavePossible = false;
                 isShockWaveButtonPressed = false;
-                hasWallDamageBeenAssigned = false;
             }
         }
     }
 
-
+    
     public void Push()
     {
         isShockWaveButtonPressed = true;

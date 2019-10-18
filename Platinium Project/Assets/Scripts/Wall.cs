@@ -47,8 +47,6 @@ public class Wall : MonoBehaviour
         if (wallLife <= 0)
         {
             GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<LineRenderer>().enabled = false;
-
             switch (this.gameObject.name)
             {
                 case "WallNorthEast":
