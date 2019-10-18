@@ -57,6 +57,7 @@ public class PlayerEntity : MonoBehaviour
         if (_input != Vector2.zero)
         {
             _playerInput = INPUTSTATE.GivingInput;
+            _timerDeadPoint = 0;
         }
         else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
         {
