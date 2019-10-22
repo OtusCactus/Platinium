@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4485591729104594552
+--- !u!1 &5745505756664892775
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4485591729104594548}
-  - component: {fileID: 4485591729104594549}
-  - component: {fileID: 4485591729104594554}
-  - component: {fileID: 4485591729104594555}
-  - component: {fileID: 4485591729104594551}
+  - component: {fileID: 5745505756664892779}
+  - component: {fileID: 5745505756664892778}
+  - component: {fileID: 5745505756664892773}
+  - component: {fileID: 5745505756664892772}
+  - component: {fileID: 5745505756664892777}
+  - component: {fileID: 5745505756664892780}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Walls
@@ -20,35 +21,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4485591729104594548
+--- !u!4 &5745505756664892779
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4485591729104594552}
-  m_LocalRotation: {x: 0, y: 0, z: 0.4586495, w: 0.8886173}
-  m_LocalPosition: {x: 1.404, y: 2.491, z: 0}
-  m_LocalScale: {x: 0.20684901, y: 3.7322915, z: 1}
+  m_GameObject: {fileID: 5745505756664892775}
+  m_LocalRotation: {x: -0.015592594, y: 0.025369223, z: 0.44791594, w: 0.89357966}
+  m_LocalPosition: {x: 0.886, y: 1.219, z: 4.592}
+  m_LocalScale: {x: 0.20684902, y: 2.1095474, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 54.6}
---- !u!33 &4485591729104594549
+  m_LocalEulerAnglesHint: {x: -2.9, y: 1.8, z: 53.2}
+--- !u!33 &5745505756664892778
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4485591729104594552}
+  m_GameObject: {fileID: 5745505756664892775}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4485591729104594554
+--- !u!23 &5745505756664892773
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4485591729104594552}
+  m_GameObject: {fileID: 5745505756664892775}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -80,13 +81,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!61 &4485591729104594555
+--- !u!61 &5745505756664892772
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4485591729104594552}
+  m_GameObject: {fileID: 5745505756664892775}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -106,16 +107,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4485591729104594551
+--- !u!114 &5745505756664892777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4485591729104594552}
+  m_GameObject: {fileID: 5745505756664892775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f32d966dae8b1140b41a9b51eac61bb, type: 3}
+  m_Script: {fileID: 11500000, guid: c9c514540261fa34193ba3bdc6a4bb6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 1
@@ -124,3 +125,17 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f52822d87b6ec2847a6102c2b4cc9359, type: 2}
   - {fileID: 2100000, guid: befed9e8e84eb454482af0efab0ebc24, type: 2}
   - {fileID: 2100000, guid: 933a17b9d478aa44dbb422ab3102a475, type: 2}
+--- !u!114 &5745505756664892780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745505756664892775}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43356582aa277e94fbcea7d3287da266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallLife: 3
+  wallLimitVelocity: 0.8
