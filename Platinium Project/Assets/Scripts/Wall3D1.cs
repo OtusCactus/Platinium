@@ -73,28 +73,6 @@ public class Wall3D1 : MonoBehaviour
         //permet de savoir quel mur est descendu à 0 et vers quelle face tourner l'arène
         if (wallLife <= 0)
         {
-            GetComponent<BoxCollider2D>().enabled = false;
-            switch (this.gameObject.name)
-            {
-                case "WallNorthEast":
-                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthEastTab, _currentFace);
-                    break;
-                case "WallNorthWest":
-                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthWestTab, _currentFace);
-                    break;
-                case "WallSouthWest":
-                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthWestTab, _currentFace);
-                    break;
-                case "WallSouth":
-                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthTab, _currentFace);
-                    break;
-                case "WallSouthEast":
-                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthEastTab, _currentFace);
-                    break;
-            }
-            //renvoie la prochaine face vers le script de rotation de caméra
-            _cameraMouvementsScript._cameraPositionNumber = _nextFace;
-
             _lastHit = true;
             GetComponent<MeshRenderer>().material = wallAppearance[2];
         }
@@ -121,6 +99,27 @@ public class Wall3D1 : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            switch (this.gameObject.name)
+            {
+                case "WallNorthEast":
+                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthEastTab, _currentFace);
+                    break;
+                case "WallNorthWest":
+                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthWestTab, _currentFace);
+                    break;
+                case "WallSouthWest":
+                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthWestTab, _currentFace);
+                    break;
+                case "WallSouth":
+                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthTab, _currentFace);
+                    break;
+                case "WallSouthEast":
+                    _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthEastTab, _currentFace);
+                    break;
+            }
+            //renvoie la prochaine face vers le script de rotation de caméra
+            _cameraMouvementsScript._cameraPositionNumber = _nextFace;
         }
     }
 }
