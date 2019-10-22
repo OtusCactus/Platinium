@@ -14,19 +14,19 @@ public class Wall1 : MonoBehaviour
     public int wallLife;
     public float wallLimitVelocity;
 
-    private float _playerVelocity;
+    private float _playerVelocityRatio;
 
     //Variables pour les murs en LineRenderer, pour l'instant inutile, mais on les garde au cas où
-    private LineRenderer line;
+   /* private LineRenderer line;
     public float xradius;
     public float yradius;
-    public Transform[] points;
+    public Transform[] points;*/
 
     // Start is called before the first frame update
     void Start()
     {
-        line = GetComponent<LineRenderer>();
-        line.positionCount = points.Length;
+        //line = GetComponent<LineRenderer>();
+        //line.positionCount = points.Length;
     }
 
     // Update is called once per frame
@@ -35,33 +35,34 @@ public class Wall1 : MonoBehaviour
         if (wallLife <= 0)
         {
             GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<LineRenderer>().enabled = false;
+            //GetComponent<LineRenderer>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
         }
-        _UpdateWall();
+        //_UpdateWall();
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        _playerVelocity = collision.GetComponent<Rigidbody2D>().velocity.sqrMagnitude;
-        if (_playerVelocity >= wallLimitVelocity)
+        _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
+        if (_playerVelocityRatio >= wallLimitVelocity)
         {
             wallLife = 0;
         }
-        else if (_playerVelocity < wallLimitVelocity)
+        else if (_playerVelocityRatio < wallLimitVelocity)
         {
             wallLife -= 1;
         }
     }
     
-    private void _UpdateWall()
+    /*private void _UpdateWall()
     {
         for (int i = 0; i < points.Length; i++)
         {
             line.SetPosition(i, points[i].position);
         }
-    }
+    }*/
    
 
 }

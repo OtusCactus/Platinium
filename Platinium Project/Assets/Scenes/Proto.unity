@@ -1989,6 +1989,7 @@ GameObject:
   - component: {fileID: 990616942}
   - component: {fileID: 990616945}
   - component: {fileID: 990616941}
+  - component: {fileID: 990616946}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -2118,6 +2119,20 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f52822d87b6ec2847a6102c2b4cc9359, type: 2}
   - {fileID: 2100000, guid: befed9e8e84eb454482af0efab0ebc24, type: 2}
   - {fileID: 2100000, guid: 933a17b9d478aa44dbb422ab3102a475, type: 2}
+--- !u!114 &990616946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990616939}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43356582aa277e94fbcea7d3287da266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallLife: 3
+  wallLimitVelocity: 0.8
 --- !u!1 &998962510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +2734,7 @@ GameObject:
   - component: {fileID: 1302509628}
   - component: {fileID: 1302509631}
   - component: {fileID: 1302509627}
+  - component: {fileID: 1302509632}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -2848,6 +2864,20 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f52822d87b6ec2847a6102c2b4cc9359, type: 2}
   - {fileID: 2100000, guid: befed9e8e84eb454482af0efab0ebc24, type: 2}
   - {fileID: 2100000, guid: 933a17b9d478aa44dbb422ab3102a475, type: 2}
+--- !u!114 &1302509632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302509625}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43356582aa277e94fbcea7d3287da266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallLife: 3
+  wallLimitVelocity: 0.8
 --- !u!1 &1366459337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8627799423210609200, guid: 791126972d8ed8847aff9faadc41eb1a,
@@ -3166,6 +3196,7 @@ GameObject:
   - component: {fileID: 1653751080}
   - component: {fileID: 1653751083}
   - component: {fileID: 1653751079}
+  - component: {fileID: 1653751084}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -3295,6 +3326,20 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f52822d87b6ec2847a6102c2b4cc9359, type: 2}
   - {fileID: 2100000, guid: befed9e8e84eb454482af0efab0ebc24, type: 2}
   - {fileID: 2100000, guid: 933a17b9d478aa44dbb422ab3102a475, type: 2}
+--- !u!114 &1653751084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653751077}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43356582aa277e94fbcea7d3287da266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallLife: 3
+  wallLimitVelocity: 0.8
 --- !u!1 &1671456321
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,6 +4011,7 @@ GameObject:
   - component: {fileID: 2018374089}
   - component: {fileID: 2018374092}
   - component: {fileID: 2018374088}
+  - component: {fileID: 2018374093}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -4095,6 +4141,20 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f52822d87b6ec2847a6102c2b4cc9359, type: 2}
   - {fileID: 2100000, guid: befed9e8e84eb454482af0efab0ebc24, type: 2}
   - {fileID: 2100000, guid: 933a17b9d478aa44dbb422ab3102a475, type: 2}
+--- !u!114 &2018374093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018374086}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43356582aa277e94fbcea7d3287da266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallLife: 3
+  wallLimitVelocity: 0.8
 --- !u!1 &2031556230
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,6 +4568,7 @@ GameObject:
   - component: {fileID: 4485591728015333540}
   - component: {fileID: 4485591728015333545}
   - component: {fileID: 4485591728015333544}
+  - component: {fileID: 4485591728015333548}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -4573,6 +4634,20 @@ Transform:
   m_Father: {fileID: 382851078}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -2.9, y: 1.8, z: 53.2}
+--- !u!114 &4485591728015333548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485591728015333543}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43356582aa277e94fbcea7d3287da266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallLife: 3
+  wallLimitVelocity: 0.8
 --- !u!1 &5509694377808773627
 GameObject:
   m_ObjectHideFlags: 0
