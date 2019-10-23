@@ -27,11 +27,10 @@ public class Wall3D : MonoBehaviour
     public float magnitudeShake;
     public float speedShake;
     public float shakeDuration;
-    private Vector3 _cameraStartPosition;
-    private bool _mustShake = false;
-    private bool _iAlreadyShook = false;
-    public float timer = 0;
 
+    public int numberWallState;
+    private Vector3 _cameraStartPosition;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -49,41 +48,16 @@ public class Wall3D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (wallLife <= 0)
         {
             _lastHit = true;
-            if(timer <= shakeDuration && !_iAlreadyShook)
-            {
-                _mustShake = true;
-            }
-            if (_mustShake)
-            {
-                ShakeScreen();
-            }
-            if (_iAlreadyShook)
-            {
-                _mustShake = false;
-                timer = 0;
-            }
+            if(numberWallState > numberWallState - 2) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[2];
             
         }
         if(wallLife < wallLifeMax && !_lastHit)
         {
-            if (timer <= shakeDuration && !_iAlreadyShook)
-            {
-                _mustShake = true;
-            }
-            if (_mustShake)
-            {
-                ShakeScreen();
-            }
-            if (_iAlreadyShook)
-            {
-                _mustShake = false;
-                timer = 0;
-            }
+            if(numberWallState > numberWallState - 1) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[1];
         }
     }
@@ -116,7 +90,8 @@ public class Wall3D : MonoBehaviour
         if (timer >= shakeDuration)
         {
             camera.transform.position = _cameraStartPosition;
-            _iAlreadyShook = true;
+            numberWallState -= 1;
+            timer = 0;
         }
     }
 }
