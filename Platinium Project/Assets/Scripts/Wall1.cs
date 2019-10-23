@@ -11,20 +11,26 @@ public class Wall1 : MonoBehaviour
 
     //Propriétés du mur
     [Header("Propriétés")]
-    public int wallLife;
+    public int wallLifeMax;
     public float wallLimitVelocity;
+    public int wallLife;
 
     private float _playerVelocityRatio;
 
+    [Header("Apparence")]
+    public Material[] wallAppearance;
+
     //Variables pour les murs en LineRenderer, pour l'instant inutile, mais on les garde au cas où
-   /* private LineRenderer line;
-    public float xradius;
-    public float yradius;
-    public Transform[] points;*/
+    /* private LineRenderer line;
+     public float xradius;
+     public float yradius;
+     public Transform[] points;*/
 
     // Start is called before the first frame update
     void Start()
     {
+        wallLife = wallLifeMax;
+        GetComponent<MeshRenderer>().material = wallAppearance[0];
         //line = GetComponent<LineRenderer>();
         //line.positionCount = points.Length;
     }
@@ -37,6 +43,15 @@ public class Wall1 : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             //GetComponent<LineRenderer>().enabled = false;
             GetComponent<MeshRenderer>().enabled = false;
+        }
+        if (wallLife < wallLifeMax)
+        {
+            GetComponent<MeshRenderer>().material = wallAppearance[1];
+        }
+        if (wallLife == 1)
+        {
+            print("hello");
+            GetComponent<MeshRenderer>().material = wallAppearance[2];
         }
         //_UpdateWall();
     }
