@@ -1203,7 +1203,7 @@ MonoBehaviour:
   magnitudeShake: 0.1
   speedShake: 50
   shakeDuration: 0.2
-  numberWallState: 0
+  numberWallStateMax: 0
 --- !u!1 &1303861703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   magnitudeShake: 0.1
   speedShake: 50
   shakeDuration: 0.2
-  numberWallState: 0
+  numberWallStateMax: 0
 --- !u!1 &1366459337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   magnitudeShake: 0.1
   speedShake: 50
   shakeDuration: 0.5
-  numberWallState: 3
+  numberWallStateMax: 0
 --- !u!1 &1887356433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,7 +2399,7 @@ MonoBehaviour:
   magnitudeShake: 0.1
   speedShake: 50
   shakeDuration: 0.2
-  numberWallState: 0
+  numberWallStateMax: 0
 --- !u!1 &2054524613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,7 +2528,7 @@ MonoBehaviour:
   magnitudeShake: 0.1
   speedShake: 50
   shakeDuration: 0.2
-  numberWallState: 0
+  numberWallStateMax: 3
 --- !u!1001 &2109026617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2961,11 +2961,6 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3581425553625243296, guid: 8660eee5cca4cf8498a8be09a089b271,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3581425552979159207, guid: 8660eee5cca4cf8498a8be09a089b271,
         type: 3}
       propertyPath: m_Layer
@@ -3005,6 +3000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243296, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3581425554201511549, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
