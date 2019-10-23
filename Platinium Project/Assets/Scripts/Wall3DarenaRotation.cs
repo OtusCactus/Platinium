@@ -26,6 +26,7 @@ public class Wall3DarenaRotation : MonoBehaviour
     private WallManager _wallManagerScript;
     private GameManager _gameManagerScript;
     private ArenaRotation _arenaRotationScript;
+    private ScoreManager _scoreManagerScript;
 
     //variables pour le changement de face de l'arène
     private int _currentFace;
@@ -39,6 +40,7 @@ public class Wall3DarenaRotation : MonoBehaviour
         _arenaRotationScript = arena.GetComponent<ArenaRotation>();
         _wallManagerScript = GameObject.FindWithTag("GameController").GetComponent<WallManager>();
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
 
         // set les valeurs de départs
         wallLife = wallLifeMax;
@@ -109,6 +111,14 @@ public class Wall3DarenaRotation : MonoBehaviour
         {
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
+            if(collision.tag == "Player1")
+            {
+                _scoreManagerScript.AddScore(1);
+            }
+            else if(collision.tag == "Player2")
+            {
+                _scoreManagerScript.AddScore(2);
+            }
 
             switch (this.gameObject.name)
             {
