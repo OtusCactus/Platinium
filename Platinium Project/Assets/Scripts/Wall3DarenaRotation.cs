@@ -106,7 +106,7 @@ public class Wall3DarenaRotation : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
-        //
+        
         if (_playerVelocityRatio >= wallLimitVelocity)
         {
             wallLife = 0;
