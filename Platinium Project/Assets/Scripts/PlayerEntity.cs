@@ -37,6 +37,9 @@ public class PlayerEntity : MonoBehaviour
     private float _velocityConvertedToRatio;
     private Vector3 _lastFrameVelocity;
 
+    //particules
+    private GameObject _particuleContact;
+
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
@@ -48,6 +51,7 @@ public class PlayerEntity : MonoBehaviour
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
         _velocityMax = (powerMax * speed) * (powerMax * speed);
+        _particuleContact = this.transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
@@ -125,6 +129,9 @@ public class PlayerEntity : MonoBehaviour
                 Bounce(collision.contacts[0].normal);
             }
         }
+
+        _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
+        _particuleContact.GetComponent<ParticleSystem>().Play();
     }
 
     private void Bounce(Vector3 collisionNormal)
