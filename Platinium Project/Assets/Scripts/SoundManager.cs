@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip[] wallSounds;
-    public AudioClip[] playerSounds;
-    public AudioClip[] gameSounds;
+    public AudioClip wallHit;
+    public AudioClip wallDestroyed;
+    public AudioClip playersCollision;
+    public AudioClip endRound;
 
     // Start is called before the first frame update
     void Start()
