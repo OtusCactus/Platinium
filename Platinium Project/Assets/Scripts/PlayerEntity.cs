@@ -40,7 +40,7 @@ public class PlayerEntity : MonoBehaviour
     private float _lastFramePower;
 
     [Header("Frictions")]
-    public float friction = 1;
+    public float friction = 0.1f;
 
     //particules
     private GameObject _particuleContact;
@@ -62,6 +62,20 @@ public class PlayerEntity : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+         if (_myRb.velocity != Vector2.zero)
+        {
+            Vector2 frictionDir = _myRb.velocity.normalized;
+            float frictionToApply = friction * Time.fixedDeltaTime;
+            if (_myRb.velocity.sqrMagnitude <= frictionToApply * frictionToApply)
+            {
+                _myRb.velocity = Vector2.zero;
+            }
+            else
+            {
+                _myRb.velocity -= frictionToApply * frictionDir;
+            }
+        }
+
         //Dicte quand on passe d'un enum à l'autre
         #region Change Enum
         if (_input != Vector2.zero)
@@ -104,6 +118,7 @@ public class PlayerEntity : MonoBehaviour
             _myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
+
             _inputVariableToStoreDirection = Vector2.zero;
             _lastFramePower = _timerPower;
             _timerPower = 0;
