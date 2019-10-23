@@ -12,6 +12,7 @@ public class ShockwaveHit : MonoBehaviour
     //Empêche l'autre joueur de se déplacer pendant un certain temps après être hit par la shockwave
     public float mouvementPlayerDisabledTimeMax;
     private float mouvementPlayerDisabledTime;
+    public float reactivatingScriptVelocity = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class ShockwaveHit : MonoBehaviour
             this.GetComponent<PlayerEntity>().powerJaugeParent.gameObject.SetActive(false);
             this.GetComponent<PlayerEntity>().enabled = false;
             mouvementPlayerDisabledTime -= Time.deltaTime;
-            if(mouvementPlayerDisabledTime <= 0)
+            if(GetComponent<PlayerEntity>().GetVelocityRatio() <= reactivatingScriptVelocity)
             {
                 this.GetComponent<PlayerEntity>().enabled = true;
                 haveIBeenHit = false;

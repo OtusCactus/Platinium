@@ -12,7 +12,7 @@ public class CameraPointCreation : MonoBehaviour
     private GameObject _cameraPointObj;
     public float diceCameraDistance;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         //permet de set la distance des positions des caméras par rapport au centre de l'arène
         for (int i = 0; i < cameraPosition.Length; i++)

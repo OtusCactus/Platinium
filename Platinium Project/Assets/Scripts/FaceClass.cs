@@ -14,7 +14,10 @@ public class FaceClass : MonoBehaviour
     {
         public int faceNumber;
         public Transform cameraPosition;
+        public Transform arenaRotation;
         public Vector3 spriteRotation;
+        public Transform player1StartingPosition;
+        public Transform player2StartingPosition;
     }
 
     public face[] faceTab;

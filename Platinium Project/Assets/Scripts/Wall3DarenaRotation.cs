@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wall3D1 : MonoBehaviour
+public class Wall3DarenaRotation : MonoBehaviour
 {
     //merge des scripts Wall et Wall3D pour la scène Proto.
 
@@ -19,11 +19,13 @@ public class Wall3D1 : MonoBehaviour
 
     private float _playerVelocityRatio;
 
-
+    //arene
+    [Header("arène")]
+    public GameObject arena;
     //differents scripts 
     private WallManager _wallManagerScript;
     private GameManager _gameManagerScript;
-    private CameraMouvements _cameraMouvementsScript;
+    private ArenaRotation _arenaRotationScript;
 
     //variables pour le changement de face de l'arène
     private int _currentFace;
@@ -34,13 +36,13 @@ public class Wall3D1 : MonoBehaviour
     {
 
         //récupération des scripts
-        _cameraMouvementsScript = GameObject.FindWithTag("MainCamera").GetComponent<CameraMouvements>();
+        _arenaRotationScript = arena.GetComponent<ArenaRotation>();
         _wallManagerScript = GameObject.FindWithTag("GameController").GetComponent<WallManager>();
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
 
         // set les valeurs de départs
         wallLife = wallLifeMax;
-        _currentFace = _cameraMouvementsScript._cameraPositionNumber;
+        _currentFace = _arenaRotationScript._cameraPositionNumber;
 
         //set le material du mur par défaut
         GetComponent<MeshRenderer>().material = wallAppearance[0];
@@ -51,12 +53,13 @@ public class Wall3D1 : MonoBehaviour
     {
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
-        if (_cameraMouvementsScript._isTurning)
+        if (_arenaRotationScript._isTurning)
         {
+            _gameManagerScript.isTurning = true;
 
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<MeshRenderer>().enabled = false;
-            _currentFace = _cameraMouvementsScript._cameraPositionNumber;
+            _currentFace = _arenaRotationScript._cameraPositionNumber;
             wallLife = wallLifeMax;
         }
         //sinon réactive les colliders et les sprites des murs.
@@ -64,13 +67,14 @@ public class Wall3D1 : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = true;
             GetComponent<MeshRenderer>().enabled = true;
+            _gameManagerScript.isTurning = false;
 
         }
 
         //Debug.Log(_nextFace + " next face " + this.gameObject.name);
         //Debug.Log(_currentFace + " current face " + this.gameObject.name);
 
-        if(wallLife >0)
+        if (wallLife >0)
         {
             GetComponent<MeshRenderer>().material = wallAppearance[0];
         }
@@ -102,8 +106,7 @@ public class Wall3D1 : MonoBehaviour
         {
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
-            //_gameManagerScript.destroyedWallPosition = transform.position;
-            //_gameManagerScript.playerWhoDestroyedWall = collision.gameObject.tag;
+
             switch (this.gameObject.name)
             {
                 case "WallNorthEast":
@@ -124,7 +127,7 @@ public class Wall3D1 : MonoBehaviour
             }
             //renvoie la prochaine face vers le script de rotation de caméra
             _gameManagerScript.currentFace = _nextFace - 1;
-            _cameraMouvementsScript._cameraPositionNumber = _nextFace;
+            _arenaRotationScript._cameraPositionNumber = _nextFace;
             _lastHit = false;
         }
     }
