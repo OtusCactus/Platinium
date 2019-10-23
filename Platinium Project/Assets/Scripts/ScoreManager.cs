@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,12 +11,11 @@ public class ScoreManager : MonoBehaviour
     public GameObject[] scoreP1;
     public GameObject[] scoreP2;
     public GameObject restartMenu;
+    public TextMeshProUGUI textWinner;
 
     private int[] _playerScore;
     private int actualRound = 0;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         _playerScore = new int[nbrPlayers];
@@ -43,6 +43,7 @@ public class ScoreManager : MonoBehaviour
         if (_playerScore[player] == scoreToWin)
         {
             Debug.Log("player" + player+1 + "win");
+            textWinner.text = "Player " + (player + 1) + " win !";
             restartMenu.SetActive(true);
         }
     }

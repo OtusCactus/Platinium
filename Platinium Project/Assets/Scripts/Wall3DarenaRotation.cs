@@ -61,6 +61,8 @@ public class Wall3DarenaRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(wallLife + " " + gameObject.name);
+
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
@@ -70,6 +72,7 @@ public class Wall3DarenaRotation : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<MeshRenderer>().enabled = false;
             _currentFace = _arenaRotationScript._cameraPositionNumber;
+            _lastHit = false;
             wallLife = wallLifeMax;
         }
         //sinon réactive les colliders et les sprites des murs.
