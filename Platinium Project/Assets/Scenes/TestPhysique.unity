@@ -2881,6 +2881,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243308, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: friction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243308, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: speedMax
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243308, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3581425553625243311, guid: 8660eee5cca4cf8498a8be09a089b271,
         type: 3}
       propertyPath: m_LocalPosition.x
