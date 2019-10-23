@@ -10,7 +10,7 @@ public class PlayerEntity : MonoBehaviour
 
     //
     [Header("Speed")]
-    public int speed;
+    public float speed;
     public float rotationSpeed;
 
     //
@@ -30,12 +30,17 @@ public class PlayerEntity : MonoBehaviour
     public Image powerJauge;
     public GameObject powerJaugeParent;
     private float _timerPower = 0;
+    
 
     //Variables pour la vitesse
     private float _myVelocity;
     private float _velocityMax;
     private float _velocityConvertedToRatio;
     private Vector3 _lastFrameVelocity;
+    private float _lastFramePower;
+
+    [Header("Frictions")]
+    public float friction = 1;
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
@@ -95,8 +100,8 @@ public class PlayerEntity : MonoBehaviour
             _myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
-            _lastFrameVelocity = _myRb.velocity;
             _inputVariableToStoreDirection = Vector2.zero;
+            _lastFramePower = _timerPower;
             _timerPower = 0;
             _timerDeadPoint = 0;
             _playerInput = INPUTSTATE.None;
@@ -114,6 +119,7 @@ public class PlayerEntity : MonoBehaviour
         {
             GetComponent<TrailRenderer>().enabled = false;
         }
+        _lastFrameVelocity = _myRb.velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -122,7 +128,6 @@ public class PlayerEntity : MonoBehaviour
         {
             if (collision.gameObject.tag == "Walls")
             {
-                //Bounce(collision.contacts[0].normal);
                 Bounce(collision.GetContact(0).normal);
             }
         }
@@ -133,7 +138,7 @@ public class PlayerEntity : MonoBehaviour
         Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
         print(direction + "c'est la direction");
         //_myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
-        _myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.x, direction.y * _lastFrameVelocity.y);
+        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * (_lastFramePower * speed);
     }
 
     public void SetInputX(Vector2 myInput)

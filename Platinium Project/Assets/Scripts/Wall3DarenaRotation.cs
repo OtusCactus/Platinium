@@ -31,6 +31,16 @@ public class Wall3DarenaRotation : MonoBehaviour
     private int _currentFace;
     private int _nextFace;
 
+    [Header("Camera Shake")]
+    public Camera camera;
+    public float magnitudeShake;
+    public float speedShake;
+    public float shakeDuration;
+    public int numberWallStateMax;
+    private int numberWallState;
+    private Vector3 _cameraStartPosition;
+    private float timer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,18 +83,16 @@ public class Wall3DarenaRotation : MonoBehaviour
 
         //Debug.Log(_nextFace + " next face " + this.gameObject.name);
         //Debug.Log(_currentFace + " current face " + this.gameObject.name);
-
-        if (wallLife >0)
-        {
-            GetComponent<MeshRenderer>().material = wallAppearance[0];
-        }
+        
         if (wallLife <= 0)
         {
             _lastHit = true;
+            if (numberWallState > numberWallStateMax - 2) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[2];
         }
         if(wallLife < wallLifeMax && !_lastHit)
         {
+            if (numberWallState > numberWallStateMax - 1) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[1];
         }
     }
@@ -129,6 +137,18 @@ public class Wall3DarenaRotation : MonoBehaviour
             _gameManagerScript.currentFace = _nextFace - 1;
             _arenaRotationScript._cameraPositionNumber = _nextFace;
             _lastHit = false;
+        }
+    }
+
+    private void ShakeScreen()
+    {
+        camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
+        timer += Time.deltaTime;
+        if (timer >= shakeDuration)
+        {
+            camera.transform.position = _cameraStartPosition;
+            numberWallState -= 1;
+            timer = 0;
         }
     }
 }
