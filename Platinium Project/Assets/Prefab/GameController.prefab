@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8627799423210609205}
   - component: {fileID: 8627799423210609204}
   - component: {fileID: 8627799423210609207}
+  - component: {fileID: -7169960847691262422}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -46,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43465cab69a37ef4f9772c2b1fdf0b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallLife: 3
 --- !u!114 &8627799423210609205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d0d5c176955014f9168240556ce9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouvementPlayer1: {fileID: 0}
-  mouvementPlayer2: {fileID: 0}
+  playerEntity1: {fileID: 0}
+  playerEntity2: {fileID: 0}
 --- !u!114 &8627799423210609204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +127,18 @@ MonoBehaviour:
   - faceNumber: 12
     cameraPosition: {fileID: 0}
     spriteRotation: {x: 0, y: 0, z: 0}
+--- !u!114 &-7169960847691262422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627799423210609200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b346212da52246488e1abd8c5a26ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallSounds: []
+  playerSounds: []
+  gameSounds: []

@@ -22,13 +22,27 @@ public class Wall3D : MonoBehaviour
 
     private float _playerVelocityRatio;
 
+    [Header("Camera Shake")]
+    public Camera camera;
+    public float magnitudeShake;
+    public float speedShake;
+    public float shakeDuration;
+
+    public int numberWallState;
+    private Vector3 _cameraStartPosition;
+    private float timer = 0;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //set le material du mur par défaut
         GetComponent<MeshRenderer>().material = wallAppearance[0];
         wallLife = wallLifeMax;
+    }
+
+    private void Start()
+    {
+        _cameraStartPosition = camera.transform.position;
     }
 
     // Update is called once per frame
@@ -37,10 +51,13 @@ public class Wall3D : MonoBehaviour
         if (wallLife <= 0)
         {
             _lastHit = true;
+            if(numberWallState > numberWallState - 2) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[2];
+            
         }
         if(wallLife < wallLifeMax && !_lastHit)
         {
+            if(numberWallState > numberWallState - 1) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[1];
         }
     }
@@ -48,6 +65,7 @@ public class Wall3D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
         //
         if (_playerVelocityRatio >= wallLimitVelocity)
@@ -62,6 +80,18 @@ public class Wall3D : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    private void ShakeScreen()
+    {
+        camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
+        timer += Time.deltaTime;
+        if (timer >= shakeDuration)
+        {
+            camera.transform.position = _cameraStartPosition;
+            numberWallState -= 1;
+            timer = 0;
         }
     }
 }
