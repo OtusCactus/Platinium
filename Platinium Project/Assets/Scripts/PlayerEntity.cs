@@ -122,7 +122,8 @@ public class PlayerEntity : MonoBehaviour
         {
             if (collision.gameObject.tag == "Walls")
             {
-                Bounce(collision.contacts[0].normal);
+                //Bounce(collision.contacts[0].normal);
+                Bounce(collision.GetContact(0).normal);
             }
         }
     }
@@ -130,8 +131,9 @@ public class PlayerEntity : MonoBehaviour
     private void Bounce(Vector3 collisionNormal)
     {
         Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
-
-        _myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
+        print(direction + "c'est la direction");
+        //_myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
+        _myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.x, direction.y * _lastFrameVelocity.y);
     }
 
     public void SetInputX(Vector2 myInput)
