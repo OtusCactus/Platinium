@@ -28,7 +28,8 @@ public class Wall3D : MonoBehaviour
     public float speedShake;
     public float shakeDuration;
 
-    public int numberWallState;
+    public int numberWallStateMax;
+    private int numberWallState;
     private Vector3 _cameraStartPosition;
     private float timer = 0;
 
@@ -43,6 +44,7 @@ public class Wall3D : MonoBehaviour
     private void Start()
     {
         _cameraStartPosition = camera.transform.position;
+        numberWallState = numberWallStateMax;
     }
 
     // Update is called once per frame
@@ -51,13 +53,13 @@ public class Wall3D : MonoBehaviour
         if (wallLife <= 0)
         {
             _lastHit = true;
-            if(numberWallState > numberWallState - 2) ShakeScreen();
+            if(numberWallState > numberWallStateMax - 2) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[2];
             
         }
         if(wallLife < wallLifeMax && !_lastHit)
         {
-            if(numberWallState > numberWallState - 1) ShakeScreen();
+            if(numberWallState > numberWallStateMax - 1) ShakeScreen();
             GetComponent<MeshRenderer>().material = wallAppearance[1];
         }
     }

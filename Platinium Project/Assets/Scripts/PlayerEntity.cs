@@ -51,7 +51,7 @@ public class PlayerEntity : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Dicte quand on passe d'un enum à l'autre
         #region Change Enum
@@ -76,11 +76,11 @@ public class PlayerEntity : MonoBehaviour
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
             powerJaugeParent.gameObject.SetActive(true);
-            powerJauge.fillAmount = _timerPower / 5;
+            powerJauge.fillAmount = _timerPower / powerMax;
 
             _inputVariableToStoreDirection = _input;
             _myRb.drag = 3;
-            _timerPower += Time.deltaTime;
+            _timerPower += Time.fixedDeltaTime;
             if (_timerPower > powerMax)
             {
                 _timerPower = powerMax;
@@ -88,7 +88,7 @@ public class PlayerEntity : MonoBehaviour
         }
         else if (_playerInput == INPUTSTATE.EasingInput)
         {
-                _timerDeadPoint += Time.deltaTime;
+                _timerDeadPoint += Time.fixedDeltaTime;
         }
         else if(_playerInput == INPUTSTATE.Released)
         {
@@ -116,7 +116,7 @@ public class PlayerEntity : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (gameObject.tag == "Player")
         {
@@ -125,14 +125,12 @@ public class PlayerEntity : MonoBehaviour
                 Bounce(collision.contacts[0].normal);
             }
         }
-    }*/
+    }
 
     private void Bounce(Vector3 collisionNormal)
     {
         Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
 
-
-        Debug.Log("Out Direction: " + direction);
         _myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
     }
 
