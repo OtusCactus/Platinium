@@ -77,6 +77,11 @@ public class PlayerEntity : MonoBehaviour
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
     }
 
+    private void OnDisable()
+    {
+
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -143,6 +148,8 @@ public class PlayerEntity : MonoBehaviour
                     _timerPower = 0;
                     _timerDeadPoint = 0;
                     vibrationTreshold = 0.2f;
+                    powerJauge.fillAmount = 0;
+
                     if (gameObject.tag == "Player1")
                     {
 
@@ -179,9 +186,9 @@ public class PlayerEntity : MonoBehaviour
         else if (_playerInput == INPUTSTATE.None)
         {
             vibrationTreshold = 0.2f;
+            powerJauge.fillAmount = 0;
             if (gameObject.tag == "Player1")
             {
-
                 _playerManagerScript._player1.StopVibration();
             }
             else if (gameObject.tag == "Player2")
@@ -203,6 +210,7 @@ public class PlayerEntity : MonoBehaviour
             GetComponent<TrailRenderer>().enabled = false;
         }
         _lastFrameVelocity = _myRb.velocity;
+
     }
 
 
@@ -218,7 +226,7 @@ public class PlayerEntity : MonoBehaviour
         {
             GetComponent<AudioSource>().enabled = false;
         }
-        
+
 
         if (powerJauge.fillAmount > vibrationTreshold)
         {

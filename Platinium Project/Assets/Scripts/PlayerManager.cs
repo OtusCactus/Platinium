@@ -59,6 +59,8 @@ public class PlayerManager : MonoBehaviour
         {
             _attackTest1.Push();
         }
+
+
         
 
         float inputXPlayer2 = -_player2.GetAxis("HorizontalJoy2");
@@ -72,7 +74,7 @@ public class PlayerManager : MonoBehaviour
             _attackTest2.Push();
         }
 
-        
+
     }
 
 

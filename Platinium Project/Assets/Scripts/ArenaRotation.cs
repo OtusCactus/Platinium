@@ -42,6 +42,7 @@ public class ArenaRotation : MonoBehaviour
     private FaceClass _faceClassScript;
     private GameManager _gameManagerScript;
     private SoundManager _soundManagerScript;
+    private PlayerManager _playerManagerScript;
     //debug
     [Header("Debug")]
     public bool debug;
@@ -53,6 +54,7 @@ public class ArenaRotation : MonoBehaviour
         _faceClassScript = gameManager.GetComponent<FaceClass>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
         _soundManagerScript = gameManager.GetComponent<SoundManager>();
+        _playerManagerScript = gameManager.GetComponent<PlayerManager>();
 
         //set la caméra sur la première face de l'arène.
         _cameraPositionNumber = 0;
@@ -118,6 +120,11 @@ public class ArenaRotation : MonoBehaviour
             Quaternion currentRotation = Quaternion.Lerp(_startRotation, _endRotation, timerClamped);
             transform.rotation = currentRotation;
 
+
+                _playerManagerScript._player1.StopVibration();
+
+                _playerManagerScript._player2.StopVibration();
+            
 
             //reset le lerp.
             if (timerClamped >= 1)
