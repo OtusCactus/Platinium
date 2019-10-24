@@ -9,8 +9,8 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager Instance = null;
 
-    private Player _player1;
-    private Player _player2;
+    public Player _player1;
+    public Player _player2;
     private Player _player3;
     private Player _player4;
 
@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour
         }
         _attackTest1 = playerEntity1.GetComponent<AttackTest>();
         _attackTest2 = playerEntity2.GetComponent<AttackTest>();
+
     }
 
     // Start is called before the first frame update
@@ -71,5 +72,16 @@ public class PlayerManager : MonoBehaviour
         {
             _attackTest2.Push();
         }
+
+        
     }
+
+
+    public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
+    {
+
+        _player.SetVibration(motorUsed, motorVibrationStrength, duration);
+    }
+
+
 }

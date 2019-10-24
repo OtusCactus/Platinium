@@ -54,8 +54,8 @@ public class CameraMouvements : MonoBehaviour
         //set la caméra sur la première face de l'arène.
         _cameraPositionNumber = 0;
         _cameraCurrentHolder = _cameraPositionNumber;
-        transform.position = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
-        transform.rotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
+        //transform.position = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
+        //transform.rotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
     }
 
     // Update is called once per frame
@@ -68,10 +68,10 @@ public class CameraMouvements : MonoBehaviour
         if (_cameraCurrentHolder != _cameraPositionNumber)
         {
             _startPosition = transform.position;
-            _endPosition = _faceClassScript.faceTab[_cameraPositionNumber - 1].cameraPosition.position;
+            //_endPosition = _faceClassScript.faceTab[_cameraPositionNumber - 1].cameraPosition.position;
 
             _startRotation = transform.rotation;
-            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber - 1].cameraPosition.rotation;
+           // _endRotation = _faceClassScript.faceTab[_cameraPositionNumber - 1].cameraPosition.rotation;
 
             //permet la rotation
             _isTurning = true;
@@ -86,10 +86,10 @@ public class CameraMouvements : MonoBehaviour
             _cameraPositionNumber += 1;
 
             _startPosition = transform.position;
-            _endPosition = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
+            //_endPosition = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
 
             _startRotation = transform.rotation;
-            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
+           // _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
 
             _isTurning = true;
         }
@@ -100,10 +100,10 @@ public class CameraMouvements : MonoBehaviour
             _cameraPositionNumber -= 1;
 
             _startPosition = transform.position;
-            _endPosition = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
+            //_endPosition = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.position;
 
             _startRotation = transform.rotation;
-            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
+            //_endRotation = _faceClassScript.faceTab[_cameraPositionNumber].cameraPosition.rotation;
             _isTurning = true;
         }
 
