@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class AttackTest : MonoBehaviour
 {
@@ -64,19 +65,21 @@ public class AttackTest : MonoBehaviour
         if (isShockWaveButtonPressed && isShockWavePossible && !GetComponent<ShockwaveHit>().haveIBeenHit)
         {
             shockWaveDuration -= Time.deltaTime;
-            if(shockWaveDuration > 0)
+            
+            
+            if (shockWaveDuration > 0)
             {
 
-                 if (gameObject.tag == "Player1")
-                 {
-                     _playerManagerScript.Vibration(_playerManagerScript._player1, 0, 3f, shockWaveDurationMax);
-                 }
-                 else if (gameObject.tag == "Player2")
-                 {
-                     _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 3f, shockWaveDurationMax);
-                 }
 
-                
+
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player1, 0, 1.0f, shockWaveDurationMax);
+                }
+                else if (gameObject.tag == "Player2")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 1.0f, shockWaveDurationMax);
+                }
                 shockWaveSprite.SetActive(true);
                 //set un cercle qui check les colliders dedans, si il y a un joueur, il le rajoute dans un tableau et permet d'accéder à l'objet qui contient le collider
                 Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);

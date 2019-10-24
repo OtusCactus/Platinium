@@ -17,7 +17,7 @@ public class UI_gameOverMenu : MonoBehaviour
 
     public void RestartMatch()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Proto 1");
     }
 
     public void Quit()

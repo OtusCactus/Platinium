@@ -5182,7 +5182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shockWavePosition: {fileID: 3581425552979159206}
-  shockWaveRadius: 1
+  shockWaveRadius: 0.5
   shockWaveCooldownMax: 2
   shockWaveDurationMax: 0.5
   isShockWavePossible: 0
