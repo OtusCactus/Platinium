@@ -58,6 +58,10 @@ public class Wall3DarenaRotation : MonoBehaviour
         wallLife = wallLifeMax;
         _currentFace = _arenaRotationScript._cameraPositionNumber;
 
+        //set les valeurs pour screenshake
+        _cameraStartPosition = camera.transform.position;
+        numberWallState = numberWallStateMax;
+
         //set le material du mur par défaut
         GetComponent<MeshRenderer>().material = wallAppearance[0];
 
@@ -77,7 +81,7 @@ public class Wall3DarenaRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(wallLife + " " + gameObject.name);
+        //Debug.Log(wallLife + " " + gameObject.name);
 
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
