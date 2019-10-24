@@ -29,7 +29,6 @@ public class PlayerManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         _attackTest1 = playerEntity1.GetComponent<AttackTest>();
         _attackTest2 = playerEntity2.GetComponent<AttackTest>();
