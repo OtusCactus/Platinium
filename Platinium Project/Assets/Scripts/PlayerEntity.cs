@@ -116,7 +116,6 @@ public class PlayerEntity : MonoBehaviour
         if (_playerInput == INPUTSTATE.GivingInput)
         {
 
-            Debug.Log(powerJauge.fillAmount);
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
             powerJaugeParent.gameObject.SetActive(true);
@@ -211,8 +210,15 @@ public class PlayerEntity : MonoBehaviour
     {
         if(_playerInput == INPUTSTATE.GivingInput)
         {
-            _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
+            GetComponent<AudioSource>().enabled = true;
+           // _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
+            print("je dois jouer le son");
         }
+        else
+        {
+            GetComponent<AudioSource>().enabled = false;
+        }
+        
 
         if (powerJauge.fillAmount > vibrationTreshold)
         {
