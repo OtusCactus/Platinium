@@ -23,14 +23,9 @@ public class WallManager : MonoBehaviour
     public int WallFaceChange(int[] wallOrientFaceChangeTab, int currentFace)
     {
         int nextface;
-        if (currentFace != 0)
-        {
-            nextface = wallOrientFaceChangeTab[currentFace - 1];
-        }
-        else
-        {
-            nextface = wallOrientFaceChangeTab[currentFace];
-        }
+
+        nextface = wallOrientFaceChangeTab[currentFace];
+        
         return nextface;
     }
 }

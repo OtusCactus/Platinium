@@ -25,7 +25,6 @@ public class ArenaRotation : MonoBehaviour
     public GameObject arena;
 
     //face utilisée
-    [System.NonSerialized]
     public int _cameraPositionNumber;
     private int _cameraCurrentHolder;
 
@@ -42,7 +41,7 @@ public class ArenaRotation : MonoBehaviour
     public GameObject gameManager;
     private FaceClass _faceClassScript;
     private GameManager _gameManagerScript;
-
+    private SoundManager _soundManagerScript;
     //debug
     [Header("Debug")]
     public bool debug;
@@ -53,12 +52,12 @@ public class ArenaRotation : MonoBehaviour
         //Scripts nécessaires
         _faceClassScript = gameManager.GetComponent<FaceClass>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
+        _soundManagerScript = gameManager.GetComponent<SoundManager>();
 
         //set la caméra sur la première face de l'arène.
         _cameraPositionNumber = 0;
         _cameraCurrentHolder = _cameraPositionNumber;
         transform.rotation = _faceClassScript.faceTab[_cameraPositionNumber].arenaRotation.rotation;
-        
     }
 
     // Update is called once per frame
@@ -72,7 +71,9 @@ public class ArenaRotation : MonoBehaviour
             
 
             _startRotation = transform.rotation;
-            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber - 1].arenaRotation.rotation;
+            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].arenaRotation.rotation;
+
+            _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
 
             //permet la rotation
             _isTurning = true;
@@ -123,7 +124,9 @@ public class ArenaRotation : MonoBehaviour
             {
                 timerClamped = 0;
                 _turningTimer = 0;
+                _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
                 _isTurning = false;
+
             }
         }
     }

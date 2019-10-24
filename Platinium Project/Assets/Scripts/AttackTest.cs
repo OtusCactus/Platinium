@@ -27,6 +27,7 @@ public class AttackTest : MonoBehaviour
     public LayerMask EnemyMask;
     public float pushbackIntensity;
 
+    private PlayerManager _playerManagerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class AttackTest : MonoBehaviour
         //set les paramètres de la shockwave au début pour qu'elle soit lançable
         shockWaveCooldown = 0;
         shockWaveDuration = shockWaveDurationMax;
+        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
     }
 
 
@@ -56,12 +58,25 @@ public class AttackTest : MonoBehaviour
         }
 
 
+        
+
         //active la shockwave pendant un certain temps
-        if (isShockWaveButtonPressed && isShockWavePossible)
+        if (isShockWaveButtonPressed && isShockWavePossible && !GetComponent<ShockwaveHit>().haveIBeenHit)
         {
             shockWaveDuration -= Time.deltaTime;
             if(shockWaveDuration > 0)
             {
+
+                 if (gameObject.tag == "Player1")
+                 {
+                     _playerManagerScript.Vibration(_playerManagerScript._player1, 0, 3f, shockWaveDurationMax);
+                 }
+                 else if (gameObject.tag == "Player2")
+                 {
+                     _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 3f, shockWaveDurationMax);
+                 }
+
+                
                 shockWaveSprite.SetActive(true);
                 //set un cercle qui check les colliders dedans, si il y a un joueur, il le rajoute dans un tableau et permet d'accéder à l'objet qui contient le collider
                 Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);

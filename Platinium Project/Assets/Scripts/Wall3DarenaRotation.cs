@@ -27,6 +27,7 @@ public class Wall3DarenaRotation : MonoBehaviour
     private GameManager _gameManagerScript;
     private ArenaRotation _arenaRotationScript;
     private ScoreManager _scoreManagerScript;
+    private FaceClass _faceClassScript;
 
     //variables pour le changement de face de l'arène
     private int _currentFace;
@@ -51,6 +52,7 @@ public class Wall3DarenaRotation : MonoBehaviour
         _wallManagerScript = GameObject.FindWithTag("GameController").GetComponent<WallManager>();
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
+        _faceClassScript = GameObject.FindWithTag("GameController").GetComponent<FaceClass>();
 
         // set les valeurs de départs
         wallLife = wallLifeMax;
@@ -58,6 +60,18 @@ public class Wall3DarenaRotation : MonoBehaviour
 
         //set le material du mur par défaut
         GetComponent<MeshRenderer>().material = wallAppearance[0];
+
+        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
+        {
+            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+        }
+        gameObject.layer = 15;
+        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+        {
+            //_faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).GetComponent<BoxCollider2D>().enabled = true;
+            _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+        }
     }
 
     // Update is called once per frame
@@ -71,23 +85,38 @@ public class Wall3DarenaRotation : MonoBehaviour
         {
             _gameManagerScript.isTurning = true;
 
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = true;
+            GetComponent<MeshRenderer>().enabled = true;
             _currentFace = _arenaRotationScript._cameraPositionNumber;
             _lastHit = false;
             wallLife = wallLifeMax;
+            GetComponent<MeshRenderer>().material = wallAppearance[0];
+
+
+            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
+            {
+                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+            }
+            gameObject.layer = 15;
+            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+            {
+                //_faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).GetComponent<BoxCollider2D>().enabled = true;
+                _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+            }
         }
         //sinon réactive les colliders et les sprites des murs.
         else
         {
-            GetComponent<BoxCollider2D>().enabled = true;
-            GetComponent<MeshRenderer>().enabled = true;
+            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace.Length; i++)
+            {
+                _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
+            }
             _gameManagerScript.isTurning = false;
 
         }
 
-        //Debug.Log(_nextFace + " next face " + this.gameObject.name);
-        //Debug.Log(_currentFace + " current face " + this.gameObject.name);
+
         
         if (wallLife <= 0)
         {
@@ -148,7 +177,7 @@ public class Wall3DarenaRotation : MonoBehaviour
             }
             //renvoie la prochaine face vers le script de rotation de caméra
             _gameManagerScript.currentFace = _nextFace - 1;
-            _arenaRotationScript._cameraPositionNumber = _nextFace;
+            _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
             _lastHit = false;
         }
     }
