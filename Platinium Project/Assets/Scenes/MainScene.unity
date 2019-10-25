@@ -13836,7 +13836,7 @@ PrefabInstance:
     - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
-      value: Walls
+      value: StickyWalls
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
@@ -13856,7 +13856,7 @@ PrefabInstance:
     - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
-      value: Walls
+      value: BouncyWalls
       objectReference: {fileID: 0}
     - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
@@ -14268,6 +14268,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7b12f273e3a704ab49d515bc4683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1323674683
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323674671}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 981ee87f483923f4c9e1316103259b4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1366459337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8627799423210609200, guid: 791126972d8ed8847aff9faadc41eb1a,
@@ -19942,6 +19961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: friction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: wallReboundBouncy
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4544888571748118748, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}

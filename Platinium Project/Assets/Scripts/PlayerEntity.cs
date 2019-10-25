@@ -49,6 +49,7 @@ public class PlayerEntity : MonoBehaviour
     [Header("Frictions")]
     public float friction = 0.1f;
     public float wallRebound = 1.25f;
+    public float wallReboundBouncy = 1.25f;
 
     [Header("Vibration")]
     private float vibrationTreshold = 0.2f;
@@ -262,13 +263,17 @@ public class PlayerEntity : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //physique custom de rebound
-
-        if (gameObject.tag.Contains("Player"))
+        if (collision.gameObject.tag == "StickyWalls")
         {
-            if (collision.gameObject.tag == "Walls")
-            {
-                Bounce(collision.GetContact(0).normal);
-            }
+            Sticky();
+        }
+        else if (collision.gameObject.tag == "BouncyWalls")
+        {
+            BounceALot(collision.GetContact(0).normal);
+        }
+        else
+        {
+            Bounce(collision.GetContact(0).normal);
         }
 
         _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
@@ -281,6 +286,15 @@ public class PlayerEntity : MonoBehaviour
         print(direction + "c'est la direction");
         //_myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
         _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((_lastFrameVelocity.magnitude / wallRebound) * speed);
+    }
+    private void BounceALot(Vector3 collisionNormal)
+    {
+        Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
+        _myRb.velocity = new Vector3(direction.x, direction.y).normalized * ((_lastFrameVelocity.magnitude / wallReboundBouncy) * speed);
+    }
+    private void Sticky()
+    {
+        _myRb.velocity = Vector3.zero;
     }
 
     public void SetInputX(Vector2 myInput)

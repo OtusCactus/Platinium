@@ -46,7 +46,7 @@ public class ShockwaveHit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Walls")
+        if (collision.tag.Contains("Walls"))
         {
             _hitWalls = true;
             _soundManagerScript.PlaySound(transform.GetChild(0).GetComponent<AudioSource>(),_soundManagerScript.wallHit);
