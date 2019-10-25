@@ -128,7 +128,6 @@ public class PlayerEntity : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, _angle);
             powerJaugeParent.gameObject.SetActive(true);
             powerJauge.fillAmount = _timerPower / powerMax;
-            
             _inputVariableToStoreDirection = _input;
             _myRb.drag = 3;
             _timerPower += Time.fixedDeltaTime;
@@ -260,13 +259,15 @@ public class PlayerEntity : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (gameObject.tag == "Player")
-        {
-            if (collision.gameObject.tag == "Walls")
-            {
-                Bounce(collision.GetContact(0).normal);
-            }
-        }
+        //physique custom de rebound
+
+        //if (gameObject.tag.Contains("Player"))
+        //{
+        //    if (collision.gameObject.tag == "Walls")
+        //    {
+        //        Bounce(collision.GetContact(0).normal);
+        //    }
+        //}
 
         _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
         _particuleContact.GetComponent<ParticleSystem>().Play();
