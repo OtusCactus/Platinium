@@ -53,6 +53,9 @@ public class PlayerEntity : MonoBehaviour
     [Header("Vibration")]
     private float vibrationTreshold = 0.2f;
 
+    //bool sound
+    private bool _mustPlayCastSound = false;
+
 
     //particules
     private GameObject _particuleContact;
@@ -216,15 +219,16 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
-        if(_playerInput == INPUTSTATE.GivingInput)
+        if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-            GetComponent<AudioSource>().enabled = true;
-           // _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
+           _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
             print("je dois jouer le son");
+            _mustPlayCastSound = false;
         }
-        else
+        else if (_playerInput == INPUTSTATE.None)
         {
-            GetComponent<AudioSource>().enabled = false;
+            _soundManagerScript.NoSound(GetComponent<AudioSource>());
+            _mustPlayCastSound = true;
         }
 
 
