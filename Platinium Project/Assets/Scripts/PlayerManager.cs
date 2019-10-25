@@ -11,14 +11,18 @@ public class PlayerManager : MonoBehaviour
 
     public Player _player1;
     public Player _player2;
-    private Player _player3;
-    private Player _player4;
+    public Player _player3;
+    public Player _player4;
 
     public PlayerEntity playerEntity1;
     public PlayerEntity playerEntity2;
+    public PlayerEntity playerEntity3;
+    public PlayerEntity playerEntity4;
 
     private AttackTest _attackTest1;
     private AttackTest _attackTest2;
+    private AttackTest _attackTest3;
+    private AttackTest _attackTest4;
 
     private void Awake()
     {
@@ -32,6 +36,8 @@ public class PlayerManager : MonoBehaviour
         }
         _attackTest1 = playerEntity1.GetComponent<AttackTest>();
         _attackTest2 = playerEntity2.GetComponent<AttackTest>();
+        _attackTest3 = playerEntity3.GetComponent<AttackTest>();
+        _attackTest4 = playerEntity4.GetComponent<AttackTest>();
 
     }
 
@@ -74,7 +80,27 @@ public class PlayerManager : MonoBehaviour
             _attackTest2.Push();
         }
 
+        float inputXPlayer3 = -_player3.GetAxis("HorizontalJoy3");
+        float inputYPlayer3 = _player3.GetAxis("VerticalJoy3");
+        Vector2 dirPlayer3 = new Vector2(inputXPlayer3, inputYPlayer3);
 
+        playerEntity3.SetInputX(dirPlayer3);
+
+        if (_player3.GetButton("Push3") && _attackTest3.isShockWavePossible)
+        {
+            _attackTest3.Push();
+        }
+
+        float inputXPlayer4 = -_player4.GetAxis("HorizontalJoy4");
+        float inputYPlayer4 = _player4.GetAxis("VerticalJoy4");
+        Vector2 dirPlayer4 = new Vector2(inputXPlayer4, inputYPlayer4);
+
+        playerEntity4.SetInputX(dirPlayer4);
+
+        if (_player4.GetButton("Push4") && _attackTest4.isShockWavePossible)
+        {
+            _attackTest4.Push();
+        }
     }
 
 
