@@ -5497,8 +5497,6 @@ GameObject:
   - component: {fileID: 3876687248998186138}
   - component: {fileID: 3876687248998186136}
   - component: {fileID: 3876687248998186132}
-  - component: {fileID: 3876687248998186133}
-  - component: {fileID: 3876687248998186134}
   - component: {fileID: 3876687248998186135}
   - component: {fileID: 3876687247311588860}
   - component: {fileID: 3876687248998186149}
@@ -5547,6 +5545,7 @@ MonoBehaviour:
   tooMuchPowerTimerMax: 2
   friction: 0.1
   wallRebound: 15
+  wallReboundBouncy: 1.25
 --- !u!50 &3876687248998186136
 Rigidbody2D:
   serializedVersion: 4
@@ -5590,38 +5589,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3584
   pushbackIntensity: 1000
---- !u!58 &3876687248998186133
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3876687248998186139}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.27
---- !u!58 &3876687248998186134
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3876687248998186139}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.27
 --- !u!114 &3876687248998186135
 MonoBehaviour:
   m_ObjectHideFlags: 0
