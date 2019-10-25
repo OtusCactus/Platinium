@@ -12,7 +12,6 @@ public class PlayerEntity : MonoBehaviour
     //
     [Header("Speed")]
     public float speed;
-    public float rotationSpeed;
 
     //
     private Rigidbody2D _myRb;
@@ -126,6 +125,7 @@ public class PlayerEntity : MonoBehaviour
 
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
+
             powerJaugeParent.gameObject.SetActive(true);
             powerJauge.fillAmount = _timerPower / powerMax;
             _inputVariableToStoreDirection = _input;
@@ -221,7 +221,6 @@ public class PlayerEntity : MonoBehaviour
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
            _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
-            print("je dois jouer le son");
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
