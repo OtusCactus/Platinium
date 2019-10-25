@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -386,9 +386,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &116768471
 BoxCollider2D:
@@ -455,12 +455,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -535,46 +575,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &133599854 stripped
@@ -625,8 +625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -634,9 +634,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &133599861
 BoxCollider2D:
@@ -676,8 +676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -685,9 +685,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &133599863
 BoxCollider2D:
@@ -727,8 +727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -736,9 +736,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &133599865
 BoxCollider2D:
@@ -778,8 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -787,9 +787,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &133599867
 BoxCollider2D:
@@ -829,8 +829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -838,9 +838,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &133599869
 BoxCollider2D:
@@ -1112,12 +1112,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -1192,46 +1232,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &143709278 stripped
@@ -1282,8 +1282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1291,9 +1291,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &143709285
 BoxCollider2D:
@@ -1333,8 +1333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1342,9 +1342,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &143709287
 BoxCollider2D:
@@ -1384,8 +1384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1393,9 +1393,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &143709289
 BoxCollider2D:
@@ -1435,8 +1435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1444,9 +1444,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &143709291
 BoxCollider2D:
@@ -1486,8 +1486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1495,9 +1495,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &143709293
 BoxCollider2D:
@@ -2154,12 +2154,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -2233,46 +2273,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3000008
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -2741,6 +2741,36 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 41cec847c3017964b9bc089ae26aabdd, type: 3}
+    - target: {fileID: 3581425553625243298, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: shockWaveCooldownMax
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243298, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: shockWaveDurationMax
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243298, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: pushbackIntensity
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243308, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243308, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: tooMuchPowerTimerMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243308, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: friction
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
 --- !u!1 &318405301
@@ -3220,14 +3250,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 1898340704, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3581425553625243298, guid: 8660eee5cca4cf8498a8be09a089b271,
         type: 3}
       propertyPath: shockWaveRadius
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898340704, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
@@ -3705,12 +3735,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -3784,46 +3854,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.300002
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -4292,8 +4322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -4301,9 +4331,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &505077480
 BoxCollider2D:
@@ -5816,8 +5846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -5825,9 +5855,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &930500394
 BoxCollider2D:
@@ -6222,12 +6252,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -6301,46 +6371,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3000008
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -11545,12 +11575,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -11624,46 +11694,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3000008
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -11970,12 +12000,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -12050,46 +12120,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1065016409 stripped
@@ -12140,8 +12170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -12149,9 +12179,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1065016416
 BoxCollider2D:
@@ -12191,8 +12221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -12200,9 +12230,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1065016418
 BoxCollider2D:
@@ -12242,8 +12272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -12251,9 +12281,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1065016420
 BoxCollider2D:
@@ -12293,8 +12323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -12302,9 +12332,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1065016422
 BoxCollider2D:
@@ -12344,8 +12374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -12353,9 +12383,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1065016424
 BoxCollider2D:
@@ -13160,12 +13190,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -13240,46 +13310,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1297860118 stripped
@@ -13330,8 +13360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -13339,9 +13369,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1297860125
 BoxCollider2D:
@@ -13381,8 +13411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -13390,9 +13420,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1297860127
 BoxCollider2D:
@@ -13432,8 +13462,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -13441,9 +13471,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1297860129
 BoxCollider2D:
@@ -13483,8 +13513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -13492,9 +13522,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1297860131
 BoxCollider2D:
@@ -13534,8 +13564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -13543,9 +13573,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1297860133
 BoxCollider2D:
@@ -13620,12 +13650,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -13699,46 +13769,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2000021
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
@@ -18963,12 +18993,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -19043,46 +19113,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1428792495 stripped
@@ -19133,8 +19163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19142,9 +19172,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1428792502
 BoxCollider2D:
@@ -19184,8 +19214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19193,9 +19223,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1428792504
 BoxCollider2D:
@@ -19235,8 +19265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19244,9 +19274,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1428792506
 BoxCollider2D:
@@ -19286,8 +19316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19295,9 +19325,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1428792508
 BoxCollider2D:
@@ -19337,8 +19367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19346,9 +19376,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1428792510
 BoxCollider2D:
@@ -19863,12 +19893,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -19943,46 +20013,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1546882384 stripped
@@ -20033,8 +20063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -20042,9 +20072,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1546882391
 BoxCollider2D:
@@ -20084,8 +20114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -20093,9 +20123,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1546882393
 BoxCollider2D:
@@ -20135,8 +20165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -20144,9 +20174,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1546882395
 BoxCollider2D:
@@ -20186,8 +20216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -20195,9 +20225,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1546882397
 BoxCollider2D:
@@ -20237,8 +20267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -20246,9 +20276,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1546882399
 BoxCollider2D:
@@ -20540,12 +20570,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -20619,46 +20689,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3000008
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -20995,12 +21025,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -21075,46 +21145,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1581038452 stripped
@@ -21165,8 +21195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21174,9 +21204,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1581038459
 BoxCollider2D:
@@ -21216,8 +21246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21225,9 +21255,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1581038461
 BoxCollider2D:
@@ -21267,8 +21297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21276,9 +21306,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1581038463
 BoxCollider2D:
@@ -21318,8 +21348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21327,9 +21357,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1581038465
 BoxCollider2D:
@@ -21369,8 +21399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21378,9 +21408,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1581038467
 BoxCollider2D:
@@ -21455,12 +21485,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -21535,46 +21605,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1586147301 stripped
@@ -21625,8 +21655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21634,9 +21664,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1586147308
 BoxCollider2D:
@@ -21676,8 +21706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21685,9 +21715,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1586147310
 BoxCollider2D:
@@ -21727,8 +21757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21736,9 +21766,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1586147312
 BoxCollider2D:
@@ -21778,8 +21808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21787,9 +21817,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1586147314
 BoxCollider2D:
@@ -21829,8 +21859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21838,9 +21868,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1586147316
 BoxCollider2D:
@@ -22045,12 +22075,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -22124,46 +22194,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.300002
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -22786,12 +22816,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -22866,46 +22936,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1710805109 stripped
@@ -22956,8 +22986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -22965,9 +22995,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1710805116
 BoxCollider2D:
@@ -23007,8 +23037,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -23016,9 +23046,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1710805118
 BoxCollider2D:
@@ -23058,8 +23088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -23067,9 +23097,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1710805120
 BoxCollider2D:
@@ -23109,8 +23139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -23118,9 +23148,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1710805122
 BoxCollider2D:
@@ -23160,8 +23190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -23169,9 +23199,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1710805124
 BoxCollider2D:
@@ -23338,12 +23368,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -23417,46 +23487,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3000008
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -24160,12 +24190,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -24239,46 +24309,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3000008
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -24837,8 +24867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -24846,9 +24876,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1898660305
 BoxCollider2D:
@@ -24899,12 +24929,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -24978,46 +25048,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -25355,8 +25385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -25364,9 +25394,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1969983273
 BoxCollider2D:
@@ -25435,12 +25465,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -25515,46 +25585,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &1981282565 stripped
@@ -25605,8 +25635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -25614,9 +25644,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1981282572
 BoxCollider2D:
@@ -25656,8 +25686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -25665,9 +25695,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1981282574
 BoxCollider2D:
@@ -25707,8 +25737,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -25716,9 +25746,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1981282576
 BoxCollider2D:
@@ -25758,8 +25788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -25767,9 +25797,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1981282578
 BoxCollider2D:
@@ -25809,8 +25839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -25818,9 +25848,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &1981282580
 BoxCollider2D:
@@ -25998,12 +26028,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -26077,46 +26147,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.300002
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -26545,12 +26575,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -26624,46 +26694,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.300002
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -27405,12 +27435,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_Name
       value: WallSouthEast
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -27484,46 +27554,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.300002
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: 173d3e8872898674e8f978f73f473f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d3e8872898674e8f978f73f473f2c, type: 3}
@@ -27950,12 +27980,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallNorthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_Name
       value: WallNorthWest
       objectReference: {fileID: 0}
     - target: {fileID: -4504542204797394584, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthEast
+      objectReference: {fileID: 0}
+    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
+        type: 3}
+      propertyPath: m_Name
+      value: WallSouthWest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_TagString
       value: Walls
@@ -28030,46 +28100,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2000021
       objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: -2271535598020674892, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422654858479946931, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallNorthEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484120366374810385, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_Name
-      value: WallSouthWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7179631351208947356, guid: d22068d70cb3de74496d7698cb767820,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
 --- !u!4 &2144081365 stripped
@@ -28120,8 +28150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -28129,9 +28159,9 @@ MonoBehaviour:
   - {fileID: -1569480693482316322, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &2144081372
 BoxCollider2D:
@@ -28171,8 +28201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -28180,9 +28210,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &2144081374
 BoxCollider2D:
@@ -28222,8 +28252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -28231,9 +28261,9 @@ MonoBehaviour:
   - {fileID: -4996861437628621093, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &2144081376
 BoxCollider2D:
@@ -28273,8 +28303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -35850239040426563, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: 6975212812562875068, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -28282,9 +28312,9 @@ MonoBehaviour:
   - {fileID: -1041292729156527536, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &2144081378
 BoxCollider2D:
@@ -28324,8 +28354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 1
-  wallLimitVelocity: 0.8
+  wallLifeMax: 3
+  wallLimitVelocity: 1.2
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -28333,9 +28363,9 @@ MonoBehaviour:
   - {fileID: -35850239040426563, guid: 13ed2dcba403e5f479612f9f89cc4c73, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
-  magnitudeShake: 0.1
-  speedShake: 50
-  shakeDuration: 0.5
+  magnitudeShake: 0.07
+  speedShake: 25
+  shakeDuration: 0.2
   numberWallStateMax: 4
 --- !u!61 &2144081380
 BoxCollider2D:
@@ -31461,6 +31491,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8627799423210609202, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: wallHit
@@ -31487,11 +31522,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 85867b784713d4d4292f066904245f76, type: 3}
     - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8627799423210609202, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: m_Enabled
       value: 1
