@@ -48,13 +48,14 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Frictions")]
     public float friction = 0.1f;
+    public float wallRebound = 1.25f;
 
     [Header("Vibration")]
     private float vibrationTreshold = 0.2f;
 
     //bool sound
     private bool _mustPlayCastSound = false;
-
+    
 
     //particules
     private GameObject _particuleContact;
@@ -126,6 +127,7 @@ public class PlayerEntity : MonoBehaviour
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
 
+
             powerJaugeParent.gameObject.SetActive(true);
             powerJauge.fillAmount = _timerPower / powerMax;
             _inputVariableToStoreDirection = _input;
@@ -173,6 +175,7 @@ public class PlayerEntity : MonoBehaviour
         }
         else if(_playerInput == INPUTSTATE.Released)
         {
+
             _myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
@@ -260,13 +263,13 @@ public class PlayerEntity : MonoBehaviour
     {
         //physique custom de rebound
 
-        //if (gameObject.tag.Contains("Player"))
-        //{
-        //    if (collision.gameObject.tag == "Walls")
-        //    {
-        //        Bounce(collision.GetContact(0).normal);
-        //    }
-        //}
+        if (gameObject.tag.Contains("Player"))
+        {
+            if (collision.gameObject.tag == "Walls")
+            {
+                Bounce(collision.GetContact(0).normal);
+            }
+        }
 
         _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
         _particuleContact.GetComponent<ParticleSystem>().Play();
@@ -277,7 +280,7 @@ public class PlayerEntity : MonoBehaviour
         Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
         print(direction + "c'est la direction");
         //_myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
-        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * (_lastFramePower * speed);
+        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((_lastFrameVelocity.magnitude / wallRebound) * speed);
     }
 
     public void SetInputX(Vector2 myInput)
