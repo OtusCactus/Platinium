@@ -44,12 +44,13 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.Log("player" + player+1 + "win");
             restartMenu.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
     void _UpdateUI(int player)
     {
-        if(player == 0)
+        if(player == 1)
         {
             scoreP1[actualRound].GetComponent<Image>().color = Color.green;
             scoreP2[actualRound].GetComponent<Image>().color = Color.red;

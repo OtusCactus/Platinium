@@ -14,10 +14,12 @@ public class UI_gameOverMenu : MonoBehaviour
         restart.onClick.Invoke();
         quit.onClick.Invoke();
     }*/
+    
 
     public void RestartMatch()
     {
-        SceneManager.LoadScene("Proto 1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void Quit()
