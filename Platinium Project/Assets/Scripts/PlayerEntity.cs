@@ -131,7 +131,7 @@ public class PlayerEntity : MonoBehaviour
             powerJaugeParent.gameObject.SetActive(true);
             powerJauge.fillAmount = _timerPower / powerMax;
             _inputVariableToStoreDirection = _input;
-            _myRb.drag = 3;
+            //_myRb.drag = 3;
             _timerPower += Time.fixedDeltaTime;
 
             //check si ça fait pas de probs plus tard
@@ -143,7 +143,7 @@ public class PlayerEntity : MonoBehaviour
                 {
                     tooMuchPowerTimer = 0;
                     _isTooMuchPowerGathered = true;
-                    _myRb.drag = 0;
+                    //_myRb.drag = 0;
                     powerJaugeParent.gameObject.SetActive(false);
                     _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
@@ -176,7 +176,7 @@ public class PlayerEntity : MonoBehaviour
         else if(_playerInput == INPUTSTATE.Released)
         {
 
-            _myRb.drag = 0;
+            //_myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
