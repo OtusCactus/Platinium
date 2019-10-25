@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3e8bc5155c4c9ed46a63ac64c06408f3, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2377,11 +2377,6 @@ PrefabInstance:
       propertyPath: powerMax
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3581425553625243298, guid: 8660eee5cca4cf8498a8be09a089b271,
-        type: 3}
-      propertyPath: shockWaveRadius
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3581425553625243297, guid: 8660eee5cca4cf8498a8be09a089b271,
         type: 3}
       propertyPath: reactivatingScriptVelocity
@@ -2391,6 +2386,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 41cec847c3017964b9bc089ae26aabdd, type: 3}
+    - target: {fileID: 3581425553625243298, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: shockWaveRadius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3581425552979159207, guid: 8660eee5cca4cf8498a8be09a089b271,
         type: 3}
       propertyPath: m_Layer
@@ -3039,7 +3039,7 @@ Camera:
   m_GameObject: {fileID: 490292815}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.6222855, g: 0.71781176, b: 0.8679245, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -21165,6 +21165,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018235437935430363, guid: 63371290dd3454a49a6c615a33f18e1f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63e1722e7fdd05a47a37526c312837b6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63371290dd3454a49a6c615a33f18e1f, type: 3}
 --- !u!4 &4485591728015333547 stripped
@@ -21416,31 +21421,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.1095476
       objectReference: {fileID: 0}
-    - target: {fileID: 5745505756664892773, guid: 4f369988f2695c849a098ed67166e06f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.4079615
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.3725097
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.0010284781
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.1688954
-      objectReference: {fileID: 0}
     - target: {fileID: 5745505756664892777, guid: 4f369988f2695c849a098ed67166e06f,
         type: 3}
       propertyPath: arena
@@ -21496,6 +21476,31 @@ PrefabInstance:
       propertyPath: wallAppearance.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 933a17b9d478aa44dbb422ab3102a475, type: 2}
+    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.4079615
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.3725097
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0010284781
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745505756664892772, guid: 4f369988f2695c849a098ed67166e06f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.1688954
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745505756664892773, guid: 4f369988f2695c849a098ed67166e06f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f369988f2695c849a098ed67166e06f, type: 3}
 --- !u!1 &8213482573648745921 stripped
