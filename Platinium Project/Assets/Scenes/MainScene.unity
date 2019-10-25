@@ -14238,6 +14238,11 @@ PrefabInstance:
       propertyPath: wallRebound
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: friction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7827578486218238840, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: m_Material
@@ -19933,6 +19938,11 @@ PrefabInstance:
       propertyPath: wallRebound
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: friction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4544888571748118748, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_Material
@@ -22948,6 +22958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: wallRebound
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: friction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7827578486218238840, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -27008,6 +27023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: wallRebound
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: friction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4544888571748118748, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
