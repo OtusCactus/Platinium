@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject player1;
     public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
 
     public bool isTurning;
 
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
         faceClassScript = GetComponent<FaceClass>();
         player1.transform.position = faceClassScript.faceTab[0].player1StartingPosition.position;
         player2.transform.position = faceClassScript.faceTab[0].player2StartingPosition.position;
+        player3.transform.position = faceClassScript.faceTab[0].player3StartingPosition.position;
+        player4.transform.position = faceClassScript.faceTab[0].player4StartingPosition.position;
     }
 
     // Update is called once per frame
@@ -49,16 +53,24 @@ public class GameManager : MonoBehaviour
 
             player1.SetActive(false);
             player2.SetActive(false);
+            player3.SetActive(false);
+            player4.SetActive(false);
 
             player1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             player2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player3.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player4.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             player1.transform.position = faceClassScript.faceTab[currentFace].player1StartingPosition.position;
             player2.transform.position = faceClassScript.faceTab[currentFace].player2StartingPosition.position;
+            player3.transform.position = faceClassScript.faceTab[currentFace].player3StartingPosition.position;
+            player4.transform.position = faceClassScript.faceTab[currentFace].player4StartingPosition.position;
         }
         else
         {
             player1.SetActive(true);
             player2.SetActive(true);
+            player3.SetActive(true);
+            player4.SetActive(true);
 
         }
     }

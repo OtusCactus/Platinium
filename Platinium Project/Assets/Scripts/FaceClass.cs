@@ -18,6 +18,8 @@ public class FaceClass : MonoBehaviour
         public GameObject arenaWall;
         public Transform player1StartingPosition;
         public Transform player2StartingPosition;
+        public Transform player3StartingPosition;
+        public Transform player4StartingPosition;
         public MeshRenderer[] wallToHideNextToFace;
         public MeshRenderer[] wallToHideInOtherFace;
     }

@@ -80,6 +80,16 @@ public class AttackTest : MonoBehaviour
                 {
                     _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 1.0f, shockWaveDurationMax);
                 }
+                else if (gameObject.tag == "Player3")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player3, 0, 1.0f, shockWaveDurationMax);
+
+                }
+                else if (gameObject.tag == "Player4")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player4, 0, 1.0f, shockWaveDurationMax);
+
+                }
                 shockWaveSprite.SetActive(true);
                 //set un cercle qui check les colliders dedans, si il y a un joueur, il le rajoute dans un tableau et permet d'accéder à l'objet qui contient le collider
                 Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);

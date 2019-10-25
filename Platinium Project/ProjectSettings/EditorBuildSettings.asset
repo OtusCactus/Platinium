@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Greg.unity
-    guid: b0e0e68f836406447ba60f884916e609
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: 6ced31694dc2a5241a1bf42dfcec3d2d
+  - enabled: 1
+    path: Assets/Scenes/MainScene 1.unity
+    guid: 51cdc24e7650c214da5cb6fb38a0368e
   m_configObjects: {}
