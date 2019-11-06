@@ -4,28 +4,44 @@ using UnityEngine;
 
 public class WallBounce : MonoBehaviour
 {
-    public float friction = 15;
+    private float friction = 15;
+    [Header("Wall Type")]
+    public bool isBouncy = false;
+    public bool isSticky = false;
+    public bool isMoving = false;
+
+    private WallManager _wallManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (isBouncy)
+        {
+            friction = _wallManagerScript.wallBouncyFriction;
+        }
+        else
+        {
+            friction = _wallManagerScript.wallFriction;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerEntity player = collision.gameObject.GetComponent<PlayerEntity>();
+        if (!isSticky)
+        {
+            _wallManagerScript.Bounce(player.GetLastFrameVelocity(), collision.GetContact(0).normal, collision.gameObject.GetComponent<Rigidbody2D>(), player.speed, friction);
+        }
+        else
+        {
+            _wallManagerScript.StickyWall(collision.gameObject.GetComponent<Rigidbody2D>());
+        }
     }
 
-    private void Bounce(Vector3 playerVelocity, Vector3 collisionNormal, Rigidbody2D _myRb, float playerSpeed)
-    {
-        Vector3 direction = Vector3.Reflect(playerVelocity.normalized, collisionNormal);
-        _myRb.velocity = new Vector3(direction.x, direction.y).normalized * ((playerVelocity.magnitude / friction) * playerSpeed);
-    }
 }
