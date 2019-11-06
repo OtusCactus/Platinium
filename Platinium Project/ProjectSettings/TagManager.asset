@@ -10,6 +10,8 @@ TagManager:
   - Player3
   - Player4
   - WaitingWalls
+  - StickyWalls
+  - BouncyWalls
   layers:
   - Default
   - TransparentFX
