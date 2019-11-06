@@ -54,6 +54,9 @@ public class PlayerEntity : MonoBehaviour
     [Header("Vibration")]
     private float vibrationTreshold = 0.2f;
 
+    [Header("Animation")]
+    private Animator _animator;
+
     //bool sound
     private bool _mustPlayCastSound = false;
     
@@ -79,6 +82,7 @@ public class PlayerEntity : MonoBehaviour
 
         _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
+        _animator = GetComponent<Animator>();
     }
 
     private void OnDisable()
@@ -124,7 +128,7 @@ public class PlayerEntity : MonoBehaviour
         #region Actions depending on INPUTSTATE
         if (_playerInput == INPUTSTATE.GivingInput)
         {
-
+            _animator.SetBool("IsSlingshoting", true);
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
 
@@ -164,6 +168,14 @@ public class PlayerEntity : MonoBehaviour
                     {
                         _playerManagerScript._player2.StopVibration();
                     }
+                    else if (gameObject.tag == "Player3")
+                    {
+                        _playerManagerScript._player3.StopVibration();
+                    }
+                    else if (gameObject.tag == "Player4")
+                    {
+                        _playerManagerScript._player4.StopVibration();
+                    }
                     //_soundManagerScript.NoSound();
                     _playerInput = INPUTSTATE.None;
                 }
@@ -176,7 +188,7 @@ public class PlayerEntity : MonoBehaviour
         }
         else if(_playerInput == INPUTSTATE.Released)
         {
-
+            _animator.SetBool("IsSlingshoting", false);
             //_myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
@@ -200,6 +212,14 @@ public class PlayerEntity : MonoBehaviour
             else if (gameObject.tag == "Player2")
             {
                 _playerManagerScript._player2.StopVibration();
+            }
+            else if (gameObject.tag == "Player3")
+            {
+                _playerManagerScript._player3.StopVibration();
+            }
+            else if (gameObject.tag == "Player4")
+            {
+                _playerManagerScript._player4.StopVibration();
             }
         }
         #endregion
@@ -244,6 +264,14 @@ public class PlayerEntity : MonoBehaviour
             {
                 _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 1.0f, vibrationTreshold * 0.5f);
             }
+            if (gameObject.tag == "Player3")
+            {
+                _playerManagerScript.Vibration(_playerManagerScript._player3, 0, 1.0f, vibrationTreshold * 0.5f);
+            }
+            else if (gameObject.tag == "Player4")
+            {
+                _playerManagerScript.Vibration(_playerManagerScript._player4, 0, 1.0f, vibrationTreshold * 0.5f);
+            }
             vibrationTreshold += 0.2f;
         }
         else if (powerJauge.fillAmount == vibrationTreshold)
@@ -255,6 +283,14 @@ public class PlayerEntity : MonoBehaviour
             else if (gameObject.tag == "Player2")
             {
                 _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 1.0f, tooMuchPowerTimerMax);
+            }
+            if (gameObject.tag == "Player3")
+            {
+                _playerManagerScript.Vibration(_playerManagerScript._player3, 0, 1.0f, tooMuchPowerTimerMax);
+            }
+            else if (gameObject.tag == "Player4")
+            {
+                _playerManagerScript.Vibration(_playerManagerScript._player4, 0, 1.0f, tooMuchPowerTimerMax);
             }
         }
     }
