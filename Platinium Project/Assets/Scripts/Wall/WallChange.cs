@@ -9,6 +9,7 @@ public class WallChange : MonoBehaviour
     [Header("Propriétés")]
     public float wallLifeMax;
     public float wallLimitVelocity;
+    public float friction = 15;
     private float wallLife;
     //
     private bool _lastHit = false;
@@ -20,7 +21,7 @@ public class WallChange : MonoBehaviour
     private float _playerVelocityRatio;
 
     //arene
-    [Header("arène")]
+    [Header("Arène")]
     public GameObject arena;
     //differents scripts 
     private WallManager _wallManagerScript;

@@ -48,8 +48,7 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Frictions")]
     public float friction = 0.1f;
-    public float wallFriction = 15f;
-    public float wallBouncyFriction = 1.25f;
+    public float frictionPlayer = 15f;
 
     [Header("Vibration")]
     private float vibrationTreshold = 0.2f;
@@ -298,39 +297,22 @@ public class PlayerEntity : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //physique custom de rebound
-        if (collision.gameObject.tag == "StickyWalls")
+        if (collision.gameObject.tag.Contains("Player"))
         {
-            Sticky();
-        }
-        else if (collision.gameObject.tag == "BouncyWalls")
-        {
-            BounceALot(collision.GetContact(0).normal);
-        }
-        else
-        {
-            Bounce(collision.GetContact(0).normal);
+            PlayerEntity otherPlayer = collision.gameObject.GetComponent<PlayerEntity>();
+            Rebound(otherPlayer.GetLastFrameVelocity(), collision.GetContact(0).normal, frictionPlayer);
+            otherPlayer.Rebound(_lastFrameVelocity, collision.GetContact(0).normal, frictionPlayer);
         }
 
         _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
         _particuleContact.GetComponent<ParticleSystem>().Play();
     }
 
-    private void Bounce(Vector3 collisionNormal)
+    private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {
-        Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
-        print(direction + "c'est la direction");
-        //_myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
-        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((_lastFrameVelocity.magnitude / wallFriction) * speed);
-    }
-    private void BounceALot(Vector3 collisionNormal)
-    {
-        Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
-        _myRb.velocity = new Vector3(direction.x, direction.y).normalized * ((_lastFrameVelocity.magnitude / wallBouncyFriction) * speed);
-    }
-    private void Sticky()
-    {
-        _myRb.velocity = Vector3.zero;
+        Vector3 direction = Vector3.Reflect(-reboundVelocity.normalized, collisionNormal);
+        print(name + " rebound direction = " + direction);
+        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
     }
 
     public void SetInputX(Vector2 myInput)
@@ -341,6 +323,11 @@ public class PlayerEntity : MonoBehaviour
     public float GetVelocityRatio()
     {
         return _velocityConvertedToRatio;
+    }
+
+    public Vector3 GetLastFrameVelocity()
+    {
+        return _lastFrameVelocity;
     }
 
     
