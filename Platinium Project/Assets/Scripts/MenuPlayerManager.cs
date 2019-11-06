@@ -11,7 +11,7 @@ public class MenuPlayerManager : MonoBehaviour
 
     public Player _player;
 
-    public PlayerEntity playerEntity;
+    public MenuPlayerEntity menuPlayerEntity;
 
     private void Awake()
     {
@@ -41,6 +41,12 @@ public class MenuPlayerManager : MonoBehaviour
         float inputYPlayer1 = _player.GetAxis("VerticalJoy1");
         Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
 
-        playerEntity.SetInputX(dirPlayer1);
+        menuPlayerEntity.SetInputX(dirPlayer1);
+    }
+
+    public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
+    {
+
+        _player.SetVibration(motorUsed, motorVibrationStrength, duration);
     }
 }
