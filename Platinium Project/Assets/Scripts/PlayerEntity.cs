@@ -48,8 +48,8 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Frictions")]
     public float friction = 0.1f;
-    public float wallRebound = 1.25f;
-    public float wallReboundBouncy = 1.25f;
+    public float wallFriction = 15f;
+    public float wallBouncyFriction = 1.25f;
 
     [Header("Vibration")]
     private float vibrationTreshold = 0.2f;
@@ -321,12 +321,12 @@ public class PlayerEntity : MonoBehaviour
         Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
         print(direction + "c'est la direction");
         //_myRb.velocity = new Vector3(direction.x * _lastFrameVelocity.normalized.x, direction.y * _lastFrameVelocity.normalized.y);
-        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((_lastFrameVelocity.magnitude / wallRebound) * speed);
+        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((_lastFrameVelocity.magnitude / wallFriction) * speed);
     }
     private void BounceALot(Vector3 collisionNormal)
     {
         Vector3 direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
-        _myRb.velocity = new Vector3(direction.x, direction.y).normalized * ((_lastFrameVelocity.magnitude / wallReboundBouncy) * speed);
+        _myRb.velocity = new Vector3(direction.x, direction.y).normalized * ((_lastFrameVelocity.magnitude / wallBouncyFriction) * speed);
     }
     private void Sticky()
     {

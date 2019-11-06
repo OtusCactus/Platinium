@@ -63,7 +63,11 @@ public class WallChange : MonoBehaviour
         numberWallState = numberWallStateMax;
 
         //set le material du mur par défaut
-        GetComponent<MeshFilter>().mesh = wallAppearance[0];
+        GetComponent<MeshRenderer>().materials[0].color = new Color32(30, 255, 0, 255);
+        GetComponent<MeshRenderer>().materials[1].color = new Color32(30, 200, 0, 255);
+        GetComponent<MeshRenderer>().materials[2].color = new Color32(5, 255, 0, 255);
+        GetComponent<MeshRenderer>().materials[3].color = new Color32(28, 235, 0, 255);
+        GetComponent<MeshRenderer>().materials[4].color = new Color32(20, 189, 0, 255);
 
         for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
         {
@@ -95,6 +99,7 @@ public class WallChange : MonoBehaviour
             _lastHit = false;
             wallLife = wallLifeMax;
             GetComponent<MeshFilter>().mesh = wallAppearance[0];
+            GetComponent<MeshRenderer>().materials[0].color = new Color32(30, 255, 0, 255);
 
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
@@ -120,8 +125,6 @@ public class WallChange : MonoBehaviour
 
         }
 
-
-        
         if (wallLife <= 0)
         {
             _lastHit = true;
@@ -142,6 +145,8 @@ public class WallChange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+
         _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
         
         if (_playerVelocityRatio >= wallLimitVelocity)
