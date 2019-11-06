@@ -164,6 +164,14 @@ public class WallChange : MonoBehaviour
             {
                 _scoreManagerScript.AddScore(2);
             }
+            else if (collision.tag == "Player3")
+            {
+                _scoreManagerScript.AddScore(3);
+            }
+            else if (collision.tag == "Player4")
+            {
+                _scoreManagerScript.AddScore(4);
+            }
 
             switch (this.gameObject.name)
             {
