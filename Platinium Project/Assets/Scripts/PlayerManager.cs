@@ -55,8 +55,8 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         //Gère à quel joueur attribué quel action
-        float inputXPlayer1 = -_player1.GetAxis("HorizontalJoy1");
-        float inputYPlayer1 = _player1.GetAxis("VerticalJoy1");
+        float inputXPlayer1 = _player1.GetAxis("HorizontalJoy1");
+        float inputYPlayer1 = -_player1.GetAxis("VerticalJoy1");
         Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
         
         playerEntity1.SetInputX(dirPlayer1);

@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     public int nbrPlayers;
     public GameObject[] scoreP1;
     public GameObject[] scoreP2;
+    public GameObject[] scoreP3;
+    public GameObject[] scoreP4;
     public GameObject restartMenu;
 
     private int[] _playerScore;
@@ -54,11 +56,29 @@ public class ScoreManager : MonoBehaviour
         {
             scoreP1[actualRound].GetComponent<Image>().color = Color.green;
             scoreP2[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP3[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP4[actualRound].GetComponent<Image>().color = Color.red;
         }
-        else // if P2 win
+        else if(player == 2) // if P2 win
         {
             scoreP1[actualRound].GetComponent<Image>().color = Color.red;
             scoreP2[actualRound].GetComponent<Image>().color = Color.green;
+            scoreP3[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP4[actualRound].GetComponent<Image>().color = Color.red;
+        }
+        else if (player == 3) // if P2 win
+        {
+            scoreP1[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP2[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP3[actualRound].GetComponent<Image>().color = Color.green;
+            scoreP4[actualRound].GetComponent<Image>().color = Color.red;
+        }
+        else if (player == 4) // if P2 win
+        {
+            scoreP1[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP2[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP3[actualRound].GetComponent<Image>().color = Color.red;
+            scoreP4[actualRound].GetComponent<Image>().color = Color.green;
         }
     }
 
