@@ -6,6 +6,8 @@ public class WallManager : MonoBehaviour
 {
     //Grégoire s'est occupé de ce script
 
+    public float wallFriction = 15;
+    public float wallBouncyFriction = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +29,14 @@ public class WallManager : MonoBehaviour
         nextface = wallOrientFaceChangeTab[currentFace];
         
         return nextface;
+    }
+    public void Bounce(Vector3 playerVelocity, Vector3 collisionNormal, Rigidbody2D _myRb, float playerSpeed, float myFriction)
+    {
+        Vector3 direction = Vector3.Reflect(playerVelocity.normalized, collisionNormal);
+        _myRb.velocity = new Vector3(direction.x, direction.y).normalized * ((playerVelocity.magnitude / myFriction) * playerSpeed);
+    }
+    public void StickyWall(Rigidbody2D _myRb)
+    {
+        _myRb.velocity = Vector3.zero;
     }
 }

@@ -51,7 +51,7 @@ public class WallChange : MonoBehaviour
 
         //récupération des scripts
         _arenaRotationScript = arena.GetComponent<ArenaRotation>();
-        _wallManagerScript = GameObject.FindWithTag("GameController").GetComponent<WallManager>();
+        _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
         _faceClassScript = GameObject.FindWithTag("GameController").GetComponent<FaceClass>();
