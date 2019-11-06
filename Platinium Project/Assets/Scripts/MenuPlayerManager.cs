@@ -11,7 +11,7 @@ public class MenuPlayerManager : MonoBehaviour
 
     public Player _player;
 
-    public MenuPlayerEntity menuPlayerEntity;
+    public InMenuPlayer playerEntity;
 
     private void Awake()
     {
@@ -43,10 +43,10 @@ public class MenuPlayerManager : MonoBehaviour
 
         menuPlayerEntity.SetInputX(dirPlayer1);
     }
-
     public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
     {
 
         _player.SetVibration(motorUsed, motorVibrationStrength, duration);
     }
+
 }

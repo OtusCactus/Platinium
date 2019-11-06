@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
 
-public class PlayerEntity : MonoBehaviour
+public class InMenuPlayer : MonoBehaviour
 {
     //Ce script sert aux déplacements des joueurs
     //Pour l'instant on utilise la physique d'Unity pour le proto, mais on changera pour une physique personnalisée pour la semaine prochaine
@@ -58,13 +58,13 @@ public class PlayerEntity : MonoBehaviour
 
     //bool sound
     private bool _mustPlayCastSound = false;
-    
+
 
     //particules
     private GameObject _particuleContact;
 
     private SoundManager _soundManagerScript;
-    private PlayerManager _playerManagerScript;
+    private MenuPlayerManager _playerManagerScript;
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
@@ -80,7 +80,7 @@ public class PlayerEntity : MonoBehaviour
         _particuleContact = this.transform.GetChild(1).gameObject;
 
         _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
-        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
+        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<MenuPlayerManager>();
         _animator = GetComponent<Animator>();
     }
 
@@ -92,7 +92,7 @@ public class PlayerEntity : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-         if (_myRb.velocity != Vector2.zero)
+        if (_myRb.velocity != Vector2.zero)
         {
             Vector2 frictionDir = _myRb.velocity.normalized;
             float frictionToApply = friction * Time.fixedDeltaTime;
@@ -118,7 +118,7 @@ public class PlayerEntity : MonoBehaviour
         {
             _playerInput = INPUTSTATE.EasingInput;
         }
-        else if((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
+        else if ((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
         {
             _playerInput = INPUTSTATE.Released;
         }
@@ -161,19 +161,7 @@ public class PlayerEntity : MonoBehaviour
                     if (gameObject.tag == "Player1")
                     {
 
-                        _playerManagerScript._player1.StopVibration();
-                    }
-                    else if (gameObject.tag == "Player2")
-                    {
-                        _playerManagerScript._player2.StopVibration();
-                    }
-                    else if (gameObject.tag == "Player3")
-                    {
-                        _playerManagerScript._player3.StopVibration();
-                    }
-                    else if (gameObject.tag == "Player4")
-                    {
-                        _playerManagerScript._player4.StopVibration();
+                        _playerManagerScript._player.StopVibration();
                     }
                     //_soundManagerScript.NoSound();
                     _playerInput = INPUTSTATE.None;
@@ -182,21 +170,21 @@ public class PlayerEntity : MonoBehaviour
         }
         else if (_playerInput == INPUTSTATE.EasingInput)
         {
-                _timerDeadPoint += Time.fixedDeltaTime;
+            _timerDeadPoint += Time.fixedDeltaTime;
 
         }
-        else if(_playerInput == INPUTSTATE.Released)
+        else if (_playerInput == INPUTSTATE.Released)
         {
-            _animator.SetBool("IsSlingshoting", false);
+            //_animator.SetBool("IsSlingshoting", false);
             //_myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
-            _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
+            _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
             _inputVariableToStoreDirection = Vector2.zero;
             _lastFramePower = _timerPower;
             _timerPower = 0;
             _timerDeadPoint = 0;
-            
+
             //_soundManagerScript.NoSound();
             _playerInput = INPUTSTATE.None;
         }
@@ -206,19 +194,7 @@ public class PlayerEntity : MonoBehaviour
             powerJauge.fillAmount = 0;
             if (gameObject.tag == "Player1")
             {
-                _playerManagerScript._player1.StopVibration();
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript._player2.StopVibration();
-            }
-            else if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript._player3.StopVibration();
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript._player4.StopVibration();
+                _playerManagerScript._player.StopVibration();
             }
         }
         #endregion
@@ -241,9 +217,9 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
-        if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
+        if (_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-           _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
+            _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
@@ -257,19 +233,7 @@ public class PlayerEntity : MonoBehaviour
         {
             if (gameObject.tag == "Player1")
             {
-                _playerManagerScript.Vibration(_playerManagerScript._player1, 0, 1.0f, vibrationTreshold * 0.5f);
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 1.0f, vibrationTreshold * 0.5f);
-            }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript._player3, 0, 1.0f, vibrationTreshold * 0.5f);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript._player4, 0, 1.0f, vibrationTreshold * 0.5f);
+               _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, vibrationTreshold * 0.5f);
             }
             vibrationTreshold += 0.2f;
         }
@@ -277,42 +241,9 @@ public class PlayerEntity : MonoBehaviour
         {
             if (gameObject.tag == "Player1")
             {
-                _playerManagerScript.Vibration(_playerManagerScript._player1, 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript._player3, 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript._player4, 0, 1.0f, tooMuchPowerTimerMax);
+                _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, tooMuchPowerTimerMax);
             }
         }
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Contains("Player"))
-        {
-            PlayerEntity otherPlayer = collision.gameObject.GetComponent<PlayerEntity>();
-            Rebound(otherPlayer.GetLastFrameVelocity(), collision.GetContact(0).normal, frictionPlayer);
-            otherPlayer.Rebound(_lastFrameVelocity, collision.GetContact(0).normal, frictionPlayer);
-        }
-
-            _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
-            _particuleContact.GetComponent<ParticleSystem>().Play();
-    }
-
-    private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
-    {
-        Vector3 direction = Vector3.Reflect(-reboundVelocity.normalized, collisionNormal);
-        print(name + " rebound direction = " + direction);
-        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
     }
 
     public void SetInputX(Vector2 myInput)
@@ -330,5 +261,5 @@ public class PlayerEntity : MonoBehaviour
         return _lastFrameVelocity;
     }
 
-    
+
 }
