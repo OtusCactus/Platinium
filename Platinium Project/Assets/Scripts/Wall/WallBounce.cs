@@ -15,13 +15,12 @@ public class WallBounce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerEntity player = collision.gameObject.GetComponent<PlayerEntity>();
-        Bounce(collision.gameObject.GetComponent<PlayerEntity>().GetLastFrameVelocity(), collision.GetContact(0).normal, collision.gameObject.GetComponent<Rigidbody2D>(), player.speed);
     }
 
     private void Bounce(Vector3 playerVelocity, Vector3 collisionNormal, Rigidbody2D _myRb, float playerSpeed)

@@ -304,8 +304,8 @@ public class PlayerEntity : MonoBehaviour
             otherPlayer.Rebound(_lastFrameVelocity, collision.GetContact(0).normal, frictionPlayer);
         }
 
-        _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
-        _particuleContact.GetComponent<ParticleSystem>().Play();
+            _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
+            _particuleContact.GetComponent<ParticleSystem>().Play();
     }
 
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
