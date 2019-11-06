@@ -6,6 +6,13 @@ using Rewired;
 
 public class InMenuPlayer : MonoBehaviour
 {
+    public int currentFace;
+    public bool isTurning;
+    public Quaternion arenaRotation;
+    public GameObject arena;
+
+
+
     //Ce script sert aux déplacements des joueurs
     //Pour l'instant on utilise la physique d'Unity pour le proto, mais on changera pour une physique personnalisée pour la semaine prochaine
 
@@ -73,6 +80,7 @@ public class InMenuPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentFace = 0;
         _myRb = GetComponent<Rigidbody2D>();
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
@@ -82,6 +90,7 @@ public class InMenuPlayer : MonoBehaviour
         _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<MenuPlayerManager>();
         _animator = GetComponent<Animator>();
+
     }
 
     private void OnDisable()
@@ -244,6 +253,57 @@ public class InMenuPlayer : MonoBehaviour
                 _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, tooMuchPowerTimerMax);
             }
         }
+
+        
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        arenaRotation = arena.transform.rotation;
+        if (currentFace == 0)
+        {
+            if (collision.name == "WallNorthEast")
+            {
+                currentFace = 1;
+                isTurning = true;
+            }
+            else if (collision.name == "WallNorthWest")
+            {
+                currentFace = 2;
+                isTurning = true;
+            }
+
+        }
+        else if (currentFace == 1)
+        {
+            if (collision.name == "WallSouth")
+            {
+                currentFace = 0;
+                isTurning = true;
+            }
+            else if (collision.name == "WallSouthWest")
+            {
+                currentFace = 2;
+                isTurning = true;
+            }
+        }
+        else if (currentFace == 2)
+        {
+            if (collision.name == "WallSouth")
+            {
+                currentFace = 0;
+                isTurning = true;
+            }
+            else if (collision.name == "WallSouthEast")
+            {
+                currentFace = 1;
+                isTurning = true;
+            }
+        }
+
+
+
     }
 
     public void SetInputX(Vector2 myInput)
