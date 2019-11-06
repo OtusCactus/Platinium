@@ -2767,11 +2767,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3581425553625243297, guid: 8660eee5cca4cf8498a8be09a089b271,
-        type: 3}
-      propertyPath: reactivatingScriptVelocity
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3581425553625243308, guid: 8660eee5cca4cf8498a8be09a089b271,
         type: 3}
       propertyPath: speed
@@ -2786,6 +2781,11 @@ PrefabInstance:
         type: 3}
       propertyPath: friction
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581425553625243297, guid: 8660eee5cca4cf8498a8be09a089b271,
+        type: 3}
+      propertyPath: reactivatingScriptVelocity
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 825795264, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
       propertyPath: m_audioClip
@@ -3247,6 +3247,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1898340704, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3581425552233106343, guid: 8660eee5cca4cf8498a8be09a089b271,
         type: 3}
       propertyPath: m_Layer
@@ -3301,10 +3305,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898340704, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8660eee5cca4cf8498a8be09a089b271, type: 3}
@@ -19965,7 +19965,7 @@ PrefabInstance:
     - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: wallReboundBouncy
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4544888571748118748, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
@@ -32020,6 +32020,11 @@ PrefabInstance:
       propertyPath: faceTab.Array.data[3].faceNumber
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8627799423210609202, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: player1
@@ -32121,11 +32126,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 85867b784713d4d4292f066904245f76, type: 3}
     - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8627799423210609202, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: m_Enabled
       value: 1
