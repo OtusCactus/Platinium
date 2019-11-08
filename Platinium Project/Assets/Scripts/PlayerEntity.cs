@@ -73,6 +73,8 @@ public class PlayerEntity : MonoBehaviour
     public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
 
+    private bool _touchedByPlayer = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,7 +132,6 @@ public class PlayerEntity : MonoBehaviour
         #region Actions depending on INPUTSTATE
         if (_playerInput == INPUTSTATE.GivingInput)
         {
-            print("je giveinpout");
             _animator.SetBool("IsSlingshoting", true);
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
@@ -200,6 +201,10 @@ public class PlayerEntity : MonoBehaviour
         }
         else if(_playerInput == INPUTSTATE.Released)
         {
+            if (_touchedByPlayer)
+            {
+                _touchedByPlayer = false;
+            }
             _animator.SetBool("IsSlingshoting", false);
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
@@ -310,6 +315,7 @@ public class PlayerEntity : MonoBehaviour
     {
         if (collision.gameObject.tag.Contains("Player"))
         {
+            _touchedByPlayer = true;
             PlayerEntity otherPlayer = collision.gameObject.GetComponent<PlayerEntity>();
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
@@ -344,7 +350,7 @@ public class PlayerEntity : MonoBehaviour
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {
         Vector3 direction = Vector3.Reflect(-reboundVelocity.normalized, collisionNormal);
-        //_myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
+        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
     }
 
     public void SetInputX(Vector2 myInput)
