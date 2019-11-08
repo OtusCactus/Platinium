@@ -48,6 +48,7 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Frictions")]
     public float friction = 0.1f;
+    public float frictionWhenCharging = 0.1f;
     public float frictionPlayer = 15f;
     public float reboundPourcentageOfSpeedIfImFaster = 25;
     public float reboundPourcentageOfSpeedIfImSlower = 75;
@@ -138,6 +139,15 @@ public class PlayerEntity : MonoBehaviour
             powerJauge.fillAmount = _timerPower / powerMax;
             _inputVariableToStoreDirection = _input;
             //_myRb.drag = 3;
+            Vector2 frictionDir = _myRb.velocity.normalized;
+            if (_myRb.velocity.sqrMagnitude >= (frictionWhenCharging * Time.fixedDeltaTime) * (frictionWhenCharging * Time.fixedDeltaTime))
+            {
+                _myRb.velocity -= (frictionWhenCharging * Time.fixedDeltaTime) * frictionDir;
+            }
+            else
+            {
+                _myRb.velocity = Vector2.zero;
+            }
             _timerPower += Time.fixedDeltaTime;
 
             //check si ça fait pas de probs plus tard
