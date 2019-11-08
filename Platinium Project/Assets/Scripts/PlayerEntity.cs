@@ -296,10 +296,6 @@ public class PlayerEntity : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        print("ma nvlle vel sorti plauer == " + _myRb.velocity + " " + name);
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Contains("Player"))
@@ -309,10 +305,7 @@ public class PlayerEntity : MonoBehaviour
             {
                 if(otherPlayer._lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
                 {
-                    print("je prend 25 de ma vitesse");
                     Rebound((-_lastFrameVelocity * reboundPourcentageOfSpeedIfImFaster)/100, collision.GetContact(0).normal, frictionPlayer);
-                    //print("25 de ma vit == " + (-_lastFrameVelocity * reboundPourcentageOfSpeedIfImFaster) / 100)
-                    print("ma nvlle vel == " + _myRb.velocity + " " + name);
                 }
                 else
                 {

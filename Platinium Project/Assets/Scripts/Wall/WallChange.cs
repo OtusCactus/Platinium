@@ -43,6 +43,9 @@ public class WallChange : MonoBehaviour
     private int numberWallState;
     private Vector3 _cameraStartPosition;
     private float timer = 0;
+
+    private GameObject leftWall;
+    private GameObject rightWall;
    
 
     // Start is called before the first frame update
@@ -151,6 +154,7 @@ public class WallChange : MonoBehaviour
             GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
 
             _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
+
         if (!GetComponent<WallProprieties>().isIndestructible)
         {
             if (_playerVelocityRatio >= wallLimitVelocity)
@@ -220,5 +224,11 @@ public class WallChange : MonoBehaviour
             numberWallState -= 1;
             timer = 0;
         }
+    }
+
+    public void SetDammageFromConnect(float dammage)
+    {
+        wallLife -= dammage;
+        GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
     }
 }

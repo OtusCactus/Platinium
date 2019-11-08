@@ -14,11 +14,22 @@ public class WallProprieties : MonoBehaviour
     public bool isMoving = false;
 
     private WallManager _wallManagerScript;
+    private GameObject rightWall;
+    private GameObject leftWall;
 
     // Start is called before the first frame update
     void Start()
     {
         _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
+
+        if (isConnectedRight)
+        {
+            rightWall = _wallManagerScript.SetConnectedWallRight(gameObject);
+        }
+        if (isConnectedLeft)
+        {
+            leftWall = _wallManagerScript.SetConnectedLeftWall(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -44,6 +55,15 @@ public class WallProprieties : MonoBehaviour
         else
         {
             _wallManagerScript.StickyWall(collision.gameObject.GetComponent<Rigidbody2D>());
+        }
+
+        if (isConnectedRight)
+        {
+            _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, rightWall);
+        }
+        if (isConnectedLeft)
+        {
+            _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, leftWall);
         }
     }
 
