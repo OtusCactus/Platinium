@@ -21,15 +21,8 @@ public class WallProprieties : MonoBehaviour
     void Start()
     {
         _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
-
-        if (isConnectedRight)
-        {
             rightWall = _wallManagerScript.SetConnectedWallRight(gameObject);
-        }
-        if (isConnectedLeft)
-        {
             leftWall = _wallManagerScript.SetConnectedLeftWall(gameObject);
-        }
     }
 
     // Update is called once per frame
@@ -59,11 +52,32 @@ public class WallProprieties : MonoBehaviour
 
         if (isConnectedRight)
         {
-            _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, rightWall);
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+
+                _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, rightWall);
+            }
         }
         if (isConnectedLeft)
         {
-            _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, leftWall);
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, leftWall);
+            }
+        }
+        if(rightWall.GetComponent<WallProprieties>().isConnectedLeft && !rightWall.GetComponent<WallProprieties>().isIndestructible)
+        {
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                rightWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            }
+        }
+        if (leftWall.GetComponent<WallProprieties>().isConnectedRight && !leftWall.GetComponent<WallProprieties>().isIndestructible)
+        {
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                leftWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            }
         }
     }
 

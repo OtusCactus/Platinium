@@ -46,6 +46,8 @@ public class WallChange : MonoBehaviour
 
     private GameObject leftWall;
     private GameObject rightWall;
+
+    private 
    
 
     // Start is called before the first frame update
@@ -151,12 +153,11 @@ public class WallChange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
-
             _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
 
-        if (!GetComponent<WallProprieties>().isIndestructible)
+        if (!GetComponent<WallProprieties>().isIndestructible && collision.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
         {
+            print("bloop");
             if (_playerVelocityRatio >= wallLimitVelocity)
             {
                 wallLife = 0;
@@ -209,6 +210,8 @@ public class WallChange : MonoBehaviour
                 _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
                 _lastHit = false;
             }
+
+            GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         }
             
         
@@ -216,7 +219,25 @@ public class WallChange : MonoBehaviour
 
     private void ShakeScreen()
     {
-        camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
+        switch (gameObject.name)
+        {
+            case "WallNorthEast":
+                camera.transform.position = new Vector3(Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.x - magnitudeShake, Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
+                break;
+            case "WallNorthWest":
+                camera.transform.position = new Vector3((Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.x + magnitudeShake), Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
+                break;
+            case "WallSouthWest":
+                camera.transform.position = new Vector3(Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.x - magnitudeShake, Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
+                break;
+            case "WallSouth":
+                camera.transform.position = new Vector3(_cameraStartPosition.x, Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
+                break;
+            case "WallSouthEast":
+                camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
+                break;
+        }
+        //camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
         timer += Time.deltaTime;
         if (timer >= shakeDuration)
         {
@@ -228,7 +249,22 @@ public class WallChange : MonoBehaviour
 
     public void SetDammageFromConnect(float dammage)
     {
-        wallLife -= dammage;
         GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        if (dammage >= wallLimitVelocity)
+        {
+            wallLife = 0;
+        }
+        else if (dammage < wallLimitVelocity)
+        {
+            wallLife -= dammage;
+            print("aaaaaaaaaaaaaa");
+        }
+        GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+
+    }
+
+    public float GetPlayerVelocityRatio()
+    {
+        return _playerVelocityRatio;
     }
 }
