@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallBounce : MonoBehaviour
+public class WallProprieties : MonoBehaviour
 {
     private float friction = 15;
     [Header("Wall Type")]
     public bool isBouncy = false;
     public bool isSticky = false;
+    public bool isIndestructible = false;
+    public bool isConnectedRight = false;
+    public bool isConnectedLeft = false;
     public bool isMoving = false;
 
     private WallManager _wallManagerScript;

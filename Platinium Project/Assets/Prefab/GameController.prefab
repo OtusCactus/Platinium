@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8627799423210609203}
-  - component: {fileID: 8627799423210609202}
   - component: {fileID: 8627799423210609205}
   - component: {fileID: 8627799423210609204}
   - component: {fileID: 8627799423210609207}
   - component: {fileID: -7169960847691262422}
+  - component: {fileID: 1366459344}
+  - component: {fileID: 1366459345}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -35,18 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8627799423210609202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8627799423210609200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43465cab69a37ef4f9772c2b1fdf0b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8627799423210609205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerEntity1: {fileID: 0}
   playerEntity2: {fileID: 0}
+  playerEntity3: {fileID: 0}
+  playerEntity4: {fileID: 0}
 --- !u!114 &8627799423210609204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,11 +64,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22b49a5596a93d40941bd378ed2c3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallNorthEastTab: 020000000900000002000000030000000100000002000000080000000300000007000000090000000700000008000000
-  _wallNorthWestTab: 030000000300000009000000080000000400000001000000090000000900000008000000020000000a00000007000000
-  _wallSouthEastTab: 060000000a0000000100000001000000060000000a0000000c000000040000000a000000070000000c00000004000000
-  _wallSouthTab: 050000000600000004000000050000000b0000000b0000000b0000000c000000020000000b0000000500000005000000
-  _wallSouthWestTab: 0400000001000000080000000c0000000c000000050000000a000000070000000300000006000000060000000b000000
+  _wallNorthEastTab: 020000000900000002000000030000000400000002000000080000000300000003000000090000000700000008000000
+  _wallNorthWestTab: 030000000300000009000000080000000c00000001000000090000000900000002000000020000000a00000007000000
+  _wallSouthEastTab: 060000000a0000000100000001000000010000000a0000000c0000000400000008000000070000000c00000004000000
+  _wallSouthTab: 05000000060000000400000005000000060000000b0000000b0000000c000000070000000b0000000500000005000000
+  _wallSouthWestTab: 0400000001000000080000000c0000000b000000050000000a000000070000000a00000006000000060000000b000000
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
+  isTurning: 0
+  currentFace: 0
 --- !u!114 &8627799423210609207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,41 +89,293 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceTab:
   - faceNumber: 1
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 2
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 3
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 4
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 5
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 6
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 7
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 8
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 9
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 10
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 11
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - faceNumber: 12
-    cameraPosition: {fileID: 0}
-    spriteRotation: {x: 0, y: 0, z: 0}
+    arenaRotation: {fileID: 0}
+    arenaWall: {fileID: 0}
+    player1StartingPosition: {fileID: 0}
+    player2StartingPosition: {fileID: 0}
+    player3StartingPosition: {fileID: 0}
+    player4StartingPosition: {fileID: 0}
+    wallToHideNextToFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    wallToHideInOtherFace:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!114 &-7169960847691262422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +388,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b346212da52246488e1abd8c5a26ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallSounds: []
-  playerSounds: []
-  gameSounds: []
+  wallHit: {fileID: 8300000, guid: a6e7796a418a93e41814a0089b6d643f, type: 3}
+  playerCast: {fileID: 8300000, guid: 41cec847c3017964b9bc089ae26aabdd, type: 3}
+  playersCollision: {fileID: 8300000, guid: c38a4dd55ba96d943bf46a5c20f6ce69, type: 3}
+  endRound: {fileID: 8300000, guid: 85867b784713d4d4292f066904245f76, type: 3}
+  myAudio: {fileID: 0}
+--- !u!82 &1366459344
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627799423210609200}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1366459345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627799423210609200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256ea0c9fbe277545b6ed7b4dea8408b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToWin: 3
+  nbrPlayers: 2
+  scoreP1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  scoreP2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  scoreP3: []
+  scoreP4: []
+  restartMenu: {fileID: 0}

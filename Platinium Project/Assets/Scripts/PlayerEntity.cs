@@ -49,6 +49,8 @@ public class PlayerEntity : MonoBehaviour
     [Header("Frictions")]
     public float friction = 0.1f;
     public float frictionPlayer = 15f;
+    public float reboundPourcentageOfSpeedIfImFaster = 25;
+    public float reboundPourcentageOfSpeedIfImSlower = 75;
 
     [Header("Vibration")]
     private float vibrationTreshold = 0.2f;
@@ -294,14 +296,42 @@ public class PlayerEntity : MonoBehaviour
         }
     }
 
-
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        print("ma nvlle vel sorti plauer == " + _myRb.velocity + " " + name);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Contains("Player"))
         {
             PlayerEntity otherPlayer = collision.gameObject.GetComponent<PlayerEntity>();
-            Rebound(otherPlayer.GetLastFrameVelocity(), collision.GetContact(0).normal, frictionPlayer);
-            otherPlayer.Rebound(_lastFrameVelocity, collision.GetContact(0).normal, frictionPlayer);
+            if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
+            {
+                if(otherPlayer._lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
+                {
+                    print("je prend 25 de ma vitesse");
+                    Rebound((-_lastFrameVelocity * reboundPourcentageOfSpeedIfImFaster)/100, collision.GetContact(0).normal, frictionPlayer);
+                    //print("25 de ma vit == " + (-_lastFrameVelocity * reboundPourcentageOfSpeedIfImFaster) / 100)
+                    print("ma nvlle vel == " + _myRb.velocity + " " + name);
+                }
+                else
+                {
+                    Rebound((otherPlayer.GetLastFrameVelocity() * reboundPourcentageOfSpeedIfImFaster) / 100, collision.GetContact(0).normal, frictionPlayer);
+                }
+                otherPlayer.Rebound((_lastFrameVelocity * otherPlayer.reboundPourcentageOfSpeedIfImSlower) / 100, collision.GetContact(0).normal, otherPlayer.frictionPlayer);
+            }
+            else
+            {
+                if(_lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
+                {
+                    otherPlayer.Rebound((-otherPlayer.GetLastFrameVelocity() * otherPlayer.reboundPourcentageOfSpeedIfImFaster) / 100, collision.GetContact(0).normal, otherPlayer.frictionPlayer);
+                }
+                else
+                {
+                    otherPlayer.Rebound((_lastFrameVelocity * otherPlayer.reboundPourcentageOfSpeedIfImFaster) / 100, collision.GetContact(0).normal, otherPlayer.frictionPlayer);
+                }
+                Rebound((otherPlayer.GetLastFrameVelocity() * reboundPourcentageOfSpeedIfImSlower) / 100, collision.GetContact(0).normal, frictionPlayer);
+            }
         }
 
             _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
@@ -311,7 +341,6 @@ public class PlayerEntity : MonoBehaviour
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {
         Vector3 direction = Vector3.Reflect(-reboundVelocity.normalized, collisionNormal);
-        print(name + " rebound direction = " + direction);
         _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
     }
 

@@ -39,4 +39,8 @@ public class WallManager : MonoBehaviour
     {
         _myRb.velocity = Vector3.zero;
     }
+    public void ConnectedRightWall(WallChange rightWall)
+    {
+        
+    }
 }
