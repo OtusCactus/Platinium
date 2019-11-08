@@ -15,7 +15,7 @@ public class MenuPlayerManager : MonoBehaviour
 
     public InMenuPlayer playerEntity;
 
-    public GameObject PlayerSelection;
+    public GameObject playerSelection;
 
     private void Awake()
     {
@@ -33,7 +33,7 @@ public class MenuPlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        playerSelection.SetActive(false);
         _player = ReInput.players.GetPlayer("Player1");
     }
 
@@ -70,7 +70,7 @@ public class MenuPlayerManager : MonoBehaviour
 
     void ShowPlayerSelection()
     {
-        PlayerSelection.SetActive(true);
+        playerSelection.SetActive(true);
     }
 
     void ExitGame()
