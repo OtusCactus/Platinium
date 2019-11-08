@@ -15,6 +15,8 @@ public class MenuPlayerManager : MonoBehaviour
 
     public InMenuPlayer playerEntity;
 
+    public GameObject PlayerSelection;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -47,7 +49,7 @@ public class MenuPlayerManager : MonoBehaviour
 
         if (playerEntity.currentFace == 0 && _player.GetButton("Push1"))
         {
-            StartGame();
+            ShowPlayerSelection();
         }
         else if (playerEntity.currentFace == 1 && _player.GetButton("Push1"))
         {
@@ -61,9 +63,14 @@ public class MenuPlayerManager : MonoBehaviour
     }
 
 
-    void StartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("MainScene 2");
+    }
+
+    void ShowPlayerSelection()
+    {
+        PlayerSelection.SetActive(true);
     }
 
     void ExitGame()

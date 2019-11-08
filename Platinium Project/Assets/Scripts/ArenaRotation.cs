@@ -121,9 +121,9 @@ public class ArenaRotation : MonoBehaviour
             transform.rotation = currentRotation;
 
 
-                _playerManagerScript._player1.StopVibration();
+                _playerManagerScript.player1.StopVibration();
 
-                _playerManagerScript._player2.StopVibration();
+                _playerManagerScript.player2.StopVibration();
             
 
             //reset le lerp.

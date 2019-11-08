@@ -74,20 +74,20 @@ public class AttackTest : MonoBehaviour
 
                 if (gameObject.tag == "Player1")
                 {
-                    _playerManagerScript.Vibration(_playerManagerScript._player1, 0, 1.0f, shockWaveDurationMax);
+                    _playerManagerScript.Vibration(_playerManagerScript.player1, 0, 1.0f, shockWaveDurationMax);
                 }
                 else if (gameObject.tag == "Player2")
                 {
-                    _playerManagerScript.Vibration(_playerManagerScript._player2, 0, 1.0f, shockWaveDurationMax);
+                    _playerManagerScript.Vibration(_playerManagerScript.player2, 0, 1.0f, shockWaveDurationMax);
                 }
                 else if (gameObject.tag == "Player3")
                 {
-                    _playerManagerScript.Vibration(_playerManagerScript._player3, 0, 1.0f, shockWaveDurationMax);
+                    _playerManagerScript.Vibration(_playerManagerScript.player3, 0, 1.0f, shockWaveDurationMax);
 
                 }
                 else if (gameObject.tag == "Player4")
                 {
-                    _playerManagerScript.Vibration(_playerManagerScript._player4, 0, 1.0f, shockWaveDurationMax);
+                    _playerManagerScript.Vibration(_playerManagerScript.player4, 0, 1.0f, shockWaveDurationMax);
 
                 }
                 shockWaveSprite.SetActive(true);
