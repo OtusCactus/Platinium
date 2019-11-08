@@ -151,7 +151,8 @@ public class WallChange : MonoBehaviour
             GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
 
             _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
-
+        if (!GetComponent<WallProprieties>().isIndestructible)
+        {
             if (_playerVelocityRatio >= wallLimitVelocity)
             {
                 wallLife = 0;
@@ -204,6 +205,8 @@ public class WallChange : MonoBehaviour
                 _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
                 _lastHit = false;
             }
+        }
+            
         
     }
 
