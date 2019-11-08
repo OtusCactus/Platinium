@@ -5629,8 +5629,7 @@ MonoBehaviour:
   powerJaugeParent: {fileID: 3876687249007833889}
   tooMuchPowerTimerMax: 2
   friction: 0.1
-  wallFriction: 15
-  wallBouncyFriction: 1.25
+  frictionPlayer: 15
 --- !u!50 &3876687248998186136
 Rigidbody2D:
   serializedVersion: 4
@@ -6160,7 +6159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4100775667729643683}
   m_LocalRotation: {x: 0.001193738, y: -0.010631624, z: -0.06509849, w: 0.9978215}
-  m_LocalPosition: {x: 1.07, y: 1.9100004, z: 0}
+  m_LocalPosition: {x: 1.07, y: 1.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3876687248484492400}
@@ -6311,7 +6310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8143220231691665542
 Transform:
   m_ObjectHideFlags: 0
@@ -6320,8 +6319,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4826620742251067284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.58, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 11.11111}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 11.11111}
   m_Children: []
   m_Father: {fileID: 3876687248484492400}
   m_RootOrder: 0
