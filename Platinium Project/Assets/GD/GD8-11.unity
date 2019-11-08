@@ -1824,7 +1824,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.52}
 --- !u!1 &194557299 stripped
 GameObject:
@@ -2609,7 +2609,7 @@ GameObject:
   - component: {fileID: 380338767}
   - component: {fileID: 380338770}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: BlackHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2692,7 +2692,7 @@ Transform:
   m_LocalScale: {x: 0.18729109, y: 0.18729109, z: 0.18729109}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &380338770
 MonoBehaviour:
@@ -3304,7 +3304,7 @@ PrefabInstance:
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
@@ -7848,7 +7848,7 @@ PrefabInstance:
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -13865,7 +13865,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1524190921
 MonoBehaviour:
@@ -15958,7 +15958,7 @@ PrefabInstance:
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -18444,7 +18444,7 @@ PrefabInstance:
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
