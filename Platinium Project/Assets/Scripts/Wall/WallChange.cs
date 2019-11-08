@@ -228,7 +228,19 @@ public class WallChange : MonoBehaviour
 
     public void SetDammageFromConnect(float dammage)
     {
-        wallLife -= dammage;
         GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        if (dammage >= wallLimitVelocity)
+        {
+            wallLife = 0;
+        }
+        else if (dammage < wallLimitVelocity)
+        {
+            wallLife -= dammage;
+        }
+    }
+
+    public float GetPlayerVelocityRatio()
+    {
+        return _playerVelocityRatio;
     }
 }
