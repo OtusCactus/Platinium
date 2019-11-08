@@ -221,4 +221,10 @@ public class WallChange : MonoBehaviour
             timer = 0;
         }
     }
+
+    public void SetDammageFromConnect(float dammage)
+    {
+        wallLife -= dammage;
+        GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+    }
 }

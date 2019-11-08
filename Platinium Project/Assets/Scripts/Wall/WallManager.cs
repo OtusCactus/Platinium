@@ -39,8 +39,159 @@ public class WallManager : MonoBehaviour
     {
         _myRb.velocity = Vector3.zero;
     }
-    public void ConnectedRightWall(WallChange rightWall)
+    public void ConnectedRightWall(float myDammage, GameObject thisWall)
     {
-        
+        GameObject rightWall = null;
+        switch (thisWall.name)
+        {
+            case "WallNorthEast":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallNorthWest")
+                    {
+                        rightWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!rightWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    rightWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallNorthWest":
+                for(int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if(thisWall.transform.parent.GetChild(i).name == "WallSouthWest")
+                    {
+                        rightWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!rightWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    rightWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallSouthWest":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "South")
+                    {
+                        rightWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!rightWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    rightWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallSouth":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallSouthEast")
+                    {
+                        rightWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!rightWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    rightWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallSouthEast":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallNorthEast")
+                    {
+                        rightWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!rightWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    rightWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+        }
+    }
+
+    public void ConnectedLeftWall(float myDammage, GameObject thisWall)
+    {
+        GameObject leftWall = null;
+        switch (thisWall.name)
+        {
+            case "WallNorthEast":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallSouthEast")
+                    {
+                        leftWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!leftWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    leftWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallNorthWest":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallNorthEast")
+                    {
+                        leftWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!leftWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    leftWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallSouthWest":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallNorthWest")
+                    {
+                        leftWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!leftWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    leftWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallSouth":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallSouthWest")
+                    {
+                        leftWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!leftWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    leftWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+            case "WallSouthEast":
+                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                {
+                    if (thisWall.transform.parent.GetChild(i).name == "WallSouth")
+                    {
+                        leftWall = thisWall.transform.parent.GetChild(i).gameObject;
+                        break;
+                    }
+                }
+                if (!leftWall.GetComponent<WallProprieties>().isIndestructible)
+                {
+                    leftWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+                }
+                break;
+        }
     }
 }

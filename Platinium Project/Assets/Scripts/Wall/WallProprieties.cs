@@ -45,6 +45,15 @@ public class WallProprieties : MonoBehaviour
         {
             _wallManagerScript.StickyWall(collision.gameObject.GetComponent<Rigidbody2D>());
         }
+
+        if (isConnectedRight)
+        {
+            _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject);
+        }
+        if (isConnectedLeft)
+        {
+            _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject);
+        }
     }
 
 }

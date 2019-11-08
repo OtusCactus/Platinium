@@ -3298,6 +3298,11 @@ PrefabInstance:
       propertyPath: reboundPourcentageOfSpeedIfImSlower
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: friction
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3306,7 +3311,7 @@ PrefabInstance:
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.39
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
@@ -3595,7 +3600,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
+  isConnectedRight: 1
   isConnectedLeft: 0
   isMoving: 0
 --- !u!1 &510313499
@@ -7869,7 +7874,7 @@ PrefabInstance:
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.025355717
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -7929,7 +7934,7 @@ PrefabInstance:
     - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: friction
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -15884,7 +15889,7 @@ PrefabInstance:
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.025355717
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -15944,7 +15949,7 @@ PrefabInstance:
     - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: friction
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -18379,7 +18384,7 @@ PrefabInstance:
     - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: friction
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
@@ -18394,7 +18399,7 @@ PrefabInstance:
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.025355717
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
