@@ -2652,7 +2652,7 @@ MonoBehaviour:
   faceClassMenuScript: {fileID: 1814875016}
   inMenuPlayerScript: {fileID: 90597506}
   player: {fileID: 3876687248912339995}
-  turningTimerMax: 2
+  turningTimerMax: 0.5
 --- !u!1 &1413006310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,7 +3986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerEntity: {fileID: 90597506}
-  PlayerSelection: {fileID: 618298084}
+  playerSelection: {fileID: 618298084}
 --- !u!4 &1814875014
 Transform:
   m_ObjectHideFlags: 0
