@@ -78,6 +78,13 @@ public class GameManager : MonoBehaviour
         {
             player[0].SetActive(false);
             player[1].SetActive(false);
+
+            player[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player[0].transform.position = faceClassScript.faceTab[currentFace].player1StartingPosition.position;
+            player[1].transform.position = faceClassScript.faceTab[currentFace].player2StartingPosition.position;
+
+
             if (player[2] != null)
             {
                 player[2].SetActive(false);
@@ -93,10 +100,6 @@ public class GameManager : MonoBehaviour
 
             }
 
-            player[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            player[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            player[0].transform.position = faceClassScript.faceTab[currentFace].player1StartingPosition.position;
-            player[1].transform.position = faceClassScript.faceTab[currentFace].player2StartingPosition.position;
         }
         else
         {

@@ -66,14 +66,14 @@ public class ScoreManager : MonoBehaviour
             scoreP3[actualRound].GetComponent<Image>().color = Color.red;
             scoreP4[actualRound].GetComponent<Image>().color = Color.red;
         }
-        else if (player == 3) // if P2 win
+        else if (player == 3) // if P3 win
         {
             scoreP1[actualRound].GetComponent<Image>().color = Color.red;
             scoreP2[actualRound].GetComponent<Image>().color = Color.red;
             scoreP3[actualRound].GetComponent<Image>().color = Color.green;
             scoreP4[actualRound].GetComponent<Image>().color = Color.red;
         }
-        else if (player == 4) // if P2 win
+        else if (player == 4) // if P4 win
         {
             scoreP1[actualRound].GetComponent<Image>().color = Color.red;
             scoreP2[actualRound].GetComponent<Image>().color = Color.red;
