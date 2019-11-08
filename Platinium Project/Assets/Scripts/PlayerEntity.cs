@@ -40,7 +40,7 @@ public class PlayerEntity : MonoBehaviour
     private bool _isTooMuchPowerGathered;
 
     //Variables pour la vitesse
-    private float _myVelocity;
+    private float _myVelocityFloat;
     private float _velocityMax;
     private float _velocityConvertedToRatio;
     private Vector3 _lastFrameVelocity;
@@ -70,7 +70,7 @@ public class PlayerEntity : MonoBehaviour
     private PlayerManager _playerManagerScript;
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
-    private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
+    public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
 
     // Start is called before the first frame update
@@ -130,6 +130,7 @@ public class PlayerEntity : MonoBehaviour
         #region Actions depending on INPUTSTATE
         if (_playerInput == INPUTSTATE.GivingInput)
         {
+            print("je giveinpout");
             _animator.SetBool("IsSlingshoting", true);
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
@@ -200,7 +201,6 @@ public class PlayerEntity : MonoBehaviour
         else if(_playerInput == INPUTSTATE.Released)
         {
             _animator.SetBool("IsSlingshoting", false);
-            //_myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
@@ -236,8 +236,8 @@ public class PlayerEntity : MonoBehaviour
         #endregion
 
         //Fait apparaitre une trail si la vitesse atteind le seuil des murs (on changera après le 0.8 par une variable)
-        _myVelocity = _myRb.velocity.sqrMagnitude;
-        _velocityConvertedToRatio = (_myVelocity / _velocityMax);
+        _myVelocityFloat = _myRb.velocity.sqrMagnitude;
+        _velocityConvertedToRatio = (_myVelocityFloat / _velocityMax);
         if (_velocityConvertedToRatio > 0.8)
         {
             GetComponent<TrailRenderer>().enabled = true;
@@ -344,7 +344,7 @@ public class PlayerEntity : MonoBehaviour
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {
         Vector3 direction = Vector3.Reflect(-reboundVelocity.normalized, collisionNormal);
-        _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
+        //_myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
     }
 
     public void SetInputX(Vector2 myInput)
@@ -360,6 +360,11 @@ public class PlayerEntity : MonoBehaviour
     public Vector3 GetLastFrameVelocity()
     {
         return _lastFrameVelocity;
+    }
+
+    public INPUTSTATE GetPlayerINPUTSTATE()
+    {
+        return _playerInput;
     }
 
     

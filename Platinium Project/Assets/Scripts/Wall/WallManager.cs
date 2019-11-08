@@ -30,10 +30,10 @@ public class WallManager : MonoBehaviour
         
         return nextface;
     }
-    public void Bounce(Vector3 playerVelocity, Vector3 collisionNormal, Rigidbody2D _myRb, float playerSpeed, float myFriction)
+    public void Bounce(Vector3 playerVelocity, Vector3 collisionNormal, Rigidbody2D playerRb, float playerSpeed, float myFriction)
     {
         Vector3 direction = Vector3.Reflect(playerVelocity.normalized, collisionNormal);
-        _myRb.velocity = new Vector3(direction.x, direction.y).normalized * ((playerVelocity.magnitude / myFriction) * playerSpeed);
+        playerRb.velocity = new Vector3(direction.x, direction.y).normalized * ((playerVelocity.magnitude / myFriction) * playerSpeed);
     }
     public void StickyWall(Rigidbody2D _myRb)
     {
@@ -44,7 +44,7 @@ public class WallManager : MonoBehaviour
         switch (thisWall.name)
         {
             case "WallNorthEast":
-                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                for (int i = 0; i < thisWall.transform.parent.childCount; i++)
                 {
                     if (thisWall.transform.parent.GetChild(i).name == "WallNorthWest")
                     {
@@ -53,7 +53,7 @@ public class WallManager : MonoBehaviour
                 }
                 break;
             case "WallNorthWest":
-                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                for (int i = 0; i < thisWall.transform.parent.childCount; i++)
                 {
                     if (thisWall.transform.parent.GetChild(i).name == "WallSouthWest")
                     {
@@ -62,16 +62,16 @@ public class WallManager : MonoBehaviour
                 }
                 break;
             case "WallSouthWest":
-                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                for (int i = 0; i < thisWall.transform.parent.childCount; i++)
                 {
-                    if (thisWall.transform.parent.GetChild(i).name == "South")
+                    if (thisWall.transform.parent.GetChild(i).name == "WallSouth")
                     {
                         return thisWall.transform.parent.GetChild(i).gameObject;
                     }
                 }
                 break;
             case "WallSouth":
-                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                for (int i = 0; i < thisWall.transform.parent.childCount; i++)
                 {
                     if (thisWall.transform.parent.GetChild(i).name == "WallSouthEast")
                     {
@@ -80,7 +80,7 @@ public class WallManager : MonoBehaviour
                 }
                 break;
             case "WallSouthEast":
-                for (int i = 0; i <= thisWall.transform.parent.childCount; i++)
+                for (int i = 0; i < thisWall.transform.parent.childCount; i++)
                 {
                     if (thisWall.transform.parent.GetChild(i).name == "WallNorthEast")
                     {

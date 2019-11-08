@@ -52,19 +52,32 @@ public class WallProprieties : MonoBehaviour
 
         if (isConnectedRight)
         {
-            _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, rightWall);
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+
+                _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, rightWall);
+            }
         }
         if (isConnectedLeft)
         {
-            _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, leftWall);
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, leftWall);
+            }
         }
         if(rightWall.GetComponent<WallProprieties>().isConnectedLeft && !rightWall.GetComponent<WallProprieties>().isIndestructible)
         {
-            rightWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                rightWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            }
         }
         if (leftWall.GetComponent<WallProprieties>().isConnectedRight && !leftWall.GetComponent<WallProprieties>().isIndestructible)
         {
-            leftWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            if (collision.gameObject.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                leftWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            }
         }
     }
 
