@@ -9,6 +9,8 @@ public class WallProprieties : MonoBehaviour
     public bool isBouncy = false;
     public bool isSticky = false;
     public bool isIndestructible = false;
+    public bool isConnectedRight = false;
+    public bool isConnectedLeft = false;
     public bool isMoving = false;
 
     private WallManager _wallManagerScript;
