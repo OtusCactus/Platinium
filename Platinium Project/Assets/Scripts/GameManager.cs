@@ -19,10 +19,13 @@ public class GameManager : MonoBehaviour
 
     private FaceClass faceClassScript;
 
-    public GameObject player1;
-    public GameObject player2;
-    public GameObject player3;
-    public GameObject player4;
+    public GameObject[] player;
+    //public GameObject player2;
+    //public GameObject player3;
+    //public GameObject player4;
+    private MenuManager menuManagerScript;
+
+    public GameObject[] playerPrefabs;
 
     public bool isTurning;
 
@@ -33,14 +36,38 @@ public class GameManager : MonoBehaviour
     public int currentFace;
     //score
 
+    private void Awake()
+    {
+        menuManagerScript = GameObject.FindWithTag("MenuManager").GetComponent<MenuManager>();
+        if (menuManagerScript != null && player.Length > 0)
+        {
+            for (int j = 0; j < player.Length; j++)
+            {
+                player[j].SetActive(false);
+                player[j] = null;
+            }
+        }
+
+        for (int i = 0; i < menuManagerScript.numbersOfPlayers; i++)
+        {
+            GameObject playerInstantiation = Instantiate(playerPrefabs[i]);
+            player[i] = playerInstantiation;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         faceClassScript = GetComponent<FaceClass>();
-        player1.transform.position = faceClassScript.faceTab[0].player1StartingPosition.position;
-        player2.transform.position = faceClassScript.faceTab[0].player2StartingPosition.position;
-        player3.transform.position = faceClassScript.faceTab[0].player3StartingPosition.position;
-        player4.transform.position = faceClassScript.faceTab[0].player4StartingPosition.position;
+
+        
+
+        player[0].transform.position = faceClassScript.faceTab[0].player1StartingPosition.position;
+        player[1].transform.position = faceClassScript.faceTab[0].player2StartingPosition.position;
+        if(player[2] != null)
+        player[2].transform.position = faceClassScript.faceTab[0].player3StartingPosition.position;
+        if (player[3] != null)
+        player[3].transform.position = faceClassScript.faceTab[0].player4StartingPosition.position;
     }
 
     // Update is called once per frame
@@ -49,29 +76,36 @@ public class GameManager : MonoBehaviour
 
         if (isTurning)
         {
+            player[0].SetActive(false);
+            player[1].SetActive(false);
+            if (player[2] != null)
+            {
+                player[2].SetActive(false);
+                player[2].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                player[2].transform.position = faceClassScript.faceTab[currentFace].player3StartingPosition.position;
 
+            }
+            if (player[3] != null)
+            {
+                player[3].SetActive(false);
+                player[3].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                player[3].transform.position = faceClassScript.faceTab[currentFace].player4StartingPosition.position;
 
-            player1.SetActive(false);
-            player2.SetActive(false);
-            player3.SetActive(false);
-            player4.SetActive(false);
+            }
 
-            player1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            player2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            player3.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            player4.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            player1.transform.position = faceClassScript.faceTab[currentFace].player1StartingPosition.position;
-            player2.transform.position = faceClassScript.faceTab[currentFace].player2StartingPosition.position;
-            player3.transform.position = faceClassScript.faceTab[currentFace].player3StartingPosition.position;
-            player4.transform.position = faceClassScript.faceTab[currentFace].player4StartingPosition.position;
+            player[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            player[0].transform.position = faceClassScript.faceTab[currentFace].player1StartingPosition.position;
+            player[1].transform.position = faceClassScript.faceTab[currentFace].player2StartingPosition.position;
         }
         else
         {
-            player1.SetActive(true);
-            player2.SetActive(true);
-            player3.SetActive(true);
-            player4.SetActive(true);
-
+            player[0].SetActive(true);
+            player[1].SetActive(true);
+            if (player[2] != null)
+            player[2].SetActive(true);
+            if (player[3] != null)
+            player[3].SetActive(true);
         }
     }
 }
