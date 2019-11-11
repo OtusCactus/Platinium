@@ -14,11 +14,11 @@ public class InMenuPlayer : MonoBehaviour
 
 
     //Ce script sert aux déplacements des joueurs
-    //Pour l'instant on utilise la physique d'Unity pour le proto, mais on changera pour une physique personnalisée pour la semaine prochaine
 
     //
     [Header("Speed")]
     public float speed;
+    private TrailRenderer _trailRenderer;
 
     //
     private Rigidbody2D _myRb;
@@ -65,6 +65,8 @@ public class InMenuPlayer : MonoBehaviour
 
     //bool sound
     private bool _mustPlayCastSound = false;
+    private AudioSource _audioSource;
+
 
 
     //particules
@@ -77,26 +79,31 @@ public class InMenuPlayer : MonoBehaviour
     private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
 
+
+    private void Awake()
+    {
+        _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
+        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<MenuPlayerManager>();
+        _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+        _trailRenderer = GetComponent<TrailRenderer>();
+        _myRb = GetComponent<Rigidbody2D>();
+        _particuleContact = this.transform.GetChild(1).gameObject;
+
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         currentFace = 0;
-        _myRb = GetComponent<Rigidbody2D>();
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
         _velocityMax = (powerMax * speed) * (powerMax * speed);
-        _particuleContact = this.transform.GetChild(1).gameObject;
 
-        _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
-        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<MenuPlayerManager>();
-        _animator = GetComponent<Animator>();
 
     }
 
-    private void OnDisable()
-    {
-
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -185,7 +192,6 @@ public class InMenuPlayer : MonoBehaviour
         else if (_playerInput == INPUTSTATE.Released)
         {
             //_animator.SetBool("IsSlingshoting", false);
-            //_myRb.drag = 0;
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
@@ -213,11 +219,11 @@ public class InMenuPlayer : MonoBehaviour
         _velocityConvertedToRatio = (_myVelocity / _velocityMax);
         if (_velocityConvertedToRatio > 0.8)
         {
-            GetComponent<TrailRenderer>().enabled = true;
+            _trailRenderer.enabled = true;
         }
         else
         {
-            GetComponent<TrailRenderer>().enabled = false;
+            _trailRenderer.enabled = false;
         }
         _lastFrameVelocity = _myRb.velocity;
 
@@ -228,12 +234,12 @@ public class InMenuPlayer : MonoBehaviour
     {
         if (_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-            _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
+            _soundManagerScript.PlaySound(_audioSource, _soundManagerScript.playerCast);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
-            _soundManagerScript.NoSound(GetComponent<AudioSource>());
+            _soundManagerScript.NoSound(_audioSource);
             _mustPlayCastSound = true;
         }
 

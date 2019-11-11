@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    //grégoire c'est occupé de ce script.
+
     public AudioClip wallHit;
     public AudioClip playerCast;
     public AudioClip playersCollision;

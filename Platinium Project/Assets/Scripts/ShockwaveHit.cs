@@ -11,18 +11,25 @@ public class ShockwaveHit : MonoBehaviour
 
     //Empêche l'autre joueur de se déplacer pendant un certain temps après être hit par la shockwave
     public float mouvementPlayerDisabledTimeMax;
-    private float mouvementPlayerDisabledTime;
+    //private float mouvementPlayerDisabledTime;
     public float reactivatingScriptVelocity = 0.2f;
 
+    //check si les murs ont été touchés
     private bool _hitWalls;
+
+    //garde les components nécéssaires au script
     private SoundManager _soundManagerScript;
+    private PlayerEntity _playerEntityScript;
+
+    private AudioSource _childAudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
+        //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
         _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
-
+        _playerEntityScript = GetComponent<PlayerEntity>();
+        _childAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,14 +38,14 @@ public class ShockwaveHit : MonoBehaviour
         //si le joueur est hit par une shockwave d'un autre joueur, désactive son script de mouvement pendant un certain temps
         if (haveIBeenHit)
         {
-            this.GetComponent<PlayerEntity>().powerJaugeParent.gameObject.SetActive(false);
-            this.GetComponent<PlayerEntity>().enabled = false;
-            mouvementPlayerDisabledTime -= Time.deltaTime;
-            if(GetComponent<PlayerEntity>().GetVelocityRatio() <= reactivatingScriptVelocity || _hitWalls)
+            _playerEntityScript.powerJaugeParent.gameObject.SetActive(false);
+            _playerEntityScript.enabled = false;
+            //mouvementPlayerDisabledTime -= Time.deltaTime;
+            if(_playerEntityScript.GetVelocityRatio() <= reactivatingScriptVelocity || _hitWalls)
             {
-                this.GetComponent<PlayerEntity>().enabled = true;
+                _playerEntityScript.enabled = true;
                 haveIBeenHit = false;
-                mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
+                //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
                 _hitWalls = false;
             }
         }
@@ -46,15 +53,16 @@ public class ShockwaveHit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //si on touche un mur on un joueur, joue un son différent
         if (collision.tag.Contains("Walls"))
         {
             _hitWalls = true;
-            _soundManagerScript.PlaySound(transform.GetChild(0).GetComponent<AudioSource>(),_soundManagerScript.wallHit);
+            _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallHit);
            
         }
         else if (collision.tag.Contains("Player"))
         {
-            _soundManagerScript.PlaySound(transform.GetChild(0).GetComponent<AudioSource>(), _soundManagerScript.playersCollision);
+            _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.playersCollision);
 
         }
     }

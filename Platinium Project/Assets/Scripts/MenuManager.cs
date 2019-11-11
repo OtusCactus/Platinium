@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-
+    //Grégoire à fait ce script
     public int numbersOfPlayers;
 
     private void Awake()
     {
+        //permet de garder cet objet lors de la transition du menu à la scène de jeu
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -25,6 +26,7 @@ public class MenuManager : MonoBehaviour
         
     }
 
+    //permet de changer le nombre de joeuur qui seront présent dans la scène de jeu
     public void GetPlayerNumbers(float sliderValue)
     {
         numbersOfPlayers = (int) sliderValue;

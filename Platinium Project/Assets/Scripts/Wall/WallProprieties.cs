@@ -14,20 +14,30 @@ public class WallProprieties : MonoBehaviour
     public bool isMoving = false;
 
     private WallManager _wallManagerScript;
-    private GameObject rightWall;
-    private GameObject leftWall;
+    private WallChange _thisWallChange;
+
+    private GameObject _rightWall;
+    private WallProprieties _rightWallProprieties;
+    private WallChange _rightWallChange;
+
+    private GameObject _leftWall;
+    private WallProprieties _leftWallProprieties;
+    private WallChange _leftWallChange;
 
     // Start is called before the first frame update
     void Start()
     {
         _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
-            rightWall = _wallManagerScript.SetConnectedWallRight(gameObject);
-            leftWall = _wallManagerScript.SetConnectedLeftWall(gameObject);
-    }
+        _thisWallChange = GetComponent<WallChange>();
 
-    // Update is called once per frame
-    void Update()
-    {
+        _rightWall = _wallManagerScript.SetConnectedWallRight(gameObject);
+        _rightWallProprieties = _rightWall.GetComponent<WallProprieties>();
+        _rightWallChange = _rightWall.GetComponent<WallChange>();
+
+        _leftWall = _wallManagerScript.SetConnectedLeftWall(gameObject);
+        _leftWallProprieties = _leftWall.GetComponent<WallProprieties>();
+        _leftWallChange = _leftWall.GetComponent<WallChange>();
+
         if (isBouncy)
         {
             friction = _wallManagerScript.wallBouncyFriction;
@@ -38,33 +48,56 @@ public class WallProprieties : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerEntity player = collision.gameObject.GetComponent<PlayerEntity>();
+        Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+
+        
         if (!isSticky)
         {
-            _wallManagerScript.Bounce(player.GetLastFrameVelocity(), collision.GetContact(0).normal, collision.gameObject.GetComponent<Rigidbody2D>(), player.speed, friction);
+            _wallManagerScript.Bounce(player.GetLastFrameVelocity(), collision.GetContact(0).normal, playerRigidbody, player.speed, friction);
         }
         else
         {
-            _wallManagerScript.StickyWall(collision.gameObject.GetComponent<Rigidbody2D>());
+            _wallManagerScript.StickyWall(playerRigidbody);
         }
 
+        //permet aux murs connectés de partagés leur dommages
+        //Si un mur est connecté à celui à sa droite, alors le mur à la droite prendra les mêmes dégâts que celui à gauche, et vice-versa
         if (isConnectedRight)
         {
-            _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, rightWall);
+            if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, _rightWall);
+            }
         }
         if (isConnectedLeft)
         {
-            _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, leftWall);
+            if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, _leftWall);
+            }
         }
-        if(rightWall.GetComponent<WallProprieties>().isConnectedLeft && !rightWall.GetComponent<WallProprieties>().isIndestructible)
+        if(_rightWallProprieties.isConnectedLeft && !_rightWallProprieties.isIndestructible)
         {
-            rightWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                _rightWallChange.SetDammageFromConnect(_thisWallChange.GetPlayerVelocityRatio());
+            }
         }
-        if (leftWall.GetComponent<WallProprieties>().isConnectedRight && !leftWall.GetComponent<WallProprieties>().isIndestructible)
+        if (_leftWallProprieties.isConnectedRight && !_leftWallProprieties.isIndestructible)
         {
-            leftWall.GetComponent<WallChange>().SetDammageFromConnect(GetComponent<WallChange>().GetPlayerVelocityRatio());
+            if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            {
+                _leftWallChange.SetDammageFromConnect(_thisWallChange.GetPlayerVelocityRatio());
+            }
         }
     }
 

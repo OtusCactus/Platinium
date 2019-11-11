@@ -25,10 +25,10 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            AddScore(1);
-        }
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    AddScore(1);
+        //}
     }
 
     public void AddScore(int player)
@@ -40,6 +40,7 @@ public class ScoreManager : MonoBehaviour
         actualRound++;
     }
 
+    //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
     void _CheckScore(int player)
     {
         if (_playerScore[player] == scoreToWin)
@@ -66,14 +67,14 @@ public class ScoreManager : MonoBehaviour
             scoreP3[actualRound].GetComponent<Image>().color = Color.red;
             scoreP4[actualRound].GetComponent<Image>().color = Color.red;
         }
-        else if (player == 3) // if P2 win
+        else if (player == 3) // if P3 win
         {
             scoreP1[actualRound].GetComponent<Image>().color = Color.red;
             scoreP2[actualRound].GetComponent<Image>().color = Color.red;
             scoreP3[actualRound].GetComponent<Image>().color = Color.green;
             scoreP4[actualRound].GetComponent<Image>().color = Color.red;
         }
-        else if (player == 4) // if P2 win
+        else if (player == 4) // if P4 win
         {
             scoreP1[actualRound].GetComponent<Image>().color = Color.red;
             scoreP2[actualRound].GetComponent<Image>().color = Color.red;
