@@ -17,8 +17,8 @@ public class MenuRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set la position de départ de l'arene
         transform.rotation = faceClassMenuScript.faceTab[0].arenaRotation.rotation;
-
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class MenuRotation : MonoBehaviour
             //permet de lancer le lerp de la caméra
             _turningTimer += Time.deltaTime;
             timerClamped = _turningTimer / turningTimerMax;
-            //change le transform de la caméra
+            //change la rotation de l'arène
             Quaternion currentRotation = Quaternion.Lerp(inMenuPlayerScript.arenaRotation, faceClassMenuScript.faceTab[inMenuPlayerScript.currentFace].arenaRotation.rotation, timerClamped);
             transform.rotation = currentRotation;
 

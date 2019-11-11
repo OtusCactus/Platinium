@@ -25,10 +25,10 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            AddScore(1);
-        }
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    AddScore(1);
+        //}
     }
 
     public void AddScore(int player)
@@ -40,6 +40,7 @@ public class ScoreManager : MonoBehaviour
         actualRound++;
     }
 
+    //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
     void _CheckScore(int player)
     {
         if (_playerScore[player] == scoreToWin)

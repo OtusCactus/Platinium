@@ -29,6 +29,7 @@ public class AttackTest : MonoBehaviour
     public float pushbackIntensity;
 
     private PlayerManager _playerManagerScript;
+    private ShockwaveHit _shockWaveHitScript;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class AttackTest : MonoBehaviour
         shockWaveCooldown = 0;
         shockWaveDuration = shockWaveDurationMax;
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
+        _shockWaveHitScript = GetComponent<ShockwaveHit>();
     }
 
 
@@ -62,7 +64,7 @@ public class AttackTest : MonoBehaviour
         
 
         //active la shockwave pendant un certain temps
-        if (isShockWaveButtonPressed && isShockWavePossible && !GetComponent<ShockwaveHit>().haveIBeenHit)
+        if (isShockWaveButtonPressed && isShockWavePossible && !_shockWaveHitScript.haveIBeenHit)
         {
             shockWaveDuration -= Time.deltaTime;
             

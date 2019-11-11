@@ -14,7 +14,7 @@ public class ArenaRotation : MonoBehaviour
     private Quaternion _endRotation;
 
     //distance entre la caméra et l'arène
-    private float diceCameraDistance;
+    //private float diceCameraDistance;
 
     public Camera mainCamera;
     public Transform arenaLookAt;
@@ -40,7 +40,6 @@ public class ArenaRotation : MonoBehaviour
     [Header("gameManager")]
     public GameObject gameManager;
     private FaceClass _faceClassScript;
-    private GameManager _gameManagerScript;
     private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
     //debug
@@ -52,7 +51,6 @@ public class ArenaRotation : MonoBehaviour
     {
         //Scripts nécessaires
         _faceClassScript = gameManager.GetComponent<FaceClass>();
-        _gameManagerScript = gameManager.GetComponent<GameManager>();
         _soundManagerScript = gameManager.GetComponent<SoundManager>();
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
 
@@ -66,12 +64,11 @@ public class ArenaRotation : MonoBehaviour
     void Update()
     {
         //permet d'avoir accès à la distance de la caméra
-        diceCameraDistance = Vector3.Distance(arena.transform.position, mainCamera.transform.position);
-        //si la face de la caméra doit changer, permet de modifier la position et rotation de la caméra en fonction de la face sur laquelle on doit aller
+        //diceCameraDistance = Vector3.Distance(arena.transform.position, mainCamera.transform.position);
+
+        //si la face de l'arène doit changer, permet de chercher la rotation nécéssaire à effectuer puis de jouer le son de fin de round
         if (_cameraCurrentHolder != _cameraPositionNumber)
         {
-            
-
             _startRotation = transform.rotation;
             _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].arenaRotation.rotation;
 
@@ -83,7 +80,7 @@ public class ArenaRotation : MonoBehaviour
             _cameraCurrentHolder = _cameraPositionNumber;
         }
 
-        //permet de tourner la caméra sur la prochaine face dans l'ordre de 1 à 12
+        //permet de tourner l'arène sur la prochaine face dans l'ordre de 1 à 12
         if (Input.GetKeyDown(KeyCode.N) && !_isTurning && _cameraPositionNumber < _faceClassScript.faceTab.Length - 1)
         {
             Debug.Log("OK");
@@ -96,7 +93,7 @@ public class ArenaRotation : MonoBehaviour
 
             _isTurning = true;
         }
-        //permet de tourner la caméra sur la face précédente dans l'ordre de 1 à 12
+        //permet de tourner l'arène sur la face précédente dans l'ordre de 1 à 12
         if (Input.GetKeyDown(KeyCode.B) && !_isTurning && _cameraPositionNumber > 0)
         {
             Debug.Log("OK");
@@ -112,19 +109,19 @@ public class ArenaRotation : MonoBehaviour
 
         if (_isTurning)
         {
-            //permet de lancer le lerp de la caméra
+            //permet de lancer le lerp de l'arène
             _turningTimer += Time.deltaTime;
             timerClamped = _turningTimer / turningTimerMax;
 
-            //change le transform de la caméra
+            //change le transform de l'arène
             Quaternion currentRotation = Quaternion.Lerp(_startRotation, _endRotation, timerClamped);
             transform.rotation = currentRotation;
 
+            //stop les vibrations si vibrations il y a
+            _playerManagerScript.player1.StopVibration();
 
-                _playerManagerScript.player1.StopVibration();
-
-                _playerManagerScript.player2.StopVibration();
-            
+            _playerManagerScript.player2.StopVibration();
+           
 
             //reset le lerp.
             if (timerClamped >= 1)
@@ -143,8 +140,8 @@ public class ArenaRotation : MonoBehaviour
     {
         if (debug)
         {
-            GUILayout.Label("TimerClamped : " + timerClamped);
-            GUILayout.Label("diceCameraDistance : " + diceCameraDistance);
+            //GUILayout.Label("TimerClamped : " + timerClamped);
+            //GUILayout.Label("diceCameraDistance : " + diceCameraDistance);
         }
     }
 }
