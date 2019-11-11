@@ -17,8 +17,13 @@ public class WallChange : MonoBehaviour
     //Materials
     [Header("Apparence")]
     public Mesh[] wallAppearance;
+    private Material[] _meshMaterials;
+    private Mesh _wallMesh;
 
+    private PlayerEntity _playerOnCollision;
     private float _playerVelocityRatio;
+    private BoxCollider2D _wallCollider;
+    private MeshRenderer _wallMeshRenderer;
 
     //arene
     [Header("Arène")]
@@ -47,8 +52,8 @@ public class WallChange : MonoBehaviour
     private GameObject leftWall;
     private GameObject rightWall;
 
-    private 
-   
+    private WallProprieties _wallProprieties;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +65,7 @@ public class WallChange : MonoBehaviour
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
         _faceClassScript = GameObject.FindWithTag("GameController").GetComponent<FaceClass>();
+        _wallProprieties = GetComponent<WallProprieties>();
 
         // set les valeurs de départs
         wallLife = wallLifeMax;
@@ -70,11 +76,17 @@ public class WallChange : MonoBehaviour
         numberWallState = numberWallStateMax;
 
         //set le material du mur par défaut
-        GetComponent<MeshRenderer>().materials[0].color = new Color32(30, 255, 0, 255);
-        GetComponent<MeshRenderer>().materials[1].color = new Color32(30, 200, 0, 255);
-        GetComponent<MeshRenderer>().materials[2].color = new Color32(5, 255, 0, 255);
-        GetComponent<MeshRenderer>().materials[3].color = new Color32(28, 235, 0, 255);
-        GetComponent<MeshRenderer>().materials[4].color = new Color32(20, 189, 0, 255);
+        _meshMaterials = GetComponent<MeshRenderer>().materials;
+        _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+        _meshMaterials[1].color = new Color32(30, 200, 0, 255);
+        _meshMaterials[2].color = new Color32(5, 255, 0, 255);
+        _meshMaterials[3].color = new Color32(28, 235, 0, 255);
+        _meshMaterials[4].color = new Color32(20, 189, 0, 255);
+
+        _wallMesh = GetComponent<MeshFilter>().mesh;
+        _wallMeshRenderer = GetComponent<MeshRenderer>();
+
+        _wallCollider = GetComponent<BoxCollider2D>();
 
         for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
         {
@@ -83,7 +95,6 @@ public class WallChange : MonoBehaviour
         gameObject.layer = 15;
         for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
         {
-            //_faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).GetComponent<BoxCollider2D>().enabled = true;
             _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
 
         }
@@ -92,7 +103,6 @@ public class WallChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(wallLife + " " + gameObject.name);
 
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
@@ -100,13 +110,13 @@ public class WallChange : MonoBehaviour
         {
             _gameManagerScript.isTurning = true;
 
-            GetComponent<BoxCollider2D>().enabled = true;
-            GetComponent<MeshRenderer>().enabled = true;
+            _wallCollider.enabled = true;
+            _wallMeshRenderer.enabled = true;
             _currentFace = _arenaRotationScript._cameraPositionNumber;
             _lastHit = false;
             wallLife = wallLifeMax;
-            GetComponent<MeshFilter>().mesh = wallAppearance[0];
-            GetComponent<MeshRenderer>().materials[0].color = new Color32(30, 255, 0, 255);
+            _wallMesh = wallAppearance[0];
+            _meshMaterials[0].color = new Color32(30, 255, 0, 255);
 
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
@@ -116,7 +126,6 @@ public class WallChange : MonoBehaviour
             gameObject.layer = 15;
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
             {
-                //_faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).GetComponent<BoxCollider2D>().enabled = true;
                 _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
 
             }
@@ -136,16 +145,16 @@ public class WallChange : MonoBehaviour
         {
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 3) ShakeScreen();
-            GetComponent<MeshFilter>().mesh = wallAppearance[3];
+            _wallMesh = wallAppearance[3];
         }
         else if (wallLife < wallLifeMax && wallLife >= wallLifeMax / 2)
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
-            GetComponent<MeshFilter>().mesh = wallAppearance[1];
+            _wallMesh = wallAppearance[1];
         }
         else if (wallLife < wallLifeMax/2 && wallLife > 0){
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
-            GetComponent<MeshFilter>().mesh = wallAppearance[2];
+            _wallMesh = wallAppearance[2];
         }
 
     }
@@ -153,11 +162,12 @@ public class WallChange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            _playerVelocityRatio = collision.GetComponent<PlayerEntity>().GetVelocityRatio();
+        _playerOnCollision = collision.GetComponent<PlayerEntity>();
+        _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
 
-        if (!GetComponent<WallProprieties>().isIndestructible && collision.GetComponent<PlayerEntity>().GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+        //Si le mur n'est pas indestructible et que le joueur ne donne pas d'input (debug du problème ou le joueur charge la puissance en tournant et le mur prend des dégats) alors le mur prend des dégats
+        if (!_wallProprieties.isIndestructible && _playerOnCollision.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
         {
-            print("bloop");
             if (_playerVelocityRatio >= wallLimitVelocity)
             {
                 wallLife = 0;
@@ -168,8 +178,8 @@ public class WallChange : MonoBehaviour
             }
             if (_lastHit)
             {
-                GetComponent<MeshRenderer>().enabled = false;
-                GetComponent<BoxCollider2D>().enabled = false;
+                _wallMeshRenderer.enabled = false;
+                _wallCollider.enabled = false;
                 if (collision.tag == "Player1")
                 {
                     _scoreManagerScript.AddScore(1);
@@ -211,7 +221,7 @@ public class WallChange : MonoBehaviour
                 _lastHit = false;
             }
 
-            GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         }
             
         
@@ -225,7 +235,7 @@ public class WallChange : MonoBehaviour
                 camera.transform.position = new Vector3(Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.x - magnitudeShake, Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
                 break;
             case "WallNorthWest":
-                camera.transform.position = new Vector3((Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.x + magnitudeShake), Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
+                camera.transform.position = new Vector3(-(Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.x + magnitudeShake), Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
                 break;
             case "WallSouthWest":
                 camera.transform.position = new Vector3(Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.x - magnitudeShake, Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
@@ -234,7 +244,7 @@ public class WallChange : MonoBehaviour
                 camera.transform.position = new Vector3(_cameraStartPosition.x, Mathf.PingPong(Time.time * speedShake, magnitudeShake + magnitudeShake) + _cameraStartPosition.y - magnitudeShake, _cameraStartPosition.z);
                 break;
             case "WallSouthEast":
-                camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
+                camera.transform.position = new Vector3(-(Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
                 break;
         }
         //camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
@@ -249,7 +259,7 @@ public class WallChange : MonoBehaviour
 
     public void SetDammageFromConnect(float dammage)
     {
-        GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         if (dammage >= wallLimitVelocity)
         {
             wallLife = 0;
@@ -259,7 +269,7 @@ public class WallChange : MonoBehaviour
             wallLife -= dammage;
             print("aaaaaaaaaaaaaa");
         }
-        GetComponent<MeshRenderer>().materials[0].color = Color32.Lerp(GetComponent<MeshRenderer>().materials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
 
     }
 

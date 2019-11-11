@@ -59,16 +59,21 @@ public class PlayerEntity : MonoBehaviour
     [Header("Animation")]
     private Animator _animator;
 
-    //bool sound
+    //sound
     private bool _mustPlayCastSound = false;
-    
+    private SoundManager _soundManagerScript;
+    private PlayerManager _playerManagerScript;
+    private AudioSource _playerAudio;
+
 
     //particules
     private GameObject _particuleContact;
+    private ParticleSystem _particuleContactSystem;
 
-    private SoundManager _soundManagerScript;
-    private PlayerManager _playerManagerScript;
+    //trail
+    private TrailRenderer _playerTrail;
 
+    
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
@@ -79,13 +84,21 @@ public class PlayerEntity : MonoBehaviour
     void Start()
     {
         _myRb = GetComponent<Rigidbody2D>();
+
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
+
         _velocityMax = (powerMax * speed) * (powerMax * speed);
+
         _particuleContact = this.transform.GetChild(1).gameObject;
+        _particuleContactSystem = _particuleContact.GetComponent<ParticleSystem>();
+        _playerTrail = GetComponent<TrailRenderer>();
 
         _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
+        _playerAudio = GetComponent<AudioSource>();
+
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
+
         _animator = GetComponent<Animator>();
     }
 
@@ -140,7 +153,6 @@ public class PlayerEntity : MonoBehaviour
             powerJaugeParent.gameObject.SetActive(true);
             powerJauge.fillAmount = _timerPower / powerMax;
             _inputVariableToStoreDirection = _input;
-            //_myRb.drag = 3;
             Vector2 frictionDir = _myRb.velocity.normalized;
             if (_myRb.velocity.sqrMagnitude >= (frictionWhenCharging * Time.fixedDeltaTime) * (frictionWhenCharging * Time.fixedDeltaTime))
             {
@@ -161,7 +173,6 @@ public class PlayerEntity : MonoBehaviour
                 {
                     tooMuchPowerTimer = 0;
                     _isTooMuchPowerGathered = true;
-                    //_myRb.drag = 0;
                     powerJaugeParent.gameObject.SetActive(false);
                     _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
@@ -214,7 +225,6 @@ public class PlayerEntity : MonoBehaviour
             _timerPower = 0;
             _timerDeadPoint = 0;
             
-            //_soundManagerScript.NoSound();
             _playerInput = INPUTSTATE.None;
         }
         else if (_playerInput == INPUTSTATE.None)
@@ -245,11 +255,11 @@ public class PlayerEntity : MonoBehaviour
         _velocityConvertedToRatio = (_myVelocityFloat / _velocityMax);
         if (_velocityConvertedToRatio > 0.8)
         {
-            GetComponent<TrailRenderer>().enabled = true;
+            _playerTrail.enabled = true;
         }
         else
         {
-            GetComponent<TrailRenderer>().enabled = false;
+            _playerTrail.enabled = false;
         }
         _lastFrameVelocity = _myRb.velocity;
 
@@ -260,12 +270,12 @@ public class PlayerEntity : MonoBehaviour
     {
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-           _soundManagerScript.PlaySound(GetComponent<AudioSource>(), _soundManagerScript.playerCast);
+           _soundManagerScript.PlaySound(_playerAudio, _soundManagerScript.playerCast);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
-            _soundManagerScript.NoSound(GetComponent<AudioSource>());
+            _soundManagerScript.NoSound(_playerAudio);
             _mustPlayCastSound = true;
         }
 
@@ -343,8 +353,8 @@ public class PlayerEntity : MonoBehaviour
             }
         }
 
-            _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
-            _particuleContact.GetComponent<ParticleSystem>().Play();
+        _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
+        _particuleContactSystem.Play();
     }
 
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
