@@ -19,6 +19,7 @@ public class FaceClass : MonoBehaviour
         public Transform[] playerStartingPosition;
         public MeshRenderer[] wallToHideNextToFace;
         public MeshRenderer[] wallToHideInOtherFace;
+        public GameObject levelDesign;
     }
 
     public face[] faceTab;

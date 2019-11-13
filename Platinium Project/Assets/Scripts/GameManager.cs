@@ -13,9 +13,7 @@ public class GameManager : MonoBehaviour
     public int[] _wallSouthEastTab;
     public int[] _wallSouthTab;
     public int[] _wallSouthWestTab;
-
-    //public Vector3 destroyedWallPosition;
-    //public string playerWhoDestroyedWall;
+    
 
 
     private FaceClass _faceClassScript;
@@ -24,21 +22,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] player;
 
-    public int currentPlayersOnArena;
-    //public GameObject player2;
-    //public GameObject player3;
-    //public GameObject player4;
-
     public GameObject[] playerPrefabs;
 
     public bool isTurning;
-
-    //private float timer;
-    //private float timer2;
-    //public float timerMax;
-    //public float timerMax2;
+    
     public int currentFace;
-    //score
+
+    private GameObject currentLD;
 
     private void Awake()
     {
@@ -96,9 +86,16 @@ public class GameManager : MonoBehaviour
     {
         //check si on doit changer de face de l'arène
         if (isTurning)
-        { 
+        {
+            if (currentLD != null)
+            {
+                Destroy(currentLD);
+            }
             PlayerReset(player);
-
+            if (_faceClassScript.faceTab[currentFace].levelDesign != null)
+            {
+                currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+            }
 
 
 
