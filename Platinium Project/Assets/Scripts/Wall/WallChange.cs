@@ -116,6 +116,7 @@ public class WallChange : MonoBehaviour
             wallLife = wallLifeMax;
             _wallMesh.mesh = wallAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+            _wallMeshRenderer.enabled = true;
 
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
@@ -143,18 +144,25 @@ public class WallChange : MonoBehaviour
         if (wallLife <= 0)
         {
             _lastHit = true;
-            if (numberWallState > numberWallStateMax - 3) ShakeScreen();
-            _wallMesh.mesh = wallAppearance[3];
+            if (numberWallState > numberWallStateMax - 4) ShakeScreen();
+            //_wallMesh.mesh = wallAppearance[3];
+            _wallMeshRenderer.enabled = false;
         }
-        else if (wallLife < wallLifeMax && wallLife >= wallLifeMax / 2)
+        else if (wallLife < wallLifeMax && wallLife >= (wallLifeMax * 0.66))
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
             _wallMesh.mesh = wallAppearance[1];
             
         }
-        else if (wallLife < wallLifeMax/2 && wallLife > 0){
+        else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
+        {
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
             _wallMesh.mesh = wallAppearance[2];
+        }
+        else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
+        {
+            if (numberWallState > numberWallStateMax - 3) ShakeScreen();
+            _wallMesh.mesh = wallAppearance[3];
         }
 
     }
@@ -163,7 +171,6 @@ public class WallChange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.GetComponent<PlayerEntity>();
-        //Rigidbody2D collisionRb = collision.GetComponent<Rigidbody2D>();
         _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
 
         //Si le mur n'est pas indestructible et que le joueur ne donne pas d'input (debug du problème ou le joueur charge la puissance en tournant et le mur prend des dégats) alors le mur prend des dégats
