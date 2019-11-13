@@ -52,6 +52,8 @@ public class WallChange : MonoBehaviour
 
     private WallProprieties _wallProprieties;
 
+    bool _hasPlayerPassedTrigger = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -88,20 +90,12 @@ public class WallChange : MonoBehaviour
         gameObject.layer = 15;
 
 
-        //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
-        //{
-        //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
-        //}
-        //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
-        //{
-        //    _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
-
-        //}
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Update : " + _hasPlayerPassedTrigger);
 
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
@@ -115,30 +109,9 @@ public class WallChange : MonoBehaviour
             wallLife = wallLifeMax;
             _wallMesh.mesh = wallAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
-            _wallMeshRenderer.enabled = true;
-
-
-
-            //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
-            //{
-            //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
-            //}
-            //gameObject.layer = 15;
-            //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
-            //{
-            //    _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
-
-            //}
+            _wallMeshRenderer.enabled = true;  
         }
-        //sinon réactive les colliders et les sprites des murs.
-        //else
-        //{
-        //    for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace.Length; i++)
-        //    {
-        //        _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
-        //    }
-
-        //}
+        
 
         if (wallLife <= 0)
         {
@@ -168,6 +141,7 @@ public class WallChange : MonoBehaviour
     }
 
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.GetComponent<PlayerEntity>();
@@ -186,20 +160,23 @@ public class WallChange : MonoBehaviour
             }
             if (_lastHit)
             {
-                if(_gameManagerScript.currentPlayersOnArena > 2)
+                if(_gameManagerScript.currentPlayersOnArena > 2 && !_hasPlayerPassedTrigger)
                 {
 
                     _wallMeshRenderer.enabled = false;
+
                     _gameManagerScript.currentPlayersOnArena--;
+                    Debug.Log(_gameManagerScript.currentPlayersOnArena);
+
                     _playerOnCollision.enabled = false;
                     CircleCollider2D[] collisionColliders = collision.GetComponents<CircleCollider2D>();
                     foreach(CircleCollider2D colliders in collisionColliders)
                     {
                         colliders.enabled = false;
                     }
-                    
+                    _hasPlayerPassedTrigger = true;
                 }
-                else
+                else if (_gameManagerScript.currentPlayersOnArena < 2)
                 {
                     if (collision.tag == "Player1")
                     {
@@ -253,6 +230,14 @@ public class WallChange : MonoBehaviour
         
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag.Contains("Player"))
+        _hasPlayerPassedTrigger = false;
+        Debug.Log(_hasPlayerPassedTrigger);
+
+    }
+
     private void ShakeScreen()
     {
         switch (gameObject.name)
@@ -301,5 +286,10 @@ public class WallChange : MonoBehaviour
     public float GetPlayerVelocityRatio()
     {
         return _playerVelocityRatio;
+    }
+
+    public bool GetLastHit()
+    {
+        return _lastHit;
     }
 }
