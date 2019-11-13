@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     private ScoreManager _scoreManagerScript;
 
     public GameObject[] player;
+
+    public int currentPlayersOnArena;
     //public GameObject player2;
     //public GameObject player3;
     //public GameObject player4;
@@ -65,7 +67,7 @@ public class GameManager : MonoBehaviour
         _faceClassScript = GetComponent<FaceClass>();
         _scoreManagerScript = GetComponent<ScoreManager>();
 
-        
+        currentPlayersOnArena = player.Length;
 
 
     }
