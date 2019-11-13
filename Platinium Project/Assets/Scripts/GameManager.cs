@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
     private void PlayerLerp(int playerNumber, float timerRatio)
     {
         player[playerNumber].transform.position = Vector3.Lerp(player[playerNumber].transform.position, _faceClassScript.faceTab[currentFace].playerStartingPosition[playerNumber].position, timerRatio);
-        print(timerRatio);
+
         if(timerRatio >= 1)
         {
             print("reached");

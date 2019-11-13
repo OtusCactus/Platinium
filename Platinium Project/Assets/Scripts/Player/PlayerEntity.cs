@@ -73,7 +73,10 @@ public class PlayerEntity : MonoBehaviour
     //trail
     private TrailRenderer _playerTrail;
 
-    
+    //score
+    private ScoreManager _scoreManagerScript;
+
+
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
@@ -96,6 +99,8 @@ public class PlayerEntity : MonoBehaviour
 
         _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
         _playerAudio = GetComponent<AudioSource>();
+
+        _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
 
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
 
@@ -381,6 +386,11 @@ public class PlayerEntity : MonoBehaviour
     public INPUTSTATE GetPlayerINPUTSTATE()
     {
         return _playerInput;
+    }
+
+    public void DesactiveCollider()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 
     

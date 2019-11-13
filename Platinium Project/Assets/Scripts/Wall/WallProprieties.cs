@@ -52,7 +52,6 @@ public class WallProprieties : MonoBehaviour
     {
         PlayerEntity player = collision.gameObject.GetComponent<PlayerEntity>();
         Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
-
         
         if (!isSticky)
         {

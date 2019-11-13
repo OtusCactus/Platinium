@@ -7,10 +7,12 @@ public class ScoreManager : MonoBehaviour
 {
     public int scoreToWin;
     public int nbrPlayers;
+    public GameObject[] allScores;
     public GameObject[] scoreP1;
     public GameObject[] scoreP2;
     public GameObject[] scoreP3;
     public GameObject[] scoreP4;
+    
     public GameObject restartMenu;
 
     private int[] _playerScore;
@@ -31,13 +33,19 @@ public class ScoreManager : MonoBehaviour
         //}
     }
 
-    public void AddScore(int player)
+    public void ChangeScore(bool win, int player)
     {
-        player--;  //for the index
-        _playerScore[player]++;
-        _UpdateUI(player);
-        _CheckScore(player);
-        actualRound++;
+        if (!win)
+        {
+            allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.red;
+        }
+        else
+        {
+            allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.green;
+            _CheckScore(player);
+            actualRound++;
+        }
+
     }
 
     //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
