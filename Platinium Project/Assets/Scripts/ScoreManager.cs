@@ -31,13 +31,24 @@ public class ScoreManager : MonoBehaviour
         //}
     }
 
-    public void AddScore(int player)
+    public void ChangeScore(bool win, int player)
     {
-        player--;  //for the index
-        _playerScore[player]++;
-        _UpdateUI(player);
-        _CheckScore(player);
-        actualRound++;
+        //player--;  //for the index
+        //_playerScore[player]++;
+        //_UpdateUI(player);
+        //_CheckScore(player);
+        //actualRound++;
+        if (!win)
+        {
+            scoreP1[actualRound].GetComponent<Image>().color = Color.red;
+        }
+        else
+        {
+            scoreP1[actualRound].GetComponent<Image>().color = Color.green;
+            _CheckScore(player);
+            actualRound++;
+        }
+
     }
 
     //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
