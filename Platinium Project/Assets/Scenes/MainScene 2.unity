@@ -529,8 +529,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 1
   isMoving: 0
 --- !u!1 &131738930
 GameObject:
@@ -998,8 +997,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &133599871 stripped
 MeshRenderer:
@@ -1022,8 +1020,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &133599873
 MonoBehaviour:
@@ -1040,8 +1037,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &133599874 stripped
 MeshRenderer:
@@ -1064,8 +1060,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &133599876
 MonoBehaviour:
@@ -1082,8 +1077,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &133599877 stripped
 MeshRenderer:
@@ -1750,8 +1744,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &143709295 stripped
 MeshRenderer:
@@ -1774,8 +1767,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &143709297
 MonoBehaviour:
@@ -1792,8 +1784,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &143709298 stripped
 MeshRenderer:
@@ -1816,8 +1807,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &143709300
 MonoBehaviour:
@@ -1834,8 +1824,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &143709301 stripped
 MeshRenderer:
@@ -3952,8 +3941,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!1 &505300671
 GameObject:
@@ -6241,8 +6229,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!1 &939888537
 GameObject:
@@ -7401,8 +7388,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1065016426 stripped
 MeshRenderer:
@@ -7425,8 +7411,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1065016428
 MonoBehaviour:
@@ -7443,8 +7428,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1065016429 stripped
 MeshRenderer:
@@ -7467,8 +7451,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1065016431
 MonoBehaviour:
@@ -7485,8 +7468,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1065016432 stripped
 MeshRenderer:
@@ -8968,8 +8950,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1297860135 stripped
 MeshRenderer:
@@ -8992,8 +8973,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1297860137
 MonoBehaviour:
@@ -9010,8 +8990,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1297860138 stripped
 MeshRenderer:
@@ -9034,8 +9013,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1297860140
 MonoBehaviour:
@@ -9052,8 +9030,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1297860141 stripped
 MeshRenderer:
@@ -14906,8 +14883,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1428792512 stripped
 MeshRenderer:
@@ -14930,8 +14906,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1428792514
 MonoBehaviour:
@@ -14948,8 +14923,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1428792515 stripped
 MeshRenderer:
@@ -14972,8 +14946,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1428792517
 MonoBehaviour:
@@ -14990,8 +14963,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1428792518 stripped
 MeshRenderer:
@@ -16045,8 +16017,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1546882401 stripped
 MeshRenderer:
@@ -16069,8 +16040,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1546882403
 MonoBehaviour:
@@ -16087,8 +16057,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1546882404 stripped
 MeshRenderer:
@@ -16111,8 +16080,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1546882406
 MonoBehaviour:
@@ -16129,8 +16097,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1546882407 stripped
 MeshRenderer:
@@ -16767,8 +16734,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1581038469 stripped
 MeshRenderer:
@@ -16791,8 +16757,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1581038471
 MonoBehaviour:
@@ -16809,8 +16774,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1581038472 stripped
 MeshRenderer:
@@ -16833,8 +16797,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1581038474
 MonoBehaviour:
@@ -16851,8 +16814,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1581038475 stripped
 MeshRenderer:
@@ -17322,8 +17284,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1586147318 stripped
 MeshRenderer:
@@ -17346,8 +17307,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1586147320
 MonoBehaviour:
@@ -17364,8 +17324,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1586147321 stripped
 MeshRenderer:
@@ -17388,8 +17347,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1586147323
 MonoBehaviour:
@@ -17406,8 +17364,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1586147324 stripped
 MeshRenderer:
@@ -18500,8 +18457,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1710805126 stripped
 MeshRenderer:
@@ -18524,8 +18480,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1710805128
 MonoBehaviour:
@@ -18542,8 +18497,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1710805129 stripped
 MeshRenderer:
@@ -18566,8 +18520,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1710805131
 MonoBehaviour:
@@ -18584,8 +18537,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1710805132 stripped
 MeshRenderer:
@@ -19359,8 +19311,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!1 &1931219816
 GameObject:
@@ -19496,7 +19447,7 @@ MonoBehaviour:
   magnitudeShake: 0.07
   speedShake: 25
   shakeDuration: 0.2
-  numberWallStateMax: 4
+  numberWallStateMax: 5
 --- !u!61 &1969983273
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19538,8 +19489,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 1
   isMoving: 0
 --- !u!23 &1969983275 stripped
 MeshRenderer:
@@ -20018,8 +19968,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1981282582 stripped
 MeshRenderer:
@@ -20042,8 +19991,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1981282584
 MonoBehaviour:
@@ -20060,8 +20008,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1981282585 stripped
 MeshRenderer:
@@ -20084,8 +20031,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &1981282587
 MonoBehaviour:
@@ -20102,8 +20048,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &1981282588 stripped
 MeshRenderer:
@@ -21570,8 +21515,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &2144081382 stripped
 MeshRenderer:
@@ -21594,8 +21538,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &2144081384
 MonoBehaviour:
@@ -21612,8 +21555,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 1
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &2144081385 stripped
 MeshRenderer:
@@ -21636,8 +21578,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!114 &2144081387
 MonoBehaviour:
@@ -21654,8 +21595,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnectedRight: 0
-  isConnectedLeft: 0
+  isConnected: 0
   isMoving: 0
 --- !u!23 &2144081388 stripped
 MeshRenderer:
