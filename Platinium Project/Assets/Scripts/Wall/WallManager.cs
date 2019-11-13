@@ -49,9 +49,7 @@ public class WallManager : MonoBehaviour
             }
         }
         return null;
-    }
-    
-    
+    }   
     public void ConnectedtWallDammage(float myDammage, GameObject thisWall, WallProprieties connectedWallProprieties, WallChange connectedWallChange)
     {
         if (!connectedWallProprieties.isIndestructible)

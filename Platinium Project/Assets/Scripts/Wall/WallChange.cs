@@ -9,7 +9,6 @@ public class WallChange : MonoBehaviour
     [Header("Propriétés")]
     public float wallLifeMax;
     public float wallLimitVelocity;
-    public float friction = 15;
     private float wallLife;
     //
     private bool _lastHit = false;
@@ -145,7 +144,6 @@ public class WallChange : MonoBehaviour
         {
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
-            //_wallMesh.mesh = wallAppearance[3];
             _wallMeshRenderer.enabled = false;
             _wallCollider.isTrigger = true;
 
