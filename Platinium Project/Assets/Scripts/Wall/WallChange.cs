@@ -84,6 +84,7 @@ public class WallChange : MonoBehaviour
         _meshMaterials[4].color = new Color32(20, 189, 0, 255);
 
         _wallMesh = GetComponent<MeshFilter>().mesh;
+        _wallMesh = wallAppearance[3];
         _wallMeshRenderer = GetComponent<MeshRenderer>();
 
         _wallCollider = GetComponent<BoxCollider2D>();
@@ -151,6 +152,9 @@ public class WallChange : MonoBehaviour
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
             _wallMesh = wallAppearance[1];
+            //GetComponent<MeshFilter>().mesh = wallAppearance[1];
+            print("je chnagze aozqihjcslk");
+            
         }
         else if (wallLife < wallLifeMax/2 && wallLife > 0){
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
@@ -247,7 +251,7 @@ public class WallChange : MonoBehaviour
                 camera.transform.position = new Vector3(-(Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
                 break;
         }
-        //camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
+        
         timer += Time.deltaTime;
         if (timer >= shakeDuration)
         {
@@ -267,7 +271,6 @@ public class WallChange : MonoBehaviour
         else if (dammage < wallLimitVelocity)
         {
             wallLife -= dammage;
-            print("aaaaaaaaaaaaaa");
         }
         _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
 

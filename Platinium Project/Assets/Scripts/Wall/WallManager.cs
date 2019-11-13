@@ -147,19 +147,19 @@ public class WallManager : MonoBehaviour
 
 
     //A CHANGER, METTRE LES SCRIPTS EN PARAMETRES DIRECTEMENT
-    public void ConnectedRightWall(float myDammage, GameObject thisWall, GameObject rightWall)
+    public void ConnectedRightWall(float myDammage, GameObject thisWall, WallProprieties rightWallProprieties, WallChange rightWallChange)
     {
-        if (!rightWall.GetComponent<WallProprieties>().isIndestructible)
+        if (!rightWallProprieties.isIndestructible)
         {
-            rightWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+            rightWallChange.SetDammageFromConnect(myDammage);
         }
     }
 
-    public void ConnectedLeftWall(float myDammage, GameObject thisWall, GameObject leftWall)
+    public void ConnectedLeftWall(float myDammage, GameObject thisWall, WallProprieties leftWallProprieties, WallChange leftWallChange)
     {
-        if (!leftWall.GetComponent<WallProprieties>().isIndestructible)
+        if (!leftWallProprieties.isIndestructible)
         {
-            leftWall.GetComponent<WallChange>().SetDammageFromConnect(myDammage);
+            leftWallChange.SetDammageFromConnect(myDammage);
         }
     }
 }

@@ -75,14 +75,14 @@ public class WallProprieties : MonoBehaviour
         {
             if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
             {
-                _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, _rightWall);
+                _wallManagerScript.ConnectedRightWall(player.GetVelocityRatio(), gameObject, _rightWallProprieties, _rightWallChange);
             }
         }
         if (isConnectedLeft)
         {
             if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
             {
-                _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, _leftWall);
+                _wallManagerScript.ConnectedLeftWall(player.GetVelocityRatio(), gameObject, _leftWallProprieties, _leftWallChange);
             }
         }
         if(_rightWallProprieties.isConnectedLeft && !_rightWallProprieties.isIndestructible)
