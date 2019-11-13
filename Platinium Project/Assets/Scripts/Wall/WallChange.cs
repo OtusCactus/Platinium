@@ -48,9 +48,7 @@ public class WallChange : MonoBehaviour
     private int numberWallState;
     private Vector3 _cameraStartPosition;
     private float timer = 0;
-
-    private GameObject leftWall;
-    private GameObject rightWall;
+    
 
     private WallProprieties _wallProprieties;
 
