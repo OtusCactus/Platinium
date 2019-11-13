@@ -23592,6 +23592,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: allScores.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: scoreP1.Array.data[0]
       value: 
       objectReference: {fileID: 1053349367}
@@ -23755,6 +23759,26 @@ PrefabInstance:
       propertyPath: scoreP4.Array.data[9]
       value: 
       objectReference: {fileID: 916205245}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: allScores.Array.data[0]
+      value: 
+      objectReference: {fileID: 1553651789}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: allScores.Array.data[1]
+      value: 
+      objectReference: {fileID: 1692727125}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: allScores.Array.data[2]
+      value: 
+      objectReference: {fileID: 335609519}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: allScores.Array.data[3]
+      value: 
+      objectReference: {fileID: 1179709337}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: nbrPlayers
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
 --- !u!4 &8803697247810532328

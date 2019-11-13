@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] player;
     public GameObject[] playerPrefabs;
     private PlayerEntity[] playersEntityScripts;
+    private List<GameObject> currentPlayersList = new List<GameObject>(); 
 
     public int currentPlayersOnArena;
 
@@ -67,6 +68,10 @@ public class GameManager : MonoBehaviour
 
         currentPlayersOnArena = player.Length;
 
+        for (int i = player.Length; i--> 0;)
+        {
+            currentPlayersList.Add(player[i]);
+        }
 
     }
 
@@ -149,5 +154,21 @@ public class GameManager : MonoBehaviour
                colliders.enabled = true;
             }
         }
+    }
+
+    public void ThisPlayerHasLost(string player)
+    {
+        for (int i = currentPlayersList.Count; i--> 0;)
+        {
+            if (currentPlayersList[i].gameObject.tag == player)
+            {
+                currentPlayersList.Remove(currentPlayersList[i]);
+            }
+        }
+    }
+
+    public GameObject GetFirstCurrentPlayersItem()
+    {
+        return currentPlayersList[0];
     }
 }
