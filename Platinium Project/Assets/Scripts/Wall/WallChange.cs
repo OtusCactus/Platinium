@@ -107,7 +107,6 @@ public class WallChange : MonoBehaviour
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
         {
-            _gameManagerScript.isTurning = true;
 
             _wallCollider.enabled = true;
             _wallMeshRenderer.enabled = true;
@@ -137,7 +136,6 @@ public class WallChange : MonoBehaviour
             {
                 _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
             }
-            _gameManagerScript.isTurning = false;
 
         }
 
