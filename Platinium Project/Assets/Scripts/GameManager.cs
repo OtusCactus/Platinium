@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentLD;
 
+    private float lerpTimer;
+    public float lerpTimerMax;
+
     private void Awake()
     {
         if(GameObject.FindWithTag("MenuManager") != null)
@@ -58,6 +61,8 @@ public class GameManager : MonoBehaviour
         }
         _faceClassScript = GetComponent<FaceClass>();
         _scoreManagerScript = GetComponent<ScoreManager>();
+
+        playersEntityScripts = new PlayerEntity[player.Length];
 
         currentPlayersOnArena = player.Length;
 
@@ -124,16 +129,33 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < player.Length; i++)
         {
-            player[i].SetActive(false);
+            //player[i].SetActive(false);
             player[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            player[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
+            //player[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
+
+            PlayerLerp(0);
+            PlayerLerp(1);
+            PlayerLerp(2);
+            PlayerLerp(3);
 
             
         }
     }
 
-    private void PlayerLerp(GameObject player)
+    private void PlayerLerp(int playerNumber)
     {
-        player.transform.position = Vector3.Lerp()
+        float timerRatio = lerpTimer / lerpTimerMax;
+        player[playerNumber].transform.position = Vector3.Lerp(player[playerNumber].transform.position, _faceClassScript.faceTab[currentFace].playerStartingPosition[playerNumber].position, timerRatio);
+
+        if(timerRatio > 1)
+        {
+            timerRatio = 1;
+            playersEntityScripts[playerNumber].enabled = true;
+            CircleCollider2D[] playerColliders = player[playerNumber].GetComponents<CircleCollider2D>();
+            foreach(CircleCollider2D colliders in playerColliders)
+            { 
+               colliders.enabled = true;
+            }
+        }
     }
 }
