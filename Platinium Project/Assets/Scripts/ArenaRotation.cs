@@ -32,6 +32,8 @@ public class ArenaRotation : MonoBehaviour
     [Header("ArenaRotation")]
     [System.NonSerialized]
     public bool _isTurning;
+    public bool _hasRoundBegun;
+
     private float timerClamped;
     private float _turningTimer;
     public float turningTimerMax;
@@ -40,6 +42,7 @@ public class ArenaRotation : MonoBehaviour
     [Header("gameManager")]
     public GameObject gameManager;
     private FaceClass _faceClassScript;
+    private GameManager _gameManagerScript;
     private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
     //debug
@@ -53,6 +56,7 @@ public class ArenaRotation : MonoBehaviour
         _faceClassScript = gameManager.GetComponent<FaceClass>();
         _soundManagerScript = gameManager.GetComponent<SoundManager>();
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
+        _gameManagerScript = gameManager.GetComponent<GameManager>();
 
         //set la caméra sur la première face de l'arène.
         _cameraPositionNumber = 0;
@@ -76,6 +80,8 @@ public class ArenaRotation : MonoBehaviour
 
             //permet la rotation
             _isTurning = true;
+            _gameManagerScript.isTurning = true;
+
             //reset la condition pour pouvoir tourner lors de la prochaine face
             _cameraCurrentHolder = _cameraPositionNumber;
         }
@@ -130,7 +136,8 @@ public class ArenaRotation : MonoBehaviour
                 _turningTimer = 0;
                 _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
                 _isTurning = false;
-
+                _gameManagerScript.isTurning = false;
+                _gameManagerScript.hasRoundBegun = true;
             }
         }
     }

@@ -27,12 +27,13 @@ public class GameManager : MonoBehaviour
     public int currentPlayersOnArena;
 
     public bool isTurning;
+    public bool hasRoundBegun;
     
     public int currentFace;
 
     private GameObject currentLD;
 
-    private float lerpTimer;
+    private float lerpTimer = 0;
     public float lerpTimerMax;
 
     private void Awake()
@@ -94,33 +95,30 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(currentLD);
             }
-            PlayerReset(player);
             if (_faceClassScript.faceTab[currentFace].levelDesign != null)
             {
                 currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
             }
-
-
-
-
-           
-
         }
-        else
+        else if(hasRoundBegun)
         {
-            //réactive les joueurs quand le changement de face est terminé
-            for (int i = 0; i < player.Length; i++)
-            {
-                player[i].SetActive(true);
-                //playersEntityScripts[i].enabled = true;
-                //CircleCollider2D[] playerColliders = player[i].GetComponents<CircleCollider2D>();
-                //foreach(CircleCollider2D colliders in playerColliders)
-                //{
-                //    colliders.enabled = true;
-                //}
+            lerpTimer += Time.deltaTime;
+            float timerRatio = lerpTimer / lerpTimerMax;
 
+
+            PlayerReset(player);
+            PlayerLerp(0, timerRatio);
+            PlayerLerp(1, timerRatio);
+            PlayerLerp(2, timerRatio);
+            PlayerLerp(3, timerRatio);
+            if(timerRatio >1)
+            {
+                currentPlayersOnArena = player.Length;
+                lerpTimer = 0;
+                timerRatio = 0;
+                hasRoundBegun = false;
             }
-  
+
         }
     }
 
@@ -133,23 +131,17 @@ public class GameManager : MonoBehaviour
             player[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             //player[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
 
-            PlayerLerp(0);
-            PlayerLerp(1);
-            PlayerLerp(2);
-            PlayerLerp(3);
-
-            
         }
     }
 
-    private void PlayerLerp(int playerNumber)
+    private void PlayerLerp(int playerNumber, float timerRatio)
     {
-        float timerRatio = lerpTimer / lerpTimerMax;
         player[playerNumber].transform.position = Vector3.Lerp(player[playerNumber].transform.position, _faceClassScript.faceTab[currentFace].playerStartingPosition[playerNumber].position, timerRatio);
-
-        if(timerRatio > 1)
+        print(timerRatio);
+        if(timerRatio >= 1)
         {
-            timerRatio = 1;
+            print("reached");
+
             playersEntityScripts[playerNumber].enabled = true;
             CircleCollider2D[] playerColliders = player[playerNumber].GetComponents<CircleCollider2D>();
             foreach(CircleCollider2D colliders in playerColliders)
