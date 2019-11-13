@@ -18,7 +18,7 @@ public class WallChange : MonoBehaviour
     [Header("Apparence")]
     public Mesh[] wallAppearance;
     private Material[] _meshMaterials;
-    private Mesh _wallMesh;
+    private MeshFilter _wallMesh;
 
     private PlayerEntity _playerOnCollision;
     private float _playerVelocityRatio;
@@ -83,8 +83,7 @@ public class WallChange : MonoBehaviour
         _meshMaterials[3].color = new Color32(28, 235, 0, 255);
         _meshMaterials[4].color = new Color32(20, 189, 0, 255);
 
-        _wallMesh = GetComponent<MeshFilter>().mesh;
-        _wallMesh = wallAppearance[3];
+        _wallMesh = GetComponent<MeshFilter>();
         _wallMeshRenderer = GetComponent<MeshRenderer>();
 
         _wallCollider = GetComponent<BoxCollider2D>();
@@ -116,7 +115,7 @@ public class WallChange : MonoBehaviour
             _currentFace = _arenaRotationScript._cameraPositionNumber;
             _lastHit = false;
             wallLife = wallLifeMax;
-            _wallMesh = wallAppearance[0];
+            _wallMesh.mesh = wallAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
 
 
@@ -146,19 +145,17 @@ public class WallChange : MonoBehaviour
         {
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 3) ShakeScreen();
-            _wallMesh = wallAppearance[3];
+            _wallMesh.mesh = wallAppearance[3];
         }
         else if (wallLife < wallLifeMax && wallLife >= wallLifeMax / 2)
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
-            _wallMesh = wallAppearance[1];
-            //GetComponent<MeshFilter>().mesh = wallAppearance[1];
-            print("je chnagze aozqihjcslk");
+            _wallMesh.mesh = wallAppearance[1];
             
         }
         else if (wallLife < wallLifeMax/2 && wallLife > 0){
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
-            _wallMesh = wallAppearance[2];
+            _wallMesh.mesh = wallAppearance[2];
         }
 
     }
