@@ -134,6 +134,6 @@ public class GameManager : MonoBehaviour
 
     private void PlayerLerp(GameObject player)
     {
-        player.transform.position = Vector3.Lerp()
+        //player.transform.position = Vector3.Lerp()
     }
 }
