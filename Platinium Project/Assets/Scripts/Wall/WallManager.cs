@@ -145,8 +145,7 @@ public class WallManager : MonoBehaviour
         return null;
     }
 
-
-    //A CHANGER, METTRE LES SCRIPTS EN PARAMETRES DIRECTEMENT
+    
     public void ConnectedRightWall(float myDammage, GameObject thisWall, WallProprieties rightWallProprieties, WallChange rightWallChange)
     {
         if (!rightWallProprieties.isIndestructible)
