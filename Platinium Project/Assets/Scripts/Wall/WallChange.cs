@@ -177,7 +177,7 @@ public class WallChange : MonoBehaviour
 
                 _playerOnCollision.enabled = false;
                 _playerOnCollision.DesactiveCollider();
-                _scoreManagerScript.ChangeScore(false, int.Parse(collision.gameObject.name.Substring(collision.gameObject.name.Length - 1)));
+                _scoreManagerScript.ChangeScore(false, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
             }
             else if (_gameManagerScript.currentPlayersOnArena <= 2)
             {
@@ -219,6 +219,9 @@ public class WallChange : MonoBehaviour
                 //renvoie la prochaine face vers le script de rotation de caméra
                 _wallCollider.enabled = false;
                 _wallCollider.isTrigger = false;
+
+                _scoreManagerScript.ChangeScore(false, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                _scoreManagerScript.ChangeScore(true, int.Parse(_gameManagerScript.player[0].gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
 
                 _gameManagerScript.currentFace = _nextFace - 1;
                 _arenaRotationScript._currentFace = _nextFace - 1;

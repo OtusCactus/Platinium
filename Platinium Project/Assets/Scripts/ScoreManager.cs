@@ -7,10 +7,12 @@ public class ScoreManager : MonoBehaviour
 {
     public int scoreToWin;
     public int nbrPlayers;
+    public GameObject[] allScores;
     public GameObject[] scoreP1;
     public GameObject[] scoreP2;
     public GameObject[] scoreP3;
     public GameObject[] scoreP4;
+    
     public GameObject restartMenu;
 
     private int[] _playerScore;
@@ -33,18 +35,13 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeScore(bool win, int player)
     {
-        //player--;  //for the index
-        //_playerScore[player]++;
-        //_UpdateUI(player);
-        //_CheckScore(player);
-        //actualRound++;
         if (!win)
         {
-            scoreP1[actualRound].GetComponent<Image>().color = Color.red;
+            allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.red;
         }
         else
         {
-            scoreP1[actualRound].GetComponent<Image>().color = Color.green;
+            allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.green;
             _CheckScore(player);
             actualRound++;
         }
