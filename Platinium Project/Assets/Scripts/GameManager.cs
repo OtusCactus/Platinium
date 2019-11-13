@@ -13,9 +13,7 @@ public class GameManager : MonoBehaviour
     public int[] _wallSouthEastTab;
     public int[] _wallSouthTab;
     public int[] _wallSouthWestTab;
-
-    //public Vector3 destroyedWallPosition;
-    //public string playerWhoDestroyedWall;
+    
 
 
     private FaceClass _faceClassScript;
@@ -23,20 +21,16 @@ public class GameManager : MonoBehaviour
     private ScoreManager _scoreManagerScript;
 
     public GameObject[] player;
-    //public GameObject player2;
-    //public GameObject player3;
-    //public GameObject player4;
-
     public GameObject[] playerPrefabs;
+    private PlayerEntity[] playersEntityScripts;
+
+    public int currentPlayersOnArena;
 
     public bool isTurning;
-
-    //private float timer;
-    //private float timer2;
-    //public float timerMax;
-    //public float timerMax2;
+    
     public int currentFace;
-    //score
+
+    private GameObject currentLD;
 
     private void Awake()
     {
@@ -65,7 +59,7 @@ public class GameManager : MonoBehaviour
         _faceClassScript = GetComponent<FaceClass>();
         _scoreManagerScript = GetComponent<ScoreManager>();
 
-        
+        currentPlayersOnArena = player.Length;
 
 
     }
@@ -77,16 +71,12 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < player.Length; i++)
         {
             player[i].transform.position = _faceClassScript.faceTab[0].playerStartingPosition[i].position;
+            playersEntityScripts[i] = player[i].GetComponent<PlayerEntity>();
         }
 
 
 
-        //player[0].transform.position = _faceClassScript.faceTab[0].player1StartingPosition.position;
-        //player[1].transform.position = _faceClassScript.faceTab[0].player2StartingPosition.position;
-        //if(player[2] != null)
-        //player[2].transform.position = _faceClassScript.faceTab[0].player3StartingPosition.position;
-        //if (player[3] != null)
-        //player[3].transform.position = _faceClassScript.faceTab[0].player4StartingPosition.position;
+
     }
 
     // Update is called once per frame
@@ -94,36 +84,21 @@ public class GameManager : MonoBehaviour
     {
         //check si on doit changer de face de l'arène
         if (isTurning)
-        { 
+        {
+            if (currentLD != null)
+            {
+                Destroy(currentLD);
+            }
             PlayerReset(player);
+            if (_faceClassScript.faceTab[currentFace].levelDesign != null)
+            {
+                currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+            }
 
 
 
 
-
-            //player[0].SetActive(false);
-            //player[1].SetActive(false);
-
-            //player[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //player[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //player[0].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[0].position;
-            //player[1].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[1].position;
-
-
-            //if (player[2] != null)
-            //{
-            //    player[2].SetActive(false);
-            //    player[2].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //    player[2].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[2].position;
-
-            //}
-            //if (player[3] != null)
-            //{
-            //    player[3].SetActive(false);
-            //    player[3].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //    player[3].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[3].position;
-
-            //}
+           
 
         }
         else
@@ -132,13 +107,15 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < player.Length; i++)
             {
                 player[i].SetActive(true);
+                //playersEntityScripts[i].enabled = true;
+                //CircleCollider2D[] playerColliders = player[i].GetComponents<CircleCollider2D>();
+                //foreach(CircleCollider2D colliders in playerColliders)
+                //{
+                //    colliders.enabled = true;
+                //}
+
             }
-            //player[0].SetActive(true);
-            //player[1].SetActive(true);
-            //if (player[2] != null)
-            //player[2].SetActive(true);
-            //if (player[3] != null)
-            //player[3].SetActive(true);
+  
         }
     }
 
@@ -150,6 +127,13 @@ public class GameManager : MonoBehaviour
             player[i].SetActive(false);
             player[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             player[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
+
+            
         }
+    }
+
+    private void PlayerLerp(GameObject player)
+    {
+        player.transform.position = Vector3.Lerp()
     }
 }

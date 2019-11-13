@@ -18,7 +18,7 @@ public class WallChange : MonoBehaviour
     [Header("Apparence")]
     public Mesh[] wallAppearance;
     private Material[] _meshMaterials;
-    private Mesh _wallMesh;
+    private MeshFilter _wallMesh;
 
     private PlayerEntity _playerOnCollision;
     private float _playerVelocityRatio;
@@ -38,6 +38,7 @@ public class WallChange : MonoBehaviour
     //variables pour le changement de face de l'arène
     private int _currentFace;
     private int _nextFace;
+    
 
     [Header("Camera Shake")]
     public Camera camera;
@@ -48,9 +49,7 @@ public class WallChange : MonoBehaviour
     private int numberWallState;
     private Vector3 _cameraStartPosition;
     private float timer = 0;
-
-    private GameObject leftWall;
-    private GameObject rightWall;
+    
 
     private WallProprieties _wallProprieties;
 
@@ -83,7 +82,7 @@ public class WallChange : MonoBehaviour
         _meshMaterials[3].color = new Color32(28, 235, 0, 255);
         _meshMaterials[4].color = new Color32(20, 189, 0, 255);
 
-        _wallMesh = GetComponent<MeshFilter>().mesh;
+        _wallMesh = GetComponent<MeshFilter>();
         _wallMeshRenderer = GetComponent<MeshRenderer>();
 
         _wallCollider = GetComponent<BoxCollider2D>();
@@ -115,7 +114,7 @@ public class WallChange : MonoBehaviour
             _currentFace = _arenaRotationScript._cameraPositionNumber;
             _lastHit = false;
             wallLife = wallLifeMax;
-            _wallMesh = wallAppearance[0];
+            _wallMesh.mesh = wallAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
 
 
@@ -145,16 +144,17 @@ public class WallChange : MonoBehaviour
         {
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 3) ShakeScreen();
-            _wallMesh = wallAppearance[3];
+            _wallMesh.mesh = wallAppearance[3];
         }
         else if (wallLife < wallLifeMax && wallLife >= wallLifeMax / 2)
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
-            _wallMesh = wallAppearance[1];
+            _wallMesh.mesh = wallAppearance[1];
+            
         }
         else if (wallLife < wallLifeMax/2 && wallLife > 0){
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
-            _wallMesh = wallAppearance[2];
+            _wallMesh.mesh = wallAppearance[2];
         }
 
     }
@@ -163,6 +163,7 @@ public class WallChange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.GetComponent<PlayerEntity>();
+        //Rigidbody2D collisionRb = collision.GetComponent<Rigidbody2D>();
         _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
 
         //Si le mur n'est pas indestructible et que le joueur ne donne pas d'input (debug du problème ou le joueur charge la puissance en tournant et le mur prend des dégats) alors le mur prend des dégats
@@ -178,47 +179,62 @@ public class WallChange : MonoBehaviour
             }
             if (_lastHit)
             {
-                _wallMeshRenderer.enabled = false;
-                _wallCollider.enabled = false;
-                if (collision.tag == "Player1")
+                if(_gameManagerScript.currentPlayersOnArena > 2)
                 {
-                    _scoreManagerScript.AddScore(1);
+                    _wallMeshRenderer.enabled = false;
+                    _gameManagerScript.currentPlayersOnArena--;
+                    _playerOnCollision.enabled = false;
+                    CircleCollider2D[] collisionColliders = collision.GetComponents<CircleCollider2D>();
+                    foreach(CircleCollider2D colliders in collisionColliders)
+                    {
+                        colliders.enabled = false;
+                    }
+                    
                 }
-                else if (collision.tag == "Player2")
+                else
                 {
-                    _scoreManagerScript.AddScore(2);
-                }
-                else if (collision.tag == "Player3")
-                {
-                    _scoreManagerScript.AddScore(3);
-                }
-                else if (collision.tag == "Player4")
-                {
-                    _scoreManagerScript.AddScore(4);
-                }
+                    if (collision.tag == "Player1")
+                    {
+                        //_scoreManagerScript.AddScore(1);
+                    }
+                    else if (collision.tag == "Player2")
+                    {
+                        //_scoreManagerScript.AddScore(2);
+                    }
+                    else if (collision.tag == "Player3")
+                    {
+                        //_scoreManagerScript.AddScore(3);
+                    }
+                    else if (collision.tag == "Player4")
+                    {
+                        //_scoreManagerScript.AddScore(4);
+                    }
 
-                switch (this.gameObject.name)
-                {
-                    case "WallNorthEast":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthEastTab, _currentFace);
-                        break;
-                    case "WallNorthWest":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthWestTab, _currentFace);
-                        break;
-                    case "WallSouthWest":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthWestTab, _currentFace);
-                        break;
-                    case "WallSouth":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthTab, _currentFace);
-                        break;
-                    case "WallSouthEast":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthEastTab, _currentFace);
-                        break;
+                    switch (this.gameObject.name)
+                    {
+                        case "WallNorthEast":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthEastTab, _currentFace);
+                            break;
+                        case "WallNorthWest":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthWestTab, _currentFace);
+                            break;
+                        case "WallSouthWest":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthWestTab, _currentFace);
+                            break;
+                        case "WallSouth":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthTab, _currentFace);
+                            break;
+                        case "WallSouthEast":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthEastTab, _currentFace);
+                            break;
+                    }
+                    //renvoie la prochaine face vers le script de rotation de caméra
+                    _wallCollider.enabled = false;
+                    _gameManagerScript.currentFace = _nextFace - 1;
+                    _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
+                    _lastHit = false;
                 }
-                //renvoie la prochaine face vers le script de rotation de caméra
-                _gameManagerScript.currentFace = _nextFace - 1;
-                _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
-                _lastHit = false;
+                
             }
 
             _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
@@ -247,7 +263,7 @@ public class WallChange : MonoBehaviour
                 camera.transform.position = new Vector3(-(Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
                 break;
         }
-        //camera.transform.position = new Vector3((Mathf.Cos(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.x, (Mathf.Sin(Time.time * speedShake) * magnitudeShake) + _cameraStartPosition.y, _cameraStartPosition.z);
+        
         timer += Time.deltaTime;
         if (timer >= shakeDuration)
         {
@@ -267,7 +283,6 @@ public class WallChange : MonoBehaviour
         else if (dammage < wallLimitVelocity)
         {
             wallLife -= dammage;
-            print("aaaaaaaaaaaaaa");
         }
         _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
 
