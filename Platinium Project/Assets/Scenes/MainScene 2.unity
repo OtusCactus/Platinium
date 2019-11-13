@@ -470,7 +470,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -736,7 +735,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -788,7 +786,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -840,7 +837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -892,7 +888,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -944,7 +939,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1483,7 +1477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1535,7 +1528,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1587,7 +1579,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1639,7 +1630,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -1691,7 +1681,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -3644,6 +3633,16 @@ PrefabInstance:
       propertyPath: friction
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: frictionWhenCharging
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3887,7 +3886,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -6193,13 +6191,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921560583}
-  m_LocalRotation: {x: 0.59636784, y: 0.3799282, z: 0.5963678, w: -0.37992823}
-  m_LocalPosition: {x: 0.37292907, y: -0.0050112903, z: 0.7395334}
-  m_LocalScale: {x: 0.520654, y: 0.52065414, z: 0.520654}
+  m_LocalRotation: {x: 0.69620776, y: 0.7160575, z: 0.028106676, w: 0.042029254}
+  m_LocalPosition: {x: 0.0323, y: 1.52, z: -1.9845}
+  m_LocalScale: {x: 0.2562391, y: 0.5166294, z: 0.2562391}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -181.047, y: -5.700989, z: -91.662994}
 --- !u!1 &925808464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d22068d70cb3de74496d7698cb767820,
@@ -6257,7 +6255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 5
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -7214,7 +7211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -7266,7 +7262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -7318,7 +7313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -7370,7 +7364,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -7422,7 +7415,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -8776,7 +8768,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -8828,7 +8819,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -8880,7 +8870,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -8932,7 +8921,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -8984,7 +8972,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -9620,6 +9607,16 @@ PrefabInstance:
         type: 3}
       propertyPath: wallBouncyFriction
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: frictionWhenCharging
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7827578486218238840, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -14714,7 +14711,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -14766,7 +14762,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -14818,7 +14813,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -14870,7 +14864,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -14922,7 +14915,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -15848,7 +15840,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -15900,7 +15891,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -15952,7 +15942,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -16004,7 +15993,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -16056,7 +16044,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -16565,7 +16552,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -16617,7 +16603,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -16669,7 +16654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -16721,7 +16705,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -16773,7 +16756,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -17115,7 +17097,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -17167,7 +17148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -17219,7 +17199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -17271,7 +17250,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -17323,7 +17301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -17775,6 +17752,16 @@ PrefabInstance:
         type: 3}
       propertyPath: wallBouncyFriction
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: frictionWhenCharging
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7827578486218238840, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
@@ -18293,7 +18280,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -18345,7 +18331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -18397,7 +18382,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -18449,7 +18433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -18501,7 +18484,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19349,7 +19331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19533,7 +19514,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19804,7 +19784,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19856,7 +19835,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19908,7 +19886,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -19960,7 +19937,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -20012,7 +19988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -20349,6 +20324,16 @@ PrefabInstance:
         type: 3}
       propertyPath: wallBouncyFriction
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: frictionWhenCharging
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
@@ -21356,7 +21341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21408,7 +21392,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21460,7 +21443,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21512,7 +21494,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21564,7 +21545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLifeMax: 3
   wallLimitVelocity: 1.2
-  friction: 15
   wallAppearance:
   - {fileID: -7768408576438331914, guid: d22068d70cb3de74496d7698cb767820, type: 3}
   - {fileID: -5798510906853853667, guid: 736748011d957e54982948babdc3b26e, type: 3}
@@ -21858,6 +21838,7 @@ MonoBehaviour:
   arenaLookAt: {fileID: 2064437471}
   arena: {fileID: 5509694377808773627}
   _cameraPositionNumber: 0
+  _hasRoundBegun: 0
   turningTimerMax: 0.5
   gameManager: {fileID: 1366459337}
   debug: 0
