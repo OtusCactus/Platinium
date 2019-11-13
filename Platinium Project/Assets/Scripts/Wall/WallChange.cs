@@ -38,6 +38,7 @@ public class WallChange : MonoBehaviour
     //variables pour le changement de face de l'arène
     private int _currentFace;
     private int _nextFace;
+    
 
     [Header("Camera Shake")]
     public Camera camera;
@@ -162,6 +163,7 @@ public class WallChange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.GetComponent<PlayerEntity>();
+        //Rigidbody2D collisionRb = collision.GetComponent<Rigidbody2D>();
         _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
 
         //Si le mur n'est pas indestructible et que le joueur ne donne pas d'input (debug du problème ou le joueur charge la puissance en tournant et le mur prend des dégats) alors le mur prend des dégats
@@ -177,47 +179,62 @@ public class WallChange : MonoBehaviour
             }
             if (_lastHit)
             {
-                _wallMeshRenderer.enabled = false;
-                _wallCollider.enabled = false;
-                if (collision.tag == "Player1")
+                if(_gameManagerScript.currentPlayersOnArena > 2)
                 {
-                    _scoreManagerScript.AddScore(1);
+                    _wallMeshRenderer.enabled = false;
+                    _gameManagerScript.currentPlayersOnArena--;
+                    _playerOnCollision.enabled = false;
+                    CircleCollider2D[] collisionColliders = collision.GetComponents<CircleCollider2D>();
+                    foreach(CircleCollider2D colliders in collisionColliders)
+                    {
+                        colliders.enabled = false;
+                    }
+                    
                 }
-                else if (collision.tag == "Player2")
+                else
                 {
-                    _scoreManagerScript.AddScore(2);
-                }
-                else if (collision.tag == "Player3")
-                {
-                    _scoreManagerScript.AddScore(3);
-                }
-                else if (collision.tag == "Player4")
-                {
-                    _scoreManagerScript.AddScore(4);
-                }
+                    if (collision.tag == "Player1")
+                    {
+                        //_scoreManagerScript.AddScore(1);
+                    }
+                    else if (collision.tag == "Player2")
+                    {
+                        //_scoreManagerScript.AddScore(2);
+                    }
+                    else if (collision.tag == "Player3")
+                    {
+                        //_scoreManagerScript.AddScore(3);
+                    }
+                    else if (collision.tag == "Player4")
+                    {
+                        //_scoreManagerScript.AddScore(4);
+                    }
 
-                switch (this.gameObject.name)
-                {
-                    case "WallNorthEast":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthEastTab, _currentFace);
-                        break;
-                    case "WallNorthWest":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthWestTab, _currentFace);
-                        break;
-                    case "WallSouthWest":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthWestTab, _currentFace);
-                        break;
-                    case "WallSouth":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthTab, _currentFace);
-                        break;
-                    case "WallSouthEast":
-                        _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthEastTab, _currentFace);
-                        break;
+                    switch (this.gameObject.name)
+                    {
+                        case "WallNorthEast":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthEastTab, _currentFace);
+                            break;
+                        case "WallNorthWest":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallNorthWestTab, _currentFace);
+                            break;
+                        case "WallSouthWest":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthWestTab, _currentFace);
+                            break;
+                        case "WallSouth":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthTab, _currentFace);
+                            break;
+                        case "WallSouthEast":
+                            _nextFace = _wallManagerScript.WallFaceChange(_gameManagerScript._wallSouthEastTab, _currentFace);
+                            break;
+                    }
+                    //renvoie la prochaine face vers le script de rotation de caméra
+                    _wallCollider.enabled = false;
+                    _gameManagerScript.currentFace = _nextFace - 1;
+                    _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
+                    _lastHit = false;
                 }
-                //renvoie la prochaine face vers le script de rotation de caméra
-                _gameManagerScript.currentFace = _nextFace - 1;
-                _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
-                _lastHit = false;
+                
             }
 
             _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);

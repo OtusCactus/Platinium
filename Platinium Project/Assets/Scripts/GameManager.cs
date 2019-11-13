@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         _faceClassScript = GetComponent<FaceClass>();
         _scoreManagerScript = GetComponent<ScoreManager>();
 
-        
+        currentPlayersOnArena = player.Length;
 
 
     }
