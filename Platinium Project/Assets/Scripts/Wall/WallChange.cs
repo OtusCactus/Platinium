@@ -68,7 +68,7 @@ public class WallChange : MonoBehaviour
 
         // set les valeurs de départs
         wallLife = wallLifeMax;
-        _currentFace = _arenaRotationScript._cameraPositionNumber;
+        _currentFace = _arenaRotationScript._currentFace;
 
         //set les valeurs pour screenshake
         _cameraStartPosition = camera.transform.position;
@@ -86,17 +86,18 @@ public class WallChange : MonoBehaviour
         _wallMeshRenderer = GetComponent<MeshRenderer>();
 
         _wallCollider = GetComponent<BoxCollider2D>();
-
-        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
-        {
-            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
-        }
         gameObject.layer = 15;
-        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
-        {
-            _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
 
-        }
+
+        //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
+        //{
+        //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+        //}
+        //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+        //{
+        //    _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+        //}
     }
 
     // Update is called once per frame
@@ -110,7 +111,7 @@ public class WallChange : MonoBehaviour
 
             _wallCollider.enabled = true;
             _wallMeshRenderer.enabled = true;
-            _currentFace = _arenaRotationScript._cameraPositionNumber;
+            _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
             _wallMesh.mesh = wallAppearance[0];
@@ -118,26 +119,27 @@ public class WallChange : MonoBehaviour
             _wallMeshRenderer.enabled = true;
 
 
-            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
-            {
-                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
-            }
-            gameObject.layer = 15;
-            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
-            {
-                _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
 
-            }
+            //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
+            //{
+            //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+            //}
+            //gameObject.layer = 15;
+            //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+            //{
+            //    _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+            //}
         }
         //sinon réactive les colliders et les sprites des murs.
-        else
-        {
-            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace.Length; i++)
-            {
-                _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
-            }
+        //else
+        //{
+        //    for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace.Length; i++)
+        //    {
+        //        _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
+        //    }
 
-        }
+        //}
 
         if (wallLife <= 0)
         {
@@ -145,6 +147,8 @@ public class WallChange : MonoBehaviour
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             //_wallMesh.mesh = wallAppearance[3];
             _wallMeshRenderer.enabled = false;
+            _wallCollider.isTrigger = true;
+
         }
         else if (wallLife < wallLifeMax && wallLife >= (wallLifeMax * 0.66))
         {
@@ -186,6 +190,7 @@ public class WallChange : MonoBehaviour
             {
                 if(_gameManagerScript.currentPlayersOnArena > 2)
                 {
+
                     _wallMeshRenderer.enabled = false;
                     _gameManagerScript.currentPlayersOnArena--;
                     _playerOnCollision.enabled = false;
@@ -235,8 +240,10 @@ public class WallChange : MonoBehaviour
                     }
                     //renvoie la prochaine face vers le script de rotation de caméra
                     _wallCollider.enabled = false;
+                    _wallCollider.isTrigger = false;
+
                     _gameManagerScript.currentFace = _nextFace - 1;
-                    _arenaRotationScript._cameraPositionNumber = _nextFace - 1;
+                    _arenaRotationScript._currentFace = _nextFace - 1;
                     _lastHit = false;
                 }
                 

@@ -25,8 +25,8 @@ public class ArenaRotation : MonoBehaviour
     public GameObject arena;
 
     //face utilisée
-    public int _cameraPositionNumber;
-    private int _cameraCurrentHolder;
+    public int _currentFace;
+    private int _faceStored;
 
     //arene qui tourne
     [Header("ArenaRotation")]
@@ -59,9 +59,21 @@ public class ArenaRotation : MonoBehaviour
         _gameManagerScript = gameManager.GetComponent<GameManager>();
 
         //set la caméra sur la première face de l'arène.
-        _cameraPositionNumber = 0;
-        _cameraCurrentHolder = _cameraPositionNumber;
-        transform.rotation = _faceClassScript.faceTab[_cameraPositionNumber].arenaRotation.rotation;
+        _currentFace = 0;
+        _faceStored = _currentFace;
+        transform.rotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
+
+
+        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
+        {
+            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+        }
+        
+        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+        {
+            _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+        }
     }
 
     // Update is called once per frame
@@ -71,44 +83,47 @@ public class ArenaRotation : MonoBehaviour
         //diceCameraDistance = Vector3.Distance(arena.transform.position, mainCamera.transform.position);
 
         //si la face de l'arène doit changer, permet de chercher la rotation nécéssaire à effectuer puis de jouer le son de fin de round
-        if (_cameraCurrentHolder != _cameraPositionNumber)
+        if (_faceStored != _currentFace)
         {
             _startRotation = transform.rotation;
-            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].arenaRotation.rotation;
+            _endRotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
 
             _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
 
             //permet la rotation
             _isTurning = true;
             _gameManagerScript.isTurning = true;
-
+            for (int i = 0; i < _faceClassScript.faceTab[_faceStored].arenaWall.transform.childCount; i++)
+            {
+                _faceClassScript.faceTab[_faceStored].arenaWall.transform.GetChild(i).gameObject.layer = 15;
+            }
             //reset la condition pour pouvoir tourner lors de la prochaine face
-            _cameraCurrentHolder = _cameraPositionNumber;
+            _faceStored = _currentFace;
         }
 
         //permet de tourner l'arène sur la prochaine face dans l'ordre de 1 à 12
-        if (Input.GetKeyDown(KeyCode.N) && !_isTurning && _cameraPositionNumber < _faceClassScript.faceTab.Length - 1)
+        if (Input.GetKeyDown(KeyCode.N) && !_isTurning && _currentFace < _faceClassScript.faceTab.Length - 1)
         {
             Debug.Log("OK");
-            _cameraPositionNumber += 1;
+            _currentFace += 1;
 
            
 
             _startRotation = transform.rotation;
-            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].arenaRotation.rotation;
+            _endRotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
 
             _isTurning = true;
         }
         //permet de tourner l'arène sur la face précédente dans l'ordre de 1 à 12
-        if (Input.GetKeyDown(KeyCode.B) && !_isTurning && _cameraPositionNumber > 0)
+        if (Input.GetKeyDown(KeyCode.B) && !_isTurning && _currentFace > 0)
         {
             Debug.Log("OK");
-            _cameraPositionNumber -= 1;
+            _currentFace -= 1;
 
            
 
             _startRotation = transform.rotation;
-            _endRotation = _faceClassScript.faceTab[_cameraPositionNumber].arenaRotation.rotation;
+            _endRotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
             _isTurning = true;
         }
 
@@ -127,7 +142,18 @@ public class ArenaRotation : MonoBehaviour
             _playerManagerScript.player1.StopVibration();
 
             _playerManagerScript.player2.StopVibration();
-           
+
+
+            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
+            {
+                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+            }
+            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+            {
+                _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+            }
+
 
             //reset le lerp.
             if (timerClamped >= 1)
@@ -139,6 +165,14 @@ public class ArenaRotation : MonoBehaviour
                 _gameManagerScript.isTurning = false;
                 _gameManagerScript.hasRoundBegun = true;
             }
+        }
+        else
+        {
+            for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace.Length; i++)
+            {
+                _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
+            }
+
         }
     }
 
