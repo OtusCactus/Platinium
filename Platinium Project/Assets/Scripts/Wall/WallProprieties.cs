@@ -72,11 +72,14 @@ public class WallProprieties : MonoBehaviour
                 _wallManagerScript.ConnectedtWallDammage(player.GetVelocityRatio(), gameObject, _connectedWallProprieties, _connectedWallChange);
             }
         }
-        if(_connectedWallProprieties.isConnected && !_connectedWallProprieties.isIndestructible)
+        if (_connectedWall != null)
         {
-            if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+            if (_connectedWallProprieties.isConnected && !_connectedWallProprieties.isIndestructible)
             {
-                _connectedWallChange.SetDammageFromConnect(_thisWallChange.GetPlayerVelocityRatio());
+                if (player.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+                {
+                    _connectedWallChange.SetDammageFromConnect(_thisWallChange.GetPlayerVelocityRatio());
+                }
             }
         }
     }
