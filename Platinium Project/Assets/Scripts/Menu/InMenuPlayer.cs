@@ -191,7 +191,7 @@ public class InMenuPlayer : MonoBehaviour
         }
         else if (_playerInput == INPUTSTATE.Released)
         {
-            //_animator.SetBool("IsSlingshoting", false);
+            _animator.SetBool("IsSlingshoting", false);
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 

@@ -18,6 +18,8 @@ public class MenuPlayerManager : MonoBehaviour
     public GameObject playerSelection;
     public string sceneName;
 
+    private bool _isStartGameShowing;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -56,6 +58,14 @@ public class MenuPlayerManager : MonoBehaviour
         {
             ExitGame();
         }
+
+        if (_isStartGameShowing && _player.GetButton("BackMenu"))
+        {
+            playerEntity.enabled = true;
+            playerSelection.SetActive(false);
+            _isStartGameShowing = false;
+
+        }
     }
     public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
     {
@@ -72,6 +82,9 @@ public class MenuPlayerManager : MonoBehaviour
     void ShowPlayerSelection()
     {
         playerSelection.SetActive(true);
+        playerEntity.enabled = false;
+        _isStartGameShowing = true;
+
     }
 
     void ExitGame()

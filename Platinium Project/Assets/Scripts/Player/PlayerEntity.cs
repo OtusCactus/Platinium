@@ -23,6 +23,8 @@ public class PlayerEntity : MonoBehaviour
     private float _joyAngle;
     private float _angle;
     [HideInInspector] public int _controllerNumber;
+    private float inputXSign;
+    private float inputYSign;
 
 
 
@@ -140,9 +142,12 @@ public class PlayerEntity : MonoBehaviour
         else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
         {
             _playerInput = INPUTSTATE.EasingInput;
+            //inputXSign = _inputVariableToStoreDirection.x;
+            //inputYSign = _inputVariableToStoreDirection.y;
         }
         else if((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
         {
+
             _playerInput = INPUTSTATE.Released;
         }
         #endregion
@@ -221,9 +226,12 @@ public class PlayerEntity : MonoBehaviour
             {
                 _touchedByPlayer = false;
             }
+
+
             _animator.SetBool("IsSlingshoting", false);
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
+            //_myRb.velocity = new Vector2 (inputXSign, -inputYSign).normalized * (-_timerPower * speed);
 
             _inputVariableToStoreDirection = Vector2.zero;
             _lastFramePower = _timerPower;
@@ -234,6 +242,7 @@ public class PlayerEntity : MonoBehaviour
         }
         else if (_playerInput == INPUTSTATE.None)
         {
+
             vibrationTreshold = 0.2f;
             powerJauge.fillAmount = 0;
             if (gameObject.tag == "Player1")
