@@ -23701,6 +23701,11 @@ PrefabInstance:
       propertyPath: playerList.Array.data[3]
       value: 
       objectReference: {fileID: 1126815082}
+    - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: lerpTimerMax
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: scoreP3.Array.size
       value: 10

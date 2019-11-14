@@ -116,10 +116,12 @@ public class GameManager : MonoBehaviour
 
 
             PlayerReset(playerList);
-            PlayerLerp(0, timerRatio);
-            PlayerLerp(1, timerRatio);
-            PlayerLerp(2, timerRatio);
-            PlayerLerp(3, timerRatio);
+            for (int i = 0; i < playerList.Count; i ++)
+            {
+                PlayerLerp(i, timerRatio);
+
+            }
+
             if(timerRatio >1)
             {
                 currentPlayersOnArena = playerList.Count;
