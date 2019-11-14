@@ -9,22 +9,16 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager Instance = null;
 
-    public Player player1;
-    public Player player2;
-    public Player player3;
-    public Player player4;
+    public List<Player> player;
 
-    public PlayerEntity playerEntity1;
-    public PlayerEntity playerEntity2;
-    public PlayerEntity playerEntity3;
-    public PlayerEntity playerEntity4;
+
+    public List<PlayerEntity> playerEntity;
+
 
     private GameManager gameManagerScript;
 
-    private AttackTest _attackTest1;
-    private AttackTest _attackTest2;
-    private AttackTest _attackTest3;
-    private AttackTest _attackTest4;
+    private List<AttackTest> _attackTest;
+
 
     private void Awake()
     {
@@ -45,75 +39,89 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerEntity1 = gameManagerScript.player[0].GetComponent<PlayerEntity>();
-        playerEntity2 = gameManagerScript.player[1].GetComponent<PlayerEntity>();
-        if(gameManagerScript.player[2] != null)
-        playerEntity3 = gameManagerScript.player[2].GetComponent<PlayerEntity>();
-        if (gameManagerScript.player[3] != null)
-        playerEntity4 = gameManagerScript.player[3].GetComponent<PlayerEntity>();
+
+        player = new List<Player>();
+        playerEntity = new List<PlayerEntity>();
+        _attackTest = new List<AttackTest>();
+        for (int i = 0; i < gameManagerScript.playerList.Count; i++)
+        {
+            player.Add(ReInput.players.GetPlayer("Player" + (i+1)));
+        }
+
+        for (int i = 0; i < player.Count; i++)
+        {
+            playerEntity.Add(gameManagerScript.playerList[i].GetComponent<PlayerEntity>());
+        }
 
 
-        _attackTest1 = playerEntity1.GetComponent<AttackTest>();
-        _attackTest2 = playerEntity2.GetComponent<AttackTest>();
-        _attackTest3 = playerEntity3.GetComponent<AttackTest>();
-        _attackTest4 = playerEntity4.GetComponent<AttackTest>();
 
-        player1 = ReInput.players.GetPlayer("Player1");
-        player2 = ReInput.players.GetPlayer("Player2");
-        player3 = ReInput.players.GetPlayer("Player3");
-        player4 = ReInput.players.GetPlayer("Player4");
+        for (int i = 0; i < player.Count; i++)
+        {
+            _attackTest.Add(playerEntity[i].GetComponent<AttackTest>());
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Gère à quel joueur attribué quel action
-        float inputXPlayer1 = -player1.GetAxis("HorizontalJoy1");
-        float inputYPlayer1 = player1.GetAxis("VerticalJoy1");
+        //Gère à quel joueur attribuer quel action
+        float inputXPlayer1 = -player[0].GetAxis("HorizontalJoy1");
+        float inputYPlayer1 = player[0].GetAxis("VerticalJoy1");
         Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
         
-        playerEntity1.SetInputX(dirPlayer1);
+        playerEntity[0].SetInputX(dirPlayer1);
 
-        if(player1.GetButton("Push1") && _attackTest1.isShockWavePossible)
+        if(player[0].GetButton("Push1") && _attackTest[0].isShockWavePossible)
         {
-            _attackTest1.Push();
+            _attackTest[0].Push();
         }
 
 
         
 
-        float inputXPlayer2 = -player2.GetAxis("HorizontalJoy2");
-        float inputYPlayer2 = player2.GetAxis("VerticalJoy2");
+        float inputXPlayer2 = -player[1].GetAxis("HorizontalJoy2");
+        float inputYPlayer2 = player[1].GetAxis("VerticalJoy2");
         Vector2 dirPlayer2 = new Vector2(inputXPlayer2, inputYPlayer2);
         
-        playerEntity2.SetInputX(dirPlayer2);
+        playerEntity[1].SetInputX(dirPlayer2);
 
-        if (player2.GetButton("Push2") && _attackTest2.isShockWavePossible)
+        if (player[1].GetButton("Push2") && _attackTest[1].isShockWavePossible)
         {
-            _attackTest2.Push();
+            _attackTest[1].Push();
         }
 
-        float inputXPlayer3 = -player3.GetAxis("HorizontalJoy3");
-        float inputYPlayer3 = player3.GetAxis("VerticalJoy3");
-        Vector2 dirPlayer3 = new Vector2(inputXPlayer3, inputYPlayer3);
-
-        playerEntity3.SetInputX(dirPlayer3);
-
-        if (player3.GetButton("Push3") && _attackTest3.isShockWavePossible)
+        if (player.Count == 3)
         {
-            _attackTest3.Push();
+            float inputXPlayer3 = -player[2].GetAxis("HorizontalJoy3");
+            float inputYPlayer3 = player[2].GetAxis("VerticalJoy3");
+            Vector2 dirPlayer3 = new Vector2(inputXPlayer3, inputYPlayer3);
+
+            playerEntity[2].SetInputX(dirPlayer3);
+
+            if (player[2].GetButton("Push3") && _attackTest[2].isShockWavePossible)
+            {
+                _attackTest[2].Push();
+            }
         }
 
-        float inputXPlayer4 = -player4.GetAxis("HorizontalJoy4");
-        float inputYPlayer4 = player4.GetAxis("VerticalJoy4");
-        Vector2 dirPlayer4 = new Vector2(inputXPlayer4, inputYPlayer4);
+        
 
-        playerEntity4.SetInputX(dirPlayer4);
-
-        if (player4.GetButton("Push4") && _attackTest4.isShockWavePossible)
+        if(player.Count == 4)
         {
-            _attackTest4.Push();
+            float inputXPlayer4 = -player[3].GetAxis("HorizontalJoy4");
+            float inputYPlayer4 = player[3].GetAxis("VerticalJoy4");
+            Vector2 dirPlayer4 = new Vector2(inputXPlayer4, inputYPlayer4);
+
+            playerEntity[3].SetInputX(dirPlayer4);
+
+            if (player[3].GetButton("Push4") && _attackTest[3].isShockWavePossible)
+            {
+                _attackTest[3].Push();
+            }
         }
+
+       
     }
 
 

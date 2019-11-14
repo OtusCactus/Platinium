@@ -138,9 +138,11 @@ public class ArenaRotation : MonoBehaviour
             transform.rotation = currentRotation;
 
             //stop les vibrations si vibrations il y a
-            _playerManagerScript.player1.StopVibration();
+            _playerManagerScript.player[0].StopVibration();
 
-            _playerManagerScript.player2.StopVibration();
+            _playerManagerScript.player[1].StopVibration();
+            _playerManagerScript.player[2].StopVibration();
+            _playerManagerScript.player[3].StopVibration();
 
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)

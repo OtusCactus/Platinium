@@ -191,19 +191,19 @@ public class PlayerEntity : MonoBehaviour
                     if (gameObject.tag == "Player1")
                     {
 
-                        _playerManagerScript.player1.StopVibration();
+                        _playerManagerScript.player[0].StopVibration();
                     }
                     else if (gameObject.tag == "Player2")
                     {
-                        _playerManagerScript.player2.StopVibration();
+                        _playerManagerScript.player[1].StopVibration();
                     }
                     else if (gameObject.tag == "Player3")
                     {
-                        _playerManagerScript.player3.StopVibration();
+                        _playerManagerScript.player[2].StopVibration();
                     }
                     else if (gameObject.tag == "Player4")
                     {
-                        _playerManagerScript.player4.StopVibration();
+                        _playerManagerScript.player[3].StopVibration();
                     }
                     //_soundManagerScript.NoSound();
                     _playerInput = INPUTSTATE.None;
@@ -238,19 +238,19 @@ public class PlayerEntity : MonoBehaviour
             powerJauge.fillAmount = 0;
             if (gameObject.tag == "Player1")
             {
-                _playerManagerScript.player1.StopVibration();
+                _playerManagerScript.player[0].StopVibration();
             }
             else if (gameObject.tag == "Player2")
             {
-                _playerManagerScript.player2.StopVibration();
+                _playerManagerScript.player[1].StopVibration();
             }
             else if (gameObject.tag == "Player3")
             {
-                _playerManagerScript.player3.StopVibration();
+                _playerManagerScript.player[2].StopVibration();
             }
             else if (gameObject.tag == "Player4")
             {
-                _playerManagerScript.player4.StopVibration();
+                _playerManagerScript.player[3].StopVibration();
             }
         }
         #endregion
@@ -289,19 +289,19 @@ public class PlayerEntity : MonoBehaviour
         {
             if (gameObject.tag == "Player1")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player1, 0, 1.0f, vibrationTreshold * 0.5f);
+                _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, vibrationTreshold * 0.5f);
             }
             else if (gameObject.tag == "Player2")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player2, 0, 1.0f, vibrationTreshold * 0.5f);
+                _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, vibrationTreshold * 0.5f);
             }
             if (gameObject.tag == "Player3")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player3, 0, 1.0f, vibrationTreshold * 0.5f);
+                _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, vibrationTreshold * 0.5f);
             }
             else if (gameObject.tag == "Player4")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player4, 0, 1.0f, vibrationTreshold * 0.5f);
+                _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, vibrationTreshold * 0.5f);
             }
             vibrationTreshold += 0.2f;
         }
@@ -309,19 +309,19 @@ public class PlayerEntity : MonoBehaviour
         {
             if (gameObject.tag == "Player1")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player1, 0, 1.0f, tooMuchPowerTimerMax);
+                _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, tooMuchPowerTimerMax);
             }
             else if (gameObject.tag == "Player2")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player2, 0, 1.0f, tooMuchPowerTimerMax);
+                _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, tooMuchPowerTimerMax);
             }
             if (gameObject.tag == "Player3")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player3, 0, 1.0f, tooMuchPowerTimerMax);
+                _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, tooMuchPowerTimerMax);
             }
             else if (gameObject.tag == "Player4")
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player4, 0, 1.0f, tooMuchPowerTimerMax);
+                _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, tooMuchPowerTimerMax);
             }
         }
     }

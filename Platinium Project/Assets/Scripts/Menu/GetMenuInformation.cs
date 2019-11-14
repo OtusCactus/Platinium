@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuManager : MonoBehaviour
+public class GetMenuInformation : MonoBehaviour
 {
     //Grégoire à fait ce script
     public int numbersOfPlayers;

@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour
 
 
     private FaceClass _faceClassScript;
-    private MenuManager _menuManagerScript;
+    private GetMenuInformation _menuInformationScript;
     private ScoreManager _scoreManagerScript;
 
-    public GameObject[] player;
+    public List<GameObject> playerList;
     public GameObject[] playerPrefabs;
     private PlayerEntity[] playersEntityScripts;
     private List<GameObject> currentPlayersList = new List<GameObject>(); 
@@ -39,38 +39,41 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(GameObject.FindWithTag("MenuManager") != null)
+        _scoreManagerScript = GetComponent<ScoreManager>();
+        _faceClassScript = GetComponent<FaceClass>();
+
+
+        if (GameObject.FindWithTag("MenuManager") != null)
         {
-            _menuManagerScript = GameObject.FindWithTag("MenuManager").GetComponent<MenuManager>();
+
+            _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
 
             //permet de set les controles et d'instantier les personnages joueurs en fonction du nombre de joueurs
-            if (_menuManagerScript != null && player.Length > 0)
+            if (_menuInformationScript != null && playerList.Count > 0)
             {
-                _scoreManagerScript.nbrPlayers = 0;
+                print("ok");
 
-                for (int j = 0; j < player.Length; j++)
+                _scoreManagerScript.nbrPlayers = 0;
+                for (int i = playerList.Count; i-- >0;)
                 {
-                    player[j].SetActive(false);
-                    player[j] = null;
-                    _scoreManagerScript.nbrPlayers += 1;
+                    playerList[i].SetActive(false);
                 }
+                playerList.Clear();
             }
-            for (int i = 0; i < _menuManagerScript.numbersOfPlayers; i++)
+            for (int i = 0; i < _menuInformationScript.numbersOfPlayers; i++)
             {
                 GameObject playerInstantiation = Instantiate(playerPrefabs[i]);
-                player[i] = playerInstantiation;
+                playerList.Add(playerInstantiation);
             }
         }
-        _faceClassScript = GetComponent<FaceClass>();
-        _scoreManagerScript = GetComponent<ScoreManager>();
 
-        playersEntityScripts = new PlayerEntity[player.Length];
+        playersEntityScripts = new PlayerEntity[playerList.Count];
 
-        currentPlayersOnArena = player.Length;
+        currentPlayersOnArena = playerList.Count;
 
-        for (int i = player.Length; i--> 0;)
+        for (int i = playerList.Count; i--> 0;)
         {
-            currentPlayersList.Add(player[i]);
+            currentPlayersList.Add(playerList[i]);
         }
 
     }
@@ -79,10 +82,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //set la position de départ des joueurs
-        for (int i = 0; i < player.Length; i++)
+        for (int i = 0; i < playerList.Count; i++)
         {
-            player[i].transform.position = _faceClassScript.faceTab[0].playerStartingPosition[i].position;
-            playersEntityScripts[i] = player[i].GetComponent<PlayerEntity>();
+            playerList[i].transform.position = _faceClassScript.faceTab[0].playerStartingPosition[i].position;
+            playersEntityScripts[i] = playerList[i].GetComponent<PlayerEntity>();
         }
 
 
@@ -111,14 +114,14 @@ public class GameManager : MonoBehaviour
             float timerRatio = lerpTimer / lerpTimerMax;
 
 
-            PlayerReset(player);
+            PlayerReset(playerList);
             PlayerLerp(0, timerRatio);
             PlayerLerp(1, timerRatio);
             PlayerLerp(2, timerRatio);
             PlayerLerp(3, timerRatio);
             if(timerRatio >1)
             {
-                currentPlayersOnArena = player.Length;
+                currentPlayersOnArena = playerList.Count;
                 lerpTimer = 0;
                 timerRatio = 0;
                 hasRoundBegun = false;
@@ -128,12 +131,12 @@ public class GameManager : MonoBehaviour
     }
 
     //permet de reset et de replacer les joueurs à chaque changement de faces
-    private void PlayerReset(GameObject[] player)
+    private void PlayerReset(List<GameObject> player)
     {
-        for (int i = 0; i < player.Length; i++)
+        for (int i = 0; i < playerList.Count; i++)
         {
             //player[i].SetActive(false);
-            player[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            playerList[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             //player[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
 
         }
@@ -141,14 +144,14 @@ public class GameManager : MonoBehaviour
 
     private void PlayerLerp(int playerNumber, float timerRatio)
     {
-        player[playerNumber].transform.position = Vector3.Lerp(player[playerNumber].transform.position, _faceClassScript.faceTab[currentFace].playerStartingPosition[playerNumber].position, timerRatio);
+        playerList[playerNumber].transform.position = Vector3.Lerp(playerList[playerNumber].transform.position, _faceClassScript.faceTab[currentFace].playerStartingPosition[playerNumber].position, timerRatio);
 
         if(timerRatio >= 1)
         {
             print("reached");
 
             playersEntityScripts[playerNumber].enabled = true;
-            BoxCollider2D[] playerColliders = player[playerNumber].GetComponents<BoxCollider2D>();
+            BoxCollider2D[] playerColliders = playerList[playerNumber].GetComponents<BoxCollider2D>();
             foreach(BoxCollider2D colliders in playerColliders)
             { 
                colliders.enabled = true;
@@ -175,9 +178,9 @@ public class GameManager : MonoBehaviour
     public void ResetCurrentPlayers()
     {
         currentPlayersList.Clear();
-        for (int i = player.Length; i-- > 0;)
+        for (int i = playerList.Count; i-- > 0;)
         {
-            currentPlayersList.Add(player[i]);
+            currentPlayersList.Add(playerList[i]);
         }
     }
 }

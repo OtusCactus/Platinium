@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuPlayerManager : MonoBehaviour
 {
-    //Matilde a fait ce script
+    //Grégoire a fait ce script
 
     public static MenuPlayerManager Instance = null;
 
@@ -65,7 +65,7 @@ public class MenuPlayerManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("MainScene 2");
+        SceneManager.LoadScene("MainScene 3");
     }
 
     void ShowPlayerSelection()

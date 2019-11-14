@@ -2587,7 +2587,8 @@ MonoBehaviour:
   mainCamera: {fileID: 375815616}
   arenaLookAt: {fileID: 0}
   arena: {fileID: 1265585423}
-  _cameraPositionNumber: 0
+  _currentFace: 0
+  _hasRoundBegun: 0
   turningTimerMax: 0.5
   gameManager: {fileID: 1814875012}
   debug: 0
@@ -4655,20 +4656,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2472823518169880610, guid: d22068d70cb3de74496d7698cb767820,
+    - target: {fileID: -7152872451687180059, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -1.42
       objectReference: {fileID: 0}
-    - target: {fileID: 2472823518169880610, guid: d22068d70cb3de74496d7698cb767820,
+    - target: {fileID: -7152872451687180059, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: -0.02
       objectReference: {fileID: 0}
-    - target: {fileID: 2472823518169880610, guid: d22068d70cb3de74496d7698cb767820,
+    - target: {fileID: -7152872451687180059, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.39
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -5633724471250801321, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
@@ -4685,20 +4686,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -7152872451687180059, guid: d22068d70cb3de74496d7698cb767820,
+    - target: {fileID: 2472823518169880610, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.42
+      value: -1.5
       objectReference: {fileID: 0}
-    - target: {fileID: -7152872451687180059, guid: d22068d70cb3de74496d7698cb767820,
+    - target: {fileID: 2472823518169880610, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0.01
       objectReference: {fileID: 0}
-    - target: {fileID: -7152872451687180059, guid: d22068d70cb3de74496d7698cb767820,
+    - target: {fileID: 2472823518169880610, guid: d22068d70cb3de74496d7698cb767820,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.35
+      value: 1.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22068d70cb3de74496d7698cb767820, type: 3}
