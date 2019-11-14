@@ -16,6 +16,7 @@ public class MenuPlayerManager : MonoBehaviour
     public InMenuPlayer playerEntity;
 
     public GameObject playerSelection;
+    public string sceneName;
 
     private void Awake()
     {
@@ -65,7 +66,7 @@ public class MenuPlayerManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("MainScene 3");
+        SceneManager.LoadScene(sceneName);
     }
 
     void ShowPlayerSelection()

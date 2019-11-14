@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
             {
                 GameObject playerInstantiation = Instantiate(playerPrefabs[i]);
                 playerList.Add(playerInstantiation);
+                _scoreManagerScript.nbrPlayers ++;
             }
         }
 
