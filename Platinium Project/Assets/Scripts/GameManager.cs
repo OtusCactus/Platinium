@@ -148,8 +148,8 @@ public class GameManager : MonoBehaviour
             print("reached");
 
             playersEntityScripts[playerNumber].enabled = true;
-            CircleCollider2D[] playerColliders = player[playerNumber].GetComponents<CircleCollider2D>();
-            foreach(CircleCollider2D colliders in playerColliders)
+            BoxCollider2D[] playerColliders = player[playerNumber].GetComponents<BoxCollider2D>();
+            foreach(BoxCollider2D colliders in playerColliders)
             { 
                colliders.enabled = true;
             }
@@ -170,5 +170,14 @@ public class GameManager : MonoBehaviour
     public GameObject GetFirstCurrentPlayersItem()
     {
         return currentPlayersList[0];
+    }
+
+    public void ResetCurrentPlayers()
+    {
+        currentPlayersList.Clear();
+        for (int i = player.Length; i-- > 0;)
+        {
+            currentPlayersList.Add(player[i]);
+        }
     }
 }

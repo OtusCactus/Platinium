@@ -225,6 +225,8 @@ public class WallChange : MonoBehaviour
                 _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
                 _scoreManagerScript.ChangeScore(true, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
 
+                _gameManagerScript.ResetCurrentPlayers();
+
                 _gameManagerScript.currentFace = _nextFace - 1;
                 _arenaRotationScript._currentFace = _nextFace - 1;
                 _lastHit = false;

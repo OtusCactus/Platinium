@@ -393,5 +393,10 @@ public class PlayerEntity : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    
+    public void ReactiveCollider()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+
 }

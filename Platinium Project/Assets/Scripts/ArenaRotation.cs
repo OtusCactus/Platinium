@@ -117,7 +117,6 @@ public class ArenaRotation : MonoBehaviour
         //permet de tourner l'arène sur la face précédente dans l'ordre de 1 à 12
         if (Input.GetKeyDown(KeyCode.B) && !_isTurning && _currentFace > 0)
         {
-            Debug.Log("OK");
             _currentFace -= 1;
 
            
