@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public int scoreToWin;
     public GameObject[] allScores;
+    public GameObject[] allPlayersText;
     private int[] _playerWinCount;
     public int nbrPlayers;
     
@@ -65,6 +66,7 @@ public class ScoreManager : MonoBehaviour
         for(int i = 0; i < nbrPlayers; i++)
         {
             allScores[i].SetActive(true);
+            allPlayersText[i].SetActive(true);
         }
     }
 
