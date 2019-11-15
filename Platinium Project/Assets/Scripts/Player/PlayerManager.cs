@@ -78,7 +78,7 @@ public class PlayerManager : MonoBehaviour
         }
 
 
-        
+        Debug.Log(player[2].GetAxis("HorizontalJoy3"));
 
         float inputXPlayer2 = -player[1].GetAxis("HorizontalJoy2");
         float inputYPlayer2 = player[1].GetAxis("VerticalJoy2");
@@ -91,7 +91,7 @@ public class PlayerManager : MonoBehaviour
             _attackTest[1].Push();
         }
 
-        if (player.Count == 3)
+        if (player.Count == 3 || player.Count == 4)
         {
             float inputXPlayer3 = -player[2].GetAxis("HorizontalJoy3");
             float inputYPlayer3 = player[2].GetAxis("VerticalJoy3");

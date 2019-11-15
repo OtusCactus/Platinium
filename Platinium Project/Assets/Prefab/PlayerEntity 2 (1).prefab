@@ -5716,7 +5716,7 @@ MonoBehaviour:
   powerJaugeParent: {fileID: 8562993523490196623}
   tooMuchPowerTimerMax: 2
   friction: 0.5
-  frictionWhenCharging: 0.1
+  frictionWhenCharging: 5
   frictionPlayer: 15
   reboundPourcentageOfSpeedIfImFaster: 25
   reboundPourcentageOfSpeedIfImSlower: 75
