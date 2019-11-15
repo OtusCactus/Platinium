@@ -2423,7 +2423,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7471483415933633331, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
+    - {fileID: 9112317936584710446, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
+    - {fileID: 9112317936584710445, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
 --- !u!1 &1059792299
 GameObject:
@@ -2682,8 +2690,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1265585426}
   - component: {fileID: 1265585427}
-  - component: {fileID: 1265585425}
-  - component: {fileID: 1265585424}
   m_Layer: 12
   m_Name: d12
   m_TagString: Untagged
@@ -2691,52 +2697,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1265585424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265585423}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de9020394c182a49b000597056bbea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 375815616}
-  arenaLookAt: {fileID: 0}
-  arena: {fileID: 1265585423}
-  _currentFace: 0
-  _hasRoundBegun: 0
-  turningTimerMax: 0.5
-  gameManager: {fileID: 1814875012}
-  debug: 0
---- !u!114 &1265585425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265585423}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 396ea54faf967274994572b8d6482633, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPosition:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  diceCameraDistance: 6.36
 --- !u!4 &1265585426
 Transform:
   m_ObjectHideFlags: 0
@@ -2770,8 +2730,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceClassMenuScript: {fileID: 1814875016}
-  inMenuPlayerScript: {fileID: 90597506}
-  player: {fileID: 3876687248912339995}
+  inMenuPlayerScript: {fileID: 1932026958}
+  player: {fileID: 1932026957}
   turningTimerMax: 0.5
 --- !u!1 &1413006310
 GameObject:
@@ -4263,6 +4223,32 @@ MonoBehaviour:
   tooMuchPowerTimerMax: 2
   friction: 0.1
   frictionPlayer: 15
+--- !u!61 &1932026963
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932026957}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0036642998, y: 0.02343446}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.51372445, y: 0.47680795}
+  m_EdgeRadius: 0
 --- !u!114 &1983767629 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7208858349396039649, guid: 9ef282b6ac9b82e428cdeb5a655fb52f,
