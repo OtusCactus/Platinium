@@ -4849,7 +4849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3876687247261567632
 Transform:
   m_ObjectHideFlags: 0
@@ -5628,7 +5628,7 @@ MonoBehaviour:
   powerJaugeParent: {fileID: 3876687249007833889}
   tooMuchPowerTimerMax: 2
   friction: 0.5
-  frictionWhenCharging: 0.1
+  frictionWhenCharging: 5
   frictionPlayer: 15
   reboundPourcentageOfSpeedIfImFaster: 25
   reboundPourcentageOfSpeedIfImSlower: 75
