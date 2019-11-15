@@ -20,6 +20,7 @@ public class WallChange : MonoBehaviour
     private Material[] _meshMaterials;
     private MeshFilter _wallMesh;
     private MeshRenderer _wallMeshRenderer;
+    private MeshRenderer _wallChildrenMeshRenderer;
     private MeshFilter _wallShadowMesh;
     private MeshRenderer _wallShadowMeshRenderer;
 
@@ -91,6 +92,7 @@ public class WallChange : MonoBehaviour
 
         _wallMesh = GetComponent<MeshFilter>();
         _wallMeshRenderer = GetComponent<MeshRenderer>();
+        _wallChildrenMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
         //_wallShadowMesh = transform.GetChild(0).GetComponent<MeshFilter>();
         //_wallShadowMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
         _wallMesh.mesh = wallAppearance[0];
@@ -111,13 +113,14 @@ public class WallChange : MonoBehaviour
 
             _wallCollider.enabled = true;
             _wallMeshRenderer.enabled = true;
+            _wallChildrenMeshRenderer.enabled = true;
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
             _wallMesh.mesh = wallAppearance[0];
             //_wallShadowMesh.mesh = wallShadowAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
-            _wallMeshRenderer.enabled = true;  
+           
            //_wallShadowMeshRenderer.enabled = true;  
         }
         

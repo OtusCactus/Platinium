@@ -66,7 +66,8 @@ public class ArenaRotation : MonoBehaviour
 
         for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
         {
-            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].SetActive(false);
+            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
         }
         
         for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
@@ -147,7 +148,9 @@ public class ArenaRotation : MonoBehaviour
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
             {
-                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].SetActive(false);
+                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].enabled = false;
+                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+
             }
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
             {
@@ -171,7 +174,9 @@ public class ArenaRotation : MonoBehaviour
         {
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace.Length; i++)
             {
-                _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].SetActive(false);
+                _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
+                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+
             }
 
         }
