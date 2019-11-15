@@ -175,7 +175,7 @@ public class ArenaRotation : MonoBehaviour
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace.Length; i++)
             {
                 _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].enabled = false;
-                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+                _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
 
             }
 
