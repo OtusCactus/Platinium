@@ -2428,6 +2428,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1896027394, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
     - {fileID: 9112317936584710446, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
@@ -4095,6 +4099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallHit: {fileID: 0}
+  wallBouncyHit: {fileID: 0}
   playerCast: {fileID: 0}
   playersCollision: {fileID: 0}
   endRound: {fileID: 0}

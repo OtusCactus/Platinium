@@ -21,7 +21,6 @@ public class ShockwaveHit : MonoBehaviour
     private SoundManager _soundManagerScript;
     private PlayerEntity _playerEntityScript;
 
-    private AudioSource _childAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,6 @@ public class ShockwaveHit : MonoBehaviour
         //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
         _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
         _playerEntityScript = GetComponent<PlayerEntity>();
-        _childAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,27 +49,12 @@ public class ShockwaveHit : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnColliderEnter2D(Collision2D collision)
     {
-        //si on touche un mur on un joueur, joue un son différent
-        if (collision.tag.Contains("Walls"))
+        if (collision.gameObject.tag.Contains("Walls"))
         {
-            WallProprieties collisionScript = collision.GetComponent<WallProprieties>();
-            if(collisionScript.isBouncy)
-            {
-                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallBouncyHit);
 
-            }
-            else if(!collisionScript.isBouncy && !collisionScript.isIndestructible)
-            {
-                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallHit);
-            }
             _hitWalls = true;
-           
-        }
-        else if (collision.tag.Contains("Player"))
-        {
-            _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.playersCollision);
 
         }
     }

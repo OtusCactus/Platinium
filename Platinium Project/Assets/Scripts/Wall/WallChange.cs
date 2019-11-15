@@ -91,8 +91,8 @@ public class WallChange : MonoBehaviour
 
         _wallMesh = GetComponent<MeshFilter>();
         _wallMeshRenderer = GetComponent<MeshRenderer>();
-        _wallShadowMesh = transform.GetChild(0).GetComponent<MeshFilter>();
-        _wallShadowMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+        //_wallShadowMesh = transform.GetChild(0).GetComponent<MeshFilter>();
+        //_wallShadowMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
         _wallMesh.mesh = wallAppearance[0];
 
         _wallCollider = GetComponent<BoxCollider2D>();
@@ -115,10 +115,10 @@ public class WallChange : MonoBehaviour
             _lastHit = false;
             wallLife = wallLifeMax;
             _wallMesh.mesh = wallAppearance[0];
-            _wallShadowMesh.mesh = wallShadowAppearance[0];
+            //_wallShadowMesh.mesh = wallShadowAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
             _wallMeshRenderer.enabled = true;  
-            _wallShadowMeshRenderer.enabled = true;  
+           //_wallShadowMeshRenderer.enabled = true;  
         }
         
 
@@ -127,7 +127,7 @@ public class WallChange : MonoBehaviour
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             _wallMeshRenderer.enabled = false;
-            _wallShadowMeshRenderer.enabled = false;
+            //_wallShadowMeshRenderer.enabled = false;
             _wallCollider.isTrigger = true;
 
         }
@@ -135,20 +135,20 @@ public class WallChange : MonoBehaviour
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
             _wallMesh.mesh = wallAppearance[1];
-            _wallShadowMesh.mesh = wallShadowAppearance[1];
+            //_wallShadowMesh.mesh = wallShadowAppearance[1];
             
         }
         else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
         {
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
             _wallMesh.mesh = wallAppearance[2];
-            _wallShadowMesh.mesh = wallShadowAppearance[2];
+            //_wallShadowMesh.mesh = wallShadowAppearance[2];
         }
         else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
         {
             if (numberWallState > numberWallStateMax - 3) ShakeScreen();
             _wallMesh.mesh = wallAppearance[3];
-            _wallShadowMesh.mesh = wallShadowAppearance[3];
+            //_wallShadowMesh.mesh = wallShadowAppearance[3];
         }
 
     }
@@ -186,7 +186,7 @@ public class WallChange : MonoBehaviour
             {
              
                 _wallMeshRenderer.enabled = false;
-                _wallShadowMeshRenderer.enabled = false;
+               // _wallShadowMeshRenderer.enabled = false;
 
                 _gameManagerScript.currentPlayersOnArena--;
 

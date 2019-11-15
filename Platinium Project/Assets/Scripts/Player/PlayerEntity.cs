@@ -85,6 +85,9 @@ public class PlayerEntity : MonoBehaviour
     //score
     private ScoreManager _scoreManagerScript;
 
+    private AudioSource _childAudioSource;
+
+
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
@@ -114,6 +117,9 @@ public class PlayerEntity : MonoBehaviour
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
 
         _animator = GetComponent<Animator>();
+
+        _childAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
+
 
         onomatopéesSprite.enabled = false;
     }
@@ -359,6 +365,28 @@ public class PlayerEntity : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //si on touche un mur on un joueur, joue un son différent
+        if (collision.gameObject.tag.Contains("Walls"))
+        {
+            WallProprieties collisionScript = collision.gameObject.GetComponent<WallProprieties>();
+            if (collisionScript.isBouncy)
+            {
+                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallBouncyHit);
+
+            }
+            else if (!collisionScript.isBouncy && !collisionScript.isIndestructible)
+            {
+                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallHit);
+            }
+
+        }
+        else if (collision.gameObject.tag.Contains("Player"))
+        {
+            _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.playersCollision);
+
+        }
+
+
         if (collision.gameObject.tag.Contains("Player"))
         {
             onomatopéesSprite.enabled = true;
