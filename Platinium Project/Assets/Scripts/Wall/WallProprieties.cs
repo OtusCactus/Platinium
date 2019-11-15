@@ -19,6 +19,8 @@ public class WallProprieties : MonoBehaviour
     private WallProprieties _connectedWallProprieties;
     private WallChange _connectedWallChange;
 
+    public GameObject[] theWalls;
+
     // Start is called before the first frame update
     void Start()
     {
