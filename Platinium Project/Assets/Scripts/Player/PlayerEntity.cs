@@ -138,12 +138,14 @@ public class PlayerEntity : MonoBehaviour
             _playerInput = INPUTSTATE.GivingInput;
 
             _timerDeadPoint = 0;
+            inputXSign = _inputVariableToStoreDirection.x;
+            inputYSign = _inputVariableToStoreDirection.y;
         }
         else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
         {
-            _playerInput = INPUTSTATE.EasingInput;
-            //inputXSign = _inputVariableToStoreDirection.x;
-            //inputYSign = _inputVariableToStoreDirection.y;
+
+            _playerInput = INPUTSTATE.Released;
+
         }
         else if((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
         {
@@ -230,8 +232,8 @@ public class PlayerEntity : MonoBehaviour
 
             _animator.SetBool("IsSlingshoting", false);
             powerJaugeParent.gameObject.SetActive(false);
-            _myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
-            //_myRb.velocity = new Vector2 (inputXSign, -inputYSign).normalized * (-_timerPower * speed);
+            //_myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
+            _myRb.velocity = new Vector2 (inputXSign, -inputYSign).normalized * (-_timerPower * speed);
 
             _inputVariableToStoreDirection = Vector2.zero;
             _lastFramePower = _timerPower;
