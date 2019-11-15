@@ -9,6 +9,15 @@ public class WallManager : MonoBehaviour
     public float wallFriction = 15;
     public float wallBouncyFriction = 5;
 
+    //Wall Apperance
+    [Header("All Walls Appearance")]
+    public Mesh[] wallNormalAppearance;
+    public Mesh[] wallNormalShadowAppearance;
+    public Mesh[] wallIndestructibleAppearance;
+    public Mesh[] wallIndestructibleShadowAppearance;
+    public Mesh[] wallBouncyAppearance;
+    public Mesh[] wallBouncyShadowAppearance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +64,75 @@ public class WallManager : MonoBehaviour
         if (!connectedWallProprieties.isIndestructible)
         {
             connectedWallChange.SetDammageFromConnect(myDammage);
+        }
+    }
+    public void UpdateWallAppearance(Mesh[] theWallAppearance, Mesh[] theWallShadowAppearance, WallProprieties wallProprieties)
+    {
+        if (wallProprieties.isBouncy)
+        {
+            theWallAppearance = new Mesh[wallBouncyAppearance.Length];
+            theWallShadowAppearance = new Mesh[wallBouncyShadowAppearance.Length];
+            for (int i = 0; i < theWallAppearance.Length; i++)
+            {
+                theWallAppearance[i] = wallBouncyAppearance[i];
+                theWallShadowAppearance[i] = wallBouncyShadowAppearance[i];
+            }
+        }
+        else if (wallProprieties.isIndestructible)
+        {
+            theWallAppearance = new Mesh[wallIndestructibleAppearance.Length];
+            theWallShadowAppearance = new Mesh[wallIndestructibleShadowAppearance.Length];
+            print("length : " + wallIndestructibleAppearance.Length);
+            print("he dezksjnl");
+            for (int i = 0; i < theWallAppearance.Length; i++)
+            {
+                theWallAppearance[i] = wallIndestructibleAppearance[i];
+                theWallShadowAppearance[i] = wallIndestructibleShadowAppearance[i];
+            }
+        }
+        else
+        {
+            theWallAppearance = new Mesh[wallNormalAppearance.Length];
+            theWallShadowAppearance = new Mesh[wallNormalShadowAppearance.Length];
+            for (int i = 0; i < theWallAppearance.Length; i++)
+            {
+                theWallAppearance[i] = wallNormalAppearance[i];
+                theWallShadowAppearance[i] = wallNormalShadowAppearance[i];
+            }
+        }
+    }
+
+    public Mesh[] SetWallAppearance(WallProprieties wallProprieties)
+    {
+        if (wallProprieties.isBouncy)
+        {
+            return wallBouncyAppearance;
+        }
+        else if (wallProprieties.isIndestructible)
+        {
+            return wallIndestructibleAppearance;
+        }
+        else
+        {
+            return wallNormalAppearance;
+        }
+    }
+
+    public void WhichWall(WallProprieties wallProprieties) { 
+        if (wallProprieties.isBouncy)
+        {
+            wallProprieties.theWalls[0].SetActive(false);
+            wallProprieties.theWalls[1].SetActive(false);
+        }
+        else if (wallProprieties.isIndestructible)
+        {
+            wallProprieties.theWalls[0].SetActive(false);
+            wallProprieties.theWalls[2].SetActive(false);
+        }
+        else
+        {
+            wallProprieties.theWalls[1].SetActive(false);
+            wallProprieties.theWalls[2].SetActive(false);
         }
     }
 }
