@@ -72,6 +72,13 @@ public class PlayerEntity : MonoBehaviour
     private GameObject _particuleContact;
     private ParticleSystem _particuleContactSystem;
 
+    [Header("Onomatopées")]
+    public Sprite[] onomatopeesTab;
+    public SpriteRenderer onomatopéesSprite;
+    private float onomatopéeTimer;
+    public float onomatopéeTimerMax;
+
+
     //trail
     private TrailRenderer _playerTrail;
 
@@ -107,6 +114,8 @@ public class PlayerEntity : MonoBehaviour
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
 
         _animator = GetComponent<Animator>();
+
+        onomatopéesSprite.enabled = false;
     }
 
     private void OnDisable()
@@ -284,6 +293,17 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
+        if (onomatopéesSprite.enabled == true)
+        {
+            onomatopéeTimer += Time.deltaTime;
+            if(onomatopéeTimer >= onomatopéeTimerMax)
+            {
+                onomatopéeTimer = 0;
+                onomatopéesSprite.enabled = false;
+            }
+        }
+
+
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
            _soundManagerScript.PlaySound(_playerAudio, _soundManagerScript.playerCast);
@@ -341,6 +361,9 @@ public class PlayerEntity : MonoBehaviour
     {
         if (collision.gameObject.tag.Contains("Player"))
         {
+            onomatopéesSprite.enabled = true;
+            onomatopéesSprite.sprite = onomatopeesTab[Random.Range(0, onomatopeesTab.Length - 1)];
+            onomatopéeTimer = 0;
             _touchedByPlayer = true;
             PlayerEntity otherPlayer = collision.gameObject.GetComponent<PlayerEntity>();
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
@@ -372,6 +395,8 @@ public class PlayerEntity : MonoBehaviour
         _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
         _particuleContactSystem.Play();
     }
+
+
 
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {

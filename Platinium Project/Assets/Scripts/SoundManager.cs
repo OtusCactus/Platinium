@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
     //grégoire c'est occupé de ce script.
 
     public AudioClip wallHit;
+    public AudioClip wallBouncyHit;
     public AudioClip playerCast;
     public AudioClip playersCollision;
     public AudioClip endRound;

@@ -56,8 +56,17 @@ public class ShockwaveHit : MonoBehaviour
         //si on touche un mur on un joueur, joue un son différent
         if (collision.tag.Contains("Walls"))
         {
+            WallProprieties collisionScript = collision.GetComponent<WallProprieties>();
+            if(collisionScript.isBouncy)
+            {
+                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallBouncyHit);
+
+            }
+            else if(!collisionScript.isBouncy && !collisionScript.isIndestructible)
+            {
+                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallHit);
+            }
             _hitWalls = true;
-            _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallHit);
            
         }
         else if (collision.tag.Contains("Player"))
