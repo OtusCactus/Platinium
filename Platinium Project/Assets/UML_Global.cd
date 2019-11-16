@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PlayerEntity" Collapsed="true">
+    <Position X="9.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABWNIiEBAqIgSIAgAIJDBIIBAQASC1gIIAAggAIeSAg=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="14.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEQCEASAACAIIBAAAAoAEAAgEEEAAAAIAAIgpCAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreManager" Collapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AATYAAAAACABAAAAAAAAAAACAQQAAgAAAAAABCAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScoreManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="14.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAABAAAAAAAAAgAAAAAAAAAQQAAGAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI_gameOverMenu" Collapsed="true">
+    <Position X="14.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\UI_gameOverMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WInd" Collapsed="true">
+    <Position X="14.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQgAAAAACAAIAAAAAAAAACAAAAAAAAAAAgAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\WInd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlipperHandle" Collapsed="true">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FlipperHandle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FaceClass" Collapsed="true">
+    <Position X="14.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FaceClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bumper" Collapsed="true">
+    <Position X="14.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bumper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackHole" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BlackHole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaRotation" Collapsed="true">
+    <Position X="14.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQACACAACAADgAAAACAACAAQAUAmABEEACIAAACBAA=</HashCode>
+      <FileName>Assets\Scripts\ArenaRotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WallProprieties" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAIGACAAAYAAAAQAAAAQAAAAAAAQAjAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Wall\WallProprieties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WallManager" Collapsed="true">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQRAgAAAACQACAAAAAAAEAAAAgAIAAAAEQAgACAIAAQ=</HashCode>
+      <FileName>Assets\Scripts\Wall\WallManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WallChange" Collapsed="true">
+    <Position X="11.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgUQAACAAqAAEAyMBAAMARAQQU2EAQIICCAyAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Wall\WallChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShockwaveHit" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKQAAAAAACAAAAAAAAAAABAAAAAgCAAAAAQAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Player\ShockwaveHit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerManager">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAACAACAAAAAAAAAAAAAAAAAAAAABQAgAAABAAEA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AttackTest" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAiACoACAAgAAAEEAAAAAIAAAAABAgAAACACAA=</HashCode>
+      <FileName>Assets\Scripts\Player\AttackTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuRotation" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAABAAAAAAAACAAAAAAAAEFAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Menu\MenuRotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuPlayerManager" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACACEAAAAAAACAAgIAAAEAACQAAAAABAAEA=</HashCode>
+      <FileName>Assets\Scripts\Menu\MenuPlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InMenuPlayer" Collapsed="true">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABWDAiUEAqIASIAAAIJDFAAAAUESCUAAIAQABAAcCEg=</HashCode>
+      <FileName>Assets\Scripts\Menu\InMenuPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GetMenuInformation" Collapsed="true">
+    <Position X="6" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAACAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Menu\GetMenuInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FaceClassMenu" Collapsed="true">
+    <Position X="6" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Menu\FaceClassMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
