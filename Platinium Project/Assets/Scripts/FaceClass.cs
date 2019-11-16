@@ -17,8 +17,8 @@ public class FaceClass : MonoBehaviour
         public Transform arenaRotation;
         public GameObject arenaWall;
         public Transform[] playerStartingPosition;
-        public GameObject[] wallToHideNextToFace;
-        public GameObject[] wallToHideInOtherFace;
+        public MeshRenderer[] wallToHideNextToFace;
+        public MeshRenderer[] wallToHideInOtherFace;
         public GameObject levelDesign;
     }
 

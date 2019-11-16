@@ -115,12 +115,13 @@ public class WallChange : MonoBehaviour
             _lastHit = false;
             wallLife = wallLifeMax;
             _wallMesh.mesh = wallAppearance[0];
-            _wallShadowMesh.mesh = wallShadowAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
-            _wallMeshRenderer.enabled = true;  
-           _wallShadowMeshRenderer.enabled = true;  
+           
+            _wallShadowMeshRenderer.enabled = true;
+            _wallShadowMesh.mesh = wallShadowAppearance[0];
+
         }
-        
+
 
         if (wallLife <= 0)
         {
