@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="PlayerEntity" Collapsed="true">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PlayerEntity.INPUTSTATE" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Player\PlayerEntity.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABWNIiEBAqIgQJAgAIJDBIIBAQASC1gIIAAggAIeSAg=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerEntity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Rewired" />
+      <Property Name="ShockwaveHit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="14.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEQCEASAACAIABAAAAoIEAAgEEEAAAAoAAIgpCAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="GetNbrPlayers" />
+      <Property Name="getCurrentFace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ScoreManager" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <AssociationLine Name="GetNbrPlayers" Type="GameManager">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.406" Y="-0.635" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="GetAlivePlayers" Type="WallChange">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.259" Y="-0.304" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AATYAAAAACABAAAAAAAIAAACAQAEAgAAAAAABCAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScoreManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="GetNbrPlayers" />
+      <Property Name="GetAlivePlayers" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <AssociationLine Name="HitSound" Type="WallChange">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.076" Y="0.453" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAABBAAAAAAAAgAAAAAAAAAQQAAGAAgAAQ=</HashCode>
+      <FileName>Assets\Scripts\SoundManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="HitSound" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WInd" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <AssociationLine Name="MovePlayers" Type="PlayerEntity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="6.812" />
+        <Point X="14.562" Y="6.812" />
+        <Point X="14.562" Y="5.441" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.084" Y="0.711" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEQgAAAAACAAIAAAAAAAAACAAAAAQAAAAAgAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\WInd.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MovePlayers" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FaceClass" Collapsed="true">
+    <Position X="18" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Class Name="FaceClass.face" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\FaceClass.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FaceClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bumper" Collapsed="true">
+    <Position X="20.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bumper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackHole" Collapsed="true">
+    <Position X="14.25" Y="7.5" Width="1.5" />
+    <AssociationLine Name="MovePlayers" Type="PlayerEntity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15" Y="7.5" />
+        <Point X="15" Y="5.441" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.061" Y="1.769" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABCBAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BlackHole.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MovePlayers" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ArenaRotation" Collapsed="true">
+    <Position X="18" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQACACAACAADgAAAACAACAAQAWAmABEEACIAAACBAA=</HashCode>
+      <FileName>Assets\Scripts\ArenaRotation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GetNextFace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WallProprieties" Collapsed="true">
+    <Position X="20.5" Y="3.25" Width="1.5" />
+    <AssociationLine Name="CallFunctions" Type="WallManager">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.175" Y="0.206" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIGACAAAYAAAAQBAAAQAAAAAAAQAjAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Wall\WallProprieties.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="CallFunctions" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WallManager" Collapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="GetBouncy" Type="Bumper">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.029" Y="0.076" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gQRAgAAEACQACAAAAAAAEAAAAgAIAAAAEQAgACAIAAQ=</HashCode>
+      <FileName>Assets\Scripts\Wall\WallManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GetBouncy" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WallChange" Collapsed="true">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <AssociationLine Name="CurrentFace" Type="ArenaRotation">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.199" Y="0.18" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="UpdateHP" Type="WallManager">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.122" Y="0.17" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IgQQAACAAqAAEAyMBAAEARAQQU2EAQIICCAyAAAAAoA=</HashCode>
+      <FileName>Assets\Scripts\Wall\WallChange.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="CurrentFace" />
+      <Field Name="UpdateHP" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ShockwaveHit" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKQAAAAAACAAAAAAAAAAABAAAAAgCAAAAAQAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Player\ShockwaveHit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerManager" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <AssociationLine Name="GetNbrPlayers" Type="GameManager">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.122" Y="0.305" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQEAACAACAAAAAAAAAIAAAAAAAAAAABQAAAAABAAEA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="GetNbrPlayers" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AttackTest" Collapsed="true">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQEAAACACoACEAgAAAEEAAAAAIAAAAABAgAAACACAA=</HashCode>
+      <FileName>Assets\Scripts\Player\AttackTest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="BumpEnemy" />
+      <Property Name="Vibration" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MenuRotation" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACCABAAAAAAAACAAAACAAAEFAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Menu\MenuRotation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GetNextFace" />
+      <Property Name="GetRotation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MenuPlayerManager" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACACEAAAAAAACAAgMAAAEAACQAAAAABAAEA=</HashCode>
+      <FileName>Assets\Scripts\Menu\MenuPlayerManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Input" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="InMenuPlayer" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="InMenuPlayer.INPUTSTATE" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Menu\InMenuPlayer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABWDAiUEAqIASIAAAIJDFAAAAUESCUAAIAQABAAcCEg=</HashCode>
+      <FileName>Assets\Scripts\Menu\InMenuPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GetMenuInformation" Collapsed="true">
+    <Position X="11" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAACAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Menu\GetMenuInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FaceClassMenu" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="FaceClassMenu.face" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Menu\FaceClassMenu.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Menu\FaceClassMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
