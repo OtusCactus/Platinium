@@ -75,7 +75,7 @@ public class WallChange : MonoBehaviour
         _currentFace = _arenaRotationScript._currentFace;
         //_wallManagerScript.UpdateWallAppearance(wallAppearance, wallShadowAppearance, _wallProprieties);
         wallAppearance = _wallManagerScript.SetWallAppearance(_wallProprieties);
-        //_wallManagerScript.WhichWall(_wallProprieties);
+        _wallManagerScript.WhichWall(_wallProprieties);
 
         //set les valeurs pour screenshake
         _cameraStartPosition = camera.transform.position;
@@ -83,7 +83,7 @@ public class WallChange : MonoBehaviour
 
         //set le material du mur par défaut
         _meshMaterials = transform.GetChild(0).GetComponent<MeshRenderer>().materials;
-        _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+        //_meshMaterials[0].color = new Color32(30, 255, 0, 255);
         //_meshMaterials[1].color = new Color32(30, 200, 0, 255);
         //_meshMaterials[2].color = new Color32(5, 255, 0, 255);
         //_meshMaterials[3].color = new Color32(28, 235, 0, 255);

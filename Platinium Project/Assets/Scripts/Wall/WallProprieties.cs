@@ -22,10 +22,21 @@ public class WallProprieties : MonoBehaviour
     public GameObject[] theWalls;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        theWalls = new GameObject[transform.childCount];
+
+        for (int i = 0; i < theWalls.Length; i++)
+        {
+            theWalls[i] = transform.GetChild(i).gameObject;
+        }
+    }
     void Start()
     {
         _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
         _thisWallChange = GetComponent<WallChange>();
+
+        
 
         _connectedWall = _wallManagerScript.SetConnectedWall(gameObject);
         if(_connectedWall != null)
