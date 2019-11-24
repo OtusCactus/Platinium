@@ -114,6 +114,7 @@ public class WallChange : MonoBehaviour
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
+            _wallCollider.isTrigger = false;
             _wallMesh.mesh = wallAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
            

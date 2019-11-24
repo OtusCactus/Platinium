@@ -26,7 +26,7 @@ public class ShockwaveHit : MonoBehaviour
     void Start()
     {
         //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
-        _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
+        _soundManagerScript = SoundManager.instance;
         _playerEntityScript = GetComponent<PlayerEntity>();
     }
 

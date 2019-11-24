@@ -54,7 +54,7 @@ public class ArenaRotation : MonoBehaviour
     {
         //Scripts nécessaires
         _faceClassScript = gameManager.GetComponent<FaceClass>();
-        _soundManagerScript = gameManager.GetComponent<SoundManager>();
+        _soundManagerScript = SoundManager.instance;
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
 

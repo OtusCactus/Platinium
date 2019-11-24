@@ -109,7 +109,7 @@ public class PlayerEntity : MonoBehaviour
         _particuleContactSystem = _particuleContact.GetComponent<ParticleSystem>();
         _playerTrail = GetComponent<TrailRenderer>();
 
-        _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
+        _soundManagerScript = SoundManager.instance;
         _playerAudio = GetComponent<AudioSource>();
 
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
@@ -227,6 +227,7 @@ public class PlayerEntity : MonoBehaviour
                     {
                         _playerManagerScript.player[3].StopVibration();
                     }
+                    _animator.SetBool("IsSlingshoting", false);
                     //_soundManagerScript.NoSound();
                     _playerInput = INPUTSTATE.None;
                 }
@@ -308,6 +309,8 @@ public class PlayerEntity : MonoBehaviour
                 onomatopéesSprite.enabled = false;
             }
         }
+
+        
 
 
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)

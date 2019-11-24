@@ -13,29 +13,34 @@ public class GameManager : MonoBehaviour
     public int[] _wallSouthEastTab;
     public int[] _wallSouthTab;
     public int[] _wallSouthWestTab;
-    
 
+    public static GameManager instance = null;
 
     private FaceClass _faceClassScript;
     private GetMenuInformation _menuInformationScript;
     private ScoreManager _scoreManagerScript;
 
+    [Header("Player")]
     public List<GameObject> playerList;
     public GameObject[] playerPrefabs;
     private PlayerEntity[] playersEntityScripts;
-    private List<GameObject> currentPlayersList = new List<GameObject>(); 
+    private List<GameObject> currentPlayersList = new List<GameObject>();
 
+    [Header("Arena")]
     public int currentPlayersOnArena;
-
     public bool isTurning;
     public bool hasRoundBegun;
-    
     public int currentFace;
 
     private GameObject currentLD;
 
     private float lerpTimer = 0;
     public float lerpTimerMax;
+
+    [Header("SlowMotion")]
+    [SerializeField]
+    private float slowMotionScale;
+    private bool _isSlowMotion;
 
     private void Awake()
     {
@@ -114,6 +119,7 @@ public class GameManager : MonoBehaviour
             lerpTimer += Time.deltaTime;
             float timerRatio = lerpTimer / lerpTimerMax;
 
+            Debug.Log(timerRatio);
 
             PlayerReset(playerList);
             for (int i = 0; i < playerList.Count; i ++)
@@ -131,6 +137,18 @@ public class GameManager : MonoBehaviour
             }
 
         }
+
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            SlowMotion();
+
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StopSlowMotion();
+
+        }
+
     }
 
     //permet de reset et de replacer les joueurs à chaque changement de faces
@@ -160,6 +178,10 @@ public class GameManager : MonoBehaviour
                colliders.enabled = true;
             }
         }
+        else
+        {
+            playersEntityScripts[playerNumber].enabled = false;
+        }
     }
 
     public void ThisPlayerHasLost(string player)
@@ -186,4 +208,26 @@ public class GameManager : MonoBehaviour
             currentPlayersList.Add(playerList[i]);
         }
     }
+    #region SlowMo
+    public void SlowMotion()
+    {
+        _isSlowMotion = true;
+        Time.timeScale = slowMotionScale;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+    }
+
+    public void StopSlowMotion()
+    {
+        _isSlowMotion = false;
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02f;
+    }
+
+    public bool GetSlowMotionBool()
+    {
+        return _isSlowMotion;
+    }
+    #endregion
+
+
 }

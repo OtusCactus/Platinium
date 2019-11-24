@@ -82,7 +82,7 @@ public class InMenuPlayer : MonoBehaviour
 
     private void Awake()
     {
-        _soundManagerScript = GameObject.FindWithTag("GameController").GetComponent<SoundManager>();
+        _soundManagerScript = SoundManager.instance;
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<MenuPlayerManager>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
