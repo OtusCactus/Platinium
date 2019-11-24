@@ -84,7 +84,6 @@ public class WallChange : MonoBehaviour
         numberWallState = numberWallStateMax;
 
         //set le material du mur par défaut
-        //_meshMaterials = transform.GetChild(0).GetComponent<MeshRenderer>().materials;
         //_meshMaterials[0].color = new Color32(30, 255, 0, 255);
         //_meshMaterials[1].color = new Color32(30, 200, 0, 255);
         //_meshMaterials[2].color = new Color32(5, 255, 0, 255);
@@ -102,6 +101,13 @@ public class WallChange : MonoBehaviour
             if (gameObject.transform.GetChild(i).gameObject.activeSelf == true)
             {
                 _currentWallActive = transform.GetChild(i).gameObject;
+                if(i == 2)
+                {
+                    _meshMaterials = transform.GetChild(i).transform.GetChild(0).GetComponent<MeshRenderer>().materials;
+                }
+                else
+                _meshMaterials = transform.GetChild(i).GetComponent<MeshRenderer>().materials;
+
             }
         }
 
@@ -123,7 +129,15 @@ public class WallChange : MonoBehaviour
         {
 
             _wallCollider.enabled = true;
-            _wallMeshRenderer.enabled = true;
+            if (transform.GetChild(2).gameObject == _currentWallActive)
+            {
+                transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
+                transform.GetChild(2).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+            }
+
+            else
+                _wallMeshRenderer.enabled = true;
+
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
@@ -141,7 +155,14 @@ public class WallChange : MonoBehaviour
         {
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
+            if(_currentWallActive == transform.GetChild(2).gameObject)
+            {
+                Debug.Log("Hey");
+                transform.GetChild(2).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
             _wallMeshRenderer.enabled = false;
+
             //_wallShadowMeshRenderer.enabled = false;
             _wallCollider.isTrigger = true;
 

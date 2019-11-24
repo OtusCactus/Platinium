@@ -72,6 +72,7 @@ public class ArenaRotation : MonoBehaviour
 
         for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
         {
+            if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>() != null)
             _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>().enabled = false;
             if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount != 0)
             {
@@ -87,6 +88,7 @@ public class ArenaRotation : MonoBehaviour
                     {
                         for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.childCount; k++)
                         {
+                            if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
                             _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
                         }
                     }
@@ -173,6 +175,7 @@ public class ArenaRotation : MonoBehaviour
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
             {
+                if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>() != null)
                 _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>().enabled = false;
                 if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount != 0)
                 {
@@ -188,6 +191,7 @@ public class ArenaRotation : MonoBehaviour
                         {
                             for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.childCount; k++)
                             {
+                                if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
                                 _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
                             }
                         }

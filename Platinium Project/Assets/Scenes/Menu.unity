@@ -4071,7 +4071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerEntity: {fileID: 1932026958}
   playerSelection: {fileID: 618298084}
-  sceneName: MainScene greg
+  sceneName: MainScene 2
 --- !u!4 &1814875014
 Transform:
   m_ObjectHideFlags: 0

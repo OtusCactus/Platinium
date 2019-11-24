@@ -368,10 +368,12 @@ public class PlayerEntity : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         //si on touche un mur on un joueur, joue un son différent
         if (collision.gameObject.tag.Contains("Walls"))
         {
             WallProprieties collisionScript = collision.gameObject.GetComponent<WallProprieties>();
+
             if (collisionScript.isBouncy)
             {
                 _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallBouncyHit);
@@ -379,6 +381,7 @@ public class PlayerEntity : MonoBehaviour
             }
             else if (!collisionScript.isBouncy && !collisionScript.isIndestructible)
             {
+
                 _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallHit);
             }
 
