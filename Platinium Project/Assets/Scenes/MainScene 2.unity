@@ -1477,11 +1477,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -2459,11 +2454,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -2482,7 +2472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -4360,11 +4350,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -6221,11 +6206,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -7329,11 +7309,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -7935,11 +7910,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -8468,11 +8438,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -8675,11 +8640,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -8817,11 +8777,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -10096,11 +10051,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -11936,11 +11886,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -12202,11 +12147,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -12409,11 +12349,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -16434,11 +16369,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -17082,11 +17012,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -17555,11 +17480,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -17906,11 +17826,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -18268,11 +18183,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -19028,11 +18938,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -19969,11 +19874,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -22443,11 +22343,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -27034,11 +26929,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -29122,11 +29012,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -29328,11 +29213,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -29787,11 +29667,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -29812,7 +29687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -31124,11 +30999,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -31596,11 +31466,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -33791,11 +33656,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -35229,11 +35089,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -35603,11 +35458,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -36049,11 +35899,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -36859,11 +36704,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -38425,11 +38265,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -39369,11 +39204,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -39589,11 +39419,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -39795,11 +39620,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -44613,11 +44433,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -45245,11 +45060,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -45777,11 +45587,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -46399,11 +46204,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -47100,11 +46900,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -47492,11 +47287,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -48177,11 +47967,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -48319,11 +48104,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -48792,11 +48572,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -49012,11 +48787,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -50319,11 +50089,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -51484,11 +51249,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -51764,11 +51524,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -52435,11 +52190,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -52595,11 +52345,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -53793,11 +53538,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -55571,11 +55311,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -56962,11 +56697,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -57702,11 +57432,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -58267,11 +57992,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -58377,11 +58097,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -59034,11 +58749,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -59742,11 +59452,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -60794,11 +60499,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -62495,11 +62195,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -62889,11 +62584,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -64829,11 +64519,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -65945,11 +65630,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -66306,11 +65986,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -66651,11 +66326,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -66761,11 +66431,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -67098,11 +66763,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -67797,11 +67457,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -69496,11 +69151,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -70854,11 +70504,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -71248,11 +70893,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -77135,11 +76775,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -77336,11 +76971,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -79893,11 +79523,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -80238,11 +79863,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -81262,11 +80882,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -81615,11 +81230,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -82780,11 +82390,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -83578,11 +83183,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -83720,11 +83320,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -84583,11 +84178,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -84789,11 +84379,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -85558,11 +85143,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -86174,11 +85754,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -87249,11 +86824,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -87377,11 +86947,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -88445,11 +88010,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -88555,11 +88115,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -88839,11 +88394,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -89137,11 +88687,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -89277,11 +88822,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -89543,11 +89083,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -89828,11 +89363,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -92699,11 +92229,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -93342,11 +92867,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -93764,11 +93284,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -95802,11 +95317,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -96094,11 +95604,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -96332,11 +95837,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -96492,11 +95992,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -97136,11 +96631,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -98211,11 +97701,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -99080,11 +98565,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -99346,11 +98826,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -100689,11 +100164,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -102422,11 +101892,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -102697,11 +102162,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -104374,11 +103834,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -104854,11 +104309,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -106176,11 +105626,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -107731,11 +107176,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -107891,11 +107331,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -108865,11 +108300,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -109420,11 +108850,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -109736,11 +109161,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -110053,11 +109473,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -111197,11 +110612,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -112469,11 +111879,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -112686,11 +112091,6 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
-  wallShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
-  - {fileID: 6975212812562875068, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
-  - {fileID: -35850239040426563, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
-  - {fileID: -5369315709208034699, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
