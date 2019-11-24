@@ -229,7 +229,14 @@ public class ArenaRotation : MonoBehaviour
                         {
                             for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).transform.childCount; k++)
                             {
-                                _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
+                                if (_faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
+                                {
+                                    _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
+                                }
+                                else
+                                {
+                                    break;
+                                }
                             }
                         }
                     }

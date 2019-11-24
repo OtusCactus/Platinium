@@ -131,6 +131,7 @@ public class WallManager : MonoBehaviour
         }
         else
         {
+            print("lskd,xwml;<");
             wallProprieties.theWalls[1].SetActive(false);
             wallProprieties.theWalls[2].SetActive(false);
         }
