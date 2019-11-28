@@ -101,6 +101,36 @@ public class WallManager : MonoBehaviour
             }
         }
     }
+    public Mesh[] UpdateWallAppearanceDebugSansShadow(WallProprieties wallProprieties)
+    {
+        if (wallProprieties.isBouncy)
+        {
+            Mesh[] tempWallAppearance = new Mesh[wallBouncyAppearance.Length];
+            for (int i = 0; i < wallBouncyAppearance.Length; i++)
+            {
+                tempWallAppearance[i] = wallBouncyAppearance[i];
+            }
+            return tempWallAppearance;
+        }
+        else if (wallProprieties.isIndestructible)
+        {
+            Mesh[] tempWallAppearance = new Mesh[wallIndestructibleAppearance.Length];
+            for (int i = 0; i < wallIndestructibleAppearance.Length; i++)
+            {
+                tempWallAppearance[i] = wallIndestructibleAppearance[i];
+            }
+            return tempWallAppearance;
+        }
+        else
+        {
+            Mesh[] tempWallAppearance = new Mesh[wallNormalAppearance.Length];
+            for (int i = 0; i < wallNormalAppearance.Length; i++)
+            {
+                tempWallAppearance[i] = wallNormalAppearance[i];
+            }
+            return tempWallAppearance;
+        }
+    }
 
     public Mesh[] SetWallAppearance(WallProprieties wallProprieties)
     {
