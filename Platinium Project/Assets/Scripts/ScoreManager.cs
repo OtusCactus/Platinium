@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
     private int actualRound = 0;
 
     private GameManager _gameManagerScript;
-
+    
 
 
     // Start is called before the first frame update
@@ -35,19 +35,37 @@ public class ScoreManager : MonoBehaviour
     {
     }
 
-    public void ChangeScore(bool win, int player)
+    public void ChangeScore(int playersOnScene, int player)
     {
-        if (!win)
+        switch (playersOnScene)
         {
-            allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.red;
+            case 4:
+                print("score +0");
+                break;
+            case 3:
+                print("score +1");
+                break;
+            case 2:
+                print("score +2");
+                break;
+            case 1:
+                print("score +3");
+                break;
+
+
         }
-        else
-        {
-            allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.green;
-            _playerWinCount[player - 1] += 1;
-            _CheckScore(player);
-            actualRound++;
-        }
+
+        //if (!win)
+        //{
+        //    allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.red;
+        //}
+        //else
+        //{
+        //    allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.green;
+        //    _playerWinCount[player - 1] += 1;
+        //    _CheckScore(player);
+        //    actualRound++;
+        //}
 
     }
 
