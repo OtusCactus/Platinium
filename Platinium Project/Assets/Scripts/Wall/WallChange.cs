@@ -124,6 +124,8 @@ public class WallChange : MonoBehaviour
     void Update()
     {
 
+        print("current players + "+ _gameManagerScript.currentPlayersOnArena);
+
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
@@ -236,12 +238,12 @@ public class WallChange : MonoBehaviour
                 _wallMeshRenderer.enabled = false;
                //_wallShadowMeshRenderer.enabled = false;
 
-                _gameManagerScript.currentPlayersOnArena--;
 
                 _playerOnCollision.enabled = false;
                 _playerOnCollision.DesactiveCollider();
-                _scoreManagerScript.ChangeScore(false, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                _scoreManagerScript.ChangeScore(_gameManagerScript.currentPlayersOnArena, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
                 _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
+                _gameManagerScript.currentPlayersOnArena--;
             }
             else if (_gameManagerScript.currentPlayersOnArena <= 2)
             {
@@ -284,9 +286,9 @@ public class WallChange : MonoBehaviour
                 _wallCollider.enabled = false;
                 _wallCollider.isTrigger = false;
 
-                _scoreManagerScript.ChangeScore(false, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
                 _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
-                _scoreManagerScript.ChangeScore(true, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
 
                 _gameManagerScript.ResetCurrentPlayers();
 
