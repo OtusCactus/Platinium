@@ -72,7 +72,7 @@ public class PlayerManager : MonoBehaviour
         
         playerEntity[0].SetInputX(dirPlayer1);
 
-        if(player[0].GetButton("Push1") && _attackTest[0].isShockWavePossible)
+        if(player[0].GetButton("Push1") && playerEntity[0].GetUltiBool())
         {
             _attackTest[0].Push();
         }
@@ -86,7 +86,7 @@ public class PlayerManager : MonoBehaviour
         
         playerEntity[1].SetInputX(dirPlayer2);
 
-        if (player[1].GetButton("Push2") && _attackTest[1].isShockWavePossible)
+        if (player[1].GetButton("Push2") && playerEntity[1].GetUltiBool())
         {
             _attackTest[1].Push();
         }
@@ -99,7 +99,7 @@ public class PlayerManager : MonoBehaviour
 
             playerEntity[2].SetInputX(dirPlayer3);
 
-            if (player[2].GetButton("Push3") && _attackTest[2].isShockWavePossible)
+            if (player[2].GetButton("Push3") && playerEntity[2].GetUltiBool())
             {
                 _attackTest[2].Push();
             }
@@ -115,7 +115,7 @@ public class PlayerManager : MonoBehaviour
 
             playerEntity[3].SetInputX(dirPlayer4);
 
-            if (player[3].GetButton("Push4") && _attackTest[3].isShockWavePossible)
+            if (player[3].GetButton("Push4") && playerEntity[3].GetUltiBool())
             {
                 _attackTest[3].Push();
             }

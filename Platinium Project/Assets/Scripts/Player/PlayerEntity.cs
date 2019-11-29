@@ -78,7 +78,11 @@ public class PlayerEntity : MonoBehaviour
     private float onomatopéeTimer;
     public float onomatopéeTimerMax;
 
-
+    [Header("UltiCharge")]
+    public int ultiChargeMax;
+    public float ultiChargeRatio;
+    private float _ultiCurrentCharge;
+    private bool _isUltiPossible;
     //trail
     private TrailRenderer _playerTrail;
 
@@ -310,7 +314,10 @@ public class PlayerEntity : MonoBehaviour
             }
         }
 
-        
+        if(_ultiCurrentCharge == ultiChargeMax && !_isUltiPossible)
+        {
+            _ultiCurrentCharge = 0;
+        }
 
 
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
@@ -402,6 +409,12 @@ public class PlayerEntity : MonoBehaviour
             PlayerEntity otherPlayer = collision.gameObject.GetComponent<PlayerEntity>();
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
+                _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
+                if(_ultiCurrentCharge >= ultiChargeMax)
+                {
+                    _ultiCurrentCharge = ultiChargeMax;
+                    _isUltiPossible = true;
+                }
                 if(otherPlayer._lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
                 {
                     Rebound((-_lastFrameVelocity * reboundPourcentageOfSpeedIfImFaster)/100, collision.GetContact(0).normal, frictionPlayer);
@@ -468,5 +481,14 @@ public class PlayerEntity : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = true;
     }
 
+    public bool GetUltiBool()
+    {
+        return _isUltiPossible;
+    }
+
+    public void SetUltiBoolFalse()
+    {
+        _isUltiPossible = false;
+    }
 
 }
