@@ -10185,6 +10185,99 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
+        type: 3}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: ultiChargeMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: ultiChargeRatio
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
@@ -34274,6 +34367,99 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
+        type: 3}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: ultiChargeMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: ultiChargeRatio
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
 --- !u!1 &714532300 stripped
@@ -57226,6 +57412,99 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
+        type: 3}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: ultiChargeMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: ultiChargeRatio
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
@@ -98247,6 +98526,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
         type: 3}
+      propertyPath: onomatopeesTab.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
       propertyPath: ultiChargeMax
       value: 100
       objectReference: {fileID: 0}
@@ -98255,6 +98539,84 @@ PrefabInstance:
       propertyPath: ultiChargeRatio
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
+        type: 3}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: onomatopeesTab.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
 --- !u!1 &1886410724 stripped
