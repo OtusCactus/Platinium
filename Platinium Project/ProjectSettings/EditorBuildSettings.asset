@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScene/MainScene 3.unity
     guid: 845ec114ec5544649ad6df7dc1780653
   - enabled: 0
-    path: Assets/Scenes/MainScene greg.unity
+    path: Assets/Scenes/TestScene/MainScene greg.unity
     guid: 09f1fd99722b5604da94b32b48f7859a
   m_configObjects: {}
