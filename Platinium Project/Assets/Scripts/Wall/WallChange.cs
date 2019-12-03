@@ -124,8 +124,6 @@ public class WallChange : MonoBehaviour
     void Update()
     {
 
-        print("current players + "+ _gameManagerScript.currentPlayersOnArena);
-
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
