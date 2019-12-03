@@ -36,9 +36,7 @@ public class ScoreManager : MonoBehaviour
         {
             _playerScore[i] = 0;
         }
-
         UpdateUI();
-        print("heelle");
     }
 
     void Update()
@@ -68,9 +66,9 @@ public class ScoreManager : MonoBehaviour
                 print("score +3");
                 _playerScore[player - 1] += 3;
                 allScoresUI[player - 1].text = "P" + player.ToString() + " : " + _playerScore[player - 1].ToString();
-                foreach (int score in _playerScore)
+                for (int i =0; i < _playerScore.Length; i++)
                 {
-                    _CheckScore(score);
+                    _CheckScore(i);
                 }
                 actualRound++;
                 break;
