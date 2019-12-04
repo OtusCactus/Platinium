@@ -5663,8 +5663,8 @@ MonoBehaviour:
   reboundPourcentageOfSpeedIfImFaster: 25
   reboundPourcentageOfSpeedIfImSlower: 75
   _playerAudio:
-  - {fileID: 2738846599014248307}
-  - {fileID: 9112317936584710431}
+  - {fileID: 0}
+  - {fileID: 0}
   onomatopeesTab:
   - {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b, type: 3}
   - {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b, type: 3}
@@ -6352,7 +6352,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9112317937085809099}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
