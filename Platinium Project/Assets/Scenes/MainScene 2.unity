@@ -39487,7 +39487,7 @@ MonoBehaviour:
   wallIndestructibleAppearance:
   - {fileID: -7768408576438331914, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
   wallIndestructibleShadowAppearance:
-  - {fileID: 6975212812562875068, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
+  - {fileID: 3465615297516336310, guid: 8eb255f546e01684994343ad9c36dea8, type: 3}
   wallBouncyAppearance:
   - {fileID: 504564938639657996, guid: 38f7df7eb04ee914e87103ed53157bb4, type: 3}
   - {fileID: 504564938639657996, guid: f062cc399c9e2214a8b20485cc370ed4, type: 3}

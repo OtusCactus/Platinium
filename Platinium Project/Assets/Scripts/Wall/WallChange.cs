@@ -154,14 +154,14 @@ public class WallChange : MonoBehaviour
 
             _wallCollider.enabled = true;
             _wallMeshRenderer.enabled = true;
-            if(_currentWallActive == transform.GetChild(2).gameObject)
-            {
-                for (int i =0; i < _currentWallActive.transform.childCount; i++)
-                {
-                    if(_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-                    _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = true;
-                }
-            }
+            //if(_currentWallActive == transform.GetChild(2).gameObject)
+            //{
+            //    for (int i =0; i < _currentWallActive.transform.childCount; i++)
+            //    {
+            //        if(_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
+            //        _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = true;
+            //    }
+            //}
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
@@ -170,10 +170,15 @@ public class WallChange : MonoBehaviour
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[0];
+                _wallShadowMeshRenderer.enabled = true;
+                _wallShadowMesh.mesh = wallShadowAppearance[0];
             }
             else
             {
                 _wallBambouAppearance.sharedMesh = wallAppearance[0];
+                _wallBambouAppearance.enabled = true;
+                _wallShadowMeshRendererBambou.enabled = true;
+                _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[0];
             }
 
             if (!_wallProprieties.isIndestructible)
@@ -185,18 +190,6 @@ public class WallChange : MonoBehaviour
                 }
             }
 
-
-            if (!_wallProprieties.isBouncy)
-            {
-                _wallShadowMeshRenderer.enabled = true;
-                _wallShadowMesh.mesh = wallShadowAppearance[0];
-            }
-            else
-            {
-                _wallShadowMeshRendererBambou.enabled = true;
-                _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[0];
-            }
-
         }
 
 
@@ -205,14 +198,14 @@ public class WallChange : MonoBehaviour
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             _wallMeshRenderer.enabled = false;
-            if (_currentWallActive == transform.GetChild(2).gameObject)
-            {
-                for (int i = 0; i < _currentWallActive.transform.childCount; i++)
-                {
-                    if (_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-                        _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
-                }
-            }
+            //if (_currentWallActive == transform.GetChild(2).gameObject)
+            //{
+            //    for (int i = 0; i < _currentWallActive.transform.childCount; i++)
+            //    {
+            //        if (_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
+            //            _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
+            //    }
+            //}
 
             if (!_wallProprieties.isBouncy)
             {
@@ -220,6 +213,7 @@ public class WallChange : MonoBehaviour
             }
             else
             {
+                _wallBambouAppearance.enabled = false;
                 _wallShadowMeshRendererBambou.enabled = false;
             }
 
@@ -230,11 +224,6 @@ public class WallChange : MonoBehaviour
         else if (wallLife < wallLifeMax && wallLife >= (wallLifeMax * 0.66))
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
-            //if (!_wallProprieties.isBouncy)
-            //{
-            //    _wallMesh.mesh = wallAppearance[1];
-            //}
-
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[1];
