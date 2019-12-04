@@ -128,22 +128,6 @@ public class WallManager : MonoBehaviour
         }
     }
 
-    public Mesh[] SetWallAppearance(WallProprieties wallProprieties)
-    {
-        if (wallProprieties.isBouncy)
-        {
-            return wallBouncyAppearance;
-        }
-        else if (wallProprieties.isIndestructible)
-        {
-            return wallIndestructibleAppearance;
-        }
-        else
-        {
-            return wallNormalAppearance;
-        }
-    }
-
     public void WhichWall(WallProprieties wallProprieties) { 
         if (wallProprieties.isBouncy)
         {

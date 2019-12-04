@@ -18,10 +18,15 @@ public class WallChange : MonoBehaviour
     public Mesh[] wallAppearance;
     public Mesh[] wallShadowAppearance;
     private Material[] _meshMaterials;
+    private Material[] _meshMaterialsBambou;
+
     private MeshFilter _wallMesh;
     private MeshRenderer _wallMeshRenderer;
+
     private MeshFilter _wallShadowMesh;
     private MeshRenderer _wallShadowMeshRenderer;
+
+    private SkinnedMeshRenderer _wallBambouAppearance;
     private SkinnedMeshRenderer _wallShadowMeshRendererBambou;
 
     private PlayerEntity _playerOnCollision;
@@ -76,8 +81,6 @@ public class WallChange : MonoBehaviour
         // set les valeurs de départs
         wallLife = wallLifeMax;
         _currentFace = _arenaRotationScript._currentFace;
-        //_wallManagerScript.UpdateWallAppearance(wallAppearance, wallShadowAppearance, _wallProprieties);
-        //wallAppearance = _wallManagerScript.SetWallAppearance(_wallProprieties);
         _wallManagerScript.WhichWall(_wallProprieties);
         wallAppearance = _wallManagerScript.UpdateWallAppearance(_wallProprieties);
         wallShadowAppearance = _wallManagerScript.UpdateWallShadowAppearance(_wallProprieties);
@@ -85,13 +88,6 @@ public class WallChange : MonoBehaviour
         //set les valeurs pour screenshake
         _cameraStartPosition = camera.transform.position;
         numberWallState = numberWallStateMax;
-
-        //set le material du mur par défaut
-        //_meshMaterials[0].color = new Color32(30, 255, 0, 255);
-        //_meshMaterials[1].color = new Color32(30, 200, 0, 255);
-        //_meshMaterials[2].color = new Color32(5, 255, 0, 255);
-        //_meshMaterials[3].color = new Color32(28, 235, 0, 255);
-        //_meshMaterials[4].color = new Color32(20, 189, 0, 255);
 
         
 
@@ -110,9 +106,11 @@ public class WallChange : MonoBehaviour
                     _wallShadowMesh = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshFilter>();
                     _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>();
                     //bambou
+                    _wallBambouAppearance = _currentWallActive.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
                     _wallShadowMeshRendererBambou = _currentWallActive.transform.GetChild(1).GetChild(1).GetComponent<SkinnedMeshRenderer>();
 
                     _meshMaterials = _wallShadowMeshRenderer.materials;
+                    _meshMaterialsBambou = _wallShadowMeshRendererBambou.materials;
                 }
                 else
                 {
@@ -126,9 +124,22 @@ public class WallChange : MonoBehaviour
 
         _wallMesh = _currentWallActive.GetComponent<MeshFilter>();
         _wallMeshRenderer = _currentWallActive.GetComponent<MeshRenderer>();
-        //_wallShadowMesh = _currentWallActive.transform.GetChild(0).GetComponent<MeshFilter>();
-        //_wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
-        _wallMesh.mesh = wallAppearance[0];
+        if (!_wallProprieties.isBouncy)
+        {
+            _wallMesh.mesh = wallAppearance[0];
+        }
+        else
+        {
+            _wallBambouAppearance.sharedMesh = wallAppearance[0];
+        }
+        if (!_wallProprieties.isIndestructible)
+        {
+            _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+            if (_wallProprieties.isBouncy)
+            {
+                _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
+            }
+        }
 
     }
 
@@ -143,24 +154,41 @@ public class WallChange : MonoBehaviour
 
             _wallCollider.enabled = true;
             _wallMeshRenderer.enabled = true;
-            if(_currentWallActive == transform.GetChild(2).gameObject)
-            {
-                for (int i =0; i < _currentWallActive.transform.childCount; i++)
-                {
-                    if(_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-                    _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = true;
-                }
-            }
+            //if(_currentWallActive == transform.GetChild(2).gameObject)
+            //{
+            //    for (int i =0; i < _currentWallActive.transform.childCount; i++)
+            //    {
+            //        if(_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
+            //        _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = true;
+            //    }
+            //}
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
             _wallCollider.isTrigger = false;
-            _wallMesh.mesh = wallAppearance[0];
-            _meshMaterials[0].color = new Color32(30, 255, 0, 255);
-           
-            _wallShadowMeshRenderer.enabled = true;
-            _wallShadowMesh.mesh = wallShadowAppearance[0];
+            if (!_wallProprieties.isBouncy)
+            {
+                _wallMesh.mesh = wallAppearance[0];
+                _wallShadowMeshRenderer.enabled = true;
+                _wallShadowMesh.mesh = wallShadowAppearance[0];
+            }
+            else
+            {
+                _wallBambouAppearance.sharedMesh = wallAppearance[0];
+                _wallBambouAppearance.enabled = true;
+                _wallShadowMeshRendererBambou.enabled = true;
+                _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[0];
+            }
+
+            if (!_wallProprieties.isIndestructible)
+            {
+                _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+                if (_wallProprieties.isBouncy)
+                {
+                    _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
+                }
+            }
 
         }
 
@@ -170,15 +198,26 @@ public class WallChange : MonoBehaviour
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             _wallMeshRenderer.enabled = false;
-            if (_currentWallActive == transform.GetChild(2).gameObject)
+            //if (_currentWallActive == transform.GetChild(2).gameObject)
+            //{
+            //    for (int i = 0; i < _currentWallActive.transform.childCount; i++)
+            //    {
+            //        if (_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
+            //            _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
+            //    }
+            //}
+
+            if (!_wallProprieties.isBouncy)
             {
-                for (int i = 0; i < _currentWallActive.transform.childCount; i++)
-                {
-                    if (_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-                        _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
-                }
+                _wallShadowMeshRenderer.enabled = false;
             }
-            _wallShadowMeshRenderer.enabled = false;
+            else
+            {
+                _wallBambouAppearance.enabled = false;
+                _wallShadowMeshRendererBambou.enabled = false;
+            }
+
+            //_wallShadowMeshRenderer.enabled = false;
             _wallCollider.isTrigger = true;
 
         }
@@ -188,27 +227,49 @@ public class WallChange : MonoBehaviour
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[1];
+                _wallShadowMesh.mesh = wallShadowAppearance[1];
             }
-            _wallShadowMesh.mesh = wallShadowAppearance[1];
+            else
+            {
+                _wallBambouAppearance.sharedMesh = wallAppearance[1];
+                _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[1];
+            }
             
         }
         else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
         {
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
+            //if (!_wallProprieties.isBouncy)
+            //{
+            //    _wallMesh.mesh = wallAppearance[2];
+            //}
+
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[2];
+                _wallShadowMesh.mesh = wallShadowAppearance[2];
             }
-            _wallShadowMesh.mesh = wallShadowAppearance[2];
+            else
+            {
+                _wallBambouAppearance.sharedMesh = wallAppearance[2];
+                _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[2];
+            }
         }
         else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
         {
             if (numberWallState > numberWallStateMax - 3) ShakeScreen();
+
+
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[3];
+                _wallShadowMesh.mesh = wallShadowAppearance[3];
             }
-            _wallShadowMesh.mesh = wallShadowAppearance[3];
+            else
+            {
+                _wallBambouAppearance.sharedMesh = wallAppearance[3];
+                _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[3];
+            }
         }
 
     }
@@ -233,6 +294,10 @@ public class WallChange : MonoBehaviour
             }
 
             _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            if (_wallProprieties.isBouncy)
+            {
+                _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsBambou[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            }
         }
             
     }
@@ -257,23 +322,6 @@ public class WallChange : MonoBehaviour
             }
             else if (_gameManagerScript.currentPlayersOnArena <= 2)
             {
-                //if (collision.gameObject.tag == "Player1")
-                //{
-                //    //_scoreManagerScript.AddScore(1);
-                //}
-                //else if (collision.gameObject.tag == "Player2")
-                //{
-                //    //_scoreManagerScript.AddScore(2);
-                //}
-                //else if (collision.gameObject.tag == "Player3")
-                //{
-                //    //_scoreManagerScript.AddScore(3);
-                //}
-                //else if (collision.gameObject.tag == "Player4")
-                //{
-                //    //_scoreManagerScript.AddScore(4);
-                //}
-
                 switch (this.gameObject.name)
                 {
                     case "WallNorthEast":
@@ -343,6 +391,10 @@ public class WallChange : MonoBehaviour
     public void SetDammageFromConnect(float dammage)
     {
         _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        if (_wallProprieties.isBouncy)
+        {
+            _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsBambou[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        }
         if (dammage >= wallLimitVelocity)
         {
             wallLife = 0;
@@ -352,6 +404,10 @@ public class WallChange : MonoBehaviour
             wallLife -= dammage;
         }
         _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        if (_wallProprieties.isBouncy)
+        {
+            _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsBambou[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        }
 
     }
 

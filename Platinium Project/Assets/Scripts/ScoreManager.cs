@@ -93,7 +93,7 @@ public class ScoreManager : MonoBehaviour
     //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
     void _CheckScore(int player)
     {
-        if (_playerScore[player] == scoreToWin)
+        if (_playerScore[player] >= scoreToWin)
         {
             restartMenu.SetActive(true);
             Time.timeScale = 0;
