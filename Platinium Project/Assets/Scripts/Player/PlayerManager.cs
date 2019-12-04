@@ -125,8 +125,6 @@ public class PlayerManager : MonoBehaviour
                 _attackTest[3].Push();
             }
         }
-
-       
     }
 
 
