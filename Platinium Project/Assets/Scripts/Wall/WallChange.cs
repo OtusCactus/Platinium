@@ -65,6 +65,9 @@ public class WallChange : MonoBehaviour
 
     private GameObject _currentWallActive;
 
+    private bool _hasCreatedArray = false;
+    private bool _hasCreatedArrayTwo = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -239,15 +242,22 @@ public class WallChange : MonoBehaviour
         else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
         {
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
-            //if (!_wallProprieties.isBouncy)
-            //{
-            //    _wallMesh.mesh = wallAppearance[2];
-            //}
 
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[2];
                 _wallShadowMesh.mesh = wallShadowAppearance[2];
+                if (!_wallProprieties.isIndestructible && !_hasCreatedArray)
+                {
+                    print("moijgfxd " + (_wallMeshRenderer.materials.Length - 1));
+                    Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 2)];
+                    for(int i = 0; i < temp.Length; i++)
+                    {
+                        temp[i] = _wallMeshRenderer.materials[i];
+                    }
+                    _wallMeshRenderer.materials = temp;
+                    _hasCreatedArray = true;
+                }
             }
             else
             {
@@ -264,6 +274,16 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[3];
                 _wallShadowMesh.mesh = wallShadowAppearance[3];
+                if (!_wallProprieties.isIndestructible && !_hasCreatedArrayTwo)
+                {
+                    Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 1)];
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        temp[i] = _wallMeshRenderer.materials[i];
+                    }
+                    _wallMeshRenderer.materials = temp;
+                    _hasCreatedArrayTwo = true;
+                }
             }
             else
             {
@@ -271,6 +291,7 @@ public class WallChange : MonoBehaviour
                 _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[3];
             }
         }
+
 
     }
 
