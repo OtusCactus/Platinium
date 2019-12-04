@@ -74,6 +74,7 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Onomatopées")]
     public Sprite[] onomatopeesTab;
+    public Sprite onomatopéeWallHit;
     public SpriteRenderer onomatopéesSprite;
     private float onomatopéeTimer;
     public float onomatopéeTimerMax;
@@ -380,7 +381,9 @@ public class PlayerEntity : MonoBehaviour
         if (collision.gameObject.tag.Contains("Walls"))
         {
             WallProprieties collisionScript = collision.gameObject.GetComponent<WallProprieties>();
-
+            onomatopéesSprite.enabled = true;
+            onomatopéesSprite.sprite = onomatopéeWallHit;
+            onomatopéeTimer = 0;
             if (collisionScript.isBouncy)
             {
                 _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallBouncyHit);
@@ -397,11 +400,11 @@ public class PlayerEntity : MonoBehaviour
         {
             _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.playersCollision);
 
-        }
+        //}
 
 
-        if (collision.gameObject.tag.Contains("Player"))
-        {
+        //if (collision.gameObject.tag.Contains("Player"))
+        //{
             onomatopéesSprite.enabled = true;
             onomatopéesSprite.sprite = onomatopeesTab[Random.Range(0, onomatopeesTab.Length - 1)];
             onomatopéeTimer = 0;
