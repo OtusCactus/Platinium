@@ -62,10 +62,13 @@ public class PlayerEntity : MonoBehaviour
     private Animator _animator;
 
     //sound
+    
     private bool _mustPlayCastSound = false;
     private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
-    private AudioSource _playerAudio;
+    [SerializeField]
+    [Header("Sound")]
+    private AudioSource[] _playerAudio;
 
 
     //particules
@@ -115,7 +118,7 @@ public class PlayerEntity : MonoBehaviour
         _playerTrail = GetComponent<TrailRenderer>();
 
         _soundManagerScript = SoundManager.instance;
-        _playerAudio = GetComponent<AudioSource>();
+        _playerAudio = GetComponents<AudioSource>();
 
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
 
@@ -123,7 +126,7 @@ public class PlayerEntity : MonoBehaviour
 
         _animator = GetComponent<Animator>();
 
-        _childAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
+        //_childAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
 
 
         onomatopéesSprite.enabled = false;
@@ -323,12 +326,12 @@ public class PlayerEntity : MonoBehaviour
 
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-           _soundManagerScript.PlaySound(_playerAudio, _soundManagerScript.playerCast);
+           _soundManagerScript.PlaySound(_playerAudio[0], _soundManagerScript.playerCast);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
-            _soundManagerScript.NoSound(_playerAudio);
+            _soundManagerScript.NoSound(_playerAudio[0]);
             _mustPlayCastSound = true;
         }
 
@@ -384,21 +387,22 @@ public class PlayerEntity : MonoBehaviour
             onomatopéesSprite.enabled = true;
             onomatopéesSprite.sprite = onomatopéeWallHit;
             onomatopéeTimer = 0;
+            
             if (collisionScript.isBouncy)
             {
-                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallBouncyHit);
+                _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallBouncyHit);
 
             }
             else if (!collisionScript.isBouncy && !collisionScript.isIndestructible)
             {
 
-                _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.wallHit);
+                _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallHit);
             }
 
         }
         else if (collision.gameObject.tag.Contains("Player"))
         {
-            _soundManagerScript.PlaySound(_childAudioSource, _soundManagerScript.playersCollision);
+            _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
 
         //}
 
@@ -492,6 +496,11 @@ public class PlayerEntity : MonoBehaviour
     public void SetUltiBoolFalse()
     {
         _isUltiPossible = false;
+    }
+
+    public AudioSource[] GetAudioSourceTab()
+    {
+        return _playerAudio;
     }
 
 }

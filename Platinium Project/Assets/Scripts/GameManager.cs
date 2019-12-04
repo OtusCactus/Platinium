@@ -39,8 +39,12 @@ public class GameManager : MonoBehaviour
 
     [Header("SlowMotion")]
     [SerializeField]
-    private float slowMotionScale;
+    private float slowMotionScale = 0.1f;
     private bool _isSlowMotion;
+    private bool _currentSlowMotion;
+    private float _slowMotionTimer;
+    [SerializeField]
+    private float _slowMotionTimerMax = 1;
 
     private void Awake()
     {
@@ -94,7 +98,7 @@ public class GameManager : MonoBehaviour
             playersEntityScripts[i] = playerList[i].GetComponent<PlayerEntity>();
         }
 
-
+        _currentSlowMotion = _isSlowMotion;
 
 
     }
@@ -102,6 +106,29 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_isSlowMotion != _currentSlowMotion)
+        {
+            for (int i = 0; i < playerList.Count; i++)
+            {
+                for (int j = 0; j < playersEntityScripts[i].GetAudioSourceTab().Length; j++)
+                {
+                    playersEntityScripts[i].GetAudioSourceTab()[j].pitch = Time.timeScale;
+                }
+            }
+            _currentSlowMotion = _isSlowMotion;
+        }
+
+        if (_isSlowMotion )
+        {
+            _slowMotionTimer += Time.deltaTime;
+            if(_slowMotionTimer >= _slowMotionTimerMax)
+            {
+                StopSlowMotion();
+                _slowMotionTimer = 0;
+            }
+        }
+      
+
         //check si on doit changer de face de l'arène
         if (isTurning)
         {
@@ -186,6 +213,7 @@ public class GameManager : MonoBehaviour
 
     public void ThisPlayerHasLost(string player)
     {
+        SlowMotion();
         for (int i = currentPlayersList.Count; i--> 0;)
         {
             if (currentPlayersList[i].gameObject.tag == player)

@@ -1473,6 +1473,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -2446,6 +2447,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -4342,6 +4344,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -6198,6 +6201,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -7297,6 +7301,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -7898,6 +7903,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -8422,6 +8428,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -8624,6 +8631,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -8757,6 +8765,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -10031,6 +10040,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -10125,11 +10135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerEntity 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186139, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186137, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10187,143 +10192,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
-      propertyPath: onomatopeesTab.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[9]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[10]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[11]
-      value: 
-      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[12]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
-        type: 3}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: ultiChargeMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: ultiChargeRatio
+      propertyPath: _playerAudio.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
-      propertyPath: "onomatop\xE9eWallHit"
+      propertyPath: _playerAudio.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: f253ff12c37d3d54d9cf348987282fb3,
+      objectReference: {fileID: 210208686}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
         type: 3}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.010641772
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.061319545
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.18982983
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9798425
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.815
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.034
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 21.920002
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132606843777431712, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.08
-      objectReference: {fileID: 0}
+      propertyPath: _playerAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 210208684}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
@@ -10344,6 +10225,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7b12f273e3a704ab49d515bc4683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &210208684 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1588768097147573943, guid: d6549bb6c1a05804b9ad354ae31792e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 210208681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &210208686 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3876687248998186149, guid: d6549bb6c1a05804b9ad354ae31792e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 210208681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &211683537
 GameObject:
   m_ObjectHideFlags: 0
@@ -10638,7 +10531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25175092, y: 0.12632973}
   m_AnchorMax: {x: 0.74831235, y: 0.20549192}
-  m_AnchoredPosition: {x: 0, y: -0.5000305}
+  m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223219834
@@ -12001,6 +11894,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -12258,6 +12152,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -12460,6 +12355,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -16480,6 +16376,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -17119,6 +17016,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -17587,6 +17485,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -17933,6 +17832,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -18286,6 +18186,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -19041,6 +18942,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -19973,6 +19875,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -22438,6 +22341,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -27020,6 +26924,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -29099,6 +29004,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -29300,6 +29206,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -29750,6 +29657,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -31078,6 +30986,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -31541,6 +31450,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -33727,6 +33637,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -34353,11 +34264,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerEntity 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171965, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171967, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34415,143 +34321,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
-      propertyPath: onomatopeesTab.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[9]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[10]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[11]
-      value: 
-      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[12]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
-        type: 3}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: ultiChargeMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: ultiChargeRatio
+      propertyPath: _playerAudio.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
-      propertyPath: "onomatop\xE9eWallHit"
+      propertyPath: _playerAudio.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: f253ff12c37d3d54d9cf348987282fb3,
+      objectReference: {fileID: 714532304}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
         type: 3}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.008534729
-      objectReference: {fileID: 0}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.061648134
-      objectReference: {fileID: 0}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.15614928
-      objectReference: {fileID: 0}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9857708
-      objectReference: {fileID: 0}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 17.993
-      objectReference: {fileID: 0}
-    - target: {fileID: 9216261342448110432, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.86
-      objectReference: {fileID: 0}
+      propertyPath: _playerAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 714532302}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
 --- !u!1 &714532300 stripped
@@ -34572,6 +34354,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7b12f273e3a704ab49d515bc4683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &714532302 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5986071960789023824, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+    type: 3}
+  m_PrefabInstance: {fileID: 714532299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &714532304 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7052115118994171907, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+    type: 3}
+  m_PrefabInstance: {fileID: 714532299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &717717907
 GameObject:
   m_ObjectHideFlags: 0
@@ -35295,6 +35089,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -35660,6 +35455,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -36101,6 +35897,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -36906,6 +36703,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -38463,6 +38261,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -39402,6 +39201,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -39613,6 +39413,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -39814,6 +39615,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -44627,6 +44429,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -45250,6 +45053,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -45777,6 +45581,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -46394,6 +46199,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -47090,6 +46896,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -47473,6 +47280,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -48153,6 +47961,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -48286,6 +48095,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -48754,6 +48564,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -48965,6 +48776,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -49356,7 +49168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25175092, y: 0.2244973}
   m_AnchorMax: {x: 0.74831235, y: 0.29729742}
-  m_AnchoredPosition: {x: 0, y: -0.5000305}
+  m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: 1, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997834015
@@ -50267,6 +50079,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -51423,6 +51236,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -51694,6 +51508,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -52360,6 +52175,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -52515,6 +52331,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -53708,6 +53525,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -55477,6 +55295,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -56863,6 +56682,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -57440,16 +57260,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerEntity 2 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844405, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844405, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8562993523499844407, guid: 0cb10717a3c0f1c4a903567e83405ccd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57507,143 +57317,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
         type: 3}
-      propertyPath: onomatopeesTab.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[9]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[10]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[11]
-      value: 
-      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[12]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
-        type: 3}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: ultiChargeMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: ultiChargeRatio
+      propertyPath: _playerAudio.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
         type: 3}
-      propertyPath: "onomatop\xE9eWallHit"
+      propertyPath: _playerAudio.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: f253ff12c37d3d54d9cf348987282fb3,
+      objectReference: {fileID: 1126815086}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
         type: 3}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.010771183
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.061296947
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.19189775
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9794396
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.063
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.834
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.147
-      objectReference: {fileID: 0}
-    - target: {fileID: 4730337627529392014, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 22.162
-      objectReference: {fileID: 0}
+      propertyPath: _playerAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 1126815084}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
 --- !u!1 &1126815082 stripped
@@ -57664,6 +57350,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7b12f273e3a704ab49d515bc4683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1126815084 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7431688554162633726, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1126815081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1126815086 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8562993523499844363, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1126815081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1130829875
 GameObject:
   m_ObjectHideFlags: 0
@@ -57737,6 +57435,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -58293,6 +57992,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -58394,6 +58094,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -59046,6 +58747,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -59745,6 +59447,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -60633,7 +60336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.9620001, y: 0.032423373}
   m_AnchorMax: {x: 0.9932292, y: 0.3223604}
-  m_AnchoredPosition: {x: -1, y: -4.0006714}
+  m_AnchoredPosition: {x: -1, y: -4.0022583}
   m_SizeDelta: {x: 1.2172852, y: 1.9400635}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1179777782
@@ -60792,6 +60495,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -62484,6 +62188,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -62873,6 +62578,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -64808,6 +64514,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -65915,6 +65622,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -66267,6 +65975,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -66603,6 +66312,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -66704,6 +66414,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -67032,6 +66743,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -67726,6 +67438,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -69420,6 +69133,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -70773,6 +70487,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -71162,6 +70877,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -77040,6 +76756,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -77236,6 +76953,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -79788,6 +79506,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -80128,6 +79847,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -81143,6 +80863,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -81488,6 +81209,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -82648,6 +82370,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -83441,6 +83164,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -83574,6 +83298,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -84428,6 +84153,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -84629,6 +84355,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -85389,6 +85116,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -85996,6 +85724,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -87062,6 +86791,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -87185,6 +86915,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -88244,6 +87975,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -88345,6 +88077,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -88624,6 +88357,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -88913,6 +88647,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -89044,6 +88779,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -89301,6 +89037,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -89581,6 +89318,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -92447,6 +92185,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -93081,6 +92820,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -93494,6 +93234,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -95523,6 +95264,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -95810,6 +95552,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -96043,6 +95786,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -96198,6 +95942,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -96837,6 +96582,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -97903,6 +97649,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -98602,11 +98349,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
-    - target: {fileID: 9112317936584710433, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9112317936584710435, guid: 24aac449f2ff63540be24e3e62f05f1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98661,137 +98403,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: ultiChargeMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: ultiChargeRatio
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f58f430b10b3a440993029fe60e2e7b,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b7b5c5b462a0594a987fdf0a6034a4b,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: aad1c0d6416528f4cb64bf94100abd4a,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 70561c1fb325df9428df38d315e401dc,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7d491fd8e86885740be7a936ed6fe889,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 42049b23d7bc5e64d9a9e109dcca50cd,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2d8a6dddc8422634b9ce8fdfc14d920a,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f2a885abd1232042b2273a2375429a1,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: f75980714bab94e45bbded9c533f7ebe,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[9]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2357ba6355eab9a42b1fa34da8d9b652,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[10]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[11]
-      value: 
-      objectReference: {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: onomatopeesTab.Array.data[12]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487,
-        type: 3}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: "onomatop\xE9eWallHit"
-      value: 
-      objectReference: {fileID: 21300000, guid: f253ff12c37d3d54d9cf348987282fb3,
-        type: 3}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.008662097
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.06163036
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.15818582
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.98544604
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896027395, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 18.230001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
@@ -98894,6 +98505,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -99151,6 +98763,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -100489,6 +100102,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -102213,6 +101827,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -102479,6 +102094,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -104151,6 +103767,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -104626,6 +104243,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -105939,6 +105557,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -107489,6 +107108,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -107644,6 +107264,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -108613,6 +108234,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -109163,6 +108785,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -109474,6 +109097,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -109786,6 +109410,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -110921,6 +110546,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -112184,6 +111810,7 @@ MonoBehaviour:
   wallLifeMax: 3
   wallLimitVelocity: 1.2
   wallAppearance: []
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -112396,6 +112023,7 @@ MonoBehaviour:
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
   - {fileID: -7768408576438331914, guid: be56cf285c3f6834d9bfa7153236a361, type: 3}
   - {fileID: -35850239040426563, guid: 5f3fe8b4fae0ee14e89efd899b04bf5b, type: 3}
+  wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
   camera: {fileID: 490292817}
   magnitudeShake: 0.07
@@ -116676,6 +116304,11 @@ PrefabInstance:
       propertyPath: slowMotionScale
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: _slowMotionTimerMax
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: scoreP3.Array.size
       value: 10
@@ -116952,6 +116585,10 @@ PrefabInstance:
       propertyPath: playerEntity.Array.data[3]
       value: 
       objectReference: {fileID: 1126815083}
+    - target: {fileID: 1366459344, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
 --- !u!23 &8747372900448624745

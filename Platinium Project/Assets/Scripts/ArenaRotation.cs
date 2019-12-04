@@ -45,6 +45,7 @@ public class ArenaRotation : MonoBehaviour
     private GameManager _gameManagerScript;
     private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
+    private bool _currentSlowMotion;
     //debug
     [Header("Debug")]
     public bool debug;
@@ -62,7 +63,7 @@ public class ArenaRotation : MonoBehaviour
         _currentFace = 0;
         _faceStored = _currentFace;
         transform.rotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
-
+        _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();
 
         //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
         //{
@@ -107,6 +108,11 @@ public class ArenaRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_gameManagerScript.GetSlowMotionBool() != _currentSlowMotion)
+        {
+            _soundManagerScript.myAudio.pitch = Time.timeScale;
+            _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();
+        }
         //permet d'avoir accès à la distance de la caméra
         //diceCameraDistance = Vector3.Distance(arena.transform.position, mainCamera.transform.position);
 
