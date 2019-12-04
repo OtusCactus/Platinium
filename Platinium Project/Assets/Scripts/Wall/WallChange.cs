@@ -151,7 +151,7 @@ public class WallChange : MonoBehaviour
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
         {
-
+            _wallManagerScript.WhichWall(_wallProprieties);
             _wallCollider.enabled = true;
             _wallMeshRenderer.enabled = true;
             //if(_currentWallActive == transform.GetChild(2).gameObject)
