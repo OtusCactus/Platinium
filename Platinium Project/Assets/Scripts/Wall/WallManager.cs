@@ -131,18 +131,15 @@ public class WallManager : MonoBehaviour
     public void WhichWall(WallProprieties wallProprieties) { 
         if (wallProprieties.isBouncy)
         {
-            wallProprieties.theWalls[0].SetActive(false);
-            wallProprieties.theWalls[1].SetActive(false);
+            wallProprieties.theWalls[2].SetActive(true);
         }
         else if (wallProprieties.isIndestructible)
         {
-            wallProprieties.theWalls[0].SetActive(false);
-            wallProprieties.theWalls[2].SetActive(false);
+            wallProprieties.theWalls[1].SetActive(true);
         }
         else
         {
-            wallProprieties.theWalls[1].SetActive(false);
-            wallProprieties.theWalls[2].SetActive(false);
+            wallProprieties.theWalls[0].SetActive(true);
         }
     }
 }
