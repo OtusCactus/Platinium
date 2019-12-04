@@ -65,11 +65,7 @@ public class ArenaRotation : MonoBehaviour
         transform.rotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
         _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();
 
-        //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
-        //{
-        //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>().enabled = false;
-        //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-        //}
+
 
         for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
         {
@@ -79,35 +75,9 @@ public class ArenaRotation : MonoBehaviour
             {
                 for (int j = 0; j < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount; j++)
                 {
-                    if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<MeshRenderer>() != null)
-                        _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<MeshRenderer>().enabled = false;
-                    else if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<SkinnedMeshRenderer>() != null)
-                        _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<SkinnedMeshRenderer>().enabled = false;
-
-                    if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).childCount != 0)
-                    {
-                        for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.childCount; k++)
-                        {
-                            Debug.Log("found");
-                            if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
-                                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
-                            else if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<SkinnedMeshRenderer>() != null)
-                                _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<SkinnedMeshRenderer>().enabled = false;
-                        }
-                    }
+                    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).gameObject.SetActive(false);
                 }
-                //for (int j = 0; j < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount; j++)
-                //{
-                //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<MeshRenderer>().enabled = false;
-                //    if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).childCount != 0)
-                //    {
-                //        for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.childCount; k++)
-                //        {
-                //            if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
-                //            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
-                //        }
-                //    }
-                //}
+
             }
 
         }
@@ -193,32 +163,7 @@ public class ArenaRotation : MonoBehaviour
             }
 
 
-            //for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
-            //{
-            //    if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>() != null)
-            //    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>().enabled = false;
-            //    if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount != 0)
-            //    {
-            //        for(int j = 0; j < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount; j++)
-            //        {
-            //            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<MeshRenderer>().enabled = false;
 
-            //        }
-            //        for (int j = 0; j < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount; j++)
-            //        {
-            //            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<MeshRenderer>().enabled = false;
-            //            if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).childCount != 0)
-            //            {
-            //                for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.childCount; k++)
-            //                {
-            //                    if(_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
-            //                    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
-            //                }
-            //            }
-            //        }
-            //    }
-
-            //}
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace.Length; i++)
             {
@@ -226,26 +171,14 @@ public class ArenaRotation : MonoBehaviour
                     _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].GetComponent<MeshRenderer>().enabled = false;
                 if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount != 0)
                 {
-                    for (int j = 0; j < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount; j++)
+                    for (int j =0; j < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.childCount; j++)
                     {
-                        if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<MeshRenderer>() != null)
-                            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<MeshRenderer>().enabled = false;
-                        else if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<SkinnedMeshRenderer>() != null)
-                            _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).GetComponent<SkinnedMeshRenderer>().enabled = false;
-
-                        if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).childCount != 0)
-                        {
-                            for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.childCount; k++)
-                            {
-                                if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
-                                    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
-                                else if (_faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<SkinnedMeshRenderer>() != null)
-                                    _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<SkinnedMeshRenderer>().enabled = false;
-                            }
-                        }
+                        _faceClassScript.faceTab[_currentFace].wallToHideNextToFace[i].transform.GetChild(j).gameObject.SetActive(false);
                     }
                 }
             }
+
+            
 
 
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
@@ -277,25 +210,11 @@ public class ArenaRotation : MonoBehaviour
                 {
                     for (int j = 0; j < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.childCount; j++)
                     {
-                        _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).GetComponent<MeshRenderer>().enabled = false;
-                        if (_faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).childCount != 0)
-                        {
-                            for (int k = 0; k < _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).transform.childCount; k++)
-                            {
-                                if (_faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>() != null)
-                                {
-                                    _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).transform.GetChild(k).GetComponent<MeshRenderer>().enabled = false;
-                                }
-                                else
-                                {
-                                    break;
-                                }
-                            }
-                        }
+                        _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).gameObject.SetActive(false);
                     }
-                    
                 }
-                //_faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+
+                
 
             }
 
