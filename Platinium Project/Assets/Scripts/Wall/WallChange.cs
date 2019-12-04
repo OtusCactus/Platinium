@@ -16,12 +16,13 @@ public class WallChange : MonoBehaviour
     //Materials
     [Header("Apparence")]
     public Mesh[] wallAppearance;
-    //public Mesh[] wallShadowAppearance;
+    public Mesh[] wallShadowAppearance;
     private Material[] _meshMaterials;
     private MeshFilter _wallMesh;
     private MeshRenderer _wallMeshRenderer;
-    //private MeshFilter _wallShadowMesh;
-    //private MeshRenderer _wallShadowMeshRenderer;
+    private MeshFilter _wallShadowMesh;
+    private MeshRenderer _wallShadowMeshRenderer;
+    private SkinnedMeshRenderer _wallShadowMeshRendererBambou;
 
     private PlayerEntity _playerOnCollision;
     private float _playerVelocityRatio;
@@ -78,7 +79,8 @@ public class WallChange : MonoBehaviour
         //_wallManagerScript.UpdateWallAppearance(wallAppearance, wallShadowAppearance, _wallProprieties);
         //wallAppearance = _wallManagerScript.SetWallAppearance(_wallProprieties);
         _wallManagerScript.WhichWall(_wallProprieties);
-        wallAppearance = _wallManagerScript.UpdateWallAppearanceDebugSansShadow(_wallProprieties);
+        wallAppearance = _wallManagerScript.UpdateWallAppearance(_wallProprieties);
+        wallShadowAppearance = _wallManagerScript.UpdateWallShadowAppearance(_wallProprieties);
 
         //set les valeurs pour screenshake
         _cameraStartPosition = camera.transform.position;
@@ -104,10 +106,20 @@ public class WallChange : MonoBehaviour
                 _currentWallActive = transform.GetChild(i).gameObject;
                 if(i == 2)
                 {
-                    _meshMaterials = transform.GetChild(i).transform.GetChild(0).GetComponent<MeshRenderer>().materials;
+                    //pilliers
+                    _wallShadowMesh = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshFilter>();
+                    _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>();
+                    //bambou
+                    _wallShadowMeshRendererBambou = _currentWallActive.transform.GetChild(1).GetChild(1).GetComponent<SkinnedMeshRenderer>();
+
+                    _meshMaterials = _wallShadowMeshRenderer.materials;
                 }
                 else
-                _meshMaterials = transform.GetChild(i).GetComponent<MeshRenderer>().materials;
+                {
+                    _wallShadowMesh = _currentWallActive.transform.GetChild(0).GetComponent<MeshFilter>();
+                    _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
+                    _meshMaterials = _wallShadowMeshRenderer.materials;
+                }
 
             }
         }
@@ -147,8 +159,8 @@ public class WallChange : MonoBehaviour
             _wallMesh.mesh = wallAppearance[0];
             _meshMaterials[0].color = new Color32(30, 255, 0, 255);
            
-            //_wallShadowMeshRenderer.enabled = true;
-            //_wallShadowMesh.mesh = wallShadowAppearance[0];
+            _wallShadowMeshRenderer.enabled = true;
+            _wallShadowMesh.mesh = wallShadowAppearance[0];
 
         }
 
@@ -166,7 +178,7 @@ public class WallChange : MonoBehaviour
                         _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
                 }
             }
-            //_wallShadowMeshRenderer.enabled = false;
+            _wallShadowMeshRenderer.enabled = false;
             _wallCollider.isTrigger = true;
 
         }
@@ -177,7 +189,7 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[1];
             }
-            //_wallShadowMesh.mesh = wallShadowAppearance[1];
+            _wallShadowMesh.mesh = wallShadowAppearance[1];
             
         }
         else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
@@ -187,7 +199,7 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[2];
             }
-            //_wallShadowMesh.mesh = wallShadowAppearance[2];
+            _wallShadowMesh.mesh = wallShadowAppearance[2];
         }
         else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
         {
@@ -196,7 +208,7 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[3];
             }
-            //_wallShadowMesh.mesh = wallShadowAppearance[3];
+            _wallShadowMesh.mesh = wallShadowAppearance[3];
         }
 
     }
@@ -234,7 +246,7 @@ public class WallChange : MonoBehaviour
             {
              
                 _wallMeshRenderer.enabled = false;
-               //_wallShadowMeshRenderer.enabled = false;
+               _wallShadowMeshRenderer.enabled = false;
 
 
                 _playerOnCollision.enabled = false;
