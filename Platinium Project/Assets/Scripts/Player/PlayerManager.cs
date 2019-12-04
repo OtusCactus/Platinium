@@ -69,6 +69,11 @@ public class PlayerManager : MonoBehaviour
         float inputXPlayer1 = -player[0].GetAxis("HorizontalJoy1");
         float inputYPlayer1 = player[0].GetAxis("VerticalJoy1");
         Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
+        Debug.Log(dirPlayer1.magnitude);
+        if (dirPlayer1.magnitude < 0.3f)
+        {
+            dirPlayer1 = Vector2.zero;
+        }
         
         playerEntity[0].SetInputX(dirPlayer1);
 

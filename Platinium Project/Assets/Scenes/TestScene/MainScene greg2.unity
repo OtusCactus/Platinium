@@ -10190,21 +10190,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: _playerAudio.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: _playerAudio.Array.data[0]
-      value: 
-      objectReference: {fileID: 210208686}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: _playerAudio.Array.data[1]
-      value: 
-      objectReference: {fileID: 210208684}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
@@ -10225,18 +10210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7b12f273e3a704ab49d515bc4683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &210208684 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1588768097147573943, guid: d6549bb6c1a05804b9ad354ae31792e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 210208681}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &210208686 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3876687248998186149, guid: d6549bb6c1a05804b9ad354ae31792e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 210208681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &211683537
 GameObject:
   m_ObjectHideFlags: 0
@@ -34319,21 +34292,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: _playerAudio.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: _playerAudio.Array.data[0]
-      value: 
-      objectReference: {fileID: 714532304}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: _playerAudio.Array.data[1]
-      value: 
-      objectReference: {fileID: 714532302}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
 --- !u!1 &714532300 stripped
@@ -34354,18 +34312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7b12f273e3a704ab49d515bc4683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &714532302 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5986071960789023824, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-    type: 3}
-  m_PrefabInstance: {fileID: 714532299}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &714532304 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7052115118994171907, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-    type: 3}
-  m_PrefabInstance: {fileID: 714532299}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &717717907
 GameObject:
   m_ObjectHideFlags: 0
@@ -57315,21 +57261,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: _playerAudio.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: _playerAudio.Array.data[0]
-      value: 
-      objectReference: {fileID: 1126815086}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: _playerAudio.Array.data[1]
-      value: 
-      objectReference: {fileID: 1126815084}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
 --- !u!1 &1126815082 stripped
@@ -57350,18 +57281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7b12f273e3a704ab49d515bc4683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &1126815084 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7431688554162633726, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1126815081}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1126815086 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8562993523499844363, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1126815081}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1130829875
 GameObject:
   m_ObjectHideFlags: 0
@@ -60336,7 +60255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.9620001, y: 0.032423373}
   m_AnchorMax: {x: 0.9932292, y: 0.3223604}
-  m_AnchoredPosition: {x: -1, y: -4.0022583}
+  m_AnchoredPosition: {x: -1, y: -4.003113}
   m_SizeDelta: {x: 1.2172852, y: 1.9400635}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1179777782
@@ -113541,11 +113460,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rewired Input Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 7208858349396039650, guid: 9ef282b6ac9b82e428cdeb5a655fb52f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7208858349396039648, guid: 9ef282b6ac9b82e428cdeb5a655fb52f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -113600,6 +113514,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208858349396039649, guid: 9ef282b6ac9b82e428cdeb5a655fb52f,
+        type: 3}
+      propertyPath: _userData.joystickMaps.Array.data[1].actionElementMaps.Array.data[1]._elementIdentifierId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208858349396039649, guid: 9ef282b6ac9b82e428cdeb5a655fb52f,
+        type: 3}
+      propertyPath: _userData.joystickMaps.Array.data[1].actionElementMaps.Array.data[0]._elementIdentifierId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208858349396039649, guid: 9ef282b6ac9b82e428cdeb5a655fb52f,
+        type: 3}
+      propertyPath: _userData.joystickMaps.Array.data[0].actionElementMaps.Array.data[0]._actionId
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef282b6ac9b82e428cdeb5a655fb52f, type: 3}
@@ -116307,7 +116236,7 @@ PrefabInstance:
     - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: _slowMotionTimerMax
-      value: 0.05
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: scoreP3.Array.size
