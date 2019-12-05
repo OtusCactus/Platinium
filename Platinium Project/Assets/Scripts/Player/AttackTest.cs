@@ -29,6 +29,7 @@ public class AttackTest : MonoBehaviour
     public float pushbackIntensity;
 
     private PlayerManager _playerManagerScript;
+    private PlayerEntity _playerEntityScript;
     private ShockwaveHit _shockWaveHitScript;
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class AttackTest : MonoBehaviour
         shockWaveCooldown = 0;
         shockWaveDuration = shockWaveDurationMax;
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
+        _playerEntityScript = GetComponent<PlayerEntity>();
         _shockWaveHitScript = GetComponent<ShockwaveHit>();
     }
 
@@ -47,32 +49,29 @@ public class AttackTest : MonoBehaviour
     void Update()
     {
         //cooldown de la shockwave
-        if (!isShockWavePossible)
-        {
-            shockWaveSprite.SetActive(false);
-            shockWaveCooldown -= Time.deltaTime;
+        //if (!isShockWavePossible)
+        //{
+        //    shockWaveSprite.SetActive(false);
+        //    shockWaveCooldown -= Time.deltaTime;
             
-            if (shockWaveCooldown <= 0 )
-            {
-                isShockWavePossible = true;
-                shockWaveCooldown = shockWaveCooldownMax;
-            }
+        //    if (shockWaveCooldown <= 0 )
+        //    {
+        //        isShockWavePossible = true;
+        //        shockWaveCooldown = shockWaveCooldownMax;
+        //    }
             
-        }
+        //}
 
 
         
 
         //active la shockwave pendant un certain temps
-        if (isShockWaveButtonPressed && isShockWavePossible && !_shockWaveHitScript.haveIBeenHit)
+        if (isShockWaveButtonPressed && _playerEntityScript.GetUltiBool() && !_shockWaveHitScript.haveIBeenHit)
         {
             shockWaveDuration -= Time.deltaTime;
             
-            
             if (shockWaveDuration > 0)
             {
-
-
 
                 if (gameObject.tag == "Player1")
                 {
@@ -120,7 +119,9 @@ public class AttackTest : MonoBehaviour
             else
             {
                 shockWaveDuration = shockWaveDurationMax;
-                isShockWavePossible = false;
+                _playerEntityScript.SetUltiBoolFalse();
+                shockWaveSprite.SetActive(false);
+                //isShockWavePossible = false;
                 isShockWaveButtonPressed = false;
             }
         }

@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
 {
     //grégoire c'est occupé de ce script.
 
+    public static SoundManager instance = null;
+
     public AudioClip wallHit;
     public AudioClip wallBouncyHit;
     public AudioClip playerCast;
@@ -14,7 +16,14 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource myAudio;
 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
 
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +38,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(AudioSource myAudioSource, AudioClip thisAudio)
     {
+        myAudioSource.pitch = Time.timeScale;
         myAudioSource.loop = false;
         myAudioSource.enabled = false;
         myAudioSource.clip = thisAudio;
@@ -40,4 +50,6 @@ public class SoundManager : MonoBehaviour
     {
          myAudioSource.enabled = false;
     }
+
+
 }

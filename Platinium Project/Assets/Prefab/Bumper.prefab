@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7510670961787782149}
   - component: {fileID: 7510670961787782155}
   - component: {fileID: 41822928}
+  - component: {fileID: 4552464178936290292}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -111,3 +112,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 11.35, y: 6.5}
   m_Direction: 1
+--- !u!95 &4552464178936290292
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7510670961787782151}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2326ffc2f27130046b272186261edc0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WInd : MonoBehaviour
+public class Wind : MonoBehaviour
 {
 
     public GameObject gameManager;

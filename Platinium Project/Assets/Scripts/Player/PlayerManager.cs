@@ -69,10 +69,14 @@ public class PlayerManager : MonoBehaviour
         float inputXPlayer1 = -player[0].GetAxis("HorizontalJoy1");
         float inputYPlayer1 = player[0].GetAxis("VerticalJoy1");
         Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
+        if (dirPlayer1.magnitude < 0.3f)
+        {
+            dirPlayer1 = Vector2.zero;
+        }
         
         playerEntity[0].SetInputX(dirPlayer1);
 
-        if(player[0].GetButton("Push1") && _attackTest[0].isShockWavePossible)
+        if(player[0].GetButton("Push1") && playerEntity[0].GetUltiBool())
         {
             _attackTest[0].Push();
         }
@@ -83,10 +87,14 @@ public class PlayerManager : MonoBehaviour
         float inputXPlayer2 = -player[1].GetAxis("HorizontalJoy2");
         float inputYPlayer2 = player[1].GetAxis("VerticalJoy2");
         Vector2 dirPlayer2 = new Vector2(inputXPlayer2, inputYPlayer2);
-        
+        if (dirPlayer2.magnitude < 0.3f)
+        {
+            dirPlayer2 = Vector2.zero;
+        }
         playerEntity[1].SetInputX(dirPlayer2);
 
-        if (player[1].GetButton("Push2") && _attackTest[1].isShockWavePossible)
+
+        if (player[1].GetButton("Push2") && playerEntity[1].GetUltiBool())
         {
             _attackTest[1].Push();
         }
@@ -96,10 +104,13 @@ public class PlayerManager : MonoBehaviour
             float inputXPlayer3 = -player[2].GetAxis("HorizontalJoy3");
             float inputYPlayer3 = player[2].GetAxis("VerticalJoy3");
             Vector2 dirPlayer3 = new Vector2(inputXPlayer3, inputYPlayer3);
-
+            if (dirPlayer3.magnitude < 0.3f)
+            {
+                dirPlayer3 = Vector2.zero;
+            }
             playerEntity[2].SetInputX(dirPlayer3);
 
-            if (player[2].GetButton("Push3") && _attackTest[2].isShockWavePossible)
+            if (player[2].GetButton("Push3") && playerEntity[2].GetUltiBool())
             {
                 _attackTest[2].Push();
             }
@@ -112,16 +123,17 @@ public class PlayerManager : MonoBehaviour
             float inputXPlayer4 = -player[3].GetAxis("HorizontalJoy4");
             float inputYPlayer4 = player[3].GetAxis("VerticalJoy4");
             Vector2 dirPlayer4 = new Vector2(inputXPlayer4, inputYPlayer4);
-
+            if (dirPlayer4.magnitude < 0.3f)
+            {
+                dirPlayer4 = Vector2.zero;
+            }
             playerEntity[3].SetInputX(dirPlayer4);
 
-            if (player[3].GetButton("Push4") && _attackTest[3].isShockWavePossible)
+            if (player[3].GetButton("Push4") && playerEntity[3].GetUltiBool())
             {
                 _attackTest[3].Push();
             }
         }
-
-       
     }
 
 

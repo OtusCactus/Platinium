@@ -390,6 +390,42 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 1
+    - _id: 16
+      _name: Pause1
+      _type: 1
+      _descriptiveName: Pause1
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 1
+    - _id: 17
+      _name: Pause2
+      _type: 1
+      _descriptiveName: Pause2
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 2
+    - _id: 18
+      _name: Pause3
+      _type: 1
+      _descriptiveName: Pause3
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 3
+    - _id: 19
+      _name: Pause4
+      _type: 1
+      _descriptiveName: Pause4
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 4
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -421,13 +457,13 @@ MonoBehaviour:
       - categoryId: 0
         actionIds: 
       - categoryId: 1
-        actionIds: 0300000004000000050000000f000000
+        actionIds: 0300000004000000050000000f00000010000000
       - categoryId: 2
-        actionIds: 060000000700000008000000
+        actionIds: 06000000070000000800000011000000
       - categoryId: 3
-        actionIds: 090000000a0000000b000000
+        actionIds: 090000000a0000000b00000012000000
       - categoryId: 4
-        actionIds: 0c0000000d0000000e000000
+        actionIds: 0c0000000d0000000e00000013000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -596,6 +632,17 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 16
+        _elementType: 1
+        _elementIdentifierId: 15
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     - id: 3
       categoryId: 2
       layoutId: 0
@@ -723,7 +770,7 @@ MonoBehaviour:
     controllerMapLayoutManagerRuleSets: []
     controllerMapEnablerRuleSets: []
     playerIdCounter: 5
-    actionIdCounter: 16
+    actionIdCounter: 20
     actionCategoryIdCounter: 5
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 5
