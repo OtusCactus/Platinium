@@ -40,6 +40,7 @@ public class PlayerEntity : MonoBehaviour
     public float tooMuchPowerTimerMax;
     private float tooMuchPowerTimer;
     private bool _isTooMuchPowerGathered;
+    public GameObject sweatParticles;
 
     //Variables pour la vitesse
     private float _myVelocityFloat;
@@ -77,18 +78,27 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Onomatopées")]
     public Sprite[] onomatopeesTab;
-    public Sprite onomatopéeWallHit;
     public SpriteRenderer onomatopéesSprite;
     private float onomatopéeTimer;
     public float onomatopéeTimerMax;
+
+    [Header("WallSprite")]
+    public Transform wallSpriteTransform;
+    private float wallHitSpriteTimer;
+    private float wallHitSpriteTimerMax;
+    private Vector3 wallSpritePosition;
 
     [Header("UltiCharge")]
     public int ultiChargeMax;
     public float ultiChargeRatio;
     private float _ultiCurrentCharge;
     private bool _isUltiPossible;
+    public GameObject[] UltiFxStates;
     //trail
     private TrailRenderer _playerTrail;
+    private bool _needTrail = false;
+    private float _trailTimer = 0;
+    public float trailDuration = 2;
 
     //score
     private ScoreManager _scoreManagerScript;
@@ -130,12 +140,14 @@ public class PlayerEntity : MonoBehaviour
 
 
         onomatopéesSprite.enabled = false;
+        wallSpriteTransform.gameObject.SetActive(false);
+        sweatParticles.SetActive(false);
+        UltiFxStates[0].SetActive(false);
+        UltiFxStates[1].SetActive(false);
+        UltiFxStates[2].SetActive(false);
+        wallHitSpriteTimerMax = onomatopéeTimerMax;
     }
 
-    private void OnDisable()
-    {
-
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -204,11 +216,14 @@ public class PlayerEntity : MonoBehaviour
             {
                 _timerPower = powerMax;
                 tooMuchPowerTimer += Time.fixedDeltaTime;
+                sweatParticles.SetActive(true);
                 if (tooMuchPowerTimer > tooMuchPowerTimerMax)
                 {
                     tooMuchPowerTimer = 0;
                     _isTooMuchPowerGathered = true;
                     powerJaugeParent.gameObject.SetActive(false);
+                    sweatParticles.SetActive(false);
+
                     _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
                     _inputVariableToStoreDirection = Vector2.zero;
@@ -253,7 +268,7 @@ public class PlayerEntity : MonoBehaviour
                 _touchedByPlayer = false;
             }
 
-
+            sweatParticles.SetActive(false);
             _animator.SetBool("IsSlingshoting", false);
             powerJaugeParent.gameObject.SetActive(false);
             //_myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
@@ -296,11 +311,22 @@ public class PlayerEntity : MonoBehaviour
         if (_velocityConvertedToRatio > 0.8)
         {
             _playerTrail.enabled = true;
+            _needTrail = true;
         }
-        else
+        if (_needTrail)
+        {
+            _trailTimer += Time.deltaTime;
+        }
+        if (_trailTimer >= trailDuration)
+        {
+            _needTrail = false;
+        }
+        if (!_needTrail)
         {
             _playerTrail.enabled = false;
+            _trailTimer = 0;
         }
+
         _lastFrameVelocity = _myRb.velocity;
 
     }
@@ -308,13 +334,33 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
-        if (onomatopéesSprite.enabled == true)
+        if (onomatopéesSprite.enabled)
         {
             onomatopéeTimer += Time.deltaTime;
             if(onomatopéeTimer >= onomatopéeTimerMax)
             {
                 onomatopéeTimer = 0;
                 onomatopéesSprite.enabled = false;
+            }
+        }
+
+        if(_ultiCurrentCharge < ultiChargeMax * 0.33f)
+        {
+            UltiFxStates[0].SetActive(false);
+            UltiFxStates[1].SetActive(false);
+            UltiFxStates[2].SetActive(false);
+        }
+
+        if (wallSpriteTransform.gameObject.activeSelf)
+        {
+            wallSpriteTransform.position = wallSpritePosition;
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -2.2f);
+            wallHitSpriteTimer += Time.deltaTime;
+            if(wallHitSpriteTimer >= wallHitSpriteTimerMax)
+            {
+                wallHitSpriteTimer = 0;
+                wallSpriteTransform.gameObject.SetActive(false);
+
             }
         }
 
@@ -384,10 +430,15 @@ public class PlayerEntity : MonoBehaviour
         if (collision.gameObject.tag.Contains("Walls"))
         {
             WallProprieties collisionScript = collision.gameObject.GetComponent<WallProprieties>();
-            onomatopéesSprite.enabled = true;
-            onomatopéesSprite.sprite = onomatopéeWallHit;
             onomatopéeTimer = 0;
-            
+
+            wallHitSpriteTimer = 0;
+            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, -2.2f);
+            wallSpriteTransform.position = wallSpritePosition;
+            wallSpriteTransform.gameObject.SetActive(true);
+
+
+
             if (collisionScript.isBouncy)
             {
                 _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallBouncyHit);
@@ -403,12 +454,13 @@ public class PlayerEntity : MonoBehaviour
         else if (collision.gameObject.tag.Contains("Player"))
         {
             _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
+            wallSpriteTransform.gameObject.SetActive(false);
 
-        //}
+            //}
 
 
-        //if (collision.gameObject.tag.Contains("Player"))
-        //{
+            //if (collision.gameObject.tag.Contains("Player"))
+            //{
             onomatopéesSprite.enabled = true;
             onomatopéesSprite.sprite = onomatopeesTab[Random.Range(0, onomatopeesTab.Length - 1)];
             onomatopéeTimer = 0;
@@ -417,7 +469,27 @@ public class PlayerEntity : MonoBehaviour
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
                 _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
-                if(_ultiCurrentCharge >= ultiChargeMax)
+
+                if ( _ultiCurrentCharge > ultiChargeMax/3 && _ultiCurrentCharge <ultiChargeMax * 0.66f)
+                {
+                    UltiFxStates[0].SetActive(true);
+                    UltiFxStates[1].SetActive(false);
+                    UltiFxStates[2].SetActive(false);
+                }
+                else if (_ultiCurrentCharge >= ultiChargeMax * 0.66f && _ultiCurrentCharge < ultiChargeMax)
+                {
+                    UltiFxStates[0].SetActive(false);
+                    UltiFxStates[1].SetActive(true);
+                    UltiFxStates[2].SetActive(false);
+                }
+                else if (_ultiCurrentCharge >= ultiChargeMax)
+                {
+                    UltiFxStates[0].SetActive(false);
+                    UltiFxStates[1].SetActive(false);
+                    UltiFxStates[2].SetActive(true);
+                }
+
+                if (_ultiCurrentCharge >= ultiChargeMax)
                 {
                     _ultiCurrentCharge = ultiChargeMax;
                     _isUltiPossible = true;
@@ -450,7 +522,32 @@ public class PlayerEntity : MonoBehaviour
         _particuleContactSystem.Play();
     }
 
-
+    public void newRound()
+    {
+        _animator.SetBool("IsSlingshoting", false);
+        _ultiCurrentCharge = 0;
+        _soundManagerScript.NoSound(_playerAudio[0]);
+        _mustPlayCastSound = true;
+        onomatopéesSprite.enabled = false;
+        wallSpriteTransform.gameObject.SetActive(false);
+        sweatParticles.SetActive(false);
+        if (gameObject.tag == "Player1")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
+        }
+        else if (gameObject.tag == "Player2")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+        }
+        if (gameObject.tag == "Player3")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+        }
+        else if (gameObject.tag == "Player4")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+        }
+    }
 
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {

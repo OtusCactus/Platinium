@@ -61,7 +61,10 @@ public class WallChange : MonoBehaviour
 
     private WallProprieties _wallProprieties;
 
-    bool _hasPlayerPassedTrigger = false;
+     bool _hasPlayerPassedTrigger = false;
+
+    private bool _hasPlayerCollided = false;
+    private Animator _bouncyAnimator;
 
     private GameObject _currentWallActive;
 
@@ -114,6 +117,8 @@ public class WallChange : MonoBehaviour
 
                     _meshMaterials = _wallShadowMeshRenderer.materials;
                     _meshMaterialsBambou = _wallShadowMeshRendererBambou.materials;
+
+                    _bouncyAnimator = _currentWallActive.transform.GetChild(2).GetComponent<Animator>();
                 }
                 else
                 {
@@ -121,7 +126,7 @@ public class WallChange : MonoBehaviour
                     _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
                     _meshMaterials = _wallShadowMeshRenderer.materials;
                 }
-
+                break;
             }
         }
 
@@ -195,7 +200,16 @@ public class WallChange : MonoBehaviour
 
         }
 
-
+        if (wallLife == wallLifeMax)
+        {
+            if(_wallProprieties.isBouncy)
+            {            
+                if (_hasPlayerCollided)
+                    _bouncyAnimator.SetBool("isState4", true);
+                else
+                    _bouncyAnimator.SetBool("isState4", false);
+            }
+        }
         if (wallLife <= 0)
         {
             _lastHit = true;
@@ -236,6 +250,10 @@ public class WallChange : MonoBehaviour
             {
                 _wallBambouAppearance.sharedMesh = wallAppearance[1];
                 _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[1];
+                if(_hasPlayerCollided)
+                    _bouncyAnimator.SetBool("isState3", true);
+                else
+                    _bouncyAnimator.SetBool("isState3", false);
             }
             
         }
@@ -263,6 +281,10 @@ public class WallChange : MonoBehaviour
             {
                 _wallBambouAppearance.sharedMesh = wallAppearance[2];
                 _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[2];
+                if (_hasPlayerCollided)
+                    _bouncyAnimator.SetBool("isState2", true);
+                else
+                    _bouncyAnimator.SetBool("isState2", false);
             }
         }
         else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
@@ -289,6 +311,10 @@ public class WallChange : MonoBehaviour
             {
                 _wallBambouAppearance.sharedMesh = wallAppearance[3];
                 _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[3];
+                if (_hasPlayerCollided)
+                    _bouncyAnimator.SetBool("isState1", true);
+                else
+                    _bouncyAnimator.SetBool("isState1", false);
             }
         }
 
@@ -301,6 +327,8 @@ public class WallChange : MonoBehaviour
     {
         _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
         _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
+
+        _hasPlayerCollided = true;
 
         //Si le mur n'est pas indestructible et que le joueur ne donne pas d'input (debug du problème ou le joueur charge la puissance en tournant et le mur prend des dégats) alors le mur prend des dégats
         if (!_wallProprieties.isIndestructible && _playerOnCollision.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
@@ -322,6 +350,12 @@ public class WallChange : MonoBehaviour
         }
             
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _hasPlayerCollided = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
@@ -336,6 +370,7 @@ public class WallChange : MonoBehaviour
 
 
                 _playerOnCollision.enabled = false;
+                _playerOnCollision.newRound();
                 _playerOnCollision.DesactiveCollider();
                 _scoreManagerScript.ChangeScore(_gameManagerScript.currentPlayersOnArena, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
                 _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
