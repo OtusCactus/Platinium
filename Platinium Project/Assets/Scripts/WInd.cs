@@ -20,7 +20,7 @@ public class Wind : MonoBehaviour
     {
         gameManagerScript = gameManager.GetComponent<GameManager>();
         _particule = transform.GetChild(0).gameObject;
-        startParticuleRotation = _particule.transform.rotation.ToEulerAngles();
+        startParticuleRotation = _particule.transform.eulerAngles;
     }
 
 
@@ -33,6 +33,7 @@ public class Wind : MonoBehaviour
         }
         Quaternion rotation = Quaternion.LookRotation(-direction, Vector3.up);
         _particule.transform.rotation = rotation;
+        _particule.transform.eulerAngles = new Vector3(_particule.transform.eulerAngles.x, _particule.transform.eulerAngles.y, 90);
     }
 
     // Update is called once per frame
