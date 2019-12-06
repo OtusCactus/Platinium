@@ -18,7 +18,7 @@ public class Wind : MonoBehaviour
 
     private void Awake()
     {
-        gameManagerScript = gameManager.GetComponent<GameManager>();
+        gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _particule = transform.GetChild(0).gameObject;
         startParticuleRotation = _particule.transform.eulerAngles;
     }

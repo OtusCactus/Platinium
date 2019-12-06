@@ -60461,6 +60461,48 @@ PrefabInstance:
       propertyPath: faceTab.Array.data[11].wallToHideInOtherFace.Array.data[9]
       value: 
       objectReference: {fileID: 1022899997}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[2].levelDesign
+      value: 
+      objectReference: {fileID: 5561317710565582210, guid: 792fc28b1c16ebe4896e215e26ed5b16,
+        type: 3}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[3].levelDesign
+      value: 
+      objectReference: {fileID: 7793118990006351951, guid: 3539dd5d757c2cc4b8b5b614653ee8fb,
+        type: 3}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[5].levelDesign
+      value: 
+      objectReference: {fileID: 8217444533949823787, guid: 223de9cedf7ae914093f5b717c18b5f1,
+        type: 3}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[8].levelDesign
+      value: 
+      objectReference: {fileID: 2392496456097058401, guid: 283fa2653fc5c2048af31fd358db09d4,
+        type: 3}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[9].levelDesign
+      value: 
+      objectReference: {fileID: 1129176695353786020, guid: e7b6a9701c0d46948a54e6053c3c22b9,
+        type: 3}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[10].levelDesign
+      value: 
+      objectReference: {fileID: 6258763386176136878, guid: 23d8fad4e6f473f44b1093b84d331bd6,
+        type: 3}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[11].levelDesign
+      value: 
+      objectReference: {fileID: 8689091431981974532, guid: 53eff3e74a2c2a44fb9cea4ec8184723,
+        type: 3}
     - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: playerList.Array.size
@@ -60524,6 +60566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lerpTimerMax
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: _slowMotionTimerMax
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: allScores.Array.size
