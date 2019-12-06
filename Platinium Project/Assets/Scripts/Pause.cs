@@ -4,6 +4,7 @@ using UnityEngine;
 using Rewired;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Pause : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Pause : MonoBehaviour
     public GameObject pausePanel;
     public Button resume;
     private bool _isInPause = false;
+    
 
     private void Awake()
     {
@@ -61,6 +63,7 @@ public class Pause : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+        EventSystem.current.SetSelectedGameObject(null);
         _isInPause = false;
     }
 
