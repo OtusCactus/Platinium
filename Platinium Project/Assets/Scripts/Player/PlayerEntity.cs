@@ -324,13 +324,12 @@ public class PlayerEntity : MonoBehaviour
         if (wallSpriteTransform.gameObject.activeSelf)
         {
             wallSpriteTransform.position = wallSpritePosition;
-            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -1);
-            //wallSpriteTransform.rotation = Quaternion.identity;
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -2.2f);
             wallHitSpriteTimer += Time.deltaTime;
             if(wallHitSpriteTimer >= wallHitSpriteTimerMax)
             {
                 wallHitSpriteTimer = 0;
-            wallSpriteTransform.gameObject.SetActive(false);
+                wallSpriteTransform.gameObject.SetActive(false);
 
             }
         }
@@ -403,9 +402,9 @@ public class PlayerEntity : MonoBehaviour
             WallProprieties collisionScript = collision.gameObject.GetComponent<WallProprieties>();
             onomatopéeTimer = 0;
 
-            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, -2);
+            wallHitSpriteTimer = 0;
+            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, -2.2f);
             wallSpriteTransform.position = wallSpritePosition;
-            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -1);
             wallSpriteTransform.gameObject.SetActive(true);
 
 
@@ -480,6 +479,7 @@ public class PlayerEntity : MonoBehaviour
         _soundManagerScript.NoSound(_playerAudio[0]);
         _mustPlayCastSound = true;
         onomatopéesSprite.enabled = false;
+        wallSpriteTransform.gameObject.SetActive(false);
         if (gameObject.tag == "Player1")
         {
             _playerManagerScript.StopVibration(_playerManagerScript.player[0]);

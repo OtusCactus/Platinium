@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 323983280672211798}
   - component: {fileID: 323983280672211796}
   - component: {fileID: 323983280672211799}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Particle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4763,7 +4763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6076128742928976801}
   - component: {fileID: 4123009522436681666}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Chara1_base_oreille-gauche (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4843,7 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3876687247261567632}
   - component: {fileID: 3876687247261567727}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: ShockwaveSpriteRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4924,7 +4924,7 @@ GameObject:
   - component: {fileID: 3876687248008735120}
   - component: {fileID: 3876687248008735215}
   - component: {fileID: 3876687248008735214}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4997,7 +4997,7 @@ GameObject:
   - component: {fileID: 3876687248093730224}
   - component: {fileID: 3876687248093730190}
   - component: {fileID: 3876687248093730191}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5068,7 +5068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3876687248101871409}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5105,7 +5105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3876687248337048779}
   - component: {fileID: 3876687248337048777}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: direction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5186,7 +5186,7 @@ GameObject:
   - component: {fileID: 3876687248395808906}
   - component: {fileID: 3876687248395808904}
   - component: {fileID: 3876687248395808905}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5296,7 +5296,7 @@ GameObject:
   - component: {fileID: 3876687248484492400}
   - component: {fileID: 3876687248484492362}
   - component: {fileID: 6943442748251016438}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5481,7 +5481,7 @@ GameObject:
   - component: {fileID: 3876687248936347089}
   - component: {fileID: 3876687248936347090}
   - component: {fileID: 3876687248936347091}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5587,9 +5587,9 @@ GameObject:
   - component: {fileID: 7827578486218238840}
   - component: {fileID: 1323674683}
   - component: {fileID: 1588768097147573943}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PlayerEntity 2
-  m_TagString: Player3
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5651,10 +5651,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1dcdb61147249b24e9b6243f610a4e70, type: 3}
   - {fileID: 21300000, guid: f4cda3375e73c23418a2eaf11538391e, type: 3}
   - {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487, type: 3}
-  "onomatop\xE9eWallHit": {fileID: 21300000, guid: f7385afecfc88fa4398b9c56e87c6651,
-    type: 3}
   "onomatop\xE9esSprite": {fileID: 4956807838244853691}
   "onomatop\xE9eTimerMax": 0.5
+  wallSpriteTransform: {fileID: 0}
   ultiChargeMax: 100
   ultiChargeRatio: 2
 --- !u!50 &3876687248998186136
@@ -5698,7 +5697,7 @@ MonoBehaviour:
   shockWaveSprite: {fileID: 3876687247261567633}
   EnemyMask:
     serializedVersion: 2
-    m_Bits: 2816
+    m_Bits: 3328
   pushbackIntensity: 1000
 --- !u!114 &3876687248998186135
 MonoBehaviour:
@@ -6061,7 +6060,7 @@ GameObject:
   - component: {fileID: 3876687249007833918}
   - component: {fileID: 3876687249007833919}
   - component: {fileID: 3876687249007833888}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: JaugeParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6169,7 +6168,7 @@ GameObject:
   - component: {fileID: 3876687249254345217}
   - component: {fileID: 3876687249254345247}
   - component: {fileID: 3876687249254345216}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6241,7 +6240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4009921954705824451}
   - component: {fileID: 5250414881295061788}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Chara1_base_oreille-droite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6321,7 +6320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6338266174314862492}
   - component: {fileID: 4727485016293139201}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Chara1_sling_yeux
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6401,7 +6400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8143220231691665542}
   - component: {fileID: 7776524315379998167}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Chara1_sling_oreilles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6481,7 +6480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9132606843777431712}
   - component: {fileID: 4956807838244853691}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: "Onomatop\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
