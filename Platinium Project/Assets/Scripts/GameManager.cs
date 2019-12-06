@@ -230,6 +230,7 @@ public class GameManager : MonoBehaviour
 
     public void ThisPlayerHasLost(string player)
     {
+        if(currentPlayersList.Count > 2)
         SlowMotion();
         for (int i = currentPlayersList.Count; i--> 0;)
         {
