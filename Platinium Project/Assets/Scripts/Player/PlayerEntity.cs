@@ -40,6 +40,7 @@ public class PlayerEntity : MonoBehaviour
     public float tooMuchPowerTimerMax;
     private float tooMuchPowerTimer;
     private bool _isTooMuchPowerGathered;
+    public GameObject sweatParticles;
 
     //Variables pour la vitesse
     private float _myVelocityFloat;
@@ -92,6 +93,7 @@ public class PlayerEntity : MonoBehaviour
     public float ultiChargeRatio;
     private float _ultiCurrentCharge;
     private bool _isUltiPossible;
+    public GameObject[] UltiFxStates;
     //trail
     private TrailRenderer _playerTrail;
 
@@ -136,6 +138,10 @@ public class PlayerEntity : MonoBehaviour
 
         onomatopéesSprite.enabled = false;
         wallSpriteTransform.gameObject.SetActive(false);
+        sweatParticles.SetActive(false);
+        UltiFxStates[0].SetActive(false);
+        UltiFxStates[1].SetActive(false);
+        UltiFxStates[2].SetActive(false);
         wallHitSpriteTimerMax = onomatopéeTimerMax;
     }
 
@@ -207,11 +213,14 @@ public class PlayerEntity : MonoBehaviour
             {
                 _timerPower = powerMax;
                 tooMuchPowerTimer += Time.fixedDeltaTime;
+                sweatParticles.SetActive(true);
                 if (tooMuchPowerTimer > tooMuchPowerTimerMax)
                 {
                     tooMuchPowerTimer = 0;
                     _isTooMuchPowerGathered = true;
                     powerJaugeParent.gameObject.SetActive(false);
+                    sweatParticles.SetActive(false);
+
                     _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
                     _inputVariableToStoreDirection = Vector2.zero;
@@ -256,7 +265,7 @@ public class PlayerEntity : MonoBehaviour
                 _touchedByPlayer = false;
             }
 
-
+            sweatParticles.SetActive(false);
             _animator.SetBool("IsSlingshoting", false);
             powerJaugeParent.gameObject.SetActive(false);
             //_myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
@@ -319,6 +328,13 @@ public class PlayerEntity : MonoBehaviour
                 onomatopéeTimer = 0;
                 onomatopéesSprite.enabled = false;
             }
+        }
+
+        if(_ultiCurrentCharge < ultiChargeMax * 0.33f)
+        {
+            UltiFxStates[0].SetActive(false);
+            UltiFxStates[1].SetActive(false);
+            UltiFxStates[2].SetActive(false);
         }
 
         if (wallSpriteTransform.gameObject.activeSelf)
@@ -439,7 +455,27 @@ public class PlayerEntity : MonoBehaviour
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
                 _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
-                if(_ultiCurrentCharge >= ultiChargeMax)
+
+                if ( _ultiCurrentCharge > ultiChargeMax/3 && _ultiCurrentCharge <ultiChargeMax * 0.66f)
+                {
+                    UltiFxStates[0].SetActive(true);
+                    UltiFxStates[1].SetActive(false);
+                    UltiFxStates[2].SetActive(false);
+                }
+                else if (_ultiCurrentCharge >= ultiChargeMax * 0.66f && _ultiCurrentCharge < ultiChargeMax)
+                {
+                    UltiFxStates[0].SetActive(false);
+                    UltiFxStates[1].SetActive(true);
+                    UltiFxStates[2].SetActive(false);
+                }
+                else if (_ultiCurrentCharge >= ultiChargeMax)
+                {
+                    UltiFxStates[0].SetActive(false);
+                    UltiFxStates[1].SetActive(false);
+                    UltiFxStates[2].SetActive(true);
+                }
+
+                if (_ultiCurrentCharge >= ultiChargeMax)
                 {
                     _ultiCurrentCharge = ultiChargeMax;
                     _isUltiPossible = true;
@@ -480,6 +516,7 @@ public class PlayerEntity : MonoBehaviour
         _mustPlayCastSound = true;
         onomatopéesSprite.enabled = false;
         wallSpriteTransform.gameObject.SetActive(false);
+        sweatParticles.SetActive(false);
         if (gameObject.tag == "Player1")
         {
             _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
