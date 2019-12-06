@@ -26,6 +26,8 @@ public class MenuPlayerManager : MonoBehaviour
     public GameObject selecPanel;
     public Image[] readyButton;
     public Sprite readySprite;
+    public Sprite originalSprite;
+    public Sprite outSprite;
     private bool _isCharSelecShowing = false;
     public Slider playerNumberSlider;
 
@@ -66,11 +68,6 @@ public class MenuPlayerManager : MonoBehaviour
     void Update()
     {
 
-        _isEveryoneReady[0] = _isPOneReady;
-        _isEveryoneReady[1] = _isPTwoReady;
-        _isEveryoneReady[2] = _isPThreeReady;
-        _isEveryoneReady[3] = _isPFourReady;
-
         //Gère à quel joueur attribué quel action
         float inputXPlayer1 = -_player.GetAxis("HorizontalJoy1");
         float inputYPlayer1 = _player.GetAxis("VerticalJoy1");
@@ -98,6 +95,10 @@ public class MenuPlayerManager : MonoBehaviour
         {
             selecPanel.SetActive(false);
             ShowPlayerSelection();
+            _isPOneReady = false;
+            _isPTwoReady = false;
+            _isPThreeReady = false;
+            _isPFourReady = false;
             _isCharSelecShowing = false;
 
         }
@@ -111,8 +112,15 @@ public class MenuPlayerManager : MonoBehaviour
         }
         if(timerPOne >= 1)
         {
-            readyButton[0].sprite = readySprite;
             _isPOneReady = true;
+        }
+        if (_isPOneReady)
+        {
+            readyButton[0].sprite = readySprite;
+        }
+        else
+        {
+            readyButton[0].sprite = originalSprite;
         }
 
         if (_isCharSelecShowing && otherPlayers[0].GetButton("Push2"))
@@ -125,8 +133,15 @@ public class MenuPlayerManager : MonoBehaviour
         }
         if (timerPTwo >= 1)
         {
-            readyButton[1].sprite = readySprite;
             _isPTwoReady = true;
+        }
+        if (_isPTwoReady)
+        {
+            readyButton[1].sprite = readySprite;
+        }
+        else
+        {
+            readyButton[1].sprite = originalSprite;
         }
 
         if (playerNumberSlider.value > 2)
@@ -141,9 +156,16 @@ public class MenuPlayerManager : MonoBehaviour
             }
             if (timerPThree >= 1)
             {
-                readyButton[2].sprite = readySprite;
                 _isPThreeReady = true;
             }
+        }
+        if (_isPThreeReady)
+        {
+            readyButton[2].sprite = readySprite;
+        }
+        else
+        {
+            readyButton[2].sprite = originalSprite;
         }
 
         if (playerNumberSlider.value > 3)
@@ -158,14 +180,24 @@ public class MenuPlayerManager : MonoBehaviour
             }
             if (timerPFour >= 1)
             {
-                readyButton[3].sprite = readySprite;
                 _isPFourReady = true;
             }
 
         }
 
-        if( playerNumberSlider.value == 2)
+        if (_isPFourReady)
         {
+            readyButton[3].sprite = readySprite;
+        }
+        else
+        {
+            readyButton[3].sprite = originalSprite;
+        }
+
+        if ( playerNumberSlider.value == 2)
+        {
+            readyButton[2].sprite = outSprite;
+            readyButton[3].sprite = outSprite;
             if (_isPOneReady && _isPTwoReady)
             {
                 StartGame();
@@ -173,6 +205,7 @@ public class MenuPlayerManager : MonoBehaviour
         }
         else if (playerNumberSlider.value == 3)
         {
+            readyButton[3].sprite = outSprite;
             if (_isPOneReady && _isPTwoReady && _isPThreeReady)
             {
                 StartGame();
