@@ -82,7 +82,6 @@ public class PlayerManager : MonoBehaviour
         }
 
 
-        Debug.Log(player[2].GetAxis("HorizontalJoy3"));
 
         float inputXPlayer2 = -player[1].GetAxis("HorizontalJoy2");
         float inputYPlayer2 = player[1].GetAxis("VerticalJoy2");
