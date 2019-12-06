@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,7 +34,8 @@ public class GameManager : MonoBehaviour
     public int currentFace;
 
     private GameObject currentLD;
-
+    [Header("RoundStart")]
+    public Text ReadyText;
     private float lerpTimer = 0;
     public float lerpTimerMax;
 
@@ -143,6 +145,12 @@ public class GameManager : MonoBehaviour
         }
         else if(hasRoundBegun)
         {
+            ReadyText.text = "Ready";
+            for (int i = 0; i < playersEntityScripts.Length; i++)
+            {
+                playersEntityScripts[i].newRound();
+            }
+
             lerpTimer += Time.deltaTime;
             float timerRatio = lerpTimer / lerpTimerMax;
 
@@ -152,17 +160,25 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < playerList.Count; i ++)
             {
                 PlayerLerp(i, timerRatio);
-
             }
 
-            if(timerRatio >1)
+            if(timerRatio > 0.90f)
             {
+                ReadyText.text = "Go";
+            }
+            if (timerRatio >1)
+            {
+                ReadyText.text = "";
                 currentPlayersOnArena = playerList.Count;
                 lerpTimer = 0;
                 timerRatio = 0;
                 hasRoundBegun = false;
             }
 
+        }
+        else
+        {
+            ReadyText.text = "";
         }
 
         if(Input.GetKeyDown(KeyCode.A))

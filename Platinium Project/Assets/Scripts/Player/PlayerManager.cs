@@ -142,6 +142,10 @@ public class PlayerManager : MonoBehaviour
 
         _player.SetVibration(motorUsed, motorVibrationStrength, duration);
     }
+    public void StopVibration(Player _player)
+    {
+        _player.StopVibration();
+    }
 
 
 }

@@ -77,10 +77,15 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Onomatopées")]
     public Sprite[] onomatopeesTab;
-    public Sprite onomatopéeWallHit;
     public SpriteRenderer onomatopéesSprite;
     private float onomatopéeTimer;
     public float onomatopéeTimerMax;
+
+    [Header("WallSprite")]
+    public Transform wallSpriteTransform;
+    private float wallHitSpriteTimer;
+    private float wallHitSpriteTimerMax;
+    private Vector3 wallSpritePosition;
 
     [Header("UltiCharge")]
     public int ultiChargeMax;
@@ -130,12 +135,10 @@ public class PlayerEntity : MonoBehaviour
 
 
         onomatopéesSprite.enabled = false;
+        wallSpriteTransform.gameObject.SetActive(false);
+        wallHitSpriteTimerMax = onomatopéeTimerMax;
     }
 
-    private void OnDisable()
-    {
-
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -308,13 +311,27 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
-        if (onomatopéesSprite.enabled == true)
+        if (onomatopéesSprite.enabled)
         {
             onomatopéeTimer += Time.deltaTime;
             if(onomatopéeTimer >= onomatopéeTimerMax)
             {
                 onomatopéeTimer = 0;
                 onomatopéesSprite.enabled = false;
+            }
+        }
+
+        if (wallSpriteTransform.gameObject.activeSelf)
+        {
+            wallSpriteTransform.position = wallSpritePosition;
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -1);
+            //wallSpriteTransform.rotation = Quaternion.identity;
+            wallHitSpriteTimer += Time.deltaTime;
+            if(wallHitSpriteTimer >= wallHitSpriteTimerMax)
+            {
+                wallHitSpriteTimer = 0;
+            wallSpriteTransform.gameObject.SetActive(false);
+
             }
         }
 
@@ -384,10 +401,15 @@ public class PlayerEntity : MonoBehaviour
         if (collision.gameObject.tag.Contains("Walls"))
         {
             WallProprieties collisionScript = collision.gameObject.GetComponent<WallProprieties>();
-            onomatopéesSprite.enabled = true;
-            onomatopéesSprite.sprite = onomatopéeWallHit;
             onomatopéeTimer = 0;
-            
+
+            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, -2);
+            wallSpriteTransform.position = wallSpritePosition;
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -1);
+            wallSpriteTransform.gameObject.SetActive(true);
+
+
+
             if (collisionScript.isBouncy)
             {
                 _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallBouncyHit);
@@ -403,12 +425,13 @@ public class PlayerEntity : MonoBehaviour
         else if (collision.gameObject.tag.Contains("Player"))
         {
             _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
+            wallSpriteTransform.gameObject.SetActive(false);
 
-        //}
+            //}
 
 
-        //if (collision.gameObject.tag.Contains("Player"))
-        //{
+            //if (collision.gameObject.tag.Contains("Player"))
+            //{
             onomatopéesSprite.enabled = true;
             onomatopéesSprite.sprite = onomatopeesTab[Random.Range(0, onomatopeesTab.Length - 1)];
             onomatopéeTimer = 0;
@@ -450,7 +473,30 @@ public class PlayerEntity : MonoBehaviour
         _particuleContactSystem.Play();
     }
 
-
+    public void newRound()
+    {
+        _animator.SetBool("IsSlingshoting", false);
+        _ultiCurrentCharge = 0;
+        _soundManagerScript.NoSound(_playerAudio[0]);
+        _mustPlayCastSound = true;
+        onomatopéesSprite.enabled = false;
+        if (gameObject.tag == "Player1")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
+        }
+        else if (gameObject.tag == "Player2")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+        }
+        if (gameObject.tag == "Player3")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+        }
+        else if (gameObject.tag == "Player4")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+        }
+    }
 
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {
