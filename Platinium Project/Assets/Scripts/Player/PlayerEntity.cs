@@ -98,6 +98,7 @@ public class PlayerEntity : MonoBehaviour
     private TrailRenderer _playerTrail;
     private bool _needTrail = false;
     private float _trailTimer = 0;
+    public float trailDuration = 2;
 
     //score
     private ScoreManager _scoreManagerScript;
@@ -316,7 +317,7 @@ public class PlayerEntity : MonoBehaviour
         {
             _trailTimer += Time.deltaTime;
         }
-        if (_trailTimer >= 2.2f)
+        if (_trailTimer >= trailDuration)
         {
             _needTrail = false;
         }
