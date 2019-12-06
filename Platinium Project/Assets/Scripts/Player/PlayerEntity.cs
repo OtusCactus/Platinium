@@ -132,10 +132,6 @@ public class PlayerEntity : MonoBehaviour
         onomatopéesSprite.enabled = false;
     }
 
-    private void OnDisable()
-    {
-
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -450,7 +446,30 @@ public class PlayerEntity : MonoBehaviour
         _particuleContactSystem.Play();
     }
 
-
+    public void newRound()
+    {
+        _animator.SetBool("IsSlingshoting", false);
+        _ultiCurrentCharge = 0;
+        _soundManagerScript.NoSound(_playerAudio[0]);
+        _mustPlayCastSound = true;
+        onomatopéesSprite.enabled = false;
+        if (gameObject.tag == "Player1")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
+        }
+        else if (gameObject.tag == "Player2")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+        }
+        if (gameObject.tag == "Player3")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+        }
+        else if (gameObject.tag == "Player4")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+        }
+    }
 
     private void Rebound(Vector3 reboundVelocity, Vector3 collisionNormal, float friction)
     {
