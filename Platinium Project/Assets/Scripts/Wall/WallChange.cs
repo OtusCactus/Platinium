@@ -370,6 +370,7 @@ public class WallChange : MonoBehaviour
 
 
                 _playerOnCollision.enabled = false;
+                _playerOnCollision.newRound();
                 _playerOnCollision.DesactiveCollider();
                 _scoreManagerScript.ChangeScore(_gameManagerScript.currentPlayersOnArena, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
                 _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
