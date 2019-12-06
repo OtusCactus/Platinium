@@ -126,7 +126,7 @@ public class WallChange : MonoBehaviour
                     _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
                     _meshMaterials = _wallShadowMeshRenderer.materials;
                 }
-
+                break;
             }
         }
 
