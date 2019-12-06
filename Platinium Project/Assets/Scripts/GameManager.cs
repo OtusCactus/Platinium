@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < playerList.Count; i++)
         {
             playerList[i].transform.position = _faceClassScript.faceTab[0].playerStartingPosition[i].position;
+            playerList[i].SetActive(true);
             playersEntityScripts[i] = playerList[i].GetComponent<PlayerEntity>();
         }
 
