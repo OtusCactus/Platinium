@@ -12,10 +12,15 @@ public class Wind : MonoBehaviour
     public Vector2 direction;
     public float windForce;
 
+    private GameObject _particule;
+    private float _angle;
+    private Vector3 startParticuleRotation;
+
     private void Awake()
     {
         gameManagerScript = gameManager.GetComponent<GameManager>();
-
+        _particule = transform.GetChild(0).gameObject;
+        startParticuleRotation = _particule.transform.rotation.ToEulerAngles();
     }
 
 
@@ -26,6 +31,8 @@ public class Wind : MonoBehaviour
         {
             playersRb.Add(gameManagerScript.playerList[i].gameObject.GetComponent<Rigidbody2D>());
         }
+        Quaternion rotation = Quaternion.LookRotation(-direction, Vector3.up);
+        _particule.transform.rotation = rotation;
     }
 
     // Update is called once per frame
