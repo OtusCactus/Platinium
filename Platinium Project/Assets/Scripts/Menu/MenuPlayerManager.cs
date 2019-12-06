@@ -24,6 +24,8 @@ public class MenuPlayerManager : MonoBehaviour
     private bool _isStartGameShowing;
 
     public GameObject selecPanel;
+    public GameObject[] twoOtherPlayerNumber;
+    public GameObject[] twoOtherPlayerName;
     public Image[] readyButton;
     public Sprite readySprite;
     public Sprite originalSprite;
@@ -198,6 +200,10 @@ public class MenuPlayerManager : MonoBehaviour
         {
             readyButton[2].sprite = outSprite;
             readyButton[3].sprite = outSprite;
+            twoOtherPlayerName[0].SetActive(false);
+            twoOtherPlayerName[1].SetActive(false);
+            twoOtherPlayerNumber[0].SetActive(false);
+            twoOtherPlayerNumber[1].SetActive(false);
             if (_isPOneReady && _isPTwoReady)
             {
                 StartGame();
@@ -205,6 +211,10 @@ public class MenuPlayerManager : MonoBehaviour
         }
         else if (playerNumberSlider.value == 3)
         {
+            twoOtherPlayerName[0].SetActive(true);
+            twoOtherPlayerName[1].SetActive(false);
+            twoOtherPlayerNumber[0].SetActive(true);
+            twoOtherPlayerNumber[1].SetActive(false);
             readyButton[3].sprite = outSprite;
             if (_isPOneReady && _isPTwoReady && _isPThreeReady)
             {
@@ -213,6 +223,10 @@ public class MenuPlayerManager : MonoBehaviour
         }
         else
         {
+            twoOtherPlayerName[0].SetActive(true);
+            twoOtherPlayerName[1].SetActive(true);
+            twoOtherPlayerNumber[0].SetActive(true);
+            twoOtherPlayerNumber[1].SetActive(true);
             if (_isPOneReady && _isPTwoReady && _isPThreeReady && _isPFourReady)
             {
                 StartGame();
