@@ -141,5 +141,10 @@ public class WallManager : MonoBehaviour
         {
             wallProprieties.theWalls[0].SetActive(true);
         }
+
+        if(wallProprieties.isConnected)
+        {
+            wallProprieties.theWalls[3].SetActive(true);
+        }
     }
 }
