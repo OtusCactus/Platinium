@@ -5136,6 +5136,12 @@ MonoBehaviour:
   playerSelection: {fileID: 618298084}
   sceneName: MainScene 2
   selecPanel: {fileID: 557480665}
+  twoOtherPlayerNumber:
+  - {fileID: 1144569597}
+  - {fileID: 1979566318}
+  twoOtherPlayerName:
+  - {fileID: 84297826}
+  - {fileID: 1623969401}
   readyButton:
   - {fileID: 43104542}
   - {fileID: 867917068}
