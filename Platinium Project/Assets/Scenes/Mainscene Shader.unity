@@ -5936,6 +5936,11 @@ PrefabInstance:
       propertyPath: wallSpriteTransform
       value: 
       objectReference: {fileID: 1160096616}
+    - target: {fileID: 3876687247311588860, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 64ba098e0877fbf468dd073fc08c72d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
@@ -20373,6 +20378,11 @@ PrefabInstance:
       propertyPath: wallSpriteTransform
       value: 
       objectReference: {fileID: 740156118}
+    - target: {fileID: 7052115118382307674, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ed3282b22b54a84693c61a756d810db, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
 --- !u!1 &714532300 stripped
@@ -31002,6 +31012,11 @@ PrefabInstance:
       propertyPath: wallSpriteTransform
       value: 
       objectReference: {fileID: 1686022716}
+    - target: {fileID: 8562993523978416722, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1291627eb28fef041a9ec40d788aa05f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
 --- !u!1 &1126815082 stripped
@@ -53859,6 +53874,21 @@ PrefabInstance:
       propertyPath: wallSpriteTransform
       value: 
       objectReference: {fileID: 1875562784}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: _trail
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112317936107038790, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112317936107038790, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.30980393
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
 --- !u!1 &1886410724 stripped

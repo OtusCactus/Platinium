@@ -96,6 +96,8 @@ public class PlayerEntity : MonoBehaviour
     public GameObject[] UltiFxStates;
     //trail
     private TrailRenderer _playerTrail;
+    private bool _needTrail = false;
+    private float _trailTimer = 0;
 
     //score
     private ScoreManager _scoreManagerScript;
@@ -308,11 +310,22 @@ public class PlayerEntity : MonoBehaviour
         if (_velocityConvertedToRatio > 0.8)
         {
             _playerTrail.enabled = true;
+            _needTrail = true;
         }
-        else
+        if (_needTrail)
+        {
+            _trailTimer += Time.deltaTime;
+        }
+        if (_trailTimer >= 2.2f)
+        {
+            _needTrail = false;
+        }
+        if (!_needTrail)
         {
             _playerTrail.enabled = false;
+            _trailTimer = 0;
         }
+
         _lastFrameVelocity = _myRb.velocity;
 
     }
