@@ -480,6 +480,7 @@ public class PlayerEntity : MonoBehaviour
         _soundManagerScript.NoSound(_playerAudio[0]);
         _mustPlayCastSound = true;
         onomatopéesSprite.enabled = false;
+        wallSpriteTransform.gameObject.SetActive(false);
         if (gameObject.tag == "Player1")
         {
             _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
