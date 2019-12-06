@@ -77,10 +77,15 @@ public class PlayerEntity : MonoBehaviour
 
     [Header("Onomatopées")]
     public Sprite[] onomatopeesTab;
-    public Sprite onomatopéeWallHit;
     public SpriteRenderer onomatopéesSprite;
     private float onomatopéeTimer;
     public float onomatopéeTimerMax;
+
+    [Header("WallSprite")]
+    public Transform wallSpriteTransform;
+    private float wallHitSpriteTimer;
+    private float wallHitSpriteTimerMax;
+    private Vector3 wallSpritePosition;
 
     [Header("UltiCharge")]
     public int ultiChargeMax;
@@ -130,6 +135,8 @@ public class PlayerEntity : MonoBehaviour
 
 
         onomatopéesSprite.enabled = false;
+        wallSpriteTransform.gameObject.SetActive(false);
+        wallHitSpriteTimerMax = onomatopéeTimerMax;
     }
 
 
@@ -304,13 +311,27 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
-        if (onomatopéesSprite.enabled == true)
+        if (onomatopéesSprite.enabled)
         {
             onomatopéeTimer += Time.deltaTime;
             if(onomatopéeTimer >= onomatopéeTimerMax)
             {
                 onomatopéeTimer = 0;
                 onomatopéesSprite.enabled = false;
+            }
+        }
+
+        if (wallSpriteTransform.gameObject.activeSelf)
+        {
+            wallSpriteTransform.position = wallSpritePosition;
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -1);
+            //wallSpriteTransform.rotation = Quaternion.identity;
+            wallHitSpriteTimer += Time.deltaTime;
+            if(wallHitSpriteTimer >= wallHitSpriteTimerMax)
+            {
+                wallHitSpriteTimer = 0;
+            wallSpriteTransform.gameObject.SetActive(false);
+
             }
         }
 
@@ -380,10 +401,15 @@ public class PlayerEntity : MonoBehaviour
         if (collision.gameObject.tag.Contains("Walls"))
         {
             WallProprieties collisionScript = collision.gameObject.GetComponent<WallProprieties>();
-            onomatopéesSprite.enabled = true;
-            onomatopéesSprite.sprite = onomatopéeWallHit;
             onomatopéeTimer = 0;
-            
+
+            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, -2);
+            wallSpriteTransform.position = wallSpritePosition;
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -1);
+            wallSpriteTransform.gameObject.SetActive(true);
+
+
+
             if (collisionScript.isBouncy)
             {
                 _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallBouncyHit);
@@ -399,12 +425,13 @@ public class PlayerEntity : MonoBehaviour
         else if (collision.gameObject.tag.Contains("Player"))
         {
             _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
+            wallSpriteTransform.gameObject.SetActive(false);
 
-        //}
+            //}
 
 
-        //if (collision.gameObject.tag.Contains("Player"))
-        //{
+            //if (collision.gameObject.tag.Contains("Player"))
+            //{
             onomatopéesSprite.enabled = true;
             onomatopéesSprite.sprite = onomatopeesTab[Random.Range(0, onomatopeesTab.Length - 1)];
             onomatopéeTimer = 0;
