@@ -469,7 +469,7 @@ public class PlayerEntity : MonoBehaviour
             else if (!collisionScript.isBouncy && !collisionScript.isIndestructible)
             {
 
-                _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallHit);
+                _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playerWallHit);
             }
 
         }
