@@ -72,6 +72,9 @@ public class WallChange : MonoBehaviour
     private bool _hasCreatedArrayTwo = false;
 
 
+    private NewSoundManager _newSoundManagerScript;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +86,8 @@ public class WallChange : MonoBehaviour
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
         _faceClassScript = GameObject.FindWithTag("GameController").GetComponent<FaceClass>();
         _wallProprieties = GetComponent<WallProprieties>();
+        _newSoundManagerScript = NewSoundManager.instance;
+
 
         // set les valeurs de départs
         wallLife = wallLifeMax;
@@ -267,7 +272,6 @@ public class WallChange : MonoBehaviour
                 _wallShadowMesh.mesh = wallShadowAppearance[2];
                 if (!_wallProprieties.isIndestructible && !_hasCreatedArray)
                 {
-                    print("moijgfxd " + (_wallMeshRenderer.materials.Length - 1));
                     Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 2)];
                     for(int i = 0; i < temp.Length; i++)
                     {
@@ -325,7 +329,13 @@ public class WallChange : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
+
+        if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
+        {
+            _newSoundManagerScript.PlayHighLifeWall();
+        }
+
+            _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
         _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
 
         _hasPlayerCollided = true;
