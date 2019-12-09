@@ -50,6 +50,11 @@ public class ArenaRotation : MonoBehaviour
     [Header("Debug")]
     public bool debug;
 
+    private void Awake()
+    {
+        _currentFace = Random.Range(0, 11);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +65,7 @@ public class ArenaRotation : MonoBehaviour
         _gameManagerScript = gameManager.GetComponent<GameManager>();
 
         //set la caméra sur la première face de l'arène.
-        _currentFace = 0;
+
         _faceStored = _currentFace;
         transform.rotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
         _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();

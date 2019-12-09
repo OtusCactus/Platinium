@@ -83,7 +83,7 @@ public class PlayerEntity : MonoBehaviour
     public float onomatopéeTimerMax;
 
     [Header("WallSprite")]
-    public Transform wallSpriteTransform;
+    private Transform wallSpriteTransform;
     private float wallHitSpriteTimer;
     private float wallHitSpriteTimerMax;
     private Vector3 wallSpritePosition;
@@ -140,12 +140,30 @@ public class PlayerEntity : MonoBehaviour
 
 
         onomatopéesSprite.enabled = false;
-        wallSpriteTransform.gameObject.SetActive(false);
         sweatParticles.SetActive(false);
         UltiFxStates[0].SetActive(false);
         UltiFxStates[1].SetActive(false);
         UltiFxStates[2].SetActive(false);
         wallHitSpriteTimerMax = onomatopéeTimerMax;
+
+        string thisTag = gameObject.tag;
+        switch(thisTag)
+        {
+            case "Player1":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite1").transform;
+                break;
+            case "Player2":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite2").transform;
+                break;
+            case "Player3":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite3").transform;
+                break;
+            case "Player4":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite4").transform;
+                break;
+        }
+        wallSpriteTransform.gameObject.SetActive(false);
+
     }
 
 
@@ -334,6 +352,7 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
+        //si les onomatopées sont activés, lance le timer de désactivation
         if (onomatopéesSprite.enabled)
         {
             onomatopéeTimer += Time.deltaTime;
@@ -344,6 +363,7 @@ public class PlayerEntity : MonoBehaviour
             }
         }
 
+        //si la jauge d'ulti est inférieure à 1/3 du max, ne fait pas apparaitre les FXs
         if(_ultiCurrentCharge < ultiChargeMax * 0.33f)
         {
             UltiFxStates[0].SetActive(false);
@@ -351,10 +371,11 @@ public class PlayerEntity : MonoBehaviour
             UltiFxStates[2].SetActive(false);
         }
 
+        //permet de changer la position du sprite qui apparait quand on touche le mur et de lui lancer son timer de désactivation
         if (wallSpriteTransform.gameObject.activeSelf)
         {
             wallSpriteTransform.position = wallSpritePosition;
-            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -2.2f);
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, 8);
             wallHitSpriteTimer += Time.deltaTime;
             if(wallHitSpriteTimer >= wallHitSpriteTimerMax)
             {
@@ -364,12 +385,13 @@ public class PlayerEntity : MonoBehaviour
             }
         }
 
+        //si on a utilisé l'ulti, reset la jauge.
         if(_ultiCurrentCharge == ultiChargeMax && !_isUltiPossible)
         {
             _ultiCurrentCharge = 0;
         }
 
-
+        //active et désactive le son de charge.
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
            _soundManagerScript.PlaySound(_playerAudio[0], _soundManagerScript.playerCast);
@@ -381,7 +403,7 @@ public class PlayerEntity : MonoBehaviour
             _mustPlayCastSound = true;
         }
 
-
+        //active les différents stades de vibrations
         if (powerJauge.fillAmount > vibrationTreshold)
         {
             if (gameObject.tag == "Player1")
@@ -433,12 +455,12 @@ public class PlayerEntity : MonoBehaviour
             onomatopéeTimer = 0;
 
             wallHitSpriteTimer = 0;
-            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, -2.2f);
+            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 8);
             wallSpriteTransform.position = wallSpritePosition;
             wallSpriteTransform.gameObject.SetActive(true);
 
 
-
+            //sons des murs
             if (collisionScript.isBouncy)
             {
                 _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallBouncyHit);
@@ -451,6 +473,7 @@ public class PlayerEntity : MonoBehaviour
             }
 
         }
+        //son collision avec joueurs
         else if (collision.gameObject.tag.Contains("Player"))
         {
             _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
@@ -466,6 +489,7 @@ public class PlayerEntity : MonoBehaviour
             onomatopéeTimer = 0;
             _touchedByPlayer = true;
             PlayerEntity otherPlayer = collision.gameObject.GetComponent<PlayerEntity>();
+            //charge la jauge d'ulti et active les Fxs correspondant à l'état de la jauge
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
                 _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
@@ -494,6 +518,7 @@ public class PlayerEntity : MonoBehaviour
                     _ultiCurrentCharge = ultiChargeMax;
                     _isUltiPossible = true;
                 }
+                //rebonds
                 if(otherPlayer._lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
                 {
                     Rebound((-_lastFrameVelocity * reboundPourcentageOfSpeedIfImFaster)/100, collision.GetContact(0).normal, frictionPlayer);
@@ -522,6 +547,7 @@ public class PlayerEntity : MonoBehaviour
         _particuleContactSystem.Play();
     }
 
+    //fonciton reset des variables quand new round
     public void newRound()
     {
         _animator.SetBool("IsSlingshoting", false);

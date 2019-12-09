@@ -367,7 +367,10 @@ public class WallChange : MonoBehaviour
              
                 _wallMeshRenderer.enabled = false;
                _wallShadowMeshRenderer.enabled = false;
-
+                if(transform.GetChild(3).gameObject.activeSelf)
+                {
+                    transform.GetChild(3).gameObject.SetActive(false);
+                }
 
                 _playerOnCollision.enabled = false;
                 _playerOnCollision.newRound();

@@ -5686,13 +5686,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487, type: 3}
   "onomatop\xE9esSprite": {fileID: 1896027396}
   "onomatop\xE9eTimerMax": 0.5
-  wallSpriteTransform: {fileID: 0}
   ultiChargeMax: 100
   ultiChargeRatio: 2
   UltiFxStates:
   - {fileID: 2673409836608065861}
   - {fileID: 3214523682317982314}
   - {fileID: 2206585789845544230}
+  trailDuration: 2
 --- !u!50 &9112317936584710434
 Rigidbody2D:
   serializedVersion: 4
@@ -5735,7 +5735,7 @@ MonoBehaviour:
   EnemyMask:
     serializedVersion: 2
     m_Bits: 3584
-  pushbackIntensity: 1000
+  pushbackIntensity: 200
 --- !u!114 &9112317936584710445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5811,7 +5811,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 0.30980393, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

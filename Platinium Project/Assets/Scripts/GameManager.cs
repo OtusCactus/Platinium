@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private FaceClass _faceClassScript;
     private GetMenuInformation _menuInformationScript;
     private ScoreManager _scoreManagerScript;
+    private ArenaRotation _arenaRotationScript;
 
     [Header("Player")]
     public List<GameObject> playerList;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> currentPlayersList = new List<GameObject>();
 
     [Header("Arena")]
+    public GameObject arena;
     public int currentPlayersOnArena;
     public bool isTurning;
     public bool hasRoundBegun;
@@ -48,11 +50,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _slowMotionTimerMax = 1;
 
+    public GameObject[] wallHitObj;
+
     private void Awake()
     {
         _scoreManagerScript = GetComponent<ScoreManager>();
         _faceClassScript = GetComponent<FaceClass>();
-
+        _arenaRotationScript = arena.GetComponent<ArenaRotation>();
 
         if (GameObject.FindWithTag("MenuManager") != null)
         {
@@ -88,6 +92,17 @@ public class GameManager : MonoBehaviour
             currentPlayersList.Add(playerList[i]);
         }
 
+        if (playerList.Count == 2)
+        {
+            wallHitObj[0].SetActive(false);
+            wallHitObj[1].SetActive(false);
+        }
+        else if ( playerList.Count == 3)
+        {
+            wallHitObj[1].SetActive(false);
+        }
+
+        
     }
 
     // Start is called before the first frame update
@@ -104,6 +119,7 @@ public class GameManager : MonoBehaviour
         _currentSlowMotion = _isSlowMotion;
 
 
+        currentFace = _arenaRotationScript._currentFace;
     }
 
     // Update is called once per frame
