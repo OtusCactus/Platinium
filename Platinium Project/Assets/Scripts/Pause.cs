@@ -65,6 +65,7 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0;
         resume.Select();
         _isInPause = true;
+        _isInOptions = false;
     }
 
     public void Options()
@@ -80,6 +81,7 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
         EventSystem.current.SetSelectedGameObject(null);
         _isInPause = false;
+        _isInOptions = false;
     }
 
     public void BackToMenu()

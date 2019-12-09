@@ -76,11 +76,11 @@ public class PlayerManager : MonoBehaviour
             mouvementPlayerBool[i] = gameManagerScript.GetMenuInfoMouvementBool()[i];
             if (mouvementPlayerBool[i])
             {
-                playerMouvement[i].sprite = defaultMouv;
+                playerMouvement[i].sprite = inversedMouv;
             }
             else
             {
-                playerMouvement[i].sprite = inversedMouv;
+                playerMouvement[i].sprite = defaultMouv;
             }
         }
 
