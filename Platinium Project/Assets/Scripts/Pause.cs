@@ -72,6 +72,7 @@ public class Pause : MonoBehaviour
     {
         options.SetActive(true);
         pausePanel.SetActive(false);
+        _isInPause = false;
         _isInOptions = true;
     }
 
