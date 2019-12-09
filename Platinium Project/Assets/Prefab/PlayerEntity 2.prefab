@@ -6391,7 +6391,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: ccc3acb8c972a5c469299d5ac4c243b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 2.38, y: 1.16}
   m_AdaptiveModeThreshold: 0.5
@@ -6867,7 +6867,7 @@ PrefabInstance:
     - target: {fileID: 5364048275244372808, guid: 4690ae6f3ed049f4a89bc7cd8434e2e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7403334
+      value: -0.117
       objectReference: {fileID: 0}
     - target: {fileID: 5364048275244372808, guid: 4690ae6f3ed049f4a89bc7cd8434e2e1,
         type: 3}
