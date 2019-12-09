@@ -27,6 +27,7 @@ public class MenuPlayerManager : MonoBehaviour
     public GameObject[] twoOtherPlayerNumber;
     public GameObject[] twoOtherPlayerName;
     public Image[] readyButton;
+    public Image[] readyButtonConfirm;
     public Sprite readySprite;
     public Sprite originalSprite;
     public Sprite outSprite;
@@ -97,6 +98,19 @@ public class MenuPlayerManager : MonoBehaviour
         {
             playerSelection.SetActive(false);
         }
+
+        if(!_isPOneReady)    
+        readyButtonConfirm[0].fillAmount = timerPOne;
+        if(!_isPTwoReady)    
+        readyButtonConfirm[1].fillAmount = timerPTwo;
+        if(!_isPThreeReady)    
+        readyButtonConfirm[2].fillAmount = timerPThree;
+        if(!_isPFourReady)    
+        readyButtonConfirm[3].fillAmount = timerPFour;
+
+
+
+
         if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
         {
             selecPanel.SetActive(false);
