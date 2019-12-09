@@ -94,11 +94,13 @@ public class PlayerEntity : MonoBehaviour
     private float _ultiCurrentCharge;
     private bool _isUltiPossible;
     public GameObject[] UltiFxStates;
-    //trail
+    [Header("Trail")]
+    public float trailDuration = 2;
+    public float trailApparitionTreshold = 0.8f;
     private TrailRenderer _playerTrail;
     private bool _needTrail = false;
     private float _trailTimer = 0;
-    public float trailDuration = 2;
+
 
     //score
     private ScoreManager _scoreManagerScript;
@@ -329,7 +331,7 @@ public class PlayerEntity : MonoBehaviour
         //Fait apparaitre une trail si la vitesse atteind le seuil des murs (on changera après le 0.8 par une variable)
         _myVelocityFloat = _myRb.velocity.sqrMagnitude;
         _velocityConvertedToRatio = (_myVelocityFloat / _velocityMax);
-        if (_velocityConvertedToRatio > 0.8)
+        if (_velocityConvertedToRatio > trailApparitionTreshold)
         {
             _playerTrail.enabled = true;
             _needTrail = true;
