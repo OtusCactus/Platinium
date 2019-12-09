@@ -18,6 +18,9 @@ public class NewSoundManager : MonoBehaviour
     private AudioSource[] _myAudios;
     private AudioSource[] _playerCharges;
 
+    public AudioClip[] _miscSounds;
+    public AudioClip[] _animalSounds;
+
 
     private void Awake()
     {
@@ -44,10 +47,14 @@ public class NewSoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void PlayHighLifeWall()
+    /// <summary>
+    /// Cette fonction pour jouer un son du sound manager. 1er param -> 0 pour sons uniques, 2 -> cri, 3-> charge ..
+    /// </summary>
+    /// <param name="clipName"></param>
+    public void PlaySound(int tabNumber, string clipName)
     {
         AudioSource audio = null;
         for (int i = 4; i < _myAudios.Length; i++)
@@ -60,10 +67,38 @@ public class NewSoundManager : MonoBehaviour
         }
         audio.pitch = Time.timeScale;
         audio.loop = false;
+
+        switch (tabNumber)
+        {
+            case 0:
+                for(int x = 0; x < _miscSounds.Length; x++)
+                {
+                    if (_miscSounds[x].name == clipName)
+                    {
+                        audio.clip = _miscSounds[x];
+                    }
+                    else
+                    {
+                        print("wtf");
+                    }
+                }
+                break;
+            case 1:
+                for (int x = 0; x < _animalSounds.Length; x++)
+                {
+                    if (_animalSounds[x].name == clipName)
+                    {
+                        audio.clip = _animalSounds[x];
+                    }
+                }
+                break;
+        }
+
         audio.enabled = false;
-        audio.clip = wallHitHighHp;
         audio.enabled = true;
     }
+
+
 
     public void PlayCharge(int player)
     {

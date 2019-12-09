@@ -461,25 +461,14 @@ public class PlayerEntity : MonoBehaviour
             wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 8);
             wallSpriteTransform.position = wallSpritePosition;
             wallSpriteTransform.gameObject.SetActive(true);
-
-
-            //sons des murs
-            if (collisionScript.isBouncy)
-            {
-                //_soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallBouncyHit);
-
-            }
-            else if (!collisionScript.isBouncy && !collisionScript.isIndestructible)
-            {
-
-                //_soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playerWallHit);
-            }
+            
 
         }
         //son collision avec joueurs
         else if (collision.gameObject.tag.Contains("Player"))
         {
             //_soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
+            _newSoundManagerScript.PlaySound(0, "PlayerCollision");
             wallSpriteTransform.gameObject.SetActive(false);
 
             //}

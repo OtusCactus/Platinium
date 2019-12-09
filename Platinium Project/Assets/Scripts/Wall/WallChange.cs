@@ -220,14 +220,6 @@ public class WallChange : MonoBehaviour
             _lastHit = true;
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             _wallMeshRenderer.enabled = false;
-            //if (_currentWallActive == transform.GetChild(2).gameObject)
-            //{
-            //    for (int i = 0; i < _currentWallActive.transform.childCount; i++)
-            //    {
-            //        if (_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-            //            _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
-            //    }
-            //}
 
             if (!_wallProprieties.isBouncy)
             {
@@ -238,8 +230,7 @@ public class WallChange : MonoBehaviour
                 _wallBambouAppearance.enabled = false;
                 _wallShadowMeshRendererBambou.enabled = false;
             }
-
-            //_wallShadowMeshRenderer.enabled = false;
+            
             _wallCollider.isTrigger = true;
 
         }
@@ -329,13 +320,8 @@ public class WallChange : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
-        {
-            _newSoundManagerScript.PlayHighLifeWall();
-        }
-
-            _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
+        
+        _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
         _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
 
         _hasPlayerCollided = true;
@@ -358,7 +344,32 @@ public class WallChange : MonoBehaviour
                 _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsBambou[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
             }
         }
-            
+
+        if (_wallProprieties.isIndestructible)
+        {
+            _newSoundManagerScript.PlaySound(0, "IndestructibleWallHit");
+        }
+        else if (_wallProprieties.isBouncy)
+        {
+            _newSoundManagerScript.PlaySound(0, "BouncyWallHit");
+        }
+        else if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
+        {
+            _newSoundManagerScript.PlaySound(0, "WallLifeHigh");
+        }
+        else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
+        {
+            _newSoundManagerScript.PlaySound(0, "WallLifeMiddle");
+        }
+        else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
+        {
+            _newSoundManagerScript.PlaySound(0, "WallLifeLow");
+        }
+        else if (wallLife <= 0)
+        {
+            _newSoundManagerScript.PlaySound(0, "WallDestroyed");
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)

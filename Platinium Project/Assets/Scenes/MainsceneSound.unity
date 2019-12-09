@@ -26286,6 +26286,15 @@ MonoBehaviour:
   playerCast: {fileID: 8300000, guid: 41cec847c3017964b9bc089ae26aabdd, type: 3}
   playersCollision: {fileID: 8300000, guid: 619d35ff414a5244da6f2e8f3d283efb, type: 3}
   endRound: {fileID: 8300000, guid: 85867b784713d4d4292f066904245f76, type: 3}
+  _miscSounds:
+  - {fileID: 8300000, guid: 39d43cef602c4264fbca12baf7edf43b, type: 3}
+  - {fileID: 8300000, guid: 450561206fb723945ba2ccc1b4070a14, type: 3}
+  - {fileID: 8300000, guid: e078701f3b2c0fb41a863263fde759be, type: 3}
+  - {fileID: 8300000, guid: cc8f50b26e7095c46bbe57c1816997b1, type: 3}
+  - {fileID: 8300000, guid: 2f39b9a6929c79444a5b4953a132ce0b, type: 3}
+  - {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
+  - {fileID: 8300000, guid: 619d35ff414a5244da6f2e8f3d283efb, type: 3}
+  _animalSounds: []
 --- !u!1 &890451705
 GameObject:
   m_ObjectHideFlags: 0
