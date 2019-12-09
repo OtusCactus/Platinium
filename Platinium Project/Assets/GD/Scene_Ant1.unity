@@ -36921,6 +36921,7 @@ MonoBehaviour:
   playerEntity: []
   pausePanel: {fileID: 249625006}
   resume: {fileID: 1818928448}
+  options: {fileID: 0}
 --- !u!1001 &1368992253
 PrefabInstance:
   m_ObjectHideFlags: 0
