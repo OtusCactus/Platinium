@@ -213,6 +213,39 @@ public class PlayerManager : MonoBehaviour
             mouvementPlayerBool[0] = false;
         }
 
+        if (pauseScript.GetItsOptions() && player[1].GetAxis("HorizontalJoy2") > 0.2f)
+        {
+            playerMouvement[1].sprite = inversedMouv;
+            mouvementPlayerBool[1] = true;
+        }
+        else if (pauseScript.GetItsOptions() && player[1].GetAxis("HorizontalJoy2") < -0.2f)
+        {
+            playerMouvement[1].sprite = defaultMouv;
+            mouvementPlayerBool[1] = false;
+        }
+
+        if (pauseScript.GetItsOptions() && player[2].GetAxis("HorizontalJoy3") > 0.2f)
+        {
+            playerMouvement[2].sprite = inversedMouv;
+            mouvementPlayerBool[2] = true;
+        }
+        else if (pauseScript.GetItsOptions() && player[2].GetAxis("HorizontalJoy3") < -0.2f)
+        {
+            playerMouvement[2].sprite = defaultMouv;
+            mouvementPlayerBool[2] = false;
+        }
+
+        if (pauseScript.GetItsOptions() && player[3].GetAxis("HorizontalJoy4") > 0.2f)
+        {
+            playerMouvement[3].sprite = inversedMouv;
+            mouvementPlayerBool[3] = true;
+        }
+        else if (pauseScript.GetItsOptions() && player[2].GetAxis("HorizontalJoy4") < -0.2f)
+        {
+            playerMouvement[3].sprite = defaultMouv;
+            mouvementPlayerBool[3] = false;
+        }
+
 
 
     }
