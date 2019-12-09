@@ -6133,7 +6133,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.047496557, y: -0.0051837564}
+  m_Offset: {x: -0.037963957, y: 0.026361376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6144,7 +6144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.057009, y: 0.30722266}
+  m_Size: {x: 1.8860879, y: 0.2441324}
   m_EdgeRadius: 0
 --- !u!1 &226922461
 GameObject:
@@ -43599,7 +43599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1504079763
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43612,13 +43612,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f86e6a58ad15692478031ea31f0a0aad, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 215
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
