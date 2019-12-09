@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _slowMotionTimerMax = 1;
 
+    public GameObject[] wallHitObj;
+
     private void Awake()
     {
         _scoreManagerScript = GetComponent<ScoreManager>();
@@ -88,6 +90,15 @@ public class GameManager : MonoBehaviour
             currentPlayersList.Add(playerList[i]);
         }
 
+        if (playerList.Count == 2)
+        {
+            wallHitObj[0].SetActive(false);
+            wallHitObj[1].SetActive(false);
+        }
+        else if ( playerList.Count == 3)
+        {
+            wallHitObj[1].SetActive(false);
+        }
     }
 
     // Start is called before the first frame update

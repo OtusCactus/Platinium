@@ -5826,13 +5826,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487, type: 3}
   "onomatop\xE9esSprite": {fileID: 4208688459932585246}
   "onomatop\xE9eTimerMax": 0.5
-  wallSpriteTransform: {fileID: 0}
   ultiChargeMax: 100
   ultiChargeRatio: 2
   UltiFxStates:
   - {fileID: 6200615103624448628}
   - {fileID: 2750988830740061217}
   - {fileID: 4114145966680095543}
+  trailDuration: 2
 --- !u!50 &8562993523499844406
 Rigidbody2D:
   serializedVersion: 4
@@ -5875,7 +5875,7 @@ MonoBehaviour:
   EnemyMask:
     serializedVersion: 2
     m_Bits: 1792
-  pushbackIntensity: 1000
+  pushbackIntensity: 200
 --- !u!114 &8562993523499844409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5909,7 +5909,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a17dd2f5e4684d45a47de298e1700f0, type: 2}
+  - {fileID: 2100000, guid: 1291627eb28fef041a9ec40d788aa05f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

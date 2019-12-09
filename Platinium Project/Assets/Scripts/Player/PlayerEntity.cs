@@ -83,7 +83,7 @@ public class PlayerEntity : MonoBehaviour
     public float onomatopéeTimerMax;
 
     [Header("WallSprite")]
-    public Transform wallSpriteTransform;
+    private Transform wallSpriteTransform;
     private float wallHitSpriteTimer;
     private float wallHitSpriteTimerMax;
     private Vector3 wallSpritePosition;
@@ -140,12 +140,30 @@ public class PlayerEntity : MonoBehaviour
 
 
         onomatopéesSprite.enabled = false;
-        wallSpriteTransform.gameObject.SetActive(false);
         sweatParticles.SetActive(false);
         UltiFxStates[0].SetActive(false);
         UltiFxStates[1].SetActive(false);
         UltiFxStates[2].SetActive(false);
         wallHitSpriteTimerMax = onomatopéeTimerMax;
+
+        string thisTag = gameObject.tag;
+        switch(thisTag)
+        {
+            case "Player1":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite1").transform;
+                break;
+            case "Player2":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite2").transform;
+                break;
+            case "Player3":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite3").transform;
+                break;
+            case "Player4":
+                wallSpriteTransform = GameObject.FindWithTag("WallHitSprite4").transform;
+                break;
+        }
+        wallSpriteTransform.gameObject.SetActive(false);
+
     }
 
 
@@ -354,7 +372,7 @@ public class PlayerEntity : MonoBehaviour
         if (wallSpriteTransform.gameObject.activeSelf)
         {
             wallSpriteTransform.position = wallSpritePosition;
-            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, -2.2f);
+            wallSpriteTransform.localPosition = new Vector3(wallSpriteTransform.localPosition.x, wallSpriteTransform.localPosition.y, 8);
             wallHitSpriteTimer += Time.deltaTime;
             if(wallHitSpriteTimer >= wallHitSpriteTimerMax)
             {
@@ -433,7 +451,7 @@ public class PlayerEntity : MonoBehaviour
             onomatopéeTimer = 0;
 
             wallHitSpriteTimer = 0;
-            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, -2.2f);
+            wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 8);
             wallSpriteTransform.position = wallSpritePosition;
             wallSpriteTransform.gameObject.SetActive(true);
 
