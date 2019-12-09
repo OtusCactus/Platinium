@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Rewired;
 
 public class PlayerManager : MonoBehaviour
@@ -16,11 +17,16 @@ public class PlayerManager : MonoBehaviour
 
 
     private GameManager gameManagerScript;
+    private Pause pauseScript;
 
     private List<AttackTest> _attackTest;
     private bool[] mouvementPlayerBool;
     private float[] inputXPlayer;
     private float[] inputYPlayer;
+
+    public Image[] playerMouvement;
+    public Sprite defaultMouv;
+    public Sprite inversedMouv;
 
     private void Awake()
     {
@@ -33,7 +39,7 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
         }
         gameManagerScript = GetComponent<GameManager>();
-
+        pauseScript = GetComponent<Pause>();
 
 
     }
@@ -68,10 +74,19 @@ public class PlayerManager : MonoBehaviour
         for (int i = 0; i < gameManagerScript.GetMenuInfoMouvementBool().Length;i++)
         {
             mouvementPlayerBool[i] = gameManagerScript.GetMenuInfoMouvementBool()[i];
+            if (mouvementPlayerBool[i])
+            {
+                playerMouvement[i].sprite = defaultMouv;
+            }
+            else
+            {
+                playerMouvement[i].sprite = inversedMouv;
+            }
         }
 
         inputXPlayer = new float[4];
         inputYPlayer = new float[4];
+
     }
 
     // Update is called once per frame
@@ -186,6 +201,20 @@ public class PlayerManager : MonoBehaviour
                 _attackTest[3].Push();
             }
         }
+
+        if(pauseScript.GetItsOptions() && player[0].GetAxis("HorizontalJoy1") > 0.2f)
+        {
+            playerMouvement[0].sprite = inversedMouv;
+            mouvementPlayerBool[0] = true;
+        }
+        else if (pauseScript.GetItsOptions() && player[0].GetAxis("HorizontalJoy1") < -0.2f)
+        {
+            playerMouvement[0].sprite = defaultMouv;
+            mouvementPlayerBool[0] = false;
+        }
+
+
+
     }
 
 

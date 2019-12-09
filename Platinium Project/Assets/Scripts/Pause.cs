@@ -16,6 +16,9 @@ public class Pause : MonoBehaviour
     public GameObject pausePanel;
     public Button resume;
     private bool _isInPause = false;
+
+    public GameObject options;
+    private bool _isInOptions = false;
     
 
     private void Awake()
@@ -49,14 +52,26 @@ public class Pause : MonoBehaviour
         {
             itsNotPause();
         }
+        if (_isInOptions && player[0].GetButtonDown("BackMenu"))
+        {
+            itsPause();
+        }
     }
 
     private void itsPause()
     {
         pausePanel.SetActive(true);
+        options.SetActive(false);
         Time.timeScale = 0;
         resume.Select();
         _isInPause = true;
+    }
+
+    public void Options()
+    {
+        options.SetActive(true);
+        pausePanel.SetActive(false);
+        _isInOptions = true;
     }
 
     public void itsNotPause()
@@ -78,5 +93,13 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
         Application.Quit();
     }
+
+
+
+    public bool GetItsOptions()
+    {
+        return _isInOptions;
+    }
+
 
 }
