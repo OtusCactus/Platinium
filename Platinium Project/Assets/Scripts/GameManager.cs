@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] playerPrefabs;
     private PlayerEntity[] playersEntityScripts;
     private List<GameObject> currentPlayersList = new List<GameObject>();
+    private bool[] menuInfoMouvementBool;
 
     [Header("Arena")]
     public GameObject arena;
@@ -57,6 +58,8 @@ public class GameManager : MonoBehaviour
         _scoreManagerScript = GetComponent<ScoreManager>();
         _faceClassScript = GetComponent<FaceClass>();
         _arenaRotationScript = arena.GetComponent<ArenaRotation>();
+        menuInfoMouvementBool = new bool[4];
+
 
         if (GameObject.FindWithTag("MenuManager") != null)
         {
@@ -80,6 +83,11 @@ public class GameManager : MonoBehaviour
                 GameObject playerInstantiation = Instantiate(playerPrefabs[i]);
                 playerList.Add(playerInstantiation);
                 _scoreManagerScript.nbrPlayers ++;
+            }
+
+            for(int i = 0; i < _menuInformationScript.getPlayerMouvementMode().Length; i++)
+            {
+                menuInfoMouvementBool[i] = _menuInformationScript.getPlayerMouvementMode()[i];
             }
         }
 
@@ -291,5 +299,8 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-
+    public bool[] GetMenuInfoMouvementBool()
+    {
+        return menuInfoMouvementBool;
+    }
 }

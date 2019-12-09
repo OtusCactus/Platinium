@@ -102,6 +102,7 @@ public class PlayerEntity : MonoBehaviour
 
     //score
     private ScoreManager _scoreManagerScript;
+    private NewSoundManager _newSoundManagerScript;
 
     private AudioSource _childAudioSource;
 
@@ -128,6 +129,8 @@ public class PlayerEntity : MonoBehaviour
         _playerTrail = GetComponent<TrailRenderer>();
 
         _soundManagerScript = SoundManager.instance;
+
+        _newSoundManagerScript = NewSoundManager.instance;
         _playerAudio = GetComponents<AudioSource>();
 
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
@@ -394,12 +397,12 @@ public class PlayerEntity : MonoBehaviour
         //active et désactive le son de charge.
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-           _soundManagerScript.PlaySound(_playerAudio[0], _soundManagerScript.playerCast);
+            _newSoundManagerScript.PlayCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) -1);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
-            _soundManagerScript.NoSound(_playerAudio[0]);
+            _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) -1);
             _mustPlayCastSound = true;
         }
 
@@ -458,25 +461,14 @@ public class PlayerEntity : MonoBehaviour
             wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 8);
             wallSpriteTransform.position = wallSpritePosition;
             wallSpriteTransform.gameObject.SetActive(true);
-
-
-            //sons des murs
-            if (collisionScript.isBouncy)
-            {
-                _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallBouncyHit);
-
-            }
-            else if (!collisionScript.isBouncy && !collisionScript.isIndestructible)
-            {
-
-                _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.wallHit);
-            }
+            
 
         }
         //son collision avec joueurs
         else if (collision.gameObject.tag.Contains("Player"))
         {
-            _soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
+            //_soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
+            _newSoundManagerScript.PlaySound(0, "PlayerCollision");
             wallSpriteTransform.gameObject.SetActive(false);
 
             //}

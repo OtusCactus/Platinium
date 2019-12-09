@@ -12,11 +12,13 @@ public class MenuPlayerManager : MonoBehaviour
 
     public static MenuPlayerManager Instance = null;
 
+
     public Player _player;
 
     private List<Player> otherPlayers;
 
     public InMenuPlayer playerEntity;
+    public GetMenuInformation getMenuInfoScript;
 
     public GameObject playerSelection;
     public string sceneName;
@@ -47,6 +49,14 @@ public class MenuPlayerManager : MonoBehaviour
     private bool[] _isEveryoneReady = new bool[4];
     private int _howManyReady = 0;
 
+    [Header ("Mouvement")]
+    public Image[] mouvementImage;
+    public Sprite defaultMouvement;
+    public Sprite inversedMouvement;
+
+    private float inputXPlayer3;
+    private float inputXPlayer4;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -75,8 +85,14 @@ public class MenuPlayerManager : MonoBehaviour
         float inputXPlayer1 = -_player.GetAxis("HorizontalJoy1");
         float inputYPlayer1 = _player.GetAxis("VerticalJoy1");
         Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
-
+        if (dirPlayer1.magnitude < 0.3f)
+        {
+            dirPlayer1 = Vector2.zero;
+        }
         playerEntity.SetInputX(dirPlayer1);
+
+        //Gère à quel joueur attribué quel action
+
 
         if (playerEntity.currentFace == 0 && _player.GetButton("Push1"))
         {
@@ -97,6 +113,76 @@ public class MenuPlayerManager : MonoBehaviour
         if (_isCharSelecShowing)
         {
             playerSelection.SetActive(false);
+
+            float inputXPlayer2 = -otherPlayers[0].GetAxis("HorizontalJoy2");
+           // float inputYPlayer2 = otherPlayers[0].GetAxis("VerticalJoy2");
+
+            if(otherPlayers.Count >= 2)
+            {
+                //Gère à quel joueur attribué quel action
+                inputXPlayer3 = -otherPlayers[1].GetAxis("HorizontalJoy3");
+               // float inputYPlayer3 = otherPlayers[1].GetAxis("VerticalJoy3");
+                if(otherPlayers.Count >= 3)
+                {
+                    //Gère à quel joueur attribué quel action
+                    inputXPlayer4 = -otherPlayers[2].GetAxis("HorizontalJoy4");
+                 //   float inputYPlayer4 = otherPlayers[2].GetAxis("VerticalJoy4");
+
+                }
+            }
+
+            if (inputXPlayer1 > 0.2f)
+            {
+                mouvementImage[0].sprite = inversedMouvement;
+                getMenuInfoScript.setPlayerMouvementMode(0, true);
+                //playerMouvementMode[0] = false;
+            }
+            else if (inputXPlayer1 < -0.2f)
+            {
+                getMenuInfoScript.setPlayerMouvementMode(0, false);
+                mouvementImage[0].sprite = defaultMouvement;
+                //playerMouvementMode[0] = true;
+
+            }
+
+            if (inputXPlayer2 > 0.2f)
+            {
+                getMenuInfoScript.setPlayerMouvementMode(1, true);
+                //playerMouvementMode[1] = false;
+                mouvementImage[1].sprite = inversedMouvement;
+            }
+            else if (inputXPlayer2 < -0.2f)
+            {
+                getMenuInfoScript.setPlayerMouvementMode(1, false);
+                //playerMouvementMode[1] = true;
+                mouvementImage[1].sprite = defaultMouvement;
+            }
+
+            if (inputXPlayer3 > 0.2f)
+            {
+                getMenuInfoScript.setPlayerMouvementMode(2, true);
+                //playerMouvementMode[2] = false;
+                mouvementImage[2].sprite = inversedMouvement;
+            }
+            else if (inputXPlayer3 < -0.2f)
+            {
+                getMenuInfoScript.setPlayerMouvementMode(2, false);
+                //playerMouvementMode[2] = true;
+                mouvementImage[2].sprite = defaultMouvement;
+            }
+
+            if (inputXPlayer4 > 0.2f)
+            {
+                getMenuInfoScript.setPlayerMouvementMode(3, true);
+                //playerMouvementMode[3] = false;
+                mouvementImage[3].sprite = inversedMouvement;
+            }
+            else if (inputXPlayer4 < -0.2f)
+            {
+                getMenuInfoScript.setPlayerMouvementMode(3, false);
+                //playerMouvementMode[3] = true;
+                mouvementImage[3].sprite = defaultMouvement;
+            }
         }
 
         if(!_isPOneReady)    
