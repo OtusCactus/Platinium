@@ -93,6 +93,10 @@ public class MenuPlayerManager : MonoBehaviour
             _isStartGameShowing = false;
 
         }
+        if (_isCharSelecShowing)
+        {
+            playerSelection.SetActive(false);
+        }
         if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
         {
             selecPanel.SetActive(false);
@@ -253,7 +257,6 @@ public class MenuPlayerManager : MonoBehaviour
         {
             otherPlayers.Add(ReInput.players.GetPlayer("Player" + (i + 2)));
         }
-        print(playerNumberSlider.value);
         playerSelection.SetActive(false);
         selecPanel.SetActive(true);
         _isCharSelecShowing = true;
