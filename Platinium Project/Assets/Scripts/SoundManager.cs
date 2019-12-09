@@ -8,7 +8,11 @@ public class SoundManager : MonoBehaviour
 
     public static SoundManager instance = null;
 
-    public AudioClip wallHit;
+    public AudioClip playerWallHit;
+    public AudioClip wallHitHighHp;
+    public AudioClip wallHitMidHp;
+    public AudioClip wallHitLowHp;
+    public AudioClip wallHitNoHp;
     public AudioClip wallBouncyHit;
     public AudioClip playerCast;
     public AudioClip playersCollision;

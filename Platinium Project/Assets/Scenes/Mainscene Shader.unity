@@ -10409,7 +10409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &356651021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61122,6 +61122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
+      propertyPath: playerMouvement.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
       propertyPath: playerEntity.Array.data[0]
       value: 
       objectReference: {fileID: 1886410725}
@@ -61140,6 +61145,38 @@ PrefabInstance:
       propertyPath: playerEntity.Array.data[3]
       value: 
       objectReference: {fileID: 1126815083}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playerMouvement.Array.data[0]
+      value: 
+      objectReference: {fileID: 372013894}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playerMouvement.Array.data[1]
+      value: 
+      objectReference: {fileID: 1121240897}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playerMouvement.Array.data[2]
+      value: 
+      objectReference: {fileID: 1287557243}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playerMouvement.Array.data[3]
+      value: 
+      objectReference: {fileID: 1758379438}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: defaultMouv
+      value: 
+      objectReference: {fileID: 21300000, guid: f4f9f2df5689a894890ec063bdbc61e0,
+        type: 3}
+    - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: inversedMouv
+      value: 
+      objectReference: {fileID: 21300000, guid: 3050dab8cb41890428d2b20729513bdc,
+        type: 3}
     - target: {fileID: 4105980326710910643, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: pausePanel
@@ -61155,6 +61192,31 @@ PrefabInstance:
       propertyPath: wallBouncyHit
       value: 
       objectReference: {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: wallHitHighHp
+      value: 
+      objectReference: {fileID: 8300000, guid: e078701f3b2c0fb41a863263fde759be, type: 3}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: wallHitLowHp
+      value: 
+      objectReference: {fileID: 8300000, guid: cc8f50b26e7095c46bbe57c1816997b1, type: 3}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: wallHitMidHp
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f39b9a6929c79444a5b4953a132ce0b, type: 3}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: wallHitNoHp
+      value: 
+      objectReference: {fileID: 8300000, guid: 450561206fb723945ba2ccc1b4070a14, type: 3}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playerWallHit
+      value: 
+      objectReference: {fileID: 8300000, guid: a6e7796a418a93e41814a0089b6d643f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
 --- !u!4 &8803697247810532328
