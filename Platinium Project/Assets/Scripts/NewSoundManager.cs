@@ -77,10 +77,6 @@ public class NewSoundManager : MonoBehaviour
                     {
                         audio.clip = _miscSounds[x];
                     }
-                    else
-                    {
-                        print("wtf");
-                    }
                 }
                 break;
             case 1:
