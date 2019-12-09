@@ -5665,6 +5665,7 @@ MonoBehaviour:
   - {fileID: 2537504752061910117}
   - {fileID: 3297955011324899683}
   - {fileID: 8030040518024092191}
+  trailDuration: 2
 --- !u!50 &3876687248998186136
 Rigidbody2D:
   serializedVersion: 4
@@ -5741,7 +5742,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a17dd2f5e4684d45a47de298e1700f0, type: 2}
+  - {fileID: 2100000, guid: 64ba098e0877fbf468dd073fc08c72d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

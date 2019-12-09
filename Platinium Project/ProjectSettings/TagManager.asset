@@ -12,6 +12,10 @@ TagManager:
   - WaitingWalls
   - WallController
   - MenuManager
+  - WallHitSprite1
+  - WallHitSprite3
+  - WallHitSprite4
+  - WallHitSprite2
   layers:
   - Default
   - TransparentFX

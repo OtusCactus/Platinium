@@ -5693,6 +5693,7 @@ MonoBehaviour:
   - {fileID: 2673409836608065861}
   - {fileID: 3214523682317982314}
   - {fileID: 2206585789845544230}
+  trailDuration: 2
 --- !u!50 &9112317936584710434
 Rigidbody2D:
   serializedVersion: 4
@@ -5811,7 +5812,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 0.30980393, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
