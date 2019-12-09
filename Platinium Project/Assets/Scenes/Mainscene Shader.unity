@@ -60360,6 +60360,16 @@ PrefabInstance:
       propertyPath: wallHitObj.Array.data[1]
       value: 
       objectReference: {fileID: 1686022715}
+    - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: currentFace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: arena
+      value: 
+      objectReference: {fileID: 5509694377808773627}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: allScores.Array.size
       value: 0

@@ -5713,7 +5713,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1b480829cab745c4c8d10b231ae88487, type: 3}
   "onomatop\xE9esSprite": {fileID: 5858090892845534992}
   "onomatop\xE9eTimerMax": 0.5
-  wallSpriteTransform: {fileID: 0}
   ultiChargeMax: 100
   ultiChargeRatio: 2
   UltiFxStates:
@@ -5763,7 +5762,7 @@ MonoBehaviour:
   EnemyMask:
     serializedVersion: 2
     m_Bits: 2816
-  pushbackIntensity: 1000
+  pushbackIntensity: 200
 --- !u!114 &7052115118994171953
 MonoBehaviour:
   m_ObjectHideFlags: 0
