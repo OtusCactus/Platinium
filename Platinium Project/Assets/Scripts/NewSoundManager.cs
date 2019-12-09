@@ -5,21 +5,16 @@ using UnityEngine;
 public class NewSoundManager : MonoBehaviour
 {
     public static NewSoundManager instance = null;
-
-    public AudioClip wallHitHighHp;
-    public AudioClip wallHitMidHp;
-    public AudioClip wallHitLowHp;
-    public AudioClip wallHitNoHp;
-    public AudioClip wallBouncyHit;
+    
     public AudioClip playerCast;
-    public AudioClip playersCollision;
     public AudioClip endRound;
+    public AudioClip[] playerChargeSounds;
 
     private AudioSource[] _myAudios;
     private AudioSource[] _playerCharges;
 
-    public AudioClip[] _miscSounds;
-    public AudioClip[] _animalSounds;
+    public AudioClip[] miscSounds;
+    public AudioClip[] animalSounds;
 
 
     private void Awake()
@@ -51,7 +46,7 @@ public class NewSoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Cette fonction pour jouer un son du sound manager. 1er param -> 0 pour sons uniques, 2 -> cri, 3-> charge ..
+    /// Fonction pour sons définis. 1er param -> 0 pour sons mur défini, 2 -> cri aléatoire
     /// </summary>
     /// <param name="clipName"></param>
     public void PlaySound(int tabNumber, string clipName)
@@ -71,20 +66,20 @@ public class NewSoundManager : MonoBehaviour
         switch (tabNumber)
         {
             case 0:
-                for(int x = 0; x < _miscSounds.Length; x++)
+                for(int x = 0; x < miscSounds.Length; x++)
                 {
-                    if (_miscSounds[x].name == clipName)
+                    if (miscSounds[x].name == clipName)
                     {
-                        audio.clip = _miscSounds[x];
+                        audio.clip = miscSounds[x];
                     }
                 }
                 break;
             case 1:
-                for (int x = 0; x < _animalSounds.Length; x++)
+                for (int x = 0; x < animalSounds.Length; x++)
                 {
-                    if (_animalSounds[x].name == clipName)
+                    if (animalSounds[x].name == clipName)
                     {
-                        audio.clip = _animalSounds[x];
+                        audio.clip = animalSounds[x];
                     }
                 }
                 break;
@@ -94,14 +89,46 @@ public class NewSoundManager : MonoBehaviour
         audio.enabled = true;
     }
 
+    /// <summary>
+    /// Pour sons aléatoires. 0-> murs, 1-> cris, 
+    /// </summary>
+    /// <param name="tabNumber"></param>
+    public void PlaySound(int tabNumber)
+    {
+        AudioSource audio = null;
+        for (int i = 4; i < _myAudios.Length; i++)
+        {
+            if (!_myAudios[i].isPlaying)
+            {
+                audio = _myAudios[i];
+                break;
+            }
+        }
+        audio.pitch = Time.timeScale;
+        audio.loop = false;
 
+        switch (tabNumber)
+        {
+            case 0:
+                print("lesmurs df:ss");
+                break;
+            case 1:
+                audio.clip = animalSounds[Random.Range(0, animalSounds.Length - 1)];
+                break;
+        }
+
+        audio.enabled = false;
+        audio.enabled = true;
+    }
 
     public void PlayCharge(int player)
     {
         _playerCharges[player].pitch = Time.timeScale;
         _playerCharges[player].loop = false;
         _playerCharges[player].enabled = false;
-        _playerCharges[player].clip = playerCast;
+
+        _playerCharges[player].clip = playerChargeSounds[Random.Range(0, playerChargeSounds.Length - 1)];
+        
         _playerCharges[player].enabled = true;
     }
     public void StopCharge(int player)

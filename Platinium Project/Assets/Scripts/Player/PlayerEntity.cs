@@ -469,15 +469,9 @@ public class PlayerEntity : MonoBehaviour
         //son collision avec joueurs
         else if (collision.gameObject.tag.Contains("Player"))
         {
-            //_soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
-            _newSoundManagerScript.PlaySound(0, "PlayerCollision");
+            _newSoundManagerScript.PlaySound(1);
             wallSpriteTransform.gameObject.SetActive(false);
-
-            //}
-
-
-            //if (collision.gameObject.tag.Contains("Player"))
-            //{
+            
             onomatopéesSprite.enabled = true;
             onomatopéesSprite.sprite = onomatopeesTab[Random.Range(0, onomatopeesTab.Length - 1)];
             onomatopéeTimer = 0;
