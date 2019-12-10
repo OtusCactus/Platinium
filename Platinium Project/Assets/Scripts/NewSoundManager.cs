@@ -13,6 +13,7 @@ public class NewSoundManager : MonoBehaviour
 
     public AudioClip[] miscSounds;
     public AudioClip[] animalSounds;
+    public AudioClip[] bouncySounds;
 
 
     private void Awake()
@@ -87,7 +88,7 @@ public class NewSoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Pour sons aléatoires. 0-> murs, 1-> cris, 
+    /// Pour sons aléatoires. 0-> murs bouncy, 1-> cris, 
     /// </summary>
     /// <param name="tabNumber"></param>
     public void PlaySound(int tabNumber)
@@ -107,7 +108,7 @@ public class NewSoundManager : MonoBehaviour
         switch (tabNumber)
         {
             case 0:
-                print("lesmurs df:ss");
+                audio.clip = bouncySounds[Random.Range(0, bouncySounds.Length - 1)];
                 break;
             case 1:
                 audio.clip = animalSounds[Random.Range(0, animalSounds.Length - 1)];
