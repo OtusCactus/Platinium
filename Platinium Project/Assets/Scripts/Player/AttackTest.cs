@@ -58,6 +58,7 @@ public class AttackTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //prends la position du joueur quand il quitte la caméra
         if(!hasPositionBeenTaken && !_hasRoundEnded)
         {
             playerFromCameraPosition = cameraMain.WorldToScreenPoint(transform.position);
@@ -70,15 +71,16 @@ public class AttackTest : MonoBehaviour
             }
         }
 
+        //active l'animation et lui donne la bonne position
         if (hasPositionBeenTaken)
         {
             playerOutAnim.transform.position = new Vector3 (playerOutPosition.x, playerOutPosition.y, transform.position.z);
             playerOutAnim.SetActive(true);
         }
 
+        //permet de reset les valeurs quand l'animation est finie
         if(_hasAnimationEnded)
         {
-            Debug.Log("YO");
             hasPositionBeenTaken = false;
             playerOutAnim.SetActive(false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -92,7 +94,8 @@ public class AttackTest : MonoBehaviour
         if (isShockWaveButtonPressed && _playerEntityScript.GetUltiBool() && !_shockWaveHitScript.haveIBeenHit)
         {
             shockWaveDuration -= Time.deltaTime;
-            
+                _playerEntityScript.resetUltiCurrentCharge();
+
             if (shockWaveDuration > 0)
             {
 

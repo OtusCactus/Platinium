@@ -134,7 +134,6 @@ public class PlayerManager : MonoBehaviour
         //float inputYPlayer2 = player[1].GetAxis("VerticalJoy2");
         Vector2 dirPlayer2 = new Vector2(inputXPlayer[1], inputYPlayer[1]);
 
-        Debug.Log(inputXPlayer[1]);
         if (dirPlayer2.magnitude < 0.3f)
         {
             dirPlayer2 = Vector2.zero;

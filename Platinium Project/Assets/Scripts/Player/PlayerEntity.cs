@@ -653,4 +653,9 @@ public class PlayerEntity : MonoBehaviour
         return _playerAudio;
     }
 
+    public void resetUltiCurrentCharge()
+    {
+        _ultiCurrentCharge = 0;
+    }
+
 }

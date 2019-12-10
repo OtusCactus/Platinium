@@ -55,13 +55,20 @@ public class ArenaRotation : MonoBehaviour
     private void Awake()
     {
         _currentFace = Random.Range(0, 11);
+        _faceClassScript = gameManager.GetComponent<FaceClass>();
+
+        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+        {
+            _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+        }
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
         //Scripts nécessaires
-        _faceClassScript = gameManager.GetComponent<FaceClass>();
         _soundManagerScript = SoundManager.instance;
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
@@ -91,11 +98,7 @@ public class ArenaRotation : MonoBehaviour
 
         }
 
-        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
-        {
-            _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
 
-        }
     }
 
     // Update is called once per frame

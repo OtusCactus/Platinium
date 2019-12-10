@@ -74,7 +74,10 @@ public class WallChange : MonoBehaviour
 
     private NewSoundManager _newSoundManagerScript;
 
-
+    private void Awake()
+    {
+        gameObject.layer = 15;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -104,7 +107,7 @@ public class WallChange : MonoBehaviour
 
         _wallCollider = GetComponent<BoxCollider2D>();
 
-        gameObject.layer = 15;
+
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -154,6 +157,15 @@ public class WallChange : MonoBehaviour
             }
         }
 
+
+        if(gameObject.layer == 15)
+        {
+            _wallShadowMeshRenderer.enabled = false;
+            if(_wallShadowMeshRendererBambou != null)
+            {
+                _wallShadowMeshRendererBambou.enabled = false;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -194,7 +206,14 @@ public class WallChange : MonoBehaviour
                     _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
                 }
             }
-
+            if (gameObject.layer == 15)
+            {
+                _wallShadowMeshRenderer.enabled = false;
+                if (_wallShadowMeshRendererBambou != null)
+                {
+                    _wallShadowMeshRendererBambou.enabled = false;
+                }
+            }
         }
 
         if (wallLife == wallLifeMax)
@@ -210,6 +229,10 @@ public class WallChange : MonoBehaviour
         if (wallLife <= 0)
         {
             _lastHit = true;
+            if (transform.GetChild(3).gameObject.activeSelf)
+            {
+                transform.GetChild(3).gameObject.SetActive(false);
+            }
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             _wallMeshRenderer.enabled = false;
 
@@ -386,10 +409,7 @@ public class WallChange : MonoBehaviour
              
                 _wallMeshRenderer.enabled = false;
                _wallShadowMeshRenderer.enabled = false;
-                if(transform.GetChild(3).gameObject.activeSelf)
-                {
-                    transform.GetChild(3).gameObject.SetActive(false);
-                }
+
 
                 _playerOnCollision.enabled = false;
                 _playerOnCollision.newRound();
