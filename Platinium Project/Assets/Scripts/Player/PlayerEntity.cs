@@ -223,6 +223,8 @@ public class PlayerEntity : MonoBehaviour
         if (_playerInput == INPUTSTATE.GivingInput)
         {
             _animator.SetBool("IsSlingshoting", true);
+            _animator.SetBool("isHit", false);
+            _animator.SetBool("isHitting", false);
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
 
@@ -390,6 +392,8 @@ public class PlayerEntity : MonoBehaviour
             if(onomatopéeTimer >= onomatopéeTimerMax)
             {
                 onomatopéeTimer = 0;
+                _animator.SetBool("isHit", false);
+                _animator.SetBool("isHitting", false);
                 onomatopéesSprite.enabled = false;
             }
         }
@@ -509,6 +513,7 @@ public class PlayerEntity : MonoBehaviour
             //charge la jauge d'ulti et active les Fxs correspondant à l'état de la jauge
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
+                _animator.SetBool("isHitting", true);
                 _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
 
                 if ( _ultiCurrentCharge > ultiChargeMax/3 && _ultiCurrentCharge <ultiChargeMax * 0.66f)
@@ -548,7 +553,9 @@ public class PlayerEntity : MonoBehaviour
             }
             else
             {
-                if(_lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
+                _animator.SetBool("isHit", true);
+
+                if (_lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
                 {
                     otherPlayer.Rebound((-otherPlayer.GetLastFrameVelocity() * otherPlayer.reboundPourcentageOfSpeedIfImFaster) / 100, collision.GetContact(0).normal, otherPlayer.frictionPlayer);
                 }
