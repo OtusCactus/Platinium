@@ -22481,6 +22481,11 @@ PrefabInstance:
       propertyPath: bouncySounds.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: miscSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: fe380946d77662242a16ee33e5899960, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 506d260f3fbac3b40a4f4fd529998ec6, type: 3}
 --- !u!1 &793446145
@@ -55576,6 +55581,10 @@ PrefabInstance:
       propertyPath: playerOutAnim
       value: 
       objectReference: {fileID: 1281600635}
+    - target: {fileID: 1281600639, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9112317936584710431, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
     - {fileID: 2738846599014248307, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
