@@ -46,6 +46,7 @@ public class ArenaRotation : MonoBehaviour
     private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
     private bool _currentSlowMotion;
+    private NewSoundManager _newSoundManagerScript;
     //debug
     [Header("Debug")]
     public bool debug;
@@ -63,6 +64,7 @@ public class ArenaRotation : MonoBehaviour
         _soundManagerScript = SoundManager.instance;
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
+        _newSoundManagerScript = NewSoundManager.instance;
 
         //set la caméra sur la première face de l'arène.
 
@@ -99,7 +101,7 @@ public class ArenaRotation : MonoBehaviour
     {
         if(_gameManagerScript.GetSlowMotionBool() != _currentSlowMotion)
         {
-            _soundManagerScript.myAudio.pitch = Time.timeScale;
+            //_soundManagerScript.myAudio.pitch = Time.timeScale;
             _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();
         }
         //permet d'avoir accès à la distance de la caméra
@@ -111,7 +113,8 @@ public class ArenaRotation : MonoBehaviour
             _startRotation = transform.rotation;
             _endRotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
 
-            _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
+            //_soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
+            _newSoundManagerScript.PlaySound("Gong");
 
             //permet la rotation
             _isTurning = true;
@@ -198,7 +201,8 @@ public class ArenaRotation : MonoBehaviour
             {
                 timerClamped = 0;
                 _turningTimer = 0;
-                _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
+                //_soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
+                _newSoundManagerScript.PlaySound("Gong");
                 _isTurning = false;
                 _gameManagerScript.isTurning = false;
                 _gameManagerScript.hasRoundBegun = true;
