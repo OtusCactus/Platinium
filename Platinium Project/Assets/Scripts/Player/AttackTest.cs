@@ -32,6 +32,15 @@ public class AttackTest : MonoBehaviour
     private PlayerEntity _playerEntityScript;
     private ShockwaveHit _shockWaveHitScript;
 
+    //playerCameraPosition
+    private Camera cameraMain;
+    private Vector2 playerFromCameraPosition;
+    private Vector2 playerOutPosition;
+    public GameObject playerOutAnim;
+    private bool hasPositionBeenTaken;
+    private bool _hasAnimationEnded;
+    private bool _hasRoundEnded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +50,7 @@ public class AttackTest : MonoBehaviour
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
         _playerEntityScript = GetComponent<PlayerEntity>();
         _shockWaveHitScript = GetComponent<ShockwaveHit>();
+        cameraMain = Camera.main;
     }
 
 
@@ -48,22 +58,35 @@ public class AttackTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //cooldown de la shockwave
-        //if (!isShockWavePossible)
-        //{
-        //    shockWaveSprite.SetActive(false);
-        //    shockWaveCooldown -= Time.deltaTime;
-            
-        //    if (shockWaveCooldown <= 0 )
-        //    {
-        //        isShockWavePossible = true;
-        //        shockWaveCooldown = shockWaveCooldownMax;
-        //    }
-            
-        //}
+        if(!hasPositionBeenTaken && !_hasRoundEnded)
+        {
+            playerFromCameraPosition = cameraMain.WorldToScreenPoint(transform.position);
+            if (playerFromCameraPosition.x < 0 || playerFromCameraPosition.x > cameraMain.pixelWidth || playerFromCameraPosition.y < 0 || playerFromCameraPosition.y > cameraMain.pixelHeight)
+            {
+                playerOutPosition = transform.position;
+                
+                hasPositionBeenTaken = true;
+                _hasRoundEnded = true;
+            }
+        }
+
+        if (hasPositionBeenTaken)
+        {
+            playerOutAnim.transform.position = new Vector3 (playerOutPosition.x, playerOutPosition.y, transform.position.z);
+            playerOutAnim.SetActive(true);
+        }
+
+        if(_hasAnimationEnded)
+        {
+            Debug.Log("YO");
+            hasPositionBeenTaken = false;
+            playerOutAnim.SetActive(false);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            _hasAnimationEnded = false;
+
+        }
 
 
-        
 
         //active la shockwave pendant un certain temps
         if (isShockWaveButtonPressed && _playerEntityScript.GetUltiBool() && !_shockWaveHitScript.haveIBeenHit)
@@ -138,5 +161,15 @@ public class AttackTest : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(shockWavePosition.position, shockWaveRadius);
+    }
+
+    public void GetAnimationEnd()
+    {
+        _hasAnimationEnded = true;
+    }
+
+    public void SetHasPositionFalse()
+    {
+        _hasRoundEnded = false;
     }
 }
