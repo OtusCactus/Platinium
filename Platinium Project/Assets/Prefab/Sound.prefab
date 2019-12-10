@@ -74,7 +74,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e078701f3b2c0fb41a863263fde759be, type: 3}
   - {fileID: 8300000, guid: 2f39b9a6929c79444a5b4953a132ce0b, type: 3}
   - {fileID: 8300000, guid: cc8f50b26e7095c46bbe57c1816997b1, type: 3}
-  - {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
+  - {fileID: 8300000, guid: fe380946d77662242a16ee33e5899960, type: 3}
   - {fileID: 8300000, guid: 85867b784713d4d4292f066904245f76, type: 3}
   animalSounds:
   - {fileID: 8300000, guid: 942d9398ebe6aff40a2d66405805bcb1, type: 3}
@@ -87,6 +87,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c6cd06f30c3945b48b36e1ac6f71a973, type: 3}
   - {fileID: 8300000, guid: aff802262b5e944469052255f3c69c85, type: 3}
   - {fileID: 8300000, guid: 37fe3b7bc3c16d946a6dea532602e22e, type: 3}
+  bouncySounds:
+  - {fileID: 8300000, guid: cf7ee7b286d81854f9f91e2a23811f42, type: 3}
+  - {fileID: 8300000, guid: 3cee9e10a8410d24fbf3f8191d4424ed, type: 3}
+  - {fileID: 8300000, guid: d4bdbcca3ca168748a6dd31dda394b7a, type: 3}
+  - {fileID: 8300000, guid: fe849c20b72d90346bb6c7b926bf03cc, type: 3}
+  - {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
 --- !u!82 &7955549431179610526
 AudioSource:
   m_ObjectHideFlags: 0
