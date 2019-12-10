@@ -47,6 +47,7 @@ public class ArenaRotation : MonoBehaviour
     private PlayerManager _playerManagerScript;
     private bool _currentSlowMotion;
     private NewSoundManager _newSoundManagerScript;
+    private AudioSource[] _managerAudio;
     //debug
     [Header("Debug")]
     public bool debug;
@@ -65,6 +66,7 @@ public class ArenaRotation : MonoBehaviour
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
         _newSoundManagerScript = NewSoundManager.instance;
+        _managerAudio = _newSoundManagerScript.GetMyAudios();
 
         //set la caméra sur la première face de l'arène.
 
@@ -102,6 +104,10 @@ public class ArenaRotation : MonoBehaviour
         if(_gameManagerScript.GetSlowMotionBool() != _currentSlowMotion)
         {
             //_soundManagerScript.myAudio.pitch = Time.timeScale;
+            for (int i = 0; i < _managerAudio.Length; i++)
+            {
+                _managerAudio[i].pitch = Time.timeScale;
+            }
             _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();
         }
         //permet d'avoir accès à la distance de la caméra
