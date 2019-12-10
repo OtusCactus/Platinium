@@ -179,6 +179,11 @@ public class AttackTest : MonoBehaviour
         _hasAnimationEnded = true;
     }
 
+    public bool hasPositionBeenSet()
+    {
+        return hasPositionBeenTaken;
+    }
+
     public void SetHasPositionFalse()
     {
         _hasRoundEnded = false;

@@ -8,6 +8,7 @@ public class WallManager : MonoBehaviour
 
     public float wallFriction = 15;
     public float wallBouncyFriction = 5;
+    public float ejectionPower;
 
     //Wall Apperance
     [Header("All Walls Appearance")]

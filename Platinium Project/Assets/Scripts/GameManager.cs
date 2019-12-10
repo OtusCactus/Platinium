@@ -174,6 +174,8 @@ public class GameManager : MonoBehaviour
             if (_faceClassScript.faceTab[currentFace].levelDesign != null)
             {
                 currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+                
+
             }
         }
         else if(hasRoundBegun)
@@ -198,6 +200,15 @@ public class GameManager : MonoBehaviour
             if(timerRatio > 0.90f)
             {
                 ReadyText.text = "Go";
+                for (int i = 0; i < playerList.Count; i++)
+                {
+                    ReEnablingColliders(i);
+                }
+                for (int i = 0; i < _faceClassScript.faceTab[currentFace].arenaWall.transform.childCount; i++)
+                {
+                    _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallChange>().ReEnablingWallBoxColliders();
+                }
+
             }
             if (timerRatio >1)
             {
@@ -248,15 +259,20 @@ public class GameManager : MonoBehaviour
             print("reached");
 
             playersEntityScripts[playerNumber].enabled = true;
-            BoxCollider2D[] playerColliders = playerList[playerNumber].GetComponents<BoxCollider2D>();
-            foreach(BoxCollider2D colliders in playerColliders)
-            { 
-               colliders.enabled = true;
-            }
+           
         }
         else
         {
             playersEntityScripts[playerNumber].enabled = false;
+        }
+    }
+
+    private void ReEnablingColliders(int playerNumber)
+    {
+        BoxCollider2D[] playerColliders = playerList[playerNumber].GetComponents<BoxCollider2D>();
+        foreach (BoxCollider2D colliders in playerColliders)
+        {
+            colliders.enabled = true;
         }
     }
 

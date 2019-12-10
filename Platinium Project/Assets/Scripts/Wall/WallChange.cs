@@ -73,7 +73,7 @@ public class WallChange : MonoBehaviour
 
 
     private NewSoundManager _newSoundManagerScript;
-
+    private GameObject lastEjectedPlayer;
     private void Awake()
     {
         gameObject.layer = 15;
@@ -171,7 +171,12 @@ public class WallChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (lastEjectedPlayer != null && lastEjectedPlayer.GetComponent<AttackTest>().hasPositionBeenSet())
+        {
+            _gameManagerScript.currentFace = _nextFace - 1;
+            _arenaRotationScript._currentFace = _nextFace - 1;
+            lastEjectedPlayer = null;
+        }
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
@@ -214,7 +219,17 @@ public class WallChange : MonoBehaviour
                     _wallShadowMeshRendererBambou.enabled = false;
                 }
             }
+
+            if(gameObject.layer == 14)
+            {
+                BoxCollider2D[] boxColliderTab = GetComponents<BoxCollider2D>();
+                for (int i = 0; i < boxColliderTab.Length; i++)
+                {
+                    boxColliderTab[i].enabled = false;
+                }
+            }
         }
+
 
         if (wallLife == wallLifeMax)
         {
@@ -401,14 +416,15 @@ public class WallChange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
-
+        Rigidbody2D _playerCollisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
         if (_lastHit)
         {
+            _playerCollisionRB.velocity = _playerCollisionRB.velocity.normalized * _wallManagerScript.ejectionPower;
             if (_gameManagerScript.currentPlayersOnArena > 2)
             {
              
                 _wallMeshRenderer.enabled = false;
-               _wallShadowMeshRenderer.enabled = false;
+                _wallShadowMeshRenderer.enabled = false;
 
 
                 _playerOnCollision.enabled = false;
@@ -447,9 +463,9 @@ public class WallChange : MonoBehaviour
                 _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
 
                 _gameManagerScript.ResetCurrentPlayers();
+                lastEjectedPlayer = collision.gameObject;
+                
 
-                _gameManagerScript.currentFace = _nextFace - 1;
-                _arenaRotationScript._currentFace = _nextFace - 1;
                 _lastHit = false;
             }
 
@@ -517,5 +533,16 @@ public class WallChange : MonoBehaviour
     public bool GetLastHit()
     {
         return _lastHit;
+    }
+
+    public void ReEnablingWallBoxColliders()
+    {
+
+        BoxCollider2D[] boxColliderTab = GetComponents<BoxCollider2D>();
+        for (int i = 0; i < boxColliderTab.Length; i++)
+        {
+            boxColliderTab[i].enabled = true;
+        }
+
     }
 }

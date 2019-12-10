@@ -573,8 +573,11 @@ public class PlayerEntity : MonoBehaviour
         GetComponent<AttackTest>().SetHasPositionFalse();
         _animator.SetBool("IsSlingshoting", false);
         _ultiCurrentCharge = 0;
+        UltiFxStates[0].SetActive(false);
+        UltiFxStates[1].SetActive(false);
+        UltiFxStates[2].SetActive(false);
         //_soundManagerScript.NoSound(_playerAudio[0]);
-        if(_newSoundManagerScript != null)
+        if (_newSoundManagerScript != null)
         _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
         _mustPlayCastSound = true;
         onomatopéesSprite.enabled = false;
