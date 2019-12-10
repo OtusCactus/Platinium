@@ -115,6 +115,7 @@ public class PlayerEntity : MonoBehaviour
     private float timerScaleMax = 0.08f;
     private float timerRescale = 0;
     private float timerRescaleMax = 0.08f;
+    private GameObject playerSprite;
 
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
@@ -176,6 +177,7 @@ public class PlayerEntity : MonoBehaviour
         }
         wallSpriteTransform.gameObject.SetActive(false);
 
+        playerSprite = transform.GetChild(0).gameObject;
     }
 
 
@@ -370,12 +372,12 @@ public class PlayerEntity : MonoBehaviour
         {
             timerScale += Time.deltaTime;
             float lerpScaleRatio = timerScale / timerScaleMax;
-            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(0.35f, 0.35f, transform.localScale.z), lerpScaleRatio);
+            playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(0.17f, 0.17f, playerSprite.transform.localScale.z), lerpScaleRatio);
             if (lerpScaleRatio >= 1)
             {
                 timerRescale += Time.deltaTime;
                 float lerpRescaleRatio = timerRescale / timerRescaleMax;
-                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(0.45f, 0.45f, 0.45f), lerpRescaleRatio);
+                playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(0.2f, 0.2f, 0.2f), lerpRescaleRatio);
                 if (lerpRescaleRatio >= 1)
                 {
                     timerScale = 0;
