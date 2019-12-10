@@ -109,6 +109,13 @@ public class PlayerEntity : MonoBehaviour
     private AudioSource _childAudioSource;
 
 
+    //playerScaling on wallhit
+    private bool playerScaleHitWall = false;
+    private float timerScale = 0;
+    private float timerScaleMax = 0.08f;
+    private float timerRescale = 0;
+    private float timerRescaleMax = 0.08f;
+
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
@@ -357,6 +364,25 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
+        if (playerScaleHitWall)
+        {
+            timerScale += Time.deltaTime;
+            float lerpScaleRatio = timerScale / timerScaleMax;
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(0.35f, 0.35f, transform.localScale.z), lerpScaleRatio);
+            if (lerpScaleRatio >= 1)
+            {
+                timerRescale += Time.deltaTime;
+                float lerpRescaleRatio = timerRescale / timerRescaleMax;
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(0.45f, 0.45f, 0.45f), lerpRescaleRatio);
+                if (lerpRescaleRatio >= 1)
+                {
+                    timerScale = 0;
+                    timerRescale = 0;
+                    playerScaleHitWall = false;
+                }
+            }
+        }
+
         //si les onomatopées sont activés, lance le timer de désactivation
         if (onomatopéesSprite.enabled)
         {
@@ -399,11 +425,13 @@ public class PlayerEntity : MonoBehaviour
         //active et désactive le son de charge.
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
+            if(_newSoundManagerScript != null)
             _newSoundManagerScript.PlayCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) -1);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
+            if(_newSoundManagerScript != null)
             _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) -1);
             _mustPlayCastSound = true;
         }
@@ -463,12 +491,13 @@ public class PlayerEntity : MonoBehaviour
             wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 8);
             wallSpriteTransform.position = wallSpritePosition;
             wallSpriteTransform.gameObject.SetActive(true);
-            
+            playerScaleHitWall = true;
 
         }
         //son collision avec joueurs
         else if (collision.gameObject.tag.Contains("Player"))
         {
+            if(_newSoundManagerScript != null)
             _newSoundManagerScript.PlaySound(1);
             wallSpriteTransform.gameObject.SetActive(false);
             

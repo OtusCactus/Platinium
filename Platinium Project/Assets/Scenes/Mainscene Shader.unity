@@ -59779,11 +59779,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
-        type: 3}
-      propertyPath: trailApparitionTreshold
-      value: 0.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
 --- !u!1 &1886410724 stripped

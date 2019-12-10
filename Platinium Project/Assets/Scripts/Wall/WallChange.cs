@@ -347,27 +347,33 @@ public class WallChange : MonoBehaviour
 
         if (_wallProprieties.isIndestructible)
         {
-            _newSoundManagerScript.PlaySound(0, "IndestructibleWallHit");
+            if (_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound(0, "IndestructibleWallHit");
         }
         else if (_wallProprieties.isBouncy)
         {
+            if(_newSoundManagerScript != null)
             _newSoundManagerScript.PlaySound(0, "BouncyWallHit");
         }
         else if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
         {
-            _newSoundManagerScript.PlaySound(0, "WallLifeHigh");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound(0, "WallLifeHigh");
         }
         else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
         {
-            _newSoundManagerScript.PlaySound(0, "WallLifeMiddle");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound(0, "WallLifeMiddle");
         }
         else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
         {
-            _newSoundManagerScript.PlaySound(0, "WallLifeLow");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound(0, "WallLifeLow");
         }
         else if (wallLife <= 0)
         {
-            _newSoundManagerScript.PlaySound(0, "WallDestroyed");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound(0, "WallDestroyed");
         }
 
     }

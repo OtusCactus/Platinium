@@ -5693,6 +5693,7 @@ MonoBehaviour:
   - {fileID: 3214523682317982314}
   - {fileID: 2206585789845544230}
   trailDuration: 2
+  trailApparitionTreshold: 0.8
 --- !u!50 &9112317936584710434
 Rigidbody2D:
   serializedVersion: 4
