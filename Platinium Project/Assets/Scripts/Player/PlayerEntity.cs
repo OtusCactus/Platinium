@@ -72,9 +72,7 @@ public class PlayerEntity : MonoBehaviour
     private AudioSource[] _playerAudio;
 
 
-    //particules
-    private GameObject _particuleContact;
-    private ParticleSystem _particuleContactSystem;
+
 
     [Header("Onomatopées")]
     public Sprite[] onomatopeesTab;
@@ -134,8 +132,6 @@ public class PlayerEntity : MonoBehaviour
 
         _velocityMax = (powerMax * speed) * (powerMax * speed);
 
-        _particuleContact = this.transform.GetChild(1).gameObject;
-        _particuleContactSystem = _particuleContact.GetComponent<ParticleSystem>();
         _playerTrail = GetComponent<TrailRenderer>();
 
         _soundManagerScript = SoundManager.instance;
@@ -569,8 +565,6 @@ public class PlayerEntity : MonoBehaviour
             }
         }
 
-        _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
-        _particuleContactSystem.Play();
     }
 
     //fonciton reset des variables quand new round
