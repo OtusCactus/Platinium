@@ -13,6 +13,8 @@ public class ScoreManager : MonoBehaviour
 
     public Text[] allScoresUI;
     private int[] _playerScore;
+    public Image[] playersClassement;
+    public Sprite[] playersSprite;
 
     public GameObject restartMenu;
 
@@ -80,6 +82,20 @@ public class ScoreManager : MonoBehaviour
     {
         if (_playerScore[player] >= scoreToWin)
         {
+            playersClassement[0].sprite = playersSprite[Classement()[0]];
+            playersClassement[1].sprite = playersSprite[Classement()[1]];
+            if (nbrPlayers >= 3)
+            {
+                playersClassement[2].sprite = playersSprite[Classement()[2]];
+                playersClassement[2].gameObject.SetActive(true);
+            }
+            if(nbrPlayers == 4)
+            {
+                playersClassement[3].sprite = playersSprite[Classement()[3]];
+                playersClassement[3].gameObject.SetActive(true);
+            }
+            playersClassement[0].gameObject.SetActive(true);
+            playersClassement[1].gameObject.SetActive(true);
             restartMenu.SetActive(true);
             Time.timeScale = 0;
         }
@@ -95,6 +111,77 @@ public class ScoreManager : MonoBehaviour
             totalScores[i].text = "/" + scoreToWin.ToString();
             totalScores[i].gameObject.SetActive(true);
         }
+    }
+
+    private int[] Classement()
+    {
+        int first = 0;
+        int second = 0;
+        int third = 0;
+        int fourth = 0;
+        int score = 0;
+        int scoreTw = 0;
+        int scoreTh = 0;
+        int scoreF = 0;
+        for (int x = 0; x < _playerScore.Length; x++)
+        {
+            if (_playerScore[x] > score)
+            {
+                if (nbrPlayers == 4)
+                {
+                    scoreF = scoreTh;
+                    fourth = third;
+                }
+                if (nbrPlayers >= 3)
+                {
+                    scoreTh = scoreTw;
+                    third = second;
+                }
+                scoreTw = score;
+                second = first;
+                score = _playerScore[x];
+                first = x;
+            }
+            else if (_playerScore[x] > scoreTw)
+            {
+                if (nbrPlayers == 4)
+                {
+                    scoreF = scoreTh;
+                    fourth = third;
+                }
+                if (nbrPlayers >= 3)
+                {
+                    scoreTh = scoreTw;
+                    third = second;
+                }
+                scoreTw = _playerScore[x];
+                second = x;
+            }
+            else if (_playerScore[x] >= scoreTh)
+            {
+                if (nbrPlayers == 4)
+                {
+                    scoreF = scoreTh;
+                    fourth = third;
+                }
+                scoreTh = _playerScore[x];
+                third = x;
+            }
+        }
+        int[] results;
+        if (nbrPlayers == 2)
+        {
+            results = new int[] { first, second };
+        }
+        else if (nbrPlayers == 3)
+        {
+            results = new int[] { first, second, third };
+        }
+        else
+        {
+            results = new int[] { first, second, third, fourth };
+        }
+        return results;
     }
 
 }
