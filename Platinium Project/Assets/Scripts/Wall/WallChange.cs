@@ -246,7 +246,7 @@ public class WallChange : MonoBehaviour
                 _wallShadowMeshRendererBambou.enabled = false;
             }
             
-            _wallCollider.isTrigger = true;
+            _wallCollider.enabled = false;
 
         }
         else if (wallLife < wallLifeMax && wallLife >= (wallLifeMax * 0.66))

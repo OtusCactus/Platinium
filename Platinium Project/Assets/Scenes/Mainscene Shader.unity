@@ -1554,6 +1554,7 @@ GameObject:
   - component: {fileID: 44213425}
   - component: {fileID: 44213424}
   - component: {fileID: 44213423}
+  - component: {fileID: 44213426}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -1644,6 +1645,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &44213426
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44213421}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &51841872
 GameObject:
@@ -2619,6 +2646,7 @@ GameObject:
   - component: {fileID: 107925619}
   - component: {fileID: 107925618}
   - component: {fileID: 107925617}
+  - component: {fileID: 107925620}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -2709,6 +2737,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &107925620
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107925615}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &108802221
 GameObject:
@@ -3217,6 +3271,7 @@ GameObject:
   - component: {fileID: 121261146}
   - component: {fileID: 121261145}
   - component: {fileID: 121261144}
+  - component: {fileID: 121261147}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -3307,6 +3362,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &121261147
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121261142}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &122031828
 GameObject:
@@ -3912,6 +3993,7 @@ GameObject:
   - component: {fileID: 135139812}
   - component: {fileID: 135139811}
   - component: {fileID: 135139810}
+  - component: {fileID: 135139813}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -4003,6 +4085,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
   m_EdgeRadius: 0
+--- !u!61 &135139813
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135139808}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
+  m_EdgeRadius: 0
 --- !u!4 &137314327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6228257716008273125, guid: cffaee94f73cf214296dfae7eecb5d1b,
@@ -4021,6 +4129,7 @@ GameObject:
   - component: {fileID: 137585918}
   - component: {fileID: 137585917}
   - component: {fileID: 137585916}
+  - component: {fileID: 137585919}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -4112,6 +4221,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
   m_EdgeRadius: 0
+--- !u!61 &137585919
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137585914}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
+  m_EdgeRadius: 0
 --- !u!1 &140758686
 GameObject:
   m_ObjectHideFlags: 0
@@ -4124,6 +4259,7 @@ GameObject:
   - component: {fileID: 140758690}
   - component: {fileID: 140758689}
   - component: {fileID: 140758688}
+  - component: {fileID: 140758691}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -4214,6 +4350,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &140758691
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140758686}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &141234395
 GameObject:
@@ -5595,6 +5757,7 @@ GameObject:
   - component: {fileID: 195298161}
   - component: {fileID: 195298160}
   - component: {fileID: 195298159}
+  - component: {fileID: 195298162}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -5685,6 +5848,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &195298162
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195298157}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &201948166
 GameObject:
@@ -6200,6 +6389,7 @@ GameObject:
   - component: {fileID: 223670490}
   - component: {fileID: 223670489}
   - component: {fileID: 223670488}
+  - component: {fileID: 223670491}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -6290,6 +6480,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &223670491
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223670486}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &226922461
 GameObject:
@@ -6623,7 +6839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 289}
+  m_AnchoredPosition: {x: 0.0000052452087, y: 289}
   m_SizeDelta: {x: 443.5, y: 443.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &243542489
@@ -7402,6 +7618,7 @@ GameObject:
   - component: {fileID: 252505002}
   - component: {fileID: 252505001}
   - component: {fileID: 252505000}
+  - component: {fileID: 252505003}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -7492,6 +7709,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &252505003
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252504998}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &255376676
 GameObject:
@@ -8120,6 +8363,7 @@ GameObject:
   - component: {fileID: 274965843}
   - component: {fileID: 274965842}
   - component: {fileID: 274965841}
+  - component: {fileID: 274965844}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -8210,6 +8454,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &274965844
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274965839}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &282357456
 GameObject:
@@ -8401,6 +8671,7 @@ GameObject:
   - component: {fileID: 285777327}
   - component: {fileID: 285777326}
   - component: {fileID: 285777325}
+  - component: {fileID: 285777328}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -8491,6 +8762,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &285777328
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285777323}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &289422853
 GameObject:
@@ -8950,6 +9247,7 @@ GameObject:
   - component: {fileID: 300910468}
   - component: {fileID: 300910467}
   - component: {fileID: 300910466}
+  - component: {fileID: 300910469}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -9040,6 +9338,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &300910469
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300910464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!4 &301230669 stripped
 Transform:
@@ -9932,6 +10256,7 @@ GameObject:
   - component: {fileID: 327345806}
   - component: {fileID: 327345805}
   - component: {fileID: 327345804}
+  - component: {fileID: 327345807}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -10022,6 +10347,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &327345807
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327345802}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &336052143
 GameObject:
@@ -11347,6 +11698,7 @@ GameObject:
   - component: {fileID: 383213288}
   - component: {fileID: 383213287}
   - component: {fileID: 383213286}
+  - component: {fileID: 383213289}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -11437,6 +11789,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &383213289
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383213284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &392842448
 GameObject:
@@ -12074,6 +12452,7 @@ GameObject:
   - component: {fileID: 404334569}
   - component: {fileID: 404334568}
   - component: {fileID: 404334567}
+  - component: {fileID: 404334570}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -12165,6 +12544,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
   m_EdgeRadius: 0
+--- !u!61 &404334570
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404334565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
+  m_EdgeRadius: 0
 --- !u!4 &405147827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6228257716008273125, guid: cffaee94f73cf214296dfae7eecb5d1b,
@@ -12183,6 +12588,7 @@ GameObject:
   - component: {fileID: 407140288}
   - component: {fileID: 407140287}
   - component: {fileID: 407140286}
+  - component: {fileID: 407140289}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -12273,6 +12679,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &407140289
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407140284}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &412143321
 GameObject:
@@ -12920,6 +13352,7 @@ GameObject:
   - component: {fileID: 427901597}
   - component: {fileID: 427901596}
   - component: {fileID: 427901595}
+  - component: {fileID: 427901598}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -13010,6 +13443,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &427901598
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427901593}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &435734063
 GameObject:
@@ -13441,6 +13900,7 @@ GameObject:
   - component: {fileID: 453611313}
   - component: {fileID: 453611312}
   - component: {fileID: 453611311}
+  - component: {fileID: 453611314}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -13531,6 +13991,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &453611314
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453611309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!4 &458020730 stripped
 Transform:
@@ -15897,6 +16383,7 @@ GameObject:
   - component: {fileID: 558078693}
   - component: {fileID: 558078692}
   - component: {fileID: 558078691}
+  - component: {fileID: 558078694}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -15987,6 +16474,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &558078694
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558078689}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &561221332
 GameObject:
@@ -16546,6 +17059,7 @@ GameObject:
   - component: {fileID: 584270388}
   - component: {fileID: 584270387}
   - component: {fileID: 584270386}
+  - component: {fileID: 584270389}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -16636,6 +17150,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &584270389
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584270384}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &584549416
 GameObject:
@@ -16899,6 +17439,7 @@ GameObject:
   - component: {fileID: 605961228}
   - component: {fileID: 605961227}
   - component: {fileID: 605961226}
+  - component: {fileID: 605961229}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -16989,6 +17530,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &605961229
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605961224}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &608281799
 GameObject:
@@ -17439,6 +18006,7 @@ GameObject:
   - component: {fileID: 621857276}
   - component: {fileID: 621857275}
   - component: {fileID: 621857274}
+  - component: {fileID: 621857277}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -17529,6 +18097,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &621857277
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621857272}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &622478890
 GameObject:
@@ -17989,6 +18583,7 @@ GameObject:
   - component: {fileID: 636337274}
   - component: {fileID: 636337273}
   - component: {fileID: 636337272}
+  - component: {fileID: 636337275}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -18079,6 +18674,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &636337275
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636337270}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &642428768
 GameObject:
@@ -19488,6 +20109,7 @@ GameObject:
   - component: {fileID: 686099516}
   - component: {fileID: 686099515}
   - component: {fileID: 686099514}
+  - component: {fileID: 686099517}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -19578,6 +20200,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &686099517
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686099512}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &688583349
 GameObject:
@@ -19783,6 +20431,7 @@ GameObject:
   - component: {fileID: 690909168}
   - component: {fileID: 690909167}
   - component: {fileID: 690909166}
+  - component: {fileID: 690909169}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -19873,6 +20522,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &690909169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690909164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &694588839
 GameObject:
@@ -20407,6 +21082,7 @@ GameObject:
   - component: {fileID: 710868278}
   - component: {fileID: 710868277}
   - component: {fileID: 710868276}
+  - component: {fileID: 710868279}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -20497,6 +21173,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &710868279
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710868274}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &712074890
 GameObject:
@@ -21588,6 +22290,7 @@ GameObject:
   - component: {fileID: 771192898}
   - component: {fileID: 771192897}
   - component: {fileID: 771192896}
+  - component: {fileID: 771192899}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -21678,6 +22381,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &771192899
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771192894}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1001 &775595429
 PrefabInstance:
@@ -21979,6 +22708,7 @@ GameObject:
   - component: {fileID: 783244269}
   - component: {fileID: 783244268}
   - component: {fileID: 783244267}
+  - component: {fileID: 783244270}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -22069,6 +22799,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &783244270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783244265}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &783320158
 GameObject:
@@ -22646,6 +23402,7 @@ GameObject:
   - component: {fileID: 799734100}
   - component: {fileID: 799734099}
   - component: {fileID: 799734098}
+  - component: {fileID: 799734101}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -22736,6 +23493,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &799734101
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799734096}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &803062619
 GameObject:
@@ -23010,6 +23793,7 @@ GameObject:
   - component: {fileID: 812723594}
   - component: {fileID: 812723593}
   - component: {fileID: 812723592}
+  - component: {fileID: 812723595}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -23100,6 +23884,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &812723595
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812723590}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &816901571
 GameObject:
@@ -23396,6 +24206,7 @@ GameObject:
   - component: {fileID: 826642770}
   - component: {fileID: 826642769}
   - component: {fileID: 826642768}
+  - component: {fileID: 826642771}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -23486,6 +24297,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &826642771
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826642766}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &829746657
 GameObject:
@@ -24728,6 +25565,7 @@ GameObject:
   - component: {fileID: 876628416}
   - component: {fileID: 876628415}
   - component: {fileID: 876628414}
+  - component: {fileID: 876628417}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -24818,6 +25656,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &876628417
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876628412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &878073912
 GameObject:
@@ -25170,6 +26034,7 @@ GameObject:
   - component: {fileID: 885613705}
   - component: {fileID: 885613704}
   - component: {fileID: 885613703}
+  - component: {fileID: 885613706}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -25260,6 +26125,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &885613706
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885613701}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &886937949
 GameObject:
@@ -25545,6 +26436,7 @@ GameObject:
   - component: {fileID: 895707322}
   - component: {fileID: 895707321}
   - component: {fileID: 895707320}
+  - component: {fileID: 895707323}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -25635,6 +26527,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &895707323
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895707318}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &900480612
 GameObject:
@@ -26225,6 +27143,7 @@ GameObject:
   - component: {fileID: 930776696}
   - component: {fileID: 930776695}
   - component: {fileID: 930776694}
+  - component: {fileID: 930776697}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -26315,6 +27234,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &930776697
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930776692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!4 &931523654 stripped
 Transform:
@@ -27456,6 +28401,7 @@ GameObject:
   - component: {fileID: 962423016}
   - component: {fileID: 962423015}
   - component: {fileID: 962423014}
+  - component: {fileID: 962423017}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -27546,6 +28492,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &962423017
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962423012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &964560932
 GameObject:
@@ -28646,6 +29618,7 @@ GameObject:
   - component: {fileID: 1009254228}
   - component: {fileID: 1009254227}
   - component: {fileID: 1009254226}
+  - component: {fileID: 1009254229}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -28736,6 +29709,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &1009254229
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009254224}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &1012005212
 GameObject:
@@ -29021,6 +30020,7 @@ GameObject:
   - component: {fileID: 1021521509}
   - component: {fileID: 1021521508}
   - component: {fileID: 1021521507}
+  - component: {fileID: 1021521510}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -29112,6 +30112,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
   m_EdgeRadius: 0
+--- !u!61 &1021521510
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021521505}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
+  m_EdgeRadius: 0
 --- !u!1 &1022899997
 GameObject:
   m_ObjectHideFlags: 0
@@ -29124,6 +30150,7 @@ GameObject:
   - component: {fileID: 1022900001}
   - component: {fileID: 1022900000}
   - component: {fileID: 1022899999}
+  - component: {fileID: 1022900002}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -29214,6 +30241,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &1022900002
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022899997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &1024917404
 GameObject:
@@ -30377,6 +31430,7 @@ GameObject:
   - component: {fileID: 1066674357}
   - component: {fileID: 1066674356}
   - component: {fileID: 1066674355}
+  - component: {fileID: 1066674358}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -30467,6 +31521,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &1066674358
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066674353}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &1066844241
 GameObject:
@@ -31633,6 +32713,7 @@ GameObject:
   - component: {fileID: 1125816157}
   - component: {fileID: 1125816156}
   - component: {fileID: 1125816155}
+  - component: {fileID: 1125816158}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -31723,6 +32804,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &1125816158
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125816153}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1001 &1126815081
 PrefabInstance:
@@ -31862,6 +32969,7 @@ GameObject:
   - component: {fileID: 1129211369}
   - component: {fileID: 1129211368}
   - component: {fileID: 1129211367}
+  - component: {fileID: 1129211370}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -31952,6 +33060,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &1129211370
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129211365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &1132830610
 GameObject:
@@ -35895,6 +37029,7 @@ GameObject:
   - component: {fileID: 1296659118}
   - component: {fileID: 1296659117}
   - component: {fileID: 1296659116}
+  - component: {fileID: 1296659119}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -35985,6 +37120,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &1296659119
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296659114}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &1297657867
 GameObject:
@@ -37583,6 +38744,7 @@ GameObject:
   - component: {fileID: 1346347960}
   - component: {fileID: 1346347959}
   - component: {fileID: 1346347958}
+  - component: {fileID: 1346347961}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -37673,6 +38835,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &1346347961
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346347956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1001 &1353105657
 PrefabInstance:
@@ -37780,6 +38968,7 @@ GameObject:
   - component: {fileID: 1357724680}
   - component: {fileID: 1357724679}
   - component: {fileID: 1357724678}
+  - component: {fileID: 1357724681}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -37871,6 +39060,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
   m_EdgeRadius: 0
+--- !u!61 &1357724681
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357724676}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
+  m_EdgeRadius: 0
 --- !u!1 &1362441887
 GameObject:
   m_ObjectHideFlags: 0
@@ -37883,6 +39098,7 @@ GameObject:
   - component: {fileID: 1362441891}
   - component: {fileID: 1362441890}
   - component: {fileID: 1362441889}
+  - component: {fileID: 1362441892}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -37973,6 +39189,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &1362441892
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362441887}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &1366459337 stripped
 GameObject:
@@ -44896,7 +46138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1504079763
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45609,6 +46851,7 @@ GameObject:
   - component: {fileID: 1532193249}
   - component: {fileID: 1532193248}
   - component: {fileID: 1532193247}
+  - component: {fileID: 1532193250}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -45699,6 +46942,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &1532193250
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532193245}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!4 &1533705478 stripped
 Transform:
@@ -46955,6 +48224,7 @@ GameObject:
   - component: {fileID: 1572404317}
   - component: {fileID: 1572404316}
   - component: {fileID: 1572404315}
+  - component: {fileID: 1572404318}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -47045,6 +48315,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &1572404318
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572404313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &1578234954
 GameObject:
@@ -48035,6 +49331,7 @@ GameObject:
   - component: {fileID: 1620148579}
   - component: {fileID: 1620148578}
   - component: {fileID: 1620148577}
+  - component: {fileID: 1620148580}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -48125,6 +49422,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &1620148580
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620148575}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &1620457486
 GameObject:
@@ -49243,6 +50566,7 @@ GameObject:
   - component: {fileID: 1677808181}
   - component: {fileID: 1677808180}
   - component: {fileID: 1677808179}
+  - component: {fileID: 1677808182}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -49333,6 +50657,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &1677808182
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677808177}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &1679943150
 GameObject:
@@ -49438,6 +50788,7 @@ GameObject:
   - component: {fileID: 1681265052}
   - component: {fileID: 1681265051}
   - component: {fileID: 1681265050}
+  - component: {fileID: 1681265053}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -49528,6 +50879,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &1681265053
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681265048}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &1682159950
 GameObject:
@@ -49981,6 +51358,7 @@ GameObject:
   - component: {fileID: 1688267374}
   - component: {fileID: 1688267373}
   - component: {fileID: 1688267372}
+  - component: {fileID: 1688267375}
   m_Layer: 0
   m_Name: WallSouthEast
   m_TagString: Walls
@@ -50071,6 +51449,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1689273}
+  m_EdgeRadius: 0
+--- !u!61 &1688267375
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688267370}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1683048, y: 0.22062479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3148198, y: 0.060640305}
   m_EdgeRadius: 0
 --- !u!1 &1694061601
 GameObject:
@@ -50271,6 +51675,7 @@ GameObject:
   - component: {fileID: 1695248772}
   - component: {fileID: 1695248771}
   - component: {fileID: 1695248770}
+  - component: {fileID: 1695248773}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -50361,6 +51766,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &1695248773
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695248768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!4 &1700491455 stripped
 Transform:
@@ -53429,6 +54860,7 @@ GameObject:
   - component: {fileID: 1795786721}
   - component: {fileID: 1795786720}
   - component: {fileID: 1795786719}
+  - component: {fileID: 1795786722}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -53519,6 +54951,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &1795786722
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795786717}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &1796037806
 GameObject:
@@ -53958,6 +55416,7 @@ GameObject:
   - component: {fileID: 1812452596}
   - component: {fileID: 1812452595}
   - component: {fileID: 1812452594}
+  - component: {fileID: 1812452597}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -54048,6 +55507,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &1812452597
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812452592}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!1 &1815128253
 GameObject:
@@ -54344,6 +55829,7 @@ GameObject:
   - component: {fileID: 1822140108}
   - component: {fileID: 1822140107}
   - component: {fileID: 1822140106}
+  - component: {fileID: 1822140109}
   m_Layer: 0
   m_Name: WallSouth
   m_TagString: Walls
@@ -54434,6 +55920,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.1480849}
+  m_EdgeRadius: 0
+--- !u!61 &1822140109
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822140104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037838936, y: 0.17517316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1199985, y: 0.055932477}
   m_EdgeRadius: 0
 --- !u!4 &1835130129 stripped
 Transform:
@@ -55812,6 +57324,7 @@ GameObject:
   - component: {fileID: 1898438897}
   - component: {fileID: 1898438896}
   - component: {fileID: 1898438895}
+  - component: {fileID: 1898438898}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -55902,6 +57415,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &1898438898
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898438893}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1001 &1902035735
 PrefabInstance:
@@ -56087,6 +57626,7 @@ GameObject:
   - component: {fileID: 1905086313}
   - component: {fileID: 1905086312}
   - component: {fileID: 1905086311}
+  - component: {fileID: 1905086314}
   m_Layer: 0
   m_Name: WallNorthEast
   m_TagString: Walls
@@ -56177,6 +57717,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2195582}
+  m_EdgeRadius: 0
+--- !u!61 &1905086314
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905086309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020694077, y: 0.20234041}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0692568, y: 0.03391871}
   m_EdgeRadius: 0
 --- !u!1 &1907368282
 GameObject:
@@ -58056,6 +59622,7 @@ GameObject:
   - component: {fileID: 2022229089}
   - component: {fileID: 2022229088}
   - component: {fileID: 2022229087}
+  - component: {fileID: 2022229090}
   m_Layer: 0
   m_Name: WallNorthWest
   m_TagString: Walls
@@ -58146,6 +59713,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.2219654}
+  m_EdgeRadius: 0
+--- !u!61 &2022229090
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022229085}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017329216, y: 0.18187052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0214105, y: 0.036814734}
   m_EdgeRadius: 0
 --- !u!1 &2026910872
 GameObject:
@@ -59528,6 +61121,7 @@ GameObject:
   - component: {fileID: 2088134663}
   - component: {fileID: 2088134662}
   - component: {fileID: 2088134661}
+  - component: {fileID: 2088134664}
   m_Layer: 0
   m_Name: WallSouthWest
   m_TagString: Walls
@@ -59618,6 +61212,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.057009, y: 0.234671}
+  m_EdgeRadius: 0
+--- !u!61 &2088134664
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088134659}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019838572, y: 0.2427914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0393076, y: 0.07341108}
   m_EdgeRadius: 0
 --- !u!1 &2090777944
 GameObject:
