@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int scoreToWin;
-    public GameObject[] allScores;
-    public GameObject[] allPlayersText;
+    public Text[] totalScores;
+    public GameObject[] allPlayers;
     private int[] _playerWinCount;
     public int nbrPlayers;
 
@@ -26,12 +26,8 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
-        //_playerWinCount = new int[nbrPlayers];
-        //for (int i = _playerWinCount.Length; i-- > 0;)
-        //{
-        //    _playerWinCount[i] = 0;
-        //}
         _playerScore = new int[nbrPlayers];
+
         for (int i = _playerScore.Length; i-- > 0;)
         {
             _playerScore[i] = 0;
@@ -41,6 +37,7 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
+
     }
 
     public void ChangeScore(int playersOnScene, int player)
@@ -50,22 +47,22 @@ public class ScoreManager : MonoBehaviour
             case 4:
                 print("score +0");
                 print(player - 1);
-                allScoresUI[player - 1].text = "P" + player.ToString() + " : " + _playerScore[player - 1].ToString();
+                allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 break;
             case 3:
                 print("score +1");
                 _playerScore[player - 1] += 1;
-                allScoresUI[player - 1].text = "P" + player.ToString() + " : " + _playerScore[player - 1].ToString();
+                allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 break;
             case 2:
                 print("score +2");
                 _playerScore[player - 1] += 2;
-                allScoresUI[player - 1].text = "P" + player.ToString() + " : " + _playerScore[player - 1].ToString();
+                allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 break;
             case 1:
                 print("score +3");
                 _playerScore[player - 1] += 3;
-                allScoresUI[player - 1].text = "P" + player.ToString() + " : " + _playerScore[player - 1].ToString();
+                allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 for (int i =0; i < _playerScore.Length; i++)
                 {
                     _CheckScore(i);
@@ -75,18 +72,6 @@ public class ScoreManager : MonoBehaviour
 
 
         }
-
-        //if (!win)
-        //{
-        //    allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.red;
-        //}
-        //else
-        //{
-        //    allScores[player - 1].transform.GetChild(actualRound).GetComponent<Image>().color = Color.green;
-        //    _playerWinCount[player - 1] += 1;
-        //    _CheckScore(player);
-        //    actualRound++;
-        //}
 
     }
 
@@ -104,10 +89,11 @@ public class ScoreManager : MonoBehaviour
     {
         for(int i = 0; i < nbrPlayers; i++)
         {
-            //allScores[i].SetActive(true);
-            //allPlayersText[i].SetActive(true);
-            allScoresUI[i].text = "P" + (i +1).ToString() + " : " + _playerScore[i].ToString();
+            allScoresUI[i].text = _playerScore[i].ToString();
             allScoresUI[i].gameObject.SetActive(true);
+            allPlayers[i].gameObject.SetActive(true);
+            totalScores[i].text = "/" + scoreToWin.ToString();
+            totalScores[i].gameObject.SetActive(true);
         }
     }
 
