@@ -335,7 +335,7 @@ public class PlayerEntity : MonoBehaviour
         }
         #endregion
 
-        //Fait apparaitre une trail si la vitesse atteind le seuil des murs (on changera après le 0.8 par une variable)
+        //Fait apparaitre une trail si la vitesse atteind le seuil des murs 
         _myVelocityFloat = _myRb.velocity.sqrMagnitude;
         _velocityConvertedToRatio = (_myVelocityFloat / _velocityMax);
         if (_velocityConvertedToRatio > trailApparitionTreshold)
@@ -567,9 +567,11 @@ public class PlayerEntity : MonoBehaviour
     //fonciton reset des variables quand new round
     public void newRound()
     {
+        GetComponent<AttackTest>().SetHasPositionFalse();
         _animator.SetBool("IsSlingshoting", false);
         _ultiCurrentCharge = 0;
         //_soundManagerScript.NoSound(_playerAudio[0]);
+        if(_newSoundManagerScript != null)
         _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
         _mustPlayCastSound = true;
         onomatopéesSprite.enabled = false;
