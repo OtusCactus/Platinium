@@ -121,18 +121,20 @@ public class PlayerManager : MonoBehaviour
         //Gère à quel joueur attribuer quel action
         if (mouvementPlayerBool[1] == false)
         {
-            inputXPlayer[1] = -player[1].GetAxis("HorizontalJoy1");
-            inputYPlayer[1] = player[1].GetAxis("VerticalJoy1");
+            inputXPlayer[1] = -player[1].GetAxis("HorizontalJoy2");
+            inputYPlayer[1] = player[1].GetAxis("VerticalJoy2");
 
         }
         else
         {
-            inputXPlayer[1] = player[1].GetAxis("HorizontalJoy1");
-            inputYPlayer[1] = -player[1].GetAxis("VerticalJoy1");
+            inputXPlayer[1] = player[1].GetAxis("HorizontalJoy2");
+            inputYPlayer[1] = -player[1].GetAxis("VerticalJoy2");
         }
         //inputXPlayer[1] = -player[1].GetAxis("HorizontalJoy2");
         //float inputYPlayer2 = player[1].GetAxis("VerticalJoy2");
         Vector2 dirPlayer2 = new Vector2(inputXPlayer[1], inputYPlayer[1]);
+
+        Debug.Log(inputXPlayer[1]);
         if (dirPlayer2.magnitude < 0.3f)
         {
             dirPlayer2 = Vector2.zero;
@@ -147,16 +149,16 @@ public class PlayerManager : MonoBehaviour
 
         if (player.Count == 3 || player.Count == 4)
         { //Gère à quel joueur attribuer quel action
-            if (mouvementPlayerBool[3] == false)
+            if (mouvementPlayerBool[2] == false)
             {
-                inputXPlayer[3] = -player[3].GetAxis("HorizontalJoy1");
-                inputYPlayer[3] = player[3].GetAxis("VerticalJoy1");
+                inputXPlayer[2] = -player[2].GetAxis("HorizontalJoy3");
+                inputYPlayer[2] = player[2].GetAxis("VerticalJoy3");
 
             }
             else
             {
-                inputXPlayer[3] = player[3].GetAxis("HorizontalJoy1");
-                inputYPlayer[3] = -player[3].GetAxis("VerticalJoy1");
+                inputXPlayer[2] = player[2].GetAxis("HorizontalJoy3");
+                inputYPlayer[2] = -player[2].GetAxis("VerticalJoy3");
             }
             Vector2 dirPlayer3 = new Vector2(inputXPlayer[2], inputYPlayer[2]);
             if (dirPlayer3.magnitude < 0.3f)
@@ -178,14 +180,14 @@ public class PlayerManager : MonoBehaviour
             //Gère à quel joueur attribuer quel action
             if (mouvementPlayerBool[3] == false)
             {
-                inputXPlayer[3] = -player[3].GetAxis("HorizontalJoy1");
-                inputYPlayer[3] = player[3].GetAxis("VerticalJoy1");
+                inputXPlayer[3] = -player[3].GetAxis("HorizontalJoy4");
+                inputYPlayer[3] = player[3].GetAxis("VerticalJoy4");
 
             }
             else
             {
-                inputXPlayer[3] = player[3].GetAxis("HorizontalJoy1");
-                inputYPlayer[3] = -player[3].GetAxis("VerticalJoy1");
+                inputXPlayer[3] = player[3].GetAxis("HorizontalJoy4");
+                inputYPlayer[3] = -player[3].GetAxis("VerticalJoy4");
             }
             //float inputXPlayer4 = -player[3].GetAxis("HorizontalJoy4");
             //float inputYPlayer4 = player[3].GetAxis("VerticalJoy4");
