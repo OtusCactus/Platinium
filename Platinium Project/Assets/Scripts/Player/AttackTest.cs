@@ -40,6 +40,8 @@ public class AttackTest : MonoBehaviour
     private bool hasPositionBeenTaken;
     private bool _hasAnimationEnded;
     private bool _hasRoundEnded;
+    private new NewSoundManager _newSoundManagerScript;
+    private bool _hasSoundPlayed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,7 @@ public class AttackTest : MonoBehaviour
         _playerEntityScript = GetComponent<PlayerEntity>();
         _shockWaveHitScript = GetComponent<ShockwaveHit>();
         cameraMain = Camera.main;
+        _newSoundManagerScript = NewSoundManager.instance;
     }
 
 
@@ -76,6 +79,11 @@ public class AttackTest : MonoBehaviour
         {
             playerOutAnim.transform.position = new Vector3 (playerOutPosition.x, playerOutPosition.y, transform.position.z);
             playerOutAnim.SetActive(true);
+            if (!_hasSoundPlayed)
+            {
+                _newSoundManagerScript.PlaySound("Elimination");
+                _hasSoundPlayed = true;
+            }
         }
 
         //permet de reset les valeurs quand l'animation est finie
@@ -85,7 +93,7 @@ public class AttackTest : MonoBehaviour
             playerOutAnim.SetActive(false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             _hasAnimationEnded = false;
-
+            _hasSoundPlayed = false;
         }
 
 

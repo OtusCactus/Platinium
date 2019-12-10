@@ -368,7 +368,7 @@ public class WallChange : MonoBehaviour
         else if (_wallProprieties.isBouncy)
         {
             if(_newSoundManagerScript != null)
-            _newSoundManagerScript.PlaySound("BouncyWallHit");
+            _newSoundManagerScript.PlaySound(0);
         }
         else if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
         {
