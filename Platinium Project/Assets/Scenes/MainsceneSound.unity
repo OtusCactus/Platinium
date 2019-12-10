@@ -5837,7 +5837,9 @@ PrefabInstance:
       propertyPath: wallSpriteTransform
       value: 
       objectReference: {fileID: 1160096616}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3876687248998186149, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
+    - {fileID: 1588768097147573943, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
 GameObject:
@@ -20456,7 +20458,9 @@ PrefabInstance:
       propertyPath: wallSpriteTransform
       value: 
       objectReference: {fileID: 740156118}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7052115118994171907, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
+    - {fileID: 5986071960789023824, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
 --- !u!1 &714532300 stripped
 GameObject:
@@ -26278,7 +26282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e14d39dfc04566408e85eb75b307423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCast: {fileID: 8300000, guid: 41cec847c3017964b9bc089ae26aabdd, type: 3}
   endRound: {fileID: 8300000, guid: 85867b784713d4d4292f066904245f76, type: 3}
   playerChargeSounds:
   - {fileID: 8300000, guid: c9aac255f3caf33499cf6d5efa8f4e1d, type: 3}
@@ -26292,6 +26295,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f39b9a6929c79444a5b4953a132ce0b, type: 3}
   - {fileID: 8300000, guid: cc8f50b26e7095c46bbe57c1816997b1, type: 3}
   - {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
+  - {fileID: 8300000, guid: 85867b784713d4d4292f066904245f76, type: 3}
   animalSounds:
   - {fileID: 8300000, guid: 942d9398ebe6aff40a2d66405805bcb1, type: 3}
   - {fileID: 8300000, guid: a78b58a048bdbb0419c48b6d8abe13ff, type: 3}
@@ -32822,7 +32826,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8562993523499844363, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
+    - {fileID: 7431688554162633726, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
 --- !u!1 &1126815082 stripped
 GameObject:
@@ -55959,7 +55965,9 @@ PrefabInstance:
       propertyPath: pushbackIntensity
       value: 200
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9112317936584710431, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
+    - {fileID: 2738846599014248307, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
 --- !u!1 &1886410724 stripped
 GameObject:

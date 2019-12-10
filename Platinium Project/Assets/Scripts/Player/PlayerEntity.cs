@@ -569,7 +569,8 @@ public class PlayerEntity : MonoBehaviour
     {
         _animator.SetBool("IsSlingshoting", false);
         _ultiCurrentCharge = 0;
-        _soundManagerScript.NoSound(_playerAudio[0]);
+        //_soundManagerScript.NoSound(_playerAudio[0]);
+        _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
         _mustPlayCastSound = true;
         onomatopéesSprite.enabled = false;
         wallSpriteTransform.gameObject.SetActive(false);

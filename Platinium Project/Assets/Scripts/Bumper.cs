@@ -45,7 +45,7 @@ public class Bumper : MonoBehaviour
 
         _wallManagerScript.Bounce(player.GetLastFrameVelocity(), collision.GetContact(0).normal, playerRigidbody, player.speed, friction);
         if(_newSoundManagerScript != null)
-        _newSoundManagerScript.PlaySound(0, "BumperHit");
+        _newSoundManagerScript.PlaySound("BumperHit");
     }
 
 }

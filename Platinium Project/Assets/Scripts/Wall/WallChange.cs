@@ -167,14 +167,6 @@ public class WallChange : MonoBehaviour
             _wallManagerScript.WhichWall(_wallProprieties);
             _wallCollider.enabled = true;
             _wallMeshRenderer.enabled = true;
-            //if(_currentWallActive == transform.GetChild(2).gameObject)
-            //{
-            //    for (int i =0; i < _currentWallActive.transform.childCount; i++)
-            //    {
-            //        if(_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-            //        _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = true;
-            //    }
-            //}
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
@@ -348,32 +340,32 @@ public class WallChange : MonoBehaviour
         if (_wallProprieties.isIndestructible)
         {
             if (_newSoundManagerScript != null)
-                _newSoundManagerScript.PlaySound(0, "IndestructibleWallHit");
+                _newSoundManagerScript.PlaySound("IndestructibleWallHit");
         }
         else if (_wallProprieties.isBouncy)
         {
             if(_newSoundManagerScript != null)
-            _newSoundManagerScript.PlaySound(0, "BouncyWallHit");
+            _newSoundManagerScript.PlaySound("BouncyWallHit");
         }
         else if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
         {
             if(_newSoundManagerScript != null)
-                _newSoundManagerScript.PlaySound(0, "WallLifeHigh");
+                _newSoundManagerScript.PlaySound("WallLifeHigh");
         }
         else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
         {
             if(_newSoundManagerScript != null)
-                _newSoundManagerScript.PlaySound(0, "WallLifeMiddle");
+                _newSoundManagerScript.PlaySound("WallLifeMiddle");
         }
         else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
         {
             if(_newSoundManagerScript != null)
-                _newSoundManagerScript.PlaySound(0, "WallLifeLow");
+                _newSoundManagerScript.PlaySound("WallLifeLow");
         }
         else if (wallLife <= 0)
         {
             if(_newSoundManagerScript != null)
-                _newSoundManagerScript.PlaySound(0, "WallDestroyed");
+                _newSoundManagerScript.PlaySound("WallDestroyed");
         }
 
     }

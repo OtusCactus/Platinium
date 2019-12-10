@@ -6,7 +6,6 @@ public class NewSoundManager : MonoBehaviour
 {
     public static NewSoundManager instance = null;
     
-    public AudioClip playerCast;
     public AudioClip endRound;
     public AudioClip[] playerChargeSounds;
 
@@ -46,10 +45,9 @@ public class NewSoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Fonction pour sons définis. 1er param -> 0 pour sons mur défini, 2 -> cri aléatoire
-    /// </summary>
+    /// Fonction pour sons définis. 
     /// <param name="clipName"></param>
-    public void PlaySound(int tabNumber, string clipName)
+    public void PlaySound(string clipName)
     {
         AudioSource audio = null;
         for (int i = 4; i < _myAudios.Length; i++)
@@ -62,27 +60,12 @@ public class NewSoundManager : MonoBehaviour
         }
         audio.pitch = Time.timeScale;
         audio.loop = false;
-
-        switch (tabNumber)
+        for (int x = 0; x < miscSounds.Length; x++)
         {
-            case 0:
-                for(int x = 0; x < miscSounds.Length; x++)
-                {
-                    if (miscSounds[x].name == clipName)
-                    {
-                        audio.clip = miscSounds[x];
-                    }
-                }
-                break;
-            case 1:
-                for (int x = 0; x < animalSounds.Length; x++)
-                {
-                    if (animalSounds[x].name == clipName)
-                    {
-                        audio.clip = animalSounds[x];
-                    }
-                }
-                break;
+            if (miscSounds[x].name == clipName)
+            {
+                audio.clip = miscSounds[x];
+            }
         }
 
         audio.enabled = false;
