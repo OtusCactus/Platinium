@@ -6,7 +6,6 @@ public class NewSoundManager : MonoBehaviour
 {
     public static NewSoundManager instance = null;
     
-    public AudioClip endRound;
     public AudioClip[] playerChargeSounds;
 
     private AudioSource[] _myAudios;
@@ -42,6 +41,21 @@ public class NewSoundManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public int AudioLength()
+    {
+        return _myAudios.Length;
+    }
+
+    public AudioSource[] GetMyAudios()
+    {
+        AudioSource[] tab = new AudioSource[_myAudios.Length];
+        for (int i = 0; i < _myAudios.Length; i++)
+        {
+            tab[i] = _myAudios[i];
+        }
+        return tab;
     }
 
     /// <summary>

@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     private bool _isSlowMotion;
     private bool _currentSlowMotion;
     private float _slowMotionTimer;
+    private NewSoundManager _newSoundMangerScript;
+    private AudioSource[] _managerAudios;
     [SerializeField]
     private float _slowMotionTimerMax = 1;
 
@@ -116,6 +118,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        _newSoundMangerScript = NewSoundManager.instance;
+        _managerAudios = new AudioSource[_newSoundMangerScript.AudioLength()];
+        _managerAudios = _newSoundMangerScript.GetMyAudios();
+
         //set la position de départ des joueurs
         for (int i = 0; i < playerList.Count; i++)
         {
@@ -135,12 +142,13 @@ public class GameManager : MonoBehaviour
     {
         if (_isSlowMotion != _currentSlowMotion)
         {
-            for (int i = 0; i < playerList.Count; i++)
+            for (int i = 0; i < _managerAudios.Length; i++)
             {
-                for (int j = 0; j < playersEntityScripts[i].GetAudioSourceTab().Length; j++)
-                {
-                    playersEntityScripts[i].GetAudioSourceTab()[j].pitch = Time.timeScale;
-                }
+                //
+                //
+                //
+                //
+                _managerAudios[i].pitch = Time.timeScale;
             }
             _currentSlowMotion = _isSlowMotion;
         }
