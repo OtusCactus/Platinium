@@ -94,7 +94,7 @@ public class MenuPlayerManager : MonoBehaviour
         //Gère à quel joueur attribué quel action
 
 
-        if (playerEntity.currentFace == 0 && _player.GetButton("Push1"))
+        if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing)
         {
             ShowPlayerSelection();
         }
@@ -109,6 +109,10 @@ public class MenuPlayerManager : MonoBehaviour
             playerSelection.SetActive(false);
             _isStartGameShowing = false;
 
+        }
+        else if(_isStartGameShowing && _player.GetButtonDown("Push1"))
+        {
+            ShowSelectionChar();
         }
         if (_isCharSelecShowing)
         {
@@ -360,6 +364,7 @@ public class MenuPlayerManager : MonoBehaviour
         playerSelection.SetActive(false);
         selecPanel.SetActive(true);
         _isCharSelecShowing = true;
+        _isStartGameShowing = false;
     }
 
     void ShowPlayerSelection()
