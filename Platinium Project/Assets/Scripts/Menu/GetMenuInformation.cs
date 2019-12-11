@@ -47,14 +47,22 @@ public class GetMenuInformation : MonoBehaviour
         return playerMouvementMode;
     }
 
-    public void GetMusicVolume(float sliderValue)
+    public void SetMusicVolume(float sliderValue)
     {
         musicVolume = sliderValue;
     }
+    public float GetMusicVolume()
+    {
+        return musicVolume;
+    }
 
-    public void GetSFXVolume(float sliderValue)
+    public void SetSFXVolume(float sliderValue)
     {
         sfxVolume = sliderValue;
+    }
+    public float GetSFXVolume()
+    {
+        return sfxVolume;
     }
 
 }

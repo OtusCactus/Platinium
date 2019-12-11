@@ -75,8 +75,6 @@ public class GameManager : MonoBehaviour
             //permet de set les controles et d'instantier les personnages joueurs en fonction du nombre de joueurs
             if (_menuInformationScript != null && playerList.Count > 0)
             {
-                print("ok");
-
                 _scoreManagerScript.nbrPlayers = 0;
                 for (int i = playerList.Count; i-- >0;)
                 {
