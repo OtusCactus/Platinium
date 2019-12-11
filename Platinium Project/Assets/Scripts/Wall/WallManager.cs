@@ -9,6 +9,7 @@ public class WallManager : MonoBehaviour
     public float wallFriction = 15;
     public float wallBouncyFriction = 5;
     public float ejectionPower;
+    public float shaderAppearanceTime = 1;
 
     //Wall Apperance
     [Header("All Walls Appearance")]
@@ -62,6 +63,7 @@ public class WallManager : MonoBehaviour
     }   
     public void ConnectedtWallDammage(float myDammage, GameObject thisWall, WallProprieties connectedWallProprieties, WallChange connectedWallChange)
     {
+ 
         if (!connectedWallProprieties.isIndestructible)
         {
             connectedWallChange.SetDammageFromConnect(myDammage);

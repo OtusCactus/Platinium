@@ -76,6 +76,12 @@ public class WallChange : MonoBehaviour
     private NewSoundManager _newSoundManagerScript;
     private GameObject lastEjectedPlayer;
     private float lerpTimerRatio = 0;
+
+    private bool _isShaderNeeded;
+    private bool _hasShaderCompletelyAppeared;
+    private MeshRenderer _shaderRenderer;
+    private float _shaderLerp;
+    private float _shaderLerpMax;
     private void Awake()
     {
         gameObject.layer = 15;
@@ -168,11 +174,48 @@ public class WallChange : MonoBehaviour
                 _wallShadowMeshRendererBambou.enabled = false;
             }
         }
+        if(transform.GetChild(3).gameObject.activeSelf)
+        {
+            _shaderRenderer = transform.GetChild(3).GetComponent<MeshRenderer>();
+            _shaderRenderer.material.SetFloat("_Etatdudissolve", -1);
+            _shaderLerpMax = _wallManagerScript.shaderAppearanceTime;
+            _shaderLerp = -1;
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(_isShaderNeeded)
+        {
+            if(_shaderLerp <= 1 && !_hasShaderCompletelyAppeared)
+            {
+
+                _shaderLerp += Time.deltaTime * _shaderLerpMax;
+                if(_shaderLerp >= 1)
+                {
+                    _shaderLerp = 1;
+                    _hasShaderCompletelyAppeared = true;
+
+                }
+            }
+            else if (_shaderLerp >= -1 && _hasShaderCompletelyAppeared)
+            {
+                _shaderLerp -= Time.deltaTime * _shaderLerpMax;
+                if(_shaderLerp <= -1)
+                {
+                    _shaderLerp = -1;
+                    _hasShaderCompletelyAppeared = false;
+                    _isShaderNeeded = false;
+                }
+            }
+
+            _shaderRenderer.material.SetFloat("_Etatdudissolve", _shaderLerp);
+
+        }
+
         if(_attackTestOnCollision != null)
         {
             
@@ -522,6 +565,8 @@ public class WallChange : MonoBehaviour
 
     public void SetDammageFromConnect(float dammage)
     {
+        //transform.GetChild(3).GetComponent<MeshRenderer>().material.SetFloat("_Etatdudissolve", 1);
+
         _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         if (_wallProprieties.isBouncy)
         {
@@ -562,5 +607,10 @@ public class WallChange : MonoBehaviour
             boxColliderTab[i].enabled = true;
         }
 
+    }
+
+    public void SetShaderNeededTrue()
+    {
+        _isShaderNeeded = true;
     }
 }
