@@ -18,7 +18,7 @@ public class MenuPlayerManager : MonoBehaviour
     private List<Player> otherPlayers;
 
     public InMenuPlayer playerEntity;
-    public GetMenuInformation getMenuInfoScript;
+    private GetMenuInformation getMenuInfoScript;
 
     [Header("Options")]
     public GameObject optionsPanel;
@@ -68,6 +68,8 @@ public class MenuPlayerManager : MonoBehaviour
     private float inputXPlayer3;
     private float inputXPlayer4;
 
+    public Toggle vibrationToggle;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -78,6 +80,8 @@ public class MenuPlayerManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        getMenuInfoScript = GetMenuInformation.Instance;
     }
 
     // Start is called before the first frame update
@@ -87,6 +91,9 @@ public class MenuPlayerManager : MonoBehaviour
         selecPanel.SetActive(false);
         optionsPanel.SetActive(false);
         _player = ReInput.players.GetPlayer("Player1");
+
+        vibrationToggle.onValueChanged.AddListener(VibrationToggle);
+        vibrationToggle.isOn = getMenuInfoScript.vibrationBool;
     }
 
     // Update is called once per frame
@@ -380,6 +387,8 @@ public class MenuPlayerManager : MonoBehaviour
             }
         }
         #endregion
+
+       
     }
     public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
     {
@@ -425,6 +434,11 @@ public class MenuPlayerManager : MonoBehaviour
         playerEntity.enabled = false;
         _isOnOptions = true;
         musicSlider.Select();
+    }
+
+    public void VibrationToggle(bool isOn)
+    {
+        getMenuInfoScript.vibrationBool = isOn;
     }
 
 }
