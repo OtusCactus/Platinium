@@ -30,6 +30,7 @@ public class WallChange : MonoBehaviour
     private SkinnedMeshRenderer _wallShadowMeshRendererBambou;
 
     private PlayerEntity _playerOnCollision;
+    private AttackTest _attackTestOnCollision;
     private float _playerVelocityRatio;
     private BoxCollider2D _wallCollider;
 
@@ -74,6 +75,7 @@ public class WallChange : MonoBehaviour
 
     private NewSoundManager _newSoundManagerScript;
     private GameObject lastEjectedPlayer;
+    private float lerpTimerRatio = 0;
     private void Awake()
     {
         gameObject.layer = 15;
@@ -171,6 +173,23 @@ public class WallChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_attackTestOnCollision != null)
+        {
+            
+            lerpTimerRatio += Time.deltaTime;
+            _attackTestOnCollision.GetPlayerScoreImage().color = Color32.Lerp(_attackTestOnCollision.GetPlayerScoreImage().color, new Color32(255, 255, 255, 100), lerpTimerRatio);
+            if(lerpTimerRatio >=1)
+            {
+                lerpTimerRatio = 0;
+                _attackTestOnCollision = null;
+            }
+
+            Debug.Log(lerpTimerRatio);
+
+        }
+
+       
+
         if (lastEjectedPlayer != null && lastEjectedPlayer.GetComponent<AttackTest>().hasPositionBeenSet())
         {
             _gameManagerScript.currentFace = _nextFace - 1;
@@ -416,6 +435,7 @@ public class WallChange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
+        _attackTestOnCollision = collision.gameObject.GetComponent<AttackTest>();
         Rigidbody2D _playerCollisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
         if (_lastHit)
         {

@@ -16,6 +16,10 @@ TagManager:
   - WallHitSprite3
   - WallHitSprite4
   - WallHitSprite2
+  - PlayerOneImage
+  - PlayerTwoImage
+  - PlayerThreeImage
+  - PlayerFourImage
   layers:
   - Default
   - TransparentFX
