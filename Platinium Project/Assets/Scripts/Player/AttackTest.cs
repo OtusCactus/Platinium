@@ -158,33 +158,33 @@ public class AttackTest : MonoBehaviour
 
                     }
                 }
-                
-                shockWaveSprite.SetActive(true);
-                //set un cercle qui check les colliders dedans, si il y a un joueur, il le rajoute dans un tableau et permet d'accéder à l'objet qui contient le collider
-                Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);
-                if(enemiesCollider.Length > 0)
-                {
-                    // pour chaque élément dans le tableau, lui ajoute un addforce pour la shockwave et un compteur de dommages pour les murs
-                    for (int i = 0; i < enemiesCollider.Length; i++)
-                    {
-                        Vector3 moveDirection = enemiesCollider[i].transform.position - this.transform.position;
-
-                        enemiesCollider[i].GetComponent<ShockwaveHit>().haveIBeenHit = true;
-
-                        enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = moveDirection.normalized * Time.deltaTime * pushbackIntensity;
-                        //enemiesCollider[i].GetComponent<Rigidbody2D>().AddForce(moveDirection.normalized * Time.deltaTime * pushbackIntensity);
-                        Debug.Log("Hit");
-                    }
-                }
-                else
-                {
-                    //si rien n'est check
-                    Debug.Log("Not hit");
-                }
 
             }
-            //lorsque la durée de la shockwave est finie, reset les varibles utilisées
+
+            shockWaveSprite.SetActive(true);
+            //set un cercle qui check les colliders dedans, si il y a un joueur, il le rajoute dans un tableau et permet d'accéder à l'objet qui contient le collider
+            Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);
+            if (enemiesCollider.Length > 0)
+            {
+                // pour chaque élément dans le tableau, lui ajoute un addforce pour la shockwave et un compteur de dommages pour les murs
+                for (int i = 0; i < enemiesCollider.Length; i++)
+                {
+                    Vector3 moveDirection = enemiesCollider[i].transform.position - this.transform.position;
+
+                    enemiesCollider[i].GetComponent<ShockwaveHit>().haveIBeenHit = true;
+
+                    enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = moveDirection.normalized * Time.deltaTime * pushbackIntensity;
+                    //enemiesCollider[i].GetComponent<Rigidbody2D>().AddForce(moveDirection.normalized * Time.deltaTime * pushbackIntensity);
+                    Debug.Log("Hit");
+                }
+            }
             else
+            {
+                //si rien n'est check
+                Debug.Log("Not hit");
+            }
+            //lorsque la durée de la shockwave est finie, reset les varibles utilisées
+            if (shockWaveDuration <= 0)
             {
                 shockWaveDuration = shockWaveDurationMax;
                 _playerEntityScript.SetUltiBoolFalse();
