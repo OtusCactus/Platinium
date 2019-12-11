@@ -7932,7 +7932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &262543691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22532,7 +22532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &775810062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45043,7 +45043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1423371600
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46742,6 +46742,7 @@ MonoBehaviour:
   wallBouncyFriction: 5
   ejectionPower: 50
   shaderAppearanceTime: 5
+  stringTest: 
   wallNormalAppearance:
   - {fileID: -7768408576438331914, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
@@ -60687,7 +60688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2067946292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63511,8 +63512,7 @@ PrefabInstance:
         type: 3}
       propertyPath: faceTab.Array.data[9].arenaWall
       value: 
-      objectReference: {fileID: 6549582581874060623, guid: 2f4a3c9a5a3d7d64ebe8f2285d9063b0,
-        type: 3}
+      objectReference: {fileID: 160008872}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[9].playerStartingPosition.Array.data[0]
