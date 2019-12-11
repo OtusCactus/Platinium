@@ -20,23 +20,32 @@ public class MenuPlayerManager : MonoBehaviour
     public InMenuPlayer playerEntity;
     public GetMenuInformation getMenuInfoScript;
 
+    [Header("Options")]
+    public GameObject optionsPanel;
+    public Slider musicSlider;
+    private bool _isOnOptions = false;
+
+    [Header("Play")]
     public GameObject playerSelection;
+    public Slider numberPlayers;
     public string sceneName;
-
     private bool _isStartGameShowing;
-
     public GameObject selecPanel;
+    public Slider playerNumberSlider;
+
+    [Header("Players 3 & 4")]
     public GameObject[] twoOtherPlayerNumber;
     public GameObject[] twoOtherPlayerName;
     public GameObject[] twoOtherPlayerFace;
     public GameObject[] twoOtherPlayerMode;
+
+    [Header ("Char Select Buttons")]
     public Image[] readyButton;
     public Image[] readyButtonConfirm;
     public Sprite readySprite;
     public Sprite originalSprite;
     public Sprite outSprite;
     private bool _isCharSelecShowing = false;
-    public Slider playerNumberSlider;
 
     private float timerPOne = 0;
     private float timerPTwo = 0;
@@ -76,6 +85,7 @@ public class MenuPlayerManager : MonoBehaviour
     {
         playerSelection.SetActive(false);
         selecPanel.SetActive(false);
+        optionsPanel.SetActive(false);
         _player = ReInput.players.GetPlayer("Player1");
     }
 
@@ -103,6 +113,10 @@ public class MenuPlayerManager : MonoBehaviour
         else if (playerEntity.currentFace == 1 && _player.GetButton("Push1"))
         {
             ExitGame();
+        }
+        else if (playerEntity.currentFace == 2 && _player.GetButton("Push1"))
+        {
+            Options();
         }
 
         if (_isStartGameShowing && _player.GetButtonDown("BackMenu"))
@@ -190,8 +204,17 @@ public class MenuPlayerManager : MonoBehaviour
                 mouvementImage[3].sprite = defaultMouvement;
             }
         }
+        if (_isOnOptions && _player.GetButtonDown("BackMenu"))
+        {
+            playerEntity.enabled = true;
+            optionsPanel.SetActive(false);
+            _isOnOptions = false;
 
-        if(!_isPOneReady)    
+        }
+
+
+        #region Check if everyone ready
+        if (!_isPOneReady)    
         readyButtonConfirm[0].fillAmount = timerPOne;
         if(!_isPTwoReady)    
         readyButtonConfirm[1].fillAmount = timerPTwo;
@@ -199,10 +222,10 @@ public class MenuPlayerManager : MonoBehaviour
         readyButtonConfirm[2].fillAmount = timerPThree;
         if(!_isPFourReady)    
         readyButtonConfirm[3].fillAmount = timerPFour;
+        #endregion
 
 
-
-
+        #region How to tell if ready
         if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
         {
             selecPanel.SetActive(false);
@@ -305,7 +328,9 @@ public class MenuPlayerManager : MonoBehaviour
         {
             readyButton[3].sprite = originalSprite;
         }
+        #endregion
 
+        #region Start game when all ready
         if ( playerNumberSlider.value == 2)
         {
             readyButton[2].sprite = outSprite;
@@ -354,7 +379,7 @@ public class MenuPlayerManager : MonoBehaviour
                 StartGame();
             }
         }
-
+        #endregion
     }
     public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
     {
@@ -386,12 +411,20 @@ public class MenuPlayerManager : MonoBehaviour
         playerSelection.SetActive(true);
         playerEntity.enabled = false;
         _isStartGameShowing = true;
-
+        numberPlayers.Select();
     }
 
     void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void Options()
+    {
+        optionsPanel.SetActive(true);
+        playerEntity.enabled = false;
+        _isOnOptions = true;
+        musicSlider.Select();
     }
 
 }

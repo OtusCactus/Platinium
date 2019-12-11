@@ -7,6 +7,8 @@ public class GetMenuInformation : MonoBehaviour
 {
     //Grégoire à fait ce script
     public int numbersOfPlayers;
+    public float musicVolume;
+    public float sfxVolume;
     private bool[] playerMouvementMode;
 
     private void Awake()
@@ -43,6 +45,16 @@ public class GetMenuInformation : MonoBehaviour
     public bool[] getPlayerMouvementMode()
     {
         return playerMouvementMode;
+    }
+
+    public void GetMusicVolume(float sliderValue)
+    {
+        musicVolume = sliderValue;
+    }
+
+    public void GetSFXVolume(float sliderValue)
+    {
+        sfxVolume = sliderValue;
     }
 
 }
