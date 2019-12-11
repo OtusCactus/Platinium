@@ -84,7 +84,7 @@ public class AttackTest : MonoBehaviour
                 break;
         }
 
-
+        _playerEntityScript.PlayerScoreImageSet(_playerScoreImage);
     }
 
 

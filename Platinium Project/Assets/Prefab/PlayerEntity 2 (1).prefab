@@ -1339,6 +1339,10 @@ MonoBehaviour:
   - {fileID: 4114145966680095543}
   trailDuration: 2
   trailApparitionTreshold: 0.8
+  _playerScoreImageSprites:
+  - {fileID: 21300000, guid: fc380faef506aec43b394133194253be, type: 3}
+  - {fileID: 21300000, guid: f3d251f18de501949bde4a99b9a99225, type: 3}
+  - {fileID: 21300000, guid: 323a6133cc8de2040916b5de206eb0a7, type: 3}
 --- !u!50 &8562993523499844406
 Rigidbody2D:
   serializedVersion: 4
