@@ -15,6 +15,7 @@ public class CloudSpawner : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float WaveWait;
+    public float timeToDestroy = 2;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class CloudSpawner : MonoBehaviour
                 Image instatiated = Instantiate(cloud[Random.Range(0, cloud.Length)]);
                 instatiated.transform.SetParent(backgroundCanvas.transform, false);
                 instatiated.rectTransform.anchoredPosition = new Vector2 (Random.Range(minX, maxX), Random.Range(minY, maxY));
+                Destroy(instatiated, timeToDestroy);
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(WaveWait);
