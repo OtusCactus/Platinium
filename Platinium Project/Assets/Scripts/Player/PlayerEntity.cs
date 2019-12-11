@@ -252,13 +252,14 @@ public class PlayerEntity : MonoBehaviour
                 _myRb.velocity = Vector2.zero;
             }
             _timerPower += Time.fixedDeltaTime;
+            if (_timerPower >= (powerMax + tooMuchPowerTimerMax) * 0.33f)
+                sweatParticles.SetActive(true);
 
             //check si ça fait pas de probs plus tard
             if (_timerPower >= powerMax)
             {
                 _timerPower = powerMax;
                 tooMuchPowerTimer += Time.fixedDeltaTime;
-                sweatParticles.SetActive(true);
                 if (tooMuchPowerTimer > tooMuchPowerTimerMax)
                 {
                     tooMuchPowerTimer = 0;
