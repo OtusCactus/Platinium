@@ -1255,6 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  velocityClamp: 200
   _controllerNumber: 0
   powerMax: 2
   powerJauge: {fileID: 9112317935158234196}
@@ -1335,7 +1336,7 @@ MonoBehaviour:
   EnemyMask:
     serializedVersion: 2
     m_Bits: 3584
-  pushbackIntensity: 600
+  pushbackIntensity: 200
   playerOutAnim: {fileID: 1281600635}
 --- !u!114 &9112317936584710445
 MonoBehaviour:
@@ -1351,7 +1352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   haveIBeenHit: 0
   mouvementPlayerDisabledTimeMax: 2
-  reactivatingScriptVelocity: 0.5
 --- !u!96 &9112317936107038790
 TrailRenderer:
   serializedVersion: 2

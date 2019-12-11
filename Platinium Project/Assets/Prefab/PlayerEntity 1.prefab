@@ -1282,17 +1282,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  velocityClamp: 200
   _controllerNumber: 0
   powerMax: 2
   powerJauge: {fileID: 7052115118238563656}
   powerJaugeParent: {fileID: 7052115118971709319}
-  tooMuchPowerTimerMax: 2
+  tooMuchPowerTimerMax: 0.3
   sweatParticles: {fileID: 203003403620230869}
   friction: 0.5
   frictionWhenCharging: 5
   frictionPlayer: 15
-  reboundPourcentageOfSpeedIfImFaster: 25
-  reboundPourcentageOfSpeedIfImSlower: 75
+  reboundPourcentageOfSpeedIfImFaster: 50
+  reboundPourcentageOfSpeedIfImSlower: 90
   _playerAudio:
   - {fileID: 0}
   - {fileID: 0}
@@ -1354,7 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shockWavePosition: {fileID: 7490527114208888383}
-  shockWaveRadius: 0.31
+  shockWaveRadius: 1
   shockWaveCooldownMax: 2
   shockWaveDurationMax: 0.5
   isShockWavePossible: 0
@@ -1378,7 +1379,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   haveIBeenHit: 0
   mouvementPlayerDisabledTimeMax: 2
-  reactivatingScriptVelocity: 0.5
 --- !u!96 &7052115118382307674
 TrailRenderer:
   serializedVersion: 2
