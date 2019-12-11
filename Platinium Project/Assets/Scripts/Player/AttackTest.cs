@@ -45,6 +45,7 @@ public class AttackTest : MonoBehaviour
     private bool _hasSoundPlayed = false;
 
     private Image _playerScoreImage;
+    private GetMenuInformation _menuInformationScript;
 
 
 
@@ -60,6 +61,11 @@ public class AttackTest : MonoBehaviour
         _shockWaveHitScript = GetComponent<ShockwaveHit>();
         cameraMain = Camera.main;
         _newSoundManagerScript = NewSoundManager.instance;
+        if (GameObject.FindWithTag("MenuManager") != null)
+        {
+
+            _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
+        }
 
         string thisTag = gameObject.tag;
         switch (thisTag)
@@ -128,28 +134,31 @@ public class AttackTest : MonoBehaviour
         {
             shockWaveDuration -= Time.deltaTime;
                 _playerEntityScript.resetUltiCurrentCharge();
-
-            if (shockWaveDuration > 0)
+            if (_menuInformationScript == null || _menuInformationScript.GetVibrationsValue())
             {
+                if (shockWaveDuration > 0)
+                {
 
-                if (gameObject.tag == "Player1")
-                {
-                    _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, shockWaveDurationMax);
-                }
-                else if (gameObject.tag == "Player2")
-                {
-                    _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, shockWaveDurationMax);
-                }
-                else if (gameObject.tag == "Player3")
-                {
-                    _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, shockWaveDurationMax);
+                    if (gameObject.tag == "Player1")
+                    {
+                        _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, shockWaveDurationMax);
+                    }
+                    else if (gameObject.tag == "Player2")
+                    {
+                        _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, shockWaveDurationMax);
+                    }
+                    else if (gameObject.tag == "Player3")
+                    {
+                        _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, shockWaveDurationMax);
 
-                }
-                else if (gameObject.tag == "Player4")
-                {
-                    _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, shockWaveDurationMax);
+                    }
+                    else if (gameObject.tag == "Player4")
+                    {
+                        _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, shockWaveDurationMax);
 
+                    }
                 }
+                
                 shockWaveSprite.SetActive(true);
                 //set un cercle qui check les colliders dedans, si il y a un joueur, il le rajoute dans un tableau et permet d'accéder à l'objet qui contient le collider
                 Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);

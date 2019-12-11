@@ -39348,7 +39348,7 @@ MonoBehaviour:
   spawnWait: 3
   startWait: 0
   WaveWait: 55
-  timeToDestroy: 2
+  timeToDestroy: 120
 --- !u!1001 &1368992253
 PrefabInstance:
   m_ObjectHideFlags: 0
