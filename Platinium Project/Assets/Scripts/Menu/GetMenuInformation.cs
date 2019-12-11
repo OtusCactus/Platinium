@@ -7,9 +7,9 @@ public class GetMenuInformation : MonoBehaviour
 {
     //Grégoire à fait ce script
     public int numbersOfPlayers;
-    public float musicVolume;
-    public float sfxVolume;
-    public bool vibrationBool;
+    public float musicVolume = 1;
+    public float sfxVolume = 1;
+    public bool vibrationBool = true;
     private bool[] playerMouvementMode;
 
     private void Awake()
