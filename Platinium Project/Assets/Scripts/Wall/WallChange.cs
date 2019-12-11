@@ -184,8 +184,6 @@ public class WallChange : MonoBehaviour
                 _attackTestOnCollision = null;
             }
 
-            Debug.Log(lerpTimerRatio);
-
         }
 
        
