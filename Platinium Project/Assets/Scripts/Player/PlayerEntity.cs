@@ -119,6 +119,7 @@ public class PlayerEntity : MonoBehaviour
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
+    private bool _isInputDisabled;
 
     private bool _touchedByPlayer = false;
 
@@ -202,24 +203,27 @@ public class PlayerEntity : MonoBehaviour
 
         //Dicte quand on passe d'un enum à l'autre
         #region Change Enum
-        if (_input != Vector2.zero)
+        if(!_isInputDisabled)
         {
-            _playerInput = INPUTSTATE.GivingInput;
+            if (_input != Vector2.zero)
+            {
+                _playerInput = INPUTSTATE.GivingInput;
 
-            _timerDeadPoint = 0;
-            inputXSign = _inputVariableToStoreDirection.x;
-            inputYSign = _inputVariableToStoreDirection.y;
-        }
-        else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
-        {
+                _timerDeadPoint = 0;
+                inputXSign = _inputVariableToStoreDirection.x;
+                inputYSign = _inputVariableToStoreDirection.y;
+            }
+            else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
+            {
 
-            _playerInput = INPUTSTATE.Released;
+                _playerInput = INPUTSTATE.Released;
 
-        }
-        else if((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
-        {
+            }
+            else if ((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
+            {
 
-            _playerInput = INPUTSTATE.Released;
+                _playerInput = INPUTSTATE.Released;
+            }
         }
         #endregion
 
@@ -669,6 +673,9 @@ public class PlayerEntity : MonoBehaviour
         _ultiCurrentCharge = 0;
     }
 
-
+    public void IsInputDisabled(bool isOn)
+    {
+        _isInputDisabled = isOn;
+    }
 
 }

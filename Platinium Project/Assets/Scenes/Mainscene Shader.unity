@@ -6202,6 +6202,11 @@ PrefabInstance:
       propertyPath: shockWaveRadius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186135, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: reactivatingScriptVelocity
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
@@ -57052,6 +57057,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9112317936584710446, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: pushbackIntensity
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
 --- !u!1 &1886410724 stripped
@@ -64032,6 +64042,11 @@ PrefabInstance:
       propertyPath: arena
       value: 
       objectReference: {fileID: 5509694377808773627}
+    - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: allScores.Array.size
       value: 0
