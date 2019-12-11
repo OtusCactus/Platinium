@@ -9,13 +9,14 @@ public class GetMenuInformation : MonoBehaviour
     public int numbersOfPlayers;
     public float musicVolume = 1;
     public float sfxVolume = 1;
-    public bool vibrationBool = true;
+    public bool vibrationBool;
     private bool[] playerMouvementMode;
 
     private void Awake()
     {
         //permet de garder cet objet lors de la transition du menu à la scène de jeu
         DontDestroyOnLoad(this.gameObject);
+        vibrationBool = true;
         
     }
 
@@ -30,6 +31,7 @@ public class GetMenuInformation : MonoBehaviour
     void Update()
     {
         Debug.Log(playerMouvementMode[0]);
+        print("vibration" + vibrationBool);
     }
 
     //permet de changer le nombre de joeuur qui seront présent dans la scène de jeu
@@ -68,7 +70,7 @@ public class GetMenuInformation : MonoBehaviour
 
     public void SetVibrationsValue(bool toggleValue)
     {
-        vibrationBool = toggleValue;
+        vibrationBool = !vibrationBool;
     }
     public bool GetVibrationsValue()
     {
