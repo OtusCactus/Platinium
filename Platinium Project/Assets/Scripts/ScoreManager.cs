@@ -16,6 +16,9 @@ public class ScoreManager : MonoBehaviour
     public Image[] playersClassement;
     public Sprite[] playersSprite;
     private int _todaysWinner = 0;
+    private int _todaysSecond = 0;
+    private int _todaysThird = 0;
+    private int _todaysLooser = 0;
 
     public GameObject restartMenu;
 
@@ -51,16 +54,19 @@ public class ScoreManager : MonoBehaviour
                 print("score +0");
                 print(player - 1);
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _todaysLooser = player - 1;
                 break;
             case 3:
                 print("score +1");
                 _playerScore[player - 1] += 1;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _todaysThird = player -1;
                 break;
             case 2:
                 print("score +2");
                 _playerScore[player - 1] += 2;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _todaysSecond = player -1;
                 break;
             case 1:
                 print("score +3");
@@ -122,8 +128,8 @@ public class ScoreManager : MonoBehaviour
         int third = 0;
         int fourth = 0;
         int score = 0;
-        int scoreTw = 0;
-        int scoreTh = 0;
+        int scoreS = 0;
+        int scoreT = 0;
         int scoreF = 0;
         for (int x = 0; x < _playerScore.Length; x++)
         {
@@ -131,49 +137,59 @@ public class ScoreManager : MonoBehaviour
             {
                 if (nbrPlayers == 4)
                 {
-                    scoreF = scoreTh;
+                    scoreF = scoreT;
                     fourth = third;
                 }
                 if (nbrPlayers >= 3)
                 {
-                    scoreTh = scoreTw;
+                    scoreT = scoreS;
                     third = second;
                 }
-                scoreTw = score;
+                scoreS = score;
                 second = first;
                 score = _playerScore[x];
                 first = x;
             }
-            else if (_playerScore[x] > scoreTw)
+            else if (_playerScore[x] > scoreS)
             {
                 if (nbrPlayers == 4)
                 {
-                    scoreF = scoreTh;
+                    scoreF = scoreT;
                     fourth = third;
                 }
                 if (nbrPlayers >= 3)
                 {
-                    scoreTh = scoreTw;
+                    scoreT = scoreS;
                     third = second;
                 }
-                scoreTw = _playerScore[x];
+                scoreS = _playerScore[x];
                 second = x;
             }
-            else if (_playerScore[x] >= scoreTh)
+            else if (_playerScore[x] >= scoreT)
             {
                 if (nbrPlayers == 4)
                 {
-                    scoreF = scoreTh;
+                    scoreF = scoreT;
                     fourth = third;
                 }
-                scoreTh = _playerScore[x];
+                scoreT = _playerScore[x];
                 third = x;
             }
         }
-        if (scoreF == scoreToWin && first != _todaysWinner)
+        if (scoreF == scoreS && first != _todaysWinner)
         {
             second = first;
             first = _todaysWinner;
+        }
+        if (scoreS == scoreT && second != _todaysSecond)
+        {
+            third = second;
+            second = _todaysSecond;
+        }
+        if (scoreT == scoreF && third != _todaysThird)
+        {
+            fourth = third;
+            third = _todaysThird;
         }
         int[] results;
         if (nbrPlayers == 2)

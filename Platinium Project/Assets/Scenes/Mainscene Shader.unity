@@ -64030,7 +64030,7 @@ PrefabInstance:
       objectReference: {fileID: 712074890}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: scoreToWin
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: nbrPlayers
