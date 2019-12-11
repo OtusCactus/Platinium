@@ -105,6 +105,8 @@ public class PlayerEntity : MonoBehaviour
     //score
     private ScoreManager _scoreManagerScript;
     private NewSoundManager _newSoundManagerScript;
+    private Image _playerScoreImage;
+    public Sprite[] _playerScoreImageSprites;
 
     private AudioSource _childAudioSource;
 
@@ -235,6 +237,8 @@ public class PlayerEntity : MonoBehaviour
             _animator.SetBool("IsSlingshoting", true);
             _animator.SetBool("isHit", false);
             _animator.SetBool("isHitting", false);
+            _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
 
@@ -294,6 +298,8 @@ public class PlayerEntity : MonoBehaviour
                         _playerManagerScript.player[3].StopVibration();
                     }
                     _animator.SetBool("IsSlingshoting", false);
+                    _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
                     //_soundManagerScript.NoSound();
                     _playerInput = INPUTSTATE.None;
                 }
@@ -313,6 +319,8 @@ public class PlayerEntity : MonoBehaviour
 
             sweatParticles.SetActive(false);
             _animator.SetBool("IsSlingshoting", false);
+            _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
             powerJaugeParent.gameObject.SetActive(false);
             _myRb.velocity = new Vector2 (inputXSign, -inputYSign).normalized * (-_timerPower * speed);
 
@@ -408,6 +416,8 @@ public class PlayerEntity : MonoBehaviour
                 onomatopéeTimer = 0;
                 _animator.SetBool("isHit", false);
                 _animator.SetBool("isHitting", false);
+                _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
                 onomatopéesSprite.enabled = false;
             }
         }
@@ -533,6 +543,7 @@ public class PlayerEntity : MonoBehaviour
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
                 _animator.SetBool("isHitting", true);
+                _playerScoreImage.sprite = _playerScoreImageSprites[0];
                 _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
 
                 if ( _ultiCurrentCharge > ultiChargeMax/3 && _ultiCurrentCharge <ultiChargeMax * 0.66f)
@@ -574,6 +585,7 @@ public class PlayerEntity : MonoBehaviour
             {
                 _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
                 _animator.SetBool("isHit", true);
+                _playerScoreImage.sprite = _playerScoreImageSprites[1];
 
                 if (_lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
                 {
@@ -594,6 +606,8 @@ public class PlayerEntity : MonoBehaviour
     {
         GetComponent<AttackTest>().SetHasPositionFalse();
         _animator.SetBool("IsSlingshoting", false);
+        _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
         _ultiCurrentCharge = 0;
         UltiFxStates[0].SetActive(false);
         UltiFxStates[1].SetActive(false);
@@ -682,6 +696,11 @@ public class PlayerEntity : MonoBehaviour
     public void IsInputDisabled(bool isOn)
     {
         _isInputDisabled = isOn;
+    }
+
+    public void PlayerScoreImageSet(Image imageToTransfer)
+    {
+        _playerScoreImage = imageToTransfer;
     }
 
 }
