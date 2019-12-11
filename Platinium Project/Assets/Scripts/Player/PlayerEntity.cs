@@ -309,7 +309,6 @@ public class PlayerEntity : MonoBehaviour
             sweatParticles.SetActive(false);
             _animator.SetBool("IsSlingshoting", false);
             powerJaugeParent.gameObject.SetActive(false);
-            //_myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
             _myRb.velocity = new Vector2 (inputXSign, -inputYSign).normalized * (-_timerPower * speed);
 
             _inputVariableToStoreDirection = Vector2.zero;
@@ -368,6 +367,7 @@ public class PlayerEntity : MonoBehaviour
         _lastFrameVelocity = _myRb.velocity;
         if(_myRb.velocity.sqrMagnitude > velocityClamp)
         {
+            print("imndsk");
             float factor = _myRb.velocity.sqrMagnitude / velocityClamp;
             _myRb.velocity -= _myRb.velocity.normalized * factor;
         }
