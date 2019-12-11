@@ -67,7 +67,8 @@ public class InMenuPlayer : MonoBehaviour
     private bool _mustPlayCastSound = false;
     private AudioSource _audioSource;
 
-
+    private GetMenuInformation _menuInformationScript;
+    private NewSoundManager _newSoundManagerScript;
 
     //particules
     private GameObject _particuleContact;
@@ -89,13 +90,19 @@ public class InMenuPlayer : MonoBehaviour
         _trailRenderer = GetComponent<TrailRenderer>();
         _myRb = GetComponent<Rigidbody2D>();
         _particuleContact = this.transform.GetChild(1).gameObject;
-
+        _newSoundManagerScript = NewSoundManager.instance;
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.FindWithTag("MenuManager") != null)
+        {
+
+            _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
+        }
+
         currentFace = 0;
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
@@ -234,29 +241,31 @@ public class InMenuPlayer : MonoBehaviour
     {
         if (_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-            _soundManagerScript.PlaySound(_audioSource, _soundManagerScript.playerCast);
+            _newSoundManagerScript.PlayCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
-            _soundManagerScript.NoSound(_audioSource);
+            _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
             _mustPlayCastSound = true;
         }
 
-
-        if (powerJauge.fillAmount > vibrationTreshold)
+        if (_menuInformationScript == null || _menuInformationScript.GetVibrationsValue())
         {
-            if (gameObject.tag == "Player1")
+            if (powerJauge.fillAmount > vibrationTreshold)
             {
-               _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, vibrationTreshold * 0.5f);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                vibrationTreshold += 0.2f;
             }
-            vibrationTreshold += 0.2f;
-        }
-        else if (powerJauge.fillAmount == vibrationTreshold)
-        {
-            if (gameObject.tag == "Player1")
+            else if (powerJauge.fillAmount == vibrationTreshold)
             {
-                _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, tooMuchPowerTimerMax);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, tooMuchPowerTimerMax);
+                }
             }
         }
 

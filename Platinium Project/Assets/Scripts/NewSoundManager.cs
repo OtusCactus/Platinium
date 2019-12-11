@@ -42,6 +42,12 @@ public class NewSoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (_menuInformationScript != null)
         {
             for (int i = 0; i < _myAudios.Length; i++)
@@ -50,12 +56,6 @@ public class NewSoundManager : MonoBehaviour
             }
             music.volume = _menuInformationScript.GetMusicVolume();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public int AudioLength()

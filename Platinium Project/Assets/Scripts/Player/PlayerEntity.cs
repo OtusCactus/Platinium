@@ -371,7 +371,6 @@ public class PlayerEntity : MonoBehaviour
         _lastFrameVelocity = _myRb.velocity;
         if(_myRb.velocity.sqrMagnitude > velocityClamp)
         {
-            print("imndsk");
             float factor = _myRb.velocity.sqrMagnitude / velocityClamp;
             _myRb.velocity -= _myRb.velocity.normalized * factor;
         }
