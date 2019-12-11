@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Rewired;
 
 public class AttackTest : MonoBehaviour
@@ -43,6 +44,11 @@ public class AttackTest : MonoBehaviour
     private new NewSoundManager _newSoundManagerScript;
     private bool _hasSoundPlayed = false;
 
+    private Image _playerScoreImage;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +60,25 @@ public class AttackTest : MonoBehaviour
         _shockWaveHitScript = GetComponent<ShockwaveHit>();
         cameraMain = Camera.main;
         _newSoundManagerScript = NewSoundManager.instance;
+
+        string thisTag = gameObject.tag;
+        switch (thisTag)
+        {
+            case "Player1":
+                _playerScoreImage = GameObject.FindWithTag("PlayerOneImage").GetComponent<Image>();
+                break;
+            case "Player2":
+                _playerScoreImage = GameObject.FindWithTag("PlayerTwoImage").GetComponent<Image>();
+                break;
+            case "Player3":
+                _playerScoreImage = GameObject.FindWithTag("PlayerThreeImage").GetComponent<Image>();
+                break;
+            case "Player4":
+                _playerScoreImage = GameObject.FindWithTag("PlayerFourImage").GetComponent<Image>();
+                break;
+        }
+
+
     }
 
 
@@ -187,5 +212,10 @@ public class AttackTest : MonoBehaviour
     public void SetHasPositionFalse()
     {
         _hasRoundEnded = false;
+    }
+
+    public Image GetPlayerScoreImage()
+    {
+        return _playerScoreImage;
     }
 }

@@ -657,4 +657,6 @@ public class PlayerEntity : MonoBehaviour
         _ultiCurrentCharge = 0;
     }
 
+
+
 }

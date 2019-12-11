@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> playerList;
     public GameObject[] playerPrefabs;
     private PlayerEntity[] playersEntityScripts;
+    private AttackTest[] attackTestScripts;
     private List<GameObject> currentPlayersList = new List<GameObject>();
     private bool[] menuInfoMouvementBool;
 
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour
         }
 
         playersEntityScripts = new PlayerEntity[playerList.Count];
+        attackTestScripts = new AttackTest[playerList.Count];
 
         currentPlayersOnArena = playerList.Count;
 
@@ -129,6 +131,7 @@ public class GameManager : MonoBehaviour
             playerList[i].transform.position = _faceClassScript.faceTab[0].playerStartingPosition[i].position;
             playerList[i].SetActive(true);
             playersEntityScripts[i] = playerList[i].GetComponent<PlayerEntity>();
+            attackTestScripts[i] = playerList[i].GetComponent<AttackTest>();
         }
 
         _currentSlowMotion = _isSlowMotion;
@@ -252,8 +255,8 @@ public class GameManager : MonoBehaviour
 
     private void PlayerLerp(int playerNumber, float timerRatio)
     {
+        attackTestScripts[playerNumber].GetPlayerScoreImage().color = Color32.Lerp(attackTestScripts[playerNumber].GetPlayerScoreImage().color, new Color32(255, 255, 255, 255), timerRatio);
         playerList[playerNumber].transform.position = Vector3.Lerp(playerList[playerNumber].transform.position, _faceClassScript.faceTab[currentFace].playerStartingPosition[playerNumber].position, timerRatio);
-
         if(timerRatio >= 1)
         {
             print("reached");
@@ -274,6 +277,8 @@ public class GameManager : MonoBehaviour
         {
             colliders.enabled = true;
         }
+
+
     }
 
     public void ThisPlayerHasLost(string player)
