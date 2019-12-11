@@ -12,6 +12,7 @@ public class PlayerEntity : MonoBehaviour
     //
     [Header("Speed")]
     public float speed;
+    public float velocityClamp = 200;
 
     //
     private Rigidbody2D _myRb;
@@ -92,6 +93,7 @@ public class PlayerEntity : MonoBehaviour
     private float _ultiCurrentCharge;
     private bool _isUltiPossible;
     public GameObject[] UltiFxStates;
+
     [Header("Trail")]
     public float trailDuration = 2;
     public float trailApparitionTreshold = 0.8f;
@@ -368,7 +370,11 @@ public class PlayerEntity : MonoBehaviour
         }
 
         _lastFrameVelocity = _myRb.velocity;
-
+        if(_myRb.velocity.sqrMagnitude > velocityClamp)
+        {
+            float factor = _myRb.velocity.sqrMagnitude / velocityClamp;
+            _myRb.velocity -= _myRb.velocity.normalized * factor;
+        }
     }
 
 
