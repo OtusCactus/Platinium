@@ -63895,7 +63895,7 @@ PrefabInstance:
         type: 3}
       propertyPath: faceTab.Array.data[5].levelDesign
       value: 
-      objectReference: {fileID: 6431894524924802897, guid: 0994def5b4f42c043a6d97c039c293f4,
+      objectReference: {fileID: 7660712647267114923, guid: 0994def5b4f42c043a6d97c039c293f4,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
@@ -63924,7 +63924,7 @@ PrefabInstance:
         type: 3}
       propertyPath: faceTab.Array.data[1].levelDesign
       value: 
-      objectReference: {fileID: 6804565456428573996, guid: 71370efdcc87fd54fbbcd37e8f66e1f9,
+      objectReference: {fileID: 5482982550808325107, guid: 71370efdcc87fd54fbbcd37e8f66e1f9,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
