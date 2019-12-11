@@ -6177,6 +6177,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
+        type: 3}
+      propertyPath: velocityClamp
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
@@ -21521,6 +21526,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
+        type: 3}
+      propertyPath: velocityClamp
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
 --- !u!1 &714532300 stripped
@@ -32905,6 +32915,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
+        type: 3}
+      propertyPath: velocityClamp
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
@@ -46168,7 +46183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1504079763
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56970,6 +56985,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112317936584710432, guid: 24aac449f2ff63540be24e3e62f05f1b,
+        type: 3}
+      propertyPath: velocityClamp
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24aac449f2ff63540be24e3e62f05f1b, type: 3}
