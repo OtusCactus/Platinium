@@ -551,6 +551,7 @@ public class PlayerEntity : MonoBehaviour
             }
             else
             {
+                _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
                 _animator.SetBool("isHit", true);
 
                 if (_lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)

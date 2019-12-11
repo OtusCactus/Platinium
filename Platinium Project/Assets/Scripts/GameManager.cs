@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] wallHitObj;
 
+    //debug
+    public bool debug;
+
     private void Awake()
     {
         _scoreManagerScript = GetComponent<ScoreManager>();
@@ -239,6 +242,17 @@ public class GameManager : MonoBehaviour
 
         }
 
+    }
+
+    //debug
+    private void OnGUI()
+    {
+        if (debug)
+        {
+            GUI.color = Color.black;
+            GUILayout.Label("PlayersOnArena : " + currentPlayersOnArena);
+            //GUILayout.Label("diceCameraDistance : " + diceCameraDistance);
+        }
     }
 
     //permet de reset et de replacer les joueurs à chaque changement de faces
