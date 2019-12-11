@@ -28,6 +28,8 @@ public class MenuPlayerManager : MonoBehaviour
     public GameObject selecPanel;
     public GameObject[] twoOtherPlayerNumber;
     public GameObject[] twoOtherPlayerName;
+    public GameObject[] twoOtherPlayerFace;
+    public GameObject[] twoOtherPlayerMode;
     public Image[] readyButton;
     public Image[] readyButtonConfirm;
     public Sprite readySprite;
@@ -94,7 +96,7 @@ public class MenuPlayerManager : MonoBehaviour
         //Gère à quel joueur attribué quel action
 
 
-        if (playerEntity.currentFace == 0 && _player.GetButton("Push1"))
+        if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing)
         {
             ShowPlayerSelection();
         }
@@ -109,6 +111,10 @@ public class MenuPlayerManager : MonoBehaviour
             playerSelection.SetActive(false);
             _isStartGameShowing = false;
 
+        }
+        else if(_isStartGameShowing && _player.GetButtonDown("Push1"))
+        {
+            ShowSelectionChar();
         }
         if (_isCharSelecShowing)
         {
@@ -308,6 +314,10 @@ public class MenuPlayerManager : MonoBehaviour
             twoOtherPlayerName[1].SetActive(false);
             twoOtherPlayerNumber[0].SetActive(false);
             twoOtherPlayerNumber[1].SetActive(false);
+            twoOtherPlayerFace[0].SetActive(false);
+            twoOtherPlayerFace[1].SetActive(false);
+            twoOtherPlayerMode[0].SetActive(false);
+            twoOtherPlayerMode[1].SetActive(false);
             if (_isPOneReady && _isPTwoReady)
             {
                 StartGame();
@@ -319,6 +329,10 @@ public class MenuPlayerManager : MonoBehaviour
             twoOtherPlayerName[1].SetActive(false);
             twoOtherPlayerNumber[0].SetActive(true);
             twoOtherPlayerNumber[1].SetActive(false);
+            twoOtherPlayerFace[0].SetActive(true);
+            twoOtherPlayerFace[1].SetActive(false);
+            twoOtherPlayerMode[0].SetActive(true);
+            twoOtherPlayerMode[1].SetActive(false);
             readyButton[3].sprite = outSprite;
             if (_isPOneReady && _isPTwoReady && _isPThreeReady)
             {
@@ -331,6 +345,10 @@ public class MenuPlayerManager : MonoBehaviour
             twoOtherPlayerName[1].SetActive(true);
             twoOtherPlayerNumber[0].SetActive(true);
             twoOtherPlayerNumber[1].SetActive(true);
+            twoOtherPlayerFace[0].SetActive(true);
+            twoOtherPlayerFace[1].SetActive(true);
+            twoOtherPlayerMode[0].SetActive(true);
+            twoOtherPlayerMode[1].SetActive(true);
             if (_isPOneReady && _isPTwoReady && _isPThreeReady && _isPFourReady)
             {
                 StartGame();
@@ -360,6 +378,7 @@ public class MenuPlayerManager : MonoBehaviour
         playerSelection.SetActive(false);
         selecPanel.SetActive(true);
         _isCharSelecShowing = true;
+        _isStartGameShowing = false;
     }
 
     void ShowPlayerSelection()

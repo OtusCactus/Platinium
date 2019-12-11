@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class CloudSpawner : MonoBehaviour
 {
     public Canvas backgroundCanvas;
-    public Image cloud;
-    public RectTransform[] spawnPoints;
-    //public float xValue;
-    //public float minY;
-    //public float maxY;
+    public Image[] cloud;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
     public int cloudCount;
     public float spawnWait;
     public float startWait;
@@ -28,14 +28,10 @@ public class CloudSpawner : MonoBehaviour
         {
             for (int i = 0; i < cloudCount; i++)
             {
-                Image instatiated;
-                //Vector3 spawnPosition = new Vector3(xValue, Random.Range(minY, maxY), 0);
-                Quaternion spawnRotation = Quaternion.identity;
-                instatiated = Instantiate(cloud);
-                //instatiated.rectTransform.anchoredPosition = spawnPosition;
-                //instatiated.rectTransform.anchoredPosition = new Vector2 (xValue, Random.Range(minY, maxY));
-                instatiated.rectTransform.anchoredPosition = spawnPoints[Random.Range(0, spawnPoints.Length)].anchoredPosition;
-                instatiated.transform.SetParent(backgroundCanvas.transform);
+
+                Image instatiated = Instantiate(cloud[Random.Range(0, cloud.Length)]);
+                instatiated.transform.SetParent(backgroundCanvas.transform, false);
+                instatiated.rectTransform.anchoredPosition = new Vector2 (Random.Range(minX, maxX), Random.Range(minY, maxY));
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(WaveWait);
