@@ -42,11 +42,14 @@ public class NewSoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < _myAudios.Length; i++)
+        if (_menuInformationScript != null)
         {
-            _myAudios[i].volume = _menuInformationScript.GetSFXVolume();
+            for (int i = 0; i < _myAudios.Length; i++)
+            {
+                _myAudios[i].volume = _menuInformationScript.GetSFXVolume();
+            }
+            music.volume = _menuInformationScript.GetMusicVolume();
         }
-        music.volume = _menuInformationScript.GetMusicVolume();
     }
 
     // Update is called once per frame

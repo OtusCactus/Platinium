@@ -25,7 +25,7 @@ public class PlayerEntity : MonoBehaviour
     [HideInInspector] public int _controllerNumber;
     private float inputXSign;
     private float inputYSign;
-
+    private GetMenuInformation _menuInformationScript;
 
 
 
@@ -125,6 +125,12 @@ public class PlayerEntity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.FindWithTag("MenuManager") != null)
+        {
+
+            _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
+        }
+
         _myRb = GetComponent<Rigidbody2D>();
 
         powerJauge.fillAmount = 0;
@@ -439,45 +445,50 @@ public class PlayerEntity : MonoBehaviour
         }
 
         //active les différents stades de vibrations
-        if (powerJauge.fillAmount > vibrationTreshold)
+
+        if (_menuInformationScript == null || _menuInformationScript.GetVibrationsValue())
         {
-            if (gameObject.tag == "Player1")
+            if (powerJauge.fillAmount > vibrationTreshold)
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, vibrationTreshold * 0.5f);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                else if (gameObject.tag == "Player2")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                if (gameObject.tag == "Player3")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                else if (gameObject.tag == "Player4")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                vibrationTreshold += 0.2f;
             }
-            else if (gameObject.tag == "Player2")
+            else if (powerJauge.fillAmount == vibrationTreshold)
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, vibrationTreshold * 0.5f);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, tooMuchPowerTimerMax);
+                }
+                else if (gameObject.tag == "Player2")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, tooMuchPowerTimerMax);
+                }
+                if (gameObject.tag == "Player3")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, tooMuchPowerTimerMax);
+                }
+                else if (gameObject.tag == "Player4")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, tooMuchPowerTimerMax);
+                }
             }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, vibrationTreshold * 0.5f);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, vibrationTreshold * 0.5f);
-            }
-            vibrationTreshold += 0.2f;
         }
-        else if (powerJauge.fillAmount == vibrationTreshold)
-        {
-            if (gameObject.tag == "Player1")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
