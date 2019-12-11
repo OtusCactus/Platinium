@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     private int[] _playerScore;
     public Image[] playersClassement;
     public Sprite[] playersSprite;
+    private int _todaysWinner = 0;
 
     public GameObject restartMenu;
 
@@ -65,6 +66,7 @@ public class ScoreManager : MonoBehaviour
                 print("score +3");
                 _playerScore[player - 1] += 3;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _todaysWinner = player - 1;
                 for (int i =0; i < _playerScore.Length; i++)
                 {
                     _CheckScore(i);
@@ -167,6 +169,11 @@ public class ScoreManager : MonoBehaviour
                 scoreTh = _playerScore[x];
                 third = x;
             }
+        }
+        if (scoreF == scoreToWin && first != _todaysWinner)
+        {
+            second = first;
+            first = _todaysWinner;
         }
         int[] results;
         if (nbrPlayers == 2)
