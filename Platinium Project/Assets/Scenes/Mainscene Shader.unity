@@ -6177,31 +6177,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: tooMuchPowerTimerMax
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: reboundPourcentageOfSpeedIfImFaster
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186138, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: reboundPourcentageOfSpeedIfImSlower
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186132, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: pushbackIntensity
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876687248998186132, guid: d6549bb6c1a05804b9ad354ae31792e2,
-        type: 3}
-      propertyPath: shockWaveRadius
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6549bb6c1a05804b9ad354ae31792e2, type: 3}
 --- !u!1 &210208682 stripped
@@ -21546,35 +21521,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: tooMuchPowerTimerMax
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: reboundPourcentageOfSpeedIfImFaster
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171964, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: reboundPourcentageOfSpeedIfImSlower
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171954, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: pushbackIntensity
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052115118994171954, guid: b6859bf735b0cf54f8f4f01bc4ad430c,
-        type: 3}
-      propertyPath: shockWaveRadius
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5986071960789023824, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
-    - {fileID: 7052115118994171907, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
-    - {fileID: 3769222278087055440, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6859bf735b0cf54f8f4f01bc4ad430c, type: 3}
 --- !u!1 &714532300 stripped
 GameObject:
@@ -32959,35 +32906,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: tooMuchPowerTimerMax
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: reboundPourcentageOfSpeedIfImFaster
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844404, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: reboundPourcentageOfSpeedIfImSlower
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844410, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: pushbackIntensity
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562993523499844410, guid: 0cb10717a3c0f1c4a903567e83405ccd,
-        type: 3}
-      propertyPath: shockWaveRadius
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7431688554162633726, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
-    - {fileID: 8562993523499844363, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
-    - {fileID: 2541454997929653080, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb10717a3c0f1c4a903567e83405ccd, type: 3}
 --- !u!1 &1126815082 stripped
 GameObject:
@@ -64032,6 +63951,11 @@ PrefabInstance:
       propertyPath: arena
       value: 
       objectReference: {fileID: 5509694377808773627}
+    - target: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: allScores.Array.size
       value: 0

@@ -11,8 +11,8 @@ public class ShockwaveHit : MonoBehaviour
 
     //Empêche l'autre joueur de se déplacer pendant un certain temps après être hit par la shockwave
     public float mouvementPlayerDisabledTimeMax;
-    //private float mouvementPlayerDisabledTime;
-    public float reactivatingScriptVelocity = 0.2f;
+    private float mouvementPlayerDisabledTime;
+    //public float reactivatingScriptVelocity;
 
     //check si les murs ont été touchés
     private bool _hitWalls;
@@ -25,7 +25,7 @@ public class ShockwaveHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
+        mouvementPlayerDisabledTime = 0;
         _soundManagerScript = SoundManager.instance;
         _playerEntityScript = GetComponent<PlayerEntity>();
     }
@@ -37,14 +37,15 @@ public class ShockwaveHit : MonoBehaviour
         if (haveIBeenHit)
         {
             _playerEntityScript.powerJaugeParent.gameObject.SetActive(false);
-            _playerEntityScript.enabled = false;
-            //mouvementPlayerDisabledTime -= Time.deltaTime;
-            if(_playerEntityScript.GetVelocityRatio() <= reactivatingScriptVelocity || _hitWalls)
+            _playerEntityScript.IsInputDisabled(true);
+
+            mouvementPlayerDisabledTime += Time.deltaTime;
+
+            if (mouvementPlayerDisabledTime >= mouvementPlayerDisabledTimeMax)
             {
-                _playerEntityScript.enabled = true;
+                _playerEntityScript.IsInputDisabled(false);
                 haveIBeenHit = false;
-                //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
-                _hitWalls = false;
+                mouvementPlayerDisabledTime = 0;
             }
         }
     }
