@@ -2193,6 +2193,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73371902}
   m_Mesh: {fileID: -951608786083511892, guid: 8eb255f546e01684994343ad9c36dea8, type: 3}
+--- !u!82 &79161950 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7955549431179610526, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+    type: 3}
+  m_PrefabInstance: {fileID: 791422178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &89297606
 GameObject:
   m_ObjectHideFlags: 0
@@ -23206,6 +23212,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 79161950}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 506d260f3fbac3b40a4f4fd529998ec6, type: 3}
 --- !u!1 &793446145
@@ -46162,7 +46173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1504079763
 AudioSource:
   m_ObjectHideFlags: 0

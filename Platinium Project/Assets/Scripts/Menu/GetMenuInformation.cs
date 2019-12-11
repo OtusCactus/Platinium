@@ -9,6 +9,7 @@ public class GetMenuInformation : MonoBehaviour
     public int numbersOfPlayers;
     public float musicVolume;
     public float sfxVolume;
+    public bool vibrationBool;
     private bool[] playerMouvementMode;
 
     private void Awake()
@@ -47,14 +48,31 @@ public class GetMenuInformation : MonoBehaviour
         return playerMouvementMode;
     }
 
-    public void GetMusicVolume(float sliderValue)
+    public void SetMusicVolume(float sliderValue)
     {
         musicVolume = sliderValue;
     }
+    public float GetMusicVolume()
+    {
+        return musicVolume;
+    }
 
-    public void GetSFXVolume(float sliderValue)
+    public void SetSFXVolume(float sliderValue)
     {
         sfxVolume = sliderValue;
+    }
+    public float GetSFXVolume()
+    {
+        return sfxVolume;
+    }
+
+    public void SetVibrationsValue(bool toggleValue)
+    {
+        vibrationBool = toggleValue;
+    }
+    public bool GetVibrationsValue()
+    {
+        return vibrationBool;
     }
 
 }

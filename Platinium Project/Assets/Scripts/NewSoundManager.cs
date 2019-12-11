@@ -5,6 +5,8 @@ using UnityEngine;
 public class NewSoundManager : MonoBehaviour
 {
     public static NewSoundManager instance = null;
+
+    public AudioSource music;
     
     public AudioClip[] playerChargeSounds;
 
@@ -15,6 +17,7 @@ public class NewSoundManager : MonoBehaviour
     public AudioClip[] animalSounds;
     public AudioClip[] bouncySounds;
 
+    private GetMenuInformation _menuInformationScript;
 
     private void Awake()
     {
@@ -29,13 +32,21 @@ public class NewSoundManager : MonoBehaviour
         {
             _playerCharges[i] = _myAudios[i];
         }
+        if (GameObject.FindWithTag("MenuManager") != null)
+        {
+            _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
+        }
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < _myAudios.Length; i++)
+        {
+            _myAudios[i].volume = _menuInformationScript.GetSFXVolume();
+        }
+        music.volume = _menuInformationScript.GetMusicVolume();
     }
 
     // Update is called once per frame
