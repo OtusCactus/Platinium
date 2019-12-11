@@ -27,13 +27,37 @@ public class CloudSpawner : MonoBehaviour
         yield return new WaitForSeconds(startWait);
         while (true)
         {
+            Image[] clouds = new Image[cloudCount];
+            List<float> cloudsPosY = new List<float>();
+            for (float arg = minY; arg < maxY; arg++)
+            {
+                cloudsPosY.Add(arg);
+            }
             for (int i = 0; i < cloudCount; i++)
             {
-
-                Image instatiated = Instantiate(cloud[Random.Range(0, cloud.Length)]);
-                instatiated.transform.SetParent(backgroundCanvas.transform, false);
-                instatiated.rectTransform.anchoredPosition = new Vector2 (Random.Range(minX, maxX), Random.Range(minY, maxY));
-                Destroy(instatiated, timeToDestroy);
+                Image instantiated = Instantiate(cloud[Random.Range(0, cloud.Length)]);
+                clouds[i] = instantiated;
+                int index = Random.Range(0, cloudsPosY.Count);
+                float posY = cloudsPosY[index];
+                bool iHaveRemoved = false;
+                int howmuchremoved = 0;
+                for (int x = 0; x < cloudsPosY.Count; x++)
+                {
+                    if(iHaveRemoved)
+                    {
+                        x--;
+                        iHaveRemoved = false;
+                    }
+                    if (Mathf.Abs((posY - cloudsPosY[x])) <= 40)
+                    {
+                        cloudsPosY.RemoveAt(x);
+                        iHaveRemoved = true;
+                        howmuchremoved++;
+                    }
+                }
+                instantiated.transform.SetParent(backgroundCanvas.transform, false);
+                instantiated.rectTransform.anchoredPosition = new Vector2(Random.Range(minX, maxX), posY);
+                Destroy(instantiated, timeToDestroy);
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(WaveWait);
