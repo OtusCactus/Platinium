@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private List<GameObject> currentPlayersList = new List<GameObject>();
     private bool[] menuInfoMouvementBool;
 
+    public GameObject[] playerUISprite;
+
     [Header("Arena")]
     public GameObject arena;
     public int currentPlayersOnArena;
@@ -109,13 +111,16 @@ public class GameManager : MonoBehaviour
         {
             wallHitObj[0].SetActive(false);
             wallHitObj[1].SetActive(false);
+            playerUISprite[2].SetActive(false);
+            playerUISprite[3].SetActive(false);
         }
         else if ( playerList.Count == 3)
         {
             wallHitObj[1].SetActive(false);
+            playerUISprite[3].SetActive(false);
         }
 
-        
+
     }
 
     // Start is called before the first frame update
