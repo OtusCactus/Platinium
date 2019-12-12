@@ -38,6 +38,8 @@ public class ShockwaveHit : MonoBehaviour
         {
             _playerEntityScript.powerJaugeParent.gameObject.SetActive(false);
             _playerEntityScript.IsInputDisabled(true);
+            _playerEntityScript.ResetTimerPower();
+            _playerEntityScript.GetPlayerAnimator().SetBool("IsSlingshoting", false);
 
             mouvementPlayerDisabledTime += Time.deltaTime;
 
