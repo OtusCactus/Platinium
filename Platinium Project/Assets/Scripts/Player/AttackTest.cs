@@ -189,7 +189,6 @@ public class AttackTest : MonoBehaviour
                 shockWaveDuration = shockWaveDurationMax;
                 _playerEntityScript.SetUltiBoolFalse();
                 shockWaveSprite.SetActive(false);
-                //isShockWavePossible = false;
                 isShockWaveButtonPressed = false;
             }
         }

@@ -84,7 +84,6 @@ public class WallProprieties : MonoBehaviour
                 _wallManagerScript.ConnectedtWallDammage(player.GetVelocityRatio(), gameObject, _connectedWallProprieties, _connectedWallChange);
                 _thisWallChange.SetShaderNeededTrue();
                 _connectedWallChange.SetShaderNeededTrue();
-                //transform.GetChild(3).GetComponent<MeshRenderer>().material.SetFloat("_Etatdudissolve", 1);
             }
         }
     }

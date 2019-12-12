@@ -12,7 +12,6 @@ public class ShockwaveHit : MonoBehaviour
     //Empêche l'autre joueur de se déplacer pendant un certain temps après être hit par la shockwave
     public float mouvementPlayerDisabledTimeMax;
     private float mouvementPlayerDisabledTime;
-    //public float reactivatingScriptVelocity;
 
     //check si les murs ont été touchés
     private bool _hitWalls;

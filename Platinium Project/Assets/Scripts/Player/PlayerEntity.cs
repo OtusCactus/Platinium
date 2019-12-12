@@ -13,6 +13,12 @@ public class PlayerEntity : MonoBehaviour
     [Header("Speed")]
     public float speed;
     public float velocityClamp = 200;
+    //Variables pour la vitesse
+    private float _myVelocityFloat;
+    private float _velocityMax;
+    private float _velocityConvertedToRatio;
+    private Vector3 _lastFrameVelocity;
+    private float _lastFramePower;
 
     //
     private Rigidbody2D _myRb;
@@ -28,8 +34,7 @@ public class PlayerEntity : MonoBehaviour
     private float inputYSign;
     private GetMenuInformation _menuInformationScript;
 
-
-
+    
     [Header("Power")]
     public float powerMax;
     public Image powerJauge;
@@ -42,13 +47,7 @@ public class PlayerEntity : MonoBehaviour
     private float tooMuchPowerTimer;
     private bool _isTooMuchPowerGathered;
     public GameObject sweatParticles;
-
-    //Variables pour la vitesse
-    private float _myVelocityFloat;
-    private float _velocityMax;
-    private float _velocityConvertedToRatio;
-    private Vector3 _lastFrameVelocity;
-    private float _lastFramePower;
+    
 
     [Header("Frictions")]
     public float friction = 0.1f;
@@ -63,16 +62,10 @@ public class PlayerEntity : MonoBehaviour
     [Header("Animation")]
     private Animator _animator;
 
-    //sound
-    
+    //sound    
     private bool _mustPlayCastSound = false;
     private PlayerManager _playerManagerScript;
-    [SerializeField]
-    [Header("Sound")]
-    private AudioSource[] _playerAudio;
-
-
-
+    
 
     [Header("Onomatopées")]
     public Sprite[] onomatopeesTab;
@@ -106,10 +99,8 @@ public class PlayerEntity : MonoBehaviour
     private NewSoundManager _newSoundManagerScript;
     private Image _playerScoreImage;
     public Sprite[] _playerScoreImageSprites;
-
-    private AudioSource _childAudioSource;
-
-
+    
+    
     //playerScaling on wallhit
     private bool playerScaleHitWall = false;
     private float timerScale = 0;
@@ -131,13 +122,11 @@ public class PlayerEntity : MonoBehaviour
     {
         if (GameObject.FindWithTag("MenuManager") != null)
         {
-
             _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
         }
 
         
         _newSoundManagerScript = NewSoundManager.instance;
-        _playerAudio = GetComponents<AudioSource>();
         _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
 
@@ -673,11 +662,6 @@ public class PlayerEntity : MonoBehaviour
     public void SetUltiBoolFalse()
     {
         _isUltiPossible = false;
-    }
-
-    public AudioSource[] GetAudioSourceTab()
-    {
-        return _playerAudio;
     }
 
     public void resetUltiCurrentCharge()
