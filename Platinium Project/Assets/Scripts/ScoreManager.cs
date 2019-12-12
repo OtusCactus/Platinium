@@ -116,13 +116,31 @@ public class ScoreManager : MonoBehaviour
             restartMenu.SetActive(true);
             Time.timeScale = 0;
         }
-        medals[Classement()[3]].gameObject.SetActive(false);
-        medals[Classement()[2]].sprite = medalsSprites[2];
-        medals[Classement()[2]].gameObject.SetActive(true);
-        medals[Classement()[1]].sprite = medalsSprites[1];
-        medals[Classement()[1]].gameObject.SetActive(true);
-        medals[Classement()[0]].sprite = medalsSprites[0];
-        medals[Classement()[0]].gameObject.SetActive(true);
+        if(nbrPlayers == 4)
+        {
+            medals[Classement()[3]].gameObject.SetActive(false);
+            medals[Classement()[2]].sprite = medalsSprites[2];
+            medals[Classement()[2]].gameObject.SetActive(true);
+            medals[Classement()[1]].sprite = medalsSprites[1];
+            medals[Classement()[1]].gameObject.SetActive(true);
+            medals[Classement()[0]].sprite = medalsSprites[0];
+            medals[Classement()[0]].gameObject.SetActive(true);
+        }
+        else if (nbrPlayers == 3)
+        {
+            medals[Classement()[2]].sprite = medalsSprites[2];
+            medals[Classement()[2]].gameObject.SetActive(true);
+            medals[Classement()[1]].sprite = medalsSprites[1];
+            medals[Classement()[1]].gameObject.SetActive(true);
+            medals[Classement()[0]].sprite = medalsSprites[0];
+            medals[Classement()[0]].gameObject.SetActive(true);
+        }
+        else if (nbrPlayers == 2)
+        {
+            medals[Classement()[1]].gameObject.SetActive(false);
+            medals[Classement()[0]].sprite = medalsSprites[0];
+            medals[Classement()[0]].gameObject.SetActive(true);
+        }
     }
 
     public void UpdateUI()
