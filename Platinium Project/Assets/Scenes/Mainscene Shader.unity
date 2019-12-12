@@ -65423,6 +65423,14 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medals.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medalsSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: allScoresUI.Array.data[0]
       value: 
       objectReference: {fileID: 1798387582}
@@ -65542,6 +65550,41 @@ PrefabInstance:
       propertyPath: podiumThird
       value: 
       objectReference: {fileID: 650739968}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: buttonMenu
+      value: 
+      objectReference: {fileID: 404130022}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medals.Array.data[0]
+      value: 
+      objectReference: {fileID: 1395275287}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medals.Array.data[1]
+      value: 
+      objectReference: {fileID: 1395615280}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medals.Array.data[2]
+      value: 
+      objectReference: {fileID: 1136108863}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medals.Array.data[3]
+      value: 
+      objectReference: {fileID: 1407146168}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medalsSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: de660b48ee15a4d47be8fbee5e7ee948,
+        type: 3}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medalsSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: d3a7d60530014a14da08e1906969216e,
+        type: 3}
+    - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
+      propertyPath: medalsSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b93f063615a63845b5ceb1e99a5a5da,
+        type: 3}
     - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: playerEntity.Array.size
