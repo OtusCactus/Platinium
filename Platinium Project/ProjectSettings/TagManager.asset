@@ -22,6 +22,10 @@ TagManager:
   - PlayerFourImage
   - NuageTrigger
   - Vibrations
+  - PlayerOneCrack
+  - PlayerTwoCrack
+  - PlayerThreeCrack
+  - PlayerFourCrack
   layers:
   - Default
   - TransparentFX

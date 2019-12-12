@@ -47,8 +47,12 @@ public class AttackTest : MonoBehaviour
     private Image _playerScoreImage;
     private GetMenuInformation _menuInformationScript;
 
-
-
+    //crackWave
+    private GameObject _ultiCrack;
+    public float ultiCrackTimerMax;
+    private float ultiCrackTimer;
+    private bool _hasCrackPositionBeenGiven;
+    private Color _crackStartingColor;
 
     // Start is called before the first frame update
     void Start()
@@ -72,19 +76,24 @@ public class AttackTest : MonoBehaviour
         {
             case "Player1":
                 _playerScoreImage = GameObject.FindWithTag("PlayerOneImage").GetComponent<Image>();
+                _ultiCrack = GameObject.FindWithTag("PlayerOneCrack");
                 break;
             case "Player2":
                 _playerScoreImage = GameObject.FindWithTag("PlayerTwoImage").GetComponent<Image>();
+                _ultiCrack = GameObject.FindWithTag("PlayerTwoCrack");
                 break;
             case "Player3":
                 _playerScoreImage = GameObject.FindWithTag("PlayerThreeImage").GetComponent<Image>();
+                _ultiCrack = GameObject.FindWithTag("PlayerThreeCrack");
                 break;
             case "Player4":
                 _playerScoreImage = GameObject.FindWithTag("PlayerFourImage").GetComponent<Image>();
+                _ultiCrack = GameObject.FindWithTag("PlayerFourCrack");
                 break;
         }
-
+        _ultiCrack.SetActive(false);
         _playerEntityScript.PlayerScoreImageSet(_playerScoreImage);
+        _crackStartingColor = _ultiCrack.GetComponent<SpriteRenderer>().color;
     }
 
 
@@ -127,6 +136,25 @@ public class AttackTest : MonoBehaviour
             _hasSoundPlayed = false;
         }
 
+        if (_ultiCrack.activeSelf)
+        {
+            if(!_hasCrackPositionBeenGiven)
+            {
+                _ultiCrack.transform.position = transform.position;
+                _hasCrackPositionBeenGiven = true;
+            }
+            ultiCrackTimer += Time.deltaTime;
+            float ratio = ultiCrackTimer / ultiCrackTimerMax;
+            Debug.Log(ratio + "ratio");
+            _ultiCrack.GetComponent<SpriteRenderer>().color = Color.Lerp(_crackStartingColor, new Color(255, 255, 255, 0), ratio);
+            if (ratio >= 1)
+            {
+                ultiCrackTimer = 0;
+                _ultiCrack.GetComponent<SpriteRenderer>().color = _crackStartingColor;
+                _hasCrackPositionBeenGiven = false;
+                _ultiCrack.SetActive(false);
+            }
+        }
 
 
         //active la shockwave pendant un certain temps
@@ -162,6 +190,7 @@ public class AttackTest : MonoBehaviour
             }
 
             shockWaveSprite.SetActive(true);
+            _ultiCrack.SetActive(true);
             //set un cercle qui check les colliders dedans, si il y a un joueur, il le rajoute dans un tableau et permet d'accéder à l'objet qui contient le collider
             Collider2D[] enemiesCollider = Physics2D.OverlapCircleAll(shockWavePosition.position, shockWaveRadius, EnemyMask);
             if (enemiesCollider.Length > 0)
