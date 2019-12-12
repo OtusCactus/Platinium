@@ -195,7 +195,7 @@ public class MenuPlayerManager : MonoBehaviour
             }
             if (getMenuInfoScript.numbersOfPlayers == 4)
             {
-                if (getMenuInfoScript.getPlayerMouvementMode()[2])
+                if (getMenuInfoScript.getPlayerMouvementMode()[3])
                 {
                     mouvementImageP4[0].sprite = spriteSelecOrNoP4[1];
                     mouvementImageP4[1].sprite = spriteSelecOrNoP4[2];
