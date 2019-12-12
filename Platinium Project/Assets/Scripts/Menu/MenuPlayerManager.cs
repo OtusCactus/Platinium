@@ -259,6 +259,7 @@ public class MenuPlayerManager : MonoBehaviour
                 else if (-inputXPlayer1 < -0.2f)
                 {
                     getMenuInfoScript.SetVibrationsValue(true);
+                    Vibration(_player, 0, 1.0f, 0.1f);
                 }
             }
 
