@@ -72,8 +72,7 @@ public class InMenuPlayer : MonoBehaviour
 
     //particules
     private GameObject _particuleContact;
-
-    private SoundManager _soundManagerScript;
+    
     private MenuPlayerManager _playerManagerScript;
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
@@ -84,7 +83,6 @@ public class InMenuPlayer : MonoBehaviour
 
     private void Awake()
     {
-        _soundManagerScript = SoundManager.instance;
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<MenuPlayerManager>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -159,7 +157,6 @@ public class InMenuPlayer : MonoBehaviour
             powerJaugeParent.gameObject.SetActive(true);
             powerJauge.fillAmount = _timerPower / powerMax;
             _inputVariableToStoreDirection = _input;
-            //_myRb.drag = 3;
             _timerPower += Time.fixedDeltaTime;
 
             //check si ça fait pas de probs plus tard
@@ -171,7 +168,6 @@ public class InMenuPlayer : MonoBehaviour
                 {
                     tooMuchPowerTimer = 0;
                     _isTooMuchPowerGathered = true;
-                    //_myRb.drag = 0;
                     powerJaugeParent.gameObject.SetActive(false);
                     _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
@@ -187,7 +183,6 @@ public class InMenuPlayer : MonoBehaviour
 
                         _playerManagerScript._player.StopVibration();
                     }
-                    //_soundManagerScript.NoSound();
                     _playerInput = INPUTSTATE.None;
                 }
             }
@@ -207,8 +202,6 @@ public class InMenuPlayer : MonoBehaviour
             _lastFramePower = _timerPower;
             _timerPower = 0;
             _timerDeadPoint = 0;
-
-            //_soundManagerScript.NoSound();
             _playerInput = INPUTSTATE.None;
         }
         else if (_playerInput == INPUTSTATE.None)

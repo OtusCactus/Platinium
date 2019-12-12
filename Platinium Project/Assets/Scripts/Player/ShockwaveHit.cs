@@ -18,7 +18,6 @@ public class ShockwaveHit : MonoBehaviour
     private bool _hitWalls;
 
     //garde les components nécéssaires au script
-    private SoundManager _soundManagerScript;
     private PlayerEntity _playerEntityScript;
 
 
@@ -26,7 +25,6 @@ public class ShockwaveHit : MonoBehaviour
     void Start()
     {
         mouvementPlayerDisabledTime = 0;
-        _soundManagerScript = SoundManager.instance;
         _playerEntityScript = GetComponent<PlayerEntity>();
     }
 

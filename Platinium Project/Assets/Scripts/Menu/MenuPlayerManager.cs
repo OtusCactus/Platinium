@@ -157,6 +157,8 @@ public class MenuPlayerManager : MonoBehaviour
                 vibrationOnOff[1].sprite = spritesSelectedOrNot[1];
             }
 
+            //permet de gérer la surbrillance des boutons de sélections du mode de mouvement
+            //selon le booléen du joueur
             #region Affichage Mode Déplacement
             if (getMenuInfoScript.getPlayerMouvementMode()[0])
             {
@@ -297,7 +299,6 @@ public class MenuPlayerManager : MonoBehaviour
                 _hasOptionOrPlayOpened = false;
 
             }
-            //print(EventSystem.current.currentSelectedGameObject);
             if (_isOnOptions && (EventSystem.current.currentSelectedGameObject.tag == "Vibrations"))
             {
                 if (-inputXPlayer1 > 0.2f)
@@ -336,6 +337,8 @@ public class MenuPlayerManager : MonoBehaviour
                 _isCharSelecShowing = false;
 
             }
+            //quand les joueurs garde le bouton a appuyé, le timer augmente et, passé un certain temps, le joueur est considérer comme prêt
+            //dès que tous les joueurs sont prêts, le jeu se lance
             if (_isCharSelecShowing && _player.GetButton("Push1"))
             {
                 timerPOne += Time.deltaTime;
@@ -490,7 +493,6 @@ public class MenuPlayerManager : MonoBehaviour
     }
     public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
     {
-
         _player.SetVibration(motorUsed, motorVibrationStrength, duration);
     }
 
@@ -516,7 +518,6 @@ public class MenuPlayerManager : MonoBehaviour
     void ShowPlayerSelection()
     {
         playerSelection.SetActive(true);
-        //playerEntity.enabled = false;
         _isStartGameShowing = true;
         numberPlayers.Select();
     }

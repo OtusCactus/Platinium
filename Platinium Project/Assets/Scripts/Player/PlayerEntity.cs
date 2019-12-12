@@ -66,7 +66,6 @@ public class PlayerEntity : MonoBehaviour
     //sound
     
     private bool _mustPlayCastSound = false;
-    private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
     [SerializeField]
     [Header("Sound")]
@@ -136,28 +135,23 @@ public class PlayerEntity : MonoBehaviour
             _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
         }
 
+        
+        _newSoundManagerScript = NewSoundManager.instance;
+        _playerAudio = GetComponents<AudioSource>();
+        _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
+        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
+
+
         _myRb = GetComponent<Rigidbody2D>();
+        _playerTrail = GetComponent<TrailRenderer>();
+        _animator = GetComponent<Animator>();
 
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
 
         _velocityMax = (powerMax * speed) * (powerMax * speed);
-
-        _playerTrail = GetComponent<TrailRenderer>();
-
-        _soundManagerScript = SoundManager.instance;
-
-        _newSoundManagerScript = NewSoundManager.instance;
-        _playerAudio = GetComponents<AudioSource>();
-
-        _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
-
-        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
-
-        _animator = GetComponent<Animator>();
-
-        //_childAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
-
+        
+        
 
         onomatopéesSprite.enabled = false;
         sweatParticles.SetActive(false);
@@ -299,8 +293,7 @@ public class PlayerEntity : MonoBehaviour
                     }
                     _animator.SetBool("IsSlingshoting", false);
                     _playerScoreImage.sprite = _playerScoreImageSprites[2];
-
-                    //_soundManagerScript.NoSound();
+                    
                     _playerInput = INPUTSTATE.None;
                 }
             }
@@ -612,7 +605,6 @@ public class PlayerEntity : MonoBehaviour
         UltiFxStates[0].SetActive(false);
         UltiFxStates[1].SetActive(false);
         UltiFxStates[2].SetActive(false);
-        //_soundManagerScript.NoSound(_playerAudio[0]);
         if (_newSoundManagerScript != null)
         _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
         _mustPlayCastSound = true;

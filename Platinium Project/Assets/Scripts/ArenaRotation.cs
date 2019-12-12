@@ -42,7 +42,6 @@ public class ArenaRotation : MonoBehaviour
     public GameObject gameManager;
     private FaceClass _faceClassScript;
     private GameManager _gameManagerScript;
-    private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
     private bool _currentSlowMotion;
     private NewSoundManager _newSoundManagerScript;
@@ -67,8 +66,6 @@ public class ArenaRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Scripts nécessaires
-        _soundManagerScript = SoundManager.instance;
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
         _newSoundManagerScript = NewSoundManager.instance;

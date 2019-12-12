@@ -7970,7 +7970,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1814875014}
   - component: {fileID: 1814875013}
-  - component: {fileID: 1814875015}
   - component: {fileID: 1814875016}
   m_Layer: 0
   m_Name: MenuManager
@@ -8075,28 +8074,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1814875015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814875012}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b346212da52246488e1abd8c5a26ac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerWallHit: {fileID: 0}
-  wallHitHighHp: {fileID: 0}
-  wallHitMidHp: {fileID: 0}
-  wallHitLowHp: {fileID: 0}
-  wallHitNoHp: {fileID: 0}
-  wallBouncyHit: {fileID: 0}
-  playerCast: {fileID: 0}
-  playersCollision: {fileID: 0}
-  endRound: {fileID: 0}
-  myAudio: {fileID: 0}
 --- !u!114 &1814875016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14603,7 +14580,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!222 &3876687248003939598
@@ -14834,7 +14811,7 @@ SpriteRenderer:
   m_Size: {x: 5.53, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &3876687248280583243
