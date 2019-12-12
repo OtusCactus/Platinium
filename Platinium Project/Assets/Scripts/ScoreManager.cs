@@ -27,6 +27,7 @@ public class ScoreManager : MonoBehaviour
     private GameManager _gameManagerScript;
     public GameObject gamePanel;
     public GameObject podiumThird;
+    public Button buttonMenu;
     
 
 
@@ -109,6 +110,7 @@ public class ScoreManager : MonoBehaviour
             playersClassement[0].gameObject.SetActive(true);
             playersClassement[1].gameObject.SetActive(true);
             gamePanel.SetActive(false);
+            buttonMenu.Select();
             restartMenu.SetActive(true);
             Time.timeScale = 0;
         }
