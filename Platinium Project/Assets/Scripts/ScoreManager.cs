@@ -6,28 +6,31 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int scoreToWin;
-    public Text[] totalScores;
     public GameObject[] allPlayers;
     public int nbrPlayers;
 
+    [Header("HUD")]
     public Text[] allScoresUI;
-    private int[] _playerScore;
-    public Image[] playersClassement;
-    public Sprite[] playersSprite;
+    public Text[] totalScores;
     public Image[] medals;
     public Sprite[] medalsSprites;
-
+    private int[] _playerScore;
+    
     private int _todaysWinner = 0;
     private int _todaysSecond = 0;
     private int _todaysThird = 0;
     private int _todaysLooser = 0;
 
-    public GameObject restartMenu;
-
+    
     private int actualRound = 0;
 
     private GameManager _gameManagerScript;
     public GameObject gamePanel;
+
+    [Header("Ecran Game Over")]
+    public GameObject restartMenu;
+    public Image[] playersClassement;
+    public Sprite[] playersSprite;
     public GameObject podiumThird;
     public Button buttonMenu;
     
@@ -54,6 +57,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeScore(int playersOnScene, int player)
     {
+        //attribut le nombre de point selon la position d'"éjection"
         switch (playersOnScene)
         {
             case 4:
@@ -94,6 +98,7 @@ public class ScoreManager : MonoBehaviour
     //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
     void _CheckScore(int player)
     {
+        //Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
         if (_playerScore[player] >= scoreToWin)
         {
             playersClassement[0].sprite = playersSprite[Classement()[0]];
@@ -116,7 +121,8 @@ public class ScoreManager : MonoBehaviour
             restartMenu.SetActive(true);
             Time.timeScale = 0;
         }
-        if(nbrPlayers == 4)
+        //gère l'apparition des médailles, différente selon nombre de joueur
+        if (nbrPlayers == 4)
         {
             medals[Classement()[3]].gameObject.SetActive(false);
             medals[Classement()[2]].sprite = medalsSprites[2];
@@ -165,6 +171,7 @@ public class ScoreManager : MonoBehaviour
         int scoreS = 0;
         int scoreT = 0;
         int scoreF = 0;
+        //permet de définir l'ordre des joueurs
         for (int x = 0; x < _playerScore.Length; x++)
         {
             if (_playerScore[x] > score)
@@ -210,6 +217,7 @@ public class ScoreManager : MonoBehaviour
                 third = x;
             }
         }
+        //gère les égalités, le gagnant est celui qui vient de remporter le round
         if (scoreF == scoreS && first != _todaysWinner)
         {
             second = first;

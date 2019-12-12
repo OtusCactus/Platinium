@@ -153,10 +153,6 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 0; i < _managerAudios.Length; i++)
             {
-                //
-                //
-                //
-                //
                 _managerAudios[i].pitch = Time.timeScale;
             }
             _currentSlowMotion = _isSlowMotion;
@@ -263,9 +259,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < playerList.Count; i++)
         {
-            //player[i].SetActive(false);
             playerList[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //player[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
 
         }
     }
