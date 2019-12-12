@@ -105,6 +105,10 @@ public class MenuPlayerManager : MonoBehaviour
 
         vibrationToggle.onValueChanged.AddListener(VibrationToggle);
         vibrationToggle.isOn = getMenuInfoScript.vibrationBool;
+
+        playerNumberSlider.onValueChanged.AddListener(NumberOfPlayersSlider);
+        playerNumberSlider.value = getMenuInfoScript.numbersOfPlayers;
+
     }
 
     // Update is called once per frame
@@ -483,6 +487,11 @@ public class MenuPlayerManager : MonoBehaviour
     public void VibrationToggle(bool isOn)
     {
         getMenuInfoScript.vibrationBool = isOn;
+    }
+
+    public void NumberOfPlayersSlider(float number)
+    {
+        getMenuInfoScript.numbersOfPlayers = (int)number;
     }
 
 }
