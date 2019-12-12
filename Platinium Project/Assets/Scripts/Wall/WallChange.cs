@@ -22,6 +22,7 @@ public class WallChange : MonoBehaviour
 
     private MeshFilter _wallMesh;
     private MeshRenderer _wallMeshRenderer;
+    private Material[] _wallMeshRendererOriginalMaterials;
 
     private MeshFilter _wallShadowMesh;
     private MeshRenderer _wallShadowMeshRenderer;
@@ -115,7 +116,7 @@ public class WallChange : MonoBehaviour
 
         _wallCollider = GetComponent<BoxCollider2D>();
 
-
+        _wallMeshRendererOriginalMaterials = transform.GetChild(0).GetComponent<MeshRenderer>().materials;
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -270,6 +271,15 @@ public class WallChange : MonoBehaviour
                 if (_wallProprieties.isBouncy)
                 {
                     _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
+                }
+                else
+                {
+                    Material[] temp = new Material[_wallMeshRendererOriginalMaterials.Length];
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        temp[i] = _wallMeshRendererOriginalMaterials[i];
+                    }
+                    _wallMeshRenderer.materials = temp;
                 }
             }
             if (gameObject.layer == 15)
