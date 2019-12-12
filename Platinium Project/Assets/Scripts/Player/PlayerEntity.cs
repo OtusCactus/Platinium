@@ -703,4 +703,14 @@ public class PlayerEntity : MonoBehaviour
         _playerScoreImage = imageToTransfer;
     }
 
+    public Animator GetPlayerAnimator()
+    {
+        return _animator;
+
+    }
+
+    public void ResetTimerPower()
+    {
+        _timerPower = 0;
+    }
 }
