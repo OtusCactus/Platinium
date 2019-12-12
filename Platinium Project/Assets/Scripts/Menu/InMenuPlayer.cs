@@ -245,7 +245,6 @@ public class InMenuPlayer : MonoBehaviour
 
         if (_isOptionOrPlayOpen)
         {
-            Debug.Log("PLLLLLLLLLLLLLLSSSSSSSSSSSSSSS");
             _animator.SetBool("IsSlingshoting", false);
             _myRb.velocity = Vector2.zero;
             _timerPower = 0;
