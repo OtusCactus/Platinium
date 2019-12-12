@@ -26,6 +26,17 @@ public class PlayerManager : MonoBehaviour
     public Sprite defaultMouv;
     public Sprite inversedMouv;
 
+    [Header("Mouvement")]
+    public Image[] mouvementImageP1;
+    public Image[] mouvementImageP2;
+    public Image[] mouvementImageP3;
+    public Image[] mouvementImageP4;
+
+    public Sprite[] spriteSelecOrNoP1;
+    public Sprite[] spriteSelecOrNoP2;
+    public Sprite[] spriteSelecOrNoP3;
+    public Sprite[] spriteSelecOrNoP4;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -65,20 +76,19 @@ public class PlayerManager : MonoBehaviour
         {
             _attackTest.Add(playerEntity[i].GetComponent<AttackTest>());
         }
-        
+
         for (int i = 0; i < gameManagerScript.GetMenuInfoMouvementBool().Length;i++)
         {
             mouvementPlayerBool[i] = gameManagerScript.GetMenuInfoMouvementBool()[i];
-            if (mouvementPlayerBool[i])
-            {
-                playerMouvement[i].sprite = inversedMouv;
-            }
-            else
-            {
-                playerMouvement[i].sprite = defaultMouv;
-            }
+        //    if (mouvementPlayerBool[i])
+        //    {
+        //        playerMouvement[i].sprite = inversedMouv;
+        //    }
+        //    else
+        //    {
+        //        playerMouvement[i].sprite = defaultMouv;
+        //    }
         }
-
         inputXPlayer = new float[4];
         inputYPlayer = new float[4];
 
@@ -191,52 +201,90 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        if(pauseScript.GetItsOptions() && player[0].GetAxis("HorizontalJoy1") > 0.2f)
+        if(pauseScript.GetItsOptions() && -player[0].GetAxis("HorizontalJoy1") > 0.2f)
         {
-            playerMouvement[0].sprite = inversedMouv;
             mouvementPlayerBool[0] = true;
         }
-        else if (pauseScript.GetItsOptions() && player[0].GetAxis("HorizontalJoy1") < -0.2f)
+        else if (pauseScript.GetItsOptions() && -player[0].GetAxis("HorizontalJoy1") < -0.2f)
         {
-            playerMouvement[0].sprite = defaultMouv;
             mouvementPlayerBool[0] = false;
         }
 
-        if (pauseScript.GetItsOptions() && player[1].GetAxis("HorizontalJoy2") > 0.2f)
+        if (pauseScript.GetItsOptions() && -player[1].GetAxis("HorizontalJoy2") > 0.2f)
         {
-            playerMouvement[1].sprite = inversedMouv;
             mouvementPlayerBool[1] = true;
         }
-        else if (pauseScript.GetItsOptions() && player[1].GetAxis("HorizontalJoy2") < -0.2f)
+        else if (pauseScript.GetItsOptions() && -player[1].GetAxis("HorizontalJoy2") < -0.2f)
         {
-            playerMouvement[1].sprite = defaultMouv;
             mouvementPlayerBool[1] = false;
         }
 
-        if (pauseScript.GetItsOptions() && player[2].GetAxis("HorizontalJoy3") > 0.2f)
+        if (pauseScript.GetItsOptions() && -player[2].GetAxis("HorizontalJoy3") > 0.2f)
         {
-            playerMouvement[2].sprite = inversedMouv;
             mouvementPlayerBool[2] = true;
         }
-        else if (pauseScript.GetItsOptions() && player[2].GetAxis("HorizontalJoy3") < -0.2f)
+        else if (pauseScript.GetItsOptions() && -player[2].GetAxis("HorizontalJoy3") < -0.2f)
         {
-            playerMouvement[2].sprite = defaultMouv;
             mouvementPlayerBool[2] = false;
         }
 
-        if (pauseScript.GetItsOptions() && player[3].GetAxis("HorizontalJoy4") > 0.2f)
+        if (pauseScript.GetItsOptions() && -player[3].GetAxis("HorizontalJoy4") > 0.2f)
         {
-            playerMouvement[3].sprite = inversedMouv;
             mouvementPlayerBool[3] = true;
         }
-        else if (pauseScript.GetItsOptions() && player[2].GetAxis("HorizontalJoy4") < -0.2f)
+        else if (pauseScript.GetItsOptions() && -player[3].GetAxis("HorizontalJoy4") < -0.2f)
         {
-            playerMouvement[3].sprite = defaultMouv;
             mouvementPlayerBool[3] = false;
         }
 
 
-
+        //gère le changement de sprite des boutons selon valeur booléen
+        if (mouvementPlayerBool[0])
+        {
+            mouvementImageP1[0].sprite = spriteSelecOrNoP1[1];
+            mouvementImageP1[1].sprite = spriteSelecOrNoP1[2];
+        }
+        else
+        {
+            mouvementImageP1[0].sprite = spriteSelecOrNoP1[0];
+            mouvementImageP1[1].sprite = spriteSelecOrNoP1[3];
+        }
+        if (mouvementPlayerBool[1])
+        {
+            mouvementImageP2[0].sprite = spriteSelecOrNoP2[1];
+            mouvementImageP2[1].sprite = spriteSelecOrNoP2[2];
+        }
+        else
+        {
+            mouvementImageP2[0].sprite = spriteSelecOrNoP2[0];
+            mouvementImageP2[1].sprite = spriteSelecOrNoP2[3];
+        }
+        if (player.Count >= 3)
+        {
+            if (mouvementPlayerBool[2])
+            {
+                mouvementImageP3[0].sprite = spriteSelecOrNoP3[1];
+                mouvementImageP3[1].sprite = spriteSelecOrNoP3[2];
+            }
+            else
+            {
+                mouvementImageP3[0].sprite = spriteSelecOrNoP3[0];
+                mouvementImageP3[1].sprite = spriteSelecOrNoP3[3];
+            }
+        }
+        if (player.Count == 4)
+        {
+            if (mouvementPlayerBool[3])
+            {
+                mouvementImageP4[0].sprite = spriteSelecOrNoP4[1];
+                mouvementImageP4[1].sprite = spriteSelecOrNoP4[2];
+            }
+            else
+            {
+                mouvementImageP4[0].sprite = spriteSelecOrNoP4[0];
+                mouvementImageP4[1].sprite = spriteSelecOrNoP4[3];
+            }
+        }
     }
 
 
