@@ -13,7 +13,6 @@ public class FaceClass : MonoBehaviour
     public class face
     {
         public int faceNumber;
-        //public Transform cameraPosition;
         public Transform arenaRotation;
         public GameObject arenaWall;
         public Transform[] playerStartingPosition;

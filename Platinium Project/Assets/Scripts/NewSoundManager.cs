@@ -8,13 +8,16 @@ public class NewSoundManager : MonoBehaviour
 
     public AudioSource music;
     
+    [Header("Charge Player Sounds")]
     public AudioClip[] playerChargeSounds;
-
     private AudioSource[] _myAudios;
     private AudioSource[] _playerCharges;
 
+    [Header("Unique Sounds")]
     public AudioClip[] miscSounds;
+    [Header("Animal Sounds")]
     public AudioClip[] animalSounds;
+    [Header("Bouncy Wall Sounds")]
     public AudioClip[] bouncySounds;
 
     private GetMenuInformation _menuInformationScript;
