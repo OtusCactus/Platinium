@@ -40,7 +40,6 @@ public class MenuPlayerManager : MonoBehaviour
     public GameObject[] twoOtherPlayerNumber;
     public GameObject[] twoOtherPlayerName;
     public GameObject[] twoOtherPlayerFace;
-    public GameObject[] twoOtherPlayerMode;
 
     [Header ("Char Select Buttons")]
     public Image[] readyButton;
