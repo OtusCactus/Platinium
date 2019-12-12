@@ -64,15 +64,20 @@ public class MenuPlayerManager : MonoBehaviour
     private int _howManyReady = 0;
 
     [Header ("Mouvement")]
-    public Image[] mouvementImage;
-    public Sprite defaultMouvement;
-    public Sprite inversedMouvement;
+    public Image[] mouvementImageP1;
+    public Image[] mouvementImageP2;
+    public Image[] mouvementImageP3;
+    public Image[] mouvementImageP4;
+
+    public Sprite[] spriteSelecOrNoP1;
+    public Sprite[] spriteSelecOrNoP2;
+    public Sprite[] spriteSelecOrNoP3;
+    public Sprite[] spriteSelecOrNoP4;
 
     private float inputXPlayer3;
     private float inputXPlayer4;
 
-    [Header("Mouvement")]
-    public Toggle vibrationToggle;
+    [Header("Vibrations")]
     public Selectable vibrations;
     public Image[] vibrationOnOff;
     public Sprite[] spritesSelectedOrNot;
@@ -104,9 +109,7 @@ public class MenuPlayerManager : MonoBehaviour
         selecPanel.SetActive(false);
         optionsPanel.SetActive(false);
         _player = ReInput.players.GetPlayer("Player1");
-
-        //vibrationToggle.onValueChanged.AddListener(VibrationToggle);
-        //vibrationToggle.isOn = getMenuInfoScript.vibrationBool;
+        
         playerNumberSlider.onValueChanged.AddListener(NumberOfPlayersSlider);
         playerNumberSlider.value = getMenuInfoScript.numbersOfPlayers;
     }
@@ -140,9 +143,10 @@ public class MenuPlayerManager : MonoBehaviour
             {
                 dirPlayer1 = Vector2.zero;
             }
-            if(!_isStartGameShowing && !_isOnOptions &&!_isCharSelecShowing)
-            playerEntity.SetInputX(dirPlayer1);
+            if (!_isStartGameShowing && !_isOnOptions && !_isCharSelecShowing)
+                playerEntity.SetInputX(dirPlayer1);
 
+            //gère apparence boutons vibrations
             if (getMenuInfoScript.GetVibrationsValue())
             {
                 vibrationOnOff[0].sprite = spritesSelectedOrNot[1];
@@ -152,6 +156,53 @@ public class MenuPlayerManager : MonoBehaviour
             {
                 vibrationOnOff[0].sprite = spritesSelectedOrNot[0];
                 vibrationOnOff[1].sprite = spritesSelectedOrNot[1];
+            }
+
+            if (getMenuInfoScript.getPlayerMouvementMode()[0])
+            {
+                mouvementImageP1[0].sprite = spriteSelecOrNoP1[1];
+                mouvementImageP1[1].sprite = spriteSelecOrNoP1[2];
+            }
+            else
+            {
+                mouvementImageP1[0].sprite = spriteSelecOrNoP1[0];
+                mouvementImageP1[1].sprite = spriteSelecOrNoP1[3];
+            }
+            if (getMenuInfoScript.getPlayerMouvementMode()[1])
+            {
+                mouvementImageP2[0].sprite = spriteSelecOrNoP2[1];
+                mouvementImageP2[1].sprite = spriteSelecOrNoP2[2];
+            }
+            else
+            {
+                mouvementImageP2[0].sprite = spriteSelecOrNoP2[0];
+                mouvementImageP2[1].sprite = spriteSelecOrNoP2[3];
+            }
+            if (getMenuInfoScript.numbersOfPlayers >= 3)
+            {
+                if (getMenuInfoScript.getPlayerMouvementMode()[2])
+                {
+                    mouvementImageP3[0].sprite = spriteSelecOrNoP3[1];
+                    mouvementImageP3[1].sprite = spriteSelecOrNoP3[2];
+                }
+                else
+                {
+                    mouvementImageP3[0].sprite = spriteSelecOrNoP3[0];
+                    mouvementImageP3[1].sprite = spriteSelecOrNoP3[3];
+                }
+            }
+            if (getMenuInfoScript.numbersOfPlayers == 4)
+            {
+                if (getMenuInfoScript.getPlayerMouvementMode()[2])
+                {
+                    mouvementImageP4[0].sprite = spriteSelecOrNoP4[1];
+                    mouvementImageP4[1].sprite = spriteSelecOrNoP4[2];
+                }
+                else
+                {
+                    mouvementImageP4[0].sprite = spriteSelecOrNoP4[0];
+                    mouvementImageP4[1].sprite = spriteSelecOrNoP4[3];
+                }
             }
 
             //Gère à quel joueur attribué quel action
@@ -205,55 +256,39 @@ public class MenuPlayerManager : MonoBehaviour
 
                 if (inputXPlayer1 > 0.2f)
                 {
-                    mouvementImage[0].sprite = inversedMouvement;
                     getMenuInfoScript.setPlayerMouvementMode(0, true);
-                    //playerMouvementMode[0] = false;
                 }
                 else if (inputXPlayer1 < -0.2f)
                 {
                     getMenuInfoScript.setPlayerMouvementMode(0, false);
-                    mouvementImage[0].sprite = defaultMouvement;
-                    //playerMouvementMode[0] = true;
 
                 }
 
                 if (inputXPlayer2 > 0.2f)
                 {
                     getMenuInfoScript.setPlayerMouvementMode(1, true);
-                    //playerMouvementMode[1] = false;
-                    mouvementImage[1].sprite = inversedMouvement;
                 }
                 else if (inputXPlayer2 < -0.2f)
                 {
                     getMenuInfoScript.setPlayerMouvementMode(1, false);
-                    //playerMouvementMode[1] = true;
-                    mouvementImage[1].sprite = defaultMouvement;
                 }
 
                 if (inputXPlayer3 > 0.2f)
                 {
                     getMenuInfoScript.setPlayerMouvementMode(2, true);
-                    //playerMouvementMode[2] = false;
-                    mouvementImage[2].sprite = inversedMouvement;
                 }
                 else if (inputXPlayer3 < -0.2f)
                 {
                     getMenuInfoScript.setPlayerMouvementMode(2, false);
-                    //playerMouvementMode[2] = true;
-                    mouvementImage[2].sprite = defaultMouvement;
                 }
 
                 if (inputXPlayer4 > 0.2f)
                 {
                     getMenuInfoScript.setPlayerMouvementMode(3, true);
-                    //playerMouvementMode[3] = false;
-                    mouvementImage[3].sprite = inversedMouvement;
                 }
                 else if (inputXPlayer4 < -0.2f)
                 {
                     getMenuInfoScript.setPlayerMouvementMode(3, false);
-                    //playerMouvementMode[3] = true;
-                    mouvementImage[3].sprite = defaultMouvement;
                 }
             }
             if (_isOnOptions && _player.GetButtonDown("BackMenu"))
@@ -407,8 +442,10 @@ public class MenuPlayerManager : MonoBehaviour
                 twoOtherPlayerNumber[1].SetActive(false);
                 twoOtherPlayerFace[0].SetActive(false);
                 twoOtherPlayerFace[1].SetActive(false);
-                twoOtherPlayerMode[0].SetActive(false);
-                twoOtherPlayerMode[1].SetActive(false);
+                mouvementImageP3[0].gameObject.SetActive(false);
+                mouvementImageP3[1].gameObject.SetActive(false);
+                mouvementImageP4[0].gameObject.SetActive(false);
+                mouvementImageP4[1].gameObject.SetActive(false);
                 if (_isPOneReady && _isPTwoReady)
                 {
                     StartGame();
@@ -422,8 +459,10 @@ public class MenuPlayerManager : MonoBehaviour
                 twoOtherPlayerNumber[1].SetActive(false);
                 twoOtherPlayerFace[0].SetActive(true);
                 twoOtherPlayerFace[1].SetActive(false);
-                twoOtherPlayerMode[0].SetActive(true);
-                twoOtherPlayerMode[1].SetActive(false);
+                mouvementImageP3[0].gameObject.SetActive(true);
+                mouvementImageP3[1].gameObject.SetActive(true);
+                mouvementImageP4[0].gameObject.SetActive(false);
+                mouvementImageP4[1].gameObject.SetActive(false);
                 readyButton[3].sprite = outSprite;
                 if (_isPOneReady && _isPTwoReady && _isPThreeReady)
                 {
@@ -438,8 +477,10 @@ public class MenuPlayerManager : MonoBehaviour
                 twoOtherPlayerNumber[1].SetActive(true);
                 twoOtherPlayerFace[0].SetActive(true);
                 twoOtherPlayerFace[1].SetActive(true);
-                twoOtherPlayerMode[0].SetActive(true);
-                twoOtherPlayerMode[1].SetActive(true);
+                mouvementImageP3[0].gameObject.SetActive(true);
+                mouvementImageP3[1].gameObject.SetActive(true);
+                mouvementImageP4[0].gameObject.SetActive(true);
+                mouvementImageP4[1].gameObject.SetActive(true);
                 if (_isPOneReady && _isPTwoReady && _isPThreeReady && _isPFourReady)
                 {
                     StartGame();
