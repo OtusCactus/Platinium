@@ -117,6 +117,8 @@ public class PlayerEntity : MonoBehaviour
 
     private bool _touchedByPlayer = false;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -168,6 +170,7 @@ public class PlayerEntity : MonoBehaviour
         wallSpriteTransform.gameObject.SetActive(false);
 
         playerSprite = transform.GetChild(0).gameObject;
+
     }
 
 
@@ -370,6 +373,8 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
+
+
         if (playerScaleHitWall)
         {
             timerScale += Time.deltaTime;

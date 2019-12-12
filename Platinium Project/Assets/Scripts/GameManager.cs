@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     private float _slowMotionTimerMax = 1;
 
     public GameObject[] wallHitObj;
+    public GameObject[] CracksObj;
 
     //debug
     public bool debug;
@@ -113,9 +114,12 @@ public class GameManager : MonoBehaviour
             wallHitObj[1].SetActive(false);
             playerUISprite[2].SetActive(false);
             playerUISprite[3].SetActive(false);
+            CracksObj[0].SetActive(false);
+            CracksObj[1].SetActive(false);
         }
         else if ( playerList.Count == 3)
         {
+            CracksObj[1].SetActive(false);
             wallHitObj[1].SetActive(false);
             playerUISprite[3].SetActive(false);
         }
@@ -130,11 +134,12 @@ public class GameManager : MonoBehaviour
         _newSoundMangerScript = NewSoundManager.instance;
         _managerAudios = new AudioSource[_newSoundMangerScript.AudioLength()];
         _managerAudios = _newSoundMangerScript.GetMyAudios();
+        currentFace = _arenaRotationScript._currentFace;
 
         //set la position de départ des joueurs
         for (int i = 0; i < playerList.Count; i++)
         {
-            playerList[i].transform.position = _faceClassScript.faceTab[0].playerStartingPosition[i].position;
+            playerList[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
             playerList[i].SetActive(true);
             playersEntityScripts[i] = playerList[i].GetComponent<PlayerEntity>();
             attackTestScripts[i] = playerList[i].GetComponent<AttackTest>();
@@ -143,7 +148,12 @@ public class GameManager : MonoBehaviour
         _currentSlowMotion = _isSlowMotion;
 
 
-        currentFace = _arenaRotationScript._currentFace;
+        if (_faceClassScript.faceTab[currentFace].levelDesign != null)
+        {
+            currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+
+
+        }
     }
 
     // Update is called once per frame
@@ -176,15 +186,21 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(currentLD);
             }
-            if (_faceClassScript.faceTab[currentFace].levelDesign != null)
-            {
-                currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
-                
-
-            }
         }
         else if(hasRoundBegun)
         {
+
+            if (currentLD != null)
+            {
+                Destroy(currentLD);
+            }
+            if (_faceClassScript.faceTab[currentFace].levelDesign != null)
+            {
+                currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+
+
+            }
+
             ReadyText.text = "Ready ?";
             for (int i = 0; i < playersEntityScripts.Length; i++)
             {

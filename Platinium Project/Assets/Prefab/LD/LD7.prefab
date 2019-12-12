@@ -122,12 +122,12 @@ PrefabInstance:
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.822
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
@@ -152,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
@@ -167,12 +167,17 @@ PrefabInstance:
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6074495156387488724, guid: 3fe8eca514f0db44ca16aa8fd3883131,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214754041612010721, guid: 3fe8eca514f0db44ca16aa8fd3883131,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 212420541, guid: 3fe8eca514f0db44ca16aa8fd3883131, type: 3}
       propertyPath: gameManager

@@ -71,6 +71,8 @@ public class AttackTest : MonoBehaviour
             _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
         }
 
+
+
         string thisTag = gameObject.tag;
         switch (thisTag)
         {
