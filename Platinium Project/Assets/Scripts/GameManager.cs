@@ -189,7 +189,7 @@ public class GameManager : MonoBehaviour
         }
         else if(hasRoundBegun)
         {
-            ReadyText.text = "Ready";
+            ReadyText.text = "Ready ?";
             for (int i = 0; i < playersEntityScripts.Length; i++)
             {
                 playersEntityScripts[i].newRound();
@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
 
             if(timerRatio > 0.90f)
             {
-                ReadyText.text = "Go";
+                ReadyText.text = "Go !";
                 for (int i = 0; i < playerList.Count; i++)
                 {
                     ReEnablingColliders(i);
