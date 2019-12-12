@@ -521,6 +521,7 @@ public class WallChange : MonoBehaviour
                 //renvoie la prochaine face vers le script de rotation de caméra
                 _wallCollider.enabled = false;
                 _wallCollider.isTrigger = false;
+                _playerOnCollision.enabled = false;
 
                 _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
                 _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
