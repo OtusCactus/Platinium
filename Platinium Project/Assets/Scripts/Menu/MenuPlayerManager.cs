@@ -103,8 +103,8 @@ public class MenuPlayerManager : MonoBehaviour
         optionsPanel.SetActive(false);
         _player = ReInput.players.GetPlayer("Player1");
 
-        vibrationToggle.onValueChanged.AddListener(VibrationToggle);
-        vibrationToggle.isOn = getMenuInfoScript.vibrationBool;
+        //vibrationToggle.onValueChanged.AddListener(VibrationToggle);
+        //vibrationToggle.isOn = getMenuInfoScript.vibrationBool;
     }
 
     // Update is called once per frame
@@ -250,15 +250,12 @@ public class MenuPlayerManager : MonoBehaviour
             //print(EventSystem.current.currentSelectedGameObject);
             if (_isOnOptions && (EventSystem.current.currentSelectedGameObject.tag == "Vibrations"))
             {
-                print("je sui dnas les options je peux changer vibratuoin");
                 if (-inputXPlayer1 > 0.2f)
                 {
-                    print("je vais à droite c'est off");
                     getMenuInfoScript.SetVibrationsValue(false);
                 }
                 else if (-inputXPlayer1 < -0.2f)
                 {
-                    print("je vais a gauchec'est on");
                     getMenuInfoScript.SetVibrationsValue(true);
                 }
             }
