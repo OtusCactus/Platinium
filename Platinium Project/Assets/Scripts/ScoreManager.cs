@@ -8,13 +8,15 @@ public class ScoreManager : MonoBehaviour
     public int scoreToWin;
     public Text[] totalScores;
     public GameObject[] allPlayers;
-    private int[] _playerWinCount;
     public int nbrPlayers;
 
     public Text[] allScoresUI;
     private int[] _playerScore;
     public Image[] playersClassement;
     public Sprite[] playersSprite;
+    public Image[] medals;
+    public Sprite[] medalsSprites;
+
     private int _todaysWinner = 0;
     private int _todaysSecond = 0;
     private int _todaysThird = 0;
@@ -47,7 +49,7 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void ChangeScore(int playersOnScene, int player)
@@ -114,6 +116,13 @@ public class ScoreManager : MonoBehaviour
             restartMenu.SetActive(true);
             Time.timeScale = 0;
         }
+        medals[Classement()[3]].gameObject.SetActive(false);
+        medals[Classement()[2]].sprite = medalsSprites[2];
+        medals[Classement()[2]].gameObject.SetActive(true);
+        medals[Classement()[1]].sprite = medalsSprites[1];
+        medals[Classement()[1]].gameObject.SetActive(true);
+        medals[Classement()[0]].sprite = medalsSprites[0];
+        medals[Classement()[0]].gameObject.SetActive(true);
     }
 
     public void UpdateUI()
