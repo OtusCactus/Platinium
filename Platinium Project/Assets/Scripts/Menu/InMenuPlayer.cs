@@ -80,6 +80,7 @@ public class InMenuPlayer : MonoBehaviour
     private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
 
+    private bool _isOptionOrPlayOpen;
 
     private void Awake()
     {
@@ -239,6 +240,19 @@ public class InMenuPlayer : MonoBehaviour
 
     private void Update()
     {
+
+        Debug.Log(_isOptionOrPlayOpen);
+
+        if (_isOptionOrPlayOpen)
+        {
+            Debug.Log("PLLLLLLLLLLLLLLSSSSSSSSSSSSSSS");
+            _animator.SetBool("IsSlingshoting", false);
+            _myRb.velocity = Vector2.zero;
+            _timerPower = 0;
+
+        }
+        
+
         if (_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
             _newSoundManagerScript.PlayCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
@@ -336,5 +350,8 @@ public class InMenuPlayer : MonoBehaviour
         return _lastFrameVelocity;
     }
 
-
+    public void IsInOptionOrCharacterMenu(bool boolValue)
+    {
+        _isOptionOrPlayOpen = boolValue;
+    }
 }
