@@ -33,7 +33,7 @@ public class WallChange : MonoBehaviour
     private PlayerEntity _playerOnCollision;
     private AttackTest _attackTestOnCollision;
     private float _playerVelocityRatio;
-    private BoxCollider2D _wallCollider;
+    private BoxCollider2D[] _wallCollider = new BoxCollider2D[2];
 
     //arene
     [Header("Arène")]
@@ -114,7 +114,9 @@ public class WallChange : MonoBehaviour
 
         
 
-        _wallCollider = GetComponent<BoxCollider2D>();
+        _wallCollider = GetComponents<BoxCollider2D>();
+        _wallCollider[1].enabled = false;
+
 
         _wallMeshRendererOriginalMaterials = transform.GetChild(0).GetComponent<MeshRenderer>().materials;
 
@@ -244,14 +246,16 @@ public class WallChange : MonoBehaviour
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
         {
+
             _wallManagerScript.WhichWall(_wallProprieties);
-            _wallCollider.enabled = true;
+            _wallCollider[0].enabled = true;
+            _wallCollider[1].enabled = false;
             _wallMeshRenderer.enabled = true;
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
-            _wallCollider.isTrigger = false;
+            //_wallCollider[0].isTrigger = false;
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[0];
@@ -336,7 +340,9 @@ public class WallChange : MonoBehaviour
                 _wallShadowMeshRendererBambou.enabled = false;
             }
             
-            _wallCollider.enabled = false;
+            _wallCollider[0].enabled = false;
+            _wallCollider[1].enabled = true;
+
 
         }
         else if (wallLife < wallLifeMax && wallLife >= (wallLifeMax * 0.66))
@@ -533,8 +539,8 @@ public class WallChange : MonoBehaviour
                         break;
                 }
                 //renvoie la prochaine face vers le script de rotation de caméra
-                _wallCollider.enabled = false;
-                _wallCollider.isTrigger = false;
+                _wallCollider[0].enabled = false;
+               // _wallCollider.isTrigger = false;
                 _playerOnCollision.enabled = false;
 
                 if(_gameManagerScript.playerList.Count > 2)
