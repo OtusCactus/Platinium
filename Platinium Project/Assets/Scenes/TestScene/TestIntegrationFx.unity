@@ -13361,7 +13361,7 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
+  m_UseCustomVertexStreams: 1
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
@@ -14381,16 +14381,16 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 27.640102
+          outSlope: 8.89148
           tangentMode: 69
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.036179315
-          value: 1
-          inSlope: 27.640102
-          outSlope: 0
+          time: 0.110947385
+          value: 0.98648655
+          inSlope: 8.89148
+          outSlope: 0.015199827
           tangentMode: 69
           weightedMode: 0
           inWeight: 0.3137823
@@ -14398,7 +14398,7 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: -0
+          inSlope: 0.015199827
           outSlope: 1
           tangentMode: 69
           weightedMode: 0
@@ -14711,8 +14711,8 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0, g: 0, b: 0, a: 0}
         key1: {r: 0, g: 0, b: 0, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 1}
+        key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -14726,8 +14726,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 31804
-        atime2: 65535
+        atime1: 5204
+        atime2: 16384
         atime3: 65535
         atime4: 0
         atime5: 0
@@ -14735,7 +14735,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -18104,7 +18104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610139714}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.459, y: 0.039, z: -2.107}
+  m_LocalPosition: {x: 0.459, y: 0.198, z: -2.107}
   m_LocalScale: {x: 0.084322, y: 0.084322065, z: 0.084322065}
   m_Children: []
   m_Father: {fileID: 0}
@@ -35347,6 +35347,7 @@ MonoBehaviour:
   playerEntity: []
   pausePanel: {fileID: 249625006}
   resume: {fileID: 1818928448}
+  options: {fileID: 0}
 --- !u!1 &1368696473
 GameObject:
   m_ObjectHideFlags: 0
@@ -42406,6 +42407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallFriction: 15
   wallBouncyFriction: 5
+  ejectionPower: 0
+  shaderAppearanceTime: 1
   wallNormalAppearance:
   - {fileID: -7768408576438331914, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}
@@ -56973,11 +56976,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6800474577820962033, guid: 4690ae6f3ed049f4a89bc7cd8434e2e1,
-        type: 3}
-      propertyPath: m_Name
-      value: FX_sweat_charge
-      objectReference: {fileID: 0}
     - target: {fileID: 5364048275244372808, guid: 4690ae6f3ed049f4a89bc7cd8434e2e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57032,6 +57030,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800474577820962033, guid: 4690ae6f3ed049f4a89bc7cd8434e2e1,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_sweat_charge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4690ae6f3ed049f4a89bc7cd8434e2e1, type: 3}
@@ -57610,11 +57613,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4214754040215182260, guid: 9e7122f450b7f814ba5a0706757d2636,
-        type: 3}
-      propertyPath: m_Name
-      value: FX_wind
-      objectReference: {fileID: 0}
     - target: {fileID: 4214754040215182259, guid: 9e7122f450b7f814ba5a0706757d2636,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57669,6 +57667,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214754040215182260, guid: 9e7122f450b7f814ba5a0706757d2636,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_wind
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7122f450b7f814ba5a0706757d2636, type: 3}
@@ -61485,21 +61488,6 @@ PrefabInstance:
       propertyPath: scoreToWin
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
-        type: 3}
-      propertyPath: playersCollision
-      value: 
-      objectReference: {fileID: 8300000, guid: 619d35ff414a5244da6f2e8f3d283efb, type: 3}
-    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
-        type: 3}
-      propertyPath: wallBouncyHit
-      value: 
-      objectReference: {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
-    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
-        type: 3}
-      propertyPath: wallHit
-      value: 
-      objectReference: {fileID: 8300000, guid: cf7ee7b286d81854f9f91e2a23811f42, type: 3}
     - target: {fileID: 8627799423210609205, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: playerEntity.Array.size
@@ -61545,6 +61533,21 @@ PrefabInstance:
       propertyPath: playerEntity.Array.data[3]
       value: 
       objectReference: {fileID: 1126815083}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: playersCollision
+      value: 
+      objectReference: {fileID: 8300000, guid: 619d35ff414a5244da6f2e8f3d283efb, type: 3}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: wallBouncyHit
+      value: 
+      objectReference: {fileID: 8300000, guid: c91ad34af46270f41b71adab3eecb84a, type: 3}
+    - target: {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: wallHit
+      value: 
+      objectReference: {fileID: 8300000, guid: cf7ee7b286d81854f9f91e2a23811f42, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
 --- !u!1 &8772184004847292695
