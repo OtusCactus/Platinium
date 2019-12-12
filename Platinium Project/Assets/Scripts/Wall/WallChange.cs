@@ -168,6 +168,7 @@ public class WallChange : MonoBehaviour
 
         if(gameObject.layer == 15)
         {
+            gameObject.SetActive(false);
             _wallShadowMeshRenderer.enabled = false;
             if(_wallShadowMeshRendererBambou != null)
             {
@@ -273,6 +274,7 @@ public class WallChange : MonoBehaviour
             }
             if (gameObject.layer == 15)
             {
+                gameObject.SetActive(false);
                 _wallShadowMeshRenderer.enabled = false;
                 if (_wallShadowMeshRendererBambou != null)
                 {
@@ -282,6 +284,7 @@ public class WallChange : MonoBehaviour
 
             if(gameObject.layer == 14)
             {
+                gameObject.SetActive(true);
                 BoxCollider2D[] boxColliderTab = GetComponents<BoxCollider2D>();
                 for (int i = 0; i < boxColliderTab.Length; i++)
                 {

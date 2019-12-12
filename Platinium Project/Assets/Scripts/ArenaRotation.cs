@@ -201,7 +201,7 @@ public class ArenaRotation : MonoBehaviour
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
             {
                 _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
-
+                _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.SetActive(true);
             }
 
 
