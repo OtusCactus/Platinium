@@ -82,7 +82,7 @@ public class GetMenuInformation : MonoBehaviour
 
     public void SetVibrationsValue(bool toggleValue)
     {
-        vibrationBool = vibrationBool;
+        vibrationBool = toggleValue;
     }
     public bool GetVibrationsValue()
     {

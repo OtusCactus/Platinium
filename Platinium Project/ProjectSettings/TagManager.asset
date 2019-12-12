@@ -21,6 +21,7 @@ TagManager:
   - PlayerThreeImage
   - PlayerFourImage
   - NuageTrigger
+  - Vibrations
   layers:
   - Default
   - TransparentFX

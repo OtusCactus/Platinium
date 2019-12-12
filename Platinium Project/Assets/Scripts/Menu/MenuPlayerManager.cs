@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 
 public class MenuPlayerManager : MonoBehaviour
@@ -70,7 +71,12 @@ public class MenuPlayerManager : MonoBehaviour
     private float inputXPlayer3;
     private float inputXPlayer4;
 
+    [Header("Mouvement")]
     public Toggle vibrationToggle;
+    public Selectable vibrations;
+    public Image[] vibrationOnOff;
+    public Sprite[] spritesSelectedOrNot;
+    private bool _isOnVibration = false;
 
     private float timerMenu = 0;
 
@@ -121,6 +127,17 @@ public class MenuPlayerManager : MonoBehaviour
                 dirPlayer1 = Vector2.zero;
             }
             playerEntity.SetInputX(dirPlayer1);
+
+            if (getMenuInfoScript.GetVibrationsValue())
+            {
+                vibrationOnOff[0].sprite = spritesSelectedOrNot[1];
+                vibrationOnOff[1].sprite = spritesSelectedOrNot[0];
+            }
+            else
+            {
+                vibrationOnOff[0].sprite = spritesSelectedOrNot[0];
+                vibrationOnOff[1].sprite = spritesSelectedOrNot[1];
+            }
 
             //Gère à quel joueur attribué quel action
 
@@ -229,6 +246,21 @@ public class MenuPlayerManager : MonoBehaviour
                 optionsPanel.SetActive(false);
                 _isOnOptions = false;
 
+            }
+            //print(EventSystem.current.currentSelectedGameObject);
+            if (_isOnOptions && (EventSystem.current.currentSelectedGameObject.tag == "Vibrations"))
+            {
+                print("je sui dnas les options je peux changer vibratuoin");
+                if (-inputXPlayer1 > 0.2f)
+                {
+                    print("je vais à droite c'est off");
+                    getMenuInfoScript.SetVibrationsValue(false);
+                }
+                else if (-inputXPlayer1 < -0.2f)
+                {
+                    print("je vais a gauchec'est on");
+                    getMenuInfoScript.SetVibrationsValue(true);
+                }
             }
 
 
