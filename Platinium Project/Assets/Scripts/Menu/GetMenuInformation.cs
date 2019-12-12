@@ -42,7 +42,7 @@ public class GetMenuInformation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(playerMouvementMode[0]);
+
         print("vibration" + vibrationBool);
     }
 

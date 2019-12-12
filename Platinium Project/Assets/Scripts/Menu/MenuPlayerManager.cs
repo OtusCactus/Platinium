@@ -80,6 +80,8 @@ public class MenuPlayerManager : MonoBehaviour
 
     private float timerMenu = 0;
 
+    private bool _hasOptionOrPlayOpened;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -112,6 +114,16 @@ public class MenuPlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_isOnOptions || _isCharSelecShowing || _isStartGameShowing)
+        {
+            playerEntity.IsInOptionOrCharacterMenu(true); 
+        }
+        else
+        {
+            playerEntity.IsInOptionOrCharacterMenu(false);
+
+        }
+
         if (!_theMenuHasBegun && _player.GetButtonUp("Push1"))
         {
             startPanel.SetActive(false);
@@ -128,6 +140,7 @@ public class MenuPlayerManager : MonoBehaviour
             {
                 dirPlayer1 = Vector2.zero;
             }
+            if(!_isStartGameShowing && !_isOnOptions &&!_isCharSelecShowing)
             playerEntity.SetInputX(dirPlayer1);
 
             if (getMenuInfoScript.GetVibrationsValue())
@@ -143,7 +156,6 @@ public class MenuPlayerManager : MonoBehaviour
 
             //Gère à quel joueur attribué quel action
 
-
             if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing && timerMenu >= 0.2)
             {
                 ShowPlayerSelection();
@@ -155,6 +167,7 @@ public class MenuPlayerManager : MonoBehaviour
             else if (playerEntity.currentFace == 2 && _player.GetButton("Push1"))
             {
                 Options();
+                _hasOptionOrPlayOpened = true;
             }
 
             if (_isStartGameShowing && _player.GetButtonDown("BackMenu"))
@@ -162,6 +175,7 @@ public class MenuPlayerManager : MonoBehaviour
                 playerEntity.enabled = true;
                 playerSelection.SetActive(false);
                 _isStartGameShowing = false;
+                _hasOptionOrPlayOpened = false;
 
             }
             else if (_isStartGameShowing && _player.GetButtonDown("Push1"))
@@ -247,6 +261,7 @@ public class MenuPlayerManager : MonoBehaviour
                 playerEntity.enabled = true;
                 optionsPanel.SetActive(false);
                 _isOnOptions = false;
+                _hasOptionOrPlayOpened = false;
 
             }
             //print(EventSystem.current.currentSelectedGameObject);
@@ -462,7 +477,7 @@ public class MenuPlayerManager : MonoBehaviour
     void ShowPlayerSelection()
     {
         playerSelection.SetActive(true);
-        playerEntity.enabled = false;
+        //playerEntity.enabled = false;
         _isStartGameShowing = true;
         numberPlayers.Select();
     }
@@ -475,7 +490,7 @@ public class MenuPlayerManager : MonoBehaviour
     public void Options()
     {
         optionsPanel.SetActive(true);
-        playerEntity.enabled = false;
+        //playerEntity.enabled = false;
         _isOnOptions = true;
         musicSlider.Select();
     }
@@ -490,4 +505,8 @@ public class MenuPlayerManager : MonoBehaviour
         getMenuInfoScript.numbersOfPlayers = (int)number;
     }
 
+    public bool hasOptionOrPlayBeenOpened()
+    {
+        return _hasOptionOrPlayOpened;
+    }
 }
