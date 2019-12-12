@@ -7,10 +7,12 @@ public class CloudSpawner : MonoBehaviour
 {
     public Canvas backgroundCanvas;
     public Image[] cloud;
+    [Header("Cadre de Spawn")]
     public float minX;
     public float maxX;
     public float minY;
     public float maxY;
+    [Header("Paramètres de Spawn")]
     public int cloudCount;
     public float spawnWait;
     public float startWait;
@@ -28,6 +30,7 @@ public class CloudSpawner : MonoBehaviour
         while (true)
         {
             Image[] clouds = new Image[cloudCount];
+            //créer une liste de toutes les positions possibles entre le minY et maxY
             List<float> cloudsPosY = new List<float>();
             for (float arg = minY; arg < maxY; arg++)
             {
@@ -41,6 +44,8 @@ public class CloudSpawner : MonoBehaviour
                 float posY = cloudsPosY[index];
                 bool iHaveRemoved = false;
                 int howmuchremoved = 0;
+                //boucle qui permet d'enlever de la listre de positions possibles celle que vient de prendre le nuages,
+                //ainsi que toutes les autres jusqu'à une distance de 40
                 for (int x = 0; x < cloudsPosY.Count; x++)
                 {
                     if(iHaveRemoved)

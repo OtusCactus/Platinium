@@ -18,7 +18,6 @@ public class ArenaRotation : MonoBehaviour
 
     public Camera mainCamera;
     public Transform arenaLookAt;
-    //public Transform[] faceCenter;
 
     //arène
     [Header("Arène")]
@@ -106,7 +105,6 @@ public class ArenaRotation : MonoBehaviour
     {
         if(_gameManagerScript.GetSlowMotionBool() != _currentSlowMotion)
         {
-            //_soundManagerScript.myAudio.pitch = Time.timeScale;
             for (int i = 0; i < _managerAudio.Length; i++)
             {
                 _managerAudio[i].pitch = Time.timeScale;
@@ -114,15 +112,12 @@ public class ArenaRotation : MonoBehaviour
             _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();
         }
         //permet d'avoir accès à la distance de la caméra
-        //diceCameraDistance = Vector3.Distance(arena.transform.position, mainCamera.transform.position);
 
         //si la face de l'arène doit changer, permet de chercher la rotation nécéssaire à effectuer puis de jouer le son de fin de round
         if (_faceStored != _currentFace)
         {
             _startRotation = transform.rotation;
             _endRotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
-
-            //_soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
             _newSoundManagerScript.PlaySound("Gong");
 
             //permet la rotation
@@ -210,7 +205,6 @@ public class ArenaRotation : MonoBehaviour
             {
                 timerClamped = 0;
                 _turningTimer = 0;
-                //_soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
                 _newSoundManagerScript.PlaySound("Gong");
                 _isTurning = false;
                 _gameManagerScript.isTurning = false;
@@ -231,9 +225,6 @@ public class ArenaRotation : MonoBehaviour
                         _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).gameObject.SetActive(false);
                     }
                 }
-
-                
-
             }
 
         }

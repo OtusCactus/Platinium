@@ -157,6 +157,7 @@ public class MenuPlayerManager : MonoBehaviour
                 vibrationOnOff[1].sprite = spritesSelectedOrNot[1];
             }
 
+            #region Affichage Mode Déplacement
             if (getMenuInfoScript.getPlayerMouvementMode()[0])
             {
                 mouvementImageP1[0].sprite = spriteSelecOrNoP1[1];
@@ -203,6 +204,7 @@ public class MenuPlayerManager : MonoBehaviour
                     mouvementImageP4[1].sprite = spriteSelecOrNoP4[3];
                 }
             }
+            #endregion
 
             //Gère à quel joueur attribué quel action
 
@@ -237,18 +239,15 @@ public class MenuPlayerManager : MonoBehaviour
                 playerSelection.SetActive(false);
 
                 float inputXPlayer2 = -otherPlayers[0].GetAxis("HorizontalJoy2");
-                // float inputYPlayer2 = otherPlayers[0].GetAxis("VerticalJoy2");
 
                 if (otherPlayers.Count >= 2)
                 {
                     //Gère à quel joueur attribué quel action
                     inputXPlayer3 = -otherPlayers[1].GetAxis("HorizontalJoy3");
-                    // float inputYPlayer3 = otherPlayers[1].GetAxis("VerticalJoy3");
                     if (otherPlayers.Count >= 3)
                     {
                         //Gère à quel joueur attribué quel action
                         inputXPlayer4 = -otherPlayers[2].GetAxis("HorizontalJoy4");
-                        //   float inputYPlayer4 = otherPlayers[2].GetAxis("VerticalJoy4");
 
                     }
                 }
@@ -530,7 +529,6 @@ public class MenuPlayerManager : MonoBehaviour
     public void Options()
     {
         optionsPanel.SetActive(true);
-        //playerEntity.enabled = false;
         _isOnOptions = true;
         musicSlider.Select();
     }

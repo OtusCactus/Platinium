@@ -123,6 +123,7 @@ public class WallChange : MonoBehaviour
             if (gameObject.transform.GetChild(i).gameObject.activeSelf == true)
             {
                 _currentWallActive = transform.GetChild(i).gameObject;
+                //si le mur est bouncy, c'est composant à attribuer sont diférents, il y a les pillier et le bambou, au lieu de juste le mur
                 if(i == 2)
                 {
                     //pilliers
@@ -272,6 +273,7 @@ public class WallChange : MonoBehaviour
                 {
                     _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
                 }
+                //réinitialise le tableau de matériaux du mur normal
                 else
                 {
                     Material[] temp = new Material[_wallMeshRendererOriginalMaterials.Length];
@@ -364,6 +366,7 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[2];
                 _wallShadowMesh.mesh = wallShadowAppearance[2];
+                //on change le nombre de matériaux du mur normal car son mesh a changé
                 if (!_wallProprieties.isIndestructible && !_hasCreatedArray)
                 {
                     Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 2)];
@@ -394,6 +397,7 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[3];
                 _wallShadowMesh.mesh = wallShadowAppearance[3];
+                //on change le nombre de matériaux du mur normal car son mesh a changé
                 if (!_wallProprieties.isIndestructible && !_hasCreatedArrayTwo)
                 {
                     Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 1)];
@@ -588,8 +592,6 @@ public class WallChange : MonoBehaviour
 
     public void SetDammageFromConnect(float dammage)
     {
-        //transform.GetChild(3).GetComponent<MeshRenderer>().material.SetFloat("_Etatdudissolve", 1);
-
         _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         if (_wallProprieties.isBouncy)
         {
