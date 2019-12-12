@@ -25,6 +25,8 @@ public class ScoreManager : MonoBehaviour
     private int actualRound = 0;
 
     private GameManager _gameManagerScript;
+    public GameObject gamePanel;
+    public GameObject podiumThird;
     
 
 
@@ -39,6 +41,7 @@ public class ScoreManager : MonoBehaviour
             _playerScore[i] = 0;
         }
         UpdateUI();
+        gamePanel.SetActive(true);
     }
 
     void Update()
@@ -95,6 +98,7 @@ public class ScoreManager : MonoBehaviour
             if (nbrPlayers >= 3)
             {
                 playersClassement[2].sprite = playersSprite[Classement()[2]];
+                podiumThird.SetActive(true);
                 playersClassement[2].gameObject.SetActive(true);
             }
             if(nbrPlayers == 4)
@@ -104,6 +108,7 @@ public class ScoreManager : MonoBehaviour
             }
             playersClassement[0].gameObject.SetActive(true);
             playersClassement[1].gameObject.SetActive(true);
+            gamePanel.SetActive(false);
             restartMenu.SetActive(true);
             Time.timeScale = 0;
         }
