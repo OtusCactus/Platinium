@@ -26,12 +26,14 @@ public class MenuPlayerManager : MonoBehaviour
     private bool _isOnOptions = false;
 
     [Header("Play")]
+    public GameObject startPanel;
     public GameObject playerSelection;
     public Slider numberPlayers;
     public string sceneName;
     private bool _isStartGameShowing;
     public GameObject selecPanel;
     public Slider playerNumberSlider;
+    private bool _theMenuHasBegun = false;
 
     [Header("Players 3 & 4")]
     public GameObject[] twoOtherPlayerNumber;
@@ -70,6 +72,8 @@ public class MenuPlayerManager : MonoBehaviour
 
     public Toggle vibrationToggle;
 
+    private float timerMenu = 0;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -87,6 +91,7 @@ public class MenuPlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPanel.SetActive(true);
         playerSelection.SetActive(false);
         selecPanel.SetActive(false);
         optionsPanel.SetActive(false);
@@ -99,296 +104,303 @@ public class MenuPlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //Gère à quel joueur attribué quel action
-        float inputXPlayer1 = -_player.GetAxis("HorizontalJoy1");
-        float inputYPlayer1 = _player.GetAxis("VerticalJoy1");
-        Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
-        if (dirPlayer1.magnitude < 0.3f)
+        if (!_theMenuHasBegun && _player.GetButtonUp("Push1"))
         {
-            dirPlayer1 = Vector2.zero;
+            startPanel.SetActive(false);
+            _theMenuHasBegun = true;
         }
-        playerEntity.SetInputX(dirPlayer1);
-
-        //Gère à quel joueur attribué quel action
-
-
-        if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing)
+        if (_theMenuHasBegun)
         {
-            ShowPlayerSelection();
-        }
-        else if (playerEntity.currentFace == 1 && _player.GetButton("Push1"))
-        {
-            ExitGame();
-        }
-        else if (playerEntity.currentFace == 2 && _player.GetButton("Push1"))
-        {
-            Options();
-        }
-
-        if (_isStartGameShowing && _player.GetButtonDown("BackMenu"))
-        {
-            playerEntity.enabled = true;
-            playerSelection.SetActive(false);
-            _isStartGameShowing = false;
-
-        }
-        else if(_isStartGameShowing && _player.GetButtonDown("Push1"))
-        {
-            ShowSelectionChar();
-        }
-        if (_isCharSelecShowing)
-        {
-            playerSelection.SetActive(false);
-
-            float inputXPlayer2 = -otherPlayers[0].GetAxis("HorizontalJoy2");
-           // float inputYPlayer2 = otherPlayers[0].GetAxis("VerticalJoy2");
-
-            if(otherPlayers.Count >= 2)
+            timerMenu += Time.deltaTime;
+            //Gère à quel joueur attribué quel action
+            float inputXPlayer1 = -_player.GetAxis("HorizontalJoy1");
+            float inputYPlayer1 = _player.GetAxis("VerticalJoy1");
+            Vector2 dirPlayer1 = new Vector2(inputXPlayer1, inputYPlayer1);
+            if (dirPlayer1.magnitude < 0.3f)
             {
-                //Gère à quel joueur attribué quel action
-                inputXPlayer3 = -otherPlayers[1].GetAxis("HorizontalJoy3");
-               // float inputYPlayer3 = otherPlayers[1].GetAxis("VerticalJoy3");
-                if(otherPlayers.Count >= 3)
+                dirPlayer1 = Vector2.zero;
+            }
+            playerEntity.SetInputX(dirPlayer1);
+
+            //Gère à quel joueur attribué quel action
+
+
+            if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing && timerMenu >= 0.2)
+            {
+                ShowPlayerSelection();
+            }
+            else if (playerEntity.currentFace == 1 && _player.GetButton("Push1"))
+            {
+                ExitGame();
+            }
+            else if (playerEntity.currentFace == 2 && _player.GetButton("Push1"))
+            {
+                Options();
+            }
+
+            if (_isStartGameShowing && _player.GetButtonDown("BackMenu"))
+            {
+                playerEntity.enabled = true;
+                playerSelection.SetActive(false);
+                _isStartGameShowing = false;
+
+            }
+            else if (_isStartGameShowing && _player.GetButtonDown("Push1"))
+            {
+                ShowSelectionChar();
+            }
+            if (_isCharSelecShowing)
+            {
+                playerSelection.SetActive(false);
+
+                float inputXPlayer2 = -otherPlayers[0].GetAxis("HorizontalJoy2");
+                // float inputYPlayer2 = otherPlayers[0].GetAxis("VerticalJoy2");
+
+                if (otherPlayers.Count >= 2)
                 {
                     //Gère à quel joueur attribué quel action
-                    inputXPlayer4 = -otherPlayers[2].GetAxis("HorizontalJoy4");
-                 //   float inputYPlayer4 = otherPlayers[2].GetAxis("VerticalJoy4");
+                    inputXPlayer3 = -otherPlayers[1].GetAxis("HorizontalJoy3");
+                    // float inputYPlayer3 = otherPlayers[1].GetAxis("VerticalJoy3");
+                    if (otherPlayers.Count >= 3)
+                    {
+                        //Gère à quel joueur attribué quel action
+                        inputXPlayer4 = -otherPlayers[2].GetAxis("HorizontalJoy4");
+                        //   float inputYPlayer4 = otherPlayers[2].GetAxis("VerticalJoy4");
+
+                    }
+                }
+
+                if (inputXPlayer1 > 0.2f)
+                {
+                    mouvementImage[0].sprite = inversedMouvement;
+                    getMenuInfoScript.setPlayerMouvementMode(0, true);
+                    //playerMouvementMode[0] = false;
+                }
+                else if (inputXPlayer1 < -0.2f)
+                {
+                    getMenuInfoScript.setPlayerMouvementMode(0, false);
+                    mouvementImage[0].sprite = defaultMouvement;
+                    //playerMouvementMode[0] = true;
 
                 }
-            }
 
-            if (inputXPlayer1 > 0.2f)
+                if (inputXPlayer2 > 0.2f)
+                {
+                    getMenuInfoScript.setPlayerMouvementMode(1, true);
+                    //playerMouvementMode[1] = false;
+                    mouvementImage[1].sprite = inversedMouvement;
+                }
+                else if (inputXPlayer2 < -0.2f)
+                {
+                    getMenuInfoScript.setPlayerMouvementMode(1, false);
+                    //playerMouvementMode[1] = true;
+                    mouvementImage[1].sprite = defaultMouvement;
+                }
+
+                if (inputXPlayer3 > 0.2f)
+                {
+                    getMenuInfoScript.setPlayerMouvementMode(2, true);
+                    //playerMouvementMode[2] = false;
+                    mouvementImage[2].sprite = inversedMouvement;
+                }
+                else if (inputXPlayer3 < -0.2f)
+                {
+                    getMenuInfoScript.setPlayerMouvementMode(2, false);
+                    //playerMouvementMode[2] = true;
+                    mouvementImage[2].sprite = defaultMouvement;
+                }
+
+                if (inputXPlayer4 > 0.2f)
+                {
+                    getMenuInfoScript.setPlayerMouvementMode(3, true);
+                    //playerMouvementMode[3] = false;
+                    mouvementImage[3].sprite = inversedMouvement;
+                }
+                else if (inputXPlayer4 < -0.2f)
+                {
+                    getMenuInfoScript.setPlayerMouvementMode(3, false);
+                    //playerMouvementMode[3] = true;
+                    mouvementImage[3].sprite = defaultMouvement;
+                }
+            }
+            if (_isOnOptions && _player.GetButtonDown("BackMenu"))
             {
-                mouvementImage[0].sprite = inversedMouvement;
-                getMenuInfoScript.setPlayerMouvementMode(0, true);
-                //playerMouvementMode[0] = false;
+                playerEntity.enabled = true;
+                optionsPanel.SetActive(false);
+                _isOnOptions = false;
+
             }
-            else if (inputXPlayer1 < -0.2f)
+
+
+            #region Check if everyone ready
+            if (!_isPOneReady)
+                readyButtonConfirm[0].fillAmount = timerPOne;
+            if (!_isPTwoReady)
+                readyButtonConfirm[1].fillAmount = timerPTwo;
+            if (!_isPThreeReady)
+                readyButtonConfirm[2].fillAmount = timerPThree;
+            if (!_isPFourReady)
+                readyButtonConfirm[3].fillAmount = timerPFour;
+            #endregion
+
+
+            #region How to tell if ready
+            if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
             {
-                getMenuInfoScript.setPlayerMouvementMode(0, false);
-                mouvementImage[0].sprite = defaultMouvement;
-                //playerMouvementMode[0] = true;
+                selecPanel.SetActive(false);
+                ShowPlayerSelection();
+                _isPOneReady = false;
+                _isPTwoReady = false;
+                _isPThreeReady = false;
+                _isPFourReady = false;
+                _isCharSelecShowing = false;
 
             }
-
-            if (inputXPlayer2 > 0.2f)
+            if (_isCharSelecShowing && _player.GetButton("Push1"))
             {
-                getMenuInfoScript.setPlayerMouvementMode(1, true);
-                //playerMouvementMode[1] = false;
-                mouvementImage[1].sprite = inversedMouvement;
+                timerPOne += Time.deltaTime;
             }
-            else if (inputXPlayer2 < -0.2f)
+            else if (_isCharSelecShowing && _player.GetButtonUp("Push1"))
             {
-                getMenuInfoScript.setPlayerMouvementMode(1, false);
-                //playerMouvementMode[1] = true;
-                mouvementImage[1].sprite = defaultMouvement;
+                timerPOne = 0;
             }
-
-            if (inputXPlayer3 > 0.2f)
+            if (timerPOne >= 1)
             {
-                getMenuInfoScript.setPlayerMouvementMode(2, true);
-                //playerMouvementMode[2] = false;
-                mouvementImage[2].sprite = inversedMouvement;
+                _isPOneReady = true;
             }
-            else if (inputXPlayer3 < -0.2f)
+            if (_isPOneReady)
             {
-                getMenuInfoScript.setPlayerMouvementMode(2, false);
-                //playerMouvementMode[2] = true;
-                mouvementImage[2].sprite = defaultMouvement;
+                readyButton[0].sprite = readySprite;
             }
-
-            if (inputXPlayer4 > 0.2f)
+            else
             {
-                getMenuInfoScript.setPlayerMouvementMode(3, true);
-                //playerMouvementMode[3] = false;
-                mouvementImage[3].sprite = inversedMouvement;
+                readyButton[0].sprite = originalSprite;
             }
-            else if (inputXPlayer4 < -0.2f)
+
+            if (_isCharSelecShowing && otherPlayers[0].GetButton("Push2"))
             {
-                getMenuInfoScript.setPlayerMouvementMode(3, false);
-                //playerMouvementMode[3] = true;
-                mouvementImage[3].sprite = defaultMouvement;
+                timerPTwo += Time.deltaTime;
             }
-        }
-        if (_isOnOptions && _player.GetButtonDown("BackMenu"))
-        {
-            playerEntity.enabled = true;
-            optionsPanel.SetActive(false);
-            _isOnOptions = false;
-
-        }
-
-
-        #region Check if everyone ready
-        if (!_isPOneReady)    
-        readyButtonConfirm[0].fillAmount = timerPOne;
-        if(!_isPTwoReady)    
-        readyButtonConfirm[1].fillAmount = timerPTwo;
-        if(!_isPThreeReady)    
-        readyButtonConfirm[2].fillAmount = timerPThree;
-        if(!_isPFourReady)    
-        readyButtonConfirm[3].fillAmount = timerPFour;
-        #endregion
-
-
-        #region How to tell if ready
-        if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
-        {
-            selecPanel.SetActive(false);
-            ShowPlayerSelection();
-            _isPOneReady = false;
-            _isPTwoReady = false;
-            _isPThreeReady = false;
-            _isPFourReady = false;
-            _isCharSelecShowing = false;
-
-        }
-        if (_isCharSelecShowing && _player.GetButton("Push1"))
-        {
-            timerPOne += Time.deltaTime;
-        }
-        else if (_isCharSelecShowing && _player.GetButtonUp("Push1"))
-        {
-            timerPOne = 0;
-        }
-        if(timerPOne >= 1)
-        {
-            _isPOneReady = true;
-        }
-        if (_isPOneReady)
-        {
-            readyButton[0].sprite = readySprite;
-        }
-        else
-        {
-            readyButton[0].sprite = originalSprite;
-        }
-
-        if (_isCharSelecShowing && otherPlayers[0].GetButton("Push2"))
-        {
-            timerPTwo += Time.deltaTime;
-        }
-        else if (_isCharSelecShowing && otherPlayers[0].GetButtonUp("Push2"))
-        {
-            timerPTwo = 0;
-        }
-        if (timerPTwo >= 1)
-        {
-            _isPTwoReady = true;
-        }
-        if (_isPTwoReady)
-        {
-            readyButton[1].sprite = readySprite;
-        }
-        else
-        {
-            readyButton[1].sprite = originalSprite;
-        }
-
-        if (playerNumberSlider.value > 2)
-        {
-            if (_isCharSelecShowing && otherPlayers[1].GetButton("Push3"))
+            else if (_isCharSelecShowing && otherPlayers[0].GetButtonUp("Push2"))
             {
-                timerPThree += Time.deltaTime;
+                timerPTwo = 0;
             }
-            else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push3"))
+            if (timerPTwo >= 1)
             {
-                timerPThree = 0;
+                _isPTwoReady = true;
             }
-            if (timerPThree >= 1)
+            if (_isPTwoReady)
             {
-                _isPThreeReady = true;
+                readyButton[1].sprite = readySprite;
             }
-        }
-        if (_isPThreeReady)
-        {
-            readyButton[2].sprite = readySprite;
-        }
-        else
-        {
-            readyButton[2].sprite = originalSprite;
-        }
-
-        if (playerNumberSlider.value > 3)
-        {
-            if (_isCharSelecShowing && otherPlayers[2].GetButton("Push4"))
+            else
             {
-                timerPFour += Time.deltaTime;
-            }
-            else if (_isCharSelecShowing && otherPlayers[2].GetButtonUp("Push4"))
-            {
-                timerPFour = 0;
-            }
-            if (timerPFour >= 1)
-            {
-                _isPFourReady = true;
+                readyButton[1].sprite = originalSprite;
             }
 
+            if (playerNumberSlider.value > 2)
+            {
+                if (_isCharSelecShowing && otherPlayers[1].GetButton("Push3"))
+                {
+                    timerPThree += Time.deltaTime;
+                }
+                else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push3"))
+                {
+                    timerPThree = 0;
+                }
+                if (timerPThree >= 1)
+                {
+                    _isPThreeReady = true;
+                }
+            }
+            if (_isPThreeReady)
+            {
+                readyButton[2].sprite = readySprite;
+            }
+            else
+            {
+                readyButton[2].sprite = originalSprite;
+            }
+
+            if (playerNumberSlider.value > 3)
+            {
+                if (_isCharSelecShowing && otherPlayers[2].GetButton("Push4"))
+                {
+                    timerPFour += Time.deltaTime;
+                }
+                else if (_isCharSelecShowing && otherPlayers[2].GetButtonUp("Push4"))
+                {
+                    timerPFour = 0;
+                }
+                if (timerPFour >= 1)
+                {
+                    _isPFourReady = true;
+                }
+
+            }
+
+            if (_isPFourReady)
+            {
+                readyButton[3].sprite = readySprite;
+            }
+            else
+            {
+                readyButton[3].sprite = originalSprite;
+            }
+            #endregion
+
+            #region Start game when all ready
+            if (playerNumberSlider.value == 2)
+            {
+                readyButton[2].sprite = outSprite;
+                readyButton[3].sprite = outSprite;
+                twoOtherPlayerName[0].SetActive(false);
+                twoOtherPlayerName[1].SetActive(false);
+                twoOtherPlayerNumber[0].SetActive(false);
+                twoOtherPlayerNumber[1].SetActive(false);
+                twoOtherPlayerFace[0].SetActive(false);
+                twoOtherPlayerFace[1].SetActive(false);
+                twoOtherPlayerMode[0].SetActive(false);
+                twoOtherPlayerMode[1].SetActive(false);
+                if (_isPOneReady && _isPTwoReady)
+                {
+                    StartGame();
+                }
+            }
+            else if (playerNumberSlider.value == 3)
+            {
+                twoOtherPlayerName[0].SetActive(true);
+                twoOtherPlayerName[1].SetActive(false);
+                twoOtherPlayerNumber[0].SetActive(true);
+                twoOtherPlayerNumber[1].SetActive(false);
+                twoOtherPlayerFace[0].SetActive(true);
+                twoOtherPlayerFace[1].SetActive(false);
+                twoOtherPlayerMode[0].SetActive(true);
+                twoOtherPlayerMode[1].SetActive(false);
+                readyButton[3].sprite = outSprite;
+                if (_isPOneReady && _isPTwoReady && _isPThreeReady)
+                {
+                    StartGame();
+                }
+            }
+            else
+            {
+                twoOtherPlayerName[0].SetActive(true);
+                twoOtherPlayerName[1].SetActive(true);
+                twoOtherPlayerNumber[0].SetActive(true);
+                twoOtherPlayerNumber[1].SetActive(true);
+                twoOtherPlayerFace[0].SetActive(true);
+                twoOtherPlayerFace[1].SetActive(true);
+                twoOtherPlayerMode[0].SetActive(true);
+                twoOtherPlayerMode[1].SetActive(true);
+                if (_isPOneReady && _isPTwoReady && _isPThreeReady && _isPFourReady)
+                {
+                    StartGame();
+                }
+            }
+            #endregion
         }
 
-        if (_isPFourReady)
-        {
-            readyButton[3].sprite = readySprite;
-        }
-        else
-        {
-            readyButton[3].sprite = originalSprite;
-        }
-        #endregion
-
-        #region Start game when all ready
-        if ( playerNumberSlider.value == 2)
-        {
-            readyButton[2].sprite = outSprite;
-            readyButton[3].sprite = outSprite;
-            twoOtherPlayerName[0].SetActive(false);
-            twoOtherPlayerName[1].SetActive(false);
-            twoOtherPlayerNumber[0].SetActive(false);
-            twoOtherPlayerNumber[1].SetActive(false);
-            twoOtherPlayerFace[0].SetActive(false);
-            twoOtherPlayerFace[1].SetActive(false);
-            twoOtherPlayerMode[0].SetActive(false);
-            twoOtherPlayerMode[1].SetActive(false);
-            if (_isPOneReady && _isPTwoReady)
-            {
-                StartGame();
-            }
-        }
-        else if (playerNumberSlider.value == 3)
-        {
-            twoOtherPlayerName[0].SetActive(true);
-            twoOtherPlayerName[1].SetActive(false);
-            twoOtherPlayerNumber[0].SetActive(true);
-            twoOtherPlayerNumber[1].SetActive(false);
-            twoOtherPlayerFace[0].SetActive(true);
-            twoOtherPlayerFace[1].SetActive(false);
-            twoOtherPlayerMode[0].SetActive(true);
-            twoOtherPlayerMode[1].SetActive(false);
-            readyButton[3].sprite = outSprite;
-            if (_isPOneReady && _isPTwoReady && _isPThreeReady)
-            {
-                StartGame();
-            }
-        }
-        else
-        {
-            twoOtherPlayerName[0].SetActive(true);
-            twoOtherPlayerName[1].SetActive(true);
-            twoOtherPlayerNumber[0].SetActive(true);
-            twoOtherPlayerNumber[1].SetActive(true);
-            twoOtherPlayerFace[0].SetActive(true);
-            twoOtherPlayerFace[1].SetActive(true);
-            twoOtherPlayerMode[0].SetActive(true);
-            twoOtherPlayerMode[1].SetActive(true);
-            if (_isPOneReady && _isPTwoReady && _isPThreeReady && _isPFourReady)
-            {
-                StartGame();
-            }
-        }
-        #endregion
-
-       
     }
     public void Vibration(Player _player, int motorUsed, float motorVibrationStrength, float duration)
     {
