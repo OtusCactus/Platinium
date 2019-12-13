@@ -55,6 +55,8 @@ public class AttackTest : MonoBehaviour
     private Color _crackStartingColor;
     private bool _isCrackActive;
 
+    private bool _hasPlayedSound = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -160,12 +162,15 @@ public class AttackTest : MonoBehaviour
                 _isCrackActive = false;
             }
         }
-
-
+        
         //active la shockwave pendant un certain temps
         if (isShockWaveButtonPressed && _playerEntityScript.GetUltiBool() && !_shockWaveHitScript.haveIBeenHit)
         {
-            _newSoundManagerScript.PlaySound("Ulti");
+            if (!_hasPlayedSound)
+            {
+                _newSoundManagerScript.PlaySound("Ulti");
+                _hasPlayedSound = true;
+            }
             shockWaveDuration -= Time.deltaTime;
             _playerEntityScript.resetUltiCurrentCharge();
             if (_menuInformationScript == null || _menuInformationScript.GetVibrationsValue())
