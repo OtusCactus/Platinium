@@ -165,14 +165,13 @@ public class AttackTest : MonoBehaviour
         //active la shockwave pendant un certain temps
         if (isShockWaveButtonPressed && _playerEntityScript.GetUltiBool() && !_shockWaveHitScript.haveIBeenHit)
         {
+            _newSoundManagerScript.PlaySound("Ulti");
             shockWaveDuration -= Time.deltaTime;
-                _playerEntityScript.resetUltiCurrentCharge();
+            _playerEntityScript.resetUltiCurrentCharge();
             if (_menuInformationScript == null || _menuInformationScript.GetVibrationsValue())
             {
                 if (shockWaveDuration > 0)
                 {
-
-                    _newSoundManagerScript.PlaySound("Ulti");
                     if (gameObject.tag == "Player1")
                     {
                         _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, shockWaveDurationMax);
