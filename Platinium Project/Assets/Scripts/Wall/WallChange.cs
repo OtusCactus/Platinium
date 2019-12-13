@@ -543,17 +543,26 @@ public class WallChange : MonoBehaviour
                // _wallCollider.isTrigger = false;
                 _playerOnCollision.enabled = false;
 
-                if(_gameManagerScript.playerList.Count > 2)
+                if (_gameManagerScript.playerList.Count > 2)
                 {
-                    _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
-                    _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
-                    _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                    if (_gameManagerScript.currentPlayersOnArena == 2)
+                    {
+                        _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                        _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
+                        _gameManagerScript.currentPlayersOnArena--;
+                        _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                    }
+
                 }
                 else
                 {
-                    _scoreManagerScript.ChangeScore(4, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
-                    _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
-                    _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                    if (_gameManagerScript.currentPlayersOnArena == 2)
+                    {
+                        _scoreManagerScript.ChangeScore(4, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                        _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
+                        _gameManagerScript.currentPlayersOnArena--;
+                        _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                    }
                 }
 
                 _gameManagerScript.ResetCurrentPlayers();
