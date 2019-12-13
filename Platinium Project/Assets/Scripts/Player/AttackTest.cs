@@ -172,6 +172,7 @@ public class AttackTest : MonoBehaviour
                 if (shockWaveDuration > 0)
                 {
 
+                    _newSoundManagerScript.PlaySound("Ulti");
                     if (gameObject.tag == "Player1")
                     {
                         _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, shockWaveDurationMax);
@@ -208,7 +209,6 @@ public class AttackTest : MonoBehaviour
                     enemiesCollider[i].GetComponent<ShockwaveHit>().haveIBeenHit = true;
 
                     enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = moveDirection.normalized * Time.deltaTime * pushbackIntensity;
-                    //enemiesCollider[i].GetComponent<Rigidbody2D>().AddForce(moveDirection.normalized * Time.deltaTime * pushbackIntensity);
                     Debug.Log("Hit");
                 }
             }
