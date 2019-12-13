@@ -19,12 +19,14 @@ public class ShockwaveHit : MonoBehaviour
     //garde les components nécéssaires au script
     private PlayerEntity _playerEntityScript;
 
+    public GameObject stunParticles;
 
     // Start is called before the first frame update
     void Start()
     {
         mouvementPlayerDisabledTime = 0;
         _playerEntityScript = GetComponent<PlayerEntity>();
+        stunParticles.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class ShockwaveHit : MonoBehaviour
         //si le joueur est hit par une shockwave d'un autre joueur, désactive son script de mouvement pendant un certain temps
         if (haveIBeenHit)
         {
+            stunParticles.SetActive(true);
             _playerEntityScript.powerJaugeParent.gameObject.SetActive(false);
             _playerEntityScript.IsInputDisabled(true);
             _playerEntityScript.ResetTimerPower();
@@ -45,6 +48,8 @@ public class ShockwaveHit : MonoBehaviour
                 _playerEntityScript.IsInputDisabled(false);
                 haveIBeenHit = false;
                 mouvementPlayerDisabledTime = 0;
+                stunParticles.SetActive(false);
+
             }
         }
     }
