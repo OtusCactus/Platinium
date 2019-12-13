@@ -2499,6 +2499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_ult_shockwave
       objectReference: {fileID: 0}
+    - target: {fileID: 7240806585276425235, guid: 9892ba1ebcbb2204e80814f4979e7f35,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7240806585276425232, guid: 9892ba1ebcbb2204e80814f4979e7f35,
         type: 3}
       propertyPath: m_LocalPosition.x

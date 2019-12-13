@@ -114,12 +114,12 @@ public class GameManager : MonoBehaviour
             wallHitObj[1].SetActive(false);
             playerUISprite[2].SetActive(false);
             playerUISprite[3].SetActive(false);
-            CracksObj[0].SetActive(false);
-            CracksObj[1].SetActive(false);
+            CracksObj[2].SetActive(false);
+            CracksObj[3].SetActive(false);
         }
         else if ( playerList.Count == 3)
         {
-            CracksObj[1].SetActive(false);
+            CracksObj[3].SetActive(false);
             wallHitObj[1].SetActive(false);
             playerUISprite[3].SetActive(false);
         }
@@ -185,6 +185,14 @@ public class GameManager : MonoBehaviour
             if (currentLD != null)
             {
                 Destroy(currentLD);
+            }
+            for(int i =0; i < CracksObj.Length; i++)
+            {
+                if(CracksObj[i].activeSelf)
+                {
+                    attackTestScripts[i].ResetUlt();
+                    CracksObj[i].SetActive(false);
+                }
             }
         }
         else if(hasRoundBegun)
