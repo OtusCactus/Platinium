@@ -18,6 +18,7 @@ public class CloudSpawner : MonoBehaviour
     public float startWait;
     public float WaveWait;
     public float timeToDestroy = 2;
+    public float spaceBetweenClouds;
 
     void Start()
     {
@@ -53,7 +54,7 @@ public class CloudSpawner : MonoBehaviour
                         x--;
                         iHaveRemoved = false;
                     }
-                    if (Mathf.Abs((posY - cloudsPosY[x])) <= 40)
+                    if (Mathf.Abs((posY - cloudsPosY[x])) <= spaceBetweenClouds)
                     {
                         cloudsPosY.RemoveAt(x);
                         iHaveRemoved = true;
