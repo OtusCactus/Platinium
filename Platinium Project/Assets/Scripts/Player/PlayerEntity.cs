@@ -252,7 +252,7 @@ public class PlayerEntity : MonoBehaviour
                 tooMuchPowerTimer += Time.fixedDeltaTime;
                 if (tooMuchPowerTimer > tooMuchPowerTimerMax)
                 {
-                    tooMuchPowerTimer = 0;
+                    _animator.SetBool("IsSlingshoting", false);
                     _isTooMuchPowerGathered = true;
                     powerJaugeParent.gameObject.SetActive(false);
                     sweatParticles.SetActive(false);
@@ -283,10 +283,11 @@ public class PlayerEntity : MonoBehaviour
                     {
                         _playerManagerScript.player[3].StopVibration();
                     }
-                    _animator.SetBool("IsSlingshoting", false);
                     _playerScoreImage.sprite = _playerScoreImageSprites[2];
                     
                     _playerInput = INPUTSTATE.None;
+                    tooMuchPowerTimer = 0;
+
                 }
             }
         }
