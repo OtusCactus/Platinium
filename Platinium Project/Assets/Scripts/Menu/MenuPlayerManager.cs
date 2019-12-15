@@ -118,7 +118,8 @@ public class MenuPlayerManager : MonoBehaviour
     {
         if(_isOnOptions || _isCharSelecShowing || _isStartGameShowing)
         {
-            playerEntity.IsInOptionOrCharacterMenu(true); 
+            playerEntity.IsInOptionOrCharacterMenu(true);
+            _player.StopVibration();
         }
         else
         {
@@ -547,5 +548,10 @@ public class MenuPlayerManager : MonoBehaviour
     public bool hasOptionOrPlayBeenOpened()
     {
         return _hasOptionOrPlayOpened;
+    }
+
+    public void StopVibration(Player _player)
+    {
+        _player.StopVibration();
     }
 }

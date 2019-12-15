@@ -101,28 +101,43 @@ public class AttackTest : MonoBehaviour
         _crackStartingColor = _ultiCrack.GetComponent<SpriteRenderer>().color;
     }
 
-
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         //prends la position du joueur quand il quitte la caméra
-        if(!hasPositionBeenTaken && !_hasRoundEnded)
+        if (!hasPositionBeenTaken && !_hasRoundEnded)
         {
             playerFromCameraPosition = cameraMain.WorldToScreenPoint(transform.position);
             if (playerFromCameraPosition.x < 0 || playerFromCameraPosition.x > cameraMain.pixelWidth || playerFromCameraPosition.y < 0 || playerFromCameraPosition.y > cameraMain.pixelHeight)
             {
                 playerOutPosition = transform.position;
-                
+
                 hasPositionBeenTaken = true;
                 _hasRoundEnded = true;
             }
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
 
         //active l'animation et lui donne la bonne position
         if (hasPositionBeenTaken)
         {
+            Vector3 dirFromAtoB = (Vector3.zero - transform.GetChild(0).transform.position).normalized;
+            float dotProd = Vector3.Dot(dirFromAtoB, transform.GetChild(0).transform.forward);
+            playerOutAnim.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 180);
+
+            //si le sprite du joueur regarde vers l'arène
+            if (dotProd > 0)
+            {
+                playerOutAnim.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
+            }
+
+
             playerOutAnim.transform.position = new Vector3 (playerOutPosition.x, playerOutPosition.y, transform.position.z);
+           // transform.GetChild(0).transform.LookAt(new Vector3(0, 0, 0));
             playerOutAnim.SetActive(true);
             if (!_hasSoundPlayed)
             {
@@ -132,7 +147,8 @@ public class AttackTest : MonoBehaviour
         }
 
         //permet de reset les valeurs quand l'animation est finie
-        if(_hasAnimationEnded)
+        //if(_hasAnimationEnded)
+        if (playerOutAnim.GetComponent<ParticleSystem>().isStopped && _hasSoundPlayed)
         {
             hasPositionBeenTaken = false;
             playerOutAnim.SetActive(false);
@@ -231,6 +247,7 @@ public class AttackTest : MonoBehaviour
             }
         }
     }
+
 
     
     public void Push()

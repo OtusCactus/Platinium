@@ -182,6 +182,8 @@ public class GameManager : MonoBehaviour
         //check si on doit changer de face de l'arène
         if (isTurning)
         {
+
+
             if (currentLD != null)
             {
                 Destroy(currentLD);
@@ -194,6 +196,8 @@ public class GameManager : MonoBehaviour
                     CracksObj[i].SetActive(false);
                 }
             }
+
+
         }
         else if(hasRoundBegun)
         {
