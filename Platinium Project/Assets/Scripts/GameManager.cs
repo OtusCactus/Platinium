@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] wallHitObj;
     public GameObject[] CracksObj;
 
+    private Animator _previousFaceAnimator;
+
     //debug
     public bool debug;
 
@@ -154,6 +156,9 @@ public class GameManager : MonoBehaviour
 
 
         }
+        //_previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
+        //_previousFaceAnimator.SetBool("isRising", true);
+
     }
 
     // Update is called once per frame
@@ -182,7 +187,8 @@ public class GameManager : MonoBehaviour
         //check si on doit changer de face de l'arène
         if (isTurning)
         {
-
+            
+            //_previousFaceAnimator.SetBool("isFalling", true);
 
             if (currentLD != null)
             {
@@ -201,7 +207,11 @@ public class GameManager : MonoBehaviour
         }
         else if(hasRoundBegun)
         {
+           // _previousFaceAnimator.SetBool("isFalling", false);
+           // _previousFaceAnimator = null;
 
+            //_previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
+            //_faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>().SetBool("isRising", true);
             if (currentLD != null)
             {
                 Destroy(currentLD);
@@ -241,6 +251,7 @@ public class GameManager : MonoBehaviour
                 {
                     _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallChange>().ReEnablingWallBoxColliders();
                 }
+                //_previousFaceAnimator.SetBool("isRising", false);
 
             }
             if (timerRatio >1)
@@ -370,5 +381,16 @@ public class GameManager : MonoBehaviour
     public bool[] GetMenuInfoMouvementBool()
     {
         return menuInfoMouvementBool;
+    }
+
+    public void SetPreviousFaceAnimatorRisingFalse()
+    {
+        _previousFaceAnimator.SetBool("isRising", false);
+
+    }
+
+    public void SetPreviousFaceAnimatorFallingFalse()
+    {
+        _previousFaceAnimator.SetBool("isFalling", false);
     }
 }

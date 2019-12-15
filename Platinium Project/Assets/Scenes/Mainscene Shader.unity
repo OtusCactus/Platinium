@@ -5155,6 +5155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94092799}
   - component: {fileID: 94092800}
+  - component: {fileID: 94092801}
   m_Layer: 0
   m_Name: Arena 11
   m_TagString: Untagged
@@ -5200,6 +5201,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &94092801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94092798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &97992295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5792,6 +5806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 108758057}
   - component: {fileID: 108758058}
+  - component: {fileID: 108758059}
   m_Layer: 0
   m_Name: New Arena 10
   m_TagString: Untagged
@@ -5837,6 +5852,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &108758059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108758056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &111428226
 GameObject:
   m_ObjectHideFlags: 0
@@ -6644,6 +6672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123306910}
   - component: {fileID: 123306911}
+  - component: {fileID: 123306912}
   m_Layer: 0
   m_Name: New Arena 5
   m_TagString: Untagged
@@ -6689,6 +6718,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &123306912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123306909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &123360119
 GameObject:
   m_ObjectHideFlags: 0
@@ -8770,6 +8812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 158621157}
   - component: {fileID: 158621158}
+  - component: {fileID: 158621159}
   m_Layer: 0
   m_Name: New Arena 4
   m_TagString: Untagged
@@ -8815,6 +8858,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &158621159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158621156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &160008872
 GameObject:
   m_ObjectHideFlags: 0
@@ -33632,6 +33688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608906489}
   - component: {fileID: 608906490}
+  - component: {fileID: 608906491}
   m_Layer: 0
   m_Name: New Arena 1
   m_TagString: Untagged
@@ -33677,6 +33734,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &608906491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608906488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &609355421
 GameObject:
   m_ObjectHideFlags: 0
@@ -62113,6 +62183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1074620913}
   - component: {fileID: 1074620914}
+  - component: {fileID: 1074620915}
   m_Layer: 0
   m_Name: New Arena 8
   m_TagString: Untagged
@@ -62158,6 +62229,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1074620915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074620912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &1074926907
 GameObject:
   m_ObjectHideFlags: 0
@@ -68327,6 +68411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162857825}
   - component: {fileID: 1162857826}
+  - component: {fileID: 1162857827}
   m_Layer: 0
   m_Name: New Arena 6
   m_TagString: Untagged
@@ -68372,6 +68457,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1162857827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162857824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &1163481435
 GameObject:
   m_ObjectHideFlags: 0
@@ -80859,6 +80957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1362210697}
   - component: {fileID: 1362210698}
+  - component: {fileID: 1362210699}
   m_Layer: 0
   m_Name: New Arena 9
   m_TagString: Untagged
@@ -80904,6 +81003,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1362210699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362210696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &1362410656
 GameObject:
   m_ObjectHideFlags: 0
@@ -81303,6 +81415,18 @@ MonoBehaviour:
   pausePanel: {fileID: 249625006}
   resume: {fileID: 1818928448}
   options: {fileID: 356651020}
+--- !u!114 &1366459343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8627799423210609204, guid: 791126972d8ed8847aff9faadc41eb1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8627799424535058937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366459337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22b49a5596a93d40941bd378ed2c3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1366459346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95631,6 +95755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1510550796}
   - component: {fileID: 1510550797}
+  - component: {fileID: 1510550798}
   m_Layer: 0
   m_Name: New Arena 12
   m_TagString: Untagged
@@ -95676,6 +95801,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1510550798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510550795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &1510644880
 GameObject:
   m_ObjectHideFlags: 0
@@ -98594,6 +98732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572882421}
   - component: {fileID: 1572882422}
+  - component: {fileID: 1572882423}
   m_Layer: 0
   m_Name: New Arena 7
   m_TagString: Untagged
@@ -98639,6 +98778,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1572882423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572882420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &1578234954
 GameObject:
   m_ObjectHideFlags: 0
@@ -116861,6 +117013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1841716554}
   - component: {fileID: 1841716555}
+  - component: {fileID: 1841716556}
   m_Layer: 0
   m_Name: New Arena 3
   m_TagString: Untagged
@@ -116906,6 +117059,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1841716556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841716553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &1842305751
 GameObject:
   m_ObjectHideFlags: 0
@@ -118700,6 +118866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1866963966}
   - component: {fileID: 1866963967}
+  - component: {fileID: 1866963968}
   m_Layer: 0
   m_Name: New Arena 2
   m_TagString: Untagged
@@ -118745,6 +118912,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1866963968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866963965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b36876d2fd364fa68edcea35883a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManagerScript: {fileID: 1366459343}
 --- !u!1 &1868490098
 GameObject:
   m_ObjectHideFlags: 0
