@@ -220,7 +220,8 @@ public class PlayerEntity : MonoBehaviour
         #region Actions depending on INPUTSTATE
         if (_playerInput == INPUTSTATE.GivingInput)
         {
-            _animator.SetBool("IsSlingshoting", true);
+            if (tooMuchPowerTimer < tooMuchPowerTimerMax)
+                _animator.SetBool("IsSlingshoting", true);
             _animator.SetBool("isHit", false);
             _animator.SetBool("isHitting", false);
             _playerScoreImage.sprite = _playerScoreImageSprites[2];
