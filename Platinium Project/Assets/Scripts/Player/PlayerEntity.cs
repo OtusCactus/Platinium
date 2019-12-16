@@ -417,9 +417,6 @@ public class PlayerEntity : MonoBehaviour
             velX = Mathf.Clamp(velX, 1, 3);
             velY = Mathf.Clamp(velY, 1, 3);
 
-            Debug.Log(velX + "velocity.x");
-            Debug.Log(velY  + "velocity.y");
-
             float squash = ((velY + velX) / scaleMultiplier);
 
             timerScale += Time.deltaTime;
