@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
         }
         _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
         _previousFaceAnimator.SetBool("isRising", true);
-
+        hasRoundBegun = true;
     }
 
     // Update is called once per frame
@@ -207,8 +207,12 @@ public class GameManager : MonoBehaviour
         }
         else if(hasRoundBegun)
         {
-            _previousFaceAnimator.SetBool("isFalling", false);
-            _previousFaceAnimator = null;
+            if(_previousFaceAnimator != null)
+            {
+                _previousFaceAnimator.SetBool("isFalling", false);
+                _previousFaceAnimator = null;
+            }
+
 
             _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
             if(!_isRisingHappened)
