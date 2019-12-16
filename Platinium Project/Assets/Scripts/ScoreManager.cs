@@ -121,6 +121,7 @@ public class ScoreManager : MonoBehaviour
             gamePanel.SetActive(false);
             buttonMenu.Select();
             restartMenu.SetActive(true);
+            buttonMenu.Select();
             Time.timeScale = 0;
         }
         //gère l'apparition des médailles, différente selon nombre de joueur

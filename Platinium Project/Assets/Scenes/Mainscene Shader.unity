@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -3844,7 +3844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -7120,7 +7120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -10728,7 +10728,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnected: 1
+  isConnected: 0
   isMoving: 0
   theWalls: []
 --- !u!61 &327345806
@@ -11594,7 +11594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -12108,7 +12108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -12376,7 +12376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -12589,7 +12589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -13852,7 +13852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -14318,9 +14318,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -15279,7 +15279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -19083,7 +19083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -19400,7 +19400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -21540,7 +21540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -23598,9 +23598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -25006,7 +25006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -29395,9 +29395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -31619,7 +31619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
   isConnected: 0
@@ -35651,9 +35651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -37017,7 +37017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -37935,7 +37935,7 @@ MonoBehaviour:
   isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnected: 0
+  isConnected: 1
   isMoving: 0
   theWalls: []
 --- !u!61 &1049864916
@@ -38864,9 +38864,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -40408,8 +40408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
+  isIndestructible: 1
+  isConnected: 1
   isMoving: 0
   theWalls: []
 --- !u!61 &1119925636
@@ -48310,9 +48310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -50663,8 +50663,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
-  isConnected: 1
+  isIndestructible: 0
+  isConnected: 0
   isMoving: 0
   theWalls: []
 --- !u!61 &1362441891
@@ -59008,9 +59008,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -61190,9 +61190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -66422,9 +66422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -66823,9 +66823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -69740,7 +69740,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnected: 0
+  isConnected: 1
   isMoving: 0
   theWalls: []
 --- !u!61 &1700109399
@@ -70730,9 +70730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -75594,10 +75594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnected: 0
+  isConnected: 1
   isMoving: 0
   theWalls: []
 --- !u!61 &1825883749
@@ -75972,10 +75972,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnected: 1
+  isConnected: 0
   isMoving: 0
   theWalls: []
 --- !u!61 &1833146790
@@ -76102,10 +76102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnected: 1
+  isConnected: 0
   isMoving: 0
   theWalls: []
 --- !u!61 &1836531781
@@ -80208,10 +80208,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnected: 1
+  isConnected: 0
   isMoving: 0
   theWalls: []
 --- !u!61 &1922976657
@@ -81918,10 +81918,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnected: 1
+  isConnected: 0
   isMoving: 0
   theWalls: []
 --- !u!61 &1962133098
@@ -82319,10 +82319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
+  isBouncy: 0
   isSticky: 0
   isIndestructible: 0
-  isConnected: 0
+  isConnected: 1
   isMoving: 0
   theWalls: []
 --- !u!61 &1970468816
@@ -83712,7 +83712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -85872,7 +85872,7 @@ MonoBehaviour:
   isBouncy: 1
   isSticky: 0
   isIndestructible: 0
-  isConnected: 0
+  isConnected: 1
   isMoving: 0
   theWalls: []
 --- !u!61 &2061394826
@@ -86593,7 +86593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBouncy: 0
   isSticky: 0
-  isIndestructible: 0
+  isIndestructible: 1
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -88059,9 +88059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
+  isBouncy: 1
   isSticky: 0
-  isIndestructible: 1
+  isIndestructible: 0
   isConnected: 0
   isMoving: 0
   theWalls: []
@@ -90980,19 +90980,19 @@ PrefabInstance:
         type: 3}
       propertyPath: faceTab.Array.data[2].levelDesign
       value: 
-      objectReference: {fileID: 4348870030978695456, guid: a50eda80fff204441a2f9063fdc4212e,
+      objectReference: {fileID: 6549582581874060623, guid: 2f4a3c9a5a3d7d64ebe8f2285d9063b0,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[3].levelDesign
       value: 
-      objectReference: {fileID: 5939146380506230663, guid: 475ec98c976ae634fae87450dcbb3e75,
+      objectReference: {fileID: 1914861561315287575, guid: 2ad1f35b4fe7ec248b79b74c3319ab36,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[5].levelDesign
       value: 
-      objectReference: {fileID: 7660712647267114923, guid: 0994def5b4f42c043a6d97c039c293f4,
+      objectReference: {fileID: 5939146380506230663, guid: 475ec98c976ae634fae87450dcbb3e75,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
@@ -91003,37 +91003,42 @@ PrefabInstance:
         type: 3}
       propertyPath: faceTab.Array.data[9].levelDesign
       value: 
-      objectReference: {fileID: 1914861561315287575, guid: 2ad1f35b4fe7ec248b79b74c3319ab36,
+      objectReference: {fileID: 7660712647267114923, guid: 0994def5b4f42c043a6d97c039c293f4,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[10].levelDesign
       value: 
-      objectReference: {fileID: 6258763386176136878, guid: 23d8fad4e6f473f44b1093b84d331bd6,
+      objectReference: {fileID: 4697008752281433917, guid: 4f9546448a25b8b419fd9fee9f637bed,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[11].levelDesign
       value: 
-      objectReference: {fileID: 7636349134469516674, guid: 3eac9963d4e45d449a25b415d7a6713d,
+      objectReference: {fileID: 503968027712619394, guid: d0bb96ca4fe878e40941dd187b11b835,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[1].levelDesign
       value: 
-      objectReference: {fileID: 5482982550808325107, guid: 71370efdcc87fd54fbbcd37e8f66e1f9,
+      objectReference: {fileID: 7636349134469516674, guid: 3eac9963d4e45d449a25b415d7a6713d,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[6].levelDesign
       value: 
-      objectReference: {fileID: 503968027712619394, guid: d0bb96ca4fe878e40941dd187b11b835,
+      objectReference: {fileID: 4348870030978695456, guid: a50eda80fff204441a2f9063fdc4212e,
         type: 3}
     - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
         type: 3}
       propertyPath: faceTab.Array.data[7].levelDesign
       value: 
-      objectReference: {fileID: 4697008752281433917, guid: 4f9546448a25b8b419fd9fee9f637bed,
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627799423210609207, guid: 791126972d8ed8847aff9faadc41eb1a,
+        type: 3}
+      propertyPath: faceTab.Array.data[0].levelDesign
+      value: 
+      objectReference: {fileID: 5482982550808325107, guid: 71370efdcc87fd54fbbcd37e8f66e1f9,
         type: 3}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: allScores.Array.size
@@ -91504,7 +91509,8 @@ PrefabInstance:
       propertyPath: playerWallHit
       value: 
       objectReference: {fileID: 8300000, guid: a6e7796a418a93e41814a0089b6d643f, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7169960847691262422, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
 --- !u!4 &8803697247810532328
 Transform:
