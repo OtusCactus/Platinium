@@ -40,7 +40,9 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        nbrPlayers = _gameManagerScript.playerList.Count;
         _playerScore = new int[nbrPlayers];
+        print(nbrPlayers);
 
         for (int i = _playerScore.Length; i-- > 0;)
         {
@@ -143,6 +145,8 @@ public class ScoreManager : MonoBehaviour
         }
         else if (nbrPlayers == 2)
         {
+            medals[Classement()[3]].gameObject.SetActive(false);
+            medals[Classement()[2]].gameObject.SetActive(false);
             medals[Classement()[1]].gameObject.SetActive(false);
             medals[Classement()[0]].sprite = medalsSprites[0];
             medals[Classement()[0]].gameObject.SetActive(true);
