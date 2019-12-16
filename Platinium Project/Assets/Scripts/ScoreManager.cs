@@ -150,6 +150,23 @@ public class ScoreManager : MonoBehaviour
         }
         else if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && _mustSuddenDeath)
         {
+            if (gameObject.tag == "Player1")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
+            }
+            else if (gameObject.tag == "Player2")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+            }
+            if (gameObject.tag == "Player3")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+            }
+            else if (gameObject.tag == "Player4")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+            }
+
             _gameManagerScript.ReadyText.text = "Sudden Death";
             if(_playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[0]])
             {
@@ -159,7 +176,6 @@ public class ScoreManager : MonoBehaviour
                     _gameManagerScript.playerUISprite[_thisRoundClassement[2]].gameObject.SetActive(false);
                     medals[_thisRoundClassement[2]].gameObject.SetActive(false);
                     allScoresUI[_thisRoundClassement[2]].gameObject.SetActive(false);
-                    totalScores[_thisRoundClassement[2]].gameObject.SetActive(false);
                     totalScores[_thisRoundClassement[2]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[2] + " désactivé");
                 }
