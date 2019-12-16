@@ -82,6 +82,10 @@ public class MenuPlayerManager : MonoBehaviour
     public Sprite[] spritesSelectedOrNot;
     private bool _isOnVibration = false;
 
+    [Header("Tutorial")]
+    public GameObject tutorialPanel;
+    private bool _isOnTutorial = false;
+
     private float timerMenu = 0;
 
     private bool _hasOptionOrPlayOpened;
@@ -236,6 +240,10 @@ public class MenuPlayerManager : MonoBehaviour
             else if (_isStartGameShowing && _player.GetButtonDown("Push1"))
             {
                 ShowSelectionChar();
+            }
+            if (_isOnTutorial && _player.GetButtonUp("BackMenu"))
+            {
+                ShowPlayerSelection();
             }
             if (_isCharSelecShowing)
             {
@@ -520,6 +528,8 @@ public class MenuPlayerManager : MonoBehaviour
     {
         playerSelection.SetActive(true);
         _isStartGameShowing = true;
+        tutorialPanel.SetActive(false);
+        _isOnTutorial = false;
         numberPlayers.Select();
     }
 
@@ -533,6 +543,13 @@ public class MenuPlayerManager : MonoBehaviour
         optionsPanel.SetActive(true);
         _isOnOptions = true;
         musicSlider.Select();
+    }
+
+    public void Tutorial()
+    {
+        tutorialPanel.SetActive(true);
+        _isOnTutorial = true;
+        _isStartGameShowing = false;
     }
 
     public void VibrationToggle(bool isOn)
