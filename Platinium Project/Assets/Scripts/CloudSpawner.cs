@@ -8,6 +8,7 @@ public class CloudSpawner : MonoBehaviour
     public Canvas backgroundCanvas;
     public Image[] cloud;
     [Header("Cadre de Spawn")]
+    public Image pivot;
     public float minX;
     public float maxX;
     public float minY;
@@ -19,6 +20,15 @@ public class CloudSpawner : MonoBehaviour
     public float WaveWait;
     public float timeToDestroy = 2;
     public float spaceBetweenClouds;
+
+    private float _minPosY = 0;
+    private float _maxPosY = 0;
+
+    private void Awake()
+    {
+        _minPosY = pivot.rectTransform.anchoredPosition.y + minY;
+        _maxPosY = pivot.rectTransform.anchoredPosition.y + maxY;
+    }
 
     void Start()
     {
@@ -33,7 +43,7 @@ public class CloudSpawner : MonoBehaviour
             Image[] clouds = new Image[cloudCount];
             //créer une liste de toutes les positions possibles entre le minY et maxY
             List<float> cloudsPosY = new List<float>();
-            for (float arg = minY; arg < maxY; arg++)
+            for (float arg = _minPosY; arg < _maxPosY; arg++)
             {
                 cloudsPosY.Add(arg);
             }
@@ -62,7 +72,7 @@ public class CloudSpawner : MonoBehaviour
                     }
                 }
                 instantiated.transform.SetParent(backgroundCanvas.transform, false);
-                instantiated.rectTransform.anchoredPosition = new Vector2(Random.Range(minX, maxX), posY);
+                instantiated.rectTransform.anchoredPosition = new Vector2(Random.Range(pivot.rectTransform.anchoredPosition.x + minX, pivot.rectTransform.anchoredPosition.x + maxX), posY);
                 Destroy(instantiated, timeToDestroy);
                 yield return new WaitForSeconds(spawnWait);
             }
