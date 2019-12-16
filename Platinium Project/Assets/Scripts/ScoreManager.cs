@@ -164,7 +164,8 @@ public class ScoreManager : MonoBehaviour
             {
                 if (nbrPlayers >= 3)
                 {
-                    _gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    _gameManagerScript.GetSuddenDeathPlayerToDisappear().Add(_gameManagerScript.playerList[_thisRoundClassement[2]].gameObject);
+                    //_gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[2]].gameObject.SetActive(false);
                     medals[_thisRoundClassement[2]].gameObject.SetActive(false);
                     allScoresUI[_thisRoundClassement[2]].gameObject.SetActive(false);
@@ -173,7 +174,9 @@ public class ScoreManager : MonoBehaviour
                 }
                 if (nbrPlayers == 4)
                 {
-                    _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    _gameManagerScript.GetSuddenDeathPlayerToDisappear().Add(_gameManagerScript.playerList[_thisRoundClassement[3]].gameObject);
+
+                    //_gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
                     medals[_thisRoundClassement[3]].gameObject.SetActive(false);
                     allScoresUI[_thisRoundClassement[3]].gameObject.SetActive(false);
@@ -194,7 +197,9 @@ public class ScoreManager : MonoBehaviour
             {
                 if (nbrPlayers == 4)
                 {
-                    _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    _gameManagerScript.GetSuddenDeathPlayerToDisappear().Add(_gameManagerScript.playerList[_thisRoundClassement[1]].gameObject);
+
+                    //_gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
                     medals[_thisRoundClassement[3]].gameObject.SetActive(false);
                     allScoresUI[_thisRoundClassement[3]].gameObject.SetActive(false);

@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] wallHitObj;
     public GameObject[] CracksObj;
 
+    private List<GameObject> suddenDeathPlayerToDisappear;
+
     private Animator _previousFaceAnimator;
     private bool _isRisingHappened;
     //debug
@@ -205,6 +207,13 @@ public class GameManager : MonoBehaviour
                 }
             }
 
+            if(_scoreManagerScript.GetSuddenDeath())
+            {
+                for (int i = 0; i < suddenDeathPlayerToDisappear.Count; i++)
+                {
+                    suddenDeathPlayerToDisappear[i].SetActive(false);
+                }
+            }
 
         }
         else if(hasRoundBegun)
@@ -417,5 +426,10 @@ public class GameManager : MonoBehaviour
     public List<GameObject> GetCurrentPlayerList()
     {
         return currentPlayersList;
+    }
+
+    public List<GameObject> GetSuddenDeathPlayerToDisappear()
+    {
+        return suddenDeathPlayerToDisappear;
     }
 }
