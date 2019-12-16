@@ -157,16 +157,27 @@ public class ScoreManager : MonoBehaviour
                 {
                     _gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    medals[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    allScoresUI[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[2]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[2] + " désactivé");
                 }
                 if (nbrPlayers == 4)
                 {
                     _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
-
+                    medals[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    allScoresUI[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[3]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
                 }
-                _gameManagerScript.currentPlayersOnArena = 2;
+                _gameManagerScript.SetPlayerMax(2);
+
+                if(_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]])
+                {
+                    RestartMenu();
+                }
             }
             else if (_playerScore[_thisRoundClassement[3]] != _playerScore[_thisRoundClassement[0]])
             {
@@ -174,15 +185,27 @@ public class ScoreManager : MonoBehaviour
                 {
                     _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
-
+                    medals[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    allScoresUI[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[3]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
-                    _gameManagerScript.currentPlayersOnArena = 3;
-
+                    _gameManagerScript.SetPlayerMax(3);
+                }
+                if (_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]] || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[2]] 
+                    || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]])
+                {
+                    RestartMenu();
                 }
             }
             else
             {
-                _gameManagerScript.currentPlayersOnArena = 4;
+                _gameManagerScript.SetPlayerMax(4);
+                if (_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]] || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[2]]
+                   || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]] 
+                   || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[3]])
+                {
+                    RestartMenu();
+                }
             }
 
         }
@@ -307,7 +330,7 @@ public class ScoreManager : MonoBehaviour
                     tempHigh = bleuh;
                 }
             }
-            if (tempLow < tempHigh)
+            if (tempLow > tempHigh)
             {
                 fourth = _roundClassmentForEgality[tempLow];
                 third = _roundClassmentForEgality[tempHigh];
@@ -333,7 +356,7 @@ public class ScoreManager : MonoBehaviour
                     tempHigh = second;
                 }
             }
-            if (tempLow < tempHigh)
+            if (tempLow > tempHigh)
             {
                 third = _roundClassmentForEgality[tempLow];
                 second = _roundClassmentForEgality[tempHigh];
@@ -359,7 +382,7 @@ public class ScoreManager : MonoBehaviour
                     tempHigh = second;
                 }
             }
-            if (tempLow < tempHigh)
+            if (tempLow > tempHigh)
             {
                 second = _roundClassmentForEgality[tempLow];
                 first = _roundClassmentForEgality[tempHigh];
@@ -390,6 +413,30 @@ public class ScoreManager : MonoBehaviour
             results = new int[] { first, second, third, fourth };
         }
         return results;
+    }
+
+    private void RestartMenu()
+    {
+            playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
+            playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
+            if (nbrPlayers >= 3)
+            {
+                playersClassement[2].sprite = playersSprite[_thisRoundClassement[2]];
+                podiumThird.SetActive(true);
+                playersClassement[2].gameObject.SetActive(true);
+            }
+            if (nbrPlayers == 4)
+            {
+                playersClassement[3].sprite = playersSprite[_thisRoundClassement[3]];
+                playersClassement[3].gameObject.SetActive(true);
+            }
+            playersClassement[0].gameObject.SetActive(true);
+            playersClassement[1].gameObject.SetActive(true);
+            gamePanel.SetActive(false);
+            buttonMenu.Select();
+            restartMenu.SetActive(true);
+            Time.timeScale = 0;
+        
     }
 
 }

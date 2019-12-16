@@ -169,7 +169,7 @@ public class AttackTest : MonoBehaviour
             }
             ultiCrackTimer += Time.deltaTime;
             float ratio = ultiCrackTimer / ultiCrackTimerMax;
-            Debug.Log(ratio + "ratio");
+
             _ultiCrack.GetComponent<SpriteRenderer>().color = Color.Lerp(_crackStartingColor, new Color(255, 255, 255, 0), ratio);
             if (ratio >= 1)
             {

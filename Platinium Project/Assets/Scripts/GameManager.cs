@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     [Header("Arena")]
     public GameObject arena;
     public int currentPlayersOnArena;
+    private int playerMax; 
     public bool isTurning;
     public bool hasRoundBegun;
     public int currentFace;
@@ -102,8 +103,9 @@ public class GameManager : MonoBehaviour
 
         playersEntityScripts = new PlayerEntity[playerList.Count];
         attackTestScripts = new AttackTest[playerList.Count];
+        playerMax = playerList.Count;
 
-        currentPlayersOnArena = playerList.Count;
+        currentPlayersOnArena = playerMax;
 
         for (int i = playerList.Count; i--> 0;)
         {
@@ -240,7 +242,7 @@ public class GameManager : MonoBehaviour
             lerpTimer += Time.deltaTime;
             float timerRatio = lerpTimer / lerpTimerMax;
 
-            Debug.Log(timerRatio);
+
 
             PlayerReset(playerList);
             for (int i = 0; i < playerList.Count; i ++)
@@ -265,7 +267,7 @@ public class GameManager : MonoBehaviour
             if (timerRatio >1)
             {
                 ReadyText.text = "";
-                currentPlayersOnArena = playerList.Count;
+                currentPlayersOnArena = playerMax;
                 lerpTimer = 0;
                 timerRatio = 0;
                 _isRisingHappened = false;
@@ -401,5 +403,10 @@ public class GameManager : MonoBehaviour
     public void SetPreviousFaceAnimatorFallingFalse()
     {
         _previousFaceAnimator.SetBool("isFalling", false);
+    }
+
+    public void SetPlayerMax(int playerNumber)
+    {
+        playerMax = playerNumber;
     }
 }
