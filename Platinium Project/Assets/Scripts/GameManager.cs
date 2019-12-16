@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] CracksObj;
 
     private Animator _previousFaceAnimator;
-
+    private bool _isRisingHappened;
     //debug
     public bool debug;
 
@@ -156,8 +156,8 @@ public class GameManager : MonoBehaviour
 
 
         }
-        //_previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
-        //_previousFaceAnimator.SetBool("isRising", true);
+        _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
+        _previousFaceAnimator.SetBool("isRising", true);
 
     }
 
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
         if (isTurning)
         {
             
-            //_previousFaceAnimator.SetBool("isFalling", true);
+            _previousFaceAnimator.SetBool("isFalling", true);
 
             if (currentLD != null)
             {
@@ -207,11 +207,15 @@ public class GameManager : MonoBehaviour
         }
         else if(hasRoundBegun)
         {
-           // _previousFaceAnimator.SetBool("isFalling", false);
-           // _previousFaceAnimator = null;
+            _previousFaceAnimator.SetBool("isFalling", false);
+            _previousFaceAnimator = null;
 
-            //_previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
-            //_faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>().SetBool("isRising", true);
+            _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
+            if(!_isRisingHappened)
+            {
+                _previousFaceAnimator.SetBool("isRising", true);
+                _isRisingHappened = true;
+            }
             if (currentLD != null)
             {
                 Destroy(currentLD);
@@ -251,7 +255,7 @@ public class GameManager : MonoBehaviour
                 {
                     _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallChange>().ReEnablingWallBoxColliders();
                 }
-                //_previousFaceAnimator.SetBool("isRising", false);
+                _previousFaceAnimator.SetBool("isRising", false);
 
             }
             if (timerRatio >1)
@@ -260,6 +264,7 @@ public class GameManager : MonoBehaviour
                 currentPlayersOnArena = playerList.Count;
                 lerpTimer = 0;
                 timerRatio = 0;
+                _isRisingHappened = false;
                 hasRoundBegun = false;
             }
 
