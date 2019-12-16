@@ -21,6 +21,9 @@ public class NewSoundManager : MonoBehaviour
     public AudioClip[] bouncySounds;
     [Header("Ulti")]
     public AudioClip[] ultiSounds;
+    [Header("Sudden Death")]
+    public AudioClip deathMusic;
+
 
     private GetMenuInformation _menuInformationScript;
 
@@ -151,5 +154,10 @@ public class NewSoundManager : MonoBehaviour
     public void StopCharge(int player)
     {
         _playerCharges[player].enabled = false;
+    }
+
+    public void ItsSuddenDeath()
+    {
+        music.clip = deathMusic;
     }
 }
