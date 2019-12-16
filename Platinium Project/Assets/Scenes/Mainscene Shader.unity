@@ -41767,7 +41767,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 7fd83a3470f5d494998f53e4e4dc291a, type: 2}
+      objectReference: {fileID: 2100000, guid: 4744e1e0772a18940a008783a5a97964, type: 2}
     - target: {fileID: -1504981713932161579, guid: a92053745bc3c1e4089466112a51205b,
         type: 3}
       propertyPath: m_Materials.Array.data[3]
@@ -50874,8 +50874,8 @@ MonoBehaviour:
   cloudCount: 5
   spawnWait: 3
   startWait: 0
-  WaveWait: 45
-  timeToDestroy: 120
+  WaveWait: 120
+  timeToDestroy: 180
   spaceBetweenClouds: 145
 --- !u!1 &1366904485
 GameObject:

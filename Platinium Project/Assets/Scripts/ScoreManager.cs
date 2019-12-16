@@ -91,7 +91,6 @@ public class ScoreManager : MonoBehaviour
                 _todaysWinner = player - 1;
                 for (int i =0; i < _playerScore.Length; i++)
                 {
-
                     _CheckScore(i);
                 }
                 actualRound++;
@@ -105,27 +104,29 @@ public class ScoreManager : MonoBehaviour
     //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
     void _CheckScore(int player)
     {
-        //Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
-        if (_playerScore[player] >= scoreToWin)
+        print("check score" + Classement().Length);
+        if (Classement().Length != 0)
         {
-            if (gameObject.tag == "Player1")
+            //Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
+            if (_playerScore[player] >= scoreToWin)
             {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
-            }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
-            }
-            if (Classement().Length != 0)
-            {
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
+                }
+                else if (gameObject.tag == "Player2")
+                {
+                    _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+                }
+                if (gameObject.tag == "Player3")
+                {
+                    _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+                }
+                else if (gameObject.tag == "Player4")
+                {
+                    _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+                }
+
                 playersClassement[0].sprite = playersSprite[Classement()[0]];
                 playersClassement[1].sprite = playersSprite[Classement()[1]];
                 if (nbrPlayers >= 3)
@@ -146,38 +147,39 @@ public class ScoreManager : MonoBehaviour
                 restartMenu.SetActive(true);
                 Time.timeScale = 0;
             }
-            else
+            //gère l'apparition des médailles, différente selon nombre de joueur
+            if (nbrPlayers == 4)
             {
-                //bioup
+                medals[Classement()[3]].gameObject.SetActive(false);
+                medals[Classement()[2]].sprite = medalsSprites[2];
+                medals[Classement()[2]].gameObject.SetActive(true);
+                medals[Classement()[1]].sprite = medalsSprites[1];
+                medals[Classement()[1]].gameObject.SetActive(true);
+                medals[Classement()[0]].sprite = medalsSprites[0];
+                medals[Classement()[0]].gameObject.SetActive(true);
+            }
+            else if (nbrPlayers == 3)
+            {
+                medals[Classement()[2]].sprite = medalsSprites[2];
+                medals[Classement()[2]].gameObject.SetActive(true);
+                medals[Classement()[1]].sprite = medalsSprites[1];
+                medals[Classement()[1]].gameObject.SetActive(true);
+                medals[Classement()[0]].sprite = medalsSprites[0];
+                medals[Classement()[0]].gameObject.SetActive(true);
+            }
+            else if (nbrPlayers == 2)
+            {
+                medals[Classement()[3]].gameObject.SetActive(false);
+                medals[Classement()[2]].gameObject.SetActive(false);
+                medals[Classement()[1]].gameObject.SetActive(false);
+                medals[Classement()[0]].sprite = medalsSprites[0];
+                medals[Classement()[0]].gameObject.SetActive(true);
             }
         }
-        //gère l'apparition des médailles, différente selon nombre de joueur
-        if (nbrPlayers == 4)
+        else
         {
-            medals[Classement()[3]].gameObject.SetActive(false);
-            medals[Classement()[2]].sprite = medalsSprites[2];
-            medals[Classement()[2]].gameObject.SetActive(true);
-            medals[Classement()[1]].sprite = medalsSprites[1];
-            medals[Classement()[1]].gameObject.SetActive(true);
-            medals[Classement()[0]].sprite = medalsSprites[0];
-            medals[Classement()[0]].gameObject.SetActive(true);
-        }
-        else if (nbrPlayers == 3)
-        {
-            medals[Classement()[2]].sprite = medalsSprites[2];
-            medals[Classement()[2]].gameObject.SetActive(true);
-            medals[Classement()[1]].sprite = medalsSprites[1];
-            medals[Classement()[1]].gameObject.SetActive(true);
-            medals[Classement()[0]].sprite = medalsSprites[0];
-            medals[Classement()[0]].gameObject.SetActive(true);
-        }
-        else if (nbrPlayers == 2)
-        {
-            medals[Classement()[3]].gameObject.SetActive(false);
-            medals[Classement()[2]].gameObject.SetActive(false);
-            medals[Classement()[1]].gameObject.SetActive(false);
-            medals[Classement()[0]].sprite = medalsSprites[0];
-            medals[Classement()[0]].gameObject.SetActive(true);
+            //bioup
+            print("bonjour sudden death");
         }
     }
 
@@ -261,12 +263,12 @@ public class ScoreManager : MonoBehaviour
             fourth = third;
             third = _todaysThird;
         }
-        //if (scoreF == scoreS && first != _todaysWinner)
-        //{
-        //    second = first;
-        //    first = _todaysWinner;
-        //}
-        if (scoreF == scoreS)
+        if (scoreF == score && first != _todaysWinner && score < scoreToWin)
+        {
+            second = first;
+            first = _todaysWinner;
+        }
+        else if (score == scoreS)
         {
             _mustSuddenDeath = true;
             return new int[0];
