@@ -150,16 +150,41 @@ public class ScoreManager : MonoBehaviour
         }
         else if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && _mustSuddenDeath)
         {
-            if (nbrPlayers >= 3)
+            _gameManagerScript.ReadyText.text = "Sudden Death";
+            if(_playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[0]])
             {
-                _gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
-                print("joueur " + _thisRoundClassement[2] + " désactivé");
+                if (nbrPlayers >= 3)
+                {
+                    _gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    _gameManagerScript.playerUISprite[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    print("joueur " + _thisRoundClassement[2] + " désactivé");
+                }
+                if (nbrPlayers == 4)
+                {
+                    _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
+
+                    print("joueur " + _thisRoundClassement[3] + " désactivé");
+                }
+                _gameManagerScript.currentPlayersOnArena = 2;
             }
-            if (nbrPlayers == 4)
+            else if (_playerScore[_thisRoundClassement[3]] != _playerScore[_thisRoundClassement[0]])
             {
-                _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
-                print("joueur " + _thisRoundClassement[3] + " désactivé");
+                if (nbrPlayers == 4)
+                {
+                    _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
+
+                    print("joueur " + _thisRoundClassement[3] + " désactivé");
+                    _gameManagerScript.currentPlayersOnArena = 3;
+
+                }
             }
+            else
+            {
+                _gameManagerScript.currentPlayersOnArena = 4;
+            }
+
         }
         //gère l'apparition des médailles, différente selon nombre de joueur
         if (nbrPlayers == 4)
