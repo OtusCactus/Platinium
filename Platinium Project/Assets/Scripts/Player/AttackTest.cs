@@ -142,7 +142,7 @@ public class AttackTest : MonoBehaviour
             if (!_hasSoundPlayed)
             {
                 _newSoundManagerScript.PlaySound("Elimination");
-                _newSoundManagerScript.PlaySound(3);
+                _newSoundManagerScript.PlaySound("Crowd");
                 _hasSoundPlayed = true;
             }
         }

@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
     public Sprite[] medalsSprites;
     private int[] _playerScore;
 
-    private int[] _roundClassment = new int[] { 0, 0, 0, 0 };
+    private int[] _roundClassmentForEgality = new int[] { 0, 0, 0, 0 };
     private int _todaysWinner = 0;
     private int _todaysSecond = 0;
     private int _todaysThird = 0;
@@ -72,28 +72,28 @@ public class ScoreManager : MonoBehaviour
                 print("score +0");
                 print(player - 1);
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
-                _thisRoundClassement[3] = player - 1;
+                _roundClassmentForEgality[3] = player - 1;
                 _todaysLooser = player - 1;
                 break;
             case 3:
                 print("score +1");
                 _playerScore[player - 1] += 1;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
-                _thisRoundClassement[2] = player - 1;
+                _roundClassmentForEgality[2] = player - 1;
                 _todaysThird = player -1;
                 break;
             case 2:
                 print("score +2");
                 _playerScore[player - 1] += 2;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
-                _thisRoundClassement[1] = player - 1;
+                _roundClassmentForEgality[1] = player - 1;
                 _todaysSecond = player -1;
                 break;
             case 1:
                 print("score +3");
                 _playerScore[player - 1] += 3;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
-                _thisRoundClassement[0] = player - 1;
+                _roundClassmentForEgality[0] = player - 1;
                 _todaysWinner = player - 1;
                 _CheckScore();
                 actualRound++;
@@ -291,21 +291,84 @@ public class ScoreManager : MonoBehaviour
             }
         }
         //gère les égalités, le gagnant est celui qui vient de remporter le round
-        
-        if (scoreT == scoreF && third != _todaysThird)
+
+        if (scoreT == scoreF)
         {
-            fourth = third;
-            third = _todaysThird;
+            int tempLow = 0;
+            int tempHigh = 0;
+            for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
+            {
+                if (_roundClassmentForEgality[bleuh] == fourth)
+                {
+                    tempLow = bleuh;
+                }
+                else if (_roundClassmentForEgality[bleuh] == third)
+                {
+                    tempHigh = bleuh;
+                }
+            }
+            if (tempLow < tempHigh)
+            {
+                fourth = _roundClassmentForEgality[tempLow];
+                third = _roundClassmentForEgality[tempHigh];
+            }
+            else
+            {
+                fourth = _roundClassmentForEgality[tempHigh];
+                third = _roundClassmentForEgality[tempLow];
+            }
         }
-        if (scoreS == scoreT && second != _todaysSecond)
+        if (scoreS == scoreT)
         {
-            third = second;
-            second = _todaysSecond;
+            int tempLow = 0;
+            int tempHigh = 0;
+            for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
+            {
+                if (_roundClassmentForEgality[bleuh] == third)
+                {
+                    tempLow = bleuh;
+                }
+                else if (_roundClassmentForEgality[bleuh] == third)
+                {
+                    tempHigh = second;
+                }
+            }
+            if (tempLow < tempHigh)
+            {
+                third = _roundClassmentForEgality[tempLow];
+                second = _roundClassmentForEgality[tempHigh];
+            }
+            else
+            {
+                third = _roundClassmentForEgality[tempHigh];
+                second = _roundClassmentForEgality[tempLow];
+            }
         }
-        if (scoreF == score && first != _todaysWinner && score < scoreToWin)
+        if (scoreF == score && score < scoreToWin)
         {
-            second = first;
-            first = _todaysWinner;
+            int tempLow = 0;
+            int tempHigh = 0;
+            for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
+            {
+                if (_roundClassmentForEgality[bleuh] == third)
+                {
+                    tempLow = bleuh;
+                }
+                else if (_roundClassmentForEgality[bleuh] == third)
+                {
+                    tempHigh = second;
+                }
+            }
+            if (tempLow < tempHigh)
+            {
+                second = _roundClassmentForEgality[tempLow];
+                first = _roundClassmentForEgality[tempHigh];
+            }
+            else
+            {
+                second = _roundClassmentForEgality[tempHigh];
+                first = _roundClassmentForEgality[tempLow];
+            }
         }
         else if (score == scoreS && score >= scoreToWin)
         {
