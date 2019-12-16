@@ -25,6 +25,7 @@ public class ScoreManager : MonoBehaviour
     private int actualRound = 0;
 
     private GameManager _gameManagerScript;
+    private PlayerManager _playerManagerScript;
     public GameObject gamePanel;
 
     [Header("Ecran Game Over")]
@@ -40,6 +41,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
         nbrPlayers = _gameManagerScript.playerList.Count;
         _playerScore = new int[nbrPlayers];
         print(nbrPlayers);
@@ -87,6 +89,7 @@ public class ScoreManager : MonoBehaviour
                 _todaysWinner = player - 1;
                 for (int i =0; i < _playerScore.Length; i++)
                 {
+
                     _CheckScore(i);
                 }
                 actualRound++;
@@ -103,6 +106,22 @@ public class ScoreManager : MonoBehaviour
         //Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
         if (_playerScore[player] >= scoreToWin)
         {
+            if (gameObject.tag == "Player1")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
+            }
+            else if (gameObject.tag == "Player2")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+            }
+            if (gameObject.tag == "Player3")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+            }
+            else if (gameObject.tag == "Player4")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+            }
             playersClassement[0].sprite = playersSprite[Classement()[0]];
             playersClassement[1].sprite = playersSprite[Classement()[1]];
             if (nbrPlayers >= 3)

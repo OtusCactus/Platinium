@@ -107,6 +107,8 @@ public class PlayerEntity : MonoBehaviour
     private float timerScaleMax = 0.08f;
     private float timerRescale = 0;
     private float timerRescaleMax = 0.08f;
+    public float scaleMultiplier;
+
     private GameObject playerSprite;
 
 
@@ -116,6 +118,7 @@ public class PlayerEntity : MonoBehaviour
     private bool _isInputDisabled;
 
     private bool _touchedByPlayer = false;
+
 
 
 
@@ -381,7 +384,7 @@ public class PlayerEntity : MonoBehaviour
         {
             timerScale += Time.deltaTime;
             float lerpScaleRatio = timerScale / timerScaleMax;
-            playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(0.17f, 0.17f, playerSprite.transform.localScale.z), lerpScaleRatio);
+            playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(playerSprite.transform.localScale.x * scaleMultiplier , playerSprite.transform.localScale.y / scaleMultiplier , playerSprite.transform.localScale.z), lerpScaleRatio);
             if (lerpScaleRatio >= 1)
             {
                 timerRescale += Time.deltaTime;

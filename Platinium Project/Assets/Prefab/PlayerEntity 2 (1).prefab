@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  velocityClamp: 250
+  velocityClamp: 300
   _controllerNumber: 0
   powerMax: 2
   powerJauge: {fileID: 8562993524623513152}
@@ -1585,6 +1585,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc380faef506aec43b394133194253be, type: 3}
   - {fileID: 21300000, guid: f3d251f18de501949bde4a99b9a99225, type: 3}
   - {fileID: 21300000, guid: 323a6133cc8de2040916b5de206eb0a7, type: 3}
+  scaleMultiplier: 1.5
 --- !u!50 &8562993523499844406
 Rigidbody2D:
   serializedVersion: 4
@@ -2622,7 +2623,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.3
       objectReference: {fileID: 0}
-    - target: {fileID: 8228884, guid: c217f262fea9e90468154f70d667707c, type: 3}
+    - target: {fileID: 11432878, guid: c217f262fea9e90468154f70d667707c, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -2630,7 +2631,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11432878, guid: c217f262fea9e90468154f70d667707c, type: 3}
+    - target: {fileID: 8228884, guid: c217f262fea9e90468154f70d667707c, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
