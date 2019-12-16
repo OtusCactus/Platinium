@@ -215,9 +215,9 @@ public class MenuPlayerManager : MonoBehaviour
 
             //Gère à quel joueur attribué quel action
 
-            if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing && timerMenu >= 0.2)
+            if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing && timerMenu >= 0.2 && !_isOnTutorial)
             {
-                ShowPlayerSelection();
+                ShowPlayerNumberSelection();
             }
             else if (playerEntity.currentFace == 1 && _player.GetButton("Push1"))
             {
@@ -237,13 +237,15 @@ public class MenuPlayerManager : MonoBehaviour
                 _hasOptionOrPlayOpened = false;
 
             }
-            else if (_isStartGameShowing && _player.GetButtonDown("Push1"))
+            else if (_isStartGameShowing && _player.GetButtonDown("Push1") && !_isOnTutorial)
             {
                 ShowSelectionChar();
             }
             if (_isOnTutorial && _player.GetButtonUp("BackMenu"))
             {
-                ShowPlayerSelection();
+                tutorialPanel.SetActive(false);
+                _isOnTutorial = false;
+                ShowPlayerNumberSelection();
             }
             if (_isCharSelecShowing)
             {
@@ -338,7 +340,7 @@ public class MenuPlayerManager : MonoBehaviour
             if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
             {
                 selecPanel.SetActive(false);
-                ShowPlayerSelection();
+                ShowPlayerNumberSelection();
                 _isPOneReady = false;
                 _isPTwoReady = false;
                 _isPThreeReady = false;
@@ -524,12 +526,11 @@ public class MenuPlayerManager : MonoBehaviour
         _isStartGameShowing = false;
     }
 
-    void ShowPlayerSelection()
+    void ShowPlayerNumberSelection()
     {
         playerSelection.SetActive(true);
         _isStartGameShowing = true;
-        tutorialPanel.SetActive(false);
-        _isOnTutorial = false;
+        
         numberPlayers.Select();
     }
 
@@ -549,7 +550,7 @@ public class MenuPlayerManager : MonoBehaviour
     {
         tutorialPanel.SetActive(true);
         _isOnTutorial = true;
-        _isStartGameShowing = false;
+        //_isStartGameShowing = false;
     }
 
     public void VibrationToggle(bool isOn)
