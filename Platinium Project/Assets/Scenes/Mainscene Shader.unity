@@ -28343,6 +28343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
         type: 3}
+      propertyPath: ultiSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
       propertyPath: crowdSounds.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: be46c8c4d61f76049b824963879fa333, type: 3}
@@ -28366,6 +28371,11 @@ PrefabInstance:
       propertyPath: miscSounds.Array.data[8]
       value: 
       objectReference: {fileID: 8300000, guid: 14117dd770d1c2f4ea96261e6744fc20, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: ultiSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d4ff880d5241c24ea06a77695e8f6d6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 506d260f3fbac3b40a4f4fd529998ec6, type: 3}
 --- !u!1 &791446893

@@ -133,7 +133,8 @@ public class NewSoundManager : MonoBehaviour
                 audio.clip = animalSounds[Random.Range(0, animalSounds.Length - 1)];
                 break;
             case 2:
-                audio.clip = ultiSounds[Random.Range(0, ultiSounds.Length - 1)];
+                //audio.clip = ultiSounds[Random.Range(0, ultiSounds.Length - 1)];
+                audio.clip = ultiSounds[0];
                 break;
         }
 
