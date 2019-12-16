@@ -424,12 +424,12 @@ public class PlayerEntity : MonoBehaviour
 
             timerScale += Time.deltaTime;
             float lerpScaleRatio = timerScale / timerScaleMax;
-            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(0.2f, 0.2f, 0.2f), new Vector3(squash + originalScale, (squash / -2) + originalScale, playerSprite.transform.localScale.z), lerpScaleRatio);
+            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(originalScale, originalScale, originalScale), new Vector3(squash + originalScale, (squash / -2) + originalScale, playerSprite.transform.localScale.z), lerpScaleRatio);
             if (lerpScaleRatio >= 1)
             {
                 timerRescale += Time.deltaTime;
                 float lerpRescaleRatio = timerRescale / timerRescaleMax;
-                playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(0.2f, 0.2f, 0.2f), lerpRescaleRatio);
+                playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(originalScale, originalScale, originalScale), lerpRescaleRatio);
                 if (lerpRescaleRatio >= 1)
                 {
                     timerScale = 0;
@@ -438,10 +438,7 @@ public class PlayerEntity : MonoBehaviour
                 }
             }
         }
-        else if (_lastFramePower <= 1)
-        {
-            playerSprite.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        }
+
 
         //si les onomatopées sont activés, lance le timer de désactivation
         if (onomatopéesSprite.enabled)
