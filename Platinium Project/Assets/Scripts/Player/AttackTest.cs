@@ -186,7 +186,7 @@ public class AttackTest : MonoBehaviour
         {
             if (!_hasPlayedSound)
             {
-                _newSoundManagerScript.PlaySound(2);
+                _newSoundManagerScript.PlaySound("Ulti");
                 _hasPlayedSound = true;
             }
             shockWaveDuration -= Time.deltaTime;
