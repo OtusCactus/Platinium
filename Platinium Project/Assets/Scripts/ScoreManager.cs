@@ -17,10 +17,6 @@ public class ScoreManager : MonoBehaviour
     private int[] _playerScore;
 
     private int[] _roundClassmentForEgality = new int[] { 0, 0, 0, 0 };
-    private int _todaysWinner = 0;
-    private int _todaysSecond = 0;
-    private int _todaysThird = 0;
-    private int _todaysLooser = 0;
 
     
     private int actualRound = 0;
@@ -73,28 +69,24 @@ public class ScoreManager : MonoBehaviour
                 print(player - 1);
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 _roundClassmentForEgality[3] = player - 1;
-                _todaysLooser = player - 1;
                 break;
             case 3:
                 print("score +1");
                 _playerScore[player - 1] += 1;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 _roundClassmentForEgality[2] = player - 1;
-                _todaysThird = player -1;
                 break;
             case 2:
                 print("score +2");
                 _playerScore[player - 1] += 2;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 _roundClassmentForEgality[1] = player - 1;
-                _todaysSecond = player -1;
                 break;
             case 1:
                 print("score +3");
                 _playerScore[player - 1] += 3;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 _roundClassmentForEgality[0] = player - 1;
-                _todaysWinner = player - 1;
                 _CheckScore();
                 actualRound++;
                 break;
@@ -367,7 +359,7 @@ public class ScoreManager : MonoBehaviour
                 {
                     tempLow = bleuh;
                 }
-                else if (_roundClassmentForEgality[bleuh] == third)
+                else if (_roundClassmentForEgality[bleuh] == second)
                 {
                     tempHigh = second;
                 }
@@ -389,11 +381,11 @@ public class ScoreManager : MonoBehaviour
             int tempHigh = 0;
             for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
             {
-                if (_roundClassmentForEgality[bleuh] == third)
+                if (_roundClassmentForEgality[bleuh] == second)
                 {
                     tempLow = bleuh;
                 }
-                else if (_roundClassmentForEgality[bleuh] == third)
+                else if (_roundClassmentForEgality[bleuh] == first)
                 {
                     tempHigh = second;
                 }
@@ -411,8 +403,6 @@ public class ScoreManager : MonoBehaviour
         }
         else if (score == scoreS && score >= scoreToWin)
         {
-            second = first;
-            first = _todaysWinner;
             _mustSuddenDeath = true;
         }
         int[] results;
