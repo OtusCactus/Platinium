@@ -33,6 +33,8 @@ public class ScoreManager : MonoBehaviour
     public Sprite[] playersSprite;
     public GameObject podiumThird;
     public Button buttonMenu;
+
+    private bool _mustSuddenDeath = false;
     
 
 
@@ -103,26 +105,32 @@ public class ScoreManager : MonoBehaviour
         //Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
         if (_playerScore[player] >= scoreToWin)
         {
-            playersClassement[0].sprite = playersSprite[Classement()[0]];
-            playersClassement[1].sprite = playersSprite[Classement()[1]];
-            if (nbrPlayers >= 3)
+            if (Classement().Length != 0)
             {
-                playersClassement[2].sprite = playersSprite[Classement()[2]];
-                podiumThird.SetActive(true);
-                playersClassement[2].gameObject.SetActive(true);
+                playersClassement[0].sprite = playersSprite[Classement()[0]];
+                playersClassement[1].sprite = playersSprite[Classement()[1]];
+                if (nbrPlayers >= 3)
+                {
+                    playersClassement[2].sprite = playersSprite[Classement()[2]];
+                    podiumThird.SetActive(true);
+                    playersClassement[2].gameObject.SetActive(true);
+                }
+                if (nbrPlayers == 4)
+                {
+                    playersClassement[3].sprite = playersSprite[Classement()[3]];
+                    playersClassement[3].gameObject.SetActive(true);
+                }
+                playersClassement[0].gameObject.SetActive(true);
+                playersClassement[1].gameObject.SetActive(true);
+                gamePanel.SetActive(false);
+                buttonMenu.Select();
+                restartMenu.SetActive(true);
+                Time.timeScale = 0;
             }
-            if(nbrPlayers == 4)
+            else
             {
-                playersClassement[3].sprite = playersSprite[Classement()[3]];
-                playersClassement[3].gameObject.SetActive(true);
+                //bioup
             }
-            playersClassement[0].gameObject.SetActive(true);
-            playersClassement[1].gameObject.SetActive(true);
-            gamePanel.SetActive(false);
-            buttonMenu.Select();
-            restartMenu.SetActive(true);
-            buttonMenu.Select();
-            Time.timeScale = 0;
         }
         //gère l'apparition des médailles, différente selon nombre de joueur
         if (nbrPlayers == 4)
@@ -223,11 +231,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
         //gère les égalités, le gagnant est celui qui vient de remporter le round
-        if (scoreF == scoreS && first != _todaysWinner)
-        {
-            second = first;
-            first = _todaysWinner;
-        }
+
         if (scoreS == scoreT && second != _todaysSecond)
         {
             third = second;
@@ -237,6 +241,16 @@ public class ScoreManager : MonoBehaviour
         {
             fourth = third;
             third = _todaysThird;
+        }
+        //if (scoreF == scoreS && first != _todaysWinner)
+        //{
+        //    second = first;
+        //    first = _todaysWinner;
+        //}
+        if (scoreF == scoreS)
+        {
+            _mustSuddenDeath = true;
+            return new int[0];
         }
         int[] results;
         if (nbrPlayers == 2)
