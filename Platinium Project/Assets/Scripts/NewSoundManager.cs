@@ -159,5 +159,7 @@ public class NewSoundManager : MonoBehaviour
     public void ItsSuddenDeath()
     {
         music.clip = deathMusic;
+        music.enabled = false;
+        music.enabled = true;
     }
 }
