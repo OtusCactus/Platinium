@@ -204,10 +204,11 @@ public class ScoreManager : MonoBehaviour
         int scoreS = 0;
         int scoreT = 0;
         int scoreF = 0;
+
         //permet de définir l'ordre des joueurs
         for (int x = 0; x < _playerScore.Length; x++)
         {
-            if (_playerScore[x] > score)
+            if (_playerScore[x] >= score)
             {
                 if (nbrPlayers == 4)
                 {
@@ -224,7 +225,7 @@ public class ScoreManager : MonoBehaviour
                 score = _playerScore[x];
                 first = x;
             }
-            else if (_playerScore[x] > scoreS)
+            else if (_playerScore[x] >= scoreS)
             {
                 if (nbrPlayers == 4)
                 {
@@ -233,16 +234,13 @@ public class ScoreManager : MonoBehaviour
                 }
                 if (nbrPlayers >= 3)
                 {
-                    if (scoreS > 0)
-                    {
-                        scoreT = scoreS;
-                        third = second;
-                    }
+                    scoreT = scoreS;
+                    third = second;
                 }
                 scoreS = _playerScore[x];
                 second = x;
             }
-            else if (_playerScore[x] > scoreT)
+            else if (_playerScore[x] >= scoreT)
             {
                 if (nbrPlayers == 4)
                 {
