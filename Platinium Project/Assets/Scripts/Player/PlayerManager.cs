@@ -219,23 +219,30 @@ public class PlayerManager : MonoBehaviour
             mouvementPlayerBool[1] = false;
         }
 
-        if (pauseScript.GetItsOptions() && -player[2].GetAxis("HorizontalJoy3") > 0.2f)
+        if(player.Count >= 3)
         {
-            mouvementPlayerBool[2] = true;
-        }
-        else if (pauseScript.GetItsOptions() && -player[2].GetAxis("HorizontalJoy3") < -0.2f)
-        {
-            mouvementPlayerBool[2] = false;
+            if (pauseScript.GetItsOptions() && -player[2].GetAxis("HorizontalJoy3") > 0.2f)
+            {
+                mouvementPlayerBool[2] = true;
+            }
+            else if (pauseScript.GetItsOptions() && -player[2].GetAxis("HorizontalJoy3") < -0.2f)
+            {
+                mouvementPlayerBool[2] = false;
+            }
+            if(player.Count == 4)
+            {
+                if (pauseScript.GetItsOptions() && -player[3].GetAxis("HorizontalJoy4") > 0.2f)
+                {
+                    mouvementPlayerBool[3] = true;
+                }
+                else if (pauseScript.GetItsOptions() && -player[3].GetAxis("HorizontalJoy4") < -0.2f)
+                {
+                    mouvementPlayerBool[3] = false;
+                }
+            }
+            
         }
 
-        if (pauseScript.GetItsOptions() && -player[3].GetAxis("HorizontalJoy4") > 0.2f)
-        {
-            mouvementPlayerBool[3] = true;
-        }
-        else if (pauseScript.GetItsOptions() && -player[3].GetAxis("HorizontalJoy4") < -0.2f)
-        {
-            mouvementPlayerBool[3] = false;
-        }
 
 
         //gère le changement de sprite des boutons selon valeur booléen
