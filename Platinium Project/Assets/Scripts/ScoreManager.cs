@@ -157,16 +157,22 @@ public class ScoreManager : MonoBehaviour
                 {
                     _gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    medals[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    allScoresUI[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[2].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[2].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[2] + " désactivé");
                 }
                 if (nbrPlayers == 4)
                 {
                     _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
-
+                    medals[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    allScoresUI[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[3]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
                 }
-                _gameManagerScript.currentPlayersOnArena = 2;
+                _gameManagerScript.SetPlayerMax(2);
             }
             else if (_playerScore[_thisRoundClassement[3]] != _playerScore[_thisRoundClassement[0]])
             {
@@ -174,15 +180,17 @@ public class ScoreManager : MonoBehaviour
                 {
                     _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
-
+                    medals[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    allScoresUI[_thisRoundClassement[3]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[3]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
-                    _gameManagerScript.currentPlayersOnArena = 3;
+                    _gameManagerScript.SetPlayerMax(3);
 
                 }
             }
             else
             {
-                _gameManagerScript.currentPlayersOnArena = 4;
+                _gameManagerScript.SetPlayerMax(4);
             }
 
         }
