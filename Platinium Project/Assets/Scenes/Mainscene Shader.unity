@@ -28271,6 +28271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound
       objectReference: {fileID: 0}
+    - target: {fileID: 7955549431179610528, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7955549431179610512, guid: 506d260f3fbac3b40a4f4fd529998ec6,
         type: 3}
       propertyPath: m_LocalPosition.x
