@@ -15,7 +15,8 @@ public class ScoreManager : MonoBehaviour
     public Image[] medals;
     public Sprite[] medalsSprites;
     private int[] _playerScore;
-    
+
+    private int[] _roundClassment = new int[] { 0, 0, 0, 0 };
     private int _todaysWinner = 0;
     private int _todaysSecond = 0;
     private int _todaysThird = 0;
@@ -71,24 +72,28 @@ public class ScoreManager : MonoBehaviour
                 print("score +0");
                 print(player - 1);
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _thisRoundClassement[3] = player - 1;
                 _todaysLooser = player - 1;
                 break;
             case 3:
                 print("score +1");
                 _playerScore[player - 1] += 1;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _thisRoundClassement[2] = player - 1;
                 _todaysThird = player -1;
                 break;
             case 2:
                 print("score +2");
                 _playerScore[player - 1] += 2;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _thisRoundClassement[1] = player - 1;
                 _todaysSecond = player -1;
                 break;
             case 1:
                 print("score +3");
                 _playerScore[player - 1] += 3;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                _thisRoundClassement[0] = player - 1;
                 _todaysWinner = player - 1;
                 _CheckScore();
                 actualRound++;
