@@ -1538,7 +1538,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 96651c3417d9bf346a31b8913ca69c75, type: 3}
   - {fileID: 21300000, guid: 1efb7b181c51e1a4e81663a720a3aee7, type: 3}
   - {fileID: 21300000, guid: 433d7348cbe5c2d42ae57411be6c69e7, type: 3}
-  scaleMultiplier: 1.5
+  scaleMultiplier: 1.2
 --- !u!50 &9112317936584710434
 Rigidbody2D:
   serializedVersion: 4
