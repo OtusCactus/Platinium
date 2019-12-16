@@ -103,82 +103,77 @@ public class ScoreManager : MonoBehaviour
     void _CheckScore()
     {
         print("check score" + Classement().Length);
-        _thisRoundClassement = Classement();
-        if (_thisRoundClassement.Length != 0)
+        _thisRoundClassement = Classement();//Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
+        if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && !_mustSuddenDeath)
         {
-            //Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
-            if (_playerScore[_thisRoundClassement[0]] >= scoreToWin)
+            if (gameObject.tag == "Player1")
             {
-                if (gameObject.tag == "Player1")
-                {
-                    _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
-                }
-                else if (gameObject.tag == "Player2")
-                {
-                    _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
-                }
-                if (gameObject.tag == "Player3")
-                {
-                    _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
-                }
-                else if (gameObject.tag == "Player4")
-                {
-                    _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
-                }
-
-                playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
-                playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
-                if (nbrPlayers >= 3)
-                {
-                    playersClassement[2].sprite = playersSprite[_thisRoundClassement[2]];
-                    podiumThird.SetActive(true);
-                    playersClassement[2].gameObject.SetActive(true);
-                }
-                if (nbrPlayers == 4)
-                {
-                    playersClassement[3].sprite = playersSprite[_thisRoundClassement[3]];
-                    playersClassement[3].gameObject.SetActive(true);
-                }
-                playersClassement[0].gameObject.SetActive(true);
-                playersClassement[1].gameObject.SetActive(true);
-                gamePanel.SetActive(false);
-                buttonMenu.Select();
-                restartMenu.SetActive(true);
-                Time.timeScale = 0;
+                _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
             }
-            //gère l'apparition des médailles, différente selon nombre de joueur
+            else if (gameObject.tag == "Player2")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+            }
+            if (gameObject.tag == "Player3")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+            }
+            else if (gameObject.tag == "Player4")
+            {
+                _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+            }
+
+            playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
+            playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
+            if (nbrPlayers >= 3)
+            {
+                playersClassement[2].sprite = playersSprite[_thisRoundClassement[2]];
+                podiumThird.SetActive(true);
+                playersClassement[2].gameObject.SetActive(true);
+            }
             if (nbrPlayers == 4)
             {
-                medals[_thisRoundClassement[3]].gameObject.SetActive(false);
-                medals[_thisRoundClassement[2]].sprite = medalsSprites[2];
-                medals[_thisRoundClassement[2]].gameObject.SetActive(true);
-                medals[_thisRoundClassement[1]].sprite = medalsSprites[1];
-                medals[_thisRoundClassement[1]].gameObject.SetActive(true);
-                medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
-                medals[_thisRoundClassement[0]].gameObject.SetActive(true);
+                playersClassement[3].sprite = playersSprite[_thisRoundClassement[3]];
+                playersClassement[3].gameObject.SetActive(true);
             }
-            else if (nbrPlayers == 3)
-            {
-                medals[_thisRoundClassement[2]].sprite = medalsSprites[2];
-                medals[_thisRoundClassement[2]].gameObject.SetActive(true);
-                medals[_thisRoundClassement[1]].sprite = medalsSprites[1];
-                medals[_thisRoundClassement[1]].gameObject.SetActive(true);
-                medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
-                medals[_thisRoundClassement[0]].gameObject.SetActive(true);
-            }
-            else if (nbrPlayers == 2)
-            {
-                medals[_thisRoundClassement[3]].gameObject.SetActive(false);
-                medals[_thisRoundClassement[2]].gameObject.SetActive(false);
-                medals[_thisRoundClassement[1]].gameObject.SetActive(false);
-                medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
-                medals[_thisRoundClassement[0]].gameObject.SetActive(true);
-            }
+            playersClassement[0].gameObject.SetActive(true);
+            playersClassement[1].gameObject.SetActive(true);
+            gamePanel.SetActive(false);
+            buttonMenu.Select();
+            restartMenu.SetActive(true);
+            Time.timeScale = 0;
         }
-        else
+        else if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && _mustSuddenDeath)
         {
-            //bioup
-            print("bonjour sudden death");
+            //do the sudden death
+        }
+        //gère l'apparition des médailles, différente selon nombre de joueur
+        if (nbrPlayers == 4)
+        {
+            medals[_thisRoundClassement[3]].gameObject.SetActive(false);
+            medals[_thisRoundClassement[2]].sprite = medalsSprites[2];
+            medals[_thisRoundClassement[2]].gameObject.SetActive(true);
+            medals[_thisRoundClassement[1]].sprite = medalsSprites[1];
+            medals[_thisRoundClassement[1]].gameObject.SetActive(true);
+            medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
+            medals[_thisRoundClassement[0]].gameObject.SetActive(true);
+        }
+        else if (nbrPlayers == 3)
+        {
+            medals[_thisRoundClassement[2]].sprite = medalsSprites[2];
+            medals[_thisRoundClassement[2]].gameObject.SetActive(true);
+            medals[_thisRoundClassement[1]].sprite = medalsSprites[1];
+            medals[_thisRoundClassement[1]].gameObject.SetActive(true);
+            medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
+            medals[_thisRoundClassement[0]].gameObject.SetActive(true);
+        }
+        else if (nbrPlayers == 2)
+        {
+            medals[_thisRoundClassement[3]].gameObject.SetActive(false);
+            medals[_thisRoundClassement[2]].gameObject.SetActive(false);
+            medals[_thisRoundClassement[1]].gameObject.SetActive(false);
+            medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
+            medals[_thisRoundClassement[0]].gameObject.SetActive(true);
         }
     }
 
@@ -275,8 +270,9 @@ public class ScoreManager : MonoBehaviour
         }
         else if (score == scoreS && score >= scoreToWin)
         {
+            second = first;
+            first = _todaysWinner;
             _mustSuddenDeath = true;
-            return new int[0];
         }
         int[] results;
         if (nbrPlayers == 2)
