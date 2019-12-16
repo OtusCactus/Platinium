@@ -409,4 +409,9 @@ public class GameManager : MonoBehaviour
     {
         playerMax = playerNumber;
     }
+
+    public List<GameObject> GetCurrentPlayerList()
+    {
+        return currentPlayersList;
+    }
 }

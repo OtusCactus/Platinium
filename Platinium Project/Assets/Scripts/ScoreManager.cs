@@ -181,6 +181,9 @@ public class ScoreManager : MonoBehaviour
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
                 }
                 _gameManagerScript.SetPlayerMax(2);
+                _gameManagerScript.GetCurrentPlayerList().Clear();
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[0]]);
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[1]]);
 
                 if(_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]])
                 {
@@ -197,8 +200,13 @@ public class ScoreManager : MonoBehaviour
                     allScoresUI[_thisRoundClassement[3]].gameObject.SetActive(false);
                     totalScores[_thisRoundClassement[3]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
-                    _gameManagerScript.SetPlayerMax(3);
+
                 }
+                _gameManagerScript.SetPlayerMax(3);
+                _gameManagerScript.GetCurrentPlayerList().Clear();
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[0]]);
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[1]]);
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[2]]);
                 if (_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]] || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[2]] 
                     || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]])
                 {
@@ -208,6 +216,11 @@ public class ScoreManager : MonoBehaviour
             else
             {
                 _gameManagerScript.SetPlayerMax(4);
+                _gameManagerScript.GetCurrentPlayerList().Clear();
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[0]]);
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[1]]);
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[2]]);
+                _gameManagerScript.GetCurrentPlayerList().Add(_gameManagerScript.playerList[_thisRoundClassement[3]]);
                 if (_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]] || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[2]]
                    || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]] 
                    || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[3]])
