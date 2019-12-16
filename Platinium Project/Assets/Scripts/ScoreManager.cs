@@ -446,4 +446,8 @@ public class ScoreManager : MonoBehaviour
         
     }
 
+    public bool GetSuddenDeath()
+    {
+        return _mustSuddenDeath;
+    }
 }

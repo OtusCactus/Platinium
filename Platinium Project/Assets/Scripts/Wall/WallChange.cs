@@ -546,7 +546,14 @@ public class WallChange : MonoBehaviour
 
                 if (_gameManagerScript.playerList.Count > 2)
                 {
-                    if (_gameManagerScript.currentPlayersOnArena == 2)
+                    if (_gameManagerScript.currentPlayersOnArena == 2 && !_scoreManagerScript.GetSuddenDeath())
+                    {
+                        _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                        _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
+                        _gameManagerScript.currentPlayersOnArena--;
+                        _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                    }
+                    else if (_gameManagerScript.currentPlayersOnArena == 2 && _scoreManagerScript.GetSuddenDeath())
                     {
                         _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
                         _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
