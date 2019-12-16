@@ -362,11 +362,15 @@ public class GameManager : MonoBehaviour
 
     public void ResetCurrentPlayers()
     {
-        currentPlayersList.Clear();
-        for (int i = playerList.Count; i-- > 0;)
+        if(!_scoreManagerScript.GetSuddenDeath())
         {
-            currentPlayersList.Add(playerList[i]);
+            currentPlayersList.Clear();
+            for (int i = playerList.Count; i-- > 0;)
+            {
+                currentPlayersList.Add(playerList[i]);
+            }
         }
+        
     }
     #region SlowMo
     public void SlowMotion()
@@ -408,5 +412,10 @@ public class GameManager : MonoBehaviour
     public void SetPlayerMax(int playerNumber)
     {
         playerMax = playerNumber;
+    }
+
+    public List<GameObject> GetCurrentPlayerList()
+    {
+        return currentPlayersList;
     }
 }
