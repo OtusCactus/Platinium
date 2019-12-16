@@ -151,6 +151,7 @@ public class AttackTest : MonoBehaviour
         if (playerOutAnim.GetComponent<ParticleSystem>().isStopped && _hasSoundPlayed)
         {
             hasPositionBeenTaken = false;
+            playerOutAnim.transform.position = Vector3.zero;
             playerOutAnim.SetActive(false);
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             _hasAnimationEnded = false;

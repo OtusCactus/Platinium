@@ -380,11 +380,11 @@ public class PlayerEntity : MonoBehaviour
     {
 
 
-        if (playerScaleHitWall)
+        if (playerScaleHitWall && _lastFramePower > 1)
         {
             timerScale += Time.deltaTime;
             float lerpScaleRatio = timerScale / timerScaleMax;
-            playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(playerSprite.transform.localScale.x * scaleMultiplier , playerSprite.transform.localScale.y / scaleMultiplier , playerSprite.transform.localScale.z), lerpScaleRatio);
+            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(0.2f, 0.2f, 0.2f), new Vector3(0.2f * scaleMultiplier * _lastFramePower , 0.2f / scaleMultiplier /_lastFramePower , playerSprite.transform.localScale.z), lerpScaleRatio);
             if (lerpScaleRatio >= 1)
             {
                 timerRescale += Time.deltaTime;
