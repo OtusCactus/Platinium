@@ -236,7 +236,7 @@ public class ScoreManager : MonoBehaviour
 
         }
         //gère l'apparition des médailles, différente selon nombre de joueur
-        if (nbrPlayers == 4)
+        if (nbrPlayers == 4 && !_mustSuddenDeath)
         {
             medals[_thisRoundClassement[3]].gameObject.SetActive(false);
             medals[_thisRoundClassement[2]].sprite = medalsSprites[2];
@@ -246,7 +246,7 @@ public class ScoreManager : MonoBehaviour
             medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
             medals[_thisRoundClassement[0]].gameObject.SetActive(true);
         }
-        else if (nbrPlayers == 3)
+        else if (nbrPlayers == 3 && !_mustSuddenDeath)
         {
             medals[_thisRoundClassement[2]].sprite = medalsSprites[2];
             medals[_thisRoundClassement[2]].gameObject.SetActive(true);
@@ -255,7 +255,7 @@ public class ScoreManager : MonoBehaviour
             medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
             medals[_thisRoundClassement[0]].gameObject.SetActive(true);
         }
-        else if (nbrPlayers == 2)
+        else if (nbrPlayers == 2 && !_mustSuddenDeath)
         {
             medals[_thisRoundClassement[3]].gameObject.SetActive(false);
             medals[_thisRoundClassement[2]].gameObject.SetActive(false);
