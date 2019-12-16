@@ -595,6 +595,7 @@ public class PlayerEntity : MonoBehaviour
     {
         GetComponent<AttackTest>().SetHasPositionFalse();
         _animator.SetBool("IsSlingshoting", false);
+        _timerPower = 0;
         _playerScoreImage.sprite = _playerScoreImageSprites[2];
 
         _ultiCurrentCharge = 0;
