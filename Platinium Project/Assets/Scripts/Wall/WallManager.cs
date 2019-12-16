@@ -8,6 +8,8 @@ public class WallManager : MonoBehaviour
 
     public float wallFriction = 15;
     public float wallBouncyFriction = 5;
+    public float ejectionPower;
+    public float shaderAppearanceTime = 1;
 
     //Wall Apperance
     [Header("All Walls Appearance")]
@@ -39,15 +41,18 @@ public class WallManager : MonoBehaviour
         
         return nextface;
     }
+    //definit la puissance du rebond du joueur
     public void Bounce(Vector3 playerVelocity, Vector3 collisionNormal, Rigidbody2D playerRb, float playerSpeed, float myFriction)
     {
         Vector3 direction = Vector3.Reflect(playerVelocity.normalized, collisionNormal);
         playerRb.velocity = new Vector3(direction.x, direction.y).normalized * ((playerVelocity.magnitude / myFriction) * playerSpeed);
     }
+    //non utilisé
     public void StickyWall(Rigidbody2D _myRb)
     {
         _myRb.velocity = Vector3.zero;
     }
+    //définit les murs connectés
     public GameObject SetConnectedWall(GameObject thisWall)
     {
         for (int i = 0; i < thisWall.transform.parent.childCount; i++)
@@ -58,14 +63,18 @@ public class WallManager : MonoBehaviour
             }
         }
         return null;
-    }   
+    }
+
+    //gère les dommages des murs connectés
     public void ConnectedtWallDammage(float myDammage, GameObject thisWall, WallProprieties connectedWallProprieties, WallChange connectedWallChange)
     {
+ 
         if (!connectedWallProprieties.isIndestructible)
         {
             connectedWallChange.SetDammageFromConnect(myDammage);
         }
     }
+    //définit l'apparence du mur selon sa propriété
     public Mesh[] UpdateWallAppearance(WallProprieties wallProprieties)
     {
         if (wallProprieties.isBouncy)
@@ -96,7 +105,7 @@ public class WallManager : MonoBehaviour
             return tempWallAppearance;
         }
     }
-
+    //définit l'apparence de l'outline du mur selon sa propriété
     public Mesh[] UpdateWallShadowAppearance(WallProprieties wallProprieties)
     {
         if (wallProprieties.isBouncy)
@@ -127,7 +136,7 @@ public class WallManager : MonoBehaviour
             return tempWallShadowAppearance;
         }
     }
-
+    //définit quel mur affiché selon sa propriété
     public void WhichWall(WallProprieties wallProprieties) { 
         if (wallProprieties.isBouncy)
         {

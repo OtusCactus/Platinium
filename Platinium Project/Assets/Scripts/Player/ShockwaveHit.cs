@@ -11,23 +11,22 @@ public class ShockwaveHit : MonoBehaviour
 
     //Empêche l'autre joueur de se déplacer pendant un certain temps après être hit par la shockwave
     public float mouvementPlayerDisabledTimeMax;
-    //private float mouvementPlayerDisabledTime;
-    public float reactivatingScriptVelocity = 0.2f;
+    private float mouvementPlayerDisabledTime;
 
     //check si les murs ont été touchés
     private bool _hitWalls;
 
     //garde les components nécéssaires au script
-    private SoundManager _soundManagerScript;
     private PlayerEntity _playerEntityScript;
 
+    public GameObject stunParticles;
 
     // Start is called before the first frame update
     void Start()
     {
-        //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
-        _soundManagerScript = SoundManager.instance;
+        mouvementPlayerDisabledTime = 0;
         _playerEntityScript = GetComponent<PlayerEntity>();
+        stunParticles.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,15 +35,21 @@ public class ShockwaveHit : MonoBehaviour
         //si le joueur est hit par une shockwave d'un autre joueur, désactive son script de mouvement pendant un certain temps
         if (haveIBeenHit)
         {
+            stunParticles.SetActive(true);
             _playerEntityScript.powerJaugeParent.gameObject.SetActive(false);
-            _playerEntityScript.enabled = false;
-            //mouvementPlayerDisabledTime -= Time.deltaTime;
-            if(_playerEntityScript.GetVelocityRatio() <= reactivatingScriptVelocity || _hitWalls)
+            _playerEntityScript.IsInputDisabled(true);
+            _playerEntityScript.ResetTimerPower();
+            _playerEntityScript.GetPlayerAnimator().SetBool("IsSlingshoting", false);
+
+            mouvementPlayerDisabledTime += Time.deltaTime;
+
+            if (mouvementPlayerDisabledTime >= mouvementPlayerDisabledTimeMax)
             {
-                _playerEntityScript.enabled = true;
+                _playerEntityScript.IsInputDisabled(false);
                 haveIBeenHit = false;
-                //mouvementPlayerDisabledTime = mouvementPlayerDisabledTimeMax;
-                _hitWalls = false;
+                mouvementPlayerDisabledTime = 0;
+                stunParticles.SetActive(false);
+
             }
         }
     }

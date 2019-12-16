@@ -18,7 +18,6 @@ public class ArenaRotation : MonoBehaviour
 
     public Camera mainCamera;
     public Transform arenaLookAt;
-    //public Transform[] faceCenter;
 
     //arène
     [Header("Arène")]
@@ -43,9 +42,10 @@ public class ArenaRotation : MonoBehaviour
     public GameObject gameManager;
     private FaceClass _faceClassScript;
     private GameManager _gameManagerScript;
-    private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
     private bool _currentSlowMotion;
+    private NewSoundManager _newSoundManagerScript;
+    private AudioSource[] _managerAudio;
     //debug
     [Header("Debug")]
     public bool debug;
@@ -53,16 +53,23 @@ public class ArenaRotation : MonoBehaviour
     private void Awake()
     {
         _currentFace = Random.Range(0, 11);
+        _faceClassScript = gameManager.GetComponent<FaceClass>();
+
+        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
+        {
+            _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
+
+        }
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //Scripts nécessaires
-        _faceClassScript = gameManager.GetComponent<FaceClass>();
-        _soundManagerScript = SoundManager.instance;
         _playerManagerScript = gameManager.GetComponent<PlayerManager>();
         _gameManagerScript = gameManager.GetComponent<GameManager>();
+        _newSoundManagerScript = NewSoundManager.instance;
+        _managerAudio = _newSoundManagerScript.GetMyAudios();
 
         //set la caméra sur la première face de l'arène.
 
@@ -87,11 +94,7 @@ public class ArenaRotation : MonoBehaviour
 
         }
 
-        for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
-        {
-            _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
 
-        }
     }
 
     // Update is called once per frame
@@ -99,19 +102,20 @@ public class ArenaRotation : MonoBehaviour
     {
         if(_gameManagerScript.GetSlowMotionBool() != _currentSlowMotion)
         {
-            _soundManagerScript.myAudio.pitch = Time.timeScale;
+            for (int i = 0; i < _managerAudio.Length; i++)
+            {
+                _managerAudio[i].pitch = Time.timeScale;
+            }
             _currentSlowMotion = _gameManagerScript.GetSlowMotionBool();
         }
         //permet d'avoir accès à la distance de la caméra
-        //diceCameraDistance = Vector3.Distance(arena.transform.position, mainCamera.transform.position);
 
         //si la face de l'arène doit changer, permet de chercher la rotation nécéssaire à effectuer puis de jouer le son de fin de round
         if (_faceStored != _currentFace)
         {
             _startRotation = transform.rotation;
             _endRotation = _faceClassScript.faceTab[_currentFace].arenaRotation.rotation;
-
-            _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
+            _newSoundManagerScript.PlaySound("Gong");
 
             //permet la rotation
             _isTurning = true;
@@ -189,7 +193,7 @@ public class ArenaRotation : MonoBehaviour
             for (int i = 0; i < _faceClassScript.faceTab[_currentFace].arenaWall.transform.childCount; i++)
             {
                 _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.layer = 14;
-
+                _faceClassScript.faceTab[_currentFace].arenaWall.transform.GetChild(i).gameObject.SetActive(true);
             }
 
 
@@ -198,7 +202,7 @@ public class ArenaRotation : MonoBehaviour
             {
                 timerClamped = 0;
                 _turningTimer = 0;
-                _soundManagerScript.PlaySound(_soundManagerScript.myAudio, _soundManagerScript.endRound);
+                _newSoundManagerScript.PlaySound("Gong");
                 _isTurning = false;
                 _gameManagerScript.isTurning = false;
                 _gameManagerScript.hasRoundBegun = true;
@@ -218,9 +222,6 @@ public class ArenaRotation : MonoBehaviour
                         _faceClassScript.faceTab[_currentFace].wallToHideInOtherFace[i].transform.GetChild(j).gameObject.SetActive(false);
                     }
                 }
-
-                
-
             }
 
         }

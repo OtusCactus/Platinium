@@ -26,8 +26,11 @@ public class GameManager : MonoBehaviour
     public List<GameObject> playerList;
     public GameObject[] playerPrefabs;
     private PlayerEntity[] playersEntityScripts;
+    private AttackTest[] attackTestScripts;
     private List<GameObject> currentPlayersList = new List<GameObject>();
     private bool[] menuInfoMouvementBool;
+
+    public GameObject[] playerUISprite;
 
     [Header("Arena")]
     public GameObject arena;
@@ -48,10 +51,18 @@ public class GameManager : MonoBehaviour
     private bool _isSlowMotion;
     private bool _currentSlowMotion;
     private float _slowMotionTimer;
+    private NewSoundManager _newSoundMangerScript;
+    private AudioSource[] _managerAudios;
     [SerializeField]
     private float _slowMotionTimerMax = 1;
 
     public GameObject[] wallHitObj;
+    public GameObject[] CracksObj;
+
+    private Animator _previousFaceAnimator;
+    private bool _isRisingHappened;
+    //debug
+    public bool debug;
 
     private void Awake()
     {
@@ -69,8 +80,6 @@ public class GameManager : MonoBehaviour
             //permet de set les controles et d'instantier les personnages joueurs en fonction du nombre de joueurs
             if (_menuInformationScript != null && playerList.Count > 0)
             {
-                print("ok");
-
                 _scoreManagerScript.nbrPlayers = 0;
                 for (int i = playerList.Count; i-- >0;)
                 {
@@ -92,6 +101,7 @@ public class GameManager : MonoBehaviour
         }
 
         playersEntityScripts = new PlayerEntity[playerList.Count];
+        attackTestScripts = new AttackTest[playerList.Count];
 
         currentPlayersOnArena = playerList.Count;
 
@@ -104,30 +114,51 @@ public class GameManager : MonoBehaviour
         {
             wallHitObj[0].SetActive(false);
             wallHitObj[1].SetActive(false);
+            playerUISprite[2].SetActive(false);
+            playerUISprite[3].SetActive(false);
+            CracksObj[2].SetActive(false);
+            CracksObj[3].SetActive(false);
         }
         else if ( playerList.Count == 3)
         {
+            CracksObj[3].SetActive(false);
             wallHitObj[1].SetActive(false);
+            playerUISprite[3].SetActive(false);
         }
 
-        
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
+        _newSoundMangerScript = NewSoundManager.instance;
+        _managerAudios = new AudioSource[_newSoundMangerScript.AudioLength()];
+        _managerAudios = _newSoundMangerScript.GetMyAudios();
+        currentFace = _arenaRotationScript._currentFace;
+
         //set la position de départ des joueurs
         for (int i = 0; i < playerList.Count; i++)
         {
-            playerList[i].transform.position = _faceClassScript.faceTab[0].playerStartingPosition[i].position;
+            playerList[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
             playerList[i].SetActive(true);
             playersEntityScripts[i] = playerList[i].GetComponent<PlayerEntity>();
+            attackTestScripts[i] = playerList[i].GetComponent<AttackTest>();
         }
 
         _currentSlowMotion = _isSlowMotion;
 
 
-        currentFace = _arenaRotationScript._currentFace;
+        if (_faceClassScript.faceTab[currentFace].levelDesign != null)
+        {
+            currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+
+
+        }
+        _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
+        _previousFaceAnimator.SetBool("isRising", true);
+        hasRoundBegun = true;
     }
 
     // Update is called once per frame
@@ -135,12 +166,9 @@ public class GameManager : MonoBehaviour
     {
         if (_isSlowMotion != _currentSlowMotion)
         {
-            for (int i = 0; i < playerList.Count; i++)
+            for (int i = 0; i < _managerAudios.Length; i++)
             {
-                for (int j = 0; j < playersEntityScripts[i].GetAudioSourceTab().Length; j++)
-                {
-                    playersEntityScripts[i].GetAudioSourceTab()[j].pitch = Time.timeScale;
-                }
+                _managerAudios[i].pitch = Time.timeScale;
             }
             _currentSlowMotion = _isSlowMotion;
         }
@@ -159,6 +187,39 @@ public class GameManager : MonoBehaviour
         //check si on doit changer de face de l'arène
         if (isTurning)
         {
+            
+            _previousFaceAnimator.SetBool("isFalling", true);
+
+            if (currentLD != null)
+            {
+                Destroy(currentLD);
+            }
+            for(int i =0; i < CracksObj.Length; i++)
+            {
+                if(CracksObj[i].activeSelf)
+                {
+                    attackTestScripts[i].ResetUlt();
+                    CracksObj[i].SetActive(false);
+                }
+            }
+
+
+        }
+        else if(hasRoundBegun)
+        {
+            if(_previousFaceAnimator != null)
+            {
+                _previousFaceAnimator.SetBool("isFalling", false);
+                _previousFaceAnimator = null;
+            }
+
+
+            _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
+            if(!_isRisingHappened)
+            {
+                _previousFaceAnimator.SetBool("isRising", true);
+                _isRisingHappened = true;
+            }
             if (currentLD != null)
             {
                 Destroy(currentLD);
@@ -166,11 +227,11 @@ public class GameManager : MonoBehaviour
             if (_faceClassScript.faceTab[currentFace].levelDesign != null)
             {
                 currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+
+
             }
-        }
-        else if(hasRoundBegun)
-        {
-            ReadyText.text = "Ready";
+
+            ReadyText.text = "Ready ?";
             for (int i = 0; i < playersEntityScripts.Length; i++)
             {
                 playersEntityScripts[i].newRound();
@@ -189,7 +250,17 @@ public class GameManager : MonoBehaviour
 
             if(timerRatio > 0.90f)
             {
-                ReadyText.text = "Go";
+                ReadyText.text = "Go !";
+                for (int i = 0; i < playerList.Count; i++)
+                {
+                    ReEnablingColliders(i);
+                }
+                for (int i = 0; i < _faceClassScript.faceTab[currentFace].arenaWall.transform.childCount; i++)
+                {
+                    _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallChange>().ReEnablingWallBoxColliders();
+                }
+                _previousFaceAnimator.SetBool("isRising", false);
+
             }
             if (timerRatio >1)
             {
@@ -197,6 +268,7 @@ public class GameManager : MonoBehaviour
                 currentPlayersOnArena = playerList.Count;
                 lerpTimer = 0;
                 timerRatio = 0;
+                _isRisingHappened = false;
                 hasRoundBegun = false;
             }
 
@@ -219,37 +291,53 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //debug
+    private void OnGUI()
+    {
+        if (debug)
+        {
+            GUI.color = Color.black;
+            GUILayout.Label("PlayersOnArena : " + currentPlayersOnArena);
+            //GUILayout.Label("diceCameraDistance : " + diceCameraDistance);
+        }
+    }
+
     //permet de reset et de replacer les joueurs à chaque changement de faces
     private void PlayerReset(List<GameObject> player)
     {
         for (int i = 0; i < playerList.Count; i++)
         {
-            //player[i].SetActive(false);
             playerList[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //player[i].transform.position = _faceClassScript.faceTab[currentFace].playerStartingPosition[i].position;
 
         }
     }
 
     private void PlayerLerp(int playerNumber, float timerRatio)
     {
+        attackTestScripts[playerNumber].GetPlayerScoreImage().color = Color32.Lerp(attackTestScripts[playerNumber].GetPlayerScoreImage().color, new Color32(255, 255, 255, 255), timerRatio);
         playerList[playerNumber].transform.position = Vector3.Lerp(playerList[playerNumber].transform.position, _faceClassScript.faceTab[currentFace].playerStartingPosition[playerNumber].position, timerRatio);
-
         if(timerRatio >= 1)
         {
             print("reached");
 
             playersEntityScripts[playerNumber].enabled = true;
-            BoxCollider2D[] playerColliders = playerList[playerNumber].GetComponents<BoxCollider2D>();
-            foreach(BoxCollider2D colliders in playerColliders)
-            { 
-               colliders.enabled = true;
-            }
+           
         }
         else
         {
             playersEntityScripts[playerNumber].enabled = false;
         }
+    }
+
+    private void ReEnablingColliders(int playerNumber)
+    {
+        BoxCollider2D[] playerColliders = playerList[playerNumber].GetComponents<BoxCollider2D>();
+        foreach (BoxCollider2D colliders in playerColliders)
+        {
+            colliders.enabled = true;
+        }
+
+
     }
 
     public void ThisPlayerHasLost(string player)
@@ -302,5 +390,16 @@ public class GameManager : MonoBehaviour
     public bool[] GetMenuInfoMouvementBool()
     {
         return menuInfoMouvementBool;
+    }
+
+    public void SetPreviousFaceAnimatorRisingFalse()
+    {
+        _previousFaceAnimator.SetBool("isRising", false);
+
+    }
+
+    public void SetPreviousFaceAnimatorFallingFalse()
+    {
+        _previousFaceAnimator.SetBool("isFalling", false);
     }
 }

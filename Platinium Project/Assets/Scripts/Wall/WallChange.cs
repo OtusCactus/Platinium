@@ -22,6 +22,7 @@ public class WallChange : MonoBehaviour
 
     private MeshFilter _wallMesh;
     private MeshRenderer _wallMeshRenderer;
+    private Material[] _wallMeshRendererOriginalMaterials;
 
     private MeshFilter _wallShadowMesh;
     private MeshRenderer _wallShadowMeshRenderer;
@@ -30,8 +31,9 @@ public class WallChange : MonoBehaviour
     private SkinnedMeshRenderer _wallShadowMeshRendererBambou;
 
     private PlayerEntity _playerOnCollision;
+    private AttackTest _attackTestOnCollision;
     private float _playerVelocityRatio;
-    private BoxCollider2D _wallCollider;
+    private BoxCollider2D[] _wallCollider = new BoxCollider2D[2];
 
     //arene
     [Header("Arène")]
@@ -73,8 +75,18 @@ public class WallChange : MonoBehaviour
 
 
     private NewSoundManager _newSoundManagerScript;
+    private GameObject lastEjectedPlayer;
+    private float lerpTimerRatio = 0;
 
-
+    private bool _isShaderNeeded;
+    private bool _hasShaderCompletelyAppeared;
+    private MeshRenderer _shaderRenderer;
+    private float _shaderLerp;
+    private float _shaderLerpMax;
+    private void Awake()
+    {
+        gameObject.layer = 15;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -102,15 +114,18 @@ public class WallChange : MonoBehaviour
 
         
 
-        _wallCollider = GetComponent<BoxCollider2D>();
+        _wallCollider = GetComponents<BoxCollider2D>();
+        _wallCollider[1].enabled = false;
 
-        gameObject.layer = 15;
+
+        _wallMeshRendererOriginalMaterials = transform.GetChild(0).GetComponent<MeshRenderer>().materials;
 
         for (int i = 0; i < transform.childCount; i++)
         {
             if (gameObject.transform.GetChild(i).gameObject.activeSelf == true)
             {
                 _currentWallActive = transform.GetChild(i).gameObject;
+                //si le mur est bouncy, c'est composant à attribuer sont diférents, il y a les pillier et le bambou, au lieu de juste le mur
                 if(i == 2)
                 {
                     //pilliers
@@ -154,32 +169,94 @@ public class WallChange : MonoBehaviour
             }
         }
 
+
+        if(gameObject.layer == 15)
+        {
+            gameObject.SetActive(false);
+            _wallShadowMeshRenderer.enabled = false;
+            if(_wallShadowMeshRendererBambou != null)
+            {
+                _wallShadowMeshRendererBambou.enabled = false;
+            }
+        }
+        if(transform.GetChild(3).gameObject.activeSelf)
+        {
+            _shaderRenderer = transform.GetChild(3).GetComponent<MeshRenderer>();
+            _shaderRenderer.material.SetFloat("_Etatdudissolve", -1);
+            _shaderLerpMax = _wallManagerScript.shaderAppearanceTime;
+            _shaderLerp = -1;
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(_isShaderNeeded)
+        {
+            if(_shaderLerp <= 1 && !_hasShaderCompletelyAppeared)
+            {
 
+                _shaderLerp += Time.deltaTime * _shaderLerpMax;
+                if(_shaderLerp >= 1)
+                {
+                    _shaderLerp = 1;
+                    _hasShaderCompletelyAppeared = true;
+
+                }
+            }
+            else if (_shaderLerp >= -1 && _hasShaderCompletelyAppeared)
+            {
+                _shaderLerp -= Time.deltaTime * _shaderLerpMax;
+                if(_shaderLerp <= -1)
+                {
+                    _shaderLerp = -1;
+                    _hasShaderCompletelyAppeared = false;
+                    _isShaderNeeded = false;
+                }
+            }
+
+            _shaderRenderer.material.SetFloat("_Etatdudissolve", _shaderLerp);
+
+        }
+
+        if(_attackTestOnCollision != null)
+        {
+            
+            lerpTimerRatio += Time.deltaTime;
+            _attackTestOnCollision.GetPlayerScoreImage().color = Color32.Lerp(_attackTestOnCollision.GetPlayerScoreImage().color, new Color32(255, 255, 255, 100), lerpTimerRatio);
+            if(lerpTimerRatio >=1)
+            {
+                lerpTimerRatio = 0;
+                _attackTestOnCollision = null;
+            }
+
+        }
+
+       
+
+        if (lastEjectedPlayer != null && lastEjectedPlayer.GetComponent<AttackTest>().hasPositionBeenSet())
+        {
+            _gameManagerScript.currentFace = _nextFace - 1;
+            _arenaRotationScript._currentFace = _nextFace - 1;
+            lastEjectedPlayer = null;
+        }
         //si la caméra est en train de changer de face, désactive les sprites ainsi que les colliders des murs, reset la vie des murs et
         //actualise la face actuelle de la caméra
         if (_arenaRotationScript._isTurning)
         {
+            _hasCreatedArrayTwo = false;
+            _hasCreatedArray = false;
             _wallManagerScript.WhichWall(_wallProprieties);
-            _wallCollider.enabled = true;
+            _wallCollider[0].enabled = true;
+            _wallCollider[1].enabled = false;
             _wallMeshRenderer.enabled = true;
-            //if(_currentWallActive == transform.GetChild(2).gameObject)
-            //{
-            //    for (int i =0; i < _currentWallActive.transform.childCount; i++)
-            //    {
-            //        if(_currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-            //        _currentWallActive.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = true;
-            //    }
-            //}
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
-            _wallCollider.isTrigger = false;
+            //_wallCollider[0].isTrigger = false;
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[0];
@@ -201,9 +278,38 @@ public class WallChange : MonoBehaviour
                 {
                     _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
                 }
+                //réinitialise le tableau de matériaux du mur normal
+                else
+                {
+                    Material[] temp = new Material[_wallMeshRendererOriginalMaterials.Length];
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        temp[i] = _wallMeshRendererOriginalMaterials[i];
+                    }
+                    _wallMeshRenderer.materials = temp;
+                }
+            }
+            if (gameObject.layer == 15)
+            {
+                gameObject.SetActive(false);
+                _wallShadowMeshRenderer.enabled = false;
+                if (_wallShadowMeshRendererBambou != null)
+                {
+                    _wallShadowMeshRendererBambou.enabled = false;
+                }
             }
 
+            if(gameObject.layer == 14)
+            {
+                gameObject.SetActive(true);
+                BoxCollider2D[] boxColliderTab = GetComponents<BoxCollider2D>();
+                for (int i = 0; i < boxColliderTab.Length; i++)
+                {
+                    boxColliderTab[i].enabled = false;
+                }
+            }
         }
+
 
         if (wallLife == wallLifeMax)
         {
@@ -218,6 +324,10 @@ public class WallChange : MonoBehaviour
         if (wallLife <= 0)
         {
             _lastHit = true;
+            if (transform.GetChild(3).gameObject.activeSelf)
+            {
+                transform.GetChild(3).gameObject.SetActive(false);
+            }
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             _wallMeshRenderer.enabled = false;
 
@@ -231,7 +341,9 @@ public class WallChange : MonoBehaviour
                 _wallShadowMeshRendererBambou.enabled = false;
             }
             
-            _wallCollider.isTrigger = true;
+            _wallCollider[0].enabled = false;
+            _wallCollider[1].enabled = true;
+
 
         }
         else if (wallLife < wallLifeMax && wallLife >= (wallLifeMax * 0.66))
@@ -261,6 +373,7 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[2];
                 _wallShadowMesh.mesh = wallShadowAppearance[2];
+                //on change le nombre de matériaux du mur normal car son mesh a changé
                 if (!_wallProprieties.isIndestructible && !_hasCreatedArray)
                 {
                     Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 2)];
@@ -291,6 +404,7 @@ public class WallChange : MonoBehaviour
             {
                 _wallMesh.mesh = wallAppearance[3];
                 _wallShadowMesh.mesh = wallShadowAppearance[3];
+                //on change le nombre de matériaux du mur normal car son mesh a changé
                 if (!_wallProprieties.isIndestructible && !_hasCreatedArrayTwo)
                 {
                     Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 1)];
@@ -347,27 +461,33 @@ public class WallChange : MonoBehaviour
 
         if (_wallProprieties.isIndestructible)
         {
-            _newSoundManagerScript.PlaySound(0, "IndestructibleWallHit");
+            if (_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound("IndestructibleWallHit");
         }
         else if (_wallProprieties.isBouncy)
         {
-            _newSoundManagerScript.PlaySound(0, "BouncyWallHit");
+            if(_newSoundManagerScript != null)
+            _newSoundManagerScript.PlaySound(0);
         }
         else if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
         {
-            _newSoundManagerScript.PlaySound(0, "WallLifeHigh");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound("WallLifeHigh");
         }
         else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
         {
-            _newSoundManagerScript.PlaySound(0, "WallLifeMiddle");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound("WallLifeMiddle");
         }
         else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
         {
-            _newSoundManagerScript.PlaySound(0, "WallLifeLow");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound("WallLifeLow");
         }
         else if (wallLife <= 0)
         {
-            _newSoundManagerScript.PlaySound(0, "WallDestroyed");
+            if(_newSoundManagerScript != null)
+                _newSoundManagerScript.PlaySound("WallDestroyed");
         }
 
     }
@@ -380,18 +500,17 @@ public class WallChange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
-
+        _attackTestOnCollision = collision.gameObject.GetComponent<AttackTest>();
+        Rigidbody2D _playerCollisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
         if (_lastHit)
         {
+            _playerCollisionRB.velocity = _playerCollisionRB.velocity.normalized * _wallManagerScript.ejectionPower;
             if (_gameManagerScript.currentPlayersOnArena > 2)
             {
              
                 _wallMeshRenderer.enabled = false;
-               _wallShadowMeshRenderer.enabled = false;
-                if(transform.GetChild(3).gameObject.activeSelf)
-                {
-                    transform.GetChild(3).gameObject.SetActive(false);
-                }
+                _wallShadowMeshRenderer.enabled = false;
+
 
                 _playerOnCollision.enabled = false;
                 _playerOnCollision.newRound();
@@ -421,17 +540,36 @@ public class WallChange : MonoBehaviour
                         break;
                 }
                 //renvoie la prochaine face vers le script de rotation de caméra
-                _wallCollider.enabled = false;
-                _wallCollider.isTrigger = false;
+                _wallCollider[0].enabled = false;
+               // _wallCollider.isTrigger = false;
+                _playerOnCollision.enabled = false;
 
-                _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
-                _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
-                _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                if (_gameManagerScript.playerList.Count > 2)
+                {
+                    if (_gameManagerScript.currentPlayersOnArena == 2)
+                    {
+                        _scoreManagerScript.ChangeScore(2, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                        _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
+                        _gameManagerScript.currentPlayersOnArena--;
+                        _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                    }
+
+                }
+                else
+                {
+                    if (_gameManagerScript.currentPlayersOnArena == 2)
+                    {
+                        _scoreManagerScript.ChangeScore(4, int.Parse(collision.gameObject.tag.Substring(collision.gameObject.tag.Length - 1)));
+                        _gameManagerScript.ThisPlayerHasLost(collision.gameObject.tag);
+                        _gameManagerScript.currentPlayersOnArena--;
+                        _scoreManagerScript.ChangeScore(1, int.Parse(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Substring(_gameManagerScript.GetFirstCurrentPlayersItem().gameObject.tag.Length - 1)));
+                    }
+                }
 
                 _gameManagerScript.ResetCurrentPlayers();
+                lastEjectedPlayer = collision.gameObject;
+                
 
-                _gameManagerScript.currentFace = _nextFace - 1;
-                _arenaRotationScript._currentFace = _nextFace - 1;
                 _lastHit = false;
             }
 
@@ -499,5 +637,21 @@ public class WallChange : MonoBehaviour
     public bool GetLastHit()
     {
         return _lastHit;
+    }
+
+    public void ReEnablingWallBoxColliders()
+    {
+
+        BoxCollider2D[] boxColliderTab = GetComponents<BoxCollider2D>();
+        for (int i = 0; i < boxColliderTab.Length; i++)
+        {
+            boxColliderTab[i].enabled = true;
+        }
+
+    }
+
+    public void SetShaderNeededTrue()
+    {
+        _isShaderNeeded = true;
     }
 }

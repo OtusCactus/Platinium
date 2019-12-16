@@ -11,6 +11,8 @@ public class Bumper : MonoBehaviour
     private float _timer;
     private float _timerMax = 0.2f;
 
+    private NewSoundManager _newSoundManagerScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class Bumper : MonoBehaviour
         _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
         _anim = GetComponent<Animator>();
         _timer = _timerMax;
+        _newSoundManagerScript = NewSoundManager.instance;
     }
 
     // Update is called once per frame
@@ -41,10 +44,8 @@ public class Bumper : MonoBehaviour
         _anim.SetBool("isHit", true);
 
         _wallManagerScript.Bounce(player.GetLastFrameVelocity(), collision.GetContact(0).normal, playerRigidbody, player.speed, friction);
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
+        if(_newSoundManagerScript != null)
+        _newSoundManagerScript.PlaySound("BumperHit");
     }
 
 }

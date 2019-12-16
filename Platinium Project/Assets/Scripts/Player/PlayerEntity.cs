@@ -12,6 +12,13 @@ public class PlayerEntity : MonoBehaviour
     //
     [Header("Speed")]
     public float speed;
+    public float velocityClamp = 200;
+    //Variables pour la vitesse
+    private float _myVelocityFloat;
+    private float _velocityMax;
+    private float _velocityConvertedToRatio;
+    private Vector3 _lastFrameVelocity;
+    private float _lastFramePower;
 
     //
     private Rigidbody2D _myRb;
@@ -25,10 +32,9 @@ public class PlayerEntity : MonoBehaviour
     [HideInInspector] public int _controllerNumber;
     private float inputXSign;
     private float inputYSign;
+    private GetMenuInformation _menuInformationScript;
 
-
-
-
+    
     [Header("Power")]
     public float powerMax;
     public Image powerJauge;
@@ -41,13 +47,7 @@ public class PlayerEntity : MonoBehaviour
     private float tooMuchPowerTimer;
     private bool _isTooMuchPowerGathered;
     public GameObject sweatParticles;
-
-    //Variables pour la vitesse
-    private float _myVelocityFloat;
-    private float _velocityMax;
-    private float _velocityConvertedToRatio;
-    private Vector3 _lastFrameVelocity;
-    private float _lastFramePower;
+    
 
     [Header("Frictions")]
     public float friction = 0.1f;
@@ -62,19 +62,10 @@ public class PlayerEntity : MonoBehaviour
     [Header("Animation")]
     private Animator _animator;
 
-    //sound
-    
+    //sound    
     private bool _mustPlayCastSound = false;
-    private SoundManager _soundManagerScript;
     private PlayerManager _playerManagerScript;
-    [SerializeField]
-    [Header("Sound")]
-    private AudioSource[] _playerAudio;
-
-
-    //particules
-    private GameObject _particuleContact;
-    private ParticleSystem _particuleContactSystem;
+    
 
     [Header("Onomatopées")]
     public Sprite[] onomatopeesTab;
@@ -94,53 +85,68 @@ public class PlayerEntity : MonoBehaviour
     private float _ultiCurrentCharge;
     private bool _isUltiPossible;
     public GameObject[] UltiFxStates;
-    //trail
+
+    [Header("Trail")]
+    public float trailDuration = 2;
+    public float trailApparitionTreshold = 0.8f;
     private TrailRenderer _playerTrail;
     private bool _needTrail = false;
     private float _trailTimer = 0;
-    public float trailDuration = 2;
+
 
     //score
     private ScoreManager _scoreManagerScript;
     private NewSoundManager _newSoundManagerScript;
+    private Image _playerScoreImage;
+    public Sprite[] _playerScoreImageSprites;
+    
+    
+    //playerScaling on wallhit
+    private bool playerScaleHitWall = false;
+    private float originalScale;
+    private float timerScale = 0;
+    private float timerScaleMax = 0.08f;
+    private float timerRescale = 0;
+    private float timerRescaleMax = 0.08f;
+    public float scaleMultiplier;
 
-    private AudioSource _childAudioSource;
-
+    private GameObject playerSprite;
 
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     public enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
+    private bool _isInputDisabled;
 
     private bool _touchedByPlayer = false;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.FindWithTag("MenuManager") != null)
+        {
+            _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
+        }
+
+        
+        _newSoundManagerScript = NewSoundManager.instance;
+        _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
+        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
+
+
         _myRb = GetComponent<Rigidbody2D>();
+        _playerTrail = GetComponent<TrailRenderer>();
+        _animator = GetComponent<Animator>();
 
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
 
         _velocityMax = (powerMax * speed) * (powerMax * speed);
-
-        _particuleContact = this.transform.GetChild(1).gameObject;
-        _particuleContactSystem = _particuleContact.GetComponent<ParticleSystem>();
-        _playerTrail = GetComponent<TrailRenderer>();
-
-        _soundManagerScript = SoundManager.instance;
-
-        _newSoundManagerScript = NewSoundManager.instance;
-        _playerAudio = GetComponents<AudioSource>();
-
-        _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
-
-        _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
-
-        _animator = GetComponent<Animator>();
-
-        //_childAudioSource = transform.GetChild(0).GetComponent<AudioSource>();
-
+        
+        
 
         onomatopéesSprite.enabled = false;
         sweatParticles.SetActive(false);
@@ -167,6 +173,8 @@ public class PlayerEntity : MonoBehaviour
         }
         wallSpriteTransform.gameObject.SetActive(false);
 
+        playerSprite = transform.GetChild(0).gameObject;
+        originalScale = playerSprite.transform.localScale.x;
     }
 
 
@@ -189,31 +197,39 @@ public class PlayerEntity : MonoBehaviour
 
         //Dicte quand on passe d'un enum à l'autre
         #region Change Enum
-        if (_input != Vector2.zero)
+        if(!_isInputDisabled)
         {
-            _playerInput = INPUTSTATE.GivingInput;
+            if (_input != Vector2.zero)
+            {
+                _playerInput = INPUTSTATE.GivingInput;
 
-            _timerDeadPoint = 0;
-            inputXSign = _inputVariableToStoreDirection.x;
-            inputYSign = _inputVariableToStoreDirection.y;
-        }
-        else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
-        {
+                _timerDeadPoint = 0;
+                inputXSign = _inputVariableToStoreDirection.x;
+                inputYSign = _inputVariableToStoreDirection.y;
+            }
+            else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
+            {
 
-            _playerInput = INPUTSTATE.Released;
+                _playerInput = INPUTSTATE.Released;
 
-        }
-        else if((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
-        {
+            }
+            else if ((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
+            {
 
-            _playerInput = INPUTSTATE.Released;
+                _playerInput = INPUTSTATE.Released;
+            }
         }
         #endregion
 
         #region Actions depending on INPUTSTATE
         if (_playerInput == INPUTSTATE.GivingInput)
         {
-            _animator.SetBool("IsSlingshoting", true);
+            if (tooMuchPowerTimer < tooMuchPowerTimerMax)
+                _animator.SetBool("IsSlingshoting", true);
+            _animator.SetBool("isHit", false);
+            _animator.SetBool("isHitting", false);
+            _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
             _angle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, _angle);
 
@@ -231,16 +247,17 @@ public class PlayerEntity : MonoBehaviour
                 _myRb.velocity = Vector2.zero;
             }
             _timerPower += Time.fixedDeltaTime;
+            if (_timerPower >= (powerMax + tooMuchPowerTimerMax) * 0.33f)
+                sweatParticles.SetActive(true);
 
             //check si ça fait pas de probs plus tard
             if (_timerPower >= powerMax)
             {
                 _timerPower = powerMax;
                 tooMuchPowerTimer += Time.fixedDeltaTime;
-                sweatParticles.SetActive(true);
                 if (tooMuchPowerTimer > tooMuchPowerTimerMax)
                 {
-                    tooMuchPowerTimer = 0;
+                    _animator.SetBool("IsSlingshoting", false);
                     _isTooMuchPowerGathered = true;
                     powerJaugeParent.gameObject.SetActive(false);
                     sweatParticles.SetActive(false);
@@ -271,9 +288,11 @@ public class PlayerEntity : MonoBehaviour
                     {
                         _playerManagerScript.player[3].StopVibration();
                     }
-                    _animator.SetBool("IsSlingshoting", false);
-                    //_soundManagerScript.NoSound();
+                    _playerScoreImage.sprite = _playerScoreImageSprites[2];
+                    
                     _playerInput = INPUTSTATE.None;
+                    tooMuchPowerTimer = 0;
+
                 }
             }
         }
@@ -291,8 +310,9 @@ public class PlayerEntity : MonoBehaviour
 
             sweatParticles.SetActive(false);
             _animator.SetBool("IsSlingshoting", false);
+            _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
             powerJaugeParent.gameObject.SetActive(false);
-            //_myRb.velocity = new Vector2 (_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
             _myRb.velocity = new Vector2 (inputXSign, -inputYSign).normalized * (-_timerPower * speed);
 
             _inputVariableToStoreDirection = Vector2.zero;
@@ -326,10 +346,10 @@ public class PlayerEntity : MonoBehaviour
         }
         #endregion
 
-        //Fait apparaitre une trail si la vitesse atteind le seuil des murs (on changera après le 0.8 par une variable)
+        //Fait apparaitre une trail si la vitesse atteind le seuil des murs 
         _myVelocityFloat = _myRb.velocity.sqrMagnitude;
         _velocityConvertedToRatio = (_myVelocityFloat / _velocityMax);
-        if (_velocityConvertedToRatio > 0.8)
+        if (_velocityConvertedToRatio > trailApparitionTreshold)
         {
             _playerTrail.enabled = true;
             _needTrail = true;
@@ -349,12 +369,74 @@ public class PlayerEntity : MonoBehaviour
         }
 
         _lastFrameVelocity = _myRb.velocity;
+        if(_myRb.velocity.sqrMagnitude > velocityClamp)
+        {
+            float factor = _myRb.velocity.sqrMagnitude / velocityClamp;
+            if (_myRb.velocity.sqrMagnitude > _velocityMax)
+            {
+                _myRb.velocity -= _myRb.velocity.normalized * factor;
+            }
+        }
+
+            
+
+        //if(playerScaleHitWall)
+        //{
+
+        //    float yScale = ((squash / -2) + originalScale);
+        //    float xScale = (squash + originalScale);
+
+
+        //    //directionTraveling = ((Mathf.Atan2(rb.velocity.y, rb.velocity.x)) - (90 * (Mathf.PI / 180)));
+
+        //    //Quaternion directionTraveling = Quaternion.LookRotation(_myRb.velocity);
+
+
+        //    //playerSprite.transform.rotation = directionTraveling;
+        //    playerSprite.transform.localScale = new Vector3(xScale, yScale, 1);
+        //    playerScaleHitWall = false;
+        //}
+        //else
+        //{
+        //    playerSprite.transform.localScale = new Vector3(originalScale, originalScale, originalScale);
+        //}
+            
 
     }
 
 
     private void Update()
     {
+
+        
+        if (playerScaleHitWall)
+        {
+            float velX = Mathf.Abs(_myRb.velocity.x);
+            float velY = Mathf.Abs(_myRb.velocity.y);
+
+            velX = Mathf.Clamp(velX, 1, 3);
+            velY = Mathf.Clamp(velY, 1, 3);
+
+            float squash = ((velY + velX) / scaleMultiplier);
+
+            timerScale += Time.deltaTime;
+            float lerpScaleRatio = timerScale / timerScaleMax;
+            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(originalScale, originalScale, originalScale), new Vector3(squash + originalScale, (squash / -2) + originalScale, playerSprite.transform.localScale.z), lerpScaleRatio);
+            if (lerpScaleRatio >= 1)
+            {
+                timerRescale += Time.deltaTime;
+                float lerpRescaleRatio = timerRescale / timerRescaleMax;
+                playerSprite.transform.localScale = Vector3.Lerp(playerSprite.transform.localScale, new Vector3(originalScale, originalScale, originalScale), lerpRescaleRatio);
+                if (lerpRescaleRatio >= 1)
+                {
+                    timerScale = 0;
+                    timerRescale = 0;
+                    playerScaleHitWall = false;
+                }
+            }
+        }
+
+
         //si les onomatopées sont activés, lance le timer de désactivation
         if (onomatopéesSprite.enabled)
         {
@@ -362,6 +444,10 @@ public class PlayerEntity : MonoBehaviour
             if(onomatopéeTimer >= onomatopéeTimerMax)
             {
                 onomatopéeTimer = 0;
+                _animator.SetBool("isHit", false);
+                _animator.SetBool("isHitting", false);
+                _playerScoreImage.sprite = _playerScoreImageSprites[2];
+
                 onomatopéesSprite.enabled = false;
             }
         }
@@ -397,55 +483,62 @@ public class PlayerEntity : MonoBehaviour
         //active et désactive le son de charge.
         if(_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
+            if(_newSoundManagerScript != null)
             _newSoundManagerScript.PlayCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) -1);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
+            if(_newSoundManagerScript != null)
             _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) -1);
             _mustPlayCastSound = true;
         }
 
         //active les différents stades de vibrations
-        if (powerJauge.fillAmount > vibrationTreshold)
+
+        if (_menuInformationScript == null || _menuInformationScript.GetVibrationsValue())
         {
-            if (gameObject.tag == "Player1")
+            if (powerJauge.fillAmount > vibrationTreshold)
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, vibrationTreshold * 0.5f);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                else if (gameObject.tag == "Player2")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                if (gameObject.tag == "Player3")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                else if (gameObject.tag == "Player4")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                vibrationTreshold += 0.2f;
             }
-            else if (gameObject.tag == "Player2")
+            else if (powerJauge.fillAmount == vibrationTreshold)
             {
-                _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, vibrationTreshold * 0.5f);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, tooMuchPowerTimerMax);
+                }
+                else if (gameObject.tag == "Player2")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, tooMuchPowerTimerMax);
+                }
+                if (gameObject.tag == "Player3")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, tooMuchPowerTimerMax);
+                }
+                else if (gameObject.tag == "Player4")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, tooMuchPowerTimerMax);
+                }
             }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, vibrationTreshold * 0.5f);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, vibrationTreshold * 0.5f);
-            }
-            vibrationTreshold += 0.2f;
         }
-        else if (powerJauge.fillAmount == vibrationTreshold)
-        {
-            if (gameObject.tag == "Player1")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[0], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[1], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[2], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, tooMuchPowerTimerMax);
-            }
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -461,21 +554,16 @@ public class PlayerEntity : MonoBehaviour
             wallSpritePosition = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 8);
             wallSpriteTransform.position = wallSpritePosition;
             wallSpriteTransform.gameObject.SetActive(true);
-            
+            playerScaleHitWall = true;
 
         }
         //son collision avec joueurs
         else if (collision.gameObject.tag.Contains("Player"))
         {
-            //_soundManagerScript.PlaySound(_playerAudio[1], _soundManagerScript.playersCollision);
-            _newSoundManagerScript.PlaySound(0, "PlayerCollision");
+            if(_newSoundManagerScript != null)
+            _newSoundManagerScript.PlaySound(1);
             wallSpriteTransform.gameObject.SetActive(false);
-
-            //}
-
-
-            //if (collision.gameObject.tag.Contains("Player"))
-            //{
+            
             onomatopéesSprite.enabled = true;
             onomatopéesSprite.sprite = onomatopeesTab[Random.Range(0, onomatopeesTab.Length - 1)];
             onomatopéeTimer = 0;
@@ -484,6 +572,8 @@ public class PlayerEntity : MonoBehaviour
             //charge la jauge d'ulti et active les Fxs correspondant à l'état de la jauge
             if (_lastFrameVelocity.magnitude > otherPlayer._lastFrameVelocity.magnitude)
             {
+                _animator.SetBool("isHitting", true);
+                _playerScoreImage.sprite = _playerScoreImageSprites[0];
                 _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
 
                 if ( _ultiCurrentCharge > ultiChargeMax/3 && _ultiCurrentCharge <ultiChargeMax * 0.66f)
@@ -523,7 +613,11 @@ public class PlayerEntity : MonoBehaviour
             }
             else
             {
-                if(_lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
+                _ultiCurrentCharge += ultiChargeRatio * _lastFrameVelocity.magnitude;
+                _animator.SetBool("isHit", true);
+                _playerScoreImage.sprite = _playerScoreImageSprites[1];
+
+                if (_lastFrameVelocity.magnitude <= new Vector3(0.2f, 0.2f, 0.2f).magnitude)
                 {
                     otherPlayer.Rebound((-otherPlayer.GetLastFrameVelocity() * otherPlayer.reboundPourcentageOfSpeedIfImFaster) / 100, collision.GetContact(0).normal, otherPlayer.frictionPlayer);
                 }
@@ -535,16 +629,23 @@ public class PlayerEntity : MonoBehaviour
             }
         }
 
-        _particuleContact.transform.position = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, _particuleContact.transform.position.z);
-        _particuleContactSystem.Play();
     }
 
     //fonciton reset des variables quand new round
     public void newRound()
     {
+        GetComponent<AttackTest>().SetHasPositionFalse();
         _animator.SetBool("IsSlingshoting", false);
+        _timerPower = 0;
+        _playerScoreImage.sprite = _playerScoreImageSprites[2];
+        playerSprite.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+
         _ultiCurrentCharge = 0;
-        _soundManagerScript.NoSound(_playerAudio[0]);
+        UltiFxStates[0].SetActive(false);
+        UltiFxStates[1].SetActive(false);
+        UltiFxStates[2].SetActive(false);
+        if (_newSoundManagerScript != null)
+        _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
         _mustPlayCastSound = true;
         onomatopéesSprite.enabled = false;
         wallSpriteTransform.gameObject.SetActive(false);
@@ -613,9 +714,29 @@ public class PlayerEntity : MonoBehaviour
         _isUltiPossible = false;
     }
 
-    public AudioSource[] GetAudioSourceTab()
+    public void resetUltiCurrentCharge()
     {
-        return _playerAudio;
+        _ultiCurrentCharge = 0;
     }
 
+    public void IsInputDisabled(bool isOn)
+    {
+        _isInputDisabled = isOn;
+    }
+
+    public void PlayerScoreImageSet(Image imageToTransfer)
+    {
+        _playerScoreImage = imageToTransfer;
+    }
+
+    public Animator GetPlayerAnimator()
+    {
+        return _animator;
+
+    }
+
+    public void ResetTimerPower()
+    {
+        _timerPower = 0;
+    }
 }

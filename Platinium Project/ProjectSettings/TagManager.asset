@@ -16,6 +16,17 @@ TagManager:
   - WallHitSprite3
   - WallHitSprite4
   - WallHitSprite2
+  - PlayerOneImage
+  - PlayerTwoImage
+  - PlayerThreeImage
+  - PlayerFourImage
+  - NuageTrigger
+  - Vibrations
+  - PlayerOneCrack
+  - PlayerTwoCrack
+  - PlayerThreeCrack
+  - PlayerFourCrack
+  - arena
   layers:
   - Default
   - TransparentFX

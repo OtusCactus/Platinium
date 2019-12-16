@@ -67,35 +67,41 @@ public class InMenuPlayer : MonoBehaviour
     private bool _mustPlayCastSound = false;
     private AudioSource _audioSource;
 
-
+    private GetMenuInformation _menuInformationScript;
+    private NewSoundManager _newSoundManagerScript;
 
     //particules
     private GameObject _particuleContact;
-
-    private SoundManager _soundManagerScript;
+    
     private MenuPlayerManager _playerManagerScript;
 
     //Enum pour état du joystick -> donne un input, est à 0 mais toujours en input, input relaché et fin d'input
     private enum INPUTSTATE { GivingInput, EasingInput, Released, None };
     private INPUTSTATE _playerInput = INPUTSTATE.Released;
 
+    private bool _isOptionOrPlayOpen;
 
     private void Awake()
     {
-        _soundManagerScript = SoundManager.instance;
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<MenuPlayerManager>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _trailRenderer = GetComponent<TrailRenderer>();
         _myRb = GetComponent<Rigidbody2D>();
         _particuleContact = this.transform.GetChild(1).gameObject;
-
+        _newSoundManagerScript = NewSoundManager.instance;
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.FindWithTag("MenuManager") != null)
+        {
+
+            _menuInformationScript = GameObject.FindWithTag("MenuManager").GetComponent<GetMenuInformation>();
+        }
+
         currentFace = 0;
         powerJauge.fillAmount = 0;
         powerJaugeParent.gameObject.SetActive(false);
@@ -151,7 +157,6 @@ public class InMenuPlayer : MonoBehaviour
             powerJaugeParent.gameObject.SetActive(true);
             powerJauge.fillAmount = _timerPower / powerMax;
             _inputVariableToStoreDirection = _input;
-            //_myRb.drag = 3;
             _timerPower += Time.fixedDeltaTime;
 
             //check si ça fait pas de probs plus tard
@@ -163,7 +168,6 @@ public class InMenuPlayer : MonoBehaviour
                 {
                     tooMuchPowerTimer = 0;
                     _isTooMuchPowerGathered = true;
-                    //_myRb.drag = 0;
                     powerJaugeParent.gameObject.SetActive(false);
                     _myRb.velocity = new Vector2(_inputVariableToStoreDirection.x, -_inputVariableToStoreDirection.y).normalized * (-_timerPower * speed);
 
@@ -179,7 +183,6 @@ public class InMenuPlayer : MonoBehaviour
 
                         _playerManagerScript._player.StopVibration();
                     }
-                    //_soundManagerScript.NoSound();
                     _playerInput = INPUTSTATE.None;
                 }
             }
@@ -199,8 +202,6 @@ public class InMenuPlayer : MonoBehaviour
             _lastFramePower = _timerPower;
             _timerPower = 0;
             _timerDeadPoint = 0;
-
-            //_soundManagerScript.NoSound();
             _playerInput = INPUTSTATE.None;
         }
         else if (_playerInput == INPUTSTATE.None)
@@ -232,31 +233,45 @@ public class InMenuPlayer : MonoBehaviour
 
     private void Update()
     {
+
+        Debug.Log(_isOptionOrPlayOpen);
+
+        if (_isOptionOrPlayOpen)
+        {
+            _animator.SetBool("IsSlingshoting", false);
+            _myRb.velocity = Vector2.zero;
+            _timerPower = 0;
+
+        }
+        
+
         if (_playerInput == INPUTSTATE.GivingInput && _mustPlayCastSound)
         {
-            _soundManagerScript.PlaySound(_audioSource, _soundManagerScript.playerCast);
+            _newSoundManagerScript.PlayCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
             _mustPlayCastSound = false;
         }
         else if (_playerInput == INPUTSTATE.None)
         {
-            _soundManagerScript.NoSound(_audioSource);
+            _newSoundManagerScript.StopCharge(int.Parse(gameObject.tag.Substring(gameObject.tag.Length - 1)) - 1);
             _mustPlayCastSound = true;
         }
 
-
-        if (powerJauge.fillAmount > vibrationTreshold)
+        if (_menuInformationScript == null || _menuInformationScript.GetVibrationsValue())
         {
-            if (gameObject.tag == "Player1")
+            if (powerJauge.fillAmount > vibrationTreshold)
             {
-               _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, vibrationTreshold * 0.5f);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, vibrationTreshold * 0.5f);
+                }
+                vibrationTreshold += 0.2f;
             }
-            vibrationTreshold += 0.2f;
-        }
-        else if (powerJauge.fillAmount == vibrationTreshold)
-        {
-            if (gameObject.tag == "Player1")
+            else if (powerJauge.fillAmount == vibrationTreshold)
             {
-                _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, tooMuchPowerTimerMax);
+                if (gameObject.tag == "Player1")
+                {
+                    _playerManagerScript.Vibration(_playerManagerScript._player, 0, 1.0f, tooMuchPowerTimerMax);
+                }
             }
         }
 
@@ -327,5 +342,8 @@ public class InMenuPlayer : MonoBehaviour
         return _lastFrameVelocity;
     }
 
-
+    public void IsInOptionOrCharacterMenu(bool boolValue)
+    {
+        _isOptionOrPlayOpen = boolValue;
+    }
 }
