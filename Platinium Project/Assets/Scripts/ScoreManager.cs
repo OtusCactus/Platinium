@@ -34,8 +34,8 @@ public class ScoreManager : MonoBehaviour
 
     private bool _mustSuddenDeath = false;
     private int[] _thisRoundClassement;
-    
 
+    private NewSoundManager _newSoundManagerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,7 @@ public class ScoreManager : MonoBehaviour
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
         nbrPlayers = _gameManagerScript.playerList.Count;
         _playerScore = new int[nbrPlayers];
-        print(nbrPlayers);
+        _newSoundManagerScript = NewSoundManager.instance;
 
         for (int i = _playerScore.Length; i-- > 0;)
         {
@@ -404,6 +404,7 @@ public class ScoreManager : MonoBehaviour
         else if (score == scoreS && score >= scoreToWin)
         {
             _mustSuddenDeath = true;
+            _newSoundManagerScript.ItsSuddenDeath();
         }
         int[] results;
         if (nbrPlayers == 2)

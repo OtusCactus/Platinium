@@ -21,6 +21,9 @@ public class NewSoundManager : MonoBehaviour
     public AudioClip[] bouncySounds;
     [Header("Ulti")]
     public AudioClip[] ultiSounds;
+    [Header("Sudden Death")]
+    public AudioClip deathMusic;
+
 
     private GetMenuInformation _menuInformationScript;
 
@@ -107,7 +110,7 @@ public class NewSoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Pour sons aléatoires. 0-> murs bouncy, 1-> cris, 2-> ulti
+    /// Pour sons aléatoires. 0-> murs bouncy, 1-> cris
     /// </summary>
     /// <param name="tabNumber"></param>
     public void PlaySound(int tabNumber)
@@ -132,10 +135,6 @@ public class NewSoundManager : MonoBehaviour
             case 1:
                 audio.clip = animalSounds[Random.Range(0, animalSounds.Length - 1)];
                 break;
-            case 2:
-                //audio.clip = ultiSounds[Random.Range(0, ultiSounds.Length - 1)];
-                audio.clip = ultiSounds[0];
-                break;
         }
 
         audio.enabled = false;
@@ -155,5 +154,10 @@ public class NewSoundManager : MonoBehaviour
     public void StopCharge(int player)
     {
         _playerCharges[player].enabled = false;
+    }
+
+    public void ItsSuddenDeath()
+    {
+        music.clip = deathMusic;
     }
 }
