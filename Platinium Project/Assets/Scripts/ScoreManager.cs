@@ -173,6 +173,11 @@ public class ScoreManager : MonoBehaviour
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
                 }
                 _gameManagerScript.SetPlayerMax(2);
+
+                if(_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]])
+                {
+                    RestartMenu();
+                }
             }
             else if (_playerScore[_thisRoundClassement[3]] != _playerScore[_thisRoundClassement[0]])
             {
@@ -185,12 +190,22 @@ public class ScoreManager : MonoBehaviour
                     totalScores[_thisRoundClassement[3]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[3] + " désactivé");
                     _gameManagerScript.SetPlayerMax(3);
-
+                }
+                if (_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]] || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[2]] 
+                    || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]])
+                {
+                    RestartMenu();
                 }
             }
             else
             {
                 _gameManagerScript.SetPlayerMax(4);
+                if (_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]] || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[2]]
+                   || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]] 
+                   || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[3]])
+                {
+                    RestartMenu();
+                }
             }
 
         }
@@ -398,6 +413,30 @@ public class ScoreManager : MonoBehaviour
             results = new int[] { first, second, third, fourth };
         }
         return results;
+    }
+
+    private void RestartMenu()
+    {
+            playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
+            playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
+            if (nbrPlayers >= 3)
+            {
+                playersClassement[2].sprite = playersSprite[_thisRoundClassement[2]];
+                podiumThird.SetActive(true);
+                playersClassement[2].gameObject.SetActive(true);
+            }
+            if (nbrPlayers == 4)
+            {
+                playersClassement[3].sprite = playersSprite[_thisRoundClassement[3]];
+                playersClassement[3].gameObject.SetActive(true);
+            }
+            playersClassement[0].gameObject.SetActive(true);
+            playersClassement[1].gameObject.SetActive(true);
+            gamePanel.SetActive(false);
+            buttonMenu.Select();
+            restartMenu.SetActive(true);
+            Time.timeScale = 0;
+        
     }
 
 }
