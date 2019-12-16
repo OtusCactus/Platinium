@@ -145,7 +145,16 @@ public class ScoreManager : MonoBehaviour
         }
         else if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && _mustSuddenDeath)
         {
-            //do the sudden death
+            if (nbrPlayers >= 3)
+            {
+                _gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
+                print("joueur " + _thisRoundClassement[2] + " désactivé");
+            }
+            if (nbrPlayers == 4)
+            {
+                _gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
+                print("joueur " + _thisRoundClassement[3] + " désactivé");
+            }
         }
         //gère l'apparition des médailles, différente selon nombre de joueur
         if (nbrPlayers == 4)
