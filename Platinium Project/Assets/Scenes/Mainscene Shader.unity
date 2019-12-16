@@ -28338,6 +28338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
         type: 3}
+      propertyPath: miscSounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
       propertyPath: crowdSounds.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: be46c8c4d61f76049b824963879fa333, type: 3}
@@ -28354,6 +28359,11 @@ PrefabInstance:
     - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
         type: 3}
       propertyPath: crowdSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14117dd770d1c2f4ea96261e6744fc20, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: miscSounds.Array.data[8]
       value: 
       objectReference: {fileID: 8300000, guid: 14117dd770d1c2f4ea96261e6744fc20, type: 3}
     m_RemovedComponents: []
