@@ -103,6 +103,7 @@ public class PlayerEntity : MonoBehaviour
     
     //playerScaling on wallhit
     private bool playerScaleHitWall = false;
+    private float originalScale;
     private float timerScale = 0;
     private float timerScaleMax = 0.08f;
     private float timerRescale = 0;
@@ -173,7 +174,7 @@ public class PlayerEntity : MonoBehaviour
         wallSpriteTransform.gameObject.SetActive(false);
 
         playerSprite = transform.GetChild(0).gameObject;
-
+        originalScale = playerSprite.transform.localScale.x;
     }
 
 
@@ -376,18 +377,54 @@ public class PlayerEntity : MonoBehaviour
                 _myRb.velocity -= _myRb.velocity.normalized * factor;
             }
         }
+
+            
+
+        //if(playerScaleHitWall)
+        //{
+
+        //    float yScale = ((squash / -2) + originalScale);
+        //    float xScale = (squash + originalScale);
+
+
+        //    //directionTraveling = ((Mathf.Atan2(rb.velocity.y, rb.velocity.x)) - (90 * (Mathf.PI / 180)));
+
+        //    //Quaternion directionTraveling = Quaternion.LookRotation(_myRb.velocity);
+
+
+        //    //playerSprite.transform.rotation = directionTraveling;
+        //    playerSprite.transform.localScale = new Vector3(xScale, yScale, 1);
+        //    playerScaleHitWall = false;
+        //}
+        //else
+        //{
+        //    playerSprite.transform.localScale = new Vector3(originalScale, originalScale, originalScale);
+        //}
+            
+
     }
 
 
     private void Update()
     {
 
-
-        if (playerScaleHitWall && _lastFramePower > 1)
+        
+        if (playerScaleHitWall)
         {
+            float velX = Mathf.Abs(_myRb.velocity.x);
+            float velY = Mathf.Abs(_myRb.velocity.y);
+
+            velX = Mathf.Clamp(velX, 1, 3);
+            velY = Mathf.Clamp(velY, 1, 3);
+
+            Debug.Log(velX + "velocity.x");
+            Debug.Log(velY  + "velocity.y");
+
+            float squash = ((velY + velX) / scaleMultiplier);
+
             timerScale += Time.deltaTime;
             float lerpScaleRatio = timerScale / timerScaleMax;
-            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(0.2f, 0.2f, 0.2f), new Vector3(0.2f * scaleMultiplier * _lastFramePower , 0.2f / scaleMultiplier /_lastFramePower , playerSprite.transform.localScale.z), lerpScaleRatio);
+            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(0.2f, 0.2f, 0.2f), new Vector3(squash + originalScale, (squash / -2) + originalScale, playerSprite.transform.localScale.z), lerpScaleRatio);
             if (lerpScaleRatio >= 1)
             {
                 timerRescale += Time.deltaTime;
@@ -400,6 +437,10 @@ public class PlayerEntity : MonoBehaviour
                     playerScaleHitWall = false;
                 }
             }
+        }
+        else if (_lastFramePower <= 1)
+        {
+            playerSprite.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
 
         //si les onomatopées sont activés, lance le timer de désactivation

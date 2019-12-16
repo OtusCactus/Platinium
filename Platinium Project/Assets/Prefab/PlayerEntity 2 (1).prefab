@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  velocityClamp: 300
+  velocityClamp: 350
   _controllerNumber: 0
   powerMax: 2
   powerJauge: {fileID: 8562993524623513152}
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc380faef506aec43b394133194253be, type: 3}
   - {fileID: 21300000, guid: f3d251f18de501949bde4a99b9a99225, type: 3}
   - {fileID: 21300000, guid: 323a6133cc8de2040916b5de206eb0a7, type: 3}
-  scaleMultiplier: 1.2
+  scaleMultiplier: 10
 --- !u!50 &8562993523499844406
 Rigidbody2D:
   serializedVersion: 4
