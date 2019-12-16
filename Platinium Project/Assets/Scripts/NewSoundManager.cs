@@ -19,6 +19,8 @@ public class NewSoundManager : MonoBehaviour
     public AudioClip[] animalSounds;
     [Header("Bouncy Wall Sounds")]
     public AudioClip[] bouncySounds;
+    [Header("Ulti")]
+    public AudioClip[] ultiSounds;
 
     private GetMenuInformation _menuInformationScript;
 
@@ -105,7 +107,7 @@ public class NewSoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Pour sons aléatoires. 0-> murs bouncy, 1-> cris, 
+    /// Pour sons aléatoires. 0-> murs bouncy, 1-> cris, 2-> ulti
     /// </summary>
     /// <param name="tabNumber"></param>
     public void PlaySound(int tabNumber)
@@ -129,6 +131,9 @@ public class NewSoundManager : MonoBehaviour
                 break;
             case 1:
                 audio.clip = animalSounds[Random.Range(0, animalSounds.Length - 1)];
+                break;
+            case 2:
+                audio.clip = ultiSounds[Random.Range(0, ultiSounds.Length - 1)];
                 break;
         }
 
