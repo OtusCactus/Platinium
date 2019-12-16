@@ -28331,6 +28331,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: crowdSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: crowdSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: be46c8c4d61f76049b824963879fa333, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: crowdSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d21dc7a77ce53dd478a95bcdf6b544c4, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: crowdSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 33d7a94593fa47b4fa605b782c17a10f, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: crowdSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14117dd770d1c2f4ea96261e6744fc20, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 506d260f3fbac3b40a4f4fd529998ec6, type: 3}
 --- !u!1 &791446893
