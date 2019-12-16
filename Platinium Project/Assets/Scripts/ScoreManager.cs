@@ -159,8 +159,8 @@ public class ScoreManager : MonoBehaviour
                     _gameManagerScript.playerUISprite[_thisRoundClassement[2]].gameObject.SetActive(false);
                     medals[_thisRoundClassement[2]].gameObject.SetActive(false);
                     allScoresUI[_thisRoundClassement[2]].gameObject.SetActive(false);
-                    totalScores[_thisRoundClassement[2].gameObject.SetActive(false);
-                    totalScores[_thisRoundClassement[2].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[2]].gameObject.SetActive(false);
+                    totalScores[_thisRoundClassement[2]].gameObject.SetActive(false);
                     print("joueur " + _thisRoundClassement[2] + " désactivé");
                 }
                 if (nbrPlayers == 4)
