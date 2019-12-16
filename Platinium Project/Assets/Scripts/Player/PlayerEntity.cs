@@ -600,6 +600,7 @@ public class PlayerEntity : MonoBehaviour
         _animator.SetBool("IsSlingshoting", false);
         _timerPower = 0;
         _playerScoreImage.sprite = _playerScoreImageSprites[2];
+        transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
 
         _ultiCurrentCharge = 0;
         UltiFxStates[0].SetActive(false);
