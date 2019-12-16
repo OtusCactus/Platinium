@@ -28381,6 +28381,16 @@ PrefabInstance:
       propertyPath: miscSounds.Array.data[9]
       value: 
       objectReference: {fileID: 8300000, guid: 0d4ff880d5241c24ea06a77695e8f6d6, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: deathMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: ec8f9fd7ad562b64d9bb0037396a1c7f, type: 3}
+    - target: {fileID: 7955549431179610513, guid: 506d260f3fbac3b40a4f4fd529998ec6,
+        type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 1504079763}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 506d260f3fbac3b40a4f4fd529998ec6, type: 3}
 --- !u!1 &791446893
@@ -62339,7 +62349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1504079763
 AudioSource:
   m_ObjectHideFlags: 0
@@ -91052,7 +91062,7 @@ PrefabInstance:
       objectReference: {fileID: 712074890}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: scoreToWin
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1366459345, guid: 791126972d8ed8847aff9faadc41eb1a, type: 3}
       propertyPath: nbrPlayers
