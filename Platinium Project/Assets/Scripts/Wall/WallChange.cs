@@ -18,6 +18,7 @@ public class WallChange : MonoBehaviour
     public Mesh[] wallAppearance;
     public Mesh[] wallShadowAppearance;
     private Material[] _meshMaterials;
+    private Material[] _meshMaterialsOriginal;
     private Material[] _meshMaterialsBambou;
 
     private MeshFilter _wallMesh;
@@ -83,6 +84,7 @@ public class WallChange : MonoBehaviour
     private MeshRenderer _shaderRenderer;
     private float _shaderLerp;
     private float _shaderLerpMax;
+
     private void Awake()
     {
         gameObject.layer = 15;
@@ -136,6 +138,7 @@ public class WallChange : MonoBehaviour
                     _wallShadowMeshRendererBambou = _currentWallActive.transform.GetChild(1).GetChild(1).GetComponent<SkinnedMeshRenderer>();
 
                     _meshMaterials = _wallShadowMeshRenderer.materials;
+                    _meshMaterialsOriginal = _wallShadowMeshRendererBambou.materials;
                     _meshMaterialsBambou = _wallShadowMeshRendererBambou.materials;
 
                     _bouncyAnimator = _currentWallActive.transform.GetChild(2).GetComponent<Animator>();
@@ -145,6 +148,7 @@ public class WallChange : MonoBehaviour
                     _wallShadowMesh = _currentWallActive.transform.GetChild(0).GetComponent<MeshFilter>();
                     _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
                     _meshMaterials = _wallShadowMeshRenderer.materials;
+                    _meshMaterialsOriginal = _wallShadowMeshRenderer.materials;
                 }
                 break;
             }
@@ -162,10 +166,15 @@ public class WallChange : MonoBehaviour
         }
         if (!_wallProprieties.isIndestructible)
         {
-            _meshMaterials[0].color = new Color32(30, 255, 0, 255);
             if (_wallProprieties.isBouncy)
             {
                 _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
+                _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
+            }
+            else
+            {
+                _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+                _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
             }
         }
 
@@ -273,14 +282,16 @@ public class WallChange : MonoBehaviour
 
             if (!_wallProprieties.isIndestructible)
             {
-                _meshMaterials[0].color = new Color32(30, 255, 0, 255);
                 if (_wallProprieties.isBouncy)
                 {
                     _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
+                    //_meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
                 }
                 //réinitialise le tableau de matériaux du mur normal
                 else
                 {
+                    _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+                    //_meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
                     Material[] temp = new Material[_wallMeshRendererOriginalMaterials.Length];
                     for (int i = 0; i < temp.Length; i++)
                     {
@@ -452,10 +463,10 @@ public class WallChange : MonoBehaviour
                 wallLife -= _playerVelocityRatio;
             }
 
-            _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            _meshMaterials[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
             if (_wallProprieties.isBouncy)
             {
-                _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsBambou[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+                _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
             }
         }
 
@@ -615,10 +626,10 @@ public class WallChange : MonoBehaviour
 
     public void SetDammageFromConnect(float dammage)
     {
-        _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        _meshMaterials[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         if (_wallProprieties.isBouncy)
         {
-            _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsBambou[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         }
         if (dammage >= wallLimitVelocity)
         {
@@ -628,10 +639,10 @@ public class WallChange : MonoBehaviour
         {
             wallLife -= dammage;
         }
-        _meshMaterials[0].color = Color32.Lerp(_meshMaterials[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        _meshMaterials[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         if (_wallProprieties.isBouncy)
         {
-            _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsBambou[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         }
 
     }
