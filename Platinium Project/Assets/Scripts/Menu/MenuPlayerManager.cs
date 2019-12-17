@@ -86,6 +86,10 @@ public class MenuPlayerManager : MonoBehaviour
     public GameObject tutorialPanel;
     private bool _isOnTutorial = false;
 
+    [Header("Credits")]
+    public GameObject creditsPanel;
+    private bool _isOnCredits = false;
+
     private float timerMenu = 0;
 
     private bool _hasOptionOrPlayOpened;
@@ -138,7 +142,7 @@ public class MenuPlayerManager : MonoBehaviour
         }
         if (_theMenuHasBegun)
         {
-            if (!_isOnOptions && !_isCharSelecShowing && !_isStartGameShowing && !_hasOptionOrPlayOpened && !_isOnTutorial && _player.GetButtonDown("BackMenu"))
+            if (!_isOnOptions && !_isCharSelecShowing && !_isStartGameShowing && !_isOnCredits && !_hasOptionOrPlayOpened && !_isOnTutorial && _player.GetButtonDown("BackMenu"))
             {
                 timerMenu = 0;
                 _theMenuHasBegun = false;
@@ -234,6 +238,11 @@ public class MenuPlayerManager : MonoBehaviour
                 Options();
                 _hasOptionOrPlayOpened = true;
             }
+            else if (playerEntity.currentFace == 3 && _player.GetButton("Push1"))
+            {
+                Credits();
+                _hasOptionOrPlayOpened = true;
+            }
 
             if (_isStartGameShowing && _player.GetButtonDown("BackMenu"))
             {
@@ -253,6 +262,19 @@ public class MenuPlayerManager : MonoBehaviour
                 _isOnTutorial = false;
                 ShowPlayerNumberSelection();
             }
+
+            if (_isOnCredits && _player.GetButtonUp("BackMenu"))
+            {
+                creditsPanel.SetActive(false);
+                _isOnCredits = false;
+                _hasOptionOrPlayOpened = false;
+            }
+
+            if(_player.GetButtonUp("BackMenu"))
+            {
+                Debug.Log("ok");
+            }
+
             if (_isCharSelecShowing)
             {
                 playerSelection.SetActive(false);
@@ -557,6 +579,12 @@ public class MenuPlayerManager : MonoBehaviour
         tutorialPanel.SetActive(true);
         _isOnTutorial = true;
         //_isStartGameShowing = false;
+    }
+
+    public void Credits()
+    {
+        creditsPanel.SetActive(true);
+        _isOnCredits = true;
     }
 
     public void VibrationToggle(bool isOn)

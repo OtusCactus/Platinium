@@ -294,6 +294,11 @@ public class InMenuPlayer : MonoBehaviour
                 currentFace = 2;
                 isTurning = true;
             }
+            else if (collision.name == "WallSouthEast")
+            {
+                currentFace = 3;
+                isTurning = true;
+            }
 
         }
         else if (currentFace == 1)
@@ -308,6 +313,11 @@ public class InMenuPlayer : MonoBehaviour
                 currentFace = 2;
                 isTurning = true;
             }
+            else if (collision.name == "WallSouthEast")
+            {
+                currentFace = 3;
+                isTurning = true;
+            }
         }
         else if (currentFace == 2)
         {
@@ -317,6 +327,19 @@ public class InMenuPlayer : MonoBehaviour
                 isTurning = true;
             }
             else if (collision.name == "WallSouthEast")
+            {
+                currentFace = 1;
+                isTurning = true;
+            }
+        }
+        else if (currentFace == 3)
+        {
+            if (collision.name == "WallSouthWest")
+            {
+                currentFace = 0;
+                isTurning = true;
+            }
+            else if (collision.name == "WallNorthWest")
             {
                 currentFace = 1;
                 isTurning = true;
