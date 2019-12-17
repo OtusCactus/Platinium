@@ -265,6 +265,11 @@ public class ScoreManager : MonoBehaviour
             medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
             medals[_thisRoundClassement[0]].gameObject.SetActive(true);
         }
+
+        if (_playerScore[_thisRoundClassement[0]] >= (scoreToWin - 3))
+        {
+            _newSoundManagerScript.SpeedMusic();
+        }
     }
 
     public void UpdateUI()
