@@ -138,6 +138,12 @@ public class MenuPlayerManager : MonoBehaviour
         }
         if (_theMenuHasBegun)
         {
+            if (!_isOnOptions && !_isCharSelecShowing && !_isStartGameShowing && !_hasOptionOrPlayOpened && !_isOnTutorial && _player.GetButtonDown("BackMenu"))
+            {
+                timerMenu = 0;
+                _theMenuHasBegun = false;
+                startPanel.SetActive(true);
+            }
             timerMenu += Time.deltaTime;
             //Gère à quel joueur attribué quel action
             float inputXPlayer1 = -_player.GetAxis("HorizontalJoy1");
