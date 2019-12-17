@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour
     public Text[] totalScores;
     public Image[] medals;
     public Sprite[] medalsSprites;
+    public Text[] textToAdd;
     private int[] _playerScore;
 
     private int[] _roundClassmentForEgality = new int[] { 0, 0, 0, 0 };
@@ -74,12 +75,14 @@ public class ScoreManager : MonoBehaviour
                 print("score +1");
                 _playerScore[player - 1] += 1;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                AddScoreActivate("+ 1", textToAdd[player - 1]);
                 _roundClassmentForEgality[2] = player - 1;
                 break;
             case 2:
                 print("score +2");
                 _playerScore[player - 1] += 2;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
+                AddScoreActivate("+ 2", textToAdd[player - 1]);
                 _roundClassmentForEgality[1] = player - 1;
                 break;
             case 1:
@@ -87,6 +90,7 @@ public class ScoreManager : MonoBehaviour
                 _playerScore[player - 1] += 3;
                 allScoresUI[player - 1].text = _playerScore[player - 1].ToString();
                 _roundClassmentForEgality[0] = player - 1;
+                AddScoreActivate("+ 3", textToAdd[player - 1]);
                 _CheckScore();
                 actualRound++;
                 break;
@@ -465,5 +469,12 @@ public class ScoreManager : MonoBehaviour
     public bool GetSuddenDeath()
     {
         return _mustSuddenDeath;
+    }
+
+
+    public void AddScoreActivate(string comboText, Text textToAdd)
+    {
+        textToAdd.text = comboText;
+        textToAdd.gameObject.SetActive(true);
     }
 }
