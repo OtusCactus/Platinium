@@ -4745,11 +4745,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_black_hole
       objectReference: {fileID: 0}
-    - target: {fileID: 1914331825036266750, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3273875883140302674, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4807,18 +4802,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273875883140302674, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273875883140302674, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
+        type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3273875883140302674, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 3273875883140302674, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
+    - target: {fileID: 4125914384035217176, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
+      propertyPath: simulationSpeed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4125914384035217176, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
         type: 3}
@@ -4832,18 +4832,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125914384035217176, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
         type: 3}
-      propertyPath: simulationSpeed
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125914384035217176, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
-        type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4125914383733223467, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
+    - target: {fileID: 4125914384035217176, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594,
         type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0
+      propertyPath: ColorModule.gradient.maxGradient.atime3
+      value: 60524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6923ef36330a1fc4bbbe9a6a7fa1c594, type: 3}
