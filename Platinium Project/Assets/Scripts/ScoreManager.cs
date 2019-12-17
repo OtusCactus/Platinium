@@ -377,7 +377,7 @@ public class ScoreManager : MonoBehaviour
                 }
                 else if (_roundClassmentForEgality[bleuh] == second)
                 {
-                    tempHigh = second;
+                    tempHigh = bleuh;
                 }
             }
             if (tempLow > tempHigh)
@@ -403,7 +403,7 @@ public class ScoreManager : MonoBehaviour
                 }
                 else if (_roundClassmentForEgality[bleuh] == first)
                 {
-                    tempHigh = second;
+                    tempHigh = bleuh;
                 }
             }
             if (tempLow > tempHigh)
