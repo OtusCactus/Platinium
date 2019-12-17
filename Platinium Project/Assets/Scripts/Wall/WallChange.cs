@@ -663,6 +663,10 @@ public class WallChange : MonoBehaviour
         {
             _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         }
+        if (!_wallProprieties.isIndestructible && !_wallProprieties.isBouncy)
+        {
+            _isWallShaking = true;
+        }
 
     }
 
