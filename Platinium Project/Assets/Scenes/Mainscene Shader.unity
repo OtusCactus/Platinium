@@ -63728,10 +63728,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43465cab69a37ef4f9772c2b1fdf0b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallFriction: 10
-  wallBouncyFriction: 5
   ejectionPower: 75
   shaderAppearanceTime: 5
+  wallFriction: 10
+  wallBouncyFriction: 5
+  wallShakeMax: 0.02
+  wallShakeIntensity: 25
+  wallShakeTimerMax: 0.15
   wallNormalAppearance:
   - {fileID: -7768408576438331914, guid: 8eb267653f53ba544801fb02b4fee0eb, type: 3}
   - {fileID: -5798510906853853667, guid: c95c08db2f87e8d44a6fa14834ed5078, type: 3}

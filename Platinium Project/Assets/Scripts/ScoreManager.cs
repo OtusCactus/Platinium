@@ -103,7 +103,6 @@ public class ScoreManager : MonoBehaviour
     //check le score des joueurs, si il correspond au score à atteindre, finis la partie et fait apparaitre l'écran de fin
     void _CheckScore()
     {
-        print("check score" + Classement().Length);
         _thisRoundClassement = Classement();//Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
         if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && !_mustSuddenDeath)
         {
