@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -2026,7 +2025,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -3102,7 +3100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -3817,7 +3814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -7110,7 +7106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -10707,7 +10702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -11576,7 +11570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -12090,7 +12083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -12358,7 +12350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -12571,7 +12562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -13905,7 +13895,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -14373,7 +14362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -15334,7 +15322,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19175,7 +19162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19335,7 +19321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19492,7 +19477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19995,7 +19979,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -21614,7 +21597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -21979,7 +21961,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -23672,7 +23653,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -24023,7 +24003,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -25189,7 +25168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -26089,7 +26067,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -28371,7 +28348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -28757,7 +28733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -28887,7 +28862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -29689,7 +29663,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -31913,7 +31886,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -34890,7 +34862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -35945,7 +35916,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -37309,7 +37279,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -38226,7 +38195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -39158,7 +39126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -40700,7 +40667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -41125,7 +41091,7 @@ PrefabInstance:
     - target: {fileID: 8562993523499844407, guid: 0cb10717a3c0f1c4a903567e83405ccd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.55
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8562993523499844407, guid: 0cb10717a3c0f1c4a903567e83405ccd,
         type: 3}
@@ -45461,7 +45427,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -48704,7 +48669,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -51035,7 +50999,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -59603,7 +59566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -61785,7 +61747,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -62629,7 +62590,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -65016,7 +64976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -67020,7 +66979,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -67421,7 +67379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -70335,7 +70292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -71320,7 +71276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -76184,7 +76139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -76562,7 +76516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -76692,7 +76645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -80793,7 +80745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -81578,7 +81529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -81708,7 +81658,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -82503,7 +82452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -82904,7 +82852,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -84142,7 +84089,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -84334,7 +84280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -84464,7 +84409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -86493,7 +86437,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -86812,7 +86755,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -87215,7 +87157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -88663,7 +88604,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallLifeMax: 3
-  wallLimitVelocity: 1.2
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}

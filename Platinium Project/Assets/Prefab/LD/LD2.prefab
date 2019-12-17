@@ -4810,7 +4810,7 @@ MonoBehaviour:
   playersRb: []
   direction: {x: 0, y: -3, z: 0}
   windForce: 0.5
-  coefficientWind: 50
+  coefficientWind: 10
 --- !u!1 &8528431050713274084
 GameObject:
   m_ObjectHideFlags: 0

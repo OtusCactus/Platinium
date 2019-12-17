@@ -8,7 +8,7 @@ public class WallChange : MonoBehaviour
 
     [Header("Propriétés")]
     public float wallLifeMax;
-    public float wallLimitVelocity;
+    //public float wallLimitVelocity;
     private float wallLife;
     //
     private bool _lastHit = false;
@@ -468,14 +468,14 @@ public class WallChange : MonoBehaviour
         //Si le mur n'est pas indestructible et que le joueur ne donne pas d'input (debug du problème ou le joueur charge la puissance en tournant et le mur prend des dégats) alors le mur prend des dégats
         if (!_wallProprieties.isIndestructible && _playerOnCollision.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
         {
-            if (_playerVelocityRatio >= wallLimitVelocity)
-            {
-                wallLife = 0;
-            }
-            else if (_playerVelocityRatio < wallLimitVelocity)
-            {
+            //if (_playerVelocityRatio >= wallLimitVelocity)
+            //{
+            //    wallLife = 0;
+            //}
+            //else if (_playerVelocityRatio < wallLimitVelocity)
+            //{
                 wallLife -= _playerVelocityRatio;
-            }
+            //}
 
             _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
             if (_wallProprieties.isBouncy)
@@ -485,7 +485,6 @@ public class WallChange : MonoBehaviour
             else
             {
                 _isWallShaking = true;
-                print("gotr");
                 wallShakeTimer = 0;
             }
         }
@@ -651,14 +650,14 @@ public class WallChange : MonoBehaviour
         {
             _meshMaterialsBambou[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         }
-        if (dammage >= wallLimitVelocity)
-        {
-            wallLife = 0;
-        }
-        else if (dammage < wallLimitVelocity)
-        {
+        //if (dammage >= wallLimitVelocity)
+        //{
+        //    wallLife = 0;
+        //}
+        //else if (dammage < wallLimitVelocity)
+        //{
             wallLife -= dammage;
-        }
+        //}
         _meshMaterials[0].color = Color32.Lerp(_meshMaterialsOriginal[0].color, new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
         if (_wallProprieties.isBouncy)
         {

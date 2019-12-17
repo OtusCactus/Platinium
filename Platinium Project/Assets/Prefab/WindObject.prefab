@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   playersRb: []
-  direction: {x: 5, y: -3}
+  direction: {x: 5, y: -3, z: 0}
   windForce: 0
+  coefficientWind: 10
 --- !u!1001 &1598431058
 PrefabInstance:
   m_ObjectHideFlags: 0

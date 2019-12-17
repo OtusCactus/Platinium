@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 212420541, guid: 3fe8eca514f0db44ca16aa8fd3883131, type: 3}
       propertyPath: coefficientWind
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe8eca514f0db44ca16aa8fd3883131, type: 3}
