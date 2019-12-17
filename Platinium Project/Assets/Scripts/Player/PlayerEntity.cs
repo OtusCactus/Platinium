@@ -109,6 +109,11 @@ public class PlayerEntity : MonoBehaviour
     private float timerRescale = 0;
     private float timerRescaleMax = 0.08f;
     public float scaleMultiplier;
+    private float squashWall;
+
+    private float squash;
+    public float speedSquashMultiplier;
+
 
     private GameObject playerSprite;
 
@@ -407,21 +412,29 @@ public class PlayerEntity : MonoBehaviour
 
     private void Update()
     {
+        float velX = Mathf.Abs(_myRb.velocity.x);
+        float velY = Mathf.Abs(_myRb.velocity.y);
+        velX = Mathf.Clamp(velX, 0, 3);
+        velY = Mathf.Clamp(velY, 0, 3);
 
-        
+        if (velY >= 1 && velX >=  1)
+            squash = ((velY + velX) / speedSquashMultiplier);
+        else
+            squash = 0.0001f;
+
+        playerSprite.transform.localScale = new Vector3((squash / -2) + originalScale, squash + originalScale, playerSprite.transform.localScale.z);
+        if (_playerInput == INPUTSTATE.None)
+        playerSprite.transform.eulerAngles = Vector3.RotateTowards(playerSprite.transform.forward, transform.forward, speed * Time.deltaTime, 0.0f);
+            
+
         if (playerScaleHitWall)
         {
-            float velX = Mathf.Abs(_myRb.velocity.x);
-            float velY = Mathf.Abs(_myRb.velocity.y);
 
-            velX = Mathf.Clamp(velX, 1, 3);
-            velY = Mathf.Clamp(velY, 1, 3);
-
-            float squash = ((velY + velX) / scaleMultiplier);
+            squashWall = ((velX + velY) / scaleMultiplier);
 
             timerScale += Time.deltaTime;
             float lerpScaleRatio = timerScale / timerScaleMax;
-            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(originalScale, originalScale, originalScale), new Vector3(squash + originalScale, (squash / -2) + originalScale, playerSprite.transform.localScale.z), lerpScaleRatio);
+            playerSprite.transform.localScale = Vector3.Lerp(new Vector3(originalScale, originalScale, originalScale), new Vector3(squashWall + originalScale, (squashWall / -2) + originalScale, playerSprite.transform.localScale.z), lerpScaleRatio);
             if (lerpScaleRatio >= 1)
             {
                 timerRescale += Time.deltaTime;
