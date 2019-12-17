@@ -423,8 +423,6 @@ public class PlayerEntity : MonoBehaviour
             squash = 0.0001f;
 
         playerSprite.transform.localScale = new Vector3((squash / -2) + originalScale, squash + originalScale, playerSprite.transform.localScale.z);
-        if (_playerInput == INPUTSTATE.None)
-        playerSprite.transform.eulerAngles = Vector3.RotateTowards(playerSprite.transform.forward, transform.forward, speed * Time.deltaTime, 0.0f);
             
 
         if (playerScaleHitWall)
@@ -685,6 +683,12 @@ public class PlayerEntity : MonoBehaviour
     {
         Vector3 direction = Vector3.Reflect(-reboundVelocity.normalized, collisionNormal);
         _myRb.velocity = new Vector3(direction.x , direction.y).normalized * ((reboundVelocity.magnitude / friction) * speed);
+
+        if (_myRb.velocity != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(_myRb.velocity.y, _myRb.velocity.x) * Mathf.Rad2Deg;
+            _myRb.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        }
     }
 
     public void SetInputX(Vector2 myInput)

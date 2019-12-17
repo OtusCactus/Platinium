@@ -54,6 +54,14 @@ public class WallManager : MonoBehaviour
     {
         Vector3 direction = Vector3.Reflect(playerVelocity.normalized, collisionNormal);
         playerRb.velocity = new Vector3(direction.x, direction.y).normalized * ((playerVelocity.magnitude / myFriction) * playerSpeed);
+        //playerRb.transform.eulerAngles = new Vector3(playerRb.transform.eulerAngles.x, playerRb.transform.eulerAngles.y, Vector3.Angle(playerVelocity.normalized, playerRb.velocity.normalized));
+        
+        if (playerRb.velocity != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(playerRb.velocity.y, playerRb.velocity.x) * Mathf.Rad2Deg;
+            playerRb.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        }
+
     }
     //non utilisé
     public void StickyWall(Rigidbody2D _myRb)
