@@ -85,6 +85,13 @@ public class WallChange : MonoBehaviour
     private float _shaderLerp;
     private float _shaderLerpMax;
 
+    private float shakeWallIntensity;
+    private float maxShakeWall;
+    private bool _isWallShaking;
+    private float wallShakeTimer;
+    private float wallShakeTimerMax;
+    private Vector3 wallInitialPosition;
+
     private void Awake()
     {
         gameObject.layer = 15;
@@ -196,12 +203,28 @@ public class WallChange : MonoBehaviour
             _shaderLerp = -1;
         }
 
-
+        shakeWallIntensity = _wallManagerScript.wallShakeIntensity;
+        maxShakeWall = _wallManagerScript.wallShakeMax;
+        wallShakeTimerMax = _wallManagerScript.wallShakeTimerMax;
+        wallInitialPosition = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(_isWallShaking)
+        {
+            wallShakeTimer += Time.deltaTime;
+            //transform.position = new Vector3(transform.position.x, transform.position.y + shakeWall, transform.position.z);
+            transform.localPosition = new Vector3(Mathf.PingPong(Time.time * shakeWallIntensity, maxShakeWall * 2) + transform.localPosition.x - maxShakeWall,transform.localPosition.y, transform.localPosition.z );
+            if(wallShakeTimer >= wallShakeTimerMax)
+            {
+                transform.localPosition = wallInitialPosition;
+                wallShakeTimer = 0;
+                _isWallShaking = false;
+            }
+        }
         if(_isShaderNeeded)
         {
             if(_shaderLerp <= 1 && !_hasShaderCompletelyAppeared)
@@ -445,7 +468,7 @@ public class WallChange : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+       
         _playerOnCollision = collision.gameObject.GetComponent<PlayerEntity>();
         _playerVelocityRatio = _playerOnCollision.GetVelocityRatio();
 
@@ -467,6 +490,11 @@ public class WallChange : MonoBehaviour
             if (_wallProprieties.isBouncy)
             {
                 _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            }
+            else
+            {
+                _isWallShaking = true;
+                wallShakeTimer = 0;
             }
         }
 

@@ -10,6 +10,9 @@ public class WallManager : MonoBehaviour
     public float wallBouncyFriction = 5;
     public float ejectionPower;
     public float shaderAppearanceTime = 1;
+    public float wallShakeMax = 1;
+    public float wallShakeIntensity = 1;
+    public float wallShakeTimerMax;
 
     //Wall Apperance
     [Header("All Walls Appearance")]
