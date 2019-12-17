@@ -347,56 +347,62 @@ public class ScoreManager : MonoBehaviour
         }
         //gère les égalités, le gagnant est celui qui vient de remporter le round
 
-        if (scoreT == scoreF)
+        if (nbrPlayers == 4)
         {
-            int tempLow = 0;
-            int tempHigh = 0;
-            for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
+            if (scoreT == scoreF)
             {
-                if (_roundClassmentForEgality[bleuh] == fourth)
+                int tempLow = 0;
+                int tempHigh = 0;
+                for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
                 {
-                    tempLow = bleuh;
+                    if (_roundClassmentForEgality[bleuh] == fourth)
+                    {
+                        tempLow = bleuh;
+                    }
+                    else if (_roundClassmentForEgality[bleuh] == third)
+                    {
+                        tempHigh = bleuh;
+                    }
                 }
-                else if (_roundClassmentForEgality[bleuh] == third)
+                if (tempLow > tempHigh)
                 {
-                    tempHigh = bleuh;
+                    fourth = _roundClassmentForEgality[tempLow];
+                    third = _roundClassmentForEgality[tempHigh];
                 }
-            }
-            if (tempLow > tempHigh)
-            {
-                fourth = _roundClassmentForEgality[tempLow];
-                third = _roundClassmentForEgality[tempHigh];
-            }
-            else
-            {
-                fourth = _roundClassmentForEgality[tempHigh];
-                third = _roundClassmentForEgality[tempLow];
+                else
+                {
+                    fourth = _roundClassmentForEgality[tempHigh];
+                    third = _roundClassmentForEgality[tempLow];
+                }
             }
         }
-        if (scoreS == scoreT)
+        if (nbrPlayers >= 3)
         {
-            int tempLow = 0;
-            int tempHigh = 0;
-            for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
+            if (scoreS == scoreT)
             {
-                if (_roundClassmentForEgality[bleuh] == third)
+                int tempLow = 0;
+                int tempHigh = 0;
+                for (int bleuh = 0; bleuh < _roundClassmentForEgality.Length; bleuh++)
                 {
-                    tempLow = bleuh;
+                    if (_roundClassmentForEgality[bleuh] == third)
+                    {
+                        tempLow = bleuh;
+                    }
+                    else if (_roundClassmentForEgality[bleuh] == second)
+                    {
+                        tempHigh = bleuh;
+                    }
                 }
-                else if (_roundClassmentForEgality[bleuh] == second)
+                if (tempLow > tempHigh)
                 {
-                    tempHigh = bleuh;
+                    third = _roundClassmentForEgality[tempLow];
+                    second = _roundClassmentForEgality[tempHigh];
                 }
-            }
-            if (tempLow > tempHigh)
-            {
-                third = _roundClassmentForEgality[tempLow];
-                second = _roundClassmentForEgality[tempHigh];
-            }
-            else
-            {
-                third = _roundClassmentForEgality[tempHigh];
-                second = _roundClassmentForEgality[tempLow];
+                else
+                {
+                    third = _roundClassmentForEgality[tempHigh];
+                    second = _roundClassmentForEgality[tempLow];
+                }
             }
         }
         if (scoreF == score && score < scoreToWin)
