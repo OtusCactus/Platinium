@@ -9,8 +9,9 @@ public class Wind : MonoBehaviour
     private GameManager gameManagerScript;
     public List<Rigidbody2D> playersRb;
 
-    public Vector2 direction;
+    public Vector3 direction;
     public float windForce;
+    public float coefficientWind;
 
     private GameObject _particule;
     private float _angle;
@@ -42,7 +43,7 @@ public class Wind : MonoBehaviour
     {
         foreach (Rigidbody2D playersObjRb in playersRb)
         {
-            playersObjRb.velocity -= direction * Time.deltaTime * windForce;
+            playersObjRb.gameObject.transform.position -= (direction/coefficientWind) * Time.deltaTime;
         }
     }
 }

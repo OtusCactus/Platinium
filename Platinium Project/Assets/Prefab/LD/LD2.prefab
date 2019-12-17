@@ -4808,8 +4808,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   playersRb: []
-  direction: {x: 0, y: -3}
+  direction: {x: 0, y: -3, z: 0}
   windForce: 0.5
+  coefficientWind: 50
 --- !u!1 &8528431050713274084
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,12 +4821,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5214980887723786576}
   m_Layer: 0
-  m_Name: LD4
+  m_Name: LD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5214980887723786576
 Transform:
   m_ObjectHideFlags: 0
