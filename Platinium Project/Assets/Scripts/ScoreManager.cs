@@ -257,8 +257,6 @@ public class ScoreManager : MonoBehaviour
         }
         else if (nbrPlayers == 2 && !_mustSuddenDeath)
         {
-            medals[_thisRoundClassement[3]].gameObject.SetActive(false);
-            medals[_thisRoundClassement[2]].gameObject.SetActive(false);
             medals[_thisRoundClassement[1]].gameObject.SetActive(false);
             medals[_thisRoundClassement[0]].sprite = medalsSprites[0];
             medals[_thisRoundClassement[0]].gameObject.SetActive(true);
