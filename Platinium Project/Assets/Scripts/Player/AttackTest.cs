@@ -32,6 +32,7 @@ public class AttackTest : MonoBehaviour
     private PlayerManager _playerManagerScript;
     private PlayerEntity _playerEntityScript;
     private ShockwaveHit _shockWaveHitScript;
+    private ScoreManager _scoreManagerScript;
 
     //playerCameraPosition
     private Camera cameraMain;
@@ -66,6 +67,7 @@ public class AttackTest : MonoBehaviour
         _playerManagerScript = GameObject.FindWithTag("GameController").GetComponent<PlayerManager>();
         _playerEntityScript = GetComponent<PlayerEntity>();
         _shockWaveHitScript = GetComponent<ShockwaveHit>();
+        _scoreManagerScript = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
         cameraMain = Camera.main;
         _newSoundManagerScript = NewSoundManager.instance;
         if (GameObject.FindWithTag("MenuManager") != null)
@@ -125,6 +127,7 @@ public class AttackTest : MonoBehaviour
         //active l'animation et lui donne la bonne position
         if (hasPositionBeenTaken)
         {
+            
             Vector3 dirFromAtoB = (Vector3.zero - transform.GetChild(0).transform.position).normalized;
             float dotProd = Vector3.Dot(dirFromAtoB, transform.GetChild(0).transform.forward);
             playerOutAnim.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 180);
@@ -144,6 +147,10 @@ public class AttackTest : MonoBehaviour
                 _newSoundManagerScript.PlaySound("Elimination");
                 _newSoundManagerScript.PlaySound("Crowd");
                 _hasSoundPlayed = true;
+            }
+            if (_scoreManagerScript.GetHasGameEnded())
+            {
+                _scoreManagerScript.RestartMenu();
             }
         }
 

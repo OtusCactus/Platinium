@@ -37,6 +37,7 @@ public class ScoreManager : MonoBehaviour
     private int[] _thisRoundClassement;
 
     private NewSoundManager _newSoundManagerScript;
+    private bool _hasGameEnded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -104,63 +105,13 @@ public class ScoreManager : MonoBehaviour
     void _CheckScore()
     {
         _thisRoundClassement = Classement();//Si on a un gagnant, il faut affiché l'écran de fin, différent selon le nombre de joueur et qui est gagnant
-        if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && !_mustSuddenDeath)
+        if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && !_mustSuddenDeath )
         {
-            if (gameObject.tag == "Player1")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
-            }
-            if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
-            }
-
-            playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
-            playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
-            if (nbrPlayers >= 3)
-            {
-                playersClassement[2].sprite = playersSprite[_thisRoundClassement[2]];
-                podiumThird.SetActive(true);
-                playersClassement[2].gameObject.SetActive(true);
-            }
-            if (nbrPlayers == 4)
-            {
-                playersClassement[3].sprite = playersSprite[_thisRoundClassement[3]];
-                playersClassement[3].gameObject.SetActive(true);
-            }
-            playersClassement[0].gameObject.SetActive(true);
-            playersClassement[1].gameObject.SetActive(true);
-            gamePanel.SetActive(false);
-            buttonMenu.Select();
-            restartMenu.SetActive(true);
-            Time.timeScale = 0;
+            _hasGameEnded = true;
         }
         else if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && _mustSuddenDeath)
         {
-            if (gameObject.tag == "Player1")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
-            }
-            else if (gameObject.tag == "Player2")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
-            }
-            else if (gameObject.tag == "Player3")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
-            }
-            else if (gameObject.tag == "Player4")
-            {
-                _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
-            }
+            
 
             _gameManagerScript.ReadyText.text = "Sudden Death";
             if(_playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[0]])
@@ -193,7 +144,7 @@ public class ScoreManager : MonoBehaviour
 
                 if(_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]])
                 {
-                    RestartMenu();
+                    _hasGameEnded = true;
                 }
             }
             else if (_playerScore[_thisRoundClassement[3]] != _playerScore[_thisRoundClassement[0]])
@@ -218,7 +169,8 @@ public class ScoreManager : MonoBehaviour
                 if (_playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[1]] || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[2]] 
                     || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]])
                 {
-                    RestartMenu();
+                    _hasGameEnded = true;
+
                 }
             }
             else
@@ -233,7 +185,8 @@ public class ScoreManager : MonoBehaviour
                    || _playerScore[_thisRoundClassement[0]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[2]] 
                    || _playerScore[_thisRoundClassement[1]] != _playerScore[_thisRoundClassement[3]] || _playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[3]])
                 {
-                    RestartMenu();
+                    _hasGameEnded = true;
+
                 }
             }
 
@@ -452,9 +405,26 @@ public class ScoreManager : MonoBehaviour
         return results;
     }
 
-    private void RestartMenu()
+    public void RestartMenu()
     {
-            playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
+        if (gameObject.tag == "Player1")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[0]);
+        }
+        else if (gameObject.tag == "Player2")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
+        }
+        else if (gameObject.tag == "Player3")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
+        }
+        else if (gameObject.tag == "Player4")
+        {
+            _playerManagerScript.StopVibration(_playerManagerScript.player[3]);
+        }
+
+        playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
             playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
             if (nbrPlayers >= 3)
             {
@@ -486,5 +456,10 @@ public class ScoreManager : MonoBehaviour
     {
         textToAdd.text = comboText;
         textToAdd.gameObject.SetActive(true);
+    }
+
+    public bool GetHasGameEnded()
+    {
+        return _hasGameEnded;
     }
 }
