@@ -162,4 +162,9 @@ public class NewSoundManager : MonoBehaviour
         music.enabled = false;
         music.enabled = true;
     }
+
+    public void SpeedMusic()
+    {
+        music.pitch = 1.25f;
+    }
 }

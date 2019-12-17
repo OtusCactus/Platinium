@@ -44,15 +44,15 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player[0].GetButtonDown("Pause1") && !_isInPause)
+        if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause1") || player[2].GetButtonDown("Pause1") || player[3].GetButtonDown("Pause1")) && !_isInPause)
         {
             itsPause();
         }
-        else if (player[0].GetButtonDown("Pause1") && _isInPause)
+        else if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause1") || player[2].GetButtonDown("Pause1") || player[3].GetButtonDown("Pause1")) && _isInPause)
         {
             itsNotPause();
         }
-        if (_isInOptions && player[0].GetButtonDown("BackMenu"))
+        if (_isInOptions && (player[0].GetButtonDown("BackMenu") || player[1].GetButtonDown("BackMenu") || player[2].GetButtonDown("BackMenu") || player[3].GetButtonDown("BackMenu")))
         {
             itsPause();
         }
