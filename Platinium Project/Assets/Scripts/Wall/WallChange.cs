@@ -84,10 +84,10 @@ public class WallChange : MonoBehaviour
     private MeshRenderer _shaderRenderer;
     private float _shaderLerp;
     private float _shaderLerpMax;
-
+    
     private float shakeWallIntensity;
     private float maxShakeWall;
-    private bool _isWallShaking;
+    private bool _isWallShaking = false;
     private float wallShakeTimer;
     private float wallShakeTimerMax;
     private Vector3 wallInitialPosition;
@@ -213,18 +213,12 @@ public class WallChange : MonoBehaviour
     void Update()
     {
 
-        if(_isWallShaking)
+        if (_isWallShaking)
         {
-            wallShakeTimer += Time.deltaTime;
-            //transform.position = new Vector3(transform.position.x, transform.position.y + shakeWall, transform.position.z);
-            transform.localPosition = new Vector3(Mathf.PingPong(Time.time * shakeWallIntensity, maxShakeWall * 2) + transform.localPosition.x - maxShakeWall,transform.localPosition.y, transform.localPosition.z );
-            if(wallShakeTimer >= wallShakeTimerMax)
-            {
-                transform.localPosition = wallInitialPosition;
-                wallShakeTimer = 0;
-                _isWallShaking = false;
-            }
+            ShakeWall();
         }
+        print(wallShakeTimer);
+        
         if(_isShaderNeeded)
         {
             if(_shaderLerp <= 1 && !_hasShaderCompletelyAppeared)
@@ -288,7 +282,6 @@ public class WallChange : MonoBehaviour
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
             wallLife = wallLifeMax;
-            //_wallCollider[0].isTrigger = false;
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[0];
@@ -308,13 +301,11 @@ public class WallChange : MonoBehaviour
                 if (_wallProprieties.isBouncy)
                 {
                     _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
-                    //_meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
                 }
                 //réinitialise le tableau de matériaux du mur normal
                 else
                 {
                     _meshMaterials[0].color = new Color32(30, 255, 0, 255);
-                    //_meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
                     Material[] temp = new Material[_wallMeshRendererOriginalMaterials.Length];
                     for (int i = 0; i < temp.Length; i++)
                     {
@@ -494,6 +485,7 @@ public class WallChange : MonoBehaviour
             else
             {
                 _isWallShaking = true;
+                print("gotr");
                 wallShakeTimer = 0;
             }
         }
@@ -699,5 +691,17 @@ public class WallChange : MonoBehaviour
     public void SetShaderNeededTrue()
     {
         _isShaderNeeded = true;
+    }
+
+    private void ShakeWall()
+    {
+        transform.localPosition = new Vector3(Mathf.PingPong(Time.time * shakeWallIntensity, maxShakeWall * 2) + transform.localPosition.x - maxShakeWall, transform.localPosition.y, transform.localPosition.z);
+        wallShakeTimer += Time.deltaTime;
+        if (wallShakeTimer >= wallShakeTimerMax)
+        {
+            transform.localPosition = wallInitialPosition;
+            wallShakeTimer = 0;
+            _isWallShaking = false;
+        }
     }
 }
