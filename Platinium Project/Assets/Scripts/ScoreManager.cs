@@ -150,7 +150,7 @@ public class ScoreManager : MonoBehaviour
             {
                 _playerManagerScript.StopVibration(_playerManagerScript.player[1]);
             }
-            if (gameObject.tag == "Player3")
+            else if (gameObject.tag == "Player3")
             {
                 _playerManagerScript.StopVibration(_playerManagerScript.player[2]);
             }
@@ -164,7 +164,7 @@ public class ScoreManager : MonoBehaviour
             {
                 if (nbrPlayers >= 3)
                 {
-                    _gameManagerScript.GetSuddenDeathPlayerToDisappear().Add(_gameManagerScript.playerList[_thisRoundClassement[2]].gameObject);
+                    _gameManagerScript.SetSuddenDeathPlayerToDisappear(_gameManagerScript.playerList[_thisRoundClassement[2]].gameObject);
                     //_gameManagerScript.playerList[_thisRoundClassement[2]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[2]].gameObject.SetActive(false);
                     medals[_thisRoundClassement[2]].gameObject.SetActive(false);
@@ -174,7 +174,7 @@ public class ScoreManager : MonoBehaviour
                 }
                 if (nbrPlayers == 4)
                 {
-                    _gameManagerScript.GetSuddenDeathPlayerToDisappear().Add(_gameManagerScript.playerList[_thisRoundClassement[3]].gameObject);
+                    _gameManagerScript.SetSuddenDeathPlayerToDisappear(_gameManagerScript.playerList[_thisRoundClassement[3]].gameObject);
 
                     //_gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);
@@ -197,7 +197,7 @@ public class ScoreManager : MonoBehaviour
             {
                 if (nbrPlayers == 4)
                 {
-                    _gameManagerScript.GetSuddenDeathPlayerToDisappear().Add(_gameManagerScript.playerList[_thisRoundClassement[1]].gameObject);
+                    _gameManagerScript.SetSuddenDeathPlayerToDisappear(_gameManagerScript.playerList[_thisRoundClassement[1]].gameObject);
 
                     //_gameManagerScript.playerList[_thisRoundClassement[3]].gameObject.SetActive(false);
                     _gameManagerScript.playerUISprite[_thisRoundClassement[3]].gameObject.SetActive(false);

@@ -137,6 +137,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
+        suddenDeathPlayerToDisappear = new List<GameObject>();
+
         _newSoundMangerScript = NewSoundManager.instance;
         _managerAudios = new AudioSource[_newSoundMangerScript.AudioLength()];
         _managerAudios = _newSoundMangerScript.GetMyAudios();
@@ -428,8 +430,8 @@ public class GameManager : MonoBehaviour
         return currentPlayersList;
     }
 
-    public List<GameObject> GetSuddenDeathPlayerToDisappear()
+    public void SetSuddenDeathPlayerToDisappear(GameObject playerToDisappear)
     {
-        return suddenDeathPlayerToDisappear;
+        suddenDeathPlayerToDisappear.Add(playerToDisappear);
     }
 }
