@@ -111,8 +111,6 @@ public class ScoreManager : MonoBehaviour
         }
         else if (_playerScore[_thisRoundClassement[0]] >= scoreToWin && _mustSuddenDeath)
         {
-            
-
             _gameManagerScript.ReadyText.text = "Sudden Death";
             if(_playerScore[_thisRoundClassement[2]] != _playerScore[_thisRoundClassement[0]])
             {
@@ -425,25 +423,25 @@ public class ScoreManager : MonoBehaviour
         }
 
         playersClassement[0].sprite = playersSprite[_thisRoundClassement[0]];
-            playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
-            if (nbrPlayers >= 3)
-            {
-                playersClassement[2].sprite = playersSprite[_thisRoundClassement[2]];
-                podiumThird.SetActive(true);
-                playersClassement[2].gameObject.SetActive(true);
-            }
-            if (nbrPlayers == 4)
-            {
-                playersClassement[3].sprite = playersSprite[_thisRoundClassement[3]];
-                playersClassement[3].gameObject.SetActive(true);
-            }
-            playersClassement[0].gameObject.SetActive(true);
-            playersClassement[1].gameObject.SetActive(true);
-            gamePanel.SetActive(false);
-            buttonMenu.Select();
-            restartMenu.SetActive(true);
-            Time.timeScale = 0;
-        
+        playersClassement[1].sprite = playersSprite[_thisRoundClassement[1]];
+        if (nbrPlayers >= 3)
+        {
+            playersClassement[2].sprite = playersSprite[_thisRoundClassement[2]];
+            podiumThird.SetActive(true);
+            playersClassement[2].gameObject.SetActive(true);
+        }
+        if (nbrPlayers == 4)
+        {
+            playersClassement[3].sprite = playersSprite[_thisRoundClassement[3]];
+            playersClassement[3].gameObject.SetActive(true);
+        }
+        playersClassement[0].gameObject.SetActive(true);
+        playersClassement[1].gameObject.SetActive(true);
+        gamePanel.SetActive(false);
+        buttonMenu.Select();
+        restartMenu.SetActive(true);
+        Time.timeScale = 0;
+
     }
 
     public bool GetSuddenDeath()

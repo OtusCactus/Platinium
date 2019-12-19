@@ -12,6 +12,7 @@ public class Pause : MonoBehaviour
     public List<Player> player;
     public List<PlayerEntity> playerEntity;
     private GameManager gameManagerScript;
+    private ScoreManager scoreManagerScript;
 
     public GameObject pausePanel;
     public Button resume;
@@ -24,6 +25,7 @@ public class Pause : MonoBehaviour
     private void Awake()
     {
         gameManagerScript = GetComponent<GameManager>();
+        scoreManagerScript = GetComponent<ScoreManager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -44,17 +46,28 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")) && !_isInPause)
+        if (!scoreManagerScript.GetHasGameEnded())
         {
-            itsPause();
-        }
-        else if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")) && _isInPause)
-        {
-            itsNotPause();
-        }
-        if (_isInOptions && (player[0].GetButtonDown("BackMenu") || player[1].GetButtonDown("BackMenu2") || player[2].GetButtonDown("BackMenu3") || player[3].GetButtonDown("BackMenu4")))
-        {
-            itsPause();
+            if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")) && !_isInPause)
+            {
+                itsPause();
+            }
+            else if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")) && _isInPause)
+            {
+                itsNotPause();
+            }
+            if (_isInOptions && (player[0].GetButtonDown("BackMenu") || player[1].GetButtonDown("BackMenu2") || player[2].GetButtonDown("BackMenu3") || player[3].GetButtonDown("BackMenu4")))
+            {
+                itsPause();
+            }
+            else if (_isInOptions && (player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")))
+            {
+                itsNotPause();
+            }
+            else if (_isInPause && (player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")))
+            {
+                itsNotPause();
+            }
         }
     }
 
