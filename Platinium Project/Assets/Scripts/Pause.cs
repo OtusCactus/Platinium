@@ -21,8 +21,6 @@ public class Pause : MonoBehaviour
     public GameObject options;
     private bool _isInOptions = false;
 
-    private float _timer = 0;
-    private bool _canQuit = false;
 
     private void Awake()
     {
@@ -48,23 +46,14 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(scoreManagerScript.GetHasGameEnded());
         if (!scoreManagerScript.GetHasGameEnded())
         {
-            if (_isInPause)
-            {
-                _timer += Time.deltaTime;
-            }
-            print(_isInPause);
             if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")) && !_isInPause)
             {
-                print("bonjhoru");
                 itsPause();
-                if(_timer >= 0.5f)
-                {
-                    _canQuit = true;
-                }
             }
-            else if ((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")) && _isInPause && _canQuit)
+            else if (((player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")) || (player[0].GetButtonDown("BackMenu") || player[1].GetButtonDown("BackMenu2") || player[2].GetButtonDown("BackMenu3") || player[3].GetButtonDown("BackMenu4"))) && _isInPause)
             {
                 itsNotPause();
             }
@@ -72,20 +61,11 @@ public class Pause : MonoBehaviour
             {
                 itsPause();
             }
-            else if (_isInOptions && (player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")))
-            {
-                itsNotPause();
-            }
-            else if (_isInPause && (player[0].GetButtonDown("Pause1") || player[1].GetButtonDown("Pause2") || player[2].GetButtonDown("Pause3") || player[3].GetButtonDown("Pause4")))
-            {
-                itsNotPause();
-            }
         }
     }
 
     private void itsPause()
     {
-        _timer = 0;
         pausePanel.SetActive(true);
         options.SetActive(false);
         Time.timeScale = 0;
@@ -96,7 +76,6 @@ public class Pause : MonoBehaviour
 
     public void Options()
     {
-        _timer = 0;
         options.SetActive(true);
         pausePanel.SetActive(false);
         _isInPause = false;
@@ -105,7 +84,6 @@ public class Pause : MonoBehaviour
 
     public void itsNotPause()
     {
-        _timer = 0;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
         EventSystem.current.SetSelectedGameObject(null);
