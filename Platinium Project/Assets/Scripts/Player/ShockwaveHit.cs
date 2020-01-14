@@ -7,7 +7,7 @@ public class ShockwaveHit : MonoBehaviour
     //Grégoire s'est occupé de ce script
 
     //check si le joueur est bien hit
-    public bool haveIBeenHit;
+    private bool _haveIBeenHit;
 
     //Empêche l'autre joueur de se déplacer pendant un certain temps après être hit par la shockwave
     public float mouvementPlayerDisabledTimeMax;
@@ -20,6 +20,7 @@ public class ShockwaveHit : MonoBehaviour
     private PlayerEntity _playerEntityScript;
 
     public GameObject stunParticles;
+    private int _currentUltChargeNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +34,16 @@ public class ShockwaveHit : MonoBehaviour
     void Update()
     {
         //si le joueur est hit par une shockwave d'un autre joueur, désactive son script de mouvement pendant un certain temps
-        if (haveIBeenHit)
+        if (_haveIBeenHit)
         {
+            for (int i = 0; i < _playerEntityScript.UltiFxStates.Length; i++)
+            {
+                if(_playerEntityScript.UltiFxStates[i].activeSelf == true)
+                {
+                    _currentUltChargeNumber = i;
+                    _playerEntityScript.UltiFxStates[i].SetActive(false);
+                }
+            }
             stunParticles.SetActive(true);
             _playerEntityScript.powerJaugeParent.gameObject.SetActive(false);
             _playerEntityScript.IsInputDisabled(true);
@@ -46,9 +55,10 @@ public class ShockwaveHit : MonoBehaviour
             if (mouvementPlayerDisabledTime >= mouvementPlayerDisabledTimeMax)
             {
                 _playerEntityScript.IsInputDisabled(false);
-                haveIBeenHit = false;
+                _haveIBeenHit = false;
                 mouvementPlayerDisabledTime = 0;
                 stunParticles.SetActive(false);
+                _playerEntityScript.UltiFxStates[_currentUltChargeNumber].SetActive(true);
 
             }
         }
@@ -62,5 +72,14 @@ public class ShockwaveHit : MonoBehaviour
             _hitWalls = true;
 
         }
+    }
+
+    public bool GetHaveIBeenHit()
+    {
+        return _haveIBeenHit;
+    }
+    public void SetHaveIBeenHitTrue()
+    {
+        _haveIBeenHit = true;
     }
 }

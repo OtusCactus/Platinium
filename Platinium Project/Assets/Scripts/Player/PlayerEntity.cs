@@ -741,6 +741,11 @@ public class PlayerEntity : MonoBehaviour
         _isInputDisabled = isOn;
     }
 
+    public bool GetIsInputDisabled()
+    {
+        return _isInputDisabled;
+    }
+
     public void PlayerScoreImageSet(Image imageToTransfer)
     {
         _playerScoreImage = imageToTransfer;
