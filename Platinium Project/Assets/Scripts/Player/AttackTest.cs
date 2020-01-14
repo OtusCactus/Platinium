@@ -189,7 +189,7 @@ public class AttackTest : MonoBehaviour
         }
         
         //active la shockwave pendant un certain temps
-        if (isShockWaveButtonPressed && _playerEntityScript.GetUltiBool() && !_shockWaveHitScript.haveIBeenHit)
+        if (isShockWaveButtonPressed && _playerEntityScript.GetUltiBool() && !_shockWaveHitScript.GetHaveIBeenHit())
         {
             if (!_hasPlayedSound)
             {
@@ -218,7 +218,6 @@ public class AttackTest : MonoBehaviour
                     else if (gameObject.tag == "Player4")
                     {
                         _playerManagerScript.Vibration(_playerManagerScript.player[3], 0, 1.0f, shockWaveDurationMax);
-
                     }
                 }
 
@@ -235,7 +234,7 @@ public class AttackTest : MonoBehaviour
                 {
                     Vector3 moveDirection = enemiesCollider[i].transform.position - this.transform.position;
 
-                    enemiesCollider[i].GetComponent<ShockwaveHit>().haveIBeenHit = true;
+                    enemiesCollider[i].GetComponent<ShockwaveHit>().SetHaveIBeenHitTrue();
 
                     enemiesCollider[i].GetComponent<Rigidbody2D>().velocity = moveDirection.normalized * Time.deltaTime * pushbackIntensity;
                     Debug.Log("Hit");

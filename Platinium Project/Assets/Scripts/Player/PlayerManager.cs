@@ -117,7 +117,7 @@ public class PlayerManager : MonoBehaviour
         
         playerEntity[0].SetInputX(dirPlayer1);
 
-        if(player[0].GetButton("Push1") && playerEntity[0].GetUltiBool())
+        if(player[0].GetButton("Push1") && playerEntity[0].GetUltiBool() && !playerEntity[0].GetIsInputDisabled())
         {
             _attackTest[0].Push();
         }
@@ -144,7 +144,7 @@ public class PlayerManager : MonoBehaviour
         playerEntity[1].SetInputX(dirPlayer2);
 
 
-        if (player[1].GetButton("Push2") && playerEntity[1].GetUltiBool())
+        if (player[1].GetButton("Push2") && playerEntity[1].GetUltiBool() && !playerEntity[1].GetIsInputDisabled())
         {
             _attackTest[1].Push();
         }
@@ -169,7 +169,7 @@ public class PlayerManager : MonoBehaviour
             }
             playerEntity[2].SetInputX(dirPlayer3);
 
-            if (player[2].GetButton("Push3") && playerEntity[2].GetUltiBool())
+            if (player[2].GetButton("Push3") && playerEntity[2].GetUltiBool() && !playerEntity[2].GetIsInputDisabled())
             {
                 _attackTest[2].Push();
             }
@@ -195,7 +195,7 @@ public class PlayerManager : MonoBehaviour
             }
             playerEntity[3].SetInputX(dirPlayer4);
 
-            if (player[3].GetButton("Push4") && playerEntity[3].GetUltiBool())
+            if (player[3].GetButton("Push4") && playerEntity[3].GetUltiBool() && !playerEntity[3].GetIsInputDisabled())
             {
                 _attackTest[3].Push();
             }
