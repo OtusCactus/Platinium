@@ -124,7 +124,7 @@ public class PlayerEntity : MonoBehaviour
     private bool _isInputDisabled;
 
     private bool _touchedByPlayer = false;
-
+    public bool debug;
 
 
 
@@ -760,5 +760,17 @@ public class PlayerEntity : MonoBehaviour
     public void ResetTimerPower()
     {
         _timerPower = 0;
+    }
+
+
+    //debug
+    private void OnGUI()
+    {
+        if (debug)
+        {
+            GUI.color = Color.black;
+            GUILayout.Label("Velocity : " + _myVelocityFloat);
+            //GUILayout.Label("diceCameraDistance : " + diceCameraDistance);
+        }
     }
 }

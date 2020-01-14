@@ -110,7 +110,7 @@ public class PlayerManager : MonoBehaviour
             inputYPlayer[0] = -player[0].GetAxis("VerticalJoy1");
         }
         Vector2 dirPlayer1 = new Vector2(inputXPlayer[0], inputYPlayer[0]);
-        if (dirPlayer1.magnitude < 0.3f)
+        if (dirPlayer1.magnitude < 0.5f)
         {
             dirPlayer1 = Vector2.zero;
         }
@@ -137,7 +137,7 @@ public class PlayerManager : MonoBehaviour
         }
         Vector2 dirPlayer2 = new Vector2(inputXPlayer[1], inputYPlayer[1]);
 
-        if (dirPlayer2.magnitude < 0.3f)
+        if (dirPlayer2.magnitude < 0.5f)
         {
             dirPlayer2 = Vector2.zero;
         }
@@ -163,7 +163,7 @@ public class PlayerManager : MonoBehaviour
                 inputYPlayer[2] = -player[2].GetAxis("VerticalJoy3");
             }
             Vector2 dirPlayer3 = new Vector2(inputXPlayer[2], inputYPlayer[2]);
-            if (dirPlayer3.magnitude < 0.3f)
+            if (dirPlayer3.magnitude < 0.5f)
             {
                 dirPlayer3 = Vector2.zero;
             }
@@ -189,7 +189,7 @@ public class PlayerManager : MonoBehaviour
                 inputYPlayer[3] = -player[3].GetAxis("VerticalJoy4");
             }
             Vector2 dirPlayer4 = new Vector2(inputXPlayer[3], inputYPlayer[3]);
-            if (dirPlayer4.magnitude < 0.3f)
+            if (dirPlayer4.magnitude < 0.5f)
             {
                 dirPlayer4 = Vector2.zero;
             }
