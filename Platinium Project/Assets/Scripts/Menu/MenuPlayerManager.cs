@@ -116,7 +116,8 @@ public class MenuPlayerManager : MonoBehaviour
         selecPanel.SetActive(false);
         optionsPanel.SetActive(false);
         _player = ReInput.players.GetPlayer("Player1");
-        
+        Time.timeScale = 1;
+
         playerNumberSlider.onValueChanged.AddListener(NumberOfPlayersSlider);
         playerNumberSlider.value = getMenuInfoScript.numbersOfPlayers;
     }
