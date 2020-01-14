@@ -38,12 +38,19 @@ public class MenuPlayerManager : MonoBehaviour
     private bool _theMenuHasBegun = false;
 
     [Header("Players 2, 3 & 4")]
-    public GameObject[] twoOtherPlayerNumber;
-    public GameObject[] twoOtherPlayerName;
-    public GameObject[] twoOtherPlayerFace;
-    public GameObject[] twoOtherJoin;
+    public GameObject[] OtherPlayerNumber;
+    public GameObject[] OtherPlayerName;
+    public GameObject[] OtherPlayerFace;
+    public GameObject[] OtherJoin;
+    private bool _secondPress = false;
+    private bool _thirdPress = false;
+    private bool _fourthPress = false;
+    private bool _secondPlayerIsHere = false;
     private bool _thirdPlayerIsHere = false;
     private bool _fourthPlayerIsHere = false;
+    private int secondPlayerIndex = -1;
+    private int thirdPlayerIndex = -1;
+    private int fourthPlayerIndex = -1;
 
     [Header ("Char Select Buttons")]
     public Image[] readyButton;
@@ -77,6 +84,7 @@ public class MenuPlayerManager : MonoBehaviour
     public Sprite[] spriteSelecOrNoP3;
     public Sprite[] spriteSelecOrNoP4;
 
+    private float inputXPlayer2;
     private float inputXPlayer3;
     private float inputXPlayer4;
 
@@ -122,7 +130,7 @@ public class MenuPlayerManager : MonoBehaviour
         Time.timeScale = 1;
 
         playerNumberSlider.onValueChanged.AddListener(NumberOfPlayersSlider);
-        playerNumberSlider.value = getMenuInfoScript.numbersOfPlayers;;
+        playerNumberSlider.value = getMenuInfoScript.numbersOfPlayers; ;
 
         allPlayers = new List<Player>();
 
@@ -132,12 +140,10 @@ public class MenuPlayerManager : MonoBehaviour
         }
 
         otherPlayers = new List<Player>();
-        for (int i = 0; i < 2; i++)
-        {
-            otherPlayers.Add(ReInput.players.GetPlayer("Player" + (i + 1)));
-            print(otherPlayers[i]);
-        }
+        otherPlayers.Add(ReInput.players.GetPlayer("Player" + 1));
+    
 
+        readyButton[1].sprite = outSprite;
         readyButton[2].sprite = outSprite;
         readyButton[3].sprite = outSprite;
     }
@@ -271,6 +277,9 @@ public class MenuPlayerManager : MonoBehaviour
                 selecPanel.SetActive(false);
                 _isCharSelecShowing = false;
                 _hasOptionOrPlayOpened = false;
+                _secondPlayerIsHere = false;
+                _thirdPlayerIsHere = false;
+                _fourthPlayerIsHere = false;
             }
             if (_isOnTutorial && _player.GetButtonUp("BackMenu"))
             {
@@ -285,75 +294,232 @@ public class MenuPlayerManager : MonoBehaviour
                 _hasOptionOrPlayOpened = false;
             }
 
-            if(_player.GetButtonUp("BackMenu"))
-            {
-                Debug.Log("ok");
-            }
-
             if (_isCharSelecShowing)
             {
-                print(otherPlayers.Count);
-
-                if (allPlayers[2].GetButtonUp("Push3") && !_thirdPlayerIsHere)
+                if (allPlayers[1].GetButtonUp("Push2") && !_secondPress)
+                {
+                    otherPlayers.Add(ReInput.players.GetPlayer("Player" + 2));
+                    _secondPress = true;
+                    for (int i = 0; i < otherPlayers.Count; i++)
+                    {
+                        if (otherPlayers[i].name == allPlayers[1].name)
+                        {
+                            secondPlayerIndex = i;
+                        }
+                        print(" rajout player " + i + " = " + otherPlayers[i].name);
+                    }
+                    switch (secondPlayerIndex)
+                    {
+                        case 1:
+                            _secondPlayerIsHere = true;
+                            break;
+                        case 2:
+                            _thirdPlayerIsHere = true;
+                            break;
+                        case 3:
+                            _fourthPlayerIsHere = true;
+                            break;
+                    }
+                }
+                if (allPlayers[2].GetButtonUp("Push3") && !_thirdPress)
                 {
                     otherPlayers.Add(ReInput.players.GetPlayer("Player" + 3));
-                    _thirdPlayerIsHere = true;
+                    _thirdPress = true;
+                    for (int i = 0; i < otherPlayers.Count; i++)
+                    {
+                        if (otherPlayers[i].name == allPlayers[2].name)
+                        {
+                            thirdPlayerIndex = i;
+                        }
+                        print(" rajout player " + i + " = " + otherPlayers[i].name);
+                    }
+                    switch (thirdPlayerIndex)
+                    {
+                        case 1:
+                            _secondPlayerIsHere = true;
+                            break;
+                        case 2:
+                            _thirdPlayerIsHere = true;
+                            break;
+                        case 3:
+                            _fourthPlayerIsHere = true;
+                            break;
+                    }
                 }
-                if (allPlayers[3].GetButtonUp("Push4") && !_fourthPlayerIsHere)
+                if (allPlayers[3].GetButtonUp("Push4") && !_fourthPress)
                 {
                     otherPlayers.Add(ReInput.players.GetPlayer("Player" + 4));
-                    _fourthPlayerIsHere = true;
-                }
-                if (allPlayers[2].GetButtonUp("BackMenu3") && _thirdPlayerIsHere)
-                {
-                    otherPlayers.Remove(ReInput.players.GetPlayer("Player" + 3));
-                    _thirdPlayerIsHere = false;
-                    readyButton[2].sprite = outSprite;
-                    twoOtherJoin[1].SetActive(true);
-                    twoOtherPlayerName[0].SetActive(false);
-                    twoOtherPlayerNumber[0].SetActive(false);
-                    twoOtherPlayerFace[0].SetActive(false);
-                    mouvementImageP3[0].gameObject.SetActive(false);
-                    mouvementImageP3[1].gameObject.SetActive(false);
-                }
-                if (allPlayers[3].GetButtonUp("BackMenu3") && _fourthPlayerIsHere)
-                {
-                    otherPlayers.Remove(ReInput.players.GetPlayer("Player" + 4));
-                    _fourthPlayerIsHere = false;
-                    readyButton[2].sprite = outSprite;
-                    twoOtherJoin[2].SetActive(true);
-                    twoOtherPlayerName[1].SetActive(false);
-                    twoOtherPlayerNumber[1].SetActive(false);
-                    twoOtherPlayerFace[1].SetActive(false);
-                    mouvementImageP3[1].gameObject.SetActive(false);
-                    mouvementImageP4[1].gameObject.SetActive(false);
+                    _fourthPress = true;
+                    for (int i = 0; i < otherPlayers.Count; i++)
+                    {
+                        if (otherPlayers[i].name == allPlayers[3].name)
+                        {
+                            fourthPlayerIndex = i;
+                        }
+                        print(" rajout player " + i + " = " + otherPlayers[i].name);
+                    }
+                    switch (fourthPlayerIndex)
+                    {
+                        case 1:
+                            _secondPlayerIsHere = true;
+                            break;
+                        case 2:
+                            _thirdPlayerIsHere = true;
+                            break;
+                        case 3:
+                            _fourthPlayerIsHere = true;
+                            break;
+                    }
                 }
 
-                float inputXPlayer2 = -otherPlayers[1].GetAxis("HorizontalJoy2");
-
-
-                if (otherPlayers.Count >= 3)
+                if (otherPlayers.Count >= 2)
                 {
-                    //Gère à quel joueur attribué quel action
-                    inputXPlayer3 = -otherPlayers[2].GetAxis("HorizontalJoy3");
-                    twoOtherJoin[1].SetActive(false);
-                    twoOtherPlayerName[0].SetActive(true);
-                    twoOtherPlayerNumber[0].SetActive(true);
-                    twoOtherPlayerFace[0].SetActive(true);
-                    mouvementImageP3[0].gameObject.SetActive(true);
-                    mouvementImageP3[1].gameObject.SetActive(true);
-                    readyButton[3].sprite = outSprite;
+                    if (otherPlayers[1].GetButtonUp("BackMenu" + (otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1))))
+                    {
+                        switch (int.Parse(otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1)))
+                        {
+                            case 2:
+                                _secondPress = false;
+                                break;
+                            case 3:
+                                _thirdPress = false;
+                                break;
+                            case 4:
+                                _fourthPress = false;
+                                break;
+                        }
+                        otherPlayers.Remove(ReInput.players.GetPlayer("Player" + (otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1))));
+                        for (int i = 0; i < otherPlayers.Count; i++)
+                        {
+                            if (otherPlayers[i].name == allPlayers[3].name)
+                            {
+                                fourthPlayerIndex = i;
+                            }
+                            print("remove player " + i + " = " + otherPlayers[i].name);
+                        }
+                        //_secondPlayerIsHere = false;
+                    }
+
+
+                    if(otherPlayers.Count >= 3)
+                    {
+                        if (otherPlayers[2].GetButtonUp("BackMenu" + (otherPlayers[2].name.Substring(otherPlayers[2].name.Length - 1))))
+                        {
+                            switch (int.Parse(otherPlayers[2].name.Substring(otherPlayers[2].name.Length - 1)))
+                            {
+                                case 2:
+                                    _secondPress = false;
+                                    break;
+                                case 3:
+                                    _thirdPress = false;
+                                    break;
+                                case 4:
+                                    _fourthPress = false;
+                                    break;
+                            }
+                            otherPlayers.Remove(ReInput.players.GetPlayer("Player" + (otherPlayers[2].name.Substring(otherPlayers[2].name.Length - 1))));
+                            for (int i = 0; i < otherPlayers.Count; i++)
+                            {
+                                if (otherPlayers[i].name == allPlayers[3].name)
+                                {
+                                    fourthPlayerIndex = i;
+                                }
+                                print("remove player " + i + " = " + otherPlayers[i].name);
+                            }
+                            //_thirdPlayerIsHere = false;
+                        }
+                    }
+
 
                     if (otherPlayers.Count >= 4)
                     {
+                        if (otherPlayers[3].GetButtonUp("BackMenu" + (otherPlayers[3].name.Substring(otherPlayers[3].name.Length - 1))))
+                        {
+                            switch (int.Parse(otherPlayers[3].name.Substring(otherPlayers[3].name.Length - 1)))
+                        {
+                            case 2:
+                                _secondPress = false;
+                                break;
+                            case 3:
+                                _thirdPress = false;
+                                break;
+                            case 4:
+                                _fourthPress = false;
+                                break;
+                        }
+                            otherPlayers.Remove(ReInput.players.GetPlayer("Player" + (otherPlayers[3].name.Substring(otherPlayers[3].name.Length - 1))));
+                            for (int i = 0; i < otherPlayers.Count; i++)
+                            {
+                                if (otherPlayers[i].name == allPlayers[3].name)
+                                {
+                                    fourthPlayerIndex = i;
+                                }
+                                print("remove player " + i + " = " + otherPlayers[i].name);
+                            }
+                            //_fourthPlayerIsHere = false;
+                        }
+                    }
+                }
+                
+                if (otherPlayers.Count >= 1)
+                {
+                    readyButton[1].sprite = outSprite;
+                    OtherJoin[0].SetActive(true);
+                    OtherPlayerName[0].SetActive(false);
+                    OtherPlayerNumber[0].SetActive(false);
+                    OtherPlayerFace[0].SetActive(false);
+                    mouvementImageP2[0].gameObject.SetActive(false);
+                    mouvementImageP2[1].gameObject.SetActive(false);
+                }
+                if(otherPlayers.Count >= 2)
+                {
+                    inputXPlayer2 = -otherPlayers[1].GetAxis("HorizontalJoy2");
+                    OtherJoin[0].SetActive(false);
+                    OtherPlayerName[0].SetActive(true);
+                    OtherPlayerNumber[0].SetActive(true);
+                    OtherPlayerFace[0].SetActive(true);
+                    mouvementImageP2[0].gameObject.SetActive(true);
+                    mouvementImageP2[1].gameObject.SetActive(true);
+
+
+                    readyButton[2].sprite = outSprite;
+                    OtherJoin[1].SetActive(true);
+                    OtherPlayerName[1].SetActive(false);
+                    OtherPlayerNumber[1].SetActive(false);
+                    OtherPlayerFace[1].SetActive(false);
+                    mouvementImageP3[0].gameObject.SetActive(false);
+                    mouvementImageP3[1].gameObject.SetActive(false);
+                    if (otherPlayers.Count >= 3)
+                    {
                         //Gère à quel joueur attribué quel action
-                        inputXPlayer4 = -otherPlayers[3].GetAxis("HorizontalJoy4");
-                        twoOtherJoin[1].SetActive(false);
-                        twoOtherPlayerName[1].SetActive(true);
-                        twoOtherPlayerNumber[1].SetActive(true);
-                        twoOtherPlayerFace[1].SetActive(true);
+                        inputXPlayer3 = -otherPlayers[2].GetAxis("HorizontalJoy3");
+                        OtherJoin[1].SetActive(false);
+                        OtherPlayerName[1].SetActive(true);
+                        OtherPlayerNumber[1].SetActive(true);
+                        OtherPlayerFace[1].SetActive(true);
+                        mouvementImageP3[0].gameObject.SetActive(true);
                         mouvementImageP3[1].gameObject.SetActive(true);
-                        mouvementImageP4[1].gameObject.SetActive(true);
+
+
+                        readyButton[3].sprite = outSprite;
+                        OtherJoin[2].SetActive(true);
+                        OtherPlayerName[2].SetActive(false);
+                        OtherPlayerNumber[2].SetActive(false);
+                        OtherPlayerFace[2].SetActive(false);
+                        mouvementImageP4[0].gameObject.SetActive(false);
+                        mouvementImageP4[1].gameObject.SetActive(false);
+
+                        if (otherPlayers.Count >= 4)
+                        {
+                            //Gère à quel joueur attribué quel action
+                            inputXPlayer4 = -otherPlayers[3].GetAxis("HorizontalJoy4");
+                            OtherJoin[2].SetActive(false);
+                            OtherPlayerName[2].SetActive(true);
+                            OtherPlayerNumber[2].SetActive(true);
+                            OtherPlayerFace[2].SetActive(true);
+                            mouvementImageP4[0].gameObject.SetActive(true);
+                            mouvementImageP4[1].gameObject.SetActive(true);
+                        }
                     }
                 }
                 else
@@ -467,34 +633,38 @@ public class MenuPlayerManager : MonoBehaviour
                 readyButton[0].sprite = originalSprite;
             }
 
-            if (_isCharSelecShowing && otherPlayers[1].GetButton("Push2"))
+            if (otherPlayers.Count >= 2)
             {
-                timerPTwo += Time.deltaTime;
+                if (_isCharSelecShowing && otherPlayers[1].GetButton("Push" + (otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1))))
+                {
+                    timerPTwo += Time.deltaTime;
+                }
+                else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push" + "Push" + (otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1))))
+                {
+                    timerPTwo = 0;
+                }
+                if (timerPTwo >= 1)
+                {
+                    _isPTwoReady = true;
+                }
+                if (_isPTwoReady)
+                {
+                    readyButton[1].sprite = readySprite;
+                }
+                else
+                {
+                    readyButton[1].sprite = originalSprite;
+                }
             }
-            else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push2"))
-            {
-                timerPTwo = 0;
-            }
-            if (timerPTwo >= 1)
-            {
-                _isPTwoReady = true;
-            }
-            if (_isPTwoReady)
-            {
-                readyButton[1].sprite = readySprite;
-            }
-            else
-            {
-                readyButton[1].sprite = originalSprite;
-            }
+            
 
             if (otherPlayers.Count > 2)
             {
-                if (_isCharSelecShowing && otherPlayers[2].GetButton("Push3"))
+                if (_isCharSelecShowing && otherPlayers[2].GetButton("Push" + (otherPlayers[2].name.Substring(otherPlayers[2].name.Length - 1))))
                 {
                     timerPThree += Time.deltaTime;
                 }
-                else if (_isCharSelecShowing && otherPlayers[2].GetButtonUp("Push3"))
+                else if (_isCharSelecShowing && otherPlayers[2].GetButtonUp("Push" + (otherPlayers[2].name.Substring(otherPlayers[2].name.Length - 1))))
                 {
                     timerPThree = 0;
                 }
@@ -515,11 +685,11 @@ public class MenuPlayerManager : MonoBehaviour
 
             if (otherPlayers.Count > 3)
             {
-                if (_isCharSelecShowing && otherPlayers[3].GetButton("Push4"))
+                if (_isCharSelecShowing && otherPlayers[3].GetButton("Push" + (otherPlayers[3].name.Substring(otherPlayers[3].name.Length - 1))))
                 {
                     timerPFour += Time.deltaTime;
                 }
-                else if (_isCharSelecShowing && otherPlayers[3].GetButtonUp("Push4"))
+                else if (_isCharSelecShowing && otherPlayers[3].GetButtonUp("Push" + (otherPlayers[3].name.Substring(otherPlayers[3].name.Length - 1))))
                 {
                     timerPFour = 0;
                 }

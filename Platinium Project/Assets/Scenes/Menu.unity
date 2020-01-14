@@ -2467,7 +2467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &513177515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3885,7 +3885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 632, y: -35.3}
+  m_AnchoredPosition: {x: 644, y: -35.3}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &778148841
@@ -3945,7 +3945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &822380254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5480,7 +5480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1169258592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6259,7 +6259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1304912545
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8440,7 +8440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1632504034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9311,16 +9311,19 @@ MonoBehaviour:
   sceneName: Mainscene Shader
   selecPanel: {fileID: 557480665}
   playerNumberSlider: {fileID: 1065996202}
-  twoOtherPlayerNumber:
+  OtherPlayerNumber:
+  - {fileID: 1169258591}
   - {fileID: 1144569597}
   - {fileID: 1979566318}
-  twoOtherPlayerName:
+  OtherPlayerName:
+  - {fileID: 513177514}
   - {fileID: 84297826}
   - {fileID: 1623969401}
-  twoOtherPlayerFace:
+  OtherPlayerFace:
+  - {fileID: 1304912544}
   - {fileID: 80467353}
   - {fileID: 1945546066}
-  twoOtherJoin:
+  OtherJoin:
   - {fileID: 778148839}
   - {fileID: 1222412165}
   - {fileID: 881443127}
