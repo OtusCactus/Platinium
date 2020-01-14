@@ -17,6 +17,7 @@ public class MenuPlayerManager : MonoBehaviour
     public Player _player;
 
     private List<Player> otherPlayers;
+    private List<Player> allPlayers;
 
     public InMenuPlayer playerEntity;
     private GetMenuInformation getMenuInfoScript;
@@ -28,7 +29,7 @@ public class MenuPlayerManager : MonoBehaviour
 
     [Header("Play")]
     public GameObject startPanel;
-    public GameObject playerSelection;
+    //public GameObject playerSelection;
     public Slider numberPlayers;
     public string sceneName;
     private bool _isStartGameShowing;
@@ -36,10 +37,13 @@ public class MenuPlayerManager : MonoBehaviour
     public Slider playerNumberSlider;
     private bool _theMenuHasBegun = false;
 
-    [Header("Players 3 & 4")]
+    [Header("Players 2, 3 & 4")]
     public GameObject[] twoOtherPlayerNumber;
     public GameObject[] twoOtherPlayerName;
     public GameObject[] twoOtherPlayerFace;
+    public GameObject[] twoOtherJoin;
+    private bool _thirdPlayerIsHere = false;
+    private bool _fourthPlayerIsHere = false;
 
     [Header ("Char Select Buttons")]
     public Image[] readyButton;
@@ -112,14 +116,30 @@ public class MenuPlayerManager : MonoBehaviour
     void Start()
     {
         startPanel.SetActive(true);
-        playerSelection.SetActive(false);
         selecPanel.SetActive(false);
         optionsPanel.SetActive(false);
         _player = ReInput.players.GetPlayer("Player1");
         Time.timeScale = 1;
 
         playerNumberSlider.onValueChanged.AddListener(NumberOfPlayersSlider);
-        playerNumberSlider.value = getMenuInfoScript.numbersOfPlayers;
+        playerNumberSlider.value = getMenuInfoScript.numbersOfPlayers;;
+
+        allPlayers = new List<Player>();
+
+        for (int i = 0; i < 4; i++)
+        {
+            allPlayers.Add(ReInput.players.GetPlayer("Player" + (i + 1)));
+        }
+
+        otherPlayers = new List<Player>();
+        for (int i = 0; i < 2; i++)
+        {
+            otherPlayers.Add(ReInput.players.GetPlayer("Player" + (i + 1)));
+            print(otherPlayers[i]);
+        }
+
+        readyButton[2].sprite = outSprite;
+        readyButton[3].sprite = outSprite;
     }
 
     // Update is called once per frame
@@ -228,7 +248,7 @@ public class MenuPlayerManager : MonoBehaviour
 
             if (playerEntity.currentFace == 0 && _player.GetButtonUp("Push1") && !_isStartGameShowing && timerMenu >= 0.2 && !_isOnTutorial)
             {
-                ShowPlayerNumberSelection();
+                ShowSelectionChar();
             }
             else if (playerEntity.currentFace == 1 && _player.GetButton("Push1"))
             {
@@ -245,23 +265,17 @@ public class MenuPlayerManager : MonoBehaviour
                 _hasOptionOrPlayOpened = true;
             }
 
-            if (_isStartGameShowing && _player.GetButtonDown("BackMenu"))
+            if (_isCharSelecShowing && _player.GetButtonUp("BackMenu"))
             {
                 playerEntity.enabled = true;
-                playerSelection.SetActive(false);
-                _isStartGameShowing = false;
+                selecPanel.SetActive(false);
+                _isCharSelecShowing = false;
                 _hasOptionOrPlayOpened = false;
-
-            }
-            else if (_isStartGameShowing && _player.GetButtonDown("Push1") && !_isOnTutorial)
-            {
-                ShowSelectionChar();
             }
             if (_isOnTutorial && _player.GetButtonUp("BackMenu"))
             {
                 tutorialPanel.SetActive(false);
                 _isOnTutorial = false;
-                ShowPlayerNumberSelection();
             }
 
             if (_isOnCredits && _player.GetButtonUp("BackMenu"))
@@ -278,20 +292,73 @@ public class MenuPlayerManager : MonoBehaviour
 
             if (_isCharSelecShowing)
             {
-                playerSelection.SetActive(false);
+                print(otherPlayers.Count);
 
-                float inputXPlayer2 = -otherPlayers[0].GetAxis("HorizontalJoy2");
+                if (allPlayers[2].GetButtonUp("Push3") && !_thirdPlayerIsHere)
+                {
+                    otherPlayers.Add(ReInput.players.GetPlayer("Player" + 3));
+                    _thirdPlayerIsHere = true;
+                }
+                if (allPlayers[3].GetButtonUp("Push4") && !_fourthPlayerIsHere)
+                {
+                    otherPlayers.Add(ReInput.players.GetPlayer("Player" + 4));
+                    _fourthPlayerIsHere = true;
+                }
+                if (allPlayers[2].GetButtonUp("BackMenu3") && _thirdPlayerIsHere)
+                {
+                    otherPlayers.Remove(ReInput.players.GetPlayer("Player" + 3));
+                    _thirdPlayerIsHere = false;
+                    readyButton[2].sprite = outSprite;
+                    twoOtherJoin[1].SetActive(true);
+                    twoOtherPlayerName[0].SetActive(false);
+                    twoOtherPlayerNumber[0].SetActive(false);
+                    twoOtherPlayerFace[0].SetActive(false);
+                    mouvementImageP3[0].gameObject.SetActive(false);
+                    mouvementImageP3[1].gameObject.SetActive(false);
+                }
+                if (allPlayers[3].GetButtonUp("BackMenu3") && _fourthPlayerIsHere)
+                {
+                    otherPlayers.Remove(ReInput.players.GetPlayer("Player" + 4));
+                    _fourthPlayerIsHere = false;
+                    readyButton[2].sprite = outSprite;
+                    twoOtherJoin[2].SetActive(true);
+                    twoOtherPlayerName[1].SetActive(false);
+                    twoOtherPlayerNumber[1].SetActive(false);
+                    twoOtherPlayerFace[1].SetActive(false);
+                    mouvementImageP3[1].gameObject.SetActive(false);
+                    mouvementImageP4[1].gameObject.SetActive(false);
+                }
 
-                if (otherPlayers.Count >= 2)
+                float inputXPlayer2 = -otherPlayers[1].GetAxis("HorizontalJoy2");
+
+
+                if (otherPlayers.Count >= 3)
                 {
                     //Gère à quel joueur attribué quel action
-                    inputXPlayer3 = -otherPlayers[1].GetAxis("HorizontalJoy3");
-                    if (otherPlayers.Count >= 3)
+                    inputXPlayer3 = -otherPlayers[2].GetAxis("HorizontalJoy3");
+                    twoOtherJoin[1].SetActive(false);
+                    twoOtherPlayerName[0].SetActive(true);
+                    twoOtherPlayerNumber[0].SetActive(true);
+                    twoOtherPlayerFace[0].SetActive(true);
+                    mouvementImageP3[0].gameObject.SetActive(true);
+                    mouvementImageP3[1].gameObject.SetActive(true);
+                    readyButton[3].sprite = outSprite;
+
+                    if (otherPlayers.Count >= 4)
                     {
                         //Gère à quel joueur attribué quel action
-                        inputXPlayer4 = -otherPlayers[2].GetAxis("HorizontalJoy4");
-
+                        inputXPlayer4 = -otherPlayers[3].GetAxis("HorizontalJoy4");
+                        twoOtherJoin[1].SetActive(false);
+                        twoOtherPlayerName[1].SetActive(true);
+                        twoOtherPlayerNumber[1].SetActive(true);
+                        twoOtherPlayerFace[1].SetActive(true);
+                        mouvementImageP3[1].gameObject.SetActive(true);
+                        mouvementImageP4[1].gameObject.SetActive(true);
                     }
+                }
+                else
+                {
+                    readyButton[2].sprite = outSprite;
                 }
 
                 if (inputXPlayer1 > 0.2f)
@@ -366,17 +433,17 @@ public class MenuPlayerManager : MonoBehaviour
 
 
             #region How to tell if ready
-            if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
-            {
-                selecPanel.SetActive(false);
-                ShowPlayerNumberSelection();
-                _isPOneReady = false;
-                _isPTwoReady = false;
-                _isPThreeReady = false;
-                _isPFourReady = false;
-                _isCharSelecShowing = false;
+            //if (_isCharSelecShowing && _player.GetButtonDown("BackMenu"))
+            //{
+            //    selecPanel.SetActive(false);
+            //    //ShowPlayerNumberSelection();
+            //    _isPOneReady = false;
+            //    _isPTwoReady = false;
+            //    _isPThreeReady = false;
+            //    _isPFourReady = false;
+            //    _isCharSelecShowing = false;
 
-            }
+            //}
             //quand les joueurs garde le bouton a appuyé, le timer augmente et, passé un certain temps, le joueur est considérer comme prêt
             //dès que tous les joueurs sont prêts, le jeu se lance
             if (_isCharSelecShowing && _player.GetButton("Push1"))
@@ -400,11 +467,11 @@ public class MenuPlayerManager : MonoBehaviour
                 readyButton[0].sprite = originalSprite;
             }
 
-            if (_isCharSelecShowing && otherPlayers[0].GetButton("Push2"))
+            if (_isCharSelecShowing && otherPlayers[1].GetButton("Push2"))
             {
                 timerPTwo += Time.deltaTime;
             }
-            else if (_isCharSelecShowing && otherPlayers[0].GetButtonUp("Push2"))
+            else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push2"))
             {
                 timerPTwo = 0;
             }
@@ -421,13 +488,13 @@ public class MenuPlayerManager : MonoBehaviour
                 readyButton[1].sprite = originalSprite;
             }
 
-            if (playerNumberSlider.value > 2)
+            if (otherPlayers.Count > 2)
             {
-                if (_isCharSelecShowing && otherPlayers[1].GetButton("Push3"))
+                if (_isCharSelecShowing && otherPlayers[2].GetButton("Push3"))
                 {
                     timerPThree += Time.deltaTime;
                 }
-                else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push3"))
+                else if (_isCharSelecShowing && otherPlayers[2].GetButtonUp("Push3"))
                 {
                     timerPThree = 0;
                 }
@@ -435,23 +502,24 @@ public class MenuPlayerManager : MonoBehaviour
                 {
                     _isPThreeReady = true;
                 }
+                if (_isPThreeReady)
+                {
+                    readyButton[2].sprite = readySprite;
+                }
+                else
+                {
+                    readyButton[2].sprite = originalSprite;
+                }
             }
-            if (_isPThreeReady)
-            {
-                readyButton[2].sprite = readySprite;
-            }
-            else
-            {
-                readyButton[2].sprite = originalSprite;
-            }
+            
 
-            if (playerNumberSlider.value > 3)
+            if (otherPlayers.Count > 3)
             {
-                if (_isCharSelecShowing && otherPlayers[2].GetButton("Push4"))
+                if (_isCharSelecShowing && otherPlayers[3].GetButton("Push4"))
                 {
                     timerPFour += Time.deltaTime;
                 }
-                else if (_isCharSelecShowing && otherPlayers[2].GetButtonUp("Push4"))
+                else if (_isCharSelecShowing && otherPlayers[3].GetButtonUp("Push4"))
                 {
                     timerPFour = 0;
                 }
@@ -459,52 +527,29 @@ public class MenuPlayerManager : MonoBehaviour
                 {
                     _isPFourReady = true;
                 }
-
+                if (_isPFourReady)
+                {
+                    readyButton[3].sprite = readySprite;
+                }
+                else
+                {
+                    readyButton[3].sprite = originalSprite;
+                }
             }
 
-            if (_isPFourReady)
-            {
-                readyButton[3].sprite = readySprite;
-            }
-            else
-            {
-                readyButton[3].sprite = originalSprite;
-            }
+            
             #endregion
 
             #region Start game when all ready
-            if (playerNumberSlider.value == 2)
+            if (otherPlayers.Count == 2)
             {
-                readyButton[2].sprite = outSprite;
-                readyButton[3].sprite = outSprite;
-                twoOtherPlayerName[0].SetActive(false);
-                twoOtherPlayerName[1].SetActive(false);
-                twoOtherPlayerNumber[0].SetActive(false);
-                twoOtherPlayerNumber[1].SetActive(false);
-                twoOtherPlayerFace[0].SetActive(false);
-                twoOtherPlayerFace[1].SetActive(false);
-                mouvementImageP3[0].gameObject.SetActive(false);
-                mouvementImageP3[1].gameObject.SetActive(false);
-                mouvementImageP4[0].gameObject.SetActive(false);
-                mouvementImageP4[1].gameObject.SetActive(false);
                 if (_isPOneReady && _isPTwoReady)
                 {
                     StartGame();
                 }
             }
-            else if (playerNumberSlider.value == 3)
+            else if (otherPlayers.Count == 3)
             {
-                twoOtherPlayerName[0].SetActive(true);
-                twoOtherPlayerName[1].SetActive(false);
-                twoOtherPlayerNumber[0].SetActive(true);
-                twoOtherPlayerNumber[1].SetActive(false);
-                twoOtherPlayerFace[0].SetActive(true);
-                twoOtherPlayerFace[1].SetActive(false);
-                mouvementImageP3[0].gameObject.SetActive(true);
-                mouvementImageP3[1].gameObject.SetActive(true);
-                mouvementImageP4[0].gameObject.SetActive(false);
-                mouvementImageP4[1].gameObject.SetActive(false);
-                readyButton[3].sprite = outSprite;
                 if (_isPOneReady && _isPTwoReady && _isPThreeReady)
                 {
                     StartGame();
@@ -512,16 +557,6 @@ public class MenuPlayerManager : MonoBehaviour
             }
             else
             {
-                twoOtherPlayerName[0].SetActive(true);
-                twoOtherPlayerName[1].SetActive(true);
-                twoOtherPlayerNumber[0].SetActive(true);
-                twoOtherPlayerNumber[1].SetActive(true);
-                twoOtherPlayerFace[0].SetActive(true);
-                twoOtherPlayerFace[1].SetActive(true);
-                mouvementImageP3[0].gameObject.SetActive(true);
-                mouvementImageP3[1].gameObject.SetActive(true);
-                mouvementImageP4[0].gameObject.SetActive(true);
-                mouvementImageP4[1].gameObject.SetActive(true);
                 if (_isPOneReady && _isPTwoReady && _isPThreeReady && _isPFourReady)
                 {
                     StartGame();
@@ -544,24 +579,24 @@ public class MenuPlayerManager : MonoBehaviour
 
     public void ShowSelectionChar()
     {
-        otherPlayers = new List<Player>();
-        for (int i = 0; i < (int)playerNumberSlider.value -1; i++)
-        {
-            otherPlayers.Add(ReInput.players.GetPlayer("Player" + (i + 2)));
-        }
-        playerSelection.SetActive(false);
+        //otherPlayers = new List<Player>();
+        //for (int i = 0; i < (int)playerNumberSlider.value -1; i++)
+        //{
+        //    otherPlayers.Add(ReInput.players.GetPlayer("Player" + (i + 2)));
+        //}
+        //playerSelection.SetActive(false);
         selecPanel.SetActive(true);
         _isCharSelecShowing = true;
         _isStartGameShowing = false;
     }
 
-    void ShowPlayerNumberSelection()
-    {
-        playerSelection.SetActive(true);
-        _isStartGameShowing = true;
+    //void ShowPlayerNumberSelection()
+    //{
+    //    playerSelection.SetActive(true);
+    //    _isStartGameShowing = true;
         
-        numberPlayers.Select();
-    }
+    //    numberPlayers.Select();
+    //}
 
     void ExitGame()
     {
