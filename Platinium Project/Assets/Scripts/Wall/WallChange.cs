@@ -7,7 +7,7 @@ public class WallChange : MonoBehaviour
     //merge des scripts Wall et Wall3D pour la scène Proto.
 
     [Header("Propriétés")]
-    private float _wallLifeMax;
+    private float _wallLifeMax = 250;
     //public float wallLimitVelocity;
     private float wallLife;
     //
@@ -111,7 +111,7 @@ public class WallChange : MonoBehaviour
 
 
         // set les valeurs de départs
-        _wallLifeMax = _wallManagerScript.GetWallLifeMax();
+        //_wallLifeMax = _wallManagerScript.GetWallLifeMax();
         wallLife = _wallLifeMax;
         _currentFace = _arenaRotationScript._currentFace;
         _wallManagerScript.WhichWall(_wallProprieties);
