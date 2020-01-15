@@ -33,6 +33,11 @@ public class WallManager : MonoBehaviour
     public Mesh[] wallBouncyAppearance;
     public Mesh[] wallBouncyShadowAppearance;
 
+    [Header("Bibliothèques de LD")]
+    public RandomizerArena normalLD;
+    public List<string> bouncyLD;
+    public List<string> indestructibleLD;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -52,21 +57,13 @@ public class WallManager : MonoBehaviour
         switch (nbrPlayers)
         {
             case 2:
-                print("vie deux joueurs");
                 return wallLifeMaxTwo;
-                break;
             case 3:
-                print("vie 3 joueurs");
                 return wallLifeMaxThree;
-                break;
             case 4:
-                print("vie 4 joueurs");
                 return wallLifeMaxFour;
-                break;
             default:
-                print("vie defaut");
                 return wallLifeMaxFour;
-                break;
         }
     }
     //Changement de face en fonction de la face actuelle et des faces proches.
@@ -199,6 +196,24 @@ public class WallManager : MonoBehaviour
         if(wallProprieties.isConnected)
         {
             wallProprieties.theWalls[3].SetActive(true);
+        }
+    }
+    //Choisit un ld au hasard selon la face
+    public int GetRandomArena()
+    {
+        if (_gameManagerScript.currentFace == 0 || _gameManagerScript.currentFace == 7 || _gameManagerScript.currentFace == 8 || _gameManagerScript.currentFace == 9)
+        {
+            return Random.Range(0, normalLD.arenas.Count);
+        }
+        else if (_gameManagerScript.currentFace == 1 || _gameManagerScript.currentFace == 2 || _gameManagerScript.currentFace == 3 || _gameManagerScript.currentFace == 5)
+        {
+            print(bouncyLD[Random.Range(0, bouncyLD.Count)]);
+            return 0;
+        }
+        else
+        {
+            print(indestructibleLD[Random.Range(0, indestructibleLD.Count)]);
+            return 0;
         }
     }
 }

@@ -13,8 +13,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class RandomizerArena : ScriptableObject
 {
-    public WallList _wallNameList;
-    public List<ArenaConfig> _questions;
+    public WallList wallNameList;
+    public List<ArenaConfig> arenas;
 
     [System.Serializable]
     public struct WallConfig
@@ -27,7 +27,7 @@ public class RandomizerArena : ScriptableObject
 
         public WallConfig(int id)
         {
-            walls = 1;
+            walls = 0;
             isOpenned = false;
             isBounc = false;
             isIndestructibl = false;
@@ -39,16 +39,14 @@ public class RandomizerArena : ScriptableObject
     public struct ArenaConfig
     {
         //Variable declaration
-        public int ID;
-        public string label;
+        public string name;
         public List<WallConfig> wallsNamesList;
         public bool isOpenned;
         public bool wallIsOpenned;
 
-        public ArenaConfig(int id, string lab)
+        public ArenaConfig(string lab)
         {
-            ID = id;
-            label = lab;
+            name = lab;
             wallsNamesList = new List<WallConfig>();
             isOpenned = false;
             wallIsOpenned = false;
@@ -83,9 +81,9 @@ public class QuestionStructureEditor : Editor
 
         //base.OnInspectorGUI();
 
-        _myTarget._wallNameList = EditorGUILayout.ObjectField("Effect List", _myTarget._wallNameList, typeof(WallList), true) as WallList;
+        _myTarget.wallNameList = EditorGUILayout.ObjectField("Effect List", _myTarget.wallNameList, typeof(WallList), true) as WallList;
 
-        if (_myTarget._wallNameList != null)
+        if (_myTarget.wallNameList != null)
         {
             //serializedObject.Update();
             //SerializedProperty sp = serializedObject.FindProperty("_questions.Array");
@@ -97,32 +95,31 @@ public class QuestionStructureEditor : Editor
                 _isOpenned = true;
 
                 EditorGUI.indentLevel++;
-                int nbElement = _myTarget._questions.Count;
+                int nbElement = _myTarget.arenas.Count;
                 nbElement = EditorGUILayout.IntField("Size", nbElement);
 
-                if (_myTarget._questions.Count != nbElement)
+                if (_myTarget.arenas.Count != nbElement)
                 {
-                    while (_myTarget._questions.Count != nbElement)
+                    while (_myTarget.arenas.Count != nbElement)
                     {
-                        if (_myTarget._questions.Count < nbElement)
-                            _myTarget._questions.Add(new RandomizerArena.ArenaConfig(0, "New Arena"));
+                        if (_myTarget.arenas.Count < nbElement)
+                            _myTarget.arenas.Add(new RandomizerArena.ArenaConfig("New Arena"));
                         else
-                            _myTarget._questions.RemoveAt(_myTarget._questions.Count - 1);
+                            _myTarget.arenas.RemoveAt(_myTarget.arenas.Count - 1);
                     }
                 }
 
-                for (int i = 0; i < _myTarget._questions.Count; i++)
+                for (int i = 0; i < _myTarget.arenas.Count; i++)
                 {
                     EditorGUI.indentLevel++;
 
                     RandomizerArena.ArenaConfig arenaConfig = new RandomizerArena.ArenaConfig();
-                    arenaConfig = _myTarget._questions[i];
+                    arenaConfig = _myTarget.arenas[i];
 
-                    if (EditorGUILayout.Foldout(arenaConfig.isOpenned, arenaConfig.label, true))
+                    if (EditorGUILayout.Foldout(arenaConfig.isOpenned, arenaConfig.name, true))
                     {
                         arenaConfig.isOpenned = true;
-                        arenaConfig.ID = EditorGUILayout.IntField("ID", arenaConfig.ID);
-                        arenaConfig.label = EditorGUILayout.TextField("Label", arenaConfig.label);
+                        arenaConfig.name = EditorGUILayout.TextField("Name", arenaConfig.name);
 
                         EditorGUI.indentLevel++;
 
@@ -132,14 +129,11 @@ public class QuestionStructureEditor : Editor
 
                             EditorGUI.indentLevel++;
 
-                            int nbElementAnswer = arenaConfig.wallsNamesList.Count;
-                            nbElementAnswer = EditorGUILayout.IntField("Size", nbElementAnswer);
-
-                            if (arenaConfig.wallsNamesList.Count != nbElementAnswer)
+                            if (arenaConfig.wallsNamesList.Count != 5)
                             {
-                                while (arenaConfig.wallsNamesList.Count != nbElementAnswer)
+                                while (arenaConfig.wallsNamesList.Count != 5)
                                 {
-                                    if (arenaConfig.wallsNamesList.Count < nbElementAnswer)
+                                    if (arenaConfig.wallsNamesList.Count < 5)
                                         arenaConfig.wallsNamesList.Add(new RandomizerArena.WallConfig(0));
                                     else
                                         arenaConfig.wallsNamesList.RemoveAt(arenaConfig.wallsNamesList.Count - 1);
@@ -153,8 +147,9 @@ public class QuestionStructureEditor : Editor
                                 RandomizerArena.WallConfig wallConfig = new RandomizerArena.WallConfig();
                                 wallConfig = arenaConfig.wallsNamesList[j];
                                 List<string> labelEffects = new List<string>();
+                                wallConfig.walls = j;
 
-                                foreach (WallList.WallName wallNameList in _myTarget._wallNameList._wallNames)
+                                foreach (WallList.WallName wallNameList in _myTarget.wallNameList._wallNames)
                                 {
                                     labelEffects.Add(wallNameList.type.ToString());
                                 }
@@ -162,12 +157,7 @@ public class QuestionStructureEditor : Editor
                                 if (EditorGUILayout.Foldout(wallConfig.isOpenned, labelEffects[wallConfig.walls].ToString(), true))
                                 {
                                     wallConfig.isOpenned = true;
-                                    //List<string> labelEffects = new List<string>();
 
-                                    //foreach (WallList.WallName wallNameList in _myTarget._wallNameList._wallNames)
-                                    //{
-                                    //    labelEffects.Add(wallNameList.type.ToString());
-                                    //}
 
                                     int nbElementEffect = wallConfig.walls;
                                     wallConfig.walls = EditorGUILayout.Popup("Wall : ", wallConfig.walls, labelEffects.ToArray());
@@ -200,7 +190,7 @@ public class QuestionStructureEditor : Editor
                         arenaConfig.isOpenned = false;
                     }
 
-                    _myTarget._questions[i] = arenaConfig;
+                    _myTarget.arenas[i] = arenaConfig;
                     EditorGUI.indentLevel--;
                 }
                 EditorGUI.indentLevel--;
