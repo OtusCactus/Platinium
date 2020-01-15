@@ -280,6 +280,10 @@ public class MenuPlayerManager : MonoBehaviour
                 _secondPlayerIsHere = false;
                 _thirdPlayerIsHere = false;
                 _fourthPlayerIsHere = false;
+                _isPOneReady = false;
+                _isPTwoReady = false;
+                _isPThreeReady = false;
+                _isPFourReady = false;
             }
             if (_isOnTutorial && _player.GetButtonUp("BackMenu"))
             {
