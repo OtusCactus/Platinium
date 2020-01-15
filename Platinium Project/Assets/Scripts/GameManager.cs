@@ -434,4 +434,14 @@ public class GameManager : MonoBehaviour
     {
         suddenDeathPlayerToDisappear.Add(playerToDisappear);
     }
+
+    public PlayerEntity[] GetPlayerEntityScripts()
+    {
+        return playersEntityScripts;
+    }
+
+    public ArenaRotation GetArenaRotation()
+    {
+        return _arenaRotationScript;
+    }
 }

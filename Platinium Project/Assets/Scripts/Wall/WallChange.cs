@@ -402,8 +402,8 @@ public class WallChange : MonoBehaviour
                 //on change le nombre de matériaux du mur normal car son mesh a changé
                 if (!_wallProprieties.isIndestructible && !_hasCreatedArray)
                 {
-                    Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 2)];
-                    for(int i = 0; i < temp.Length; i++)
+                    Material[] temp = new Material[(3)]; /*_wallMeshRenderer.materials.Length - 2*/ //valeur d'avant au cas où bugg
+                    for (int i = 0; i < temp.Length; i++)
                     {
                         temp[i] = _wallMeshRenderer.materials[i];
                     }
@@ -433,7 +433,7 @@ public class WallChange : MonoBehaviour
                 //on change le nombre de matériaux du mur normal car son mesh a changé
                 if (!_wallProprieties.isIndestructible && !_hasCreatedArrayTwo)
                 {
-                    Material[] temp = new Material[(_wallMeshRenderer.materials.Length - 1)];
+                    Material[] temp = new Material[(2)];/*_wallMeshRenderer.materials.Length - 1*/ //valeur d'avant au cas où bugg
                     for (int i = 0; i < temp.Length; i++)
                     {
                         temp[i] = _wallMeshRenderer.materials[i];
