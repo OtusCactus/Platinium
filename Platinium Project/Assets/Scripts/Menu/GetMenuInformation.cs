@@ -47,9 +47,9 @@ public class GetMenuInformation : MonoBehaviour
     }
 
     //permet de changer le nombre de joeuur qui seront présent dans la scène de jeu
-    public void GetPlayerNumbers(float sliderValue)
+    public void GetPlayerNumbers(int numberPlayers)
     {
-        numbersOfPlayers = (int) sliderValue;
+        numbersOfPlayers = numberPlayers;
     }
 
     public void setPlayerMouvementMode(int boolNumber, bool state)

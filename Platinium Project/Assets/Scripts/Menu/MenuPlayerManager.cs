@@ -715,6 +715,7 @@ public class MenuPlayerManager : MonoBehaviour
             {
                 if (_isPOneReady && _isPTwoReady)
                 {
+                    getMenuInfoScript.GetPlayerNumbers(otherPlayers.Count);
                     StartGame();
                 }
             }
@@ -722,6 +723,7 @@ public class MenuPlayerManager : MonoBehaviour
             {
                 if (_isPOneReady && _isPTwoReady && _isPThreeReady)
                 {
+                    getMenuInfoScript.GetPlayerNumbers(otherPlayers.Count);
                     StartGame();
                 }
             }
@@ -729,6 +731,7 @@ public class MenuPlayerManager : MonoBehaviour
             {
                 if (_isPOneReady && _isPTwoReady && _isPThreeReady && _isPFourReady)
                 {
+                    getMenuInfoScript.GetPlayerNumbers(otherPlayers.Count);
                     StartGame();
                 }
             }
