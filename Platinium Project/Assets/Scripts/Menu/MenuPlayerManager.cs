@@ -630,7 +630,7 @@ public class MenuPlayerManager : MonoBehaviour
                 {
                     timerPTwo += Time.deltaTime;
                 }
-                else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push" + "Push" + (otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1))))
+                else if (_isCharSelecShowing && otherPlayers[1].GetButtonUp("Push" + (otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1))))
                 {
                     timerPTwo = 0;
                 }
