@@ -204,24 +204,28 @@ public class PlayerEntity : MonoBehaviour
         #region Change Enum
         if(!_isInputDisabled)
         {
-            if (_input != Vector2.zero)
+            if (_input != Vector2.zero && !_isTooMuchPowerGathered)
             {
                 _playerInput = INPUTSTATE.GivingInput;
-
                 _timerDeadPoint = 0;
                 inputXSign = _inputVariableToStoreDirection.x;
                 inputYSign = _inputVariableToStoreDirection.y;
             }
             else if (_playerInput == INPUTSTATE.GivingInput && (_input.x == 0 || _input.y == 0) && _timerDeadPoint < 0.1)
             {
-
                 _playerInput = INPUTSTATE.Released;
-
             }
             else if ((_playerInput == INPUTSTATE.EasingInput && _timerDeadPoint >= 0.1))
             {
-
                 _playerInput = INPUTSTATE.Released;
+            }
+
+
+            if(_input.x == 0 || _input.y == 0)
+            {
+                //permet de pouvoir reslinger après avoir fait un sling max
+                if (_isTooMuchPowerGathered)
+                    _isTooMuchPowerGathered = false;
             }
         }
         #endregion
@@ -294,7 +298,7 @@ public class PlayerEntity : MonoBehaviour
                         _playerManagerScript.player[3].StopVibration();
                     }
                     _playerScoreImage.sprite = _playerScoreImageSprites[2];
-                    
+
                     _playerInput = INPUTSTATE.None;
                     tooMuchPowerTimer = 0;
 
@@ -554,7 +558,6 @@ public class PlayerEntity : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         //si on touche un mur on un joueur, joue un son différent
         if (collision.gameObject.tag.Contains("Walls"))
         {
@@ -761,7 +764,6 @@ public class PlayerEntity : MonoBehaviour
     {
         _timerPower = 0;
     }
-
 
     //debug
     private void OnGUI()
