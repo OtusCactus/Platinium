@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class WallManager : MonoBehaviour
 {
-    //Grégoire s'est occupé de ce script
-
 
     public float ejectionPower;
     public float shaderAppearanceTime = 1;
+    private GameManager _gameManagerScript;
+    private int nbrPlayers;
+
+    [Header("Wall Life")]
+    public float wallLifeMaxTwo = 2;
+    public float wallLifeMaxThree = 50;
+    public float wallLifeMaxFour = 200;
 
     [Header ("Frictions")]
     public float wallFriction = 15;
@@ -31,7 +36,8 @@ public class WallManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        nbrPlayers = _gameManagerScript.playerList.Count;
     }
 
     // Update is called once per frame
@@ -40,6 +46,25 @@ public class WallManager : MonoBehaviour
         
     }
 
+    //Définit la vie du mur selon le nombre de joueur
+    public float GetWallLifeMax()
+    {
+        switch (nbrPlayers)
+        {
+            case 2:
+                return wallLifeMaxTwo;
+                break;
+            case 3:
+                return wallLifeMaxThree;
+                break;
+            case 4:
+                return wallLifeMaxFour;
+                break;
+            default:
+                return wallLifeMaxFour;
+                break;
+        }
+    }
     //Changement de face en fonction de la face actuelle et des faces proches.
     public int WallFaceChange(int[] wallOrientFaceChangeTab, int currentFace)
     {

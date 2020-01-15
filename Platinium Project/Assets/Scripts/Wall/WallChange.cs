@@ -7,7 +7,7 @@ public class WallChange : MonoBehaviour
     //merge des scripts Wall et Wall3D pour la scène Proto.
 
     [Header("Propriétés")]
-    public float wallLifeMax;
+    private float _wallLifeMax;
     //public float wallLimitVelocity;
     private float wallLife;
     //
@@ -111,7 +111,8 @@ public class WallChange : MonoBehaviour
 
 
         // set les valeurs de départs
-        wallLife = wallLifeMax;
+        _wallLifeMax = _wallManagerScript.GetWallLifeMax();
+        wallLife = _wallLifeMax;
         _currentFace = _arenaRotationScript._currentFace;
         _wallManagerScript.WhichWall(_wallProprieties);
         wallAppearance = _wallManagerScript.UpdateWallAppearance(_wallProprieties);
@@ -281,7 +282,7 @@ public class WallChange : MonoBehaviour
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
-            wallLife = wallLifeMax;
+            wallLife = _wallLifeMax;
             if (!_wallProprieties.isBouncy)
             {
                 _wallMesh.mesh = wallAppearance[0];
@@ -336,7 +337,7 @@ public class WallChange : MonoBehaviour
         }
 
 
-        if (wallLife == wallLifeMax)
+        if (wallLife == _wallLifeMax)
         {
             if(_wallProprieties.isBouncy)
             {            
@@ -371,7 +372,7 @@ public class WallChange : MonoBehaviour
 
 
         }
-        else if (wallLife < wallLifeMax && wallLife >= (wallLifeMax * 0.66))
+        else if (wallLife < _wallLifeMax && wallLife >= (_wallLifeMax * 0.66))
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
             if (!_wallProprieties.isBouncy)
@@ -390,7 +391,7 @@ public class WallChange : MonoBehaviour
             }
             
         }
-        else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
+        else if (wallLife < (_wallLifeMax * 0.66) && wallLife > (_wallLifeMax * 0.33))
         {
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
 
@@ -420,7 +421,7 @@ public class WallChange : MonoBehaviour
                     _bouncyAnimator.SetBool("isState2", false);
             }
         }
-        else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
+        else if (wallLife < (_wallLifeMax * 0.33) && wallLife > 0)
         {
             if (numberWallState > numberWallStateMax - 3) ShakeScreen();
 
@@ -477,10 +478,10 @@ public class WallChange : MonoBehaviour
                 wallLife -= _playerVelocityRatio;
             //}
 
-            _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
             if (_wallProprieties.isBouncy)
             {
-                _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+                _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
             }
             else
             {
@@ -499,17 +500,17 @@ public class WallChange : MonoBehaviour
             if(_newSoundManagerScript != null)
             _newSoundManagerScript.PlaySound(0);
         }
-        else if (wallLife <= wallLifeMax && wallLife >= (wallLifeMax * 0.66))
+        else if (wallLife <= _wallLifeMax && wallLife >= (_wallLifeMax * 0.66))
         {
             if(_newSoundManagerScript != null)
                 _newSoundManagerScript.PlaySound("WallLifeHigh");
         }
-        else if (wallLife < (wallLifeMax * 0.66) && wallLife > (wallLifeMax * 0.33))
+        else if (wallLife < (_wallLifeMax * 0.66) && wallLife > (_wallLifeMax * 0.33))
         {
             if(_newSoundManagerScript != null)
                 _newSoundManagerScript.PlaySound("WallLifeMiddle");
         }
-        else if (wallLife < (wallLifeMax * 0.33) && wallLife > 0)
+        else if (wallLife < (_wallLifeMax * 0.33) && wallLife > 0)
         {
             if(_newSoundManagerScript != null)
                 _newSoundManagerScript.PlaySound("WallLifeLow");
@@ -658,10 +659,10 @@ public class WallChange : MonoBehaviour
         //{
             wallLife -= dammage;
         //}
-        _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+        _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
         if (_wallProprieties.isBouncy)
         {
-            _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (wallLifeMax - wallLife) / 3);
+            _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
         }
         if (!_wallProprieties.isIndestructible && !_wallProprieties.isBouncy)
         {
