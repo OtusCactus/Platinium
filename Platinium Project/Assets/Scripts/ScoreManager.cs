@@ -437,10 +437,14 @@ public class ScoreManager : MonoBehaviour
         }
         playersClassement[0].gameObject.SetActive(true);
         playersClassement[1].gameObject.SetActive(true);
+        for (int i = 0; i < _gameManagerScript.GetPlayerEntityScripts().Length; i++)
+            _gameManagerScript.GetPlayerEntityScripts()[i].enabled = false;
+
+        _gameManagerScript.GetArenaRotation().enabled = false;
         gamePanel.SetActive(false);
         buttonMenu.Select();
         restartMenu.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
     }
 
