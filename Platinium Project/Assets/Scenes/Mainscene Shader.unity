@@ -28130,7 +28130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &781615708
 Transform:
   m_ObjectHideFlags: 0
@@ -62921,7 +62921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1504079763
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63680,6 +63680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524190920}
   - component: {fileID: 1524190921}
+  - component: {fileID: 1524190922}
   m_Layer: 0
   m_Name: WallController
   m_TagString: WallController
@@ -63715,9 +63716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ejectionPower: 75
   shaderAppearanceTime: 5
-  wallLifeMaxTwo: 1
-  wallLifeMaxThree: 2
-  wallLifeMaxFour: 5
+  wallLifeMaxTwo: 0.5
+  wallLifeMaxThree: 1.5
+  wallLifeMaxFour: 3
   wallFriction: 10
   wallBouncyFriction: 5
   wallShakeMax: 0.02
@@ -63747,6 +63748,29 @@ MonoBehaviour:
   - {fileID: -4254769481335329328, guid: f062cc399c9e2214a8b20485cc370ed4, type: 3}
   - {fileID: -4254769481335329328, guid: 866f5996871c69744850e324e894b687, type: 3}
   - {fileID: -4254769481335329328, guid: ee0a8e1b41aac104ab20bd68a1a5ac7c, type: 3}
+--- !u!114 &1524190922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524190919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d465f36623e45a54aa6e0e6cbd025a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalLD: []
+  bouncyLD:
+  - hello je suis bouncy
+  - boing~
+  - tululin
+  - bamboo
+  indestructibleLD:
+  - MUTEKI FOLGORE !!
+  - indestructibleeeeeee
+  - marron
+  - ivgeujhbfsdzr
 --- !u!1 &1525726635
 GameObject:
   m_ObjectHideFlags: 0
