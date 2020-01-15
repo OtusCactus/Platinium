@@ -151,7 +151,7 @@ public class MenuPlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_isOnOptions || _isCharSelecShowing || _isStartGameShowing)
+        if(_isOnOptions || _isCharSelecShowing || _isStartGameShowing || _isOnCredits)
         {
             playerEntity.IsInOptionOrCharacterMenu(true);
             _player.StopVibration();
