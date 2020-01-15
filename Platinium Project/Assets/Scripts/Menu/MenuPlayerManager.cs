@@ -306,7 +306,6 @@ public class MenuPlayerManager : MonoBehaviour
                         {
                             secondPlayerIndex = i;
                         }
-                        print(" rajout player " + i + " = " + otherPlayers[i].name);
                     }
                     switch (secondPlayerIndex)
                     {
@@ -331,7 +330,6 @@ public class MenuPlayerManager : MonoBehaviour
                         {
                             thirdPlayerIndex = i;
                         }
-                        print(" rajout player " + i + " = " + otherPlayers[i].name);
                     }
                     switch (thirdPlayerIndex)
                     {
@@ -356,7 +354,6 @@ public class MenuPlayerManager : MonoBehaviour
                         {
                             fourthPlayerIndex = i;
                         }
-                        print(" rajout player " + i + " = " + otherPlayers[i].name);
                     }
                     switch (fourthPlayerIndex)
                     {
@@ -389,15 +386,7 @@ public class MenuPlayerManager : MonoBehaviour
                                 break;
                         }
                         otherPlayers.Remove(ReInput.players.GetPlayer("Player" + (otherPlayers[1].name.Substring(otherPlayers[1].name.Length - 1))));
-                        for (int i = 0; i < otherPlayers.Count; i++)
-                        {
-                            if (otherPlayers[i].name == allPlayers[3].name)
-                            {
-                                fourthPlayerIndex = i;
-                            }
-                            print("remove player " + i + " = " + otherPlayers[i].name);
-                        }
-                        //_secondPlayerIsHere = false;
+                        
                     }
 
 
@@ -426,7 +415,6 @@ public class MenuPlayerManager : MonoBehaviour
                                 }
                                 print("remove player " + i + " = " + otherPlayers[i].name);
                             }
-                            //_thirdPlayerIsHere = false;
                         }
                     }
 
@@ -456,7 +444,6 @@ public class MenuPlayerManager : MonoBehaviour
                                 }
                                 print("remove player " + i + " = " + otherPlayers[i].name);
                             }
-                            //_fourthPlayerIsHere = false;
                         }
                     }
                 }
