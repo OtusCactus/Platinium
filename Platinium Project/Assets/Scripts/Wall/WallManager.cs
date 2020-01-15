@@ -34,7 +34,7 @@ public class WallManager : MonoBehaviour
     public Mesh[] wallBouncyShadowAppearance;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _gameManagerScript = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         nbrPlayers = _gameManagerScript.playerList.Count;
@@ -52,15 +52,19 @@ public class WallManager : MonoBehaviour
         switch (nbrPlayers)
         {
             case 2:
+                print("vie deux joueurs");
                 return wallLifeMaxTwo;
                 break;
             case 3:
+                print("vie 3 joueurs");
                 return wallLifeMaxThree;
                 break;
             case 4:
+                print("vie 4 joueurs");
                 return wallLifeMaxFour;
                 break;
             default:
+                print("vie defaut");
                 return wallLifeMaxFour;
                 break;
         }
