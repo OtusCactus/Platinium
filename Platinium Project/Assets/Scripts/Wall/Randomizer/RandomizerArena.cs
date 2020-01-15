@@ -24,6 +24,7 @@ public class RandomizerArena : ScriptableObject
         public bool isIndestructibl;
         public bool isConnecte;
         public bool isOpenned;
+        public string wallName;
 
         public WallConfig(int id)
         {
@@ -32,6 +33,7 @@ public class RandomizerArena : ScriptableObject
             isBounc = false;
             isIndestructibl = false;
             isConnecte = false;
+            wallName = "";
         }
     }
 
@@ -165,6 +167,7 @@ public class QuestionStructureEditor : Editor
                                     wallConfig.isBounc = EditorGUILayout.Toggle("isBouncy", wallConfig.isBounc);
                                     wallConfig.isIndestructibl = EditorGUILayout.Toggle("isIndestructible", wallConfig.isIndestructibl);
                                     wallConfig.isConnecte = EditorGUILayout.Toggle("isConnected", wallConfig.isConnecte);
+                                    wallConfig.wallName = labelEffects[wallConfig.walls].ToString();
                                 }
                                 else
                                 {

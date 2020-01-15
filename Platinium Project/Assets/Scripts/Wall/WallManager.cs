@@ -35,8 +35,9 @@ public class WallManager : MonoBehaviour
 
     [Header("Bibliothèques de LD")]
     public RandomizerArena normalLD;
-    public List<string> bouncyLD;
-    public List<string> indestructibleLD;
+    public RandomizerArena bouncyLD;
+    public RandomizerArena indestructibleLD;
+    private RandomizerArena _thisRoundBibli;
 
     // Start is called before the first frame update
     void Awake()
@@ -203,17 +204,22 @@ public class WallManager : MonoBehaviour
     {
         if (_gameManagerScript.currentFace == 0 || _gameManagerScript.currentFace == 7 || _gameManagerScript.currentFace == 8 || _gameManagerScript.currentFace == 9)
         {
+            _thisRoundBibli = normalLD;
             return Random.Range(0, normalLD.arenas.Count);
         }
         else if (_gameManagerScript.currentFace == 1 || _gameManagerScript.currentFace == 2 || _gameManagerScript.currentFace == 3 || _gameManagerScript.currentFace == 5)
         {
-            print(bouncyLD[Random.Range(0, bouncyLD.Count)]);
-            return 0;
+            _thisRoundBibli = bouncyLD;
+            return Random.Range(0, bouncyLD.arenas.Count);
         }
         else
         {
-            print(indestructibleLD[Random.Range(0, indestructibleLD.Count)]);
-            return 0;
+            _thisRoundBibli = indestructibleLD;
+            return Random.Range(0, indestructibleLD.arenas.Count);
         }
+    }
+    public RandomizerArena GetThisRoundBibli()
+    {
+        return _thisRoundBibli;
     }
 }

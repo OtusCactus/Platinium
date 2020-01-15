@@ -20,11 +20,15 @@ public class WallProprieties : MonoBehaviour
     private WallChange _connectedWallChange;
 
     public GameObject[] theWalls;
+    private RandomizerArena _myBibli;
+    private int _myChildPosition;
 
     // Start is called before the first frame update
     private void Awake()
     {
         theWalls = new GameObject[transform.childCount];
+        _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
+        _thisWallChange = GetComponent<WallChange>();
 
         for (int i = 0; i < theWalls.Length; i++)
         {
@@ -33,10 +37,18 @@ public class WallProprieties : MonoBehaviour
     }
     void Start()
     {
-        _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
-        _thisWallChange = GetComponent<WallChange>();
-
-        
+        int temp = _wallManagerScript.GetRandomArena();
+        _myBibli = _wallManagerScript.GetThisRoundBibli();
+        for (int i = 0; i <= _myBibli.arenas[temp].wallsNamesList.Count; i++)
+        {
+            if(_myBibli.arenas[temp].wallsNamesList[i].wallName == gameObject.name)
+            {
+                _myChildPosition = i;
+            }
+        }
+        isBouncy = _myBibli.arenas[temp].wallsNamesList[_myChildPosition].isBounc;
+        isIndestructible = _myBibli.arenas[temp].wallsNamesList[_myChildPosition].isIndestructibl;
+        isConnected = _myBibli.arenas[temp].wallsNamesList[_myChildPosition].isConnecte;
 
         _connectedWall = _wallManagerScript.SetConnectedWall(gameObject);
         if(_connectedWall != null)
