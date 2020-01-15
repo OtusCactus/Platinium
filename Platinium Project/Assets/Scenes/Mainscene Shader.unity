@@ -196,7 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -2024,7 +2023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -3099,7 +3097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -3813,7 +3810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -7125,7 +7121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -10721,7 +10716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -11589,7 +11583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -12102,7 +12095,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -12369,7 +12361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -12581,7 +12572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -13914,7 +13904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -14381,7 +14370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -15341,7 +15329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19181,7 +19168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19340,7 +19326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19496,7 +19481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -19998,7 +19982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -21616,7 +21599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -21980,7 +21962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -23672,7 +23653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -24022,7 +24002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -25187,7 +25166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -26086,7 +26064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -28367,7 +28344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -28752,7 +28728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -28881,7 +28856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -29682,7 +29656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -31905,7 +31878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -34881,7 +34853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -35935,7 +35906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -37298,7 +37268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -38214,7 +38183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -39145,7 +39113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -40686,7 +40653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -45446,7 +45412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -48688,7 +48653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -51018,7 +50982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -59585,7 +59548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -61766,7 +61728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -62609,7 +62570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -63755,6 +63715,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ejectionPower: 75
   shaderAppearanceTime: 5
+  wallLifeMaxTwo: 1
+  wallLifeMaxThree: 2
+  wallLifeMaxFour: 5
   wallFriction: 10
   wallBouncyFriction: 5
   wallShakeMax: 0.02
@@ -65015,7 +64978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -67018,7 +66980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -67418,7 +67379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -70331,7 +70291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -71335,7 +71294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -76198,7 +76156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -76575,7 +76532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -76704,7 +76660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -80829,7 +80784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -81613,7 +81567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -81742,7 +81695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -82536,7 +82488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -82936,7 +82887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -84173,7 +84123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -84364,7 +84313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -84493,7 +84441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -86521,7 +86468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -86839,7 +86785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -87241,7 +87186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
@@ -88688,7 +88632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b71e96465fe954eaf6427f85483df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLifeMax: 3
   wallAppearance: []
   wallShadowAppearance: []
   arena: {fileID: 5509694377808773627}
