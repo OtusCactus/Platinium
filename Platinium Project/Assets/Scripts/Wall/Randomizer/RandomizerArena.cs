@@ -42,6 +42,7 @@ public class RandomizerArena : ScriptableObject
     {
         //Variable declaration
         public string name;
+        public GameObject LD;
         public List<WallConfig> wallsNamesList;
         public bool isOpenned;
         public bool wallIsOpenned;
@@ -49,6 +50,7 @@ public class RandomizerArena : ScriptableObject
         public ArenaConfig(string lab)
         {
             name = lab;
+            LD = null;
             wallsNamesList = new List<WallConfig>();
             isOpenned = false;
             wallIsOpenned = false;
@@ -83,7 +85,7 @@ public class QuestionStructureEditor : Editor
 
         //base.OnInspectorGUI();
 
-        _myTarget.wallNameList = EditorGUILayout.ObjectField("Effect List", _myTarget.wallNameList, typeof(WallList), true) as WallList;
+        _myTarget.wallNameList = EditorGUILayout.ObjectField("Wall List", _myTarget.wallNameList, typeof(WallList), true) as WallList;
 
         if (_myTarget.wallNameList != null)
         {
@@ -122,6 +124,7 @@ public class QuestionStructureEditor : Editor
                     {
                         arenaConfig.isOpenned = true;
                         arenaConfig.name = EditorGUILayout.TextField("Name", arenaConfig.name);
+                        arenaConfig.LD = EditorGUILayout.ObjectField("LD", arenaConfig.LD, typeof(GameObject), true) as GameObject;
 
                         EditorGUI.indentLevel++;
 
@@ -141,7 +144,6 @@ public class QuestionStructureEditor : Editor
                                         arenaConfig.wallsNamesList.RemoveAt(arenaConfig.wallsNamesList.Count - 1);
                                 }
                             }
-
                             for (int j = 0; j < arenaConfig.wallsNamesList.Count; j++)
                             {
                                 EditorGUI.indentLevel++;

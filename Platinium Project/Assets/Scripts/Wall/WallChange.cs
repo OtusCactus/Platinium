@@ -95,10 +95,6 @@ public class WallChange : MonoBehaviour
     private void Awake()
     {
         gameObject.layer = 15;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
 
         //récupération des scripts
         _arenaRotationScript = arena.GetComponent<ArenaRotation>();
@@ -108,15 +104,21 @@ public class WallChange : MonoBehaviour
         _faceClassScript = GameObject.FindWithTag("GameController").GetComponent<FaceClass>();
         _wallProprieties = GetComponent<WallProprieties>();
         _newSoundManagerScript = NewSoundManager.instance;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        
 
 
         // set les valeurs de départs
         _wallLifeMax = _wallManagerScript.GetWallLifeMax();
         wallLife = _wallLifeMax;
-        _currentFace = _arenaRotationScript._currentFace;
-        _wallManagerScript.WhichWall(_wallProprieties);
-        wallAppearance = _wallManagerScript.UpdateWallAppearance(_wallProprieties);
-        wallShadowAppearance = _wallManagerScript.UpdateWallShadowAppearance(_wallProprieties);
+        //_currentFace = _arenaRotationScript._currentFace;
+        //_wallManagerScript.WhichWall(_wallProprieties);
+        //wallAppearance = _wallManagerScript.UpdateWallAppearance(_wallProprieties);
+        //wallShadowAppearance = _wallManagerScript.UpdateWallShadowAppearance(_wallProprieties);
 
         //set les valeurs pour screenshake
         _cameraStartPosition = camera.transform.position;
@@ -130,79 +132,79 @@ public class WallChange : MonoBehaviour
 
         _wallMeshRendererOriginalMaterials = transform.GetChild(0).GetComponent<MeshRenderer>().materials;
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            if (gameObject.transform.GetChild(i).gameObject.activeSelf == true)
-            {
-                _currentWallActive = transform.GetChild(i).gameObject;
-                //si le mur est bouncy, c'est composant à attribuer sont diférents, il y a les pillier et le bambou, au lieu de juste le mur
-                if(i == 2)
-                {
-                    //pilliers
-                    _wallShadowMesh = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshFilter>();
-                    _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>();
-                    //bambou
-                    _wallBambouAppearance = _currentWallActive.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
-                    _wallShadowMeshRendererBambou = _currentWallActive.transform.GetChild(1).GetChild(1).GetComponent<SkinnedMeshRenderer>();
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    if (gameObject.transform.GetChild(i).gameObject.activeSelf == true)
+        //    {
+        //        _currentWallActive = transform.GetChild(i).gameObject;
+        //        //si le mur est bouncy, c'est composant à attribuer sont diférents, il y a les pillier et le bambou, au lieu de juste le mur
+        //        if(i == 2)
+        //        {
+        //            //pilliers
+        //            _wallShadowMesh = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshFilter>();
+        //            _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>();
+        //            //bambou
+        //            _wallBambouAppearance = _currentWallActive.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
+        //            _wallShadowMeshRendererBambou = _currentWallActive.transform.GetChild(1).GetChild(1).GetComponent<SkinnedMeshRenderer>();
 
-                    _meshMaterials = _wallShadowMeshRenderer.materials;
-                    _meshMaterialsOriginal = _wallShadowMeshRendererBambou.materials;
-                    _meshMaterialsBambou = _wallShadowMeshRendererBambou.materials;
+        //            _meshMaterials = _wallShadowMeshRenderer.materials;
+        //            _meshMaterialsOriginal = _wallShadowMeshRendererBambou.materials;
+        //            _meshMaterialsBambou = _wallShadowMeshRendererBambou.materials;
 
-                    _bouncyAnimator = _currentWallActive.transform.GetChild(2).GetComponent<Animator>();
-                }
-                else
-                {
-                    _wallShadowMesh = _currentWallActive.transform.GetChild(0).GetComponent<MeshFilter>();
-                    _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
-                    _meshMaterials = _wallShadowMeshRenderer.materials;
-                    _meshMaterialsOriginal = _wallShadowMeshRenderer.materials;
-                }
-                break;
-            }
-        }
+        //            _bouncyAnimator = _currentWallActive.transform.GetChild(2).GetComponent<Animator>();
+        //        }
+        //        else
+        //        {
+        //            _wallShadowMesh = _currentWallActive.transform.GetChild(0).GetComponent<MeshFilter>();
+        //            _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
+        //            _meshMaterials = _wallShadowMeshRenderer.materials;
+        //            _meshMaterialsOriginal = _wallShadowMeshRenderer.materials;
+        //        }
+        //        break;
+        //    }
+        //}
 
-        _wallMesh = _currentWallActive.GetComponent<MeshFilter>();
-        _wallMeshRenderer = _currentWallActive.GetComponent<MeshRenderer>();
-        if (!_wallProprieties.isBouncy)
-        {
-            _wallMesh.mesh = wallAppearance[0];
-        }
-        else
-        {
-            _wallBambouAppearance.sharedMesh = wallAppearance[0];
-        }
-        if (!_wallProprieties.isIndestructible)
-        {
-            if (_wallProprieties.isBouncy)
-            {
-                _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
-                _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
-            }
-            else
-            {
-                _meshMaterials[0].color = new Color32(30, 255, 0, 255);
-                _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
-            }
-        }
+        //_wallMesh = _currentWallActive.GetComponent<MeshFilter>();
+        //_wallMeshRenderer = _currentWallActive.GetComponent<MeshRenderer>();
+        //if (!_wallProprieties.GetIsBouncy())
+        //{
+        //    _wallMesh.mesh = wallAppearance[0];
+        //}
+        //else
+        //{
+        //    _wallBambouAppearance.sharedMesh = wallAppearance[0];
+        //}
+        //if (!_wallProprieties.GetIsIndestructible())
+        //{
+        //    if (_wallProprieties.GetIsBouncy())
+        //    {
+        //        _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
+        //        _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
+        //    }
+        //    else
+        //    {
+        //        _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+        //        _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
+        //    }
+        //}
 
 
-        if(gameObject.layer == 15)
-        {
-            gameObject.SetActive(false);
-            _wallShadowMeshRenderer.enabled = false;
-            if(_wallShadowMeshRendererBambou != null)
-            {
-                _wallShadowMeshRendererBambou.enabled = false;
-            }
-        }
-        if(transform.GetChild(3).gameObject.activeSelf)
-        {
-            _shaderRenderer = transform.GetChild(3).GetComponent<MeshRenderer>();
-            _shaderRenderer.material.SetFloat("_Etatdudissolve", -1);
-            _shaderLerpMax = _wallManagerScript.shaderAppearanceTime;
-            _shaderLerp = -1;
-        }
+        //if(gameObject.layer == 15)
+        //{
+        //    gameObject.SetActive(false);
+        //    _wallShadowMeshRenderer.enabled = false;
+        //    if(_wallShadowMeshRendererBambou != null)
+        //    {
+        //        _wallShadowMeshRendererBambou.enabled = false;
+        //    }
+        //}
+        //if(transform.GetChild(3).gameObject.activeSelf)
+        //{
+        //    _shaderRenderer = transform.GetChild(3).GetComponent<MeshRenderer>();
+        //    _shaderRenderer.material.SetFloat("_Etatdudissolve", -1);
+        //    _shaderLerpMax = _wallManagerScript.shaderAppearanceTime;
+        //    _shaderLerp = -1;
+        //}
 
         shakeWallIntensity = _wallManagerScript.wallShakeIntensity;
         maxShakeWall = _wallManagerScript.wallShakeMax;
@@ -218,7 +220,6 @@ public class WallChange : MonoBehaviour
         {
             ShakeWall();
         }
-        print(wallShakeTimer);
         
         if(_isShaderNeeded)
         {
@@ -282,8 +283,9 @@ public class WallChange : MonoBehaviour
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
+            _wallProprieties.UpdateProprieties();
             wallLife = _wallLifeMax;
-            if (!_wallProprieties.isBouncy)
+            if (!_wallProprieties.GetIsBouncy())
             {
                 _wallMesh.mesh = wallAppearance[0];
                 _wallShadowMeshRenderer.enabled = true;
@@ -297,9 +299,9 @@ public class WallChange : MonoBehaviour
                 _wallShadowMeshRendererBambou.sharedMesh = wallShadowAppearance[0];
             }
 
-            if (!_wallProprieties.isIndestructible)
+            if (!_wallProprieties.GetIsIndestructible())
             {
-                if (_wallProprieties.isBouncy)
+                if (_wallProprieties.GetIsBouncy())
                 {
                     _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
                 }
@@ -339,7 +341,7 @@ public class WallChange : MonoBehaviour
 
         if (wallLife == _wallLifeMax)
         {
-            if(_wallProprieties.isBouncy)
+            if(_wallProprieties.GetIsBouncy())
             {            
                 if (_hasPlayerCollided)
                     _bouncyAnimator.SetBool("isState4", true);
@@ -357,7 +359,7 @@ public class WallChange : MonoBehaviour
             if (numberWallState > numberWallStateMax - 4) ShakeScreen();
             _wallMeshRenderer.enabled = false;
 
-            if (!_wallProprieties.isBouncy)
+            if (!_wallProprieties.GetIsBouncy())
             {
                 _wallShadowMeshRenderer.enabled = false;
             }
@@ -375,7 +377,7 @@ public class WallChange : MonoBehaviour
         else if (wallLife < _wallLifeMax && wallLife >= (_wallLifeMax * 0.66))
         {
             if (numberWallState > numberWallStateMax - 1) ShakeScreen();
-            if (!_wallProprieties.isBouncy)
+            if (!_wallProprieties.GetIsBouncy())
             {
                 _wallMesh.mesh = wallAppearance[1];
                 _wallShadowMesh.mesh = wallShadowAppearance[1];
@@ -395,12 +397,12 @@ public class WallChange : MonoBehaviour
         {
             if (numberWallState > numberWallStateMax - 2) ShakeScreen();
 
-            if (!_wallProprieties.isBouncy)
+            if (!_wallProprieties.GetIsBouncy())
             {
                 _wallMesh.mesh = wallAppearance[2];
                 _wallShadowMesh.mesh = wallShadowAppearance[2];
                 //on change le nombre de matériaux du mur normal car son mesh a changé
-                if (!_wallProprieties.isIndestructible && !_hasCreatedArray)
+                if (!_wallProprieties.GetIsIndestructible() && !_hasCreatedArray)
                 {
                     Material[] temp = new Material[(3)]; /*_wallMeshRenderer.materials.Length - 2*/ //valeur d'avant au cas où bugg
                     for (int i = 0; i < temp.Length; i++)
@@ -426,12 +428,12 @@ public class WallChange : MonoBehaviour
             if (numberWallState > numberWallStateMax - 3) ShakeScreen();
 
 
-            if (!_wallProprieties.isBouncy)
+            if (!_wallProprieties.GetIsBouncy())
             {
                 _wallMesh.mesh = wallAppearance[3];
                 _wallShadowMesh.mesh = wallShadowAppearance[3];
                 //on change le nombre de matériaux du mur normal car son mesh a changé
-                if (!_wallProprieties.isIndestructible && !_hasCreatedArrayTwo)
+                if (!_wallProprieties.GetIsIndestructible() && !_hasCreatedArrayTwo)
                 {
                     Material[] temp = new Material[(2)];/*_wallMeshRenderer.materials.Length - 1*/ //valeur d'avant au cas où bugg
                     for (int i = 0; i < temp.Length; i++)
@@ -467,7 +469,7 @@ public class WallChange : MonoBehaviour
         _hasPlayerCollided = true;
 
         //Si le mur n'est pas indestructible et que le joueur ne donne pas d'input (debug du problème ou le joueur charge la puissance en tournant et le mur prend des dégats) alors le mur prend des dégats
-        if (!_wallProprieties.isIndestructible && _playerOnCollision.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
+        if (!_wallProprieties.GetIsIndestructible() && _playerOnCollision.GetPlayerINPUTSTATE() != PlayerEntity.INPUTSTATE.GivingInput)
         {
             //if (_playerVelocityRatio >= wallLimitVelocity)
             //{
@@ -479,7 +481,7 @@ public class WallChange : MonoBehaviour
             //}
 
             _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
-            if (_wallProprieties.isBouncy)
+            if (_wallProprieties.GetIsBouncy())
             {
                 _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
             }
@@ -490,12 +492,12 @@ public class WallChange : MonoBehaviour
             }
         }
 
-        if (_wallProprieties.isIndestructible)
+        if (_wallProprieties.GetIsIndestructible())
         {
             if (_newSoundManagerScript != null)
                 _newSoundManagerScript.PlaySound("IndestructibleWallHit");
         }
-        else if (_wallProprieties.isBouncy)
+        else if (_wallProprieties.GetIsBouncy())
         {
             if(_newSoundManagerScript != null)
             _newSoundManagerScript.PlaySound(0);
@@ -660,11 +662,11 @@ public class WallChange : MonoBehaviour
             wallLife -= dammage;
         //}
         _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
-        if (_wallProprieties.isBouncy)
+        if (_wallProprieties.GetIsBouncy())
         {
             _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
         }
-        if (!_wallProprieties.isIndestructible && !_wallProprieties.isBouncy)
+        if (!_wallProprieties.GetIsIndestructible() && !_wallProprieties.GetIsBouncy())
         {
             _isWallShaking = true;
         }
@@ -706,6 +708,88 @@ public class WallChange : MonoBehaviour
             transform.localPosition = wallInitialPosition;
             wallShakeTimer = 0;
             _isWallShaking = false;
+        }
+    }
+
+    public void InitiateWall()
+    {
+        _wallManagerScript.WhichWall(_wallProprieties);
+        wallAppearance = _wallManagerScript.UpdateWallAppearance(_wallProprieties);
+        wallShadowAppearance = _wallManagerScript.UpdateWallShadowAppearance(_wallProprieties);
+
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (gameObject.transform.GetChild(i).gameObject.activeSelf == true)
+            {
+                _currentWallActive = transform.GetChild(i).gameObject;
+                //si le mur est bouncy, c'est composant à attribuer sont diférents, il y a les pillier et le bambou, au lieu de juste le mur
+                if (i == 2)
+                {
+                    //pilliers
+                    _wallShadowMesh = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshFilter>();
+                    _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>();
+                    //bambou
+                    _wallBambouAppearance = _currentWallActive.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
+                    _wallShadowMeshRendererBambou = _currentWallActive.transform.GetChild(1).GetChild(1).GetComponent<SkinnedMeshRenderer>();
+
+                    _meshMaterials = _wallShadowMeshRenderer.materials;
+                    _meshMaterialsOriginal = _wallShadowMeshRendererBambou.materials;
+                    _meshMaterialsBambou = _wallShadowMeshRendererBambou.materials;
+
+                    _bouncyAnimator = _currentWallActive.transform.GetChild(2).GetComponent<Animator>();
+                }
+                else
+                {
+                    _wallShadowMesh = _currentWallActive.transform.GetChild(0).GetComponent<MeshFilter>();
+                    _wallShadowMeshRenderer = _currentWallActive.transform.GetChild(0).GetComponent<MeshRenderer>();
+                    _meshMaterials = _wallShadowMeshRenderer.materials;
+                    _meshMaterialsOriginal = _wallShadowMeshRenderer.materials;
+                }
+                break;
+            }
+        }
+
+        _wallMesh = _currentWallActive.GetComponent<MeshFilter>();
+        _wallMeshRenderer = _currentWallActive.GetComponent<MeshRenderer>();
+        if (!_wallProprieties.GetIsBouncy())
+        {
+            _wallMesh.mesh = wallAppearance[0];
+        }
+        else
+        {
+            _wallBambouAppearance.sharedMesh = wallAppearance[0];
+        }
+        if (!_wallProprieties.GetIsIndestructible())
+        {
+            if (_wallProprieties.GetIsBouncy())
+            {
+                _meshMaterialsBambou[0].color = new Color32(30, 255, 0, 255);
+                _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
+            }
+            else
+            {
+                _meshMaterials[0].color = new Color32(30, 255, 0, 255);
+                _meshMaterialsOriginal[0].color = new Color32(30, 255, 0, 255);
+            }
+        }
+
+
+        if (gameObject.layer == 15)
+        {
+            gameObject.SetActive(false);
+            _wallShadowMeshRenderer.enabled = false;
+            if (_wallShadowMeshRendererBambou != null)
+            {
+                _wallShadowMeshRendererBambou.enabled = false;
+            }
+        }
+        if (transform.GetChild(3).gameObject.activeSelf)
+        {
+            _shaderRenderer = transform.GetChild(3).GetComponent<MeshRenderer>();
+            _shaderRenderer.material.SetFloat("_Etatdudissolve", -1);
+            _shaderLerpMax = _wallManagerScript.shaderAppearanceTime;
+            _shaderLerp = -1;
         }
     }
 }

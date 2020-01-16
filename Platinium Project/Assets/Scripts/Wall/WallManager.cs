@@ -38,6 +38,7 @@ public class WallManager : MonoBehaviour
     public RandomizerArena bouncyLD;
     public RandomizerArena indestructibleLD;
     private RandomizerArena _thisRoundBibli;
+    private int _arenaIndex;
 
     // Start is called before the first frame update
     void Awake()
@@ -100,7 +101,7 @@ public class WallManager : MonoBehaviour
     {
         for (int i = 0; i < thisWall.transform.parent.childCount; i++)
         {
-            if (thisWall.transform.parent.GetChild(i).GetComponent<WallProprieties>().isConnected && (thisWall.transform.parent.GetChild(i).name != thisWall.name))
+            if (thisWall.transform.parent.GetChild(i).GetComponent<WallProprieties>().GetIsConnected() && (thisWall.transform.parent.GetChild(i).name != thisWall.name))
             {
                 return thisWall.transform.parent.GetChild(i).gameObject;
             }
@@ -112,7 +113,7 @@ public class WallManager : MonoBehaviour
     public void ConnectedtWallDammage(float myDammage, GameObject thisWall, WallProprieties connectedWallProprieties, WallChange connectedWallChange)
     {
  
-        if (!connectedWallProprieties.isIndestructible)
+        if (!connectedWallProprieties.GetIsIndestructible())
         {
             connectedWallChange.SetDammageFromConnect(myDammage);
         }
@@ -120,7 +121,7 @@ public class WallManager : MonoBehaviour
     //définit l'apparence du mur selon sa propriété
     public Mesh[] UpdateWallAppearance(WallProprieties wallProprieties)
     {
-        if (wallProprieties.isBouncy)
+        if (wallProprieties.GetIsBouncy())
         {
             Mesh[] tempWallAppearance = new Mesh[wallBouncyAppearance.Length];
             for (int i = 0; i < wallBouncyAppearance.Length; i++)
@@ -129,7 +130,7 @@ public class WallManager : MonoBehaviour
             }
             return tempWallAppearance;
         }
-        else if (wallProprieties.isIndestructible)
+        else if (wallProprieties.GetIsIndestructible())
         {
             Mesh[] tempWallAppearance = new Mesh[wallIndestructibleAppearance.Length];
             for (int i = 0; i < wallIndestructibleAppearance.Length; i++)
@@ -151,7 +152,7 @@ public class WallManager : MonoBehaviour
     //définit l'apparence de l'outline du mur selon sa propriété
     public Mesh[] UpdateWallShadowAppearance(WallProprieties wallProprieties)
     {
-        if (wallProprieties.isBouncy)
+        if (wallProprieties.GetIsBouncy())
         {
             Mesh[] tempWallShadowAppearance = new Mesh[wallBouncyShadowAppearance.Length];
             for (int i = 0; i < wallBouncyShadowAppearance.Length; i++)
@@ -160,7 +161,7 @@ public class WallManager : MonoBehaviour
             }
             return tempWallShadowAppearance;
         }
-        else if (wallProprieties.isIndestructible)
+        else if (wallProprieties.GetIsIndestructible())
         {
             Mesh[] tempWallShadowAppearance = new Mesh[wallIndestructibleShadowAppearance.Length];
             for (int i = 0; i < wallIndestructibleShadowAppearance.Length; i++)
@@ -180,12 +181,12 @@ public class WallManager : MonoBehaviour
         }
     }
     //définit quel mur affiché selon sa propriété
-    public void WhichWall(WallProprieties wallProprieties) { 
-        if (wallProprieties.isBouncy)
+    public void WhichWall(WallProprieties wallProprieties) {
+        if (wallProprieties.GetIsBouncy())
         {
             wallProprieties.theWalls[2].SetActive(true);
         }
-        else if (wallProprieties.isIndestructible)
+        else if (wallProprieties.GetIsIndestructible())
         {
             wallProprieties.theWalls[1].SetActive(true);
         }
@@ -194,29 +195,36 @@ public class WallManager : MonoBehaviour
             wallProprieties.theWalls[0].SetActive(true);
         }
 
-        if(wallProprieties.isConnected)
+        if(wallProprieties.GetIsConnected())
         {
             wallProprieties.theWalls[3].SetActive(true);
         }
     }
     //Choisit un ld au hasard selon la face
-    public int GetRandomArena()
+    public void GetRandomArena()
     {
         if (_gameManagerScript.currentFace == 0 || _gameManagerScript.currentFace == 7 || _gameManagerScript.currentFace == 8 || _gameManagerScript.currentFace == 9)
         {
+            print("WALMAN curr face " + _gameManagerScript.currentFace);
             _thisRoundBibli = normalLD;
-            return Random.Range(0, normalLD.arenas.Count);
+            _arenaIndex = Random.Range(0, normalLD.arenas.Count);
         }
         else if (_gameManagerScript.currentFace == 1 || _gameManagerScript.currentFace == 2 || _gameManagerScript.currentFace == 3 || _gameManagerScript.currentFace == 5)
         {
+            print("WALMAN curr face " + _gameManagerScript.currentFace);
             _thisRoundBibli = bouncyLD;
-            return Random.Range(0, bouncyLD.arenas.Count);
+            _arenaIndex = Random.Range(0, bouncyLD.arenas.Count);
         }
         else
         {
+            print("WALMAN curr face " + _gameManagerScript.currentFace);
             _thisRoundBibli = indestructibleLD;
-            return Random.Range(0, indestructibleLD.arenas.Count);
+            _arenaIndex = Random.Range(0, indestructibleLD.arenas.Count);
         }
+    }
+    public int GetRandomArenaIndex()
+    {
+        return _arenaIndex;
     }
     public RandomizerArena GetThisRoundBibli()
     {
