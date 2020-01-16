@@ -93,7 +93,7 @@ public class WallProprieties : MonoBehaviour
     {
         _thisArenaIndex = _wallManagerScript.GetRandomArenaIndex();
         _myBibli = _wallManagerScript.GetThisRoundBibli();
-        if (_myBibli.name == "Test")
+        if (_myBibli.name == "NormalArenas")
         {
             print("");
         }
@@ -101,6 +101,7 @@ public class WallProprieties : MonoBehaviour
         print(gameObject.name + " ma bibli : " + _myBibli);
         print("je m'appelle " + gameObject.name);
         print("nombre de murs de l'arene " + _myBibli.arenas[_thisArenaIndex].wallsNamesList.Count);
+        int listCount = _myBibli.arenas[_thisArenaIndex].wallsNamesList.Count;
         for (int i = 0; i < _myBibli.arenas[_thisArenaIndex].wallsNamesList.Count; i++)
         {
             print("le mur de la bibli acteul est " + _myBibli.arenas[_thisArenaIndex].wallsNamesList[i].wallName);
