@@ -93,18 +93,9 @@ public class WallProprieties : MonoBehaviour
     {
         _thisArenaIndex = _wallManagerScript.GetRandomArenaIndex();
         _myBibli = _wallManagerScript.GetThisRoundBibli();
-        if (_myBibli.name == "NormalArenas")
-        {
-            print("");
-        }
-        print(gameObject.name + " cette arène : " + _thisArenaIndex);
-        print(gameObject.name + " ma bibli : " + _myBibli);
-        print("je m'appelle " + gameObject.name);
-        print("nombre de murs de l'arene " + _myBibli.arenas[_thisArenaIndex].wallsNamesList.Count);
         int listCount = _myBibli.arenas[_thisArenaIndex].wallsNamesList.Count;
         for (int i = 0; i < _myBibli.arenas[_thisArenaIndex].wallsNamesList.Count; i++)
         {
-            print("le mur de la bibli acteul est " + _myBibli.arenas[_thisArenaIndex].wallsNamesList[i].wallName);
             string temp = _myBibli.arenas[_thisArenaIndex].wallsNamesList[i].wallName;
             if (_myBibli.arenas[_thisArenaIndex].wallsNamesList[i].wallName == gameObject.name)
             {
@@ -115,9 +106,7 @@ public class WallProprieties : MonoBehaviour
         _isBouncy = _myBibli.arenas[_thisArenaIndex].wallsNamesList[_myChildPosition].isBounc;
         _isIndestructible = _myBibli.arenas[_thisArenaIndex].wallsNamesList[_myChildPosition].isIndestructibl;
         _isConnected = _myBibli.arenas[_thisArenaIndex].wallsNamesList[_myChildPosition].isConnecte;
-
-        print("moi je suis bouncy : " + _isBouncy);
-        print("moi je suis indestructible : " + _isIndestructible);
+        
 
         _connectedWall = _wallManagerScript.SetConnectedWall(gameObject);
     }
