@@ -153,5 +153,5 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 0
+    isOpenned: 1
     wallIsOpenned: 0

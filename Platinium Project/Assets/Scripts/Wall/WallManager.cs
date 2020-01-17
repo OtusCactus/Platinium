@@ -39,6 +39,7 @@ public class WallManager : MonoBehaviour
     public RandomizerArena indestructibleLD;
     private RandomizerArena _thisRoundBibli;
     private int _arenaIndex;
+    private GameObject _thisArenaLD;
 
     // Start is called before the first frame update
     void Awake()
@@ -205,21 +206,27 @@ public class WallManager : MonoBehaviour
     {
         if (_gameManagerScript.currentFace == 0 || _gameManagerScript.currentFace == 7 || _gameManagerScript.currentFace == 8 || _gameManagerScript.currentFace == 9)
         {
-            print("WALMAN curr face " + _gameManagerScript.currentFace);
             _thisRoundBibli = normalLD;
             _arenaIndex = Random.Range(0, normalLD.arenas.Count);
+            _thisArenaLD = _thisRoundBibli.arenas[_arenaIndex].LD;
+            print("cette arène " + _thisRoundBibli.arenas[_arenaIndex].name);
+            print(_thisArenaLD);
         }
         else if (_gameManagerScript.currentFace == 1 || _gameManagerScript.currentFace == 2 || _gameManagerScript.currentFace == 3 || _gameManagerScript.currentFace == 5)
         {
-            print("WALMAN curr face " + _gameManagerScript.currentFace);
             _thisRoundBibli = bouncyLD;
             _arenaIndex = Random.Range(0, bouncyLD.arenas.Count);
+            _thisArenaLD = _thisRoundBibli.arenas[_arenaIndex].LD;
+            print("cette arène " + _thisRoundBibli.arenas[_arenaIndex].name);
+            print(_thisArenaLD);
         }
         else
         {
-            print("WALMAN curr face " + _gameManagerScript.currentFace);
             _thisRoundBibli = indestructibleLD;
             _arenaIndex = Random.Range(0, indestructibleLD.arenas.Count);
+            _thisArenaLD = _thisRoundBibli.arenas[_arenaIndex].LD;
+            print("cette arène " + _thisRoundBibli.arenas[_arenaIndex].name);
+            print(_thisArenaLD);
         }
     }
     public int GetRandomArenaIndex()
@@ -229,5 +236,10 @@ public class WallManager : MonoBehaviour
     public RandomizerArena GetThisRoundBibli()
     {
         return _thisRoundBibli;
+    }
+
+    public GameObject GetThisRoundLD()
+    {
+        return _thisArenaLD;
     }
 }

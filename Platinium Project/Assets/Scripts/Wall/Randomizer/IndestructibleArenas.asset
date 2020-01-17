@@ -10,47 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03033f24b3d94574f9ce98292ac3b68d, type: 3}
-  m_Name: IndestructibleArena
+  m_Name: IndestructibleArenas
   m_EditorClassIdentifier: 
   wallNameAvailableList: {fileID: 11400000, guid: 428a55a2f65f65544a15e484c12e81a4,
     type: 2}
   arenas:
-  - name: With Bouncy + Blackhole
-    LD: {fileID: 2129265337091030766, guid: 77ea96d9bb2682a4dbec6006b180eb4e, type: 3}
-    wallsNamesList:
-    - walls: 0
-      isBounc: 1
-      isIndestructibl: 0
-      isConnecte: 0
-      isOpenned: 0
-      wallName: WallNorthEast
-    - walls: 1
-      isBounc: 1
-      isIndestructibl: 0
-      isConnecte: 0
-      isOpenned: 0
-      wallName: WallNorthWest
-    - walls: 2
-      isBounc: 0
-      isIndestructibl: 1
-      isConnecte: 0
-      isOpenned: 0
-      wallName: WallSouthEast
-    - walls: 3
-      isBounc: 0
-      isIndestructibl: 1
-      isConnecte: 0
-      isOpenned: 0
-      wallName: WallSouth
-    - walls: 4
-      isBounc: 0
-      isIndestructibl: 1
-      isConnecte: 0
-      isOpenned: 0
-      wallName: WallSouthWest
-    isOpenned: 0
-    wallIsOpenned: 0
-  - name: Full Indestructible no LD
+  - name: bwa
     LD: {fileID: 0}
     wallsNamesList:
     - walls: 0
@@ -85,8 +50,8 @@ MonoBehaviour:
       wallName: WallSouthWest
     isOpenned: 0
     wallIsOpenned: 0
-  - name: Full Indestructible wind + 1 bumper
-    LD: {fileID: 68917056705406854, guid: 346d43375e39f9d4aa3068ede57c287c, type: 3}
+  - name: aaaaaaaaaaaa
+    LD: {fileID: 0}
     wallsNamesList:
     - walls: 0
       isBounc: 0
@@ -108,7 +73,7 @@ MonoBehaviour:
       wallName: WallSouthEast
     - walls: 3
       isBounc: 0
-      isIndestructibl: 0
+      isIndestructibl: 1
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouth
@@ -120,7 +85,7 @@ MonoBehaviour:
       wallName: WallSouthWest
     isOpenned: 0
     wallIsOpenned: 0
-  - name: Full Indestructible connected no LD
+  - name: tfyhgjkli
     LD: {fileID: 0}
     wallsNamesList:
     - walls: 0
@@ -137,7 +102,42 @@ MonoBehaviour:
       wallName: WallNorthWest
     - walls: 2
       isBounc: 0
-      isIndestructibl: 0
+      isIndestructibl: 1
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthEast
+    - walls: 3
+      isBounc: 0
+      isIndestructibl: 1
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouth
+    - walls: 4
+      isBounc: 0
+      isIndestructibl: 1
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthWest
+    isOpenned: 0
+    wallIsOpenned: 0
+  - name: muuuuuu
+    LD: {fileID: 0}
+    wallsNamesList:
+    - walls: 0
+      isBounc: 0
+      isIndestructibl: 1
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthEast
+    - walls: 1
+      isBounc: 0
+      isIndestructibl: 1
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthWest
+    - walls: 2
+      isBounc: 0
+      isIndestructibl: 1
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthEast
