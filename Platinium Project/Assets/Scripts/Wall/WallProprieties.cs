@@ -40,11 +40,11 @@ public class WallProprieties : MonoBehaviour
     {
         //UpdateProprieties();
         
-        if(_connectedWall != null)
-        {
-            _connectedWallProprieties = _connectedWall.GetComponent<WallProprieties>();
-            _connectedWallChange = _connectedWall.GetComponent<WallChange>();
-        }
+        //if(_connectedWall != null)
+        //{
+        //    _connectedWallProprieties = _connectedWall.GetComponent<WallProprieties>();
+        //    _connectedWallChange = _connectedWall.GetComponent<WallChange>();
+        //}
 
         if (_isBouncy)
         {
@@ -109,6 +109,11 @@ public class WallProprieties : MonoBehaviour
         
 
         _connectedWall = _wallManagerScript.SetConnectedWall(gameObject);
+        if (_connectedWall != null)
+        {
+            _connectedWallProprieties = _connectedWall.GetComponent<WallProprieties>();
+            _connectedWallChange = _connectedWall.GetComponent<WallChange>();
+        }
 
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
