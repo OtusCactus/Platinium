@@ -480,10 +480,10 @@ public class WallChange : MonoBehaviour
                 wallLife -= _playerVelocityRatio;
             //}
 
-            _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
-            if (_wallProprieties.GetIsBouncy())
+            _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / _wallLifeMax);
+            if (_wallProprieties.isBouncy)
             {
-                _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / 3);
+                _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / _wallLifeMax);
             }
             else
             {
