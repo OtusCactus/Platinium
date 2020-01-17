@@ -115,7 +115,7 @@ public class WallChange : MonoBehaviour
         // set les valeurs de départs
         _wallLifeMax = _wallManagerScript.GetWallLifeMax();
         wallLife = _wallLifeMax;
-        //_currentFace = _arenaRotationScript._currentFace;
+        _currentFace = _arenaRotationScript._currentFace;
         //_wallManagerScript.WhichWall(_wallProprieties);
         //wallAppearance = _wallManagerScript.UpdateWallAppearance(_wallProprieties);
         //wallShadowAppearance = _wallManagerScript.UpdateWallShadowAppearance(_wallProprieties);
@@ -555,6 +555,8 @@ public class WallChange : MonoBehaviour
             }
             else if (_gameManagerScript.currentPlayersOnArena <= 2)
             {
+                Debug.Log("CurrentFace : " + _currentFace);
+                Debug.Log("Wall qui change : " + this.gameObject.name);
                 switch (this.gameObject.name)
                 {
                     case "WallNorthEast":
