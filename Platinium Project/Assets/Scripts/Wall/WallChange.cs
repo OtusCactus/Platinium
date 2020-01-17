@@ -278,6 +278,7 @@ public class WallChange : MonoBehaviour
             _hasCreatedArray = false;
             _wallProprieties.UpdateProprieties();
             _wallManagerScript.WhichWall(_wallProprieties);
+            _wallProprieties.IAmConnectedIMustConnect();
             InitiateWall();
             _wallCollider[0].enabled = true;
             _wallCollider[1].enabled = false;
