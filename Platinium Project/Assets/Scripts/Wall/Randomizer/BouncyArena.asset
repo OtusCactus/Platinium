@@ -22,7 +22,7 @@ MonoBehaviour:
       isBounc: 1
       isIndestructibl: 0
       isConnecte: 0
-      isOpenned: 0
+      isOpenned: 1
       wallName: WallNorthEast
     - walls: 1
       isBounc: 1
@@ -48,8 +48,8 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 0
-    wallIsOpenned: 0
+    isOpenned: 1
+    wallIsOpenned: 1
   - name: Full Bouncy 1 bumper
     LD: {fileID: 4264229893725020113, guid: 20e0da2a586c0224ba6cb9ae5ed18c57, type: 3}
     wallsNamesList:

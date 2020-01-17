@@ -15,7 +15,7 @@ MonoBehaviour:
   wallNameAvailableList: {fileID: 11400000, guid: 428a55a2f65f65544a15e484c12e81a4,
     type: 2}
   arenas:
-  - name: bwa
+  - name: Full Indestructible no LD
     LD: {fileID: 0}
     wallsNamesList:
     - walls: 0
@@ -50,18 +50,18 @@ MonoBehaviour:
       wallName: WallSouthWest
     isOpenned: 0
     wallIsOpenned: 0
-  - name: aaaaaaaaaaaa
-    LD: {fileID: 0}
+  - name: Indestructible 2 Bouncy + 1 Blackhole
+    LD: {fileID: 2129265337091030766, guid: 77ea96d9bb2682a4dbec6006b180eb4e, type: 3}
     wallsNamesList:
     - walls: 0
-      isBounc: 0
-      isIndestructibl: 1
+      isBounc: 1
+      isIndestructibl: 0
       isConnecte: 0
       isOpenned: 0
       wallName: WallNorthEast
     - walls: 1
-      isBounc: 0
-      isIndestructibl: 1
+      isBounc: 1
+      isIndestructibl: 0
       isConnecte: 0
       isOpenned: 0
       wallName: WallNorthWest
@@ -85,8 +85,8 @@ MonoBehaviour:
       wallName: WallSouthWest
     isOpenned: 0
     wallIsOpenned: 0
-  - name: tfyhgjkli
-    LD: {fileID: 0}
+  - name: Full Indestructible + 1 bumper + 1 wind
+    LD: {fileID: 68917056705406854, guid: 346d43375e39f9d4aa3068ede57c287c, type: 3}
     wallsNamesList:
     - walls: 0
       isBounc: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
       wallName: WallSouthEast
     - walls: 3
       isBounc: 0
-      isIndestructibl: 1
+      isIndestructibl: 0
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouth
@@ -120,7 +120,7 @@ MonoBehaviour:
       wallName: WallSouthWest
     isOpenned: 0
     wallIsOpenned: 0
-  - name: muuuuuu
+  - name: Full Indestructible Connected
     LD: {fileID: 0}
     wallsNamesList:
     - walls: 0
@@ -137,8 +137,8 @@ MonoBehaviour:
       wallName: WallNorthWest
     - walls: 2
       isBounc: 0
-      isIndestructibl: 1
-      isConnecte: 0
+      isIndestructibl: 0
+      isConnecte: 1
       isOpenned: 0
       wallName: WallSouthEast
     - walls: 3
@@ -150,7 +150,7 @@ MonoBehaviour:
     - walls: 4
       isBounc: 0
       isIndestructibl: 1
-      isConnecte: 0
+      isConnecte: 1
       isOpenned: 0
       wallName: WallSouthWest
     isOpenned: 0

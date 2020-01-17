@@ -22,7 +22,7 @@ MonoBehaviour:
       isBounc: 0
       isIndestructibl: 0
       isConnecte: 0
-      isOpenned: 0
+      isOpenned: 1
       wallName: WallNorthEast
     - walls: 1
       isBounc: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 0
+    isOpenned: 1
     wallIsOpenned: 0
   - name: Full Normal Connected + blackhole
     LD: {fileID: 3170468643558458467, guid: cf041dda960d494479bfe242c05930f3, type: 3}
@@ -83,7 +83,7 @@ MonoBehaviour:
       isConnecte: 1
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 0
+    isOpenned: 1
     wallIsOpenned: 0
   - name: Full Normal 3 blackhole traiangle
     LD: {fileID: 426822239993399397, guid: 691609d95cb7da04a8d5fefdaf86a1cf, type: 3}
@@ -118,7 +118,7 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 0
+    isOpenned: 1
     wallIsOpenned: 0
   - name: Full Normal 3 Bumper Vertical
     LD: {fileID: 1315962291765187697, guid: c281d5b1a9b474746ba0b3b449bf411f, type: 3}
@@ -153,5 +153,5 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 0
+    isOpenned: 1
     wallIsOpenned: 0
