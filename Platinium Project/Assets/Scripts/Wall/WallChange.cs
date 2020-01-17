@@ -276,14 +276,15 @@ public class WallChange : MonoBehaviour
         {
             _hasCreatedArrayTwo = false;
             _hasCreatedArray = false;
+            _wallProprieties.UpdateProprieties();
             _wallManagerScript.WhichWall(_wallProprieties);
+            InitiateWall();
             _wallCollider[0].enabled = true;
             _wallCollider[1].enabled = false;
             _wallMeshRenderer.enabled = true;
 
             _currentFace = _arenaRotationScript._currentFace;
             _lastHit = false;
-            _wallProprieties.UpdateProprieties();
             wallLife = _wallLifeMax;
             if (!_wallProprieties.GetIsBouncy())
             {
@@ -481,7 +482,7 @@ public class WallChange : MonoBehaviour
             //}
 
             _meshMaterials[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / _wallLifeMax);
-            if (_wallProprieties.isBouncy)
+            if (_wallProprieties.GetIsBouncy())
             {
                 _meshMaterialsBambou[0].color = Color32.Lerp(new Color32(30, 255, 0, 255), new Color32(236, 25, 25, 255), (_wallLifeMax - wallLife) / _wallLifeMax);
             }

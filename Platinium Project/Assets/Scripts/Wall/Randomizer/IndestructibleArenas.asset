@@ -26,7 +26,7 @@ MonoBehaviour:
       wallName: WallNorthEast
     - walls: 1
       isBounc: 0
-      isIndestructibl: 1
+      isIndestructibl: 0
       isConnecte: 0
       isOpenned: 0
       wallName: WallNorthWest
