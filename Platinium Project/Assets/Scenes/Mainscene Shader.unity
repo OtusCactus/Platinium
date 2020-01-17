@@ -63549,7 +63549,7 @@ MonoBehaviour:
   - {fileID: -4254769481335329328, guid: ee0a8e1b41aac104ab20bd68a1a5ac7c, type: 3}
   normalLD: {fileID: 11400000, guid: b802b56c7efec9c42bc4701cc685664c, type: 2}
   bouncyLD: {fileID: 11400000, guid: 7748b498005c61548b78acd533fe3317, type: 2}
-  indestructibleLD: {fileID: 11400000, guid: 7a58886fb78f21c4996f1eb6e6da14a2, type: 2}
+  indestructibleLD: {fileID: 11400000, guid: 99a501b9bc79277449464112aa05187f, type: 2}
 --- !u!1 &1525726635
 GameObject:
   m_ObjectHideFlags: 0

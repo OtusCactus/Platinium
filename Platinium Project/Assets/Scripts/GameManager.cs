@@ -160,10 +160,7 @@ public class GameManager : MonoBehaviour
         _currentSlowMotion = _isSlowMotion;
 
 
-        if (_faceClassScript.faceTab[currentFace].levelDesign != null)
-        {
-            currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
-        }
+        
         _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
         _previousFaceAnimator.SetBool("isRising", true);
         hasRoundBegun = true;
@@ -173,6 +170,11 @@ public class GameManager : MonoBehaviour
         {
             _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallProprieties>().UpdateProprieties();
             _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallChange>().InitiateWall();
+        }
+        if (_wallManagerScript.GetThisRoundLD() != null)
+        {
+            //currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+            currentLD = _wallManagerScript.GetThisRoundLD();
         }
     }
 
@@ -247,9 +249,9 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(currentLD);
             }
-            if (_faceClassScript.faceTab[currentFace].levelDesign != null)
+            if (_wallManagerScript.GetThisRoundLD() != null)
             {
-                currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
+                currentLD = Instantiate(_wallManagerScript.GetThisRoundLD());
 
 
             }
