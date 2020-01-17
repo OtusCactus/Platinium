@@ -105,6 +105,9 @@ public class MenuPlayerManager : MonoBehaviour
     private float timerMenu = 0;
 
     private bool _hasOptionOrPlayOpened;
+    private bool _isPressAHere = false;
+    public GameObject logo;
+    public GameObject textPressA;
 
     private void Awake()
     {
@@ -151,6 +154,7 @@ public class MenuPlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print("pressA : " + _isPressAHere);
         if(_isOnOptions || _isCharSelecShowing || _isStartGameShowing || _isOnCredits)
         {
             playerEntity.IsInOptionOrCharacterMenu(true);
@@ -162,18 +166,30 @@ public class MenuPlayerManager : MonoBehaviour
 
         }
 
-        if (!_theMenuHasBegun && _player.GetButtonUp("Push1"))
+        if (_isPressAHere)
         {
-            startPanel.SetActive(false);
-            _theMenuHasBegun = true;
+            if (!_theMenuHasBegun && _player.GetButtonUp("Push1"))
+            {
+                startPanel.SetActive(false);
+                _theMenuHasBegun = true;
+                _isPressAHere = false;
+                textPressA.SetActive(false);
+            }
+        }
+        else
+        {
+            if (_player.GetButtonUp("Push1"))
+            {
+                logo.GetComponent<Animator>().Play(0, -1, 1);
+            }
         }
         if (_theMenuHasBegun)
         {
             if (!_isOnOptions && !_isCharSelecShowing && !_isStartGameShowing && !_isOnCredits && !_hasOptionOrPlayOpened && !_isOnTutorial && _player.GetButtonDown("BackMenu"))
             {
                 timerMenu = 0;
-                _theMenuHasBegun = false;
                 startPanel.SetActive(true);
+                _theMenuHasBegun = false;
             }
             timerMenu += Time.deltaTime;
             //Gère à quel joueur attribué quel action
@@ -805,5 +821,10 @@ public class MenuPlayerManager : MonoBehaviour
     public void StopVibration(Player _player)
     {
         _player.StopVibration();
+    }
+
+    public void SetIsPressA(bool pressA)
+    {
+        _isPressAHere = pressA;
     }
 }
