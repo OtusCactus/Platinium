@@ -94,6 +94,10 @@ public class NewSoundManager : MonoBehaviour
                 audio = _myAudios[i];
                 break;
             }
+            else if (i == _myAudios.Length - 1)
+            {
+                return;
+            }
         }
         audio.pitch = Time.timeScale;
         audio.loop = false;

@@ -118,7 +118,7 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 0
+    isOpenned: 1
     wallIsOpenned: 0
   - name: Full Bouncy Black Hole
     LD: {fileID: 7684487468338834608, guid: 54eecc84fec609a43a5a80d179a199de, type: 3}

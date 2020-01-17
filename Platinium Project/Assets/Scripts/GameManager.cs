@@ -204,8 +204,11 @@ public class GameManager : MonoBehaviour
         //check si on doit changer de face de l'arène
         if (isTurning)
         {
-
-            _wallManagerScript.GetRandomArena();
+            if (!_theArenaHasBeenChosen)
+            {
+                _wallManagerScript.GetRandomArena();
+                _theArenaHasBeenChosen = true;
+            }
             _previousFaceAnimator.SetBool("isFalling", true);
 
             if (currentLD != null)
@@ -232,6 +235,7 @@ public class GameManager : MonoBehaviour
         }
         else if(hasRoundBegun)
         {
+            _theArenaHasBeenChosen = false;
             if(_previousFaceAnimator != null)
             {
                 _previousFaceAnimator.SetBool("isFalling", false);
