@@ -48,8 +48,8 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 1
-    wallIsOpenned: 1
+    isOpenned: 0
+    wallIsOpenned: 0
   - name: Full Bouncy 1 bumper
     LD: {fileID: 4264229893725020113, guid: 20e0da2a586c0224ba6cb9ae5ed18c57, type: 3}
     wallsNamesList:
@@ -118,7 +118,7 @@ MonoBehaviour:
       isConnecte: 0
       isOpenned: 0
       wallName: WallSouthWest
-    isOpenned: 1
+    isOpenned: 0
     wallIsOpenned: 0
   - name: Full Bouncy Black Hole
     LD: {fileID: 7684487468338834608, guid: 54eecc84fec609a43a5a80d179a199de, type: 3}

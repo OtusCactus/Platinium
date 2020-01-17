@@ -171,6 +171,10 @@ public class GameManager : MonoBehaviour
             _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallProprieties>().UpdateProprieties();
             _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallChange>().InitiateWall();
         }
+        for(int i = 0; i < _faceClassScript.faceTab[currentFace].arenaWall.transform.childCount; i++)
+        {
+            _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallProprieties>().IAmConnectedIMustConnect();
+        }
         if (_wallManagerScript.GetThisRoundLD() != null)
         {
             //currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);

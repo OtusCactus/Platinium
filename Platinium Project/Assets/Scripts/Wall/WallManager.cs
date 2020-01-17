@@ -113,7 +113,6 @@ public class WallManager : MonoBehaviour
     //gère les dommages des murs connectés
     public void ConnectedtWallDammage(float myDammage, GameObject thisWall, WallProprieties connectedWallProprieties, WallChange connectedWallChange)
     {
- 
         if (!connectedWallProprieties.GetIsIndestructible())
         {
             connectedWallChange.SetDammageFromConnect(myDammage);

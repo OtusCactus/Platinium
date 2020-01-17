@@ -108,16 +108,24 @@ public class WallProprieties : MonoBehaviour
         _isConnected = _myBibli.arenas[_thisArenaIndex].wallsNamesList[_myChildPosition].isConnecte;
         
 
-        _connectedWall = _wallManagerScript.SetConnectedWall(gameObject);
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            gameObject.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    public void IAmConnectedIMustConnect()
+    {
+
+        if (_isConnected)
+        {
+            _connectedWall = _wallManagerScript.SetConnectedWall(gameObject);
+        }
+
         if (_connectedWall != null)
         {
             _connectedWallProprieties = _connectedWall.GetComponent<WallProprieties>();
             _connectedWallChange = _connectedWall.GetComponent<WallChange>();
-        }
-
-        for (int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            gameObject.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 
