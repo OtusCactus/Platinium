@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03033f24b3d94574f9ce98292ac3b68d, type: 3}
+  m_Name: BouncyArena
+  m_EditorClassIdentifier: 
+  wallNameAvailableList: {fileID: 11400000, guid: 428a55a2f65f65544a15e484c12e81a4,
+    type: 2}
+  arenas:
+  - name: Full Bouncy no LD
+    LD: {fileID: 0}
+    wallsNamesList:
+    - walls: 0
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthEast
+    - walls: 1
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthWest
+    - walls: 2
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthEast
+    - walls: 3
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouth
+    - walls: 4
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthWest
+    isOpenned: 0
+    wallIsOpenned: 0
+  - name: Full Bouncy 1 bumper
+    LD: {fileID: 4264229893725020113, guid: 20e0da2a586c0224ba6cb9ae5ed18c57, type: 3}
+    wallsNamesList:
+    - walls: 0
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthEast
+    - walls: 1
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthWest
+    - walls: 2
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthEast
+    - walls: 3
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouth
+    - walls: 4
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthWest
+    isOpenned: 0
+    wallIsOpenned: 1
+  - name: Full Bouncy Connected Wind
+    LD: {fileID: 8528431050713274084, guid: 52d772ee35be90f43a3d6b8ad9023ffa, type: 3}
+    wallsNamesList:
+    - walls: 0
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 1
+      isOpenned: 0
+      wallName: WallNorthEast
+    - walls: 1
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 1
+      isOpenned: 0
+      wallName: WallNorthWest
+    - walls: 2
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthEast
+    - walls: 3
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouth
+    - walls: 4
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthWest
+    isOpenned: 0
+    wallIsOpenned: 0
+  - name: Full Bouncy Black Hole
+    LD: {fileID: 7684487468338834608, guid: 54eecc84fec609a43a5a80d179a199de, type: 3}
+    wallsNamesList:
+    - walls: 0
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthEast
+    - walls: 1
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallNorthWest
+    - walls: 2
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthEast
+    - walls: 3
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouth
+    - walls: 4
+      isBounc: 1
+      isIndestructibl: 0
+      isConnecte: 0
+      isOpenned: 0
+      wallName: WallSouthWest
+    isOpenned: 0
+    wallIsOpenned: 0

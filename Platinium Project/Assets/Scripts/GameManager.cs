@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private GetMenuInformation _menuInformationScript;
     private ScoreManager _scoreManagerScript;
     private ArenaRotation _arenaRotationScript;
+    private WallManager _wallManagerScript;
 
     [Header("Player")]
     public List<GameObject> playerList;
@@ -67,11 +68,14 @@ public class GameManager : MonoBehaviour
     //debug
     public bool debug;
 
+    private bool _theArenaHasBeenChosen = false;
+
     private void Awake()
     {
         _scoreManagerScript = GetComponent<ScoreManager>();
         _faceClassScript = GetComponent<FaceClass>();
         _arenaRotationScript = arena.GetComponent<ArenaRotation>();
+        _wallManagerScript = GameObject.FindWithTag("WallController").GetComponent<WallManager>();
         menuInfoMouvementBool = new bool[4];
 
 
@@ -159,12 +163,17 @@ public class GameManager : MonoBehaviour
         if (_faceClassScript.faceTab[currentFace].levelDesign != null)
         {
             currentLD = Instantiate(_faceClassScript.faceTab[currentFace].levelDesign);
-
-
         }
         _previousFaceAnimator = _faceClassScript.faceTab[currentFace].arenaWall.GetComponent<Animator>();
         _previousFaceAnimator.SetBool("isRising", true);
         hasRoundBegun = true;
+        
+        _wallManagerScript.GetRandomArena();
+        for (int i = 0; i < _faceClassScript.faceTab[currentFace].arenaWall.transform.childCount; i++)
+        {
+            _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallProprieties>().UpdateProprieties();
+            _faceClassScript.faceTab[currentFace].arenaWall.transform.GetChild(i).GetComponent<WallChange>().InitiateWall();
+        }
     }
 
     // Update is called once per frame
@@ -193,7 +202,8 @@ public class GameManager : MonoBehaviour
         //check si on doit changer de face de l'arène
         if (isTurning)
         {
-            
+
+            _wallManagerScript.GetRandomArena();
             _previousFaceAnimator.SetBool("isFalling", true);
 
             if (currentLD != null)

@@ -216,11 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &973871
 BoxCollider2D:
@@ -2043,11 +2038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &51543451
 BoxCollider2D:
@@ -3117,11 +3107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &79507059
 BoxCollider2D:
@@ -3830,11 +3815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &92003679
 BoxCollider2D:
@@ -7141,11 +7121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &204632712
 BoxCollider2D:
@@ -10736,11 +10711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 1
-  isMoving: 0
   theWalls: []
 --- !u!61 &327345806
 BoxCollider2D:
@@ -11603,11 +11573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &344800018
 BoxCollider2D:
@@ -12115,11 +12080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &358813208
 BoxCollider2D:
@@ -12381,11 +12341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &366732907
 BoxCollider2D:
@@ -12592,11 +12547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &369476988
 BoxCollider2D:
@@ -13924,11 +13874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &393795078
 BoxCollider2D:
@@ -14390,11 +14335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &401166803
 BoxCollider2D:
@@ -15349,11 +15289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &426633830
 BoxCollider2D:
@@ -19188,11 +19123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &552032675
 BoxCollider2D:
@@ -19346,11 +19276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 1
-  isMoving: 0
   theWalls: []
 --- !u!61 &554521175
 BoxCollider2D:
@@ -19501,11 +19426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &558078693
 BoxCollider2D:
@@ -20002,11 +19922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &565214166
 BoxCollider2D:
@@ -21619,11 +21534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &610106685
 BoxCollider2D:
@@ -21982,11 +21892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &612948025
 BoxCollider2D:
@@ -23673,11 +23578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 1
-  isMoving: 0
   theWalls: []
 --- !u!61 &651331513
 BoxCollider2D:
@@ -24022,11 +23922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 1
-  isMoving: 0
   theWalls: []
 --- !u!61 &659057918
 BoxCollider2D:
@@ -25186,11 +25081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &686099516
 BoxCollider2D:
@@ -26084,11 +25974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &712994427
 BoxCollider2D:
@@ -28364,11 +28249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &784799991
 BoxCollider2D:
@@ -28748,11 +28628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &791446898
 BoxCollider2D:
@@ -28876,11 +28751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &793248866
 BoxCollider2D:
@@ -29676,11 +29546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &821943592
 BoxCollider2D:
@@ -31898,11 +31763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &898097001
 BoxCollider2D:
@@ -34873,11 +34733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &961772232
 BoxCollider2D:
@@ -35926,11 +35781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &984087150
 BoxCollider2D:
@@ -37288,11 +37138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1022900001
 BoxCollider2D:
@@ -38203,11 +38048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1049864916
 BoxCollider2D:
@@ -39133,11 +38973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1083856906
 BoxCollider2D:
@@ -40673,11 +40508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1119925636
 BoxCollider2D:
@@ -45432,11 +45262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1239497007
 BoxCollider2D:
@@ -48673,11 +48498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1322284352
 BoxCollider2D:
@@ -51002,11 +50822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 1
-  isMoving: 0
   theWalls: []
 --- !u!61 &1362441891
 BoxCollider2D:
@@ -59568,11 +59383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1429218124
 BoxCollider2D:
@@ -61748,11 +61558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 1
-  isMoving: 0
   theWalls: []
 --- !u!61 &1478035440
 BoxCollider2D:
@@ -62590,11 +62395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1496244456
 BoxCollider2D:
@@ -63680,7 +63480,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1524190920}
   - component: {fileID: 1524190921}
-  - component: {fileID: 1524190922}
   m_Layer: 0
   m_Name: WallController
   m_TagString: WallController
@@ -63748,29 +63547,9 @@ MonoBehaviour:
   - {fileID: -4254769481335329328, guid: f062cc399c9e2214a8b20485cc370ed4, type: 3}
   - {fileID: -4254769481335329328, guid: 866f5996871c69744850e324e894b687, type: 3}
   - {fileID: -4254769481335329328, guid: ee0a8e1b41aac104ab20bd68a1a5ac7c, type: 3}
---- !u!114 &1524190922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524190919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d465f36623e45a54aa6e0e6cbd025a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalLD: []
-  bouncyLD:
-  - hello je suis bouncy
-  - boing~
-  - tululin
-  - bamboo
-  indestructibleLD:
-  - MUTEKI FOLGORE !!
-  - indestructibleeeeeee
-  - marron
-  - ivgeujhbfsdzr
+  normalLD: {fileID: 11400000, guid: b802b56c7efec9c42bc4701cc685664c, type: 2}
+  bouncyLD: {fileID: 11400000, guid: 7748b498005c61548b78acd533fe3317, type: 2}
+  indestructibleLD: {fileID: 11400000, guid: 7a58886fb78f21c4996f1eb6e6da14a2, type: 2}
 --- !u!1 &1525726635
 GameObject:
   m_ObjectHideFlags: 0
@@ -65022,11 +64801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1564224673
 BoxCollider2D:
@@ -67024,11 +66798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1624497773
 BoxCollider2D:
@@ -67423,11 +67192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1633266632
 BoxCollider2D:
@@ -70335,11 +70099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1700109399
 BoxCollider2D:
@@ -71338,11 +71097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1711566938
 BoxCollider2D:
@@ -76200,11 +75954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1825883749
 BoxCollider2D:
@@ -76576,11 +76325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1833146790
 BoxCollider2D:
@@ -76704,11 +76448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1836531781
 BoxCollider2D:
@@ -80828,11 +80567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1922976657
 BoxCollider2D:
@@ -81611,11 +81345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1941060103
 BoxCollider2D:
@@ -81739,11 +81468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1942120525
 BoxCollider2D:
@@ -82532,11 +82256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1962133098
 BoxCollider2D:
@@ -82931,11 +82650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &1970468816
 BoxCollider2D:
@@ -84167,11 +83881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &2002235057
 BoxCollider2D:
@@ -84357,11 +84066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &2004604274
 BoxCollider2D:
@@ -84485,11 +84189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &2006245202
 BoxCollider2D:
@@ -86512,11 +86211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &2061394826
 BoxCollider2D:
@@ -86829,11 +86523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 1
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &2069216624
 BoxCollider2D:
@@ -87230,11 +86919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 0
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &2080935274
 BoxCollider2D:
@@ -88676,11 +88360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7764a42358899104098ffe4fc739645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBouncy: 1
-  isSticky: 0
-  isIndestructible: 0
-  isConnected: 0
-  isMoving: 0
   theWalls: []
 --- !u!61 &2133476599
 BoxCollider2D:
