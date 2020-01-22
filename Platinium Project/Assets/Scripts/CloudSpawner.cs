@@ -18,7 +18,6 @@ public class CloudSpawner : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float WaveWait;
-    public float timeToDestroy = 2;
     public float spaceBetweenClouds;
 
     private float _minPosY = 0;
@@ -73,7 +72,6 @@ public class CloudSpawner : MonoBehaviour
                 }
                 instantiated.transform.SetParent(backgroundCanvas.transform, false);
                 instantiated.rectTransform.anchoredPosition = new Vector2(Random.Range(pivot.rectTransform.anchoredPosition.x + minX, pivot.rectTransform.anchoredPosition.x + maxX), posY);
-                Destroy(instantiated, timeToDestroy);
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(WaveWait);
