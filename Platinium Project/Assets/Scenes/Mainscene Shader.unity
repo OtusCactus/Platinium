@@ -28016,7 +28016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &781615708
 Transform:
   m_ObjectHideFlags: 0
@@ -63515,8 +63515,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ejectionPower: 75
   shaderAppearanceTime: 5
-  wallLifeMaxTwo: 0.5
-  wallLifeMaxThree: 1.5
+  wallLifeMaxTwo: 1
+  wallLifeMaxThree: 2
   wallLifeMaxFour: 3
   wallFriction: 10
   wallBouncyFriction: 5
