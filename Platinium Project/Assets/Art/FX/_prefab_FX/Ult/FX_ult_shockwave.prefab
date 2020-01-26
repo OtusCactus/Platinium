@@ -4856,7 +4856,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7240806585276425235}
   serializedVersion: 6
-  lengthInSec: 4
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -9634,11 +9634,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7240806585276425232}
     m_Modifications:
-    - target: {fileID: 6470737977711720678, guid: d44b17262836ceb4488ce5b7a15bd68c,
-        type: 3}
-      propertyPath: m_Name
-      value: FX_circle_ult
-      objectReference: {fileID: 0}
     - target: {fileID: 7940580117077177162, guid: d44b17262836ceb4488ce5b7a15bd68c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9708,6 +9703,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.062771335
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470737977711720678, guid: d44b17262836ceb4488ce5b7a15bd68c,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_circle_ult
       objectReference: {fileID: 0}
     - target: {fileID: 8799908374997502720, guid: d44b17262836ceb4488ce5b7a15bd68c,
         type: 3}
