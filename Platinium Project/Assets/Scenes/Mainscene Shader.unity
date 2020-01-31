@@ -63515,8 +63515,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ejectionPower: 75
   shaderAppearanceTime: 5
-  wallLifeMaxTwo: 1
-  wallLifeMaxThree: 2
+  wallLifeMaxTwo: 1.6
+  wallLifeMaxThree: 2.4
   wallLifeMaxFour: 3
   wallFriction: 10
   wallBouncyFriction: 5
