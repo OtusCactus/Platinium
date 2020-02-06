@@ -46,14 +46,7 @@ public class WallProprieties : MonoBehaviour
         //    _connectedWallChange = _connectedWall.GetComponent<WallChange>();
         //}
 
-        if (_isBouncy)
-        {
-            friction = _wallManagerScript.wallBouncyFriction;
-        }
-        else
-        {
-            friction = _wallManagerScript.wallFriction;
-        }
+
     }
 
     // Update is called once per frame
@@ -111,6 +104,15 @@ public class WallProprieties : MonoBehaviour
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
             gameObject.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        if (_isBouncy)
+        {
+            friction = _wallManagerScript.wallBouncyFriction;
+        }
+        else
+        {
+            friction = _wallManagerScript.wallFriction;
         }
     }
 

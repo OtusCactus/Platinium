@@ -378,14 +378,14 @@ public class PlayerEntity : MonoBehaviour
         }
 
         _lastFrameVelocity = _myRb.velocity;
-        if(_myRb.velocity.sqrMagnitude > velocityClamp)
-        {
-            float factor = _myRb.velocity.sqrMagnitude / velocityClamp;
-            if (_myRb.velocity.sqrMagnitude > _velocityMax)
-            {
-                _myRb.velocity -= _myRb.velocity.normalized * factor;
-            }
-        }
+        //if(_myRb.velocity.sqrMagnitude > velocityClamp)
+        //{
+        //    float factor = _myRb.velocity.sqrMagnitude / velocityClamp;
+        //    if (_myRb.velocity.sqrMagnitude > _velocityMax)
+        //    {
+        //        _myRb.velocity -= _myRb.velocity.normalized * factor;
+        //    }
+        //}
 
             
 
